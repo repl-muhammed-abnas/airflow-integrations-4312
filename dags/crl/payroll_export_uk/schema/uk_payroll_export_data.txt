@@ -1,5 +1,0 @@
-HEADR|"GVECRL|"Charles River|"Charles River|"|"|"{{ dag_run.conf.payroll_file_name }}.SAP|"{{ dag_run.conf.ymd_format }}|"{{ dag_run.conf.hms_format }}|"P|"01|"|"|"|"|"|"|"|"|"|"
-{%- for record in dataset %}
-{{record.RECTY}}|"{{record.CLIID}}|"{{record.INTCA}}|"{{record.ORDNO}}|"{{record.IOPER}}|"{{record.INFTY}}|"{{record.SUBTY}}|"{{record.BEGDA}}|"{{record.ENDDA}}|"{{record.OBJPS}}|"{{record.SPRPS}}|"{{record.SEQNR}}|"{{record.EXTRA}}|"{{record.LGART}}|"{{record.STDAZ}}|"{{record.BEGUZ}}|"{{record.ENDUZ}}|"{{record.BETRG}}|"{{record.WAERS}}|"{{record.ANZHL}}|"{{record.ZEINH}}|"{{record.VTKEN}}|"{{record.BWGRL}}|"{{record.AUFKZ}}|"{{record.ENDOF}}|"{{record.UFLD1}}|"{{record.UFLD2}}|"{{record.UFLD3}}|"{{record.KEYPR}}|"{{record.TRFGR}}|"{{record.TRFST}}|"{{record.PRAKN}}|"{{record.PRAKZ}}|"{{record.OTYPE}}|"{{record.PLANS}}|"{{record.VERSL}}|"{{record.EXBEL}}|"{{record.WTART}}|"{{record.TDLANGU}}|"{{record.TDSUBLA}}|"{{record.TDTYPE}}
-{%- endfor %}
-TRAIL|"{{dag_run.conf.total_records}}
