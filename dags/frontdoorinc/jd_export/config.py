@@ -1,0 +1,11 @@
+region = 'us-east-1'
+environment = 'pre-production'
+max_active_runs_master = 1
+max_active_runs_first_child = 1
+max_active_runs_child = 4
+execution_timeout_days = 14
+schedule_time_zone = 'America/Chicago'
+schedule_interval = '0 0 1 * *'
+report_name = 'JDEIntegration - BaseReport'
+opexdebit_account = '40000142.71910.098'
+opextdebit_sow_contractor = '40000142.71910.100'

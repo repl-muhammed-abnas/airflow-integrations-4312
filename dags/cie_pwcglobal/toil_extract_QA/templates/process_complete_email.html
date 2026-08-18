@@ -1,0 +1,19 @@
+<p>
+    <strong>This is an automated mail, please don't reply.</strong>
+    <br />
+    <br />Hello, 
+    <br />
+    <br />The TOIL data extract has completed successfully for the location <b>{{ params.location }}</b>. 
+    Please find the extract details for reference.
+    <br />
+</p>
+<ul>
+    <li>File Name: {{ result('get_file_name') }}</li>
+    <li>File Path: {{ params.sftp_output_file_path }}</li>
+    <li>Country: {{ params.location }}</li>
+    <li>Number of Records: {{ result('final_toil_extract_to_csv') | load_all_records | length }}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br />
+    <br />Regards, 
+    <br />Replicon Inc.
+</p>

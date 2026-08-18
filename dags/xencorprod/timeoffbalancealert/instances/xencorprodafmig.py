@@ -1,0 +1,17 @@
+region = 'us-east-1'
+environment = 'pre-production'
+instance = "Xencorprodafmig"
+company_key = 'Xencorprodafmig'
+replicon_conn_id = 'Xencorprodafmig_Timeoff_Balance_Alert'
+can_run_batch_task_var_name = f'xencorprodafmig_timeoff_balance_alert_can_run_batch_task_{instance}'
+timeoff_report_name = 'Timeoff balance report for Replicon automation'
+execution_timeout_days = 14
+child_dag_max_active_runs = 20
+master_dag_interval = 30
+log_filepath = "/IntercontinentalExchangeafmig/Logs"
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_failure_alert_email }}'
+schedule_interval_daily = '01 0 1,16 * *'
+pacific_timezone = 'US/Pacific'
+disabled = True

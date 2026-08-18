@@ -1,0 +1,9 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />
+    Hello {{ result('log_user_first_name') }}, <br /> <br />
+    The supervisor summary report  for date range "{{ dag_run.conf.datefield }}" has processed successfully on {{ result('log_time_now') }}. Please click below link to download the report. <br /> <br />
+    <a href="{{result('generate_download_link')}}">Download report</a></p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+<p>For any queries, please reach out to timesheets@terracon.com<br /><br />
+    Regards, <br />
+    Deltek Inc.
+</p>

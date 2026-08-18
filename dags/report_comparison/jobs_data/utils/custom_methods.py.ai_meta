@@ -1,0 +1,122 @@
+{
+  "ai_lines": {
+    "230": "342d8c454214519f02570bd901f80803886111e45cc2a6259d26cd96569e6268",
+    "234": "a8096804157707922816ee130b3059f64a023e6adf3cc4af55962151b88dec24",
+    "247": "5cc93ebd5b9c68a60f7f1d165fbbd51b164d0ffa724873b79cdf1499b37315a0",
+    "313": "df5323e58ff3a853b41e385e0bfe24255653b0361cabc948489880479e1f9781",
+    "314": "1e6a1fc544a47912b72c538340f9371475d640a1f1f9b39d4fc46e47cbb20534",
+    "315": "efc5551e4b021cd3dd74fa08f5bfcab3ace82269a92b9f3e38b84be27bb08acc",
+    "334": "00d69378e679ed9e7c268ea177e32377ea06a9958f4dce866c5a0c6d6f1bf90e",
+    "352": "0e661e7db9a27775ca01750045e57fde39365f16137263f67587fe9b1cbaa3da",
+    "356": "45b7467b498719afb768f07c252fc05c0473c65147a48a7865c7b80dfb3912e9",
+    "357": "a5af7c33414fa88024b29d9d47f87f7334d3eb3bbe0c6a21f7c24b028eb1b0d7",
+    "358": "a739aee2427cd5e74b4a04e329cea5cecba719ff6cca863942a82298b30a3640",
+    "360": "0ddd822ad3fd120b4b95ecd0ecb8a23d0c644421ae09bc059de281bd33398fdd",
+    "361": "32940e4ba2982bbc4df0c731a09b2bf781e51bc7b1ec3fb4f0c11118c65c1dae",
+    "363": "4215898d740005bb6927e27300c04e2a67bbe6d2cad080065f240ae7a9adfdb5",
+    "365": "a6e8739e948b0c809dd56f7aa3735f8e4316bdad2f3a244b293c140f4f636025",
+    "392": "4464dd34778e3b9bf93c2bb5eb561c6996e7f81682be0ba4fb0f32b929e300a1",
+    "410": "8955136f6f62ffe0e0255efd53854e6a87ac44f70bbef344fea3cf505cc4e9df"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 19,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-01T12:58:34.826Z",
+  "file_state": {
+    "file_sha256": "4462b100c1b2064181bc647f07b254aee2cd558cf76a85441ca29509f810df68",
+    "total_file_lines": 600,
+    "total_lines": 534
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "80d887721b9cc1dbacc8bd9471747ffa726bfb13abc8380842362b4b0dcc1ad6",
+      "last_known_line": 391,
+      "removed_at": "2026-06-02T09:36:28.598Z"
+    },
+    {
+      "hash": "6d2e5ad0b6219f60f43e97d91c8408b57783b40a05aecfc9edf7567d1fd8b318",
+      "last_known_line": 392,
+      "removed_at": "2026-06-02T09:36:28.598Z"
+    },
+    {
+      "hash": "8af7332433e503670447b5e3ed6b439609d2f7df2917ddc50a9b34b8630d103b",
+      "last_known_line": 393,
+      "removed_at": "2026-06-02T09:36:28.598Z"
+    },
+    {
+      "hash": "2d584410840caa541ece1ecbddfb8d84f4bf8e0d129b2f9f87ea7ac09faf2915",
+      "last_known_line": 398,
+      "removed_at": "2026-06-02T09:36:28.598Z"
+    },
+    {
+      "hash": "441012c16e0e0ebc026d5b0d8fa9c10937ef1fc425a2bc0c8ca3899beffec0e1",
+      "last_known_line": 401,
+      "removed_at": "2026-06-02T09:36:28.598Z"
+    },
+    {
+      "hash": "eb55dac5432e127223b98d8e51d50bbf06c3131c79bfd7c7608a42e81b5c8731",
+      "last_known_line": 402,
+      "removed_at": "2026-06-02T09:36:28.598Z"
+    },
+    {
+      "hash": "2d584410840caa541ece1ecbddfb8d84f4bf8e0d129b2f9f87ea7ac09faf2915",
+      "last_known_line": 410,
+      "removed_at": "2026-06-02T09:36:28.598Z"
+    },
+    {
+      "hash": "d05afdda48b5e611fcb46873f49fa95925aaba40f66a37ed08263454c7ea6911",
+      "last_known_line": 413,
+      "removed_at": "2026-06-02T09:36:28.598Z"
+    },
+    {
+      "hash": "fec631d9138da3bba48cdc20f75da07fc8998ed5c3043665a507f283cc6f6a44",
+      "last_known_line": 414,
+      "removed_at": "2026-06-02T09:36:28.598Z"
+    },
+    {
+      "hash": "cc05829ffd9db864e5a76d083caa76128a5144894b25dc2c2b345c958a12f75d",
+      "last_known_line": 418,
+      "removed_at": "2026-06-02T09:36:28.598Z"
+    },
+    {
+      "hash": "39103c4a494b4ba8914888fa24f30bc9771aaed33e668bba640e8754f0e14060",
+      "last_known_line": 436,
+      "removed_at": "2026-06-02T09:36:28.598Z"
+    },
+    {
+      "hash": "67130ef83eb3559553c231e27677b160da26a354cd04ca8988d50c8c70f85359",
+      "last_known_line": 226,
+      "removed_at": "2026-06-02T09:40:18.147Z"
+    },
+    {
+      "hash": "12c7c9368e546c52e7a44176e0f829f54beb8a501afef41c572643c185be33ee",
+      "last_known_line": 227,
+      "removed_at": "2026-06-02T09:40:18.147Z"
+    },
+    {
+      "hash": "6c767975a364a5cd33102f695f727a6a28127795488636cf7175142ed2f11d02",
+      "last_known_line": 230,
+      "removed_at": "2026-06-18T12:16:28.789Z"
+    },
+    {
+      "hash": "da71234da0d6efcf77e2209c74591641b96d263420a35a1462d293a43aaf6ec6",
+      "last_known_line": 231,
+      "removed_at": "2026-06-18T12:16:28.789Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\report_comparison\\jobs_data\\utils\\custom_methods.py",
+  "stats": {
+    "ai_line_count": 17,
+    "ai_line_pct": 3.18,
+    "ai_lines_removed_or_modified": 15
+  },
+  "updated_at": "2026-06-18T12:16:28.789Z",
+  "version": 1
+}

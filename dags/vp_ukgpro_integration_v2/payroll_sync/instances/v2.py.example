@@ -1,0 +1,51 @@
+"""
+Dev instance for VP UKG Pro Payroll Sync v2.
+
+Local-dev fallback so the DAGs parse without the middleware committing real
+per-customer instance files. In higher environments `integration-platform-api`
+writes one instance file per customer into this folder via GitHub commits.
+
+Connection IDs and per-customer integration settings are normally fetched
+dynamically from the Integration Platform API at runtime. The values below are
+local fallbacks; `schedule_interval = None` ensures this fallback never
+auto-runs, and is triggered manually from the Airflow UI.
+"""
+# pylint: disable=invalid-name,unused-import
+from vp_ukgpro_integration_v2.payroll_sync.config import (
+    max_active_runs,
+    execution_timeout_days,
+    max_retries,
+    retry_delay_minutes,
+    batch_size,
+    validate_employees_in_ukgpro,
+    ukgpro_source,
+    hours_code_mapping,
+    airflow_connector_ui_connid,
+)
+
+# --- Routing scope ---
+region = 'us-east-1'
+environment = 'pre-production'
+
+# --- Customer identity ---
+instance = 'dev'
+customer_slug = instance
+customer_id = 'dev'
+customer_name = 'Dev Sample Customer'
+customer_email = None
+
+# --- Integration identity (passed to child DAGs via dag_run.conf) ---
+client_id = 'dev'
+integration_id = '00000000-0000-0000-0000-000000000000'
+integration_type = 'vp_ukgpro_payroll_sync_v2'
+company_key = f"airflowsandbox{region.replace('-', '')}"
+
+middleware_conn_id = f'middleware_conn_{instance}'
+
+# --- Scheduling / lifecycle ---
+schedule_interval = None
+disabled = False
+
+# --- Airflow connections (config_helper resolves these onto dag_run.conf) ---
+ukgpro_conn_id = f'ukgpro_conn_{instance}'
+vantagepoint_conn_id = f'vantagepoint_conn_{instance}'

@@ -1,0 +1,36 @@
+{
+  "ai_lines": {
+    "297": "cc74402a36e4495c480d627ec740ae925d278f0a6f7e84b6586dcf82536e4fbc",
+    "334": "cc74402a36e4495c480d627ec740ae925d278f0a6f7e84b6586dcf82536e4fbc",
+    "366": "3b02eebe4478168ed64c1d7920c7aedffc55f32de3c528b31ceb53b0e9dc30d6",
+    "792": "7a481b752fe13a3b850bbff1fe24f83be931b0453baea8ee0dd44b5fa681dabf",
+    "84": "cc74402a36e4495c480d627ec740ae925d278f0a6f7e84b6586dcf82536e4fbc",
+    "849": "4bad209bef484fc21241e68299ad87ddc7ecff4d6f3c724925e82f62faca9167",
+    "964": "cc74402a36e4495c480d627ec740ae925d278f0a6f7e84b6586dcf82536e4fbc"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 4,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-13T17:01:48.529Z",
+  "file_state": {
+    "file_sha256": "3358535b6853528d8612207a6ff75d5a8e455bfb9d77601710c5ee660df42fdb",
+    "total_file_lines": 1075,
+    "total_lines": 975
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\michaelkorstna\\uk_user_import_v1\\michaelkorstna_uk_user_sync_master_v1_0_dag.py",
+  "stats": {
+    "ai_line_count": 7,
+    "ai_line_pct": 0.72,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-13T17:02:04.579Z",
+  "version": 1
+}

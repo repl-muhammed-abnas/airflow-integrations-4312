@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RP Integration QA — Testing Dashboard</title>
+<style>
+  :root {
+    --bg:           #f5f7fa;
+    --panel:        #ffffff;
+    --border:       #e1e5eb;
+    --text:         #1f2937;
+    --text-muted:   #6b7280;
+    --accent:       #2563eb;
+    --accent-soft:  #dbeafe;
+
+    --status-notrun:  #9ca3af;
+    --status-pass:    #10b981;
+    --status-fail:    #ef4444;
+    --status-blocked: #f59e0b;
+    --status-skipped: #d1d5db;
+
+    --critical:       #b91c1c;
+    --critical-soft:  #fee2e2;
+
+    --cat-fwd-poll:   #DAE8FC; /* blue   - Polaris→RP scheduled  */
+    --cat-fwd-event:  #FFE6CC; /* orange - Polaris→RP webhook    */
+    --cat-jit:        #FFF2CC; /* yellow - JIT trigger           */
+    --cat-rev:        #E1D5E7; /* purple - RP→Polaris            */
+    --cat-xgen:       #D5E8D4; /* green  - cross-DAG              */
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ---------- top bar ---------- */
+  header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  header h1 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  header .subtitle {
+    color: var(--text-muted);
+    font-size: 12px;
+  }
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+  }
+  .progress-bar-wrap {
+    flex: 1;
+    height: 24px;
+    background: #f3f4f6;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    border: 1px solid var(--border);
+  }
+  .progress-segment {
+    height: 100%;
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    overflow: hidden;
+  }
+  .progress-stats {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    flex-wrap: wrap;
+  }
+  .stat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: #f3f4f6;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  .stat-chip .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  /* ---------- toolbar ---------- */
+  .toolbar {
+    background: var(--panel);
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .toolbar select, .toolbar input[type="text"] {
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 13px;
+    background: white;
+  }
+  .toolbar input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+  }
+  .toolbar label {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .toolbar button {
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.15s;
+  }
+  .toolbar button:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+  }
+  .toolbar button.primary {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+  .toolbar button.primary:hover {
+    background: #1d4ed8;
+  }
+
+  /* ---------- table ---------- */
+  main {
+    padding: 16px 24px 80px 24px;
+  }
+  .integration-block {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .integration-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .integration-header:hover {
+    background: #f9fafb;
+  }
+  .integration-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    flex: 1;
+  }
+  .integration-header .arrow {
+    transition: transform 0.2s;
+    color: var(--text-muted);
+  }
+  .integration-header.collapsed .arrow {
+    transform: rotate(-90deg);
+  }
+  .integration-direction-pill {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: #e5e7eb;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  .integration-direction-pill.forward { background: var(--cat-fwd-poll); color: #1e40af; }
+  .integration-direction-pill.event   { background: var(--cat-fwd-event); color: #92400e; }
+  .integration-direction-pill.reverse { background: var(--cat-rev); color: #6b21a8; }
+  .integration-direction-pill.jit     { background: var(--cat-jit); color: #854d0e; }
+  .integration-count {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .integration-body {
+    transition: max-height 0.3s ease-out;
+  }
+  .integration-body.collapsed {
+    display: none;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 10px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: #f9fafb;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr.test-row { transition: background 0.1s; }
+  tr.test-row:hover { background: #f9fafb; }
+  tr.test-row.expanded { background: #f0f9ff; }
+  .test-id {
+    font-family: "SF Mono", Monaco, Consolas, monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .test-title { font-weight: 500; }
+  .critical-badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 6px;
+    background: var(--critical-soft);
+    color: var(--critical);
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+  .status-select {
+    padding: 4px 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    min-width: 100px;
+    cursor: pointer;
+  }
+  .status-select[data-status="notrun"]  { background: #f3f4f6; color: var(--text-muted); }
+  .status-select[data-status="pass"]    { background: #d1fae5; color: #065f46; }
+  .status-select[data-status="fail"]    { background: #fee2e2; color: #991b1b; }
+  .status-select[data-status="blocked"] { background: #fef3c7; color: #92400e; }
+  .status-select[data-status="skipped"] { background: #e5e7eb; color: var(--text-muted); }
+
+  td.actions {
+    white-space: nowrap;
+  }
+  .icon-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 11px;
+    color: var(--text-muted);
+    transition: all 0.15s;
+  }
+  .icon-btn:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ---------- expandable detail row ---------- */
+  tr.detail-row { display: none; background: #fafbfc; }
+  tr.detail-row.shown { display: table-row; }
+  tr.detail-row td { padding: 16px 24px 20px 60px; }
+  .detail-section { margin-bottom: 14px; }
+  .detail-section h4 {
+    margin: 0 0 6px 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .detail-section p, .detail-section ul, .detail-section ol {
+    margin: 4px 0;
+    font-size: 13px;
+  }
+  .detail-section pre {
+    background: #1f2937;
+    color: #f9fafb;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    overflow-x: auto;
+    margin: 6px 0;
+  }
+  .detail-section code {
+    background: #f3f4f6;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-family: "SF Mono", Monaco, Consolas, monospace;
+    font-size: 12px;
+  }
+  textarea.notes {
+    width: 100%;
+    min-height: 60px;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    resize: vertical;
+  }
+  .detail-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .detail-meta a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .detail-meta a:hover { text-decoration: underline; }
+
+  /* ---------- empty state ---------- */
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+  }
+
+  /* ---------- footer ---------- */
+  footer {
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    padding: 14px 24px;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  footer code {
+    background: #f3f4f6;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: "SF Mono", Monaco, Consolas, monospace;
+  }
+
+  @media print {
+    header, .toolbar, footer, .icon-btn, td.actions { display: none !important; }
+    tr.detail-row { display: table-row !important; }
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>RP Integration QA — Testing Dashboard</h1>
+  <div class="subtitle">
+    Track test execution across all Polaris ↔ Resource Planner integrations · Progress saved locally · v1.0
+  </div>
+  <div class="progress-row">
+    <div class="progress-bar-wrap" id="progressBar"></div>
+    <div class="progress-stats" id="progressStats"></div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <label>Integration: <select id="filterIntegration"><option value="">All</option></select></label>
+  <label>Status: <select id="filterStatus">
+    <option value="">All</option>
+    <option value="notrun">Not Run</option>
+    <option value="pass">Pass</option>
+    <option value="fail">Fail</option>
+    <option value="blocked">Blocked</option>
+    <option value="skipped">Skipped</option>
+  </select></label>
+  <label><input type="checkbox" id="filterCritical" /> Critical only</label>
+  <input type="text" id="searchBox" placeholder="Search by test ID or title…" />
+  <button id="expandAllBtn">Expand all</button>
+  <button id="collapseAllBtn">Collapse all</button>
+  <button id="exportBtn">Export CSV</button>
+  <button id="resetBtn">Reset progress</button>
+</div>
+
+<main id="tableArea"></main>
+
+<footer>
+  Source guides: <code>dags/resource_planner/docs/qa_testing_*.md</code> ·
+  Shared mechanics: <code>qa_testing_reference.md</code> ·
+  Progress stored in <code>localStorage</code>
+</footer>
+
+<script>
+/* ============================================================
+   Test case catalogue.
+   Synced manually from the qa_testing_guide_*.md files.
+   When a guide adds/removes a TC, update this array too.
+   ============================================================ */
+const TESTS = [
+  // ---- User export ----
+  { id: "TC-USR-01", title: "Happy path: add a brand-new user", integration: "User export", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "Confirm a new Polaris user lands in rp_source_resources.", how: "1. Pick a Polaris user NOT in rp_source_resources yet.\n2. Ensure they're in the User report AND eligible-employees view.\n3. Set enable_batch_task variable to 'false'.\n4. Trigger DAG resource_planner_user_export_dev.", expected: "DAG completes; identify_users_to_add log shows ≥1; insert_users returns 200.", verify: "SELECT * FROM dbo.rp_source_resources WHERE source_system='Polaris' AND employee_id='<YOUR_EMPLOYEE_ID>';" },
+  { id: "TC-USR-02", title: "Idempotency: re-run does NOT duplicate", integration: "User export", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: true, goal: "A second run skips already-synced users.", how: "Re-trigger the DAG immediately after TC-USR-01.", expected: "identify_users_to_add shows 0; has_any_users_to_add → No; insert task skipped.", verify: "SELECT COUNT(*) FROM dbo.rp_source_resources WHERE employee_id='<...>'; — expect 1." },
+  { id: "TC-USR-03", title: "Skip path: batch task toggle ON", integration: "User export", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "Confirm the variable toggle short-circuits the DAG.", how: "Set enable_batch_task='true'; trigger DAG.", expected: "can_run_batch_task → Yes → batch_task → end_task. No new rows.", verify: "Compare row count vs baseline — unchanged." },
+  { id: "TC-USR-04", title: "Empty Polaris result", integration: "User export", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "DAG handles a no-data scenario gracefully.", how: "Filter report to a non-existent employee; trigger DAG.", expected: "user_report_has_data → No → end_task. DAG succeeds with no inserts.", verify: "Baseline unchanged." },
+  { id: "TC-USR-05", title: "Eligibility filter blocks non-eligible users", integration: "User export", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "Users in report but not in vw_d_staff_replica are filtered out.", how: "Pick a Polaris user NOT in the eligible-employees view; trigger DAG.", expected: "Not inserted into rp_source_resources.", verify: "SELECT 1 FROM dbo.rp_source_resources WHERE employee_id='<NON_ELIGIBLE>'; — expect 0 rows." },
+  { id: "TC-USR-06", title: "User without resource mapping still inserted (empty users_user_id)", integration: "User export", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "Confirms users without a resources mapping get empty strings, not NULL.", how: "Pick a user with no /resources mapping; trigger DAG.", expected: "User added with empty users_user_id, resource_id.", verify: "SELECT users_user_id, resource_id FROM dbo.rp_source_resources WHERE employee_id='<UNMAPPED>'; — empty string." },
+  { id: "TC-USR-07", title: "Gateway connection failure", integration: "User export", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "DAG fails loudly when gateway unreachable.", how: "Break the connection's host; trigger DAG.", expected: "ConnectionError after retries; DAG state=failed.", verify: "Restore gateway, re-trigger, confirm recovery." },
+  { id: "TC-USR-08", title: "Schedule fires daily", integration: "User export", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "Confirm the cron 0 0 * * * fires.", how: "Unpause DAG; wait for midnight UTC.", expected: "Exactly one scheduled__<date> run fires.", verify: "Check Airflow runs list at the next UTC midnight." },
+
+  // ---- TimeOff Types ----
+  { id: "TC-TOT-01", title: "Happy path: add a brand-new time-off type", integration: "TimeOff Types", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "A new Polaris time-off type lands in rp_source_time_codes.", how: "Create QA-Test-TimeOff type in Polaris > TimeOff > Setup > Types; trigger DAG.", expected: "identify_timeoff_types_to_add shows 1; insert returns 200.", verify: "SELECT * FROM dbo.rp_source_time_codes WHERE type='timeOffType' AND time_code_name='QA-Test-TimeOff';" },
+  { id: "TC-TOT-02", title: "Idempotency: re-run does NOT duplicate", integration: "TimeOff Types", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: true, goal: "Second run is no-op.", how: "Re-trigger DAG after TC-TOT-01.", expected: "0 types to add; insert task skipped.", verify: "SELECT COUNT(*) FROM dbo.rp_source_time_codes WHERE time_code_name='QA-Test-TimeOff'; — 1." },
+  { id: "TC-TOT-03", title: "Disabled type → time_entry_enabled = 0", integration: "TimeOff Types", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "Disabled Polaris types still get inserted but with the flag off.", how: "Create a new type with enabled=false in Polaris.", expected: "Row exists with time_entry_enabled=0.", verify: "SELECT time_entry_enabled FROM dbo.rp_source_time_codes WHERE time_code_name='<DISABLED>';" },
+  { id: "TC-TOT-04", title: "Skip path: batch task toggle ON", integration: "TimeOff Types", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "Same as USR-03 for time-off types.", how: "Toggle variable; trigger.", expected: "Short-circuit; no inserts.", verify: "Baseline unchanged." },
+  { id: "TC-TOT-05", title: "LWAPI pagination", integration: "TimeOff Types", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "Pagesize-spanning catalogues are fully retrieved.", how: "Have >100 types in Polaris; trigger DAG.", expected: "All types fetched across multiple pages.", verify: "Count in RP equals count in Polaris." },
+  { id: "TC-TOT-06", title: "Empty Polaris catalog", integration: "TimeOff Types", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "No-data path works.", how: "Fresh tenant with no types; trigger DAG.", expected: "0 types to add; end_task. No inserts.", verify: "Baseline unchanged." },
+  { id: "TC-TOT-07", title: "Type name collision (different IDs, same name)", integration: "TimeOff Types", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "Confirm uniqueness is by time_code (ID), not by name.", how: "Two types in Polaris with the same name.", expected: "Both inserted as separate rows with distinct time_codes.", verify: "SELECT time_code, COUNT(*) GROUP BY time_code — 2 rows, distinct codes." },
+  { id: "TC-TOT-08", title: "Gateway connection failure", integration: "TimeOff Types", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "Same as USR-07 for time-off type DAG.", how: "Break connection; trigger.", expected: "ConnectionError; DAG failed.", verify: "Restore and re-trigger." },
+  { id: "TC-TOT-09", title: "Schedule fires daily", integration: "TimeOff Types", direction: "forward", guide: "qa_testing_guide_users_timeoff_types.md", critical: false, goal: "Daily cron fires.", how: "Wait for midnight UTC.", expected: "Scheduled run.", verify: "Airflow runs list." },
+
+  // ---- TimeOff Bookings ----
+  { id: "TC-TOB-01", title: "Happy path: new single-day Absence booking", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "Single-day approved booking lands as 1 row.", how: "Create approved booking in Polaris (8h, non-holiday type); trigger DAG.", expected: "1 row to insert; insert returns 200.", verify: "SELECT * FROM dbo.rp_source WHERE source_booking_id='<UUID>'; — 1 row with hours_type='Absence'." },
+  { id: "TC-TOB-02", title: "Multi-day booking → N rows, same source_booking_id", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: true, goal: "Multi-day expansion preserves UUID per day.", how: "Create 3-day booking, 8h each; trigger DAG.", expected: "3 rows with same source_booking_id, distinct work_dates.", verify: "SELECT * FROM dbo.rp_source WHERE source_booking_id='<UUID>' ORDER BY work_date;" },
+  { id: "TC-TOB-03", title: "Holiday vs Absence classification", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "Type names containing 'holiday' (case-insensitive) get hours_type='Holiday'.", how: "One booking on a Holiday type, one on a non-holiday type.", expected: "Each booking gets the right classification.", verify: "SELECT hours_type FROM dbo.rp_source WHERE source_booking_id IN ('<H>','<NH>');" },
+  { id: "TC-TOB-04", title: "Re-run idempotency / duplicate detection", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: true, goal: "Detect DB uniqueness on (source_booking_id, work_date). Now critical because 00:00/01:00 UTC runs re-fetch yesterday — every booking is processed at least twice in 24h. If DB doesn't dedupe, duplicates accumulate daily.", how: "Re-trigger DAG within the same UTC day after TC-TOB-01. Optionally also: wait until the next day's 00:30 UTC run.", expected: "1 row per (booking, day) OR file a bug if 2+ rows appear.", verify: "SELECT source_booking_id, work_date, COUNT(*) FROM rp_source GROUP BY source_booking_id, work_date HAVING COUNT(*) > 1; -- expect 0 rows" },
+  { id: "TC-TOB-05", title: "Booking deleted → row removed from RP", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: true, goal: "Delete-bookings report drives DELETE.", how: "After TC-TOB-02, delete the Polaris booking; trigger DAG.", expected: "delete_count=1; delete_records HTTP 200.", verify: "SELECT COUNT(*) FROM dbo.rp_source WHERE source_booking_id='<DELETED_UUID>'; — 0." },
+  { id: "TC-TOB-06", title: "Skipped: missing employee_id", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "Rows without employee_id are skipped, not inserted.", how: "Engineer orphan rows in Polaris if possible.", expected: "skipped_count > 0; booking not in rp_source.", verify: "DAG log + DB query." },
+  { id: "TC-TOB-07", title: "Zero-hour booking is skipped", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "Zero-hour entries do not create rows.", how: "Create a 0-hour booking.", expected: "Not present in rp_source.", verify: "SELECT 1 FROM rp_source WHERE source_booking_id='<ZERO>'; — 0." },
+  { id: "TC-TOB-08", title: "MST → UTC timezone conversion", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "Modified On is correctly converted.", how: "Pick booking with known MST Modified On.", expected: "last_updated_date is 6-7h ahead of MST.", verify: "Compare last_updated_date vs Modified On." },
+  { id: "TC-TOB-09", title: "Type-name collision uses time_code as dedup key", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "Different time_codes with same name don't collide.", how: "Two types with same name, different IDs.", expected: "2 distinct time_codes in result.", verify: "SELECT DISTINCT time_code FROM rp_source WHERE source_booking_id IN ('...');" },
+  { id: "TC-TOB-10", title: "Report failure short-circuit", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "Report failure triggers FailOperator, no inserts.", how: "Change config.report_name to a non-existent report.", expected: "is_report_failed → Yes; FailOperator runs; DAG failed.", verify: "No new rows." },
+  { id: "TC-TOB-11", title: "Skip path: batch task toggle ON", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "Standard short-circuit pattern.", how: "Set variable; trigger.", expected: "Short-circuit.", verify: "Baseline." },
+  { id: "TC-TOB-12", title: "Schedule fires hourly", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "Cron 0 * * * * fires.", how: "Unpause; wait for top of hour.", expected: "Scheduled run.", verify: "Airflow runs." },
+  { id: "TC-TOB-13", title: "Gateway connection failure", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "Standard.", how: "Break connection.", expected: "Failed.", verify: "Recover and re-run." },
+  { id: "TC-TOB-14", title: "Midnight-boundary catch (yesterday-window logic)", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: true, goal: "Verify the date filter falls back to YESTERDAY during 00:00–01:59 UTC so that bookings modified just before midnight aren't missed.", how: "OPTION A (real time): 1. Modify booking at 23:30 UTC. 2. Let the 23:00 run finish. 3. Wait until 00:30 UTC. 4. Trigger DAG.\n\nOPTION B (using TC-TOB-18 override at any time of day): 1. Modify booking on any date D. 2. Trigger DAG with {\"modified_date\": \"<D>\"} — see TC-TOB-18.", expected: "DAG uses target_date=yesterday (Option A) or the override date (Option B); the relevant booking is in the report and gets inserted.", verify: "SELECT * FROM rp_source WHERE source_booking_id='<UUID>'; — row present.\n\nAlso inspect run_timeoff_report task log: filterValues should show the expected MM/DD/YYYY date." },
+  { id: "TC-TOB-15", title: "02:00 UTC switches back to today's filter", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "Confirm filter transitions correctly at the 02:00 UTC boundary.", how: "1. Modify a booking at 00:30 UTC today.\n2. Wait for the 02:00 UTC scheduled run.", expected: "DAG uses target_date=today; the 00:30 modification IS included.", verify: "Row in rp_source after 02:00 run." },
+  { id: "TC-TOB-16", title: "ModifiedOnUtcDateRangeFilter lookup fails loudly when missing", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "The DAG must not silently fall back to an unfiltered fetch if the Polaris report's filter is renamed/disabled.", how: "Admin-only: disable or rename ModifiedOnUtcDateRangeFilter in Polaris report; trigger DAG.\n\nIf no Polaris admin access: verify by code-review (look for raise ValueError in get_report_params).", expected: "DAG raises ValueError('Could not find ModifiedOnUtcDateRangeFilter in report details'); state=failed.", verify: "Restore filter; re-run to confirm recovery." },
+  { id: "TC-TOB-17", title: "Backfill gap when DAG is paused (documentation test)", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: false, goal: "Document the gap: with the date filter, a paused DAG no longer auto-recovers — modifications during the gap are silently missed.", how: "1. Pause DAG.\n2. Modify a booking on day D.\n3. Resume DAG on day D+2.\n4. Trigger.\n\nRecovery: use TC-TOB-18 override to replay each missed day individually.", expected: "Day-D modification is NOT in the natural run. Recovery via {\"modified_date\":\"<D>\"} override recovers it.", verify: "Confirm the booking is missing from rp_source after normal triggers; then runs with override conf populate it." },
+  { id: "TC-TOB-18", title: "QA conf override — manual date selection", integration: "TimeOff Bookings", direction: "forward", guide: "qa_testing_guide_timeoff_bookings.md", critical: true, goal: "DAG accepts dag_run.conf['modified_date'] (ISO YYYY-MM-DD) and uses it as the filter target — bypasses the time-of-day logic. Primary mechanism for date-specific QA tests.", how: "1. Pick a booking known to be modified on a historical date (e.g. 2026-05-10).\n2. Trigger DAG with conf:\n   {\"modified_date\": \"2026-05-10\"}\n3. Wait for completion.\n\nINVALID DATE SUB-TEST: Trigger with {\"modified_date\":\"not-a-date\"} → expect ValueError, DAG fails loudly.", expected: "Log shows 'get_report_params: using override modified_date=...'. Only bookings modified on that date land in rp_source. Time-of-day branch not taken.", verify: "SELECT * FROM rp_source WHERE source_booking_id='<UUID-MODIFIED-ON-DATE>'; — row present.\n\nDAG log: filterValues uses 05/10/2026 (or whatever date was passed in MM/DD/YYYY format)." },
+
+  // ---- Project Tasks Delta ----
+  { id: "TC-PTD-01", title: "Happy path: new project with tasks", integration: "Project Tasks Delta", direction: "forward", guide: "qa_testing_guide_project_tasks_delta.md", critical: false, goal: "New Polaris project lands as 1 project row + N task rows.", how: "Create QA-Test-Project + 3 tasks in Polaris; trigger master.", expected: "Master triggers child; identify_records_to_upsert=4; upsert HTTP 200.", verify: "SELECT type, task_level, time_code, time_code_name FROM rp_source_time_codes WHERE parent_time_code='<PID>';" },
+  { id: "TC-PTD-02", title: "Idempotency: nothing changed → no inserts", integration: "Project Tasks Delta", direction: "forward", guide: "qa_testing_guide_project_tasks_delta.md", critical: false, goal: "Re-run with no changes is a MERGE no-op.", how: "Re-trigger master after TC-PTD-01.", expected: "0 inserts, 0 updates (or N updates of unchanged rows).", verify: "Row count unchanged." },
+  { id: "TC-PTD-03", title: "Project rename → in-place update, no duplicate", integration: "Project Tasks Delta", direction: "forward", guide: "qa_testing_guide_project_tasks_delta.md", critical: true, goal: "MERGE updates row, doesn't insert.", how: "Rename project in Polaris; trigger master.", expected: "Update count > 0, insert count = 0; time_code_name reflects new name.", verify: "SELECT time_code_name FROM rp_source_time_codes WHERE time_code='<PID>' AND type='project';" },
+  { id: "TC-PTD-04", title: "Nested tasks: taskLevel & predecessor_time_code", integration: "Project Tasks Delta", direction: "forward", guide: "qa_testing_guide_project_tasks_delta.md", critical: true, goal: "2-level hierarchy gets correct level and bare parent task_id.", how: "Add nested task Wireframes under Design; trigger master.", expected: "Wireframes row has task_level=2, predecessor_time_code=<Design's bare task_id>.", verify: "SELECT task_level, predecessor_time_code FROM rp_source_time_codes WHERE time_code LIKE '%~Wireframes_id';" },
+  { id: "TC-PTD-05", title: "time_entry_enabled flag from TaskListService", integration: "Project Tasks Delta", direction: "forward", guide: "qa_testing_guide_project_tasks_delta.md", critical: false, goal: "Tasks with 'Allow time entry: No' get flag=0.", how: "Disable time entry on one task in Polaris.", expected: "fetch_time_entry_enabled_tasks returns true-set; per-row flag matches Polaris.", verify: "SELECT time_entry_enabled FROM rp_source_time_codes WHERE parent_time_code='<PID>';" },
+  { id: "TC-PTD-06", title: "Delete path: project removed in Polaris", integration: "Project Tasks Delta", direction: "forward", guide: "qa_testing_guide_project_tasks_delta.md", critical: true, goal: "Delete-child DAG cleans up deleted projects.", how: "Delete project in Polaris; trigger master.", expected: "delete-child runs; rows removed.", verify: "SELECT COUNT(*) WHERE parent_time_code='<PID>'; — 0." },
+  { id: "TC-PTD-07", title: "Batch boundaries: multiple changed projects", integration: "Project Tasks Delta", direction: "forward", guide: "qa_testing_guide_project_tasks_delta.md", critical: false, goal: "Master batches N changed projects correctly.", how: "Rename 3 projects within a 5-min window; trigger master.", expected: "1 child run with 3 projects in batch.", verify: "All 3 names updated." },
+  { id: "TC-PTD-08", title: "JIT-written row + delta-written row → no duplicates", integration: "Project Tasks Delta", direction: "forward", guide: "qa_testing_guide_project_tasks_delta.md", critical: true, goal: "Both writers produce same canonical format.", how: "Trigger JIT for a project, then trigger delta for the same.", expected: "No duplicate (source_system, time_code, type) rows.", verify: "GROUP BY time_code, type HAVING COUNT(*) > 1; — 0 rows." },
+  { id: "TC-PTD-09", title: "Skip path: batch toggle ON", integration: "Project Tasks Delta", direction: "forward", guide: "qa_testing_guide_project_tasks_delta.md", critical: false, goal: "Standard short-circuit.", how: "Set variable; trigger master.", expected: "batch_task runs; no children triggered.", verify: "Run history." },
+  { id: "TC-PTD-10", title: "Schedule fires hourly", integration: "Project Tasks Delta", direction: "forward", guide: "qa_testing_guide_project_tasks_delta.md", critical: false, goal: "Cron 0 * * * * fires.", how: "Top of hour.", expected: "Scheduled run.", verify: "Airflow." },
+  { id: "TC-PTD-11", title: "Gateway connection failure", integration: "Project Tasks Delta", direction: "forward", guide: "qa_testing_guide_project_tasks_delta.md", critical: false, goal: "Standard.", how: "Break connection.", expected: "Failed.", verify: "Recover." },
+  { id: "TC-PTD-XGEN-01", title: "No orphan allocations after a delta run", integration: "Project Tasks Delta", direction: "xgen", guide: "qa_testing_guide_project_tasks_delta.md", critical: true, goal: "delta must not leave allocations pointing at missing time_codes.", how: "After delta + JIT cycle, run the join query.", expected: "0 orphans.", verify: "SELECT a.* FROM rp_source a LEFT JOIN rp_source_time_codes t ON ... WHERE t.time_code IS NULL;" },
+
+  // ---- Project Tasks Bulk ----
+  { id: "TC-PTB-01", title: "First-time full population", integration: "Project Tasks Bulk", direction: "forward", guide: "qa_testing_guide_project_tasks_bulk.md", critical: false, goal: "DAG populates an empty table from scratch.", how: "Delete test rows; trigger bulk DAG.", expected: "All projects+tasks inserted; insert counts > 0.", verify: "SELECT COUNT(*) FROM rp_source_time_codes; — > 0." },
+  { id: "TC-PTB-02", title: "Re-run idempotency (MERGE updates, doesn't insert)", integration: "Project Tasks Bulk", direction: "forward", guide: "qa_testing_guide_project_tasks_bulk.md", critical: true, goal: "Second bulk run is MERGE no-op.", how: "Re-trigger after TC-PTB-01.", expected: "insert=0, updates=N rows.", verify: "Row count unchanged." },
+  { id: "TC-PTB-03", title: "Row-format compatibility with delta DAG", integration: "Project Tasks Bulk", direction: "forward", guide: "qa_testing_guide_project_tasks_bulk.md", critical: true, goal: "Bulk + delta write the same row format.", how: "Run bulk, then delta for same project.", expected: "Same byte-for-byte rows; no duplicates.", verify: "GROUP BY time_code, type HAVING COUNT(*) > 1; — 0 rows." },
+  { id: "TC-PTB-04", title: "Large project (>100 tasks)", integration: "Project Tasks Bulk", direction: "forward", guide: "qa_testing_guide_project_tasks_bulk.md", critical: false, goal: "TaskListService pagination handles large projects.", how: "Find/create a project with >100 tasks; trigger bulk.", expected: "All tasks land; child completes < 5 min.", verify: "Task count in RP matches Polaris." },
+  { id: "TC-PTB-05", title: "Skip path: batch toggle ON", integration: "Project Tasks Bulk", direction: "forward", guide: "qa_testing_guide_project_tasks_bulk.md", critical: false, goal: "Standard.", how: "Set variable; trigger.", expected: "Short-circuit.", verify: "Baseline." },
+  { id: "TC-PTB-06", title: "No master schedule (manual only)", integration: "Project Tasks Bulk", direction: "forward", guide: "qa_testing_guide_project_tasks_bulk.md", critical: false, goal: "Bulk should not have an auto schedule.", how: "Check schedule_interval is None.", expected: "Schedule shows None / manual.", verify: "Airflow DAG list." },
+  { id: "TC-PTB-07", title: "Gateway failure mid-run", integration: "Project Tasks Bulk", direction: "forward", guide: "qa_testing_guide_project_tasks_bulk.md", critical: false, goal: "Partial completion; MERGE catches up on retry.", how: "Kill gateway mid-run; restore and re-trigger.", expected: "Mixed success/fail children; subsequent run cleans up.", verify: "All rows present after final run." },
+  { id: "TC-PTB-XGEN-01", title: "After bulk, delta is a no-op", integration: "Project Tasks Bulk", direction: "xgen", guide: "qa_testing_guide_project_tasks_bulk.md", critical: false, goal: "delta finds everything up-to-date.", how: "Run bulk, then delta.", expected: "Delta inserts 0.", verify: "Delta DAG log." },
+
+  // ---- Task Resource Allocation Bulk ----
+  { id: "TC-TRA-01", title: "Happy path: new allocation as N daily rows", integration: "Task Resource Allocation Bulk", direction: "forward", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: false, goal: "Single allocation → multiple per-day rows.", how: "Allocate user to task for 5 days, 8h; trigger DAG.", expected: "Master fans out; child writes 5 rows.", verify: "SELECT * FROM rp_source WHERE source_booking_id='<UUID>';" },
+  { id: "TC-TRA-02", title: "No change → no writes", integration: "Task Resource Allocation Bulk", direction: "forward", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: false, goal: "SHA256 hash match → no-op.", how: "Re-trigger DAG.", expected: "detect_deltas: 0 inserts, 0 deletes.", verify: "DB unchanged." },
+  { id: "TC-TRA-03", title: "Modify allocation hours → replace", integration: "Task Resource Allocation Bulk", direction: "forward", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: true, goal: "Hash differs → delete old + insert new.", how: "Change 1 day's hours in Polaris.", expected: "PUT replaces; markPushed marks the old.", verify: "Modified day shows new hours." },
+  { id: "TC-TRA-04", title: "Allocation removed → marked deleted in RP", integration: "Task Resource Allocation Bulk", direction: "forward", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: true, goal: "Missing in current run → mark hours=0.", how: "Delete allocation in Polaris.", expected: "PATCH fires; rows hours=0.", verify: "All rows for UUID have hours=0." },
+  { id: "TC-TRA-05", title: "JIT fires for brand-new project", integration: "Task Resource Allocation Bulk", direction: "forward", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: true, goal: "Trigger ensure_project_tasks for new projects.", how: "Allocate to a new Polaris project NOT in rp_source_time_codes; trigger bulk.", expected: "ensure_project_tasks DAG run appears; time_codes populated within seconds.", verify: "SELECT * FROM rp_source_time_codes WHERE parent_time_code='<NEW>';" },
+  { id: "TC-TRA-06", title: "JIT skips when present (no Polaris call)", integration: "Task Resource Allocation Bulk", direction: "forward", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: false, goal: "JIT short-circuits when nothing missing.", how: "Re-trigger after TC-TRA-05.", expected: "checkPresence → projectPresent=true, missingTaskIds=[]; fetch_from_polaris skipped.", verify: "JIT DAG log shows skipped tasks." },
+  { id: "TC-TRA-07", title: "Multi-project run: master fans out children", integration: "Task Resource Allocation Bulk", direction: "forward", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: false, goal: "Master per-project child fan-out.", how: "Allocations across 3 projects; trigger master.", expected: "3 children run.", verify: "3 distinct projects in rp_source." },
+  { id: "TC-TRA-08", title: "No allocations → DAG completes cleanly", integration: "Task Resource Allocation Bulk", direction: "forward", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: false, goal: "Empty allocations handled gracefully.", how: "Project with no allocations.", expected: "No writes; DAG success.", verify: "DB unchanged." },
+  { id: "TC-TRA-09", title: "SFTP reference file recovery", integration: "Task Resource Allocation Bulk", direction: "forward", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: false, goal: "Reference hashes correctly loaded.", how: "After TC-TRA-01, check SFTP. Optionally corrupt to test fallback.", expected: "File exists with CSV of hashes.", verify: "SSH/SFTP to check." },
+  { id: "TC-TRA-10", title: "Schedule fires (if scheduled)", integration: "Task Resource Allocation Bulk", direction: "forward", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: false, goal: "Standard.", how: "Wait for cron.", expected: "Scheduled run.", verify: "Airflow." },
+  { id: "TC-TRA-11", title: "Skip path: batch toggle ON", integration: "Task Resource Allocation Bulk", direction: "forward", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: false, goal: "Standard.", how: "Set variable.", expected: "Short-circuit.", verify: "Baseline." },
+  { id: "TC-TRA-12", title: "Allocation with >1000 days", integration: "Task Resource Allocation Bulk", direction: "forward", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: false, goal: "Long date ranges don't OOM.", how: "1+ year allocation in Polaris.", expected: "All days expanded; DAG completes.", verify: "Row count = workdays in range." },
+  { id: "TC-TRA-XGEN-01", title: "No orphan allocations after a run", integration: "Task Resource Allocation Bulk", direction: "xgen", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: true, goal: "JIT closes the orphan gap within 30s.", how: "After bulk + JIT cycle, run join.", expected: "0 orphans.", verify: "LEFT JOIN query." },
+  { id: "TC-TRA-XGEN-02", title: "No outbound_pending_op pollution", integration: "Task Resource Allocation Bulk", direction: "xgen", guide: "qa_testing_guide_task_resource_allocation_bulk.md", critical: true, goal: "This direction must not set the outbound signal.", how: "After bulk run, query.", expected: "0 rows with outbound_pending_op != NULL.", verify: "SELECT COUNT(*) FROM rp_source WHERE outbound_pending_op IS NOT NULL AND last_updated_date > <start>;" },
+
+  // ---- Task Resource Allocation Webhooks ----
+  { id: "TC-WHK-01", title: "Added webhook: end-to-end happy path", integration: "Allocation Webhooks", direction: "event", guide: "qa_testing_guide_task_resource_allocation_webhooks.md", critical: false, goal: "Polaris Created event → DB rows.", how: "In Polaris allocate 3-day, 8h to a task; wait for webhook.", expected: "Receiver routes to _added DAG; writes 3 rows.", verify: "SELECT * FROM rp_source WHERE source_booking_id='<UUID>';" },
+  { id: "TC-WHK-02", title: "Manual webhook injection (curl)", integration: "Allocation Webhooks", direction: "event", guide: "qa_testing_guide_task_resource_allocation_webhooks.md", critical: false, goal: "Repeatable test via direct POST.", how: "curl with sample-added-event.json (see reference §7.2).", expected: "Same as TC-WHK-01.", verify: "DB rows present." },
+  { id: "TC-WHK-03", title: "Modified webhook: hash-partitioned routing", integration: "Allocation Webhooks", direction: "event", guide: "qa_testing_guide_task_resource_allocation_webhooks.md", critical: false, goal: "Modify events route to correct partitioned child via md5(uuid) % N.", how: "Modify an allocation in Polaris.", expected: "Specific child DAG run appears.", verify: "Airflow run list." },
+  { id: "TC-WHK-04", title: "Same allocation modified twice quickly → serialization", integration: "Allocation Webhooks", direction: "event", guide: "qa_testing_guide_task_resource_allocation_webhooks.md", critical: true, goal: "max_active_runs=1 per partitioned child serializes back-to-back updates.", how: "Modify same allocation twice within 1s.", expected: "Both runs go to same child; run #2 queues.", verify: "Final DB matches the 2nd modification." },
+  { id: "TC-WHK-05", title: "Deleted webhook: rows marked hours=0", integration: "Allocation Webhooks", direction: "event", guide: "qa_testing_guide_task_resource_allocation_webhooks.md", critical: false, goal: "Delete event triggers PATCH.", how: "Delete allocation in Polaris.", expected: "_deleted DAG run; PATCH /sourceAllocations.", verify: "Rows present with hours=0." },
+  { id: "TC-WHK-06", title: "JIT fires for new project (webhook)", integration: "Allocation Webhooks", direction: "event", guide: "qa_testing_guide_task_resource_allocation_webhooks.md", critical: true, goal: "New project triggered via webhook → JIT fills time-codes.", how: "Allocate against a new project; observe webhook.", expected: "ensure_project_tasks DAG runs.", verify: "rp_source_time_codes populated." },
+  { id: "TC-WHK-07", title: "Out-of-order webhooks", integration: "Allocation Webhooks", direction: "event", guide: "qa_testing_guide_task_resource_allocation_webhooks.md", critical: false, goal: "Delete-before-Create stays consistent.", how: "Inject Deleted before Created for same UUID.", expected: "Last-write-wins; allocation exists.", verify: "Rows present after 2nd event." },
+  { id: "TC-WHK-08", title: "Authorization required", integration: "Allocation Webhooks", direction: "event", guide: "qa_testing_guide_task_resource_allocation_webhooks.md", critical: true, goal: "Missing/wrong bearer token rejected.", how: "POST without auth header.", expected: "401/403; no DAG triggered.", verify: "Airflow logs." },
+  { id: "TC-WHK-09", title: "Malformed webhook payload", integration: "Allocation Webhooks", direction: "event", guide: "qa_testing_guide_task_resource_allocation_webhooks.md", critical: false, goal: "Bad JSON / missing fields → DAG fails fast or 4xx.", how: "POST malformed event.", expected: "No rows written.", verify: "DB unchanged." },
+  { id: "TC-WHK-XGEN-01", title: "Webhook + bulk DAG harmonious", integration: "Allocation Webhooks", direction: "xgen", guide: "qa_testing_guide_task_resource_allocation_webhooks.md", critical: false, goal: "Concurrent webhook + bulk runs converge.", how: "Run bulk while webhooks flow.", expected: "Both reach same final state.", verify: "Spot check." },
+  { id: "TC-WHK-XGEN-02", title: "No orphan allocations", integration: "Allocation Webhooks", direction: "xgen", guide: "qa_testing_guide_task_resource_allocation_webhooks.md", critical: true, goal: "Within 30s, no allocations point at missing time-codes.", how: "After webhook batch + JIT cycle.", expected: "0 orphans.", verify: "Join query." },
+
+  // ---- Ensure Project Tasks (JIT) ----
+  { id: "TC-EPT-01", title: "Happy path: brand-new project + tasks", integration: "Ensure Project Tasks (JIT)", direction: "jit", guide: "qa_testing_guide_ensure_project_tasks.md", critical: false, goal: "JIT fetches and inserts canonical rows for unseen project.", how: "New Polaris project; trigger JIT manually with conf.", expected: "checkPresence=missing; fetch + upsert.", verify: "rp_source_time_codes has project + tasks." },
+  { id: "TC-EPT-02", title: "No-op skip path: nothing missing", integration: "Ensure Project Tasks (JIT)", direction: "jit", guide: "qa_testing_guide_ensure_project_tasks.md", critical: true, goal: "Steady-state happy path: < 2s, no Polaris call.", how: "Re-trigger same conf after TC-EPT-01.", expected: "has_missing=No; fetch_from_polaris skipped.", verify: "Run duration < 2s." },
+  { id: "TC-EPT-03", title: "Partial: project present, some tasks missing", integration: "Ensure Project Tasks (JIT)", direction: "jit", guide: "qa_testing_guide_ensure_project_tasks.md", critical: false, goal: "Refreshes full project on partial miss.", how: "Add task in Polaris, trigger JIT.", expected: "checkPresence reports missing task; full refresh.", verify: "New task in rp_source_time_codes." },
+  { id: "TC-EPT-04", title: "No duplicates vs project_task_export_delta", integration: "Ensure Project Tasks (JIT)", direction: "jit", guide: "qa_testing_guide_ensure_project_tasks.md", critical: true, goal: "Critical: JIT and delta share format → MERGE doesn't dup.", how: "Run delta, then force JIT to refresh same project.", expected: "No duplicate (source_system, time_code, type).", verify: "GROUP BY HAVING COUNT(*)>1; — 0 rows." },
+  { id: "TC-EPT-05", title: "Hierarchy: nested tasks get correct level + predecessor", integration: "Ensure Project Tasks (JIT)", direction: "jit", guide: "qa_testing_guide_ensure_project_tasks.md", critical: true, goal: "fullPathItems → taskLevel + predecessor.", how: "Create 3-level nested tasks; trigger JIT.", expected: "Levels 1/2/3; predecessor = bare parent id.", verify: "SELECT task_level, predecessor_time_code FROM rp_source_time_codes WHERE ..." },
+  { id: "TC-EPT-06", title: "Pagination: project with >1000 tasks", integration: "Ensure Project Tasks (JIT)", direction: "jit", guide: "qa_testing_guide_ensure_project_tasks.md", critical: false, goal: "Multi-page TaskListService works.", how: "Test against large project.", expected: "All pages fetched.", verify: "Task count matches Polaris." },
+  { id: "TC-EPT-07", title: "Tenant ID Variable missing → fails loudly", integration: "Ensure Project Tasks (JIT)", direction: "jit", guide: "qa_testing_guide_ensure_project_tasks.md", critical: false, goal: "Missing variable triggers KeyError.", how: "Delete rp_tenant_id_dev; trigger.", expected: "DAG fails; sync-failure logged.", verify: "Restore variable." },
+  { id: "TC-EPT-08", title: "Polaris empty response (project has no tasks)", integration: "Ensure Project Tasks (JIT)", direction: "jit", guide: "qa_testing_guide_ensure_project_tasks.md", critical: false, goal: "Empty task list still writes project row.", how: "Project with no tasks; trigger JIT.", expected: "1 project row, 0 task rows.", verify: "Count by type." },
+  { id: "TC-EPT-09", title: "Concurrent fires for same project", integration: "Ensure Project Tasks (JIT)", direction: "jit", guide: "qa_testing_guide_ensure_project_tasks.md", critical: true, goal: "Idempotent MERGE — both succeed, no duplicates.", how: "Trigger 2 JIT runs back-to-back for same project.", expected: "Both succeed; 1 project + N tasks.", verify: "No duplicates." },
+  { id: "TC-EPT-10", title: "masterRunId propagated from allocation DAG", integration: "Ensure Project Tasks (JIT)", direction: "jit", guide: "qa_testing_guide_ensure_project_tasks.md", critical: true, goal: "Correlation context flows through.", how: "Trigger allocation DAG; inspect JIT conf.", expected: "masterRunId = parent allocation run_id.", verify: "view_dag_run_conf log." },
+  { id: "TC-EPT-11", title: "Failure logging on Polaris timeout", integration: "Ensure Project Tasks (JIT)", direction: "jit", guide: "qa_testing_guide_ensure_project_tasks.md", critical: false, goal: "Failures recorded for ops.", how: "Block Polaris; trigger JIT.", expected: "log_sync_failure POSTs to /failures.", verify: "Row in rp_export_sync_failures with child_dag_id LIKE '%ensure_project_tasks%';" },
+  { id: "TC-EPT-XGEN-01", title: "Delta no-op after JIT", integration: "Ensure Project Tasks (JIT)", direction: "xgen", guide: "qa_testing_guide_ensure_project_tasks.md", critical: true, goal: "Confirms JIT format is canonical.", how: "JIT a project; then run delta.", expected: "Delta inserts=0 for that project.", verify: "Delta DAG log." },
+  { id: "TC-EPT-XGEN-02", title: "Triggers from all 3 allocation DAGs work", integration: "Ensure Project Tasks (JIT)", direction: "xgen", guide: "qa_testing_guide_ensure_project_tasks.md", critical: false, goal: "Each upstream trigger fires JIT correctly.", how: "Trigger bulk/added/modified one at a time.", expected: "JIT run appears for each.", verify: "Run list." },
+
+  // ---- Confirmed Bookings Export (RP→Polaris) ----
+  { id: "TC-CBE-01", title: "Happy path: single ADD day → Polaris CREATE", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: false, goal: "Inject ADD row, push to Polaris.", how: "Insert row with outbound_pending_op='ADD'; trigger master.", expected: "Op-create DAG; CREATE allocation + putEstimate; markPushed clears.", verify: "outbound_pending_op = NULL; allocation in Polaris UI." },
+  { id: "TC-CBE-02", title: "Multi-day ADD → single CREATE with collapsed scheduleRules", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: false, goal: "Multi-day collapses to one mutation.", how: "Insert 3 ADD rows for same UUID, consecutive days.", expected: "1 op-create with scheduleRules: [{D..D+2, setHours:8}].", verify: "All 3 rows cleared." },
+  { id: "TC-CBE-03", title: "Mixed UPDATE + DELETE on a booking → one op-update DAG", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: true, goal: "UPDATE and DELETE days share one PARTIAL mutation.", how: "Flip rows to UPDATE/DELETE signal.", expected: "One PARTIAL update with scheduleRules: [{UPDATE days, hrs}, {DELETE day, hrs=0}].", verify: "Polaris UI shows correct hours per day." },
+  { id: "TC-CBE-04", title: "Self-healing: CREATE retry hits 'already exists'", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: true, goal: "Recovery from network drops.", how: "Kill mid-run after Polaris create but before markPushed; retrigger.", expected: "handle_create_response treats duplicate as success.", verify: "Polaris has 1 allocation; row cleared." },
+  { id: "TC-CBE-05", title: "BulkGetUsers3 resolution: deleted user skipped", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: true, goal: "Prevent failed mutations for deleted users.", how: "Insert row with employee_id of a deleted Polaris user.", expected: "skipped_no_user counter; row signal stays.", verify: "outbound_pending_op still ADD; no allocation in Polaris." },
+  { id: "TC-CBE-06", title: "Snapshot window: mid-run inserts not picked up", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: false, goal: "(cursor, upperBound] is stable.", how: "Insert new row mid-run with last_updated_date > upperBound.", expected: "New row not in this run; picked up next run.", verify: "Original cleared; new row still ADD." },
+  { id: "TC-CBE-07", title: "has_pages=No path", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: false, goal: "No-work path completes cleanly.", how: "No rows with signal in window.", expected: "pageCount=0; advance_cursor still runs.", verify: "Cursor advanced; no children triggered." },
+  { id: "TC-CBE-08", title: "Cursor advances only after all children complete", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: false, goal: "all_done semantics.", how: "Long-running run; observe Variable.", expected: "Cursor stays old until wait_for_all_children done.", verify: "Variable timestamps." },
+  { id: "TC-CBE-09", title: "Sync-failure replay", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: true, goal: "Failure recorded → retry DAG re-fires.", how: "Inject failure; check failures table; trigger retry DAG.", expected: "Retry succeeds; failure record RESOLVED.", verify: "SELECT status FROM rp_export_sync_failures;" },
+  { id: "TC-CBE-10", title: "Polaris API rejects the mutation (bad data)", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: true, goal: "Loud failure on bad data.", how: "Insert row with invalid time_code.", expected: "op-create fails; failure record; signal preserved.", verify: "Row outbound_pending_op still ADD; failure row in DB." },
+  { id: "TC-CBE-11", title: "Resync with manual cursor reset", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: false, goal: "Rewinding cursor forces re-push.", how: "Set cursor to past date; trigger master.", expected: "Old rows re-picked-up; CREATE → 'already exists' → success.", verify: "Polaris not duplicated; rows re-cleared." },
+  { id: "TC-CBE-12", title: "markPushed race window", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: false, goal: "Known limitation: flipped signal may be clobbered.", how: "Flip outbound_pending_op mid-run to a different op.", expected: "EXPECTED-TO-FAIL the strict optimistic-lock contract; file bug if seen.", verify: "Bug report." },
+  { id: "TC-CBE-13", title: "Tenant ID variable missing → DAG fails loudly", integration: "Confirmed Bookings Export", direction: "reverse", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: false, goal: "Required Variable enforcement.", how: "Delete rp_tenant_id_dev; trigger master.", expected: "classify_and_build raises KeyError; DAG fails.", verify: "Restore variable to fix." },
+  { id: "TC-CBE-XGEN-01", title: "No stuck outbound_pending_op rows after run", integration: "Confirmed Bookings Export", direction: "xgen", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: true, goal: "All snapshot-window rows processed.", how: "After successful master run.", expected: "0 rows with signal still set in window.", verify: "SELECT COUNT(*) FROM rp_source WHERE outbound_pending_op IS NOT NULL AND last_updated_date <= '<upperBound>';" },
+  { id: "TC-CBE-XGEN-02", title: "Every time_code resolves to a task row", integration: "Confirmed Bookings Export", direction: "xgen", guide: "qa_testing_guide_confirmed_bookings_export.md", critical: true, goal: "Outbound rows reference valid Polaris tasks.", how: "Before triggering master.", expected: "0 unresolved time_codes.", verify: "Left join rp_source_time_codes." },
+];
+
+/* ============================================================
+   App state — persisted in localStorage
+   ============================================================ */
+const STORAGE_KEY = "rp_qa_dashboard_state_v1";
+const state = (() => {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (e) { /* ignore */ }
+  return { byId: {} }; // { byId: { "TC-USR-01": { status: "pass", notes: "..." } } }
+})();
+
+function persist() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function getRecord(id) {
+  return state.byId[id] || { status: "notrun", notes: "" };
+}
+
+function setStatus(id, status) {
+  state.byId[id] = { ...getRecord(id), status };
+  persist();
+}
+
+function setNotes(id, notes) {
+  state.byId[id] = { ...getRecord(id), notes };
+  persist();
+}
+
+/* ============================================================
+   Rendering
+   ============================================================ */
+
+const STATUS_LABELS = {
+  notrun:  "Not Run",
+  pass:    "Pass",
+  fail:    "Fail",
+  blocked: "Blocked",
+  skipped: "Skipped",
+};
+
+const STATUS_COLORS = {
+  notrun:  "var(--status-notrun)",
+  pass:    "var(--status-pass)",
+  fail:    "var(--status-fail)",
+  blocked: "var(--status-blocked)",
+  skipped: "var(--status-skipped)",
+};
+
+const DIRECTION_LABEL = {
+  forward: "Polaris → RP",
+  event:   "Polaris → RP (webhook)",
+  jit:     "JIT (triggered)",
+  reverse: "RP → Polaris",
+  xgen:    "Cross-DAG",
+};
+
+const DIRECTION_PILL_CLASS = {
+  forward: "forward",
+  event:   "event",
+  jit:     "jit",
+  reverse: "reverse",
+  xgen:    "",
+};
+
+/* group tests by integration */
+function groupedTests(filtered) {
+  const groups = new Map();
+  for (const t of filtered) {
+    if (!groups.has(t.integration)) groups.set(t.integration, []);
+    groups.get(t.integration).push(t);
+  }
+  return groups;
+}
+
+/* apply filters */
+function getFiltered() {
+  const integration = document.getElementById("filterIntegration").value;
+  const status = document.getElementById("filterStatus").value;
+  const criticalOnly = document.getElementById("filterCritical").checked;
+  const q = document.getElementById("searchBox").value.trim().toLowerCase();
+
+  return TESTS.filter(t => {
+    if (integration && t.integration !== integration) return false;
+    if (status && getRecord(t.id).status !== status) return false;
+    if (criticalOnly && !t.critical) return false;
+    if (q) {
+      const hay = (t.id + " " + t.title + " " + t.goal).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function renderProgress() {
+  const counts = { notrun: 0, pass: 0, fail: 0, blocked: 0, skipped: 0 };
+  for (const t of TESTS) {
+    counts[getRecord(t.id).status]++;
+  }
+  const total = TESTS.length;
+  const passed = counts.pass;
+
+  // Build segmented bar
+  const bar = document.getElementById("progressBar");
+  bar.innerHTML = "";
+  const order = ["pass", "fail", "blocked", "skipped", "notrun"];
+  for (const key of order) {
+    const c = counts[key];
+    if (c === 0) continue;
+    const w = (c / total) * 100;
+    const seg = document.createElement("div");
+    seg.className = "progress-segment";
+    seg.style.width = w + "%";
+    seg.style.background = STATUS_COLORS[key];
+    seg.textContent = w > 8 ? `${STATUS_LABELS[key]}: ${c}` : c;
+    seg.title = `${STATUS_LABELS[key]}: ${c}`;
+    bar.appendChild(seg);
+  }
+
+  // Stats chips
+  const stats = document.getElementById("progressStats");
+  stats.innerHTML = `
+    <span class="stat-chip"><span class="dot" style="background:var(--status-pass)"></span>${counts.pass} pass</span>
+    <span class="stat-chip"><span class="dot" style="background:var(--status-fail)"></span>${counts.fail} fail</span>
+    <span class="stat-chip"><span class="dot" style="background:var(--status-blocked)"></span>${counts.blocked} blocked</span>
+    <span class="stat-chip"><span class="dot" style="background:var(--status-skipped)"></span>${counts.skipped} skipped</span>
+    <span class="stat-chip"><span class="dot" style="background:var(--status-notrun)"></span>${counts.notrun} not run</span>
+    <span class="stat-chip" style="background:var(--accent-soft);color:var(--accent)">${passed}/${total} (${Math.round(passed/total*100)}%)</span>
+  `;
+}
+
+function renderTable() {
+  const area = document.getElementById("tableArea");
+  area.innerHTML = "";
+  const filtered = getFiltered();
+
+  if (filtered.length === 0) {
+    area.innerHTML = `<div class="empty-state">No tests match the current filters.</div>`;
+    return;
+  }
+
+  const groups = groupedTests(filtered);
+  for (const [integration, tests] of groups) {
+    const direction = tests[0].direction === "xgen"
+      ? (tests[0].integration.includes("Webhook") ? "event"
+       : tests[0].integration.includes("Confirmed") ? "reverse"
+       : tests[0].integration.includes("JIT") ? "jit"
+       : "forward")
+      : tests[0].direction;
+
+    const block = document.createElement("div");
+    block.className = "integration-block";
+    block.innerHTML = `
+      <div class="integration-header" data-int="${integration}">
+        <span class="arrow">▾</span>
+        <h2>${integration}</h2>
+        <span class="integration-direction-pill ${DIRECTION_PILL_CLASS[direction] || ''}">${DIRECTION_LABEL[direction]}</span>
+        <span class="integration-count">${tests.length} test${tests.length === 1 ? '' : 's'}</span>
+      </div>
+      <div class="integration-body">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:120px">ID</th>
+              <th>Title</th>
+              <th style="width:160px">Status</th>
+              <th style="width:100px" class="actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${tests.map(t => {
+              const rec = getRecord(t.id);
+              return `
+                <tr class="test-row" data-id="${t.id}">
+                  <td><span class="test-id">${t.id}</span></td>
+                  <td><span class="test-title">${t.title}</span>${t.critical ? '<span class="critical-badge">CRITICAL</span>' : ''}</td>
+                  <td>
+                    <select class="status-select" data-id="${t.id}" data-status="${rec.status}">
+                      ${Object.entries(STATUS_LABELS).map(([v,l]) => `<option value="${v}" ${rec.status===v?'selected':''}>${l}</option>`).join("")}
+                    </select>
+                  </td>
+                  <td class="actions">
+                    <button class="icon-btn toggle-detail" data-id="${t.id}">Details ▾</button>
+                  </td>
+                </tr>
+                <tr class="detail-row" data-id="${t.id}">
+                  <td colspan="4">
+                    <div class="detail-meta">
+                      <span><strong>Guide:</strong> <a href="${t.guide}" target="_blank">${t.guide}</a></span>
+                      <span><strong>Direction:</strong> ${DIRECTION_LABEL[t.direction]}</span>
+                      ${t.critical ? '<span style="color:var(--critical);font-weight:600">★ Critical</span>' : ''}
+                    </div>
+                    <div class="detail-section"><h4>Goal</h4><p>${escapeHtml(t.goal)}</p></div>
+                    <div class="detail-section"><h4>How to test</h4><pre>${escapeHtml(t.how)}</pre></div>
+                    <div class="detail-section"><h4>Expected</h4><p>${escapeHtml(t.expected)}</p></div>
+                    <div class="detail-section"><h4>Verify</h4><pre>${escapeHtml(t.verify)}</pre></div>
+                    <div class="detail-section">
+                      <h4>QA notes</h4>
+                      <textarea class="notes" data-id="${t.id}" placeholder="Notes / actual vs expected / bug ticket number…">${escapeHtml(rec.notes || "")}</textarea>
+                    </div>
+                  </td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+    area.appendChild(block);
+  }
+
+  // event hookups
+  area.querySelectorAll(".status-select").forEach(sel => {
+    sel.addEventListener("change", e => {
+      const id = e.target.dataset.id;
+      const val = e.target.value;
+      e.target.dataset.status = val;
+      setStatus(id, val);
+      renderProgress();
+    });
+  });
+
+  area.querySelectorAll(".toggle-detail").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const id = e.target.dataset.id;
+      const tr = area.querySelector(`tr.detail-row[data-id="${id}"]`);
+      const row = area.querySelector(`tr.test-row[data-id="${id}"]`);
+      const shown = tr.classList.toggle("shown");
+      row.classList.toggle("expanded", shown);
+      btn.textContent = shown ? "Details ▴" : "Details ▾";
+    });
+  });
+
+  area.querySelectorAll(".notes").forEach(ta => {
+    ta.addEventListener("input", e => {
+      setNotes(e.target.dataset.id, e.target.value);
+    });
+  });
+
+  area.querySelectorAll(".integration-header").forEach(h => {
+    h.addEventListener("click", () => {
+      h.classList.toggle("collapsed");
+      h.nextElementSibling.classList.toggle("collapsed");
+    });
+  });
+}
+
+function escapeHtml(s) {
+  if (!s) return "";
+  return String(s)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+/* populate integration filter */
+function initIntegrationFilter() {
+  const sel = document.getElementById("filterIntegration");
+  const integrations = [...new Set(TESTS.map(t => t.integration))];
+  for (const i of integrations) {
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.textContent = i;
+    sel.appendChild(opt);
+  }
+}
+
+/* CSV export */
+function exportCsv() {
+  const rows = [["ID", "Integration", "Direction", "Critical", "Title", "Status", "Notes", "Goal"]];
+  for (const t of TESTS) {
+    const rec = getRecord(t.id);
+    rows.push([
+      t.id,
+      t.integration,
+      DIRECTION_LABEL[t.direction],
+      t.critical ? "Yes" : "No",
+      t.title,
+      STATUS_LABELS[rec.status],
+      (rec.notes || "").replaceAll('"', '""'),
+      t.goal.replaceAll('"', '""'),
+    ]);
+  }
+  const csv = rows.map(r => r.map(c => `"${c}"`).join(",")).join("\n");
+  const blob = new Blob([csv], { type: "text/csv" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `qa_test_results_${new Date().toISOString().split('T')[0]}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+/* reset progress */
+function resetProgress() {
+  if (!confirm("Reset all test statuses and notes? This can't be undone.")) return;
+  state.byId = {};
+  persist();
+  renderTable();
+  renderProgress();
+}
+
+/* expand / collapse all */
+function expandAll() {
+  document.querySelectorAll("tr.detail-row").forEach(r => r.classList.add("shown"));
+  document.querySelectorAll("tr.test-row").forEach(r => r.classList.add("expanded"));
+  document.querySelectorAll(".toggle-detail").forEach(b => (b.textContent = "Details ▴"));
+}
+function collapseAll() {
+  document.querySelectorAll("tr.detail-row").forEach(r => r.classList.remove("shown"));
+  document.querySelectorAll("tr.test-row").forEach(r => r.classList.remove("expanded"));
+  document.querySelectorAll(".toggle-detail").forEach(b => (b.textContent = "Details ▾"));
+}
+
+/* boot */
+function boot() {
+  initIntegrationFilter();
+  renderTable();
+  renderProgress();
+
+  ["filterIntegration", "filterStatus", "filterCritical", "searchBox"].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener(id === "searchBox" ? "input" : "change", () => {
+      renderTable();
+    });
+  });
+
+  document.getElementById("expandAllBtn").addEventListener("click", expandAll);
+  document.getElementById("collapseAllBtn").addEventListener("click", collapseAll);
+  document.getElementById("exportBtn").addEventListener("click", exportCsv);
+  document.getElementById("resetBtn").addEventListener("click", resetProgress);
+}
+
+document.addEventListener("DOMContentLoaded", boot);
+</script>
+
+</body>
+</html>

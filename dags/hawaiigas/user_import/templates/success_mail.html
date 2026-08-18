@@ -1,0 +1,7 @@
+<p><strong>This is an automated mail, please don't reply</strong><br /> <br />
+    Hello, <br /> <br />
+    The User Import job is {{ result('get_subject_and_body').subject }} based on file {{ result('new_file_sensor') | file_name }}. Please click the below link to download the import logs. <br /><br />
+    <a href="{{result('generate_download_link')}}">Download user log file</a> <br /><br />
+    <a href="{{result('generate_downloadlink')}}">Download activity and payrate log file</a>
+</p>
+<p><span style="font-size: small;">The download link is valid for 30 days.</span><br /> {{ result('get_subject_and_body').body }}</p> 

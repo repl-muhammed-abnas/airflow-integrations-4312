@@ -1,0 +1,5 @@
+instance = "devops"
+region = "us-west-2"
+environment = "devops"
+replicon_conn_id = "airflow-replicon-admin"
+can_run_batch_task_var_name = f"can_run_batch_retry_failed_tasks_{instance}"

@@ -1,0 +1,4 @@
+HEADR|"G2DX|"DXCTechnology|"REPLICON|"|"|"{{ result("get_file_name") }}|"{{ result('process_start_time_ymd_format')}}|"{{ result('process_start_time_hms_format')}}|"P|"{{ dag_run.conf.sequence_no_for_0416}}{%- for record in dataset %}
+{{record.RECTY}}|"{{record.CLIID}}|"{{record.INTCA}}|"{{record.ORDNO}}|"{{record.IOPER}}|"{{record.INFTY}}|"{{record.SUBTY}}|"{{record.BEGDA}}|"{{record.ENDDA}}|"{{record.OBJPS}}|"{{record.SPRPS}}|"{{record.SEQNR}}|"{{record.EXTRA}}|"{{record.QCTYP}}|"{{record.STYPE}}|"{{record.WAERS}}|"{{record.QTYPE}}|"{{record.SRULE}}|"{{record.NUMBR}}|"{{record.AMONT}}|"{{record.WGTYP}}|"{{record.QUONR}}|"{{record.DOCSY}}|"{{record.DOCNR}}|"{{record.NOPAY}}|"{{record.COMAL}}
+{%- endfor %}
+TRAIL|"{{result('no_of_records_size_including_header_footer')}}

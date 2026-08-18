@@ -1,0 +1,10 @@
+region = 'us-east-2'
+environment = 'pre-production'
+company_key = 'dxctrial01'
+replicon_conn_id = 'dxctrial01'
+sftp_conn_id = 'sftp_useast2'
+iwo_report_name = '**IWO Perner mapping base report'
+max_active_runs = 10
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}' 
+alert_email ='{{ var.value.dagrun_internal_testing_email }}'

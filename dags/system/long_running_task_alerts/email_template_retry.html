@@ -1,0 +1,36 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> Total Retried Tasks {{
+    result('get_stalled_tasks') | length }} .
+    <br> <br>
+<table style="border:1px solid black" border="1">
+    <thead>
+        <tr>
+            <th>Sl No</th>
+            <th>DAG ID</th>
+            <th>Task ID</th>
+            <th>State</th>
+            <th>DAG Run ID</th>
+            <th>Start Date (ISO Format)</th>
+            <th>Duration</th>
+            <th>DAG Run Link</th>
+            <th>Latest Heartbeat</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%- for item in result('get_stalled_tasks') %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ item.dag_id }}</td>
+            <td>{{ item.task_id }}</td>
+            <td>{{ item.state }}</td>
+            <td>{{ item.run_id }}</td>
+            <td>{{ item.start_date }}</td>
+            <td>{{ item.duration }}</td>
+            <td><a href='{{ item.link }}'> {{ item.link }}</a></td>
+            <td>{{ item.latest_heartbeat }}</td>
+        </tr>
+        {%- endfor %}
+    </tbody>
+</table>
+<br>
+
+<p><br />Regards,<br />Deltek Inc</p>

@@ -1,0 +1,17 @@
+region = 'us-east-2'
+environment = 'pre-production'
+company_key = 'dxctrial01'
+replicon_conn_id = 'dxctrial01'
+sumo_conn_id = 'sumologic-exportlogger'
+sftp_conn_id = 'sftp_useast2'
+http_conn_id = 'DONT_POST_TO_CLIENT'
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_email = '{{ var.value.dagrun_internal_testing_email }}'
+exception_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_internal_testing_email }}'
+sftp_upload_path = '/Test/Outbound/FTPTimeExtract'
+row_threshold = 400000
+downstream_variable = 'dxctrial01_ftp_time_export_pta_v2_send_downstream'
+ackn_variable = 'ftp_pta_post_data_on_acknowledgment'
+max_active_runs = 10
+child_dag_max_active_runs = 10

@@ -1,0 +1,176 @@
+
+mutation {
+  createWebhookSubscription(
+    input: {
+      eventType: ProjectTeamModified
+      targetUrl: "https://webhooks-pre-production-us-east-2.replicon-integrations.com/webhooks/dxctechnology_c1_leanstaffassignment_webhooks?event=ProjectTeamModified"
+      disabled:true
+    }
+  ) {
+    subscription {
+      id
+      eventType
+      sharedSecret
+      createdTimestamp
+      updatedTimestamp
+      targetUrl
+      createdTimestamp
+      authType
+      disabled
+    }
+  }
+}
+
+{
+  "data": {
+    "createWebhookSubscription": {
+      "subscription": {
+        "id": "urn:replicon-tenant:dc2477cce42c427d8f3d41f43c3f1288:webhook-subscription:00367024-c0b9-4d6e-a6a7-d5cddf25ea7d",
+        "eventType": "ProjectTeamModified",
+        "sharedSecret": "",
+        "createdTimestamp": "2022-05-02T13:05:28.344Z",
+        "updatedTimestamp": "2022-05-02T13:05:28.344Z",
+        "targetUrl": "https://webhooks-pre-production-us-east-2.replicon-integrations.com/webhooks/dxctechnology_c1_leanstaffassignment_webhooks?event=ProjectTeamModified",
+        "authType": "None",
+        "disabled": null
+      }
+    }
+  }
+}
+
+
+
+mutation {
+  createWebhookSubscription(
+    input: {
+      eventType: ProjectTeamMemberAssignmentDatesModified
+      targetUrl: "https://webhooks-pre-production-us-east-2.replicon-integrations.com/webhooks/dxctechnology_c1_leanstaffassignment_webhooks?event=ProjectTeamMemberAssignmentDatesModified"
+      disabled:true
+    }
+  ) {
+    subscription {
+      id
+      eventType
+      sharedSecret
+      createdTimestamp
+      updatedTimestamp
+      targetUrl
+      createdTimestamp
+      authType
+      disabled
+    }
+  }
+}
+
+{
+  "data": {
+    "createWebhookSubscription": {
+      "subscription": {
+        "id": "urn:replicon-tenant:dc2477cce42c427d8f3d41f43c3f1288:webhook-subscription:453e355f-7611-41a2-8793-ff74d7697965",
+        "eventType": "ProjectTeamMemberAssignmentDatesModified",
+        "sharedSecret": "",
+        "createdTimestamp": "2022-05-02T13:06:34.966Z",
+        "updatedTimestamp": "2022-05-02T13:06:34.966Z",
+        "targetUrl": "https://webhooks-pre-production-us-east-2.replicon-integrations.com/webhooks/dxctechnology_c1_leanstaffassignment_webhooks?event=ProjectTeamMemberAssignmentDatesModified",
+        "authType": "None",
+        "disabled": null
+      }
+    }
+  }
+}
+
+mutation {
+  createWebhookSubscription(
+    input: {
+      eventType: ProjectTeamMemberBillingRateAssociationsModified
+      targetUrl: "https://webhooks-pre-production-us-east-2.replicon-integrations.com/webhooks/dxctechnology_c1_leanstaffassignment_webhooks?event=ProjectTeamMemberBillingRateAssociationsModified"
+      disabled:true
+    }
+  ) {
+    subscription {
+      id
+      eventType
+      sharedSecret
+      createdTimestamp
+      updatedTimestamp
+      targetUrl
+      createdTimestamp
+      authType
+      disabled
+    }
+  }
+}
+
+{
+  "data": {
+    "createWebhookSubscription": {
+      "subscription": {
+        "id": "urn:replicon-tenant:dc2477cce42c427d8f3d41f43c3f1288:webhook-subscription:394c7315-02c9-47f3-b58c-be4f01f652ed",
+        "eventType": "ProjectTeamMemberBillingRateAssociationsModified",
+        "sharedSecret": "",
+        "createdTimestamp": "2022-05-02T13:06:56.664Z",
+        "updatedTimestamp": "2022-05-02T13:06:56.664Z",
+        "targetUrl": "https://webhooks-pre-production-us-east-2.replicon-integrations.com/webhooks/dxctechnology_c1_leanstaffassignment_webhooks?event=ProjectTeamMemberBillingRateAssociationsModified",
+        "authType": "None",
+        "disabled": null
+      }
+    }
+  }
+}
+
+query {
+  webhookSubscriptions {
+    items {
+      id
+      eventType
+      sharedSecret
+      createdTimestamp
+      updatedTimestamp
+      targetUrl
+      createdTimestamp
+      authType
+      disabled
+    }
+  }
+}
+
+{
+    "output": {
+        "data": {
+            "webhookSubscriptions": {
+                "items": [
+        {
+          "id": "urn:replicon-tenant:036e775fa7bc42f98b12fc214205d771:webhook-subscription:3bde68f0-1fea-415b-bd85-c4cc5cb262b4",
+          "eventType": "ProjectTeamModified",
+          "sharedSecret": null,
+          "createdTimestamp": "2022-03-10T22:40:58.236Z",
+          "updatedTimestamp": "2022-04-05T22:41:29.610Z",
+          "targetUrl": "https://webhooks-pre-production-us-east-2.replicon-integrations.com/webhooks/dxctechnology_c1_leanstaffassignment_webhooks?event=ProjectTeamModified",
+          "authType": "None",
+          "disabled": null
+        },
+        {
+          "id": "urn:replicon-tenant:036e775fa7bc42f98b12fc214205d771:webhook-subscription:4fef83e5-526d-4b41-879c-2bf15664092f",
+          "eventType": "ProjectTeamMemberAssignmentDatesModified",
+          "sharedSecret": null,
+          "createdTimestamp": "2022-03-10T22:41:29.577Z",
+          "updatedTimestamp": "2022-04-05T22:42:30.412Z",
+          "targetUrl": "https://webhooks-pre-production-us-east-2.replicon-integrations.com/webhooks/dxctechnology_c1_leanstaffassignment_webhooks?event=ProjectTeamMemberAssignmentDatesModified",
+          "authType": "None",
+          "disabled": null
+        },
+        {
+          "id": "urn:replicon-tenant:036e775fa7bc42f98b12fc214205d771:webhook-subscription:c5bb0c7f-b13f-4038-b5b6-d9d98b5aa7ee",
+          "eventType": "ProjectTeamMemberBillingRateAssociationsModified",
+          "sharedSecret": null,
+          "createdTimestamp": "2022-03-10T22:41:46.637Z",
+          "updatedTimestamp": "2022-04-05T22:43:43.574Z",
+          "targetUrl": "https://webhooks-pre-production-us-east-2.replicon-integrations.com/webhooks/dxctechnology_c1_leanstaffassignment_webhooks?event=ProjectTeamMemberBillingRateAssociationsModified",
+          "authType": "None",
+          "disabled": null
+        }
+                ]
+            }
+        }
+    }
+}

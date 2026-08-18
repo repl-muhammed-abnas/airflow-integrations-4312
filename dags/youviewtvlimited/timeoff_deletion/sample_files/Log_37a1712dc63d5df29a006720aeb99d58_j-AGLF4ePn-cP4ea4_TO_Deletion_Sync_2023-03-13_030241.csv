@@ -1,0 +1,16 @@
+Employee ID,Absence#,Start Date,End Date,Status,Details,JobId
+daniel.sherwood@youview.com,2022.11 #29890,03/03/2023,03/03/2023,Error,'None' has no attribute 'value',37a1712dc63d5df29a006720aeb99d58:72:01:02
+daniel.sherwood@youview.com,2022.11 #29891,10/03/2023,10/03/2023,Error,'None' has no attribute 'value',37a1712dc63d5df29a006720aeb99d58:72:03:02
+daniel.sherwood@youview.com,2022.11 #29892,17/03/2023,17/03/2023,Error,'None' has no attribute 'value',37a1712dc63d5df29a006720aeb99d58:72:05:02
+daniel.sherwood@youview.com,2022.11 #29893,24/03/2023,24/03/2023,Error,'None' has no attribute 'value',37a1712dc63d5df29a006720aeb99d58:72:07:03
+daniel.sherwood@youview.com,2023.02 #31247,30/03/2023,30/03/2023,Error,'None' has no attribute 'value',37a1712dc63d5df29a006720aeb99d58:72:09:02
+daniel.sherwood@youview.com,2022.11 #29892,17/03/2023,17/03/2023,Error,'None' has no attribute 'value',37a1712dc63d5df29a006720aeb99d58:77:05:02
+daniel.sherwood@youview.com,2022.11 #29891,10/03/2023,10/03/2023,Error,'None' has no attribute 'value',37a1712dc63d5df29a006720aeb99d58:77:03:03
+daniel.sherwood@youview.com,2022.11 #29893,24/03/2023,24/03/2023,Error,'None' has no attribute 'value',37a1712dc63d5df29a006720aeb99d58:77:07:02
+daniel.sherwood@youview.com,2023.02 #31247,30/03/2023,30/03/2023,Error,'None' has no attribute 'value',37a1712dc63d5df29a006720aeb99d58:77:09:02
+daniel.sherwood@youview.com,2022.11 #29890,03/03/2023,03/03/2023,Error,'None' has no attribute 'value',37a1712dc63d5df29a006720aeb99d58:77:01:03
+daniel.sherwood@youview.com,2022.11 #29893,24/03/2023,24/03/2023,Exception,Timeoff  not deleted since no booking found for the given Absence#,37a1712dc63d5df29a006720aeb99d58:79:07:01
+daniel.sherwood@youview.com,2022.11 #29890,03/03/2023,03/03/2023,Exception,Timeoff  not deleted since no booking found for the given Absence#,37a1712dc63d5df29a006720aeb99d58:79:01:01
+daniel.sherwood@youview.com,2022.11 #29892,17/03/2023,17/03/2023,Exception,Timeoff  not deleted since no booking found for the given Absence#,37a1712dc63d5df29a006720aeb99d58:79:05:01
+daniel.sherwood@youview.com,2023.02 #31247,30/03/2023,30/03/2023,Exception,Timeoff  not deleted since no booking found for the given Absence#,37a1712dc63d5df29a006720aeb99d58:79:09:01
+daniel.sherwood@youview.com,2022.11 #29891,10/03/2023,10/03/2023,Exception,Timeoff  not deleted since no booking found for the given Absence#,37a1712dc63d5df29a006720aeb99d58:79:03:01

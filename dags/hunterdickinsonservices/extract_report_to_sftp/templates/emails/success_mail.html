@@ -1,0 +1,5 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The report export for  {{ params.report_name }} is completed on {{ result("get_logging_details")["dag_run_start_time"] }}. Please find the report file in the below SFTP location. <br /> <br />
+    File path: {{ params.report_file_path }}<br />
+    File name: {{ params.report_name }}_{{ result("get_logging_details")["dag_start_time"] }}.csv<br />
+    </p>
+    <p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

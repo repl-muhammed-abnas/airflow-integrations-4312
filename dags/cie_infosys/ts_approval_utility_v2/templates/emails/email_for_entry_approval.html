@@ -1,0 +1,23 @@
+<p>
+    <strong>
+        This is an automated mail, please don't reply.
+    </strong>
+    <br />
+    <br />Hi,
+    <br />
+    <br />
+    The Replicon Time Entry Approval automation run was successful, and all the eligible time entries have been successfully approved on
+    {{ current_time_in_specified_tz() }}. Below are the details for your reference:
+    <br />
+    <br />
+    <table style="width: 50%; border-collapse: collapse; margin: 20px 0;">
+        <tr>
+            <td style="border: 1px solid #233142; padding: 8px; text-align: center;">Count of Approved Time Entries</td>
+            <td style="border: 1px solid #233142; padding: 8px; text-align: center;">{{ result("get_consolidated_entry_approval_count").get("daily_approved_entry_count") }}</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #233142; padding: 8px; text-align: center;">Count of Failed Time Entries</td>
+            <td style="border: 1px solid #233142; padding: 8px; text-align: center;">{{ result("get_consolidated_entry_approval_count").get("daily_failed_entry_count") }}</td>
+        </tr>
+    </table>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Replicon Inc. </p>

@@ -1,0 +1,9 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon efforts
+    submit is completed successfully {{" "}}
+    at {{ result('process_start_time') }}. Please find the extract details for reference.</p>
+<ul>
+    <li>Process Started: {{ result('process_start_time') }}</li>
+    <li>Location: {{ params.country }}</li>
+    <li>Number of Records: {{ result("query_valid_time_export_collection") | load_all_records | length }}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

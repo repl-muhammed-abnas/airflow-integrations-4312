@@ -1,0 +1,46 @@
+{
+  "ai_lines": {
+    "5": "270ca8ca50ca2ab8c39ba4687300baf1d3fd667134dc782df1209d063e1cc301"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-15T07:22:49.221Z",
+  "file_state": {
+    "file_sha256": "67468401e77bc9d3e3d2beb19b604c1a0b16f0e49f10caa258458cbfea5186be",
+    "total_file_lines": 6,
+    "total_lines": 6
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "885442348f6a5112399663532afa25dde14fd152dff823f475e2def155992174",
+      "last_known_line": 5,
+      "removed_at": "2026-04-15T07:59:36.410Z"
+    },
+    {
+      "hash": "4e19ed46fe782b7277af05717b948557eb48259a730e04944468a6839aa2a65d",
+      "last_known_line": 6,
+      "removed_at": "2026-04-15T07:59:36.410Z"
+    },
+    {
+      "hash": "5077138574796c6d518dc80b27dd6ed6d6a5ede6bd0fdb5bed9a574944027eb1",
+      "last_known_line": 7,
+      "removed_at": "2026-04-15T07:59:36.410Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\mammoet\\user_import_v4\\mappers\\timesheet_period\\timesheet_period_mapper.py",
+  "stats": {
+    "ai_line_count": 1,
+    "ai_line_pct": 16.67,
+    "ai_lines_removed_or_modified": 3
+  },
+  "updated_at": "2026-04-15T07:59:36.410Z",
+  "version": 1
+}

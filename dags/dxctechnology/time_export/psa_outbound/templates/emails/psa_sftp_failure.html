@@ -1,0 +1,11 @@
+<p>Hi Team,<br /> <br /> The PSA time data export has been completed at {{ current_time_in_specified_tz() }},
+however the file upload to sftp has failed with error.</p>
+<ul>
+<li>Recipe ID: {{ dag_run.dag_id}}</li>
+<li>Job ID: {{ ecid() }}</li>
+<li>Instance: {{ get_company_key() }}</li>
+<li>File Name: {{ dag_run.conf.twbname }}.xml</li>
+<li>SFTP Path: {{ params.sftp_path}}</li>
+<li>Error: {{ get_error_message() }}</li>
+</ul>
+<p>Please find the attached file to be uploaded to sftp. Upload the file to the given sftp and debug the issue.<br /> <br />Regards,<br />Deltek Inc.</p>

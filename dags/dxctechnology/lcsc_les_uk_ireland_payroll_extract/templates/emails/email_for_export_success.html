@@ -1,0 +1,20 @@
+<p>Hello, <br /><br />
+    The Replicon payroll export for {{ dag_run.conf.region }} {{ dag_run.conf.location_name }} location and "{{ dag_run.conf.division_code }}" company code is completed successfully
+    at {{ current_time_in_specified_tz() }}. Please find the export details for reference.
+</p>
+<ul>
+    <li>File Name: {{ dag_run.conf.file_name }}.SAP.pgp</li>
+    <li>File Path: {{ params.output_filepath }}</li>
+    <li>Country: {{ dag_run.conf.location_name }}</li>
+    <li>Company Code: {{ dag_run.conf.division_code }}</li>
+    <li>Number of Records: {{ result('query_list_in_final_payroll_collection','length') }}</li>
+    <li>Log File Name: log_{{ dag_run.conf.file_name }}.txt</li>
+    <li>Log File Path: {{params.log_filepath}}</li>
+</ul>
+
+<p>For any queries, please contact our support team at <a href="https://support.deltek.com/">https://support.deltek.com/</a><br />
+<br />
+<strong>This is an automated mail from Deltek Integrations. Please do not reply to this email.</strong><br />
+<br />
+Regards,<br />
+Deltek Inc</p>

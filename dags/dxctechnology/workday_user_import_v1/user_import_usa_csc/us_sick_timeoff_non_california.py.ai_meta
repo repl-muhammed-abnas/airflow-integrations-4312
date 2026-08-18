@@ -1,0 +1,35 @@
+{
+  "ai_lines": {
+    "331": "cdd9c76cac49b3c1c520a1b826b867ee05e80b938eb599136ca687df631af247",
+    "332": "4b9bf84d4a5abba67f5f6a985e230df11c72f96a2ac5d8b0c60a9becde17f506",
+    "360": "069356be0dc4efe64982f99d6872361d8fe6111cbed56fc461c922fb6f9a44a4",
+    "361": "b89b77c1c286074cb2932bb0e217c1120771a303e6b9b220d2f9f1319b11e136",
+    "401": "9d09d9fed0ea7b875017d3278f4347a7933b45001e017e0674535a08f698e9fc",
+    "402": "7921e6dc988fb66a26acc82ac5ed79c56f05a52d94095d3bc762f9244bba656d"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 3,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-29T12:59:50.744Z",
+  "file_state": {
+    "file_sha256": "1db2c53a286098a46903ce970fbc78c04f9ebad17807cafe21768655b7005c49",
+    "total_file_lines": 524,
+    "total_lines": 472
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\dxctechnology\\workday_user_import_v1\\user_import_usa_csc\\us_sick_timeoff_non_california.py",
+  "stats": {
+    "ai_line_count": 6,
+    "ai_line_pct": 1.27,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-29T13:00:08.942Z",
+  "version": 1
+}

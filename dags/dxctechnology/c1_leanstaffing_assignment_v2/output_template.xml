@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_OB_LeanstaffAssignment_Replicon xmlns:ns0="http://csc.com/IF1386/FromRepliconToECC/Leanstaffassignments">
+  {%- for record in dataset %}
+  <Records>
+    <WBSElement>{{ record.WBSElement|e }}</WBSElement>
+    <ServiceOrder>{{ record.ServiceOrder|e }}</ServiceOrder>
+    <AssignmentObjectType>{{ record.AssignmentObjectType|e }}</AssignmentObjectType>
+    <ObjectID>{{ record.ObjectID|e }}</ObjectID>
+    <PersonnelNumber>{{ record.PersonnelNumber|e }}</PersonnelNumber>
+    <StartDate>{{ record.StartDate|e }}</StartDate>
+    <EndDate>{{ record.EndDate|e }}</EndDate>
+    <CurrencyKey>{{ record.CurrencyKey|e }}</CurrencyKey>
+    <CATSRelevant>{{ record.CATSRelevant|e }}</CATSRelevant>
+    <ForecastingRelevant>{{ record.ForecastingRelevant|e }}</ForecastingRelevant>
+    <LaborType>{{ record.LaborType|e }}</LaborType>
+    <BillableNonBillable>{{ record.BillableNonBillable|e }}</BillableNonBillable>
+    <StaffAssignmentRole>{{ record.StaffAssignmentRole|e }}</StaffAssignmentRole>
+    <DateChangeFlag>{{ record.DateChangeFlag|e }}</DateChangeFlag>
+    <Indicator>{{ record.Indicator|e }}</Indicator>
+  </Records>
+  {%- endfor %}
+</ns0:MT_OB_LeanstaffAssignment_Replicon>

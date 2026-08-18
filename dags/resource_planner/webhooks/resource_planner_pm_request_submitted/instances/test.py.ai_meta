@@ -1,0 +1,37 @@
+{
+  "ai_lines": {
+    "1": "4d79856fd75da17a9e3678ac7def65919f6f9f4473166276b7dd2d2634787097",
+    "2": "06698d1186b960e8710aa11cd8d11de3d46614685b5b3b1caf464f676f58dc57",
+    "4": "4d391fc359aefce6d6987fbd63c9cf3308bce25f638f6479d1c7efa26b8ab9f5",
+    "6": "c617aacf611752e06762da1e3e154331c2b047a0625ed000840a54a1e2db22c0",
+    "8": "7478756792164f1e8f02d130228522f4f4224b62e51f2f92d69ccff4eec21454",
+    "9": "08c6f70862be5888369983bbd773b4c50561f4c45eb89375e238ac4a6bf2a570",
+    "11": "8bc08b2c65896e07064c50e8dedfc79df76809a51544fa80bd604cfad176e814",
+    "12": "4b11d4590a0d79137db8797c162d963bb8ce75e074470260c405239f205b26e4"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Write",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-08-07T00:00:00.000Z",
+  "file_state": {
+    "file_sha256": "8590307ff331a8a58f528bd9de150f0b6a8ad10f76ae26c6acb7f5780deb081d",
+    "total_file_lines": 12,
+    "total_lines": 8
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "dags/resource_planner/webhooks/resource_planner_pm_request_submitted/instances/test.py",
+  "stats": {
+    "ai_line_count": 8,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-08-07T00:00:00.000Z",
+  "version": 1
+}

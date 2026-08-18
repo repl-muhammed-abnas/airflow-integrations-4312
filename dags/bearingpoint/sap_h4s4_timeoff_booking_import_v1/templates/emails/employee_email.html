@@ -1,0 +1,21 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello {{ result("get_user_details")['user_name'] }}, <br /> <br /> You are receiving this email because your timesheet has been reopened. Absence booking and/or time entries for the following timesheet period have been overridden:
+    <br /> <br />
+    <table style="border:1px solid black" border="1">
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Timesheet Period</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%- for item in result('map_timesheet_with_user_data', 'timesheet_to_reopen') %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ item.timesheet_period }}</td>
+            </tr>
+            {%- endfor %}
+        </tbody>
+    </table>
+    <p>Please log in to Replicon, review the reopened timesheets, and resubmit them.
+    <br />
+    <p>Regards,<br />Deltek Inc</p>

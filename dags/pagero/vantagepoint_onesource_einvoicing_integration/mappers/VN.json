@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Vietnam PUF mapper - VAT compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["Peppol BIS 3.0", "Vietnamese VAT", "e-Invoice"]
+  },
+
+  "country": {
+    "code": "VN",
+    "name": "Vietnam",
+    "currency": "VND",
+    "language": "vi"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 10.0,
+      "reduced": [5.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Thue suat thong thuong",
+      "AA": "Thue suat uu dai",
+      "Z": "Khong chiu thue",
+      "E": "Mien thue"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "0200",
+    "buyer_endpoint_scheme": "0200",
+    "vat_scheme_id": "0200",
+    "company_scheme_id": "0200",
+    "scheme_mappings": {
+      "tax_code": "0200",
+      "gln": "0088"
+    }
+  },
+
+  "extensions": {
+    "required": ["VN:SequenceNo"],
+    "optional": ["VN:FPT_autoNumber"]
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^[0-9]{10}(-[0-9]{3})?$",
+    "tax_code_pattern": "^[0-9]{10}(-[0-9]{3})?$",
+    "postal_code_pattern": "^[0-9]{6}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_tax_code"]
+  },
+
+  "defaults": {
+    "payment_terms": "Thanh toan trong 30 ngay",
+    "contact_department": "Phong Ke toan"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "e_invoice_mandatory": true
+  },
+
+  "translations": {
+    "invoice": "Hoa don",
+    "credit_note": "Hoa don dieu chinh",
+    "total": "Tong cong",
+    "vat": "Thue GTGT"
+  }
+}

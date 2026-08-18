@@ -1,0 +1,32 @@
+{
+  "ai_lines": {
+    "177": "96315e76a8f54326caa3989e88e9e00e3b726a8f9c761e8c7101f1d0da33bf20",
+    "178": "d457c0576ff02e486fdd10842e944f72f3b8194cb4e5ac9f05fc14ed8e4f7673",
+    "183": "9294e97294e0ec0a1c693f6b6fb64c94ed279d798b84ff24072cbfe06d38c6f1"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-24T17:05:07.572Z",
+  "file_state": {
+    "file_sha256": "f3ef95c30b1a641ff4db8aea862ce159f56e1829489664ab506476b656c10418",
+    "total_file_lines": 282,
+    "total_lines": 250
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\tsystems\\project_import_file_based_v4\\process_payload.py",
+  "stats": {
+    "ai_line_count": 3,
+    "ai_line_pct": 1.2,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-24T17:05:07.572Z",
+  "version": 1
+}

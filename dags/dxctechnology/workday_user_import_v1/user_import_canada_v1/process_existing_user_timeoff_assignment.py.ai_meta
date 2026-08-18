@@ -1,0 +1,90 @@
+{
+  "ai_lines": {
+    "103": "5bc9d60c165f732895550242a78f167b39c03ce3545c1405207ff50a0f3ec7c0",
+    "104": "f546404f438569b31f9ab07a43f8f9c07d72ede5bf07972f3d633ae19a13d4de",
+    "105": "46edd5c22ac72d377b6b6033ad39745d22db7147f25061ed16d6eeeace5a103b",
+    "106": "2750ce83d37d51c0de7f496c1f9142c4b15de8de9810f6bfa2644ab463bf9e28",
+    "107": "d023de15c26d21cdcb00f5607357d774fe6ee84d2d7dd8bcbab07c451fbe8211",
+    "108": "6e7103053bb414fd86a3d9819b4f48475b6cc07085e6aa2564570ab1ddd5e332",
+    "109": "8ce8689be42237098be02105417221113f6cfad95aebf6d032bf4aa84f2336e6",
+    "110": "290d5288d0f0b9d64889eafe001c2d5c40e484247cf3faeec352e76cbf2020cf",
+    "111": "3f41f75df8e52d446d4ef4491b6a3a57e14b7c665f1f82e6998541877871bd0f",
+    "112": "43a38c41ecb81e93a057edf4f39dbee4ac8f3f8bf6a79367d32a3669b3909fba",
+    "113": "96268759de70f1b657a04b76b73a12c52631af0171a0dfedebb0d720e19694c6",
+    "114": "a1ca2c9fa29f8bd62759c6db5bab07805a53535e56fa626cbcaa42892b21a902",
+    "115": "450d55e011552e58474fcd10c17853c85a2381401b30d155e4e904bcb68bb9f2",
+    "116": "8ce8689be42237098be02105417221113f6cfad95aebf6d032bf4aa84f2336e6",
+    "120": "80c662216d2317ce92e7e46bd913ac0e03995fc601272efda2170c06ee73cf32",
+    "235": "0564625d21a4711d60b743947aa937fae218812f4dda69caaf03582f1cd360a9",
+    "236": "87fa48686fe40728a0698f53c33012786c0e342da0f99cbd56d05d54b8f64c17",
+    "237": "ec25e5234fd671609abcedd71f144827729af12df368a40414f0ac84b8040f1d",
+    "240": "25aa5c18f4befcebb34170fc8d90232a5b9f8986aa17b3ec537f14ef3209e858",
+    "241": "5a344d57dbae143c8099826a79b94e6060b72f83c005cdeaa99f068ebe0de936"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 4,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-20T07:37:16.767Z",
+  "file_state": {
+    "file_sha256": "f1c06eb0199f56536cfb653476404c1e573e2e77cd018bc67db899abb8f9bafc",
+    "total_file_lines": 662,
+    "total_lines": 590
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "9ffa08731470de057dfd586ee1bfb1c6dd92b43f6fa63a1f41a89a0672dee264",
+      "last_known_line": 219,
+      "removed_at": "2026-05-20T07:41:11.738Z"
+    },
+    {
+      "hash": "c74423c4f4844fe7432ddcbcd08a85f5e1bbea7a1ffc72194aad916440229a71",
+      "last_known_line": 220,
+      "removed_at": "2026-05-20T07:41:11.738Z"
+    },
+    {
+      "hash": "4913b5c489d2b12c1f41b65e7dcaf9bf1f049818732c30fbee67da50a664f70f",
+      "last_known_line": 221,
+      "removed_at": "2026-05-20T07:41:11.738Z"
+    },
+    {
+      "hash": "6c11705bf34198f3ee9366394d33ef78bac5851466457018043b3770d22f04b5",
+      "last_known_line": 222,
+      "removed_at": "2026-05-20T07:41:11.738Z"
+    },
+    {
+      "hash": "41cc80dc446063fa699eddcd2783f68b0a4b4a5410cf4327c7ba2ddfabe4a761",
+      "last_known_line": 223,
+      "removed_at": "2026-05-20T07:41:11.738Z"
+    },
+    {
+      "hash": "25aa5c18f4befcebb34170fc8d90232a5b9f8986aa17b3ec537f14ef3209e858",
+      "last_known_line": 226,
+      "removed_at": "2026-05-20T07:41:11.738Z"
+    },
+    {
+      "hash": "9341d12a0cafd3c361937af93f5f97c250b7e6a98071412454d531540b9da9a7",
+      "last_known_line": 227,
+      "removed_at": "2026-05-20T07:41:11.738Z"
+    },
+    {
+      "hash": "ac38239c9e7605bb6f0261095d031587e8462d14e8a2a8a42fa02470a48e452a",
+      "last_known_line": 237,
+      "removed_at": "2026-05-20T07:57:52.388Z"
+    }
+  ],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\dxctechnology\\workday_user_import_v1\\user_import_canada_v1\\process_existing_user_timeoff_assignment.py",
+  "stats": {
+    "ai_line_count": 20,
+    "ai_line_pct": 3.39,
+    "ai_lines_removed_or_modified": 8
+  },
+  "updated_at": "2026-05-20T07:57:52.388Z",
+  "version": 1
+}

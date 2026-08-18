@@ -1,0 +1,20 @@
+<ErrorLogs>
+  <ErrorLog>
+    <Identity></Identity>
+    <Date>2022-09-06 10:14:55.575</Date>
+    <System>Replicon</System>
+    <FileName></FileName>
+    <ApplicationName>Replicon_Time prepopulation</ApplicationName>
+    <InstanceName>PwCinternal</InstanceName>
+    <CompRefId></CompRefId>
+    <PartyId>884723b4-842c-488d-8f46-03fa08193a3e</PartyId>
+    <Level>EXCEPTION</Level>
+    <Class></Class>
+    <Message>Time not populated as timesheet is not in open status</Message>
+    <EntityId></EntityId>
+    <EntityName></EntityName>
+    <EntityType></EntityType>
+    <AdditionalInfo>Timeentrydate:20220615|Hours:5.00|Project-Task:ABS001-TestTask</AdditionalInfo>
+    <LoggedDateTime><LoggedDateTime>
+  </ErrorLog>
+</ErrorLogs>

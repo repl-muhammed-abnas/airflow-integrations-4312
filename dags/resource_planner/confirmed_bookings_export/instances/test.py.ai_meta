@@ -1,0 +1,79 @@
+{
+  "ai_lines": {
+    "1": "4d79856fd75da17a9e3678ac7def65919f6f9f4473166276b7dd2d2634787097",
+    "10": "6ef79a738d84d5272f01d88f90338539d34e77735fb1afb900539caba1c38b3e",
+    "11": "20d656ec9f74668bef4d1ff83d7b40442fe296f64464d75178545a6e862369a5",
+    "13": "7041372511b830cbaf050b02c8368b7e0e046791080ba5adcc28b3664c700b55",
+    "14": "0dcf55a548204e2c29b8bd6d7840bb2ee44b3a6afbdd41bc84c401d318ede6e9",
+    "15": "cf44323ab6e07e644253eacd3edb1f0f9f0f916acea83a9700a665605ca9c5b2",
+    "18": "9ff8632cf4a802f31f816c92116773b4907dfd6cf89a5c3568b27f768d4f2160",
+    "19": "6e938d10b28254862a77eeda20f8dc954606dced059183cd52cbc4adf8f73dd2",
+    "2": "8d8d601b6a151926bb846065426798e8390b069d14e4129f1ce3853bba618478",
+    "20": "d9416d38deab00436c7141956d1a5c72744dcd0de8f96fc5bedd8e13e030ebbc",
+    "21": "cada5eaf2bee350d5c6ad9d082713dc977f88d2e5af574a7351030f237a2fc52",
+    "22": "a93be75c68b2aec5dcff3eb8ba118c846dbbdf4b4e90b6ddcc92512ede90d7e9",
+    "24": "f8291ce7bc15bf608de5925637e1f0748f30d5448b78774f29f938c021710119",
+    "25": "5ac21a68350127781c025c19d1f6b18d67ebdcd847946b46518fcd687a6de27a",
+    "26": "f72e3b4fc6937fcf380b604a313fac511d2b2d05f376be9539ee18a267123dd7",
+    "27": "eceda8632dcd70b0de21dcb86c7f528324b95eace98f8e3d64aca8f60aaf6ea6",
+    "28": "cfae0d4248f7142f7b17f826cd7a519280e312577690e957830d23dcf35a3fff",
+    "29": "8595dba60bf8bfa6997dea56667bde92400833b21ec5c13dc63fce9968a6cc8e",
+    "3": "1c80ee441a56d69acae99266605441b0bb38a078dd24cafe32771d718f2b86a4",
+    "31": "01c1653d28761c72d652c32a9861bb266144dbf82bcf546617cccc374c9de712",
+    "32": "3af998fb5f0e2f40d46972a178c5faeac6709e3393b6410375c9095977cdc451",
+    "5": "4d391fc359aefce6d6987fbd63c9cf3308bce25f638f6479d1c7efa26b8ab9f5",
+    "6": "6e78a59a0a185d51a44a88261c1cab1f5b4467a39285b891d6532d235aed2a93",
+    "9": "60229ed83e3750ea9d6f63db0b823a66f6a11e32cd32a78d5de8c725f41bfb1d"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 5,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-06-04T07:00:06.475Z",
+  "file_state": {
+    "file_sha256": "98eb9054c1ee76f338e21df74750d807b5d913cba7062a5cf4ca5c3366aecf04",
+    "total_file_lines": 32,
+    "total_lines": 26
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "425c17be9d759efc930ee09d7ab94305c3ba9d7a1938de2cd3c72ff8777071d7",
+      "last_known_line": 10,
+      "removed_at": "2026-06-04T07:00:14.405Z"
+    },
+    {
+      "hash": "88432ab2fee733269246790631047f347772ff5442165b686cd9f4d1ea754b63",
+      "last_known_line": 11,
+      "removed_at": "2026-06-04T07:00:14.405Z"
+    },
+    {
+      "hash": "7c019df5cb246b41e1dd221aa92412408cfba23ce7d510196dfc5edf571cad81",
+      "last_known_line": 16,
+      "removed_at": "2026-06-04T11:29:21.120Z"
+    },
+    {
+      "hash": "d49dac9b9fac4463dd07896c232fa77a499821a843577d046ec98505801f370d",
+      "last_known_line": 7,
+      "removed_at": "2026-06-09T08:32:52.113Z"
+    },
+    {
+      "hash": "2d98720d107c7086c8c29577bb703b4c6e5072b245d3b390ab69575b4e7a1dd8",
+      "last_known_line": 26,
+      "removed_at": "2026-06-10T15:13:11.462Z"
+    }
+  ],
+  "source_file": "C:\\workspace\\airflow-integrations\\dags\\resource_planner\\confirmed_bookings_export\\instances\\test.py",
+  "stats": {
+    "ai_line_count": 24,
+    "ai_line_pct": 92.31,
+    "ai_lines_removed_or_modified": 5
+  },
+  "updated_at": "2026-06-10T15:13:11.462Z",
+  "version": 1
+}

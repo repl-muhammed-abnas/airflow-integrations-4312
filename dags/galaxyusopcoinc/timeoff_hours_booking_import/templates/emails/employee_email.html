@@ -1,0 +1,22 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello {{ result("get_user_details")['user_name'] }}, <br /> <br /> You are receiving this email as your timesheet for the below period has been re-opened. This happens when an Absence(s) request was made in Workday after the timesheet was submitted / approved in Replicon. 
+    <br /> <br />
+    <table style="border:1px solid black" border="1">
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Timesheet Period</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%- for item in result('get_user_timesheet_details_after_processing') %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ item }}</td>
+            </tr>
+            {%- endfor %}
+        </tbody>
+    </table>
+    <p>Please login to Replicon, review the reopened timesheets, adjust the working hours as applicable, and resubmit your timesheet again.
+    <br /><br />
+    We thank you for your kind cooperation.<br /></p>
+    <p>Regards,<br />Deltek Inc</p>

@@ -1,0 +1,5 @@
+﻿Transaction Type,Business Unit,Third-Party Application Transaction Source,Document,Document Entry,Expenditure Batch,Batch Description,Person Name,Person Number,Human Resource Assignment,Project Name,Project Number,Task Name,Task Number,Time Type Code,Expenditure Organization,Quantity,Unit of Measure,Original Transaction Reference,Context Category
+LABOR,CA_CAD_BU,Replicon,Time Card,,REPLICON0000001,REPLICON0000001_06212025,,984744,Unisys Assignment,,846404,,980,Unisys Labor,,2.9,Hours,3947dnjdj3,PJC_ALL
+LABOR,CA_CAD_BU,Replicon,Time Card,,REPLICON0000001,REPLICON0000001_06222025,,846404,Unisys Assignment,,846404,,980,Unisys Labor,,8,Hours,3347dnj346,PJC_ALL
+LABOR,CA_DEU_BU,Replicom,Time Card,,REPLICON0000001,REPLICON0000001_06212025,,846404,Unisys Assignment,,846404,,981,Contractor Labor T&M,,5.5,Hours,4447d3edj3,PJC_ALL
+LABOR,CA_DEU_BU,Replicon,Time Card,,REPLICON0000001,REPLICON0000001_06222025,,846404,Unisys Assignment,,846404,,981,Contractor Labor T&M,,7.75,Hours,63823ehf39,PJC_ALL

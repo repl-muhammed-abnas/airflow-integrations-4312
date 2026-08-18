@@ -1,0 +1,9 @@
+region = 'us-east-2'
+environment = 'pre-production'
+company_key = 'dxctrial01'
+replicon_conn_id = 'replicon_dxctechnology_repliconintc1'
+basereport_name = "***Custom_notification_shiftassignment_India"
+execution_timeout_hours = 12
+schedule_interval = '30 4 * * THU,FRI'
+child_max_active_runs = 5
+master_dag_active_runs = 1

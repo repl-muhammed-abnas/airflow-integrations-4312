@@ -1,0 +1,41 @@
+{
+  "ai_lines": {
+    "687": "f03da68ea699906444e4c4b0d421a5f9fb941251a3f599637e750997f0c2f489",
+    "697": "8f36f8e872183548576ed4e29e473daf04db10f296841f5a2827f260f7349846",
+    "726": "2c7c9197030736365cca3e8a6760fb66a5df14c6ddda08a770340d68dda51be5",
+    "744": "2c7c9197030736365cca3e8a6760fb66a5df14c6ddda08a770340d68dda51be5",
+    "761": "2c7c9197030736365cca3e8a6760fb66a5df14c6ddda08a770340d68dda51be5",
+    "839": "8a90e3d13e8c1c232bc9e706067c425254064673493fc480f0bbe53a83d34d64"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 3,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-06-16T10:15:43.179Z",
+  "file_state": {
+    "file_sha256": "f6b77449efa082ddd8581cb98f922d5d4e26e1b3158b3252f36c8802e814ad79",
+    "total_file_lines": 1037,
+    "total_lines": 925
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "60e372ba189ea04e9df6e64fa5a81ae45ae13c8cbed7bd7a62bbd75c97587181",
+      "last_known_line": 844,
+      "removed_at": "2026-06-18T08:12:45.104Z"
+    }
+  ],
+  "source_file": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\sammedkawade\\Workspaces\\airflow-integrations\\dags\\dxctechnology\\workday_user_import\\user_import_usa_csc\\utils\\custom_methods.py",
+  "stats": {
+    "ai_line_count": 6,
+    "ai_line_pct": 0.65,
+    "ai_lines_removed_or_modified": 1
+  },
+  "updated_at": "2026-06-18T08:12:45.104Z",
+  "version": 1
+}

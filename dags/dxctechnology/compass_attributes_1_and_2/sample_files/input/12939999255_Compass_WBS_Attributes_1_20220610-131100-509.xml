@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_Attributes_Replicon xmlns:ns0="http://csc.com/IF5001/FromCOMPASSTOReplicon/Attributes">
+    <Records>
+        <WBS>Project Name 3</WBS>
+        <Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1</Attribute>
+            <Description>other Attributes in d Project</Description>
+            <EndDate>20221204</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1A</Attribute>
+            <Description>`-=~!@#$%^*()_+[]\{}</Description>
+            <EndDate>20221204</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1B</Attribute>
+            <Description>|;':",./?./*-+</Description>
+            <EndDate>20221204</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>@#$%^*()_+[]\{}</Attribute>
+            <Description>Name has special characters</Description>
+            <EndDate>20221204</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>|;':",./?./*-+</Attribute>
+            <Description>Name has special characters</Description>
+            <EndDate>20221204</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>`1234567890-=~!</Attribute>
+            <Description>Name has special characters</Description>
+            <EndDate>20221204</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1C</Attribute>
+            <Description>I need more than 30 characters Please enter the same</Description>
+            <EndDate>20221204</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>I need more dan 15</Attribute>
+            <Description>I need more dan 15 for name</Description>
+            <EndDate>20221204</EndDate>
+        </Attributes>
+    </Records>
+</ns0:MT_Attributes_Replicon>

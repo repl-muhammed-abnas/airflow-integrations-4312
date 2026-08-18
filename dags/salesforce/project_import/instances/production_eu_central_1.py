@@ -1,0 +1,13 @@
+instance = 'production'
+region = 'eu-central-1'
+environment = 'production'
+company_key = f"airflow{region.replace('-', '')}"
+execution_timeout_days = 14
+child_dag_max_active_runs = 10
+bulk_get_projects_batch_size = 25
+replicon_conn_id = 'airflow-replicon-admin'
+airflow_connector_ui_connid = 'airflow_connector_ui_endpoint'
+hmac_secret = 'airflow_connector_ui_hmac_secret'
+can_run_batch_task_var_name = f'standard_salesforce_project_import_{instance}_can_run_batch_task'
+provider = 'salesforce2'
+workflow = 'project_import'

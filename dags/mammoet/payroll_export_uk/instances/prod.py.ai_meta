@@ -1,0 +1,57 @@
+{
+  "ai_lines": {
+    "1": "4d79856fd75da17a9e3678ac7def65919f6f9f4473166276b7dd2d2634787097",
+    "11": "7463a602913e3ddeb9c7321c00c4626f22a5b7c213924dc00f44fc7c1becb782",
+    "12": "74e358bea87031c27ef26d9020345448ab2b5b15e6928372c52245f4afd96c45",
+    "13": "608596a4b361e62a74c22dfc0b9067bc13d80b94502fa2f77f745d3e3aa465e9",
+    "15": "0c5953b7eee026912ca5a10604f8cc636044efba52e05617b889f2e02c049a1c",
+    "16": "ca4e7f4ff330b96d5b2b7a67b5bec049e899924e22d624a681dc697b38057331",
+    "17": "b87245ac7e8cb707f3d920441077f38bd0ba20658ca407b785a6e15db29aea82",
+    "19": "7892457a66c309f554d66f65ed8e6cc5c36f3aab524bad8945655d30d3599314",
+    "2": "1892981cdff81f0a8f2c18a5f35e1c13e676bd04f52ca2a7288c9fdc3dce9437",
+    "20": "c37b77e496394628c3cc1a6d1ab14a65d8ccf4bc89be534a0ddc5dcbf8498223",
+    "22": "1406517f114484fa020e79a6723f15c9fc613b6f072313ad8a30a299af8c0138",
+    "24": "7f8c6aa33e4415ac9171baa5faf5cc769d80d7f66f3fcc798d84a236f19b7c6b",
+    "25": "ff7caec1313b2f5ad8a9f9f3cac0f75cadfb11b2e6eb0d335993af5e88f863f8",
+    "26": "699cb31d677831959431cbbaae0f1e21a7960b982af585d7420ea55720313203",
+    "28": "23536ecf475b6ff4c16d5d7a95ba9f9f2387c37b8359cbef96183c3f15c3156e",
+    "3": "e8c625a76ff3d16e6f43c1574f36988e552f8ac10a11b08c83b814908cf082ee",
+    "30": "08f7c3e4bae7081d4ac43815940ea8b116756b15c741c5ceae3be123f53539d5",
+    "32": "e6aa04fb04792e3ac1be09e3918b8b97e35db1a07b9c11f2ca1884e5c052ff22",
+    "33": "7e8cf5158763c37e8d389d901262306c8f6cce679d99ab49fa77c28e911f576e",
+    "34": "3b7f6d25724f5b7d778bbb62db045aa49574b5d73f13049ff669aafd8126f0f9",
+    "35": "0bb93012b48dfdf0ca88cad0c94c4b7ae2da9b3be12572125f9dfe77b5f326b8",
+    "37": "705370e7473c8d2b0510c2477921d1ff3da0460a37001cea6527fc5faf4e3f8e",
+    "38": "aebb444e90dcb34fcca697d96988dd7208fbd4e875ea23d141e887fde59f8ead",
+    "39": "0bc6f2032869533309449995e70c712ee4568dbf0e7e114225f3c271f9cba915",
+    "40": "5138bc3c8ef3abc1df280dccd751143f8071a7695e830097a0bd5f5dd0277b9b",
+    "6": "fbe8d2c7139fd71231289622554e67036e75c52e8d6f5e14c27c1d5842dcb2f9",
+    "7": "c617aacf611752e06762da1e3e154331c2b047a0625ed000840a54a1e2db22c0",
+    "9": "2d33448f7a8d7eaca8c00b0b2ac6dfe70275ffb3bf832872101dd8904dbb787b"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-28T12:45:42.146Z",
+  "file_state": {
+    "file_sha256": "66756f6d2b3d1fefd09c967fae5e5a03f41aca44bd4e2323f7257801f2703e5b",
+    "total_file_lines": 40,
+    "total_lines": 28
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\mammoet\\payroll_export_uk\\instances\\prod.py",
+  "stats": {
+    "ai_line_count": 28,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-28T12:58:24.263Z",
+  "version": 1
+}

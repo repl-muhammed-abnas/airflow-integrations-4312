@@ -1,0 +1,52 @@
+{
+  "ai_lines": {
+    "1": "0b5a71393f50f9ef3007b8c52f62c74a356027a69b0ddaf4e48e4de439792f6a",
+    "10": "7891bc12a8fe6284878bde48dd8f362859c5078a9224d42c37d00ec51be759b9",
+    "11": "9556700e74a6bb3a536bfb3dcbc310540fff485c77100368c4f807638c2543fa",
+    "14": "9a8685ab7cd5bcebb6a6c2b1379e22b0a2a9fecaf8006f930d5a3d3fab7d6f6b",
+    "15": "63a839061c610f0ee5e793b7dcb70ed274fb0ba97f5b92e005f1b1e694ccc56b",
+    "16": "c6bddd917511896dc1e278eb9e4016ade3e112054b7c798aedd6f3dcdbd08394",
+    "19": "87b5c2186b70ede9041bff4e78a1123256ac4b3fcf932333036f0193f2cb41b6",
+    "20": "05ec1e028ddd4cc3a439da7a4bbb887fc281b31c14f4798e9ae561959e525a6c",
+    "21": "40a9941102d48fdc17098f0b7e9f77a1649f502a15b2bd8f3b06a346e3d43860",
+    "22": "32318a4c56f097be1b41d22280b34d35b3ceebe4570ea775d7560519a51fbcab",
+    "23": "80889dbd9b360047a38d3d6b97c5259f412adf0ee7e686625256dceeec339a3f",
+    "24": "7b59c176ebcd23c32714d9bcea6521a8a007cde1300e4d070a3b4e357ce4f58e",
+    "25": "bfff00a524289432a25d3a295ae3528ca4dd5ee3f9dbebc6b503c9b7ce383ee6",
+    "26": "43a9d4d3bb91a8f8b856bd3e9821892c7f88cab746d86a009862904d630e6062",
+    "27": "32fbe72cc55b6701edc30219497999c9e2e97404d79586b50850af9ed2b5ef6d",
+    "28": "2a44168318e224e1f830fe9ab620aa00dd4f7b3fb19ef4399abf59593cf0756d",
+    "29": "23c47ec702c8e25b83d7d6cf61d99a6de0a3b7aae64684ea2a665e6424d554a0",
+    "4": "27d5531bacdf3cbc66c60fe4d0fcf68e50863ab7bad5a722220fbc539824bef6",
+    "5": "d362423c05d4bfdb7670ebbb99d7242db3dc9a8aa599250c7911686a496f228b",
+    "6": "4e0611f4fb3669cb6c5eb5c34720c01341ca77dd0bb3300e0658b66807fcad95",
+    "7": "964b76d31701b7dc858e7114ce5d0621220be64971191d7d3c9e995c2ba6b8ea",
+    "8": "42c1b53c0da7dbc9c15369dc775c03cd5f7a451eab226dddabcc3fff68a55993",
+    "9": "75b16bdd74ba53a91c47256c4c0f869bf5bdf5c35f0315ff6d141971d1fd7efc"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Write",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-24T07:52:38.505Z",
+  "file_state": {
+    "file_sha256": "3db3cd3865fe47fb3a2e16bef4554ef20005616fce9f128ca22d7ec4a50ca24c",
+    "total_file_lines": 29,
+    "total_lines": 23
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\accenture\\webhook_endpoints\\user_sync_ventagepoint\\utils\\python_callable_methods.py",
+  "stats": {
+    "ai_line_count": 23,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-03-24T07:52:38.505Z",
+  "version": 1
+}

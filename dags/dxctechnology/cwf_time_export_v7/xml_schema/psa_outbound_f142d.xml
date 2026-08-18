@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  {%- for record in dataset %}
+ <Records>
+  <Employee_ID>{{record.Employee_ID|e}}</Employee_ID>
+  <Date>{{record.DATE|e}}</Date>
+  <WBS>{{record.WBS|e}}</WBS>
+  <Task>{{record.Task|e}}</Task>
+  <Hours>{{record.Hours|e}}</Hours>
+  <Replicon_Unique_ID>{{record.RepliconUniqueID|e}}</Replicon_Unique_ID>
+  <Comments>{{record.Comments|e}}</Comments>
+  <Billing_Key>{{record.Billing_Key|e}}</Billing_Key>
+  <Project_Key>{{record.Project_Key|e}}</Project_Key>
+  <Attendance_Type>{{record.Attendance_Type|e}}</Attendance_Type>
+  <Child_Project_WBS>{{record.Child_Project_WBS|e}}</Child_Project_WBS>
+  <Child_Project_ERP>{{record.Child_Project_ERP|e}}</Child_Project_ERP>
+  <IWO_WBS_Flag>{{record.IWO_WBS_Flag|e}}</IWO_WBS_Flag>
+  <Parent_Project_ERP>{{record.Parent_Project_ERP|e}}</Parent_Project_ERP>
+  <Labour_Type>{{record.Labour_Type|e}}</Labour_Type>
+  <Home_ERP>{{record.Home_ERP|e}}</Home_ERP>
+ </Records>
+ {%- endfor %}
+</root>

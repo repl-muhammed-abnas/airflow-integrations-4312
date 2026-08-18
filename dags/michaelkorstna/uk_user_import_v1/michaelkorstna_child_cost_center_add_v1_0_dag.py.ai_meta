@@ -1,0 +1,30 @@
+{
+  "ai_lines": {
+    "11": "332b5cdd05dcf5a5f2db214dae1b73bb6043f6ebada5327114017b611432599e"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-13T17:00:17.232Z",
+  "file_state": {
+    "file_sha256": "aa4575df764655cc10cc183c6a2bd6e327bb85344aa4c1e3062c02548ddf5db2",
+    "total_file_lines": 249,
+    "total_lines": 221
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\michaelkorstna\\uk_user_import_v1\\michaelkorstna_child_cost_center_add_v1_0_dag.py",
+  "stats": {
+    "ai_line_count": 1,
+    "ai_line_pct": 0.45,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-13T17:00:17.232Z",
+  "version": 1
+}

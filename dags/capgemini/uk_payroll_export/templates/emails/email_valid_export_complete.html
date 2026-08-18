@@ -1,0 +1,14 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon Payroll Export of {{ params.entries_for }} entries of "{{ dag_run.conf.cost_center_name }}" and it's sub-cost centers for United Kingdom is completed successfully
+    {{ " at " + current_time_in_specified_tz(params.time_zone) }}. Please find the extract details for reference.</p>
+
+<ul>
+    <li>Process Started: {{ dag_run.conf.exportdetails.process_start_time }}</li>
+    <li>File Name: {{ dag_run.conf.export_filename }}.csv.pgp</li>
+    <li>File Path: {{ params.upload_file_path }}</li>
+    <li>Export Name: {{ dag_run.conf.payrun_export_name }}</li>
+    <li>Location: {{ params.location }}</li>
+    <li>Cost Center: {{ dag_run.conf.cost_center_name }} (including Sub-Cost Centers)</li>
+    <li>Number of Records: {{ result("query_entries_on_paycodes", "length") }}</li>
+    <li>Date Range: {{ dag_run.conf.exportdetails.export_start_date }} - {{ dag_run.conf.exportdetails.export_end_date }}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

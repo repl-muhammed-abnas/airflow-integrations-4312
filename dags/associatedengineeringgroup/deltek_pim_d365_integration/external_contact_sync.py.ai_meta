@@ -1,0 +1,45 @@
+{
+  "ai_lines": {
+    "148": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+    "149": "1de8f4b0e45818ed6fbbad7951f596a795f37e8569d6ff371179d9e3da267296",
+    "150": "2795c6143ad7fb1144879a4fc4b043281c84fa0709f9370a51286b6a901d2d4d",
+    "305": "381f58ed911af2822eb91011ceeba7e16612fcfb96973947db72418e68dcbf49",
+    "309": "25497c0f7512d949621183b8c514cc5b7e81e77817fa2db1d53e3ee28f885a6a",
+    "313": "adf5d11013701cef323160e6b15a5c905530875662f91d0c4d7a0f51a66e0be2",
+    "314": "80a1288cdb1515a23df437a37ce147a179028aed0a1fff4d4cd35a078cb2057a",
+    "315": "651232de83c74df3c39fde898726850f3cc20c92ee028a9ffe299ad7d76cd198",
+    "316": "a502adaa5e200bd73758f442baaa879095494ecbae5511d581b5379514ca2e53",
+    "317": "8d5b7beb7ab8684e3dce1c9fd2d200b15c4b996b4acd2f329d90efc1db03fa91",
+    "318": "e5cededc24b537f7707b44a0d0a115dc2e2bbf02892254be4f433b7a4998ad68",
+    "327": "381f58ed911af2822eb91011ceeba7e16612fcfb96973947db72418e68dcbf49",
+    "331": "25497c0f7512d949621183b8c514cc5b7e81e77817fa2db1d53e3ee28f885a6a",
+    "360": "b12e851c21d763b512a0c9335d15194375f5605e70b496878d7c7a9b770299ef",
+    "361": "75bc8e3b8a5635e369a4c2d5aef70ceb56462957185f1985990d55a40e829382",
+    "71": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 6,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-06-19T09:53:38.277Z",
+  "file_state": {
+    "file_sha256": "9c1d4a25cd312d50a86eeace17dd437b27c6cdd52d2b3dc670b6cc1a8dc1e563",
+    "total_file_lines": 366,
+    "total_lines": 324
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\associatedengineeringgroup\\deltek_pim_d365_integration\\external_contact_sync.py",
+  "stats": {
+    "ai_line_count": 16,
+    "ai_line_pct": 4.94,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-06-22T02:34:01.689Z",
+  "version": 1
+}

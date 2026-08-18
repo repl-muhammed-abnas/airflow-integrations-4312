@@ -1,0 +1,30 @@
+{
+  "ai_lines": {
+    "6524": "26ee193fdc19a4d01c4e8fdc54d9d04cbdfa5099d644b63ea16e626a2baaed98"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-23T05:56:07.701Z",
+  "file_state": {
+    "file_sha256": "88e02dc85eb5f7a0b3d9bdae238be19f88bfacbb770dcfe8ae7d6c3cedfac7a6",
+    "total_file_lines": 7292,
+    "total_lines": 7290
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\dxctechnology\\workday_user_import_v1\\user_import_uki_es_v2\\mapper\\es_assignment_mapper_v3.py",
+  "stats": {
+    "ai_line_count": 1,
+    "ai_line_pct": 0.01,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-23T05:56:07.701Z",
+  "version": 1
+}

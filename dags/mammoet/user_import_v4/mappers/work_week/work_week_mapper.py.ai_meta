@@ -1,0 +1,56 @@
+{
+  "ai_lines": {
+    "10": "0c9da5fcba90fbb85dab3a6eaa5fb15c3e39b1dc31a1edcd5ade24071f522b02",
+    "11": "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+    "4": "e65ac89bd60cf2250446d3343c4acbbd785b654d4a6c27e7e759b6c99b2f104d",
+    "5": "0c9da5fcba90fbb85dab3a6eaa5fb15c3e39b1dc31a1edcd5ade24071f522b02",
+    "6": "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+    "9": "e65ac89bd60cf2250446d3343c4acbbd785b654d4a6c27e7e759b6c99b2f104d"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-15T07:22:56.466Z",
+  "file_state": {
+    "file_sha256": "b9c3c58cb8717601fee3c12737ddd5edd8303a36df21f5d84f42da8105d70b1a",
+    "total_file_lines": 22,
+    "total_lines": 22
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "fbc763742f8a1f606e39d5abeb75a89dac84ca422d7f7493595c1adae2b77d40",
+      "last_known_line": 22,
+      "removed_at": "2026-04-15T07:59:44.016Z"
+    },
+    {
+      "hash": "095aff80b256c85b18d27e3fa404194324befa412ccf7d8551934f5b179611b7",
+      "last_known_line": 23,
+      "removed_at": "2026-04-15T07:59:44.016Z"
+    },
+    {
+      "hash": "b43e83b3e481dcb09f25e2f70ed570e78ba1a0cd74213d40d9fc15509c4816c1",
+      "last_known_line": 27,
+      "removed_at": "2026-04-15T07:59:44.016Z"
+    },
+    {
+      "hash": "8fb86bed7b4273a2a2414316d562713a3fe01de5d507b365f3e8240933b09cb2",
+      "last_known_line": 28,
+      "removed_at": "2026-04-15T07:59:44.016Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\mammoet\\user_import_v4\\mappers\\work_week\\work_week_mapper.py",
+  "stats": {
+    "ai_line_count": 6,
+    "ai_line_pct": 27.27,
+    "ai_lines_removed_or_modified": 4
+  },
+  "updated_at": "2026-04-15T07:59:44.016Z",
+  "version": 1
+}

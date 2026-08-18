@@ -1,0 +1,32 @@
+<p>
+  <strong> This is an automated mail, please don't reply. </strong> <br />
+  <br />Hello {{ dag_run.conf.user_first_name}}, <br />
+  <br />
+  Please submit your time entries for the following days:
+  <br />
+<table style="border: 0.3px solid black;border-collapse: collapse" border="1">
+  <tr>
+    <th>Entry Date</th>
+    <th>Time Sheet Period</th>
+  </tr>
+  {% for item in dataset %}
+   <tr>
+    <td>
+      {{ item.Entry_Date }}
+    </td>
+    <td>
+      {{ item.Timesheet_Period }}
+    </td>
+    </tr>
+    {% endfor %}
+</table>
+<br />
+</p>
+<p><em><span style="font-size: 10pt;">Please login to Replicon to submit time Entries - <a href="https://login.replicon.com/">Link to Replicon​</a>.</span></em></p>
+<br />
+<br />
+
+<p>
+  For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards,
+  <br />Deltek Inc.
+</p>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_WBS_Replicon xmlns:ns0="http://csc.com/IF7001/FromFTPToReplicon/WBS">
+	<Records>
+		<ProjectCode>SC.2320/01-01-04</ProjectCode>
+		<ProjectName>IMPLEMENTATION</ProjectName>
+		<Project_StartDate>12012021</Project_StartDate>
+		<Project_EndDate>02282022</Project_EndDate>
+		<Status>Inactive</Status>
+		<Project>SC.2320</Project>
+		<ProjectManager_EmpID>11530143</ProjectManager_EmpID>
+		<ProjectCoManager_EmpID>11530144</ProjectCoManager_EmpID>
+		<ProjectGroup>1667</ProjectGroup>
+		<ProjectUDF>04</ProjectUDF>
+		<Type>SC</Type>
+		<Billing_Indicator>X</Billing_Indicator>
+		<PRCTR>0000001200</PRCTR>
+		<SCOPE>Profit analysis</SCOPE>
+		<CUST_USR00>ICIN03</CUST_USR00>
+		<FunctionalArea>2000</FunctionalArea>
+		<Product>1200-1060</Product>
+		<Stage>S160</Stage>
+		<SalesForceID/>
+		<IWONo/>
+		<Client>Test1234Client</Client>
+	</Records>
+</ns0:MT_WBS_Replicon>

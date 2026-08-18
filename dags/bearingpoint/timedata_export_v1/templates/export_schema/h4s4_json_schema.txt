@@ -1,0 +1,24 @@
+[
+	{
+		"TimeEntryID": "84317e0f-012a-43e9-a09c-7bdef8a35950",
+		"EmployeeID": "SAP026",
+		"WorkforceID ": "ABC12",
+		"StartDate": "2024-11-11",
+		"EndDate": "2024-11-14",
+		"RecordedHours": "3",
+		"HoursUnitOfMeasure": "H",
+		"TimeSheetNote": "Comments",
+		"Attendance_AbsenceType": "0010"
+	},
+	{
+		"TimeEntryID": "84317e0f-012a-43e9-a09c-7bdef8a35951",
+		"EmployeeID": "SAP026",
+		"WorkforceID ": "ABC12",
+		"StartDate": "2024-11-12",
+		"EndDate": "2024-11-14",
+		"RecordedHours": "5",
+		"HoursUnitOfMeasure": "H",
+		"TimeSheetNote": "Comments",
+		"Attendance_AbsenceType": "0010"
+	}
+]

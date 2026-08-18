@@ -1,0 +1,92 @@
+# pylint: disable=wildcard-import unused-wildcard-import invalid-name
+"""
+CRL User Import - {COUNTRY_NAME} Country Configuration (Layer 2)
+
+Copy this file to: countries/{country_code_lower}/config.py
+Then customize all values marked with TODO.
+"""
+from datetime import datetime, timedelta
+from crl.user_import_generic_row.config_base import *  # noqa: F401,F403
+
+# ---------------------------------------------------------------------------
+# Country Identity — TODO: Set these for your country
+# ---------------------------------------------------------------------------
+COUNTRY_CODE = "XXX"                          # TODO: e.g. "ISR", "CHE", "BRA"
+COUNTRY_NAME = "Country Name"                 # TODO: e.g. "Israel", "Switzerland"
+DAG_PREFIX = "crl_user_import_countryname"    # TODO: e.g. "crl_user_import_israel"
+
+# ---------------------------------------------------------------------------
+# Concurrency Overrides (adjust based on expected user count)
+# ---------------------------------------------------------------------------
+# max_active_runs_process_users = 20          # TODO: Lower for small user bases
+# max_active_runs_process_new_users = 10
+# max_active_runs_process_update_users = 10
+# max_active_runs_process_disable_users = 10
+# max_active_runs_process_supervisor = 20
+# trigger_parallel_dagrun_count_process_users = 15
+
+# ---------------------------------------------------------------------------
+# Time-Off Types — TODO: Define all time-off types for this country
+# ---------------------------------------------------------------------------
+DEFAULT_TIME_OFF_TYPE = "[XXX] Default Time Off"  # TODO
+
+APPLICABLE_TIME_OFF_TYPES = [
+    # TODO: List ALL time-off types applicable to this country
+    # "[XXX] Vacation",
+    # "[XXX] Sick Leave",
+]
+
+GLOBAL_TIME_OFF_TYPES = [
+    # TODO: Time-off types assigned globally (NOT placeholder-based)
+]
+
+PLACEHOLDER_BASED_TIMEOFF_TYPES = [
+    # TODO: Time-off types that use placeholder policies (e.g. vacation)
+]
+
+TO_PLACEHOLDER_HIDDEN_OEF_NAMES = [
+    # TODO: Hidden OEF names for placeholder-based time-off types
+    # "[XXX] Vacation - Placeholder Policy Name",
+]
+
+MANNUAL_TIMEOFF_TYPES = []
+
+# ---------------------------------------------------------------------------
+# Mapper Configuration Overrides — TODO: Adjust matching keys for your mapper
+# ---------------------------------------------------------------------------
+# MAPPER_KEYS_FOR_DATA_RETRIEVE = [...]
+# KEY_MAPPING_FOR_FEED_FIELDS = {...}
+# SHOULD_CHECK_FOR_ALL_EXCEPT = [...]
+
+# ---------------------------------------------------------------------------
+# Country-Specific Defaults — TODO: Set schedule, work week, language
+# ---------------------------------------------------------------------------
+# DEFAULT_SCHEDULE_NAME = "SCHEDULE_CODE"     # TODO
+# DEFAULT_WORK_WEEK = "Monday - Sunday"       # TODO: Or "Sunday - Saturday"
+# DEFAULT_LANGUAGE = "English"
+
+# ---------------------------------------------------------------------------
+# Report-Based Daily Disable (optional)
+# ---------------------------------------------------------------------------
+ENABLE_REPORT_BASED_DISABLE = False
+# DISABLE_REPORT_NAME = "Report Name"         # TODO: Only if enabled
+# DISABLE_SCHEDULE_INTERVAL = "@daily"         # TODO: Only if enabled
+
+# ---------------------------------------------------------------------------
+# Hook Functions — Override as needed
+# ---------------------------------------------------------------------------
+# def get_payrule_effective_date_hook(change_effective_date, date_format="%m/%d/%Y"):
+#     """TODO: Customize payrule effective date logic."""
+#     pass
+
+# def get_overtime_eligibility_hook(item):
+#     """TODO: Customize overtime eligibility logic if needed."""
+#     return None
+
+# def get_holiday_calendar_hook(item, matched_mapper_row):
+#     """TODO: Customize holiday calendar source (mapper vs feed field)."""
+#     return matched_mapper_row.get('holiday_calendar', '')
+
+# def get_default_schedule_hook():
+#     """TODO: Return default schedule name."""
+#     return DEFAULT_SCHEDULE_NAME

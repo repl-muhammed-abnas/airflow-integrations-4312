@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Hello Team,
+			<br/>
+			<br/>
+			<strong>This is an automated mail, please don't reply.</strong>
+			<br/>
+			<br/>
+There are inactive dags present in the environment {{result('get_disabled_dag_details').reg_env}}. according to that a pull request was already been raised against the {{result('get_disabled_dag_details').repo_name}} and not yet actioned. 
+			</br>
+			</br>
+Please find the details below.
+			<br/>
+<ul>
+<li>Branch Name: {{result('get_instance_paths_to_change').last_branch_name}}</li>
+			<br/>
+<li>Pull request URL: {{result('get_instance_paths_to_change').last_pull_request}}</li>
+</ul>
+Please take the necessary actions.
+			<br/>
+            <br/>
+Thanks
+			<br/>
+		</p>
+	</body>
+</html>

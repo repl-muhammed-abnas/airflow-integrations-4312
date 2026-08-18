@@ -1,0 +1,42 @@
+"""
+Dev instance for UKG Pro → Maconomy Employee Sync.
+
+Local-dev fallback so the DAGs parse without the middleware committing real
+per-customer instance files. In higher environments `integration-platform-api`
+writes one instance file per customer into this folder via GitHub commits.
+
+`schedule_interval = None` ensures this fallback never auto-runs; trigger
+manually from the Airflow UI.
+"""
+# pylint: disable=invalid-name,unused-import
+from ukgpro_maconomy_integration.employee_sync.config import (
+    max_active_runs,
+    execution_timeout_days,
+    initial_sync_time,
+    tenant_email,
+)
+
+# --- Routing scope ---
+region = 'us-east-1'
+environment = 'pre-production'
+
+# --- Customer identity ---
+instance = 'dev'
+customer_slug = instance
+customer_id = 'dev'
+customer_name = 'Dev Sample Customer'
+customer_email = None
+
+# --- Integration identity (passed to child DAGs via dag_run.conf) ---
+client_id = 'airflow_connector_proxy'
+integration_id = '00000000-0000-0000-0000-000000000000'
+integration_type = 'ukgpro_maconomy_integration__employee_sync'
+company_key = f"airflowsandbox{region.replace('-', '')}"
+
+# --- Scheduling / lifecycle ---
+schedule_interval = None
+disabled = False
+
+# --- Airflow connections ---
+ukgpro_conn_id = f'mn_{instance}_ukgpro_connid'
+maconomy_conn_id = f'mn_{instance}_maconomy_connid'

@@ -1,0 +1,33 @@
+{
+    "webhook": {
+        "data": {
+            "mill_mpc": "mill",
+            "projectnumber": "absence",
+            "title": "Absence",
+            "role": "Senior Modeler",
+            "service": "Holiday",
+            "description": "Paid Holiday",
+            "starttime": "2022-12-13T09:00:00.000000-08:00",
+            "endtime": "2022-12-13T18:00:00.000000-08:00",
+            "duration": 9,
+            "resourcename": 206499,
+            "resourcescheduleserviceID": 67059475,
+            "fd_status": "Confirmed"
+        }
+    }
+}
+
+{
+    "mill_mpc": "mill",
+    "projectnumber": 3200091,
+    "title": "SFPS_HM",
+    "role": "2D",
+    "service": "2D-COMP",
+    "description": "Compositor(Day)|LAProject",
+    "starttime": "2022-12-13T09:00:00.000000-08:00",
+    "endtime": "2022-12-13T18:00:00.000000-08:00",
+    "duration": 9,
+    "resourcename": 206499,
+    "resourcescheduleserviceID": 67081253,
+    "fd_status": "Confirmed"
+  }

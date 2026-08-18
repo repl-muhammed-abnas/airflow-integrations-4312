@@ -1,0 +1,10 @@
+region = 'eu-central-1'
+environment = 'pre-production'
+company_key = 'WRDTafmig'
+user_report_name = '**User URI Report'
+project_report_name = '**project uri report'
+execution_timeout_days = 14
+expected_report_columns = 'Login Name, User URI'
+master_dag_interval = 30
+max_active_runs_child = 5
+max_active_runs_master = 1

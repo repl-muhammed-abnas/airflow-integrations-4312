@@ -1,0 +1,14 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Auto population of optional holiday booking for state {{ dag_run.conf.properties.state_name }} is {{" "}}
+    {%- if result("get_logged_errors", key="length") > 0 -%}
+        completed with errors
+    {%- else -%}
+        completed successfully
+    {%- endif -%}
+    {{ " - " + dag_run.conf.properties.process_start_time }}<br/><br/>
+    Please find the logs placed in the below path:<br/>
+    Log filepath: {{ params.log_filepath }}<br/>
+    Log filename: {{ result("get_log_filename") }}<br/><br/>
+    For any queries, please contact our support team at https://support.deltek.com <br /> <br />
+    Regards, <br />
+    Deltek Inc.
+</p>

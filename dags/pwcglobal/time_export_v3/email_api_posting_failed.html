@@ -1,0 +1,17 @@
+<p>
+    <strong>This is an automated mail, please don't reply.</strong>
+    <br /><br />Hello, 
+    <br /><br />
+    The time extract is completed successfully for location {{ dag_run.conf.location }} on {{ dag_run.conf.process_start_time }}.
+    The API posting failed and the file is uploaded to the backup folder. Please find the extract details for reference.
+</p>
+<ul>
+    <li>File Name: {{ dag_run.conf.export_file_name }}.json</li>
+    <li>File Path: {{ result(params.get_endpoint_details).api_failed_upload_filepath }}</li>
+    <li>Territory: {{ dag_run.conf.location }}</li>
+</ul>
+<p>
+    For any queries, please contact our support team at https://support.deltek.com
+    <br /><br />Regards,
+    <br />Deltek Inc.
+</p>

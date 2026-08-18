@@ -1,0 +1,6 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Replicon Time
+    data Import is completed with error on {{ current_time("%Y-%m-%dT%H:%M:%S.%f%z") }}. Please find the log file
+    details below for reference: <br /> <br />
+    File path: {{ params.log_filepath }}<br />
+    File name: logs_timeoff_sync_{{ result("new_file_sensor") | file_name }}_{{ current_time("%Y%m%d") }}{{ dag_run_ecid() }}.csv</p>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

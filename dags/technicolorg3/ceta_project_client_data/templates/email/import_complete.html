@@ -1,0 +1,10 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />
+  Hello, <br /> <br /> Please find the below link to download the CETA Client Project sync logs for reference. <br />
+  <br /><a href="{{result('generate_download_link')}}">Download log</a>
+</p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+<p>
+  {%- if result("get_errored_logs", key="length") > 0 -%}
+  {%- endif -%}
+  For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

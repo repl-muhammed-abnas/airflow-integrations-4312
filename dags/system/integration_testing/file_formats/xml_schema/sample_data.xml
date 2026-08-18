@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+	<catalog>
+        {%- for record in dataset %}
+		<book id= "{{ record.id|e }}">
+			<author>{{ record.author|e }}</author>
+			<title>{{ record.title|e }}</title>
+			<genre>{{ record.genre|e }}</genre>
+			<price>{{ record.price|e }}</price>
+			<publish_date>{{ record.publish_date|e }}</publish_date>
+			<description>{{ record.description|e }}</description>
+		</book>
+        {%- endfor %}
+	</catalog>

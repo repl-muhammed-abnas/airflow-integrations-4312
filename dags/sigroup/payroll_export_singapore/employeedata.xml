@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<active-support-hash-with-indifferent-accesses type="array">
+{%- for record in dataset %}
+<active-support-hash-with-indifferent-access>
+<EmployeeData>
+<EmployeeNumber>{{record.EmployeeNumber}}</EmployeeNumber>
+<TemporaryPayElement type="array">
+{%- for item in record.TemporaryPayElement %}
+<TemporaryPayElement>
+<OperationType>{{item.operationtype}}</OperationType>
+<PayCode>{{item.paycode}}</PayCode>
+<Value>{{item.value}}</Value>
+<EffectiveDate>{{item.effectivedate}}</EffectiveDate>
+</TemporaryPayElement>
+{%- endfor %}
+</TemporaryPayElement>
+<TimeBasedPayElement type="array">
+{%- for item in record.TimeBasedPayElement %}
+<TimeBasedPayElement>
+<OperationType>{{item.operationtype}}</OperationType>
+<RateId>{{item.rateid}}</RateId>
+<Type>{{item.type}}</Type>
+<Format>{{item.format}}</Format>
+<Value>{{item.value}}</Value>
+<EffectiveDate>{{item.effectivedate}}</EffectiveDate>
+<BaseRate>{{item.baserate}}</BaseRate>
+<DateType>{{item.datetype}}</DateType>
+</TimeBasedPayElement>
+{%- endfor %}
+</EmployeeData>
+</active-support-hash-with-indifferent-access>
+{%- endfor %}
+</active-support-hash-with-indifferent-accesses>

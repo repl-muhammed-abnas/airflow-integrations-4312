@@ -1,0 +1,31 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from moodys.user_sync.united_states_v1.config import *
+
+instance = "trial"
+environment = "pre-production"
+
+company_key = "moodysemeatrial03"
+
+replicon_conn_id = "replicon_moodysemeatrial03_admin"
+sftp_conn_id = "sftp_internal_useast2"
+
+input_filepath = "/moodys/User Sync/Processing/UnitedStates"
+archive_filepath = "/moodys/User Sync/Archive"
+log_filepath = "/moodys/User Sync/Logs"
+
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_failure_alert_email }}'
+
+version = "_v1"
+
+master_dagid = f'moodys_user_sync_united_states_master_{instance}{version}'
+process_users_dagid = f'moodys_user_sync_united_states_child_process_users_{instance}{version}'
+process_log_generation_dagid = f'moodys_user_sync_united_states_child_process_log_generation_{instance}{version}'
+process_new_users_dagid = f'moodys_user_sync_united_states_child_process_new_users_{instance}{version}'
+process_update_users_dagid = f'moodys_user_sync_united_states_child_process_update_users_{instance}{version}'
+processs_supervisor_dag_id = f'moodys_user_sync_united_states_child_process_supervisors_{instance}{version}'
+process_groups_dag_id = f'moodys_user_sync_united_states_child_process_groups_{instance}{version}'
+process_new_divisions_dagid = f'moodys_user_sync_united_states_child_process_divisions_{instance}{version}'
+
+can_run_batch_task_var_name = f'moodys_user_sync_run_batch_task_{instance}'

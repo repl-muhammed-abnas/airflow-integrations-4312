@@ -1,0 +1,31 @@
+{
+  "ai_lines": {
+    "12": "7b87c467156708986d81fd66b6123731ba8b765eee6f80e8d208fc82bed3f621",
+    "196": "2817426131a6dc00ac723d3354d67aa18d641d53ed7f159a55465effc138da48"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-13T17:00:56.597Z",
+  "file_state": {
+    "file_sha256": "136baa9359730906667e02ab0fb9ba4531e747c9ce597f5c52ac91a4c6518c51",
+    "total_file_lines": 263,
+    "total_lines": 226
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\michaelkorstna\\uk_user_import_v1\\michaelkorstna_uk_disable_users_v1_0_dag.py",
+  "stats": {
+    "ai_line_count": 2,
+    "ai_line_pct": 0.88,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-13T17:00:58.185Z",
+  "version": 1
+}

@@ -1,0 +1,22 @@
+<p>
+    Hi {{ result("foreach_reminder_entry")['User First Name'] }} {{ result("foreach_reminder_entry")['User Last Name'] }},
+    <br />
+    <p><strong>Employee ID: </strong>{{ result("foreach_reminder_entry")['Employee ID'] }}</p>
+    We notice that you have not updated your efforts in your timesheet and as a result, <strong>5 or more consecutive days of Annual Leave / LOP from {{ result("foreach_reminder_entry")['continousBookingStartDate'] }} to {{ result("foreach_reminder_entry")['continousBookingEndDate'] }} has been auto deducted.</strong>
+    <br />
+    <br />
+    If you were working on these days, please update your efforts on your timesheet as soon as possible and reverse the auto-deduction of leave. If not done in time, you may exhaust your annual leave and be subject to leave with loss of pay (LOP). This will have an impact on your salary. 
+    <br />
+    <br />
+    <strong>Please treat this as a priority as cancellation or reversal of auto-deducted leave cannot be done beyond 30 days from the date of the leave.</strong> You can update your timesheet now by logging in to The dot->My Time>>Replicon Time Management>>Time Off.
+    <br />
+    <br />
+    If you were on leave or returned offshore during this period, send an email at the earliest to Middle East Leaves <a href="mailto:middleeast.leaves@wipro.com">middleeast.leaves@wipro.com</a>.
+    <br />
+    <br />
+    If you are facing technical issues in filling the timesheet or updating the efforts, please raise a ticket at https://wiprocio.service-now.com/sp > Report an Issue > Application Support. 
+    <br />
+    <br />
+    <br />
+    <strong>***This is an automated response. Please do not reply to this email.***</strong>
+</p>

@@ -1,0 +1,17 @@
+<p><em><strong>This is an automated mail, please don't reply</strong></em></p>
+<p>Hello,</p>
+<p>The custom payroll notification for "{{ dag_run.conf.type }} timesheet reminder" is {{ result('get_status_subject_and_timestamp').get('subject') }} on {{ dag_run.conf.today }}.</p>
+<ul>
+    <li>Timesheet Period: {{result('csv_data').get('Timesheet Start Date') }} - {{ result('csv_data').get('Timesheet End Date') }}</li>
+    <li>Approval Status:Not Submitted</li>
+    <li>Number of timesheets:
+        {{ result('query_data_list', "length") }}</li>
+    <li>Number of records processed successfully:
+        {{ result('query_list_numberof_records_processed_successfully', "length") }}</li>
+    <li>Number of records errored while processing:
+        {{ result('query_list_numberof_records_not_processed', "length") }}</li>
+    <li>Number of skipped records:
+        {{ result('query_list_numberof_records_skipped', "length") }}</li>
+</ul>
+<p>Please find the attached logs for reference.<br /> <br />For any queries please contact our support team at https://support.deltek.com</p>
+<p>Regards,<br />Deltek Inc.</p>

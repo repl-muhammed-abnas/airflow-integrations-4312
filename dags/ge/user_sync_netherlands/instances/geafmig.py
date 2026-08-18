@@ -1,0 +1,22 @@
+region = 'eu-central-1'
+environment = 'pre-production'
+instance = "GEafmig"
+company_key = 'GEafmig'
+replicon_conn_id = 'GEafmig_User_Import'
+pgp_conn_id = 'GEafmig_User_Import_PGP'
+can_run_batch_task_var_name = f'GEafmig_user_import_can_run_batch_task_{instance}'
+sftp_conn_id = "sftp_data_import"
+input_filepath = "/GEafmig/FROMGENETHERLANDS"
+archive_filepath = "/GEafmig/DailyFiles"
+log_filepath = "/GEafmig/Logs"
+execution_timeout_days = 14
+child_dag_max_active_runs = 2
+master_dag_interval = 30
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_failure_alert_email }}'
+pacific_timezone = 'US/Pacific'
+internal_sftp_conn_id = "sftp_data_import"
+internal_archive_filepath = "/GEafmig/DailyFiles"
+
+disabled=True

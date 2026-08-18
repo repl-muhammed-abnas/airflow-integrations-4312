@@ -1,0 +1,13 @@
+Dear Customer,<br>
+<br>
+Replicon Invoice not moved to Xero. Invoice: {{ dag_run.conf.invoice_number }}<br/>
+<br/>
+Reason: Invoice already in Xero.<br/>
+<br/>
+Xero Invoice Number: {{ result('search_invoice_in_xero').Invoices[0].InvoiceNumber }}<br/>
+Job ID: {{ dag_run_ecid() }}<br>
+<br>
+For any queries, please contact our support team at https://support.deltek.com<br>
+<br>
+Thanks<br>
+Deltek Inc

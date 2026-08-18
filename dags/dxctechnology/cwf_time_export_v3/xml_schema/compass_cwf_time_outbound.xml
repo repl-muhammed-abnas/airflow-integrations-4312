@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_TIME_Replicon xmlns:ns0="http://csc.com/IF5005/FromRepliconTOCOMPASS/TIME">
+  <COMPASSRegion>{{region | first | attr_or_default('name')}}</COMPASSRegion>
+   {%- for record in records %}
+   <Records>
+      <RepliconDXCUniqueIdentifier>{{record.Shortid}}</RepliconDXCUniqueIdentifier>
+      <ExternalSystemIdentifier>{{record.Externalsystemidentifier}}</ExternalSystemIdentifier>
+      <PersonnelNumber>{{record.Perner}}</PersonnelNumber>
+      <WorkDate>{{record.Date}}</WorkDate>
+      <WBS>{{record.Projectname}}</WBS>
+      <AttendanceAbsenceType>{{record.Attendanceabsencetype}}</AttendanceAbsenceType>
+      <Hours>{{record.Hours}}</Hours>
+      <ShortText>{{record.Comments}}</ShortText>
+      <IWOExternalSystem>{{record.Iwoexternalsystem}}</IWOExternalSystem>
+      <Attribute1>{{record.Attribute1|e}}</Attribute1>
+      <Attribute2>{{record.Attribute2|e}}</Attribute2>
+      <ExternalProjectTask>{{record.Externalprojecttask}}</ExternalProjectTask>
+      <CustomerField1>{{record.Cfield1}}</CustomerField1>
+      <CustomerField2>{{record.Cfield2}}</CustomerField2>
+      <CustomerField3>{{record.Cfield3}}</CustomerField3>
+      <WorkOrder>{{record.workorder}}</WorkOrder>
+      <WorkOrderRateType>{{record.Ratetype}}</WorkOrderRateType>
+      <TMRate>{{record.Tmrate}}</TMRate>
+   </Records>
+   {%- endfor %}
+</ns0:MT_TIME_Replicon>

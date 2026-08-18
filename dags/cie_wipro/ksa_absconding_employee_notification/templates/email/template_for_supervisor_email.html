@@ -1,0 +1,16 @@
+<p>
+    Hi {{ result("foreach_reminder_entry")['User Supervisor Name (Current)'] }}
+    <br />
+    <br />
+    We are writing to inform you, one of your team members, [{{ result("foreach_reminder_entry")['User First Name'] }} {{ result("foreach_reminder_entry")['User Last Name'] }}, {{ result("foreach_reminder_entry")['Employee ID'] }}] has not updated the efforts on time due to which <strong>5 or more consecutive days of Annual Leave / LOP from {{ result("foreach_reminder_entry")['continousBookingStartDate'] }} to {{ result("foreach_reminder_entry")['continousBookingEndDate'] }} has been auto deducted.</strong>
+    <br />
+    <br />
+    If employee have worked on these days, please inform employee to update the efforts on timesheet as soon as possible and reverse the auto-deduction of leave. <strong>If not, we would like to know if we have to keep employee salary on hold.</strong>
+    <br />
+    <br />
+    Request you to kindly drop a mail to Middle East Leaves <a href="mailto:middleeast.leaves@wipro.com">middleeast.leaves@wipro.com</a> for further action.
+    <br />
+    <br />
+    <br />
+    <strong>***This is an automated response. Please do not reply to this email.***</strong>
+</p>

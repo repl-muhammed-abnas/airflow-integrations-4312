@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Australia PUF mapper - GST compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["Peppol BIS 3.0", "Australian GST"]
+  },
+
+  "country": {
+    "code": "AU",
+    "name": "Australia",
+    "currency": "AUD",
+    "language": "en"
+  },
+
+  "tax_system": {
+    "type": "GST",
+    "scheme_id": "GST",
+    "rates": {
+      "standard": 10.0,
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Standard rate GST",
+      "Z": "GST-free",
+      "E": "Exempt",
+      "O": "Out of scope"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "0151",
+    "buyer_endpoint_scheme": "0151",
+    "vat_scheme_id": "0151",
+    "company_scheme_id": "0151",
+    "abn_prefix": "",
+    "scheme_mappings": {
+      "abn": "0151",
+      "gln": "0088",
+      "duns": "0060"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": []
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^[0-9]{11}$",
+    "abn_pattern": "^[0-9]{11}$",
+    "postal_code_pattern": "^[0-9]{4}$",
+    "iban_pattern": "^AU[0-9]{2}[A-Z]{4}[0-9]{14}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_abn"]
+  },
+
+  "defaults": {
+    "payment_terms": "Net 30 days",
+    "contact_department": "Accounts Department",
+    "unit_code": "EA"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false
+  },
+
+  "translations": {
+    "invoice": "Tax Invoice",
+    "credit_note": "Credit Note",
+    "total": "Total",
+    "tax": "GST"
+  }
+}

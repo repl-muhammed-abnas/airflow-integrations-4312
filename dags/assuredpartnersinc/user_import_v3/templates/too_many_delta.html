@@ -1,0 +1,17 @@
+<p><strong>This is an automated mail, please don't reply.</strong></p>
+<p>Hello,</p>
+<p>
+    The User Import is halted as we found "{{result('query_list_changed_items_27', 'length') }}" records out of {{ result('create_collection_from_input_csv', 'length') }} records as
+    changed records for file {{ result('new_file_sensor') | file_name }}". Please review and post
+    the file in Override Folder of SFTP to continue processing.
+</p>
+<p>
+    The change file can be reviewed at the location: config.sftp_change_filepath </p>
+</p>
+<ul>
+    <li>
+        Name: "changefile_{{ dag_run_ecid() }}_{{ result('new_file_sensor') | file_name }}"
+    </li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com</p>
+<p>Regards,<br />Deltek Inc.</p>

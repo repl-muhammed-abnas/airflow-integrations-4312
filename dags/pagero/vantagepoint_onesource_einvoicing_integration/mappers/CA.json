@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Canada PUF mapper - GST/HST/PST compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["Peppol BIS 3.0", "Canadian GST/HST"]
+  },
+
+  "country": {
+    "code": "CA",
+    "name": "Canada",
+    "currency": "CAD",
+    "language": "en"
+  },
+
+  "tax_system": {
+    "type": "GST",
+    "scheme_id": "GST",
+    "rates": {
+      "federal_gst": 5.0,
+      "zero": 0.0
+    },
+    "provincial_rates": {
+      "hst": {
+        "ON": 13.0,
+        "NB": 15.0,
+        "NL": 15.0,
+        "NS": 15.0,
+        "PE": 15.0
+      },
+      "pst": {
+        "BC": 7.0,
+        "SK": 6.0,
+        "MB": 7.0
+      },
+      "qst": {
+        "QC": 9.975
+      }
+    },
+    "tax_categories": {
+      "S": "Standard rate",
+      "Z": "Zero rated",
+      "E": "Exempt",
+      "O": "Out of scope"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9937",
+    "buyer_endpoint_scheme": "9937",
+    "vat_scheme_id": "9937",
+    "company_scheme_id": "0087",
+    "scheme_mappings": {
+      "gst_number": "9937",
+      "bn": "0087",
+      "gln": "0088",
+      "duns": "0060"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": []
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^[0-9]{9}RT[0-9]{4}$",
+    "bn_pattern": "^[0-9]{9}$",
+    "postal_code_pattern": "^[A-Z][0-9][A-Z]\\s?[0-9][A-Z][0-9]$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_gst_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Net 30 days",
+    "contact_department": "Accounts Department"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "multi_tax_jurisdiction": true
+  },
+
+  "translations": {
+    "invoice": "Invoice",
+    "credit_note": "Credit Note",
+    "total": "Total",
+    "tax": "GST/HST"
+  }
+}

@@ -1,0 +1,26 @@
+<p>Hello,<br /> <br />The Replicon Timesheet Sync to Costpoint has {{" "}}
+  {%- set has_errors = result("format_logs").has_errored_logs -%}
+  {%- if has_errors -%}
+  completed with errors
+  {%- else -%}
+  completed successfully
+  {%- endif -%}
+  , further details are below: <br /></p>
+<ul>
+  <li>Source input : Replicon Timesheet</li>
+  <li>Record count : {{ result("format_logs").total_record_count }}</li>
+  <li>Log file name : {{ result("log_filename") }}</li>
+  <li>Log file link : <a href="{{ result('generate_download_link')}}">Download Log File</a></li>
+</ul><br />
+<em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+<p>For any queries, please contact our support team at <a
+    href="https://support.deltek.com/">https://support.deltek.com/</a><br />
+  <br />
+  <strong>This is an automated mail from Deltek Integration. Please do not reply to this email.</strong><br />
+  <br /><br />
+  Regards,<br />
+  Deltek Inc
+</p>

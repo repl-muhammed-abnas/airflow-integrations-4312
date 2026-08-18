@@ -1,0 +1,13 @@
+region = 'us-east-1'
+environment = 'production'
+instance = "Xencorprod"
+company_key = 'Xencorprod'
+replicon_conn_id = 'xencorprod_replicon_repliconadmin'
+can_run_batch_task_var_name = f'Xencorprod_timeoff_balance_alert_can_run_batch_task_{instance}'
+timeoff_report_name = 'Timeoff balance report for Replicon automation'
+execution_timeout_days = 14
+child_dag_max_active_runs = 1
+master_dag_interval = 30
+schedule_interval_daily = '01 0 1,16 * *'
+pacific_timezone = 'US/Pacific'
+internal_logs_email = '{{ var.value.dagrun_internal_log_email }}'

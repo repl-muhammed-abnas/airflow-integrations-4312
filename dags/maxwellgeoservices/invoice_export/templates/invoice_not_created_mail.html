@@ -1,0 +1,12 @@
+Dear Customer,<br>
+<br>
+We were unable to sync below invoice to XERO, since client is not present in XERO. <br/>
+<br/>
+Replicon Invoice number: {{ dag_run.conf.invoice_number }}<br/>
+Client Name: {{ dag_run.conf.client.textValue }}<br/>
+Job ID: {{dag_run_ecid()}}<br>
+<br>
+For any queries, please contact our support team at https://support.deltek.com<br>
+<br>
+Thanks<br>
+Deltek Inc

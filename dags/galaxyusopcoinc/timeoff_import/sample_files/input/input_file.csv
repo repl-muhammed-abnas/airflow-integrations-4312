@@ -1,0 +1,6 @@
+EmployeeID|ReferenceID|TimeOffEntryID|TimeOffStartDate|TimeOffEndDate|TimeOffDescription
+"432156"|"Testing Time Off"|"wxyz"|"2022-09-15"|"2022-09-15"|
+"432156"|"ABSENCE_PLAN-6-161"|"112233"|"2022-09-22"|"2022-09-24"|
+"TESTEMP2"|"Testing Time Off"|"yaad"|"2022-09-22"|"2022-09-24"|
+"432156"|"Testing Time Off"|"abcd"|"2022-09-16"|"2022-09-17"|
+"432156"|"Testing Time Off"|"test123"|"2022-10-01"|"2022-10-03"|

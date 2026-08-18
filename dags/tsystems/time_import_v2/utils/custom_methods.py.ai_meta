@@ -1,0 +1,74 @@
+{
+  "ai_lines": {
+    "203": "dccb01d4bee3e39a0c3f4e940517eef153cf9701a6b5703a5f62440cc4f19168",
+    "205": "c4bece2de3a4a404fb52c5b14721decd3683180ebcf0662e9d4e4d6403c9e872",
+    "208": "e74c15fb72a37f5fc18420c429873e405ee38fd8b9f6656426de3859657f4dbe",
+    "211": "c75bdcb6eea4a09bcea4920557dced46c5f0b45704be3d47eb5502c3720775fd",
+    "212": "6c0665d21e86e101e5258e33e72f9bcdc5a58d73597fcd19134c6446b7af96c6",
+    "213": "7b25d2dbc0b3a4a34dbedad70684af2f91a35e6fe5bd064204fc5aac1f5fa3a2",
+    "215": "fe7735537dfb3f43f53d353a0307019a2b66d49f91e9fd7170c04746f28713a0",
+    "216": "6715516b16ff7ec71b2c9de98d311f5c8e8f0c262acc3b5b7571967bad11fb46",
+    "219": "9b5e35aa7550e758c5dc3eb7f729cf9460c436e749c915591957412ad5923055",
+    "220": "be6c14f788bd8e6c73ce996262075d4a63191e1865e59ddce62f94406f31e5d7",
+    "221": "75d0494adba4574ecc7745b2c24d8e6b51319a28b63c09331f788b61c57d4a06",
+    "222": "8ff076bfb781ca04dd4224b77fa38bfd777eea941791d7d6b9908f1822346562",
+    "223": "eccc3a970945550e279f743fc701c3868a48c7fe7def86f65b71bbdffc6ffcf9",
+    "224": "0df21cd27e1ee6794cdc761e2884513db7ee235615123f1c108a9651b9704303",
+    "226": "0a982ebe8e5d4cd5e79d6b3250a9a51b53febf1ce61d94fab3a571aac78fefc9",
+    "227": "d0ed3e192847c302ffcc163aff94789b0ab5d6088390ec604daec4c7e8ab898c",
+    "228": "39874fc9972e1bbd80ace4fef177c5643b3fdb7bc59cddd538753f771ccb4640",
+    "229": "bccada96cb1b25e68fef3bee0d20e182ea692d4b2291e5ffb674bb08ec9da8d0",
+    "230": "28d86778615f6af47bb1bc4f40face756749768e5111f114cfa234a5060c25af"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-23T12:30:17.449Z",
+  "file_state": {
+    "file_sha256": "e45bfa5160c843fcdd377a010d73046d4b54ff964b72ac279595d7398d9aacb8",
+    "total_file_lines": 921,
+    "total_lines": 748
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "6aaa991734c5cd1d09eb69e2185c0d3272487129d4ca6919336f51e235859383",
+      "last_known_line": 207,
+      "removed_at": "2026-03-23T12:32:43.733Z"
+    },
+    {
+      "hash": "f9c92f8e9ab8674480d9172f0528402f119d8e67570ddfc774b2d2d5350c1921",
+      "last_known_line": 208,
+      "removed_at": "2026-03-23T12:32:43.733Z"
+    },
+    {
+      "hash": "ee50760b44921895c9cb1d0daf49e3b3cccc91dd2d645cc2034fd1e2125d6cd6",
+      "last_known_line": 209,
+      "removed_at": "2026-03-23T12:32:43.733Z"
+    },
+    {
+      "hash": "10acdb67b37a054cac41cc7c2e9b8972308a3a1d0d3ccf607012d76235e541bb",
+      "last_known_line": 215,
+      "removed_at": "2026-03-23T12:32:43.733Z"
+    },
+    {
+      "hash": "83226a02447102bb6877ba58c22a61cfead28b1326a296f073e3ed05d992d30b",
+      "last_known_line": 228,
+      "removed_at": "2026-03-23T12:32:43.733Z"
+    }
+  ],
+  "source_file": "c:\\workspaces\\airflow-integrations\\dags\\tsystems\\time_import_v2\\utils\\custom_methods.py",
+  "stats": {
+    "ai_line_count": 19,
+    "ai_line_pct": 2.54,
+    "ai_lines_removed_or_modified": 5
+  },
+  "updated_at": "2026-03-23T12:32:43.733Z",
+  "version": 1
+}

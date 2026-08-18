@@ -1,0 +1,11 @@
+region = "us-east-1"
+environment = "pre-production"
+schedule_interval = "*/5 * * * *"
+disable_user_schedule_interval = "0 5 * * *"
+time_zone = "US/Eastern"
+max_active_run_master = 1
+max_active_run_child = 3
+trigger_parallel_dagrun_count = 5
+execution_timeout = 14
+user_details_report = "RIT_User_Sync_Report"
+expected_report_columns = "User Email,Employee ID,Login Name,UserURI,User Status,Assignment Status"

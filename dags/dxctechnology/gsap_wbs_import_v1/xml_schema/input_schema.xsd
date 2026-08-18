@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" targetNamespace="http://csc.com/IF9001/FromGSAPToReplicon/WBSMaster" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MT_WBSMaster_Replicon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Records" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="WBS_Name" type="xs:string" />
+                    <xs:element name="WBS_Code" type="xs:string" />
+                    <xs:element name="Company_Code" type="xs:string" />
+                    <xs:element name="Project_Type" type="xs:string" />
+                    <xs:element name="Profit_Centre" type="xs:string" />
+                    <xs:element name="Task_Indicator" type="xs:string"/>
+                    <xs:element name="Project_Start" type="xs:string" />
+                    <xs:element name="Project_End" type="xs:string" />
+                    <xs:element name="Primary_Project_Manager_ID" type="xs:string" />
+                    <xs:element name="Primary_Project_Manager_Name" type="xs:string" />
+                    <xs:element name="WBS_Currency" type="xs:string" />
+                    <xs:element name="Parent_Project" type="xs:string" />
+                    <xs:element name="WBS_Parent_Project" type="xs:string" />
+                    <xs:element name="Salesforce_Opportunity_ID" type="xs:string"/>
+                    <xs:element name="Sold_to_Party" type="xs:string" />
+                    <xs:element name="Customer_Name" type="xs:string" />
+                    <xs:element name="Controlling_Area" type="xs:string" />
+                    <xs:element name="PSA_Flag" type="xs:string"/>
+                    <xs:element name="Reference_Mandatory" type="xs:string"/>
+                    <xs:element name="Comments_Mandatory" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

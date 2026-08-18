@@ -1,0 +1,11 @@
+region = 'eu-central-1'
+environment = "pre-production"
+time_zone = "Etc/UTC"
+master_max_active_run = 1
+execution_timeout = 14
+disable_schedule_interval = "0 0 * * *"
+can_process_payload_var = "wipro_user_import_can_process_payload"
+can_process_batch_task = "wipro_user_import_can_process_batch_task_nl"
+user_report_details="**User Import Disable user report"
+# pylint:disable="line-too-long"
+expected_report_columns='User Name,User First Name,User Last Name,User End Date,Local Hire Daydiff,Employee ID,Login Name,Country,Onsite Direct Recruit,Onsite End Date,Assingee Daydiff,UserUri,User Status'

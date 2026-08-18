@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_WBSANDServiceOrder_Replicon xmlns:ns0="http://csc.com/IF1383/FromC1ToReplicon/WBSAndServiceOrder">
+    <!-- SO Order -->
+    <Records>
+        <ProjectDefinition>R-010020334_Test1</ProjectDefinition>
+        <ProjectDescription>National Grid USA Service CO_Test1</ProjectDescription>
+        <ProjectIdentifier>Velocity Only</ProjectIdentifier>
+        <DXCProjectID>R-010020334.0142_Test1</DXCProjectID>
+        <WBSElementName>NG Projects Labor_Test1</WBSElementName>
+        <InternalSAPObjectNumber>PR00132914_Test1</InternalSAPObjectNumber>
+        <PrimaryWBSOwner1>656865</PrimaryWBSOwner1>
+        <PrimaryWBSOwnerName>Yeddula, Venkata Sreekant</PrimaryWBSOwnerName>
+        <CompanyCode>1571</CompanyCode>
+        <ProjectType>GB_Test1</ProjectType>
+        <AccountAssignmentIndicator>X</AccountAssignmentIndicator>
+        <Currency>USD</Currency>
+        <ContractLineStartDate>20111102</ContractLineStartDate>
+        <ContractLineEndDate>20230228</ContractLineEndDate>
+        <WBSSTATUS>REL/SETC/BUDG/RESA/RAOC</WBSSTATUS>
+        <ContractType>ZCGC</ContractType>
+        <WBSOwner2>1100058</WBSOwner2>
+        <WBSOwner2Name>Mahajan, Sanjay</WBSOwner2Name>
+        <Changedby>BATCHADM_Test1</Changedby>
+        <Changedon>20220103</Changedon>
+        <IWO></IWO>
+        <ICWBSNumber></ICWBSNumber>
+        <ServiceOrderNumber>4141600_Test1</ServiceOrderNumber>
+        <ServiceOrderType>SR02</ServiceOrderType>
+        <ServiceOrderText>AGBUS10252395 NG US TM COR0001208 McAfee EPO_Test1</ServiceOrderText>
+        <CreatedOnDate>20220114</CreatedOnDate>
+        <ChangedOnDate>20220225</ChangedOnDate>
+        <ServiceOrderCompanyCode>1571</ServiceOrderCompanyCode>
+        <Plant>1571</Plant>
+        <ServiceOrderSystemStatus>NMAT MANC CCOK SSAP SETC PRC PCNF REL_Test1</ServiceOrderSystemStatus>
+        <BasicStartDate>20211204</BasicStartDate>
+        <BasicFinishDate>20220325</BasicFinishDate>
+        <ServiceOrderInternalSAPobjectnumber>OR000004141600_Test1</ServiceOrderInternalSAPobjectnumber>
+        <SOPersonResponsible>11706075</SOPersonResponsible>
+        <SOPersonResponsibleName>TRIPATHI, ANKUR</SOPersonResponsibleName>
+        <SOPartnerWBSOwner2>656865</SOPartnerWBSOwner2>
+        <SOPartnerWBSOwner2Name>Yeddula, Venkata Sreekant</SOPartnerWBSOwner2Name>
+        <ResponsibleCostCenter>Test1</ResponsibleCostCenter>
+        <ServiceOffering>I-WHS_Test1</ServiceOffering>
+        <SalesforceOpportunityID>OPX-0020793899_Test1</SalesforceOpportunityID>
+        <SalesforceOpportunityName></SalesforceOpportunityName>
+        <HigherLevelCustomerID>0000000803_Test1</HigherLevelCustomerID>
+        <HigherLevelCustomerName>NATIONAL GRID_Test1</HigherLevelCustomerName>
+    </Records>
+</ns0:MT_WBSANDServiceOrder_Replicon>

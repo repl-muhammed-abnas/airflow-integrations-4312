@@ -1,0 +1,35 @@
+{
+  "ai_lines": {
+    "1397": "8172af96add1c4ec1188d99e18e930b4f00d1e5adb0ed05e2e69f8d66e6ade30",
+    "1398": "d7a9135b298b1a0a81d66db720f194f9903caa86a2ce56b17d7bcdbb8d2b95b1",
+    "1399": "f39248c664d94628529a98a1d05878f670a50349dfb4f67b580aec456b7e5189",
+    "1400": "002b0a98370bec4323006606f308cf908f69aacaaa4263423dbb6e2ce82769f1",
+    "1401": "d341ac4ae6f1b6e9a022d96d00dd2dddcd3127dac547a3a89954875fedecfe8c",
+    "8": "bce878c0448c34e1064d3cc0d340fe75955d4b117f65f3b8366b72e5c82df7a5"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-06-03T08:34:21.185Z",
+  "file_state": {
+    "file_sha256": "019bb261dd463e63f81c13d42fe0ad5c17edc35d19abcbd2298900b21587d7c3",
+    "total_file_lines": 2124,
+    "total_lines": 1884
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "C:\\Workspaces\\airflow-integrations\\dags\\crl\\user_import_united_kingdom\\utils\\request_payload.py",
+  "stats": {
+    "ai_line_count": 6,
+    "ai_line_pct": 0.32,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-06-03T08:34:30.233Z",
+  "version": 1
+}

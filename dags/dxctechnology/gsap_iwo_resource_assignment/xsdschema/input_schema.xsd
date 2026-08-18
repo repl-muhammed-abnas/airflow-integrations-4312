@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://csc.com/IF9004/FromGSAPToReplicon/IWOAssignment">
+ <xs:element name="MT_IWOAssignment_Replicon">
+  <xs:complexType>
+  <xs:sequence>
+  <xs:element name="Records" minOccurs="0" maxOccurs="unbounded">
+     <xs:complexType>
+      <xs:sequence>
+			<xs:element name="WBS_Name"/>
+			<xs:element name="Employee_ID"/>
+			<xs:element name="Task_level_1"/>
+      <xs:element name="User_Assignment_Start_date"/>
+      <xs:element name="User_Assignment_End_Date"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  </xs:sequence>
+ </xs:complexType>
+</xs:element>
+</xs:schema>

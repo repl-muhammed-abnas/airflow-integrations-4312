@@ -1,0 +1,13 @@
+<p>Hi Team,<br /> <br /> The automatic Project import job for {{ get_company_key() }} instance, hosted on 
+    {{ get_company_key() }}, created on {{ current_time() }} has been completed.
+</p>
+    <ul>
+    <li>File name:{{ result('get_log_file_name') }} </li>
+    <li>Total Number Records:{{ result('search_all_entries','length')}}</li>
+    <li>Total Number successful Records:{{ result('search_success_entries','length')}} </li>
+    <li>Total Number Failed Records:{{ result('count_failed_entries') }}</li>
+    </ul>
+<p> <br />
+    Regards,<br />
+    Deltek Inc
+</p>

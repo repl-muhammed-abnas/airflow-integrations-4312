@@ -1,0 +1,35 @@
+{
+  "ai_lines": {
+    "207": "52f46052b933b471bf2c6df82709c076e511c333441742dbc1f442dda563afab",
+    "218": "70eed0d821e66ae12cac7d35079bb7455f6c6a07940575a425ca477654aaa888",
+    "48": "650a98176960665e9378f350855982fd3dc3dbadbd072ba3f213fa5d8cac8e53",
+    "49": "18010eb07d039f74fa8c0890c58565cc0fc144bcc4ce083059563972e8eec26e",
+    "50": "aea58f7738c43b386f3a13cdd35d4b8bd752c6183951ee0dfb44746024882fd5",
+    "51": "cf55b4b7dc98e6c42eb39b22350206be5ba39e1022357ee5d2e198efa7789946"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 3,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-10T16:01:40.546Z",
+  "file_state": {
+    "file_sha256": "c01be69a9ae332a698d2c4c5374b20c9ee06b92b77d5b84b2c8f9c11e61ebad0",
+    "total_file_lines": 280,
+    "total_lines": 248
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\tsystems\\project_import_file_based_v3\\process_payload.py",
+  "stats": {
+    "ai_line_count": 6,
+    "ai_line_pct": 2.42,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-03-11T08:26:59.158Z",
+  "version": 1
+}

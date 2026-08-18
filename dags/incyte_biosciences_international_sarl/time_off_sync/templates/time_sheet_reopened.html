@@ -1,0 +1,25 @@
+<p>
+    Hi {{result("for_each_user").first_name}},<br/>
+    <p>You are receiving this email as your timesheet for the below period was re-opened. This happens when an Absence(s)</p><br/>
+    <p>recording was made in PeopleSoft HR, after the timesheet was submitted.</p><br/><br/>
+    <table style="border:1px solid black" border="1">
+    <thead>
+        <th>Sl No</th>
+        <th>Time sheet period</th>
+    </thead>
+    {% set ns = namespace(c = 1) %}
+    {%- for i in result("query_all_reopened_timesheet_periods")|load_all_records -%}
+    <tr>
+        <td>{{ns.c}}</td>
+        <td>{{i["time_sheet_period"]}}</td>
+    </tr>
+    {% set ns.c = ns.c +  1%}
+    {% endfor -%}
+    </table>
+</p>
+<p>Please login to Replicon, review the timesheet and adjust working hours as applicable and resubmit your timesheet again.</p><br/><br/>
+<p>We thank you for your kind cooperation.</p><br/><br/>
+<p>
+    <br /><br />Regards, <br />
+    Deltek Inc.
+</p>

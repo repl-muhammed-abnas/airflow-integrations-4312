@@ -1,0 +1,71 @@
+from json import loads
+from datetime import datetime
+from rail import result
+from dateutil.parser import parse as date_parser
+
+REPORT_DATE_FORMAT = "%d %B %Y"
+
+def disable_users_report_generation_params():
+    return {
+        "reportParameters": [
+            {
+                "reportUri": result("get_report_details")['uri'],
+                "filterValues": [],
+                "outputFormatUri": "urn:replicon:report-output-format-option:csv"
+            }
+        ]
+    }
+
+
+def convert_date_str_to_json_date(date_str, date_format=None):
+    _date = date_parser(date_str)
+    if date_format:
+        _date = datetime.strptime(date_str, date_format)
+    return {
+        "day": _date.day,
+        "month": _date.month,
+        "year": _date.year
+    }
+
+
+def get_process_disable_user_conf(item):
+    return {
+        "user_name": item["user_name"],
+        "end_date": item["user_end_date"],
+        "user_uri": item["user_uri"],
+        "login_name": item["login_name"],
+        "country": item["current_location"].split(
+            "/")[0].strip() if item["current_location"] else "No Location",
+        "company_code_type": item["current_company_code"].split(
+            "/")[0].strip() if item["current_company_code"] else "No Company Code",
+        "user_end_date_json": convert_date_str_to_json_date(item["user_end_date"], REPORT_DATE_FORMAT),
+        "starting_balance_set_to_uri": result("get_starting_balance_script"),
+        "prevent_balance_overdraw_uri": result("get_prevent_balance_overdraw_script"),
+        "disable_required": "Yes",
+        "employee_type": item["employee_type"],
+        "employee_type_check": item["employee_type"] not in ["SOW Contractor", "Contractor", "Agency Contractor"]
+    }
+
+
+def get_trigger_id(config, item):
+    return f"{config.disable_user_process_each_user_dag_id}_batch_{str(int(item['record_id'])%config.process_disable_user_dag_count)}"
+
+
+def get_user_timeoff_balance_summary_payload(dag_run):
+    return {
+        "account": {
+            "userUri": dag_run.conf['user_uri'],
+            "timeOffTypeUri": dag_run.conf['timeoff_type_uri']
+        },
+        "asOfDate": dag_run.conf['user_end_date_json']
+    }
+
+
+def get_update_policy_payload(dag_run):
+    return {
+        "timeOffAccount": {
+            "userUri": dag_run.conf['user_uri'],
+            "timeOffTypeUri": dag_run.conf['timeoff_type_uri']
+        },
+        "policySetScheduleEntries": loads(result("format_timeoff_polices_to_assign"))
+    }

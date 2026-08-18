@@ -1,0 +1,13 @@
+<p>Hi Team,<br /> <br /> The Replicon payroll export for Termination Balance file has been completed for
+    {{dag_run.conf.location}} location at {{ current_time_in_specified_tz() }}
+    , however the log upload to sftp has failed with error.</p>
+<ul>
+    <li>Location:{{dag_run.conf.location}}</li>
+    <li>Log File Name: Log_{{ dag_run.conf.file_name}}</li>
+    <li>SFTP Path: {{ params.log_filepath }}</li>
+    <li>ecid: {{ dag_run_ecid() }}</li>
+</ul>
+<p>Please find the attached log file to be uploaded to sftp. Upload the file to the given sftp and debug the
+    issue.<br />
+    <br /> Regards,<br /> Deltek Inc
+</p>

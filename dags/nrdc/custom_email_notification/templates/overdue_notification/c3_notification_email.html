@@ -1,0 +1,27 @@
+{% set lastname = dag_run.conf.username.split(',') %}
+<p>&nbsp;</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'>Hi {{ lastname[0] + ',' + lastname[1] }},</p>
+<p><br /> </p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'>Your {{ dag_run.conf.timesheetperiod }} NRDC lobbying timesheet is now OVERDUE. Please submit your timesheet immediately.</p>
+<p>&nbsp;</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'>Updated instructions on the how to enter time <a href="https://nrdc1.sharepoint.com/sites/CorporateCounsel-NRDCShared/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FCorporateCounsel%2DNRDCShared%2FShared%20Documents%2FPolitical%20Law%20Resources%2FReplicon%2FNRDC%20%5F%20NRDCAF%20Replicon%20Timesheet%20System%20Instructions%20June%202024%2Epdf&parent=%2Fsites%2FCorporateCounsel%2DNRDCShared%2FShared%20Documents%2FPolitical%20Law%20Resources%2FReplicon">are here</a>; there&rsquo;s also a <a href="https://nrdc1.sharepoint.com/:v:/s/CorporateCounsel-NRDCShared/ERv-ZOy29qpLnFanhmN4mxkBb_XjAADUaU3vGkFMnb6mjw?e=BXpRd2">video walkthrough</a>&nbsp;for the audio/visual learners among us. A few reminders on the new system:&nbsp;</p>
+<ul>
+<li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'>When entering the &ldquo;entity name,&rdquo; please include both the jurisdiction (abbreviated) and the entity name (spelled out) and the - e.g., &ldquo;CA Senate&rdquo; or &ldquo;U.S. House.&rdquo; This makes it much easier to complete our reports.</li>
+<li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'>For any given line, you do not need to record each increment on the day it actually happened; you can enter the full month&rsquo;s time in one day&rsquo;s box.</li>
+<li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'>Finance and Accounting has prepared a <a href="https://nrdc1.sharepoint.com/:x:/s/AccountingandFinanceHomepage/EZ4nQCGr7v1HpTArQEA8jHEBgUEVqW3WZE2AlLBFT9L6yQ?e=kZHaYA&amp;CID=97747F15-F177-4603-975B-FB1C0B068313&amp;wdLOR=cDDBE1A63-35DB-4059-9D5F-116DADA71F0D">&nbsp;*<strong>new</strong>* resource for staff lobbying allocations</a>. <em>Please direct any questions about this to Laura Olliverrie.</em></li>
+</ul>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'>&nbsp;In addition, the usual resources are below:&nbsp;</p>
+<ul>
+<li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'><strong>Curious about what does (or doesn&rsquo;t) need to be recorded on your&nbsp;timesheet?</strong>Review our <u><a href="https://nrdc1.sharepoint.com/:b:/s/CorporateCounsel-NRDCShared/ESOqQXWENnFIuutzeo55fNYB_v0ChOIuWcBq5QH3xXz2KQ">&nbsp;Political Law Manual</a></u>&nbsp;for guidance and examples.</li>
+<li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'><strong>Still have questions?</strong>Reply to this email with some details about your activity.</li>
+<li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'><strong>First time reporting? Don't need to report lobbying anymore?</strong>Using the IT HelpDesk portal, submit a ticket using one of the Replicon ticket templates to manage your account.&nbsp;&nbsp;</li>
+</ul>
+<p>&nbsp;</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'>If you have any substantive questions concerning your lobbying time, please contact <a href="mailto:ctommey@nrdc.org">Cam Tommey at ctommey@nrdc.org </a>. If you have any trouble accessing Replicon or entering time, please contact <a href="mailto:support@nrdc.org">support@nrdc.org</a>.&nbsp;</p>
+<p>&nbsp;</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'>**You must submit a timesheet to the system even if your total hours for the month is zero.**</p>
+<p>&nbsp;</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'><a href="{{ result('get_timsheet_button_url')}}" >#View_Timesheet</a></p>
+<p>&nbsp;</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:115%;font-size:16px;font-family:"Aptos",sans-serif;'>Thank you.</p>
+<p>&nbsp;</p>

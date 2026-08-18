@@ -1,0 +1,35 @@
+<xs:schema targetNamespace="http://csc.com/IF7001/FromFTPToReplicon/WBS" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MT_WBS_Replicon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Records" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProjectCode"/>
+              <xs:element name="ProjectName"/>
+              <xs:element name="Project_StartDate"/>
+              <xs:element name="Project_EndDate"/>
+              <xs:element name="Status"/>
+              <xs:element name="Project"/>
+              <xs:element name="ProjectManager_EmpID"/>
+              <xs:element name="ProjectCoManager_EmpID"/>
+              <xs:element name="ProjectGroup"/>
+              <xs:element name="ProjectUDF"/>
+              <xs:element name="Type"/>
+              <xs:element name="Billing_Indicator"/>
+              <xs:element name="PRCTR"/>
+              <xs:element name="SCOPE"/>
+              <xs:element name="CUST_USR00"/>
+              <xs:element name="FunctionalArea"/>
+              <xs:element name="Product" />
+              <xs:element name="Stage"/>
+              <xs:element name="SalesForceID"/>
+              <xs:element name="IWONo"/>
+              <xs:element name="Client"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+   </xs:element>
+</xs:schema>

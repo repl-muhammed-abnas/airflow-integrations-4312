@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "United Kingdom PUF mapper",
+    "inherits": "_base.json",
+    "last_updated": "2025-01-01",
+    "compliance": ["Peppol BIS 3.0", "UK VAT"]
+  },
+
+  "country": {
+    "code": "GB",
+    "name": "United Kingdom",
+    "currency": "GBP",
+    "language": "en"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 20.0,
+      "reduced": [5.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Standard rate",
+      "Z": "Zero rated",
+      "E": "Exempt"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9932",
+    "buyer_endpoint_scheme": "9932",
+    "vat_scheme_id": "9932",
+    "company_scheme_id": "0088",
+    "vat_prefix": "GB",
+    "scheme_mappings": {
+      "vat_number": "9932",
+      "gln": "0088",
+      "duns": "0060"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": []
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^GB[0-9]{9}$|^GB[0-9]{12}$|^GBGD[0-9]{3}$|^GBHA[0-9]{3}$",
+    "postal_code_pattern": "^[A-Z]{1,2}[0-9][0-9A-Z]?\\s?[0-9][A-Z]{2}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Net 30 days",
+    "contact_department": "Accounts Department"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false
+  }
+}

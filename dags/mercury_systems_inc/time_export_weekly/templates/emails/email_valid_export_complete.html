@@ -1,0 +1,13 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br />
+    <br />Hello, <br /><br />
+    The Replicon Weekly Time Export completed successfully
+    on {{ result('process_start_time') }}. Please find the export details for
+    reference.
+</p>
+<ul>
+    <li>File Name: {{ result("logging_details").time_export_filename }}.csv</li>
+    <li>File Path: {{params.upload_file_path}}</li>
+    <li>Number of Records: {{ result("time_data_export.query_time_data_export_collection", "length") }}</li>
+
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com<br /><br />Regards, <br />Deltek Integrations Centre of Excellence</p>

@@ -1,0 +1,9 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The time extract is completed successfully for location "{{ dag_run.conf['companycode'] }}" on 
+    {{ result('get_current_datetime') }}. Please find the extract details for reference. </p>
+    <ul>
+    <li>File Name: {{ result('get_file_name') }}.csv </li>
+    <li>Territory: {{ dag_run.conf['companycode'] }}</li>
+    <li>File Path : {{ params.csv_filepath }}</li>
+    <li>Number of Records: {{ result('query_from_timedata_list', 'length') }}</li>
+    </ul>
+    <p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

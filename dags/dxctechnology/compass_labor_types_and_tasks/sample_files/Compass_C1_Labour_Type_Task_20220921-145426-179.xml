@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_LaborTypeandTask_Replicon xmlns:ns0="http://csc.com/IF5006/FromCompassToReplicon/LaborTypeandTask">
+ 	<Records>
+		<WBS>IE1-IWR2 .01.01.01.20</WBS>
+		<LaborTypes>
+			<PersonnelNumber>21949261</PersonnelNumber>
+			<LaborType/>
+			<BillableDefault>X</BillableDefault>
+			<StartDate>20190101</StartDate>
+			<EndDate>20241230</EndDate>
+		</LaborTypes>
+      	<LaborTypes>
+			<PersonnelNumber>21949261</PersonnelNumber>
+			<LaborType>LaborType_Test_1234_nodate</LaborType>
+			<BillableDefault>X</BillableDefault>
+			<StartDate></StartDate>
+			<EndDate></EndDate>
+		</LaborTypes>
+		<LaborTypes>
+			<PersonnelNumber>21949261</PersonnelNumber>
+			<LaborType>LaborType_Test_1234_withdate</LaborType>
+			<BillableDefault>X</BillableDefault>
+			<StartDate>20190101</StartDate>
+			<EndDate>20241230</EndDate>
+		</LaborTypes>
+		<Tasks>
+			<Task>TESTER_10002123_123</Task>
+			<StartDate>20200111</StartDate>
+			<EndDate>20230112</EndDate>
+			<Description>TESTING APP</Description>
+		</Tasks>
+		<Tasks>
+			<Task>DEV_10002123_test</Task>
+			<StartDate>20210110</StartDate>
+			<EndDate>20230112</EndDate>
+			<Description>DEV APP</Description>
+		</Tasks>
+	</Records>
+</ns0:MT_LaborTypeandTask_Replicon>

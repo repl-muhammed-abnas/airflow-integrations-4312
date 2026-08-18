@@ -1,0 +1,15 @@
+Country ID,Employee ID,Source Time Off Booking ID,Entry date,End Date,Time Type (externalcode),Status,Duration,No of Days Booked,Booking Type,Time Off Booking Owner,Comments
+US,14243,932fc7f430b94d88864f73417d3dbe74,17/04/2026,17/04/2026,US_ANN,APPROVED,,0.5,,Deepak California Test,Legacy half day (isdigit=false)
+US,14243,143cb091c02d447dbcf11d15cd89fc2c,18/04/2026,18/04/2026,US_FMLA_STD,APPROVED,,1,,Deepak California Test,Legacy full day (isdigit=true)
+US,14243,a1b2c3d4e5f6789012345678901234ab,19/04/2026,19/04/2026,US_ANN,APPROVED,,0.5,Half Day,Deepak California Test,Half day with Booking_Type
+US,14243,b2c3d4e5f6789012345678901234abcd,20/04/2026,20/04/2026,US_ANN,APPROVED,,1,Full day,Deepak California Test,Full day with Booking_Type
+US,14243,c3d4e5f6789012345678901234abcdef,21/04/2026,23/04/2026,US_ANN,APPROVED,,3,Full day,Deepak California Test,Multi-day full day booking
+US,14243,d4e5f6789012345678901234abcdef01,24/04/2026,25/04/2026,US_ANN,APPROVED,,1.5,Half Day,Deepak California Test,Multi-day with half day end
+US,14243,e5f6789012345678901234abcdef0123,26/04/2026,26/04/2026,US_ANN,CANCELLED,,1,,Deepak California Test,Cancelled booking
+DE,121212121,f6789012345678901234abcdef012345,17/04/2026,17/04/2026,GE_BER,APPROVED,8,1,,Walkthrough20 Germany,Hourly 8 hours
+DE,121212121,g789012345678901234abcdef0123456,18/04/2026,18/04/2026,GE_BER,APPROVED,3,1,,Walkthrough20 Germany,Hourly 3 hours
+DE,121212121,h89012345678901234abcdef01234567,19/04/2026,19/04/2026,GE_BER,APPROVED,3.5,1,,Walkthrough20 Germany,Hourly 3.5 hours (decimal)
+DE,121212121,i9012345678901234abcdef012345678,20/04/2026,20/04/2026,GE_BER,APPROVED,2.25,1,,Walkthrough20 Germany,Hourly 2.25 hours (decimal)
+DE,121212121,j012345678901234abcdef0123456789,21/04/2026,21/04/2026,DE_Timeoff in Lieu,APPROVED,,1,Full day,Walkthrough20 Germany,Full day with Booking_Type
+DE,121212121,k12345678901234abcdef01234567890,22/04/2026,24/04/2026,DE_Timeoff in Lieu,APPROVED,,3,Full day,Walkthrough20 Germany,Multi-day vacation
+DE,121212121,l2345678901234abcdef012345678901,25/04/2026,25/04/2026,GE_BER,CANCELLED,4,1,,Walkthrough20 Germany,Cancelled hourly booking

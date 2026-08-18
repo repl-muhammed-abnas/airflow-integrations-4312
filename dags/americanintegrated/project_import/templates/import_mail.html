@@ -1,0 +1,12 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Project Import
+    job is completed {% if result("filter_error_logs")| load_all_records() | length > 0%}
+    with error
+    {%else%}
+    successfully
+    {%endif%} based on the file:
+    {{result("new_file_sensor")|file_name}}. The log file is placed in the path:
+    /clientproject/logs/logs_{{dag_run_ecid() | replace(":", "-")}}_{{result("new_file_sensor")|file_name}}</p>
+{% if result("filter_error_logs")| load_all_records() | length > 0%}
+{%endif%}
+<p>For any queries, please reach out to https://support.deltek.com <br /><br />Regards,<br />Integration
+    Alerts<br />Deltek Inc.</p>

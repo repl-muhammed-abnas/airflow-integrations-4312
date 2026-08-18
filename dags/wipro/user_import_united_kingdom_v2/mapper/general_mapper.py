@@ -1,0 +1,23 @@
+role_approval_path_mapper = {
+    "timesheet_approval_path": 'United Kingdom - Approval',
+    "timeoff_approval_path": "United Kingdom – Approval",
+    "timeoff_approval_path_group": "United Kingdom D1 and above Time Off Approval Path",
+    "l1_manager": "UK – L1 Manager",
+    "end_user_manager": "End User (Managers)",
+    "project_manager": "UK – Project Lead",
+    "hr_manager": "UK – Geo HR",
+    "default_user_permission": "UK End User",
+    "foreign_manager_emp_type": "Foreign Managers",
+    "ot_request_template": "",
+    "ot_request_approval_path": "",
+    "time_zone": "(UTC+0:00) GMT Standard Time",
+    "timesheet_system_approval_path": "System Approval",
+    "timesheet_period": "Weekly starting on Monday",
+    "schedule_type": "urn:replicon:schedule-type:shift",
+    "holiday_calander": "United Kingdom",
+    "timesheet_for_fulltime": "United Kingdom - TDG – FT",
+    "timesheet_for_parttime": "United Kingdom - TDG – PT",
+    "payrule_pt": "United Kingdom - Part Time",
+    "payrule_ft": "United Kingdom - Full Time",
+    "schedule_policy": "United Kingdom - Schedule Policy"
+}

@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Malaysia PUF mapper - SST compliant with MyInvois support",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["Peppol BIS 3.0", "Malaysian SST", "MyInvois"]
+  },
+
+  "country": {
+    "code": "MY",
+    "name": "Malaysia",
+    "currency": "MYR",
+    "language": "ms"
+  },
+
+  "tax_system": {
+    "type": "SST",
+    "scheme_id": "SST",
+    "rates": {
+      "sales_tax": [5.0, 10.0],
+      "service_tax": 8.0,
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Standard rate",
+      "Z": "Zero rated",
+      "E": "Exempt",
+      "O": "Out of scope"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "0199",
+    "buyer_endpoint_scheme": "0199",
+    "vat_scheme_id": "0199",
+    "company_scheme_id": "0199",
+    "scheme_mappings": {
+      "tin": "0199",
+      "brn": "0199",
+      "sst_number": "0199",
+      "gln": "0088"
+    },
+    "additional_seller_ids": {
+      "tin": "MY:TIN"
+    },
+    "additional_buyer_ids": {
+      "tin": "MY:TIN"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": ["MY:MyInvois"],
+    "myinvois": {
+      "enabled": true,
+      "e_invoice_mandatory": true,
+      "registration_data": {
+        "tin": {
+          "id_type": "MY:TIN",
+          "description": "Tax Identification Number"
+        },
+        "brn": {
+          "id_type": "MY:BRN",
+          "description": "Business Registration Number"
+        },
+        "sst_id": {
+          "id_type": "MY:SST",
+          "description": "Sales and Service Tax ID"
+        }
+      }
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^[A-Z0-9]{12}$",
+    "tin_pattern": "^C[0-9]{10}$|^IG[0-9]{10}$",
+    "brn_pattern": "^[0-9]{12}(-[A-Z])?$",
+    "postal_code_pattern": "^[0-9]{5}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_tin"]
+  },
+
+  "defaults": {
+    "payment_terms": "Pembayaran dalam masa 30 hari",
+    "contact_department": "Jabatan Kewangan"
+  },
+
+  "special_rules": {
+    "requires_issue_time": true,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "myinvois_mandatory": true,
+    "msic_code_required": true
+  },
+
+  "translations": {
+    "invoice": "Invois",
+    "credit_note": "Nota Kredit",
+    "total": "Jumlah",
+    "tax": "SST"
+  }
+}

@@ -1,0 +1,1172 @@
+﻿RECIPE: Live | Japan Momentive - user sync - Master _V3.0
+DESCRIPTION: When there is a trigger on a specified interval, do action
+================================================================================
+#0 TRIGGER clock.daily_task  (as=1f985d07)
+  param: {"companykey": "Momentive", "country": "Japan", "emails": "kazutoshi.kawahara@momentive.com,james.strang@momentive.com"}
+  input:
+    sunday = true
+    monday = true
+    tuesday = true
+    wednesday = true
+    thursday = true
+    friday = true
+    saturday = true
+    time_zone = Tokyo
+    hour = 8
+    minute = 0
+  #1 ACTION logger.log_message  (as=6afbd7d5)
+    desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+    comment: today's date
+    input:
+      message = =_dp('{"pill_type":"job_context","path":["job_created_at"]}').in_time_zone("Asia/Bangkok").strftime("%Y_%m_%d%H_%M_%S")
+  #2 TRY .
+    #3 ACTION rest.make_request_v2  (as=8a7be520)
+      desc: <span class="provider">GetAllReports</span> via <span class="provider">HTTP</span>
+      title: GetAllReports
+      input:
+        request_name = GetAllReports
+        request:
+          method = POST
+          content_type = application/json
+          url = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}#{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}/services/ReportService1.svc/GetAllReports
+        response:
+          output_type = json
+          ignore_http_errors = false
+    #4 ACTION logger.log_message  (as=e715920f)
+      desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+      comment: Report uri
+      input:
+        message = =_dp('{"pill_type":"output","provider":"rest","line":"8a7be520","path":["response","d"]}').where(displayText: "Supervisor_department_details").pluck('uri').smart_join("")
+    #5 ACTION rest.make_request_v2  (as=2f699e6e)
+      desc: <span class="provider">GetReportDetails2</span> via <span class="provider">HTTP</span>
+      title: GetReportDetails2
+      input:
+        request_name = GetReportDetails2
+        request:
+          method = POST
+          content_type = application/json
+          url = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}#{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}/services/ReportService1.svc/GetReportDetails2
+          body = {
+  "reportUri": "#{_dp('{"pill_type":"output","provider":"logger","line":"e715920f","path":["message"]}')}"
+}
+        response:
+          output_type = json
+          ignore_http_errors = false
+    #6 ACTION logger.log_message  (as=a9b9a13b)
+      desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+      comment: UserFilter uri
+      input:
+        message = =_dp('{"pill_type":"output","provider":"rest","line":"2f699e6e","path":["response","d","filterConfiguration","enabledFilters"]}').where(displayText: "UserFilter").pluck('uri').smart_join("").presence
+    #7 ACTION workday.get_report  (as=81808f22)
+      input:
+        remove_empty = false
+        report_url = https://services1.myworkday.com/ccx/service/customreport2/momentive/ISU_Replicon/Worker_Changes_Data-_Replicon
+        replace_with_additional = false
+        Country_WID = 8b705da2becf43cfaccc091da0988ab2
+    #8 CATCH .  (as=5a47b8eb)
+      input:
+        max_retry_count = 3
+        retry_interval = 10
+      #9 STOP .
+        input:
+          stop_with_error = true
+          stop_reason = #{_dp('{"pill_type":"output","provider":"catch","line":"5a47b8eb","path":["message"]}')}
+  #10 IF .
+    input:
+      type = compound
+      operand = and
+      conditions:
+        - [0]
+          operand = greater_than
+          lhs = #{_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"size"}]}')}
+          uuid = condition-ff42049b-b498-4305-8b8c-9e1c564fcc13
+          rhs = 0
+    #11 ACTION csv_parser.create_csv_lines  (as=4986cee6)
+      input:
+        create_header_line = true
+        column_separator = ,
+        force_quotes = false
+        column_labels = User_ID
+Worker_Reference_Employee_ID
+Email_Address
+First_Name
+Last_Name
+Worker_Type
+Effective_Date_of_Worker_Type
+Exemption_Status
+CF_LRV_Job_Exempt_Eff_Date
+Gender
+Hire_Date
+Termination_Date
+Active
+Function
+Function_Change_Effective_Date
+Business_Title
+CF_LRV_Business_Title_Change
+Field_HR
+Manager_ID
+Effective_Date_of_Manager_Change
+Work_Shift
+Work_Shift_Change_Effective_Date
+Location
+Location_Change_Eff_Date
+Country
+Date_of_Birth
+CF_LRV_Manager_Email
+CF_LRV_Manager_First_Name
+CF_LRV_Manager_Last_Name
+Legal_entity
+Worker_subType
+Cost_center
+Worker_cc_change_date
+Year_of_service
+Paygroup
+Japan_special_schedule_flag
+continous_service_date
+timeoff_service_date
+        lines:
+          ____source = #{_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report"]}')}
+          column_0 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"User_ID"]}') or nil
+          column_1 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Worker_Reference_Employee_ID"]}') or nil
+          column_2 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Email_Address"]}') or nil
+          column_3 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"First_Name"]}') or nil
+          column_4 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Last_Name"]}') or nil
+          column_5 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Worker_Type"]}') or nil
+          column_6 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Effective_Date_of_Worker_Type"]}') or nil
+          column_7 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Exemption_Status"]}') or nil
+          column_8 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Exemption_Eff_Date"]}') or nil
+          column_9 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Gender"]}') or nil
+          column_10 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Hire_Date"]}') or nil
+          column_11 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Termination_Date"]}') or nil
+          column_12 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Active"]}') or nil
+          column_13 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Function"]}') or nil
+          column_14 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Function_Change_Effective_Date"]}') or nil
+          column_15 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Business_Title"]}') or nil
+          column_16 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"CF_LRV_Business_Title_Change_Eff_Date"]}') or nil
+          column_17 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Field_HR"]}') or nil
+          column_18 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Manager_ID"]}') or nil
+          column_19 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Effective_Date_of_Manager_Change"]}') or nil
+          column_20 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Work_Shift"]}') or nil
+          column_21 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Work_Shift_Change_Effective_Date"]}') or nil
+          column_22 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Location"]}') or nil
+          column_23 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"CF_LRV_Location_Change_Effective_Date"]}') or nil
+          column_24 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Country"]}') or nil
+          column_25 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"CF_Date_of_Birth_MM_DD_YYYY"]}') or nil
+          column_26 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"CF_LRV_Manager_Email"]}') or nil
+          column_27 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"CF_LRV_Manager_First_Name"]}') or nil
+          column_28 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"CF_LRV_Manager_Last_Name"]}') or nil
+          column_29 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Legal_Entity"]}') or nil
+          column_30 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Worker_Sub_Type"]}') or nil
+          column_31 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Cost_Center"]}') or nil
+          column_32 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Workers_CC_Change_Eff_Date"]}') or nil
+          column_33 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"years_Of_Service"]}') or nil
+          column_34 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Pay_Group"]}') or nil
+          column_35 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Japan_Special_Schedule_Flag"]}') or nil
+          column_36 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"continuous_service_date"]}') or nil
+          column_37 = =_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"current_item"},"Time_Off_Service_Date"]}') or nil
+    #12 ACTION email.send_mail  (as=46bb91ed)
+      input:
+        email_type = text
+        to = Integrationsinternallogs@deltek.com
+        subject = Workday import - Japan
+        body = Workday schedule_Momntive_Japan
+        attachments:
+          file_binary_content = #{_dp('{"pill_type":"output","provider":"csv_parser","line":"4986cee6","path":["csv_lines"]}')}
+          file_name = workday_import.csv
+          ____source = workday_import.csv
+    #13 ACTION logger.log_message  (as=6b684bbc)
+      desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+      comment: Log the record count
+      input:
+        message = #{_dp('{"pill_type":"output","provider":"workday","line":"81808f22","path":["report",{"path_element_type":"size"}]}')}
+    #14 IF .
+      input:
+        type = compound
+        operand = and
+        conditions:
+          - [0]
+            operand = less_than
+            lhs = =_dp('{"pill_type":"output","provider":"logger","line":"6b684bbc","path":["message"]}').to_i
+            rhs = 1
+      #15 ACTION send_mail_2_0_connector_56_1585918002.Send_mail  (as=0e276e95)
+        input:
+          subject = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')} - #{_dp('{"pill_type":"job_context","path":["parameters","country"]}')} | User import completed- No change records found- #{_dp('{"pill_type":"job_context","path":["job_created_at"]}')}
+          Message = <p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The User Import has been skipped, since there were no records  found.</p><p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>
+          toaddress = #{_dp('{"pill_type":"job_context","path":["parameters","emails"]}')}
+          companykey = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+          sendmail = Yes
+      #16 STOP .
+        input:
+          stop_with_error = false
+    #17 IF .
+      input:
+        type = compound
+        operand = and
+        conditions:
+          - [0]
+            operand = greater_than
+            lhs = =_dp('{"pill_type":"output","provider":"logger","line":"6b684bbc","path":["message"]}').to_i
+            rhs = 0
+      #18 ACTION workato_smart_list.create_list_from_csv  (as=34610cc2)
+        desc: Create <span class="provider">workdayuserdata list</span> from CSV file
+        input:
+          list_source = #{_dp('{"pill_type":"output","provider":"csv_parser","line":"4986cee6","path":["csv_lines"]}')}
+          list_name = workdayuserdata
+          file_encoded_type = UTF-8
+          headers = true
+          col_sep = comma
+      #19 ACTION workato_smart_list.query_list  (as=0e1cf064)
+        comment: users here loginname is blank
+        input:
+          csv = false
+          headers = false
+          col_sep = comma
+          sql = SELECT * FROM #{_dp('{"pill_type":"output","provider":"workato_smart_list","line":"34610cc2","path":["list_name"]}')} WHERE #{_dp('{"pill_type":"output","provider":"workato_smart_list","line":"34610cc2","path":["columns","User_ID"]}')} IS NULL
+      #20 ACTION lookup_table.add_batch_of_entries  (as=f53555ed)
+        desc: Add <span class="provider">multiple entries</span> to <span class="provider">Momentive_user import logs</span> lookup table
+        input:
+          lookup_table_id = 38182
+          entries:
+            ____source = #{_dp('{"pill_type":"output","provider":"workato_smart_list","line":"0e1cf064","path":["rows"]}')}
+            parameters:
+              col1 = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+              col2 = #{_dp('{"pill_type":"output","provider":"workato_smart_list","line":"0e1cf064","path":["rows",{"path_element_type":"current_item"},"User_ID"]}')}
+              col4 = Validation
+              col5 = Skipped
+              col6 = User ID must be present|#{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+              col7 = #{_dp('{"pill_type":"job_context","path":["parameters","country"]}')}
+              col3 = #{_dp('{"pill_type":"output","provider":"workato_smart_list","line":"0e1cf064","path":["rows",{"path_element_type":"current_item"},"First_Name"]}')}#{_dp('{"pill_type":"output","provider":"workato_smart_list","line":"0e1cf064","path":["rows",{"path_element_type":"current_item"},"Last_Name"]}')}
+      #21 ACTION workato_smart_list.query_list  (as=31a61ff2)
+        comment: users here loginname is present
+        input:
+          csv = false
+          headers = false
+          col_sep = comma
+          sql = SELECT * FROM #{_dp('{"pill_type":"output","provider":"workato_smart_list","line":"34610cc2","path":["list_name"]}')} WHERE #{_dp('{"pill_type":"output","provider":"workato_smart_list","line":"34610cc2","path":["columns","User_ID"]}')}IS NOT NULL
+      #22 IF .
+        input:
+          type = compound
+          operand = and
+          conditions:
+            - [0]
+              operand = greater_than
+              lhs = #{_dp('{"pill_type":"output","provider":"workato_smart_list","line":"31a61ff2","path":["rows",{"path_element_type":"size"}]}')}
+              rhs = 0
+        #23 TRY .
+          #24 ACTION rest.make_request_v2  (as=de37ebf7)
+            desc: <span class="provider">GetEnabledDivisions</span> via <span class="provider">HTTP</span>
+            title: GetEnabledDivisions
+            input:
+              request_name = GetEnabledDivisions
+              request:
+                method = POST
+                content_type = application/json
+                url = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}#{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}/services/DivisionService1.svc/GetEnabledDivisions
+              response:
+                output_type = json
+                ignore_http_errors = false
+          #25 ACTION rest.make_request_v2  (as=4b610d87)
+            desc: <span class="provider">GetEnabledServiceCenters</span> via <span class="provider">HTTP</span>
+            title: GetEnabledServiceCenters
+            input:
+              request_name = GetEnabledServiceCenters
+              request:
+                method = POST
+                content_type = application/json
+                url = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}#{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}/services/ServiceCenterService1.svc/GetEnabledServiceCenters
+              response:
+                output_type = json
+                ignore_http_errors = false
+          #26 ACTION rest.make_request_v2  (as=22025906)
+            desc: <span class="provider">GetEnabledCostCenters</span> via <span class="provider">HTTP</span>
+            title: GetEnabledCostCenters
+            input:
+              request_name = GetEnabledCostCenters
+              request:
+                method = POST
+                content_type = application/json
+                url = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}#{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}/services/CostCenterService1.svc/GetEnabledCostCenters
+              response:
+                output_type = json
+                ignore_http_errors = false
+          #27 ACTION rest.make_request_v2  (as=d1199855)
+            desc: <span class="provider">Get all departments_enabled</span> via <span class="provider">HTTP</span>
+            title: Get all departments_enabled
+            input:
+              request_name = Get all departments_enabled
+              request:
+                method = POST
+                content_type = application/json
+                url = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}#{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}/services/DepartmentGroupListService1.svc/GetData
+                body = {
+  "page": "1",
+  "pagesize": "100000",
+  "columnUris": [
+    "urn:replicon:department-group-list-column:department-group",
+    "urn:replicon:department-group-list-column:effectively-enabled",
+    "urn:replicon:department-group-list-column:full-path"
+  ],
+  "sort": [],
+  "filterExpression": {
+    "leftExpression": {
+      "leftExpression": null,
+      "operatorUri": null,
+      "rightExpression": null,
+      "value": null,
+      "filterDefinitionUri": "urn:replicon:department-group-list-filter:effectively-enabled"
+    },
+    "operatorUri": "urn:replicon:filter-operator:equal",
+    "rightExpression": {
+      "leftExpression": null,
+      "operatorUri": null,
+      "rightExpression": null,
+      "value": {
+        "uri": null,
+        "uris": [],
+        "bool": "true",
+        "date": null,
+        "money": null,
+        "number": null,
+        "text": null,
+        "time": null,
+        "calendarDayDurationValue": null,
+        "workdayDurationValue": null,
+        "dateRange": null,
+        "dateTimeUtc": null
+      },
+      "filterDefinitionUri": null
+    },
+    "value": null,
+    "filterDefinitionUri": null
+  }
+}
+              response:
+                output_type = json
+                ignore_http_errors = false
+          #28 FOREACH .  (as=3c1db033)
+            #29 ACTION workato_list.accumulate_list_items  (as=13020322)
+              desc: Accumulate <span class="provider">items</span> to <span class="provider">departmentgroup</span> list
+              title: Accumulate items to departmentgroup list
+              input:
+                name = departmentgroup
+                list_item:
+                  data:
+                    departmentgroupname = =_dp('{"pill_type":"output","provider":"foreach","line":"3c1db033","path":["cells"]}')[0]["textValue"]
+                    departmentgroupuri = =_dp('{"pill_type":"output","provider":"foreach","line":"3c1db033","path":["cells"]}')[0]["uri"]
+                    fullpath = =_dp('{"pill_type":"output","provider":"foreach","line":"3c1db033","path":["cells"]}').pluck('cellCollection').last.pluck('textValue').smart_join(" / ")
+          #30 FOREACH .  (as=b06a838d)
+            #31 TRY .
+              #32 ACTION replicon.search_users  (as=c31a658e)
+                input:
+                  user_name = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}')}
+              #33 CATCH .  (as=182e763f)
+                input:
+                  max_retry_count = 3
+                  retry_interval = 10
+                #34 ACTION lookup_table.add_entry  (as=69389691)
+                  desc: Add <span class="provider">an entry</span> to <span class="provider">Momentive_user import logs</span> lookup table
+                  input:
+                    lookup_table_id = 38182
+                    parameters:
+                      col1 = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                      col2 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}')}
+                      col3 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}')} #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}')}
+                      col4 = Add/Update
+                      col5 = Error
+                      col6 = Error while searching the user #{_dp('{"pill_type":"output","provider":"catch","line":"182e763f","path":["message"]}')}|#{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                      col7 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}')}
+            #35 ACTION logger.log_message  (as=92af2853)
+              desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+              comment: If user exists? user uri
+              input:
+                message = =_dp('{"pill_type":"output","provider":"replicon","line":"c31a658e","path":["users",{"path_element_type":"current_item"},"login_name","uri"]}').present? ? _dp('{"pill_type":"output","provider":"replicon","line":"c31a658e","path":["users"]}').pluck('login_name').where(textValue: _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}')).pluck('uri').smart_join("") : nil
+            #36 ACTION logger.log_message  (as=efbd40ee)
+              desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+              comment: Department group uri
+              input:
+                message = =_dp('{"pill_type":"output","provider":"workato_list","line":"13020322","path":["list_items",{"path_element_type":"current_item"},"departmentgroupuri"]}').present? ? _dp('{"pill_type":"output","provider":"workato_list","line":"13020322","path":["list_items"]}').where(departmentgroupname: _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Location"]}')).pluck('departmentgroupuri').first : nil
+            #37 ACTION logger.log_message  (as=5b32aedc)
+              desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+              comment: Legal entity uri
+              input:
+                message = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["legalentity"]}').present? ? (_dp('{"pill_type":"output","provider":"rest","line":"de37ebf7","path":["response","d",{"path_element_type":"current_item"},"uri"]}').present? ? _dp('{"pill_type":"output","provider":"rest","line":"de37ebf7","path":["response","d"]}').where(displayText: _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["legalentity"]}')).pluck('uri').smart_join("").presence : nil) : nil
+            #38 ACTION logger.log_message  (as=e4fb005c)
+              desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+              comment: Paygroup uri
+              input:
+                message = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Paygroup"]}').present? ? (_dp('{"pill_type":"output","provider":"rest","line":"4b610d87","path":["response","d",{"path_element_type":"current_item"},"uri"]}').present? ? _dp('{"pill_type":"output","provider":"rest","line":"4b610d87","path":["response","d"]}').where(displayText: _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Paygroup"]}')).pluck('uri').smart_join("").presence : nil) : nil
+            #39 ACTION logger.log_message  (as=613a4df6)
+              desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+              comment: costcenter uri
+              input:
+                message = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["costcenter"]}').present? ? (_dp('{"pill_type":"output","provider":"rest","line":"22025906","path":["response","d",{"path_element_type":"current_item"},"uri"]}').present? ? _dp('{"pill_type":"output","provider":"rest","line":"22025906","path":["response","d"]}').where(displayText: _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["costcenter"]}')).pluck('uri').smart_join("").presence : nil) : nil
+            #40 IF .
+              input:
+                type = compound
+                operand = and
+                conditions:
+                  - [0]
+                    operand = present
+                    lhs = #{_dp('{"pill_type":"output","provider":"logger","line":"92af2853","path":["message"]}')}
+                    rhs = None
+              #41 ACTION logger.log_message  (as=e234df50)
+                desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+                comment: end date present?
+                input:
+                  message = =_dp('{"pill_type":"output","provider":"replicon","line":"c31a658e","path":["users",{"path_element_type":"current_item"},"end_date","dateValue"]}').present? ? _dp('{"pill_type":"output","provider":"replicon","line":"c31a658e","path":["users"]}').where("login_name.textValue==": _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}')).pluck('end_date').presence : nil
+              #42 ACTION logger.log_message  (as=3c69d58f)
+                desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+                comment: user status
+                input:
+                  message = =_dp('{"pill_type":"output","provider":"replicon","line":"c31a658e","path":["users",{"path_element_type":"current_item"},"login_name","uri"]}').present? ? _dp('{"pill_type":"output","provider":"replicon","line":"c31a658e","path":["users"]}').where("login_name.textValue==": _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}')).pluck('enabled').pluck('textValue').smart_join("") : nil
+              #43 IF .
+                input:
+                  type = compound
+                  operand = and
+                  conditions:
+                    - [0]
+                      operand = equals_to
+                      lhs = #{_dp('{"pill_type":"output","provider":"logger","line":"3c69d58f","path":["message"]}')}
+                      rhs = False
+                #44 IF .
+                  input:
+                    type = compound
+                    operand = and
+                    conditions:
+                      - [0]
+                        operand = present
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = None
+                      - [1]
+                        operand = equals_to
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = 0
+                  #45 IF .
+                    input:
+                      type = compound
+                      operand = and
+                      conditions:
+                        - [0]
+                          operand = present
+                          lhs = #{_dp('{"pill_type":"output","provider":"logger","line":"e234df50","path":["message"]}')}
+                          rhs = None
+                    #46 ACTION lookup_table.add_entry  (as=c505a74e)
+                      desc: Add <span class="provider">an entry</span> to <span class="provider">Momentive_user import logs</span> lookup table
+                      input:
+                        lookup_table_id = 38182
+                        parameters:
+                          col1 = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                          col2 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}')}
+                          col3 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}')} #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}')}
+                          col4 = Disable user|#{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                          col5 = Skipped
+                          col6 = User is already disabled in Replicon with end date
+                          col7 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}')}
+                    #47 ELSE .
+                      #48 IF .
+                        input:
+                          type = compound
+                          operand = and
+                          conditions:
+                            - [0]
+                              operand = present
+                              lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Termination_Date"]}')}
+                              rhs = None
+                        #49 IF .
+                          input:
+                            type = compound
+                            operand = or
+                            conditions:
+                              - [0]
+                                operand = equals_to
+                                lhs = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Termination_Date"]}').to_date.to_time
+                                rhs = =today.to_time
+                              - [1]
+                                operand = greater_than
+                                lhs = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Termination_Date"]}').to_date.to_time
+                                rhs = =today.to_time
+                          #50 ACTION logger.log_message  (as=4f0ee4ba)
+                            desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+                            comment: start date for the user
+                            input:
+                              message = =_dp('{"pill_type":"output","provider":"replicon","line":"c31a658e","path":["users",{"path_element_type":"current_item"},"login_name","uri"]}').present? ? _dp('{"pill_type":"output","provider":"replicon","line":"c31a658e","path":["users"]}').where("login_name.textValue==": _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}')).pluck('start_date').pluck('dateValue').smart_join("") : nil
+                          #51 ACTION workato_custom_code.invoke_custom_ruby_code  (as=3c8c1c42)
+                            desc: Execute <span class="provider">ruby</span> code: <span class="provider">startdate_splitter</span>
+                            input:
+                              code = {day: input["date"]&.strftime('%d'),
+ month: input["date"]&.strftime('%m'),
+ year: input["date"]&.strftime('%Y')
+}
+                              name = startdate_splitter
+                              code_input:
+                                data:
+                                  date = =_dp('{"pill_type":"output","provider":"logger","line":"4f0ee4ba","path":["message"]}').to_date
+                              code_output_schema_json = [{"name":"day","type":"integer","optional":false,"control_type":"integer"},{"name":"month","type":"integer","optional":false,"control_type":"integer"},{"name":"year","type":"integer","optional":false,"control_type":"integer"}]
+                          #52 ACTION workato_custom_code.invoke_custom_ruby_code  (as=35e532ef)
+                            desc: Execute <span class="provider">ruby</span> code: <span class="provider">enddate_splitter</span>
+                            input:
+                              code = {day: input["date"]&.strftime('%d'),
+ month: input["date"]&.strftime('%m'),
+ year: input["date"]&.strftime('%Y')
+}
+                              name = enddate_splitter
+                              code_input:
+                                data:
+                                  date = =_dp('{"pill_type":"output","provider":"logger","line":"e234df50","path":["message"]}').to_date
+                              code_output_schema_json = [{"name":"day","type":"integer","optional":false,"control_type":"integer"},{"name":"month","type":"integer","optional":false,"control_type":"integer"},{"name":"year","type":"integer","optional":false,"control_type":"integer"}]
+                          #53 IF .
+                            input:
+                              type = compound
+                              operand = and
+                              conditions:
+                                - [0]
+                                  operand = less_than
+                                  lhs = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Termination_Date"]}').to_date.to_time
+                                  rhs = =_dp('{"pill_type":"output","provider":"logger","line":"4f0ee4ba","path":["message"]}').to_date.to_time
+                            #54 ACTION lookup_table.add_entry  (as=05a267d6)
+                              desc: Add <span class="provider">an entry</span> to <span class="provider">Momentive_user import logs</span> lookup table
+                              input:
+                                lookup_table_id = 38182
+                                parameters:
+                                  col1 = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                                  col2 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}')}
+                                  col3 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}')} #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}')}
+                                  col4 = Disable user|#{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                                  col5 = Skipped
+                                  col6 = User was already disabled in Replicon, end date was updated since end date received is in the past
+                                  col7 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}')}
+                            #55 ELSE .
+                              #56 ACTION workato_service.call_service_async  (as=b90eb1ec)
+                                desc: Call recipe <span class="provider">Japan_Momentive_Child_Workflow to disable user v3.0</span> (do not wait for response)
+                                input:
+                                  flow_id = 43516887
+                                  request:
+                                    parentjobid = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                                    rooturl = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}#{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+                                    User_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}').present? ?  _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}').strip : nil
+                                    Worker_Reference_Employee_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Reference_Employee_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Reference_Employee_ID"]}').strip : nil
+                                    Email_Address = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Email_Address"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Email_Address"]}').strip : nil
+                                    First_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}').strip : nil
+                                    Last_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}').strip : nil
+                                    Worker_Type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Type"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Type"]}').strip : nil
+                                    Effective_Date_of_Worker_Type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Worker_Type"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Worker_Type"]}') : nil
+                                    Exemption_Status = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Status"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Status"]}').strip : nil
+                                    Exemption_Eff_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Eff_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Eff_Date"]}') : nil
+                                    Gender = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Gender"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Gender"]}').strip : nil
+                                    Hire_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Hire_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Hire_Date"]}') : nil
+                                    Termination_Date = =_dp('{"pill_type":"output","provider":"logger","line":"e234df50","path":["message"]}').present? ? _dp('{"pill_type":"output","provider":"logger","line":"e234df50","path":["message"]}') : nil
+                                    Active = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}').strip : nil
+                                    Function = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function"]}').strip : nil
+                                    Function_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function_Change_Effective_Date"]}') : nil
+                                    Business_Title = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Business_Title"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Business_Title"]}').strip : nil
+                                    CF_LRV_Business_Title_Change_Eff_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Business_Title_Change_Eff_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Business_Title_Change_Eff_Date"]}') : nil
+                                    Field_HR = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Field_HR"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Field_HR"]}').strip : nil
+                                    Manager_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Manager_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Manager_ID"]}').strip : nil
+                                    Effective_Date_of_Manager_Change = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Manager_Change"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Manager_Change"]}') : nil
+                                    Work_Shift = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift"]}').strip : nil
+                                    Work_Shift_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift_Change_Effective_Date"]}') : nil
+                                    Location = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Location"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Location"]}').strip : nil
+                                    CF_LRV_Location_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Location_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Location_Change_Effective_Date"]}') : nil
+                                    Country = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}').strip : nil
+                                    CF_Date_of_Birth_MM_DD_YYYY = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_Date_of_Birth_MM_DD_YYYY"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_Date_of_Birth_MM_DD_YYYY"]}') : nil
+                                    CF_LRV_Manager_Email = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Email"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Email"]}').strip : nil
+                                    CF_LRV_Manager_First_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_First_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_First_Name"]}').strip : nil
+                                    CF_LRV_Manager_Last_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Last_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Last_Name"]}').strip : nil
+                                    departmentgroupuri = #{_dp('{"pill_type":"output","provider":"logger","line":"efbd40ee","path":["message"]}')}
+                                    useruri = #{_dp('{"pill_type":"output","provider":"logger","line":"92af2853","path":["message"]}')}
+                          #57 ELSE .
+                            #58 ACTION lookup_table.add_entry  (as=b8aadfa4)
+                              desc: Add <span class="provider">an entry</span> to <span class="provider">Momentive_user import logs</span> lookup table
+                              input:
+                                lookup_table_id = 38182
+                                parameters:
+                                  col1 = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                                  col2 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}')}
+                                  col3 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}')} #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}')}
+                                  col4 = Disable user|#{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                                  col5 = Skipped
+                                  col6 = User not disabled since end date received is in the past
+                                  col7 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}')}
+                #59 IF .
+                  comment: rehire
+                  input:
+                    type = compound
+                    operand = and
+                    conditions:
+                      - [0]
+                        operand = present
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = None
+                      - [1]
+                        operand = equals_to
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = 1
+                  #60 ACTION logger.log_message  (as=66fda2eb)
+                    desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+                    comment: User emp type
+                    input:
+                      message = =_dp('{"pill_type":"output","provider":"replicon","line":"c31a658e","path":["users",{"path_element_type":"current_item"},"login_name","uri"]}').present? ? _dp('{"pill_type":"output","provider":"replicon","line":"c31a658e","path":["users"]}').where("login_name.textValue==": _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}')).pluck('employee_type').pluck('textValue').smart_join("") : nil
+                  #61 ACTION workato_service.call_service_async  (as=e0d2b61a)
+                    desc: Call recipe <span class="provider">Japan_Momentive_User Sync Update v3.0</span> (do not wait for response)
+                    input:
+                      flow_id = 43516894
+                      request:
+                        parentjobid = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                        rooturl = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}#{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+                        User_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}').strip : nil
+                        Worker_Reference_Employee_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Reference_Employee_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Reference_Employee_ID"]}').strip : nil
+                        Email_Address = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Email_Address"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Email_Address"]}').strip : nil
+                        First_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}').strip : nil
+                        Last_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}').strip : nil
+                        Worker_Type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Type"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Type"]}').strip : nil
+                        Effective_Date_of_Worker_Type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Worker_Type"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Worker_Type"]}') : nil
+                        Exemption_Status = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Status"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Status"]}').strip : nil
+                        Exemption_Eff_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Eff_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Eff_Date"]}') : nil
+                        Gender = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Gender"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Gender"]}').strip : nil
+                        Hire_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Hire_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Hire_Date"]}') : nil
+                        Termination_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Termination_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Termination_Date"]}') : nil
+                        Active = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}').strip : nil
+                        Function = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function"]}').strip : nil
+                        Function_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function_Change_Effective_Date"]}') : nil
+                        Business_Title = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Business_Title"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Business_Title"]}').strip : nil
+                        CF_LRV_Business_Title_Change_Eff_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Business_Title_Change_Eff_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Business_Title_Change_Eff_Date"]}') : nil
+                        Field_HR = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Field_HR"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Field_HR"]}').strip : nil
+                        Manager_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Manager_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Manager_ID"]}').strip : nil
+                        Effective_Date_of_Manager_Change = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Manager_Change"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Manager_Change"]}') : nil
+                        Work_Shift = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift"]}').strip : nil
+                        Work_Shift_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift_Change_Effective_Date"]}') : nil
+                        Location = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Location"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Location"]}').strip : nil
+                        CF_LRV_Location_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Location_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Location_Change_Effective_Date"]}') : nil
+                        Country = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}').strip : nil
+                        CF_Date_of_Birth_MM_DD_YYYY = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_Date_of_Birth_MM_DD_YYYY"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_Date_of_Birth_MM_DD_YYYY"]}') : nil
+                        CF_LRV_Manager_Email = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Email"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Email"]}').strip : nil
+                        CF_LRV_Manager_First_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_First_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_First_Name"]}').strip : nil
+                        CF_LRV_Manager_Last_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Last_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Last_Name"]}').strip : nil
+                        departmentgroupuri = #{_dp('{"pill_type":"output","provider":"logger","line":"efbd40ee","path":["message"]}')}
+                        useruri = #{_dp('{"pill_type":"output","provider":"logger","line":"92af2853","path":["message"]}')}
+                        rehire_update = rehire
+                        legal_entity = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["legalentity"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["legalentity"]}').strip : nil
+                        worker_sub_type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["workersubtype"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["workersubtype"]}').strip : nil
+                        cost_center = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["costcenter"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["costcenter"]}').strip : nil
+                        eff_cost_center = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["worker_cc_changedate"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["worker_cc_changedate"]}').strip : nil
+                        Year_of_service = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["year_of_service"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["year_of_service"]}').strip : nil
+                        paygroup = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Paygroup"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Paygroup"]}').strip : nil
+                        continious_service_date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["countinous_service_date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["countinous_service_date"]}').strip : nil
+                        time_off_service_date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["time_off_service_date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["time_off_service_date"]}').strip : nil
+                        legalentityuri = #{_dp('{"pill_type":"output","provider":"logger","line":"5b32aedc","path":["message"]}')}
+                        paygroupuri = #{_dp('{"pill_type":"output","provider":"logger","line":"e4fb005c","path":["message"]}')}
+                        japan_flag = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Japan_special_schedule_flag"]}')}
+              #62 IF .
+                input:
+                  type = compound
+                  operand = and
+                  conditions:
+                    - [0]
+                      operand = equals_to
+                      lhs = #{_dp('{"pill_type":"output","provider":"logger","line":"3c69d58f","path":["message"]}')}
+                      rhs = True
+                #63 IF .
+                  input:
+                    type = compound
+                    operand = and
+                    conditions:
+                      - [0]
+                        operand = present
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = None
+                      - [1]
+                        operand = equals_to
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = 0
+                  #64 ACTION workato_service.call_service_async  (as=94838ab9)
+                    desc: Call recipe <span class="provider">Japan_Momentive_Child_Workflow to disable user v3.0</span> (do not wait for response)
+                    input:
+                      flow_id = 43516887
+                      request:
+                        parentjobid = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                        rooturl = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}#{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+                        User_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}').strip : nil
+                        Worker_Reference_Employee_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Reference_Employee_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Reference_Employee_ID"]}').strip : nil
+                        Email_Address = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Email_Address"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Email_Address"]}').strip : nil
+                        First_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}').strip : nil
+                        Last_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}').strip : nil
+                        Worker_Type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Type"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Type"]}').strip : nil
+                        Effective_Date_of_Worker_Type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Worker_Type"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Worker_Type"]}') : nil
+                        Exemption_Status = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Status"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Status"]}').strip : nil
+                        Exemption_Eff_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Eff_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Eff_Date"]}') : nil
+                        Gender = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Gender"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Gender"]}').strip : nil
+                        Hire_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Hire_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Hire_Date"]}') : nil
+                        Termination_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Termination_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Termination_Date"]}') : nil
+                        Active = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}').strip : nil
+                        Function = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function"]}').strip : nil
+                        Function_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function_Change_Effective_Date"]}') : nil
+                        Business_Title = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Business_Title"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Business_Title"]}').strip : nil
+                        CF_LRV_Business_Title_Change_Eff_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Business_Title_Change_Eff_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Business_Title_Change_Eff_Date"]}') : nil
+                        Field_HR = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Field_HR"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Field_HR"]}').strip : nil
+                        Manager_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Manager_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Manager_ID"]}').strip : nil
+                        Effective_Date_of_Manager_Change = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Manager_Change"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Manager_Change"]}') : nil
+                        Work_Shift = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift"]}').strip : nil
+                        Work_Shift_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift_Change_Effective_Date"]}') : nil
+                        Location = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Location"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Location"]}').strip : nil
+                        CF_LRV_Location_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Location_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Location_Change_Effective_Date"]}') : nil
+                        Country = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}').strip : nil
+                        CF_Date_of_Birth_MM_DD_YYYY = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_Date_of_Birth_MM_DD_YYYY"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_Date_of_Birth_MM_DD_YYYY"]}') : nil
+                        CF_LRV_Manager_Email = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Email"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Email"]}').strip : nil
+                        CF_LRV_Manager_First_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_First_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_First_Name"]}').strip : nil
+                        CF_LRV_Manager_Last_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Last_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Last_Name"]}').strip : nil
+                        departmentgroupuri = #{_dp('{"pill_type":"output","provider":"logger","line":"efbd40ee","path":["message"]}')}
+                        useruri = #{_dp('{"pill_type":"output","provider":"logger","line":"92af2853","path":["message"]}')}
+                #65 IF .
+                  input:
+                    type = compound
+                    operand = and
+                    conditions:
+                      - [0]
+                        operand = present
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = None
+                      - [1]
+                        operand = equals_to
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = 1
+                  #66 ACTION logger.log_message  (as=89c174ef)
+                    desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+                    comment: User emp type
+                    input:
+                      message = =_dp('{"pill_type":"output","provider":"replicon","line":"c31a658e","path":["users",{"path_element_type":"current_item"},"login_name","uri"]}').present? ? _dp('{"pill_type":"output","provider":"replicon","line":"c31a658e","path":["users"]}').where("login_name.textValue==": _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}').downcase).pluck('employee_type').pluck('textValue').smart_join("") : nil
+                  #67 ACTION workato_service.call_service_async  (as=f617407e)
+                    desc: Call recipe <span class="provider">Japan_Momentive_User Sync Update v3.0</span> (do not wait for response)
+                    input:
+                      flow_id = 43516894
+                      request:
+                        parentjobid = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                        rooturl = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}#{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+                        User_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}').strip : nil
+                        Worker_Reference_Employee_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Reference_Employee_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Reference_Employee_ID"]}').strip : nil
+                        Email_Address = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Email_Address"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Email_Address"]}').strip : nil
+                        First_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}').strip : nil
+                        Last_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}').strip : nil
+                        Worker_Type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Type"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Type"]}').strip : nil
+                        Effective_Date_of_Worker_Type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Worker_Type"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Worker_Type"]}') : nil
+                        Exemption_Status = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Status"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Status"]}').strip : nil
+                        Exemption_Eff_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Eff_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Eff_Date"]}') : nil
+                        Gender = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Gender"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Gender"]}').strip : nil
+                        Hire_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Hire_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Hire_Date"]}') : nil
+                        Termination_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Termination_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Termination_Date"]}') : nil
+                        Active = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}').strip : nil
+                        Function = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function"]}').strip : nil
+                        Function_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function_Change_Effective_Date"]}') : nil
+                        Business_Title = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Business_Title"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Business_Title"]}').strip : nil
+                        CF_LRV_Business_Title_Change_Eff_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Business_Title_Change_Eff_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Business_Title_Change_Eff_Date"]}') : nil
+                        Field_HR = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Field_HR"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Field_HR"]}').strip : nil
+                        Manager_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Manager_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Manager_ID"]}').strip : nil
+                        Effective_Date_of_Manager_Change = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Manager_Change"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Manager_Change"]}') : nil
+                        Work_Shift = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift"]}').strip : nil
+                        Work_Shift_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift_Change_Effective_Date"]}') : nil
+                        Location = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Location"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Location"]}').strip : nil
+                        CF_LRV_Location_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Location_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Location_Change_Effective_Date"]}') : nil
+                        Country = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}').strip : nil
+                        CF_Date_of_Birth_MM_DD_YYYY = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_Date_of_Birth_MM_DD_YYYY"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_Date_of_Birth_MM_DD_YYYY"]}') : nil
+                        CF_LRV_Manager_Email = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Email"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Email"]}').strip : nil
+                        CF_LRV_Manager_First_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_First_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_First_Name"]}').strip : nil
+                        CF_LRV_Manager_Last_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Last_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Last_Name"]}').strip : nil
+                        departmentgroupuri = #{_dp('{"pill_type":"output","provider":"logger","line":"efbd40ee","path":["message"]}')}
+                        useruri = #{_dp('{"pill_type":"output","provider":"logger","line":"92af2853","path":["message"]}')}
+                        rehire_update = update
+                        legal_entity = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["legalentity"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["legalentity"]}').strip : nil
+                        worker_sub_type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["workersubtype"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["workersubtype"]}').strip : nil
+                        cost_center = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["costcenter"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["costcenter"]}').strip : nil
+                        eff_cost_center = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["worker_cc_changedate"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["worker_cc_changedate"]}').strip : nil
+                        Year_of_service = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["year_of_service"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["year_of_service"]}').strip : nil
+                        paygroup = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Paygroup"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Paygroup"]}').strip : nil
+                        continious_service_date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["countinous_service_date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["countinous_service_date"]}').strip : nil
+                        time_off_service_date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["time_off_service_date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["time_off_service_date"]}').strip : nil
+                        legalentityuri = #{_dp('{"pill_type":"output","provider":"logger","line":"5b32aedc","path":["message"]}')}
+                        paygroupuri = #{_dp('{"pill_type":"output","provider":"logger","line":"e4fb005c","path":["message"]}')}
+                        japan_flag = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Japan_special_schedule_flag"]}')}
+                #68 IF .
+                  input:
+                    type = compound
+                    operand = or
+                    conditions:
+                      - [0]
+                        operand = blank
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = None
+                      - [1]
+                        operand = equals_to
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = -
+                  #69 ACTION lookup_table.add_entry  (as=ae0ad31e)
+                    desc: Add <span class="provider">an entry</span> to <span class="provider">Momentive_user import logs</span> lookup table
+                    input:
+                      lookup_table_id = 38182
+                      parameters:
+                        col1 = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                        col2 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}')}
+                        col3 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}')} #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}')}
+                        col4 = Disable user|#{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                        col5 = Skipped
+                        col6 = User status (Active) received blank value or "-"
+                        col7 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}')}
+              #70 ELSE .
+                #71 IF .
+                  input:
+                    type = compound
+                    operand = and
+                    conditions:
+                      - [0]
+                        operand = equals_to
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = 1
+                  #72 ACTION workato_service.call_service_async  (as=f57de788)
+                    desc: Call recipe <span class="provider">Japan_Momentive_User Sync Add V3.0</span> (do not wait for response)
+                    input:
+                      flow_id = 43516897
+                      request:
+                        parentjobid = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                        rooturl = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}#{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+                        User_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}').strip : nil
+                        Worker_Reference_Employee_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Reference_Employee_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Reference_Employee_ID"]}').strip : nil
+                        Email_Address = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Email_Address"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Email_Address"]}').strip : nil
+                        First_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}').strip : nil
+                        Last_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}').strip : nil
+                        Worker_Type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Type"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Worker_Type"]}').strip : nil
+                        Effective_Date_of_Worker_Type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Worker_Type"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Worker_Type"]}') : nil
+                        Exemption_Status = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Status"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Status"]}').strip : nil
+                        Exemption_Eff_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Eff_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Exemption_Eff_Date"]}') : nil
+                        Gender = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Gender"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Gender"]}').strip : nil
+                        Hire_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Hire_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Hire_Date"]}') : nil
+                        Termination_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Termination_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Termination_Date"]}') : nil
+                        Active = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}').strip : nil
+                        Function = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function"]}').strip : nil
+                        Function_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Function_Change_Effective_Date"]}') : nil
+                        Business_Title = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Business_Title"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Business_Title"]}').strip : nil
+                        CF_LRV_Business_Title_Change_Eff_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Business_Title_Change_Eff_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Business_Title_Change_Eff_Date"]}') : nil
+                        Field_HR = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Field_HR"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Field_HR"]}').strip : nil
+                        Manager_ID = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Manager_ID"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Manager_ID"]}').strip : nil
+                        Effective_Date_of_Manager_Change = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Manager_Change"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Effective_Date_of_Manager_Change"]}') : nil
+                        Work_Shift = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift"]}').strip : nil
+                        Work_Shift_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Work_Shift_Change_Effective_Date"]}') : nil
+                        Location = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Location"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Location"]}').strip : nil
+                        CF_LRV_Location_Change_Effective_Date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Location_Change_Effective_Date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Location_Change_Effective_Date"]}') : nil
+                        Country = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}').strip : nil
+                        CF_Date_of_Birth_MM_DD_YYYY = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_Date_of_Birth_MM_DD_YYYY"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_Date_of_Birth_MM_DD_YYYY"]}') : nil
+                        CF_LRV_Manager_Email = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Email"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Email"]}').strip : nil
+                        CF_LRV_Manager_First_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_First_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_First_Name"]}').strip : nil
+                        CF_LRV_Manager_Last_Name = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Last_Name"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["CF_LRV_Manager_Last_Name"]}').strip : nil
+                        departmentgroupuri = #{_dp('{"pill_type":"output","provider":"logger","line":"efbd40ee","path":["message"]}')}
+                        legalentity = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["legalentity"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["legalentity"]}').strip : nil
+                        worker_sub_type = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["workersubtype"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["workersubtype"]}').strip : nil
+                        costcenter = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["costcenter"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["costcenter"]}').strip : nil
+                        eff_date_costcenter = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["worker_cc_changedate"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["worker_cc_changedate"]}').strip : nil
+                        paygroup = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Paygroup"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Paygroup"]}').strip : nil
+                        Years_of_service = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["year_of_service"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["year_of_service"]}').strip : nil
+                        continous_service_date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["countinous_service_date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["countinous_service_date"]}').strip : nil
+                        time_off_service_date = =_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["time_off_service_date"]}').present? ? _dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["time_off_service_date"]}').strip : nil
+                        legalentity_uri = #{_dp('{"pill_type":"output","provider":"logger","line":"5b32aedc","path":["message"]}')}
+                        paygroupuri = #{_dp('{"pill_type":"output","provider":"logger","line":"e4fb005c","path":["message"]}')}
+                        costcenteruri = #{_dp('{"pill_type":"output","provider":"logger","line":"613a4df6","path":["message"]}')}
+                        japan_flag = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Japan_special_schedule_flag"]}')}
+                #73 IF .
+                  input:
+                    type = compound
+                    operand = or
+                    conditions:
+                      - [0]
+                        operand = equals_to
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = 0
+                      - [1]
+                        operand = equals_to
+                        lhs = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Active"]}')}
+                        rhs = -
+                  #74 ACTION lookup_table.add_entry  (as=1a5ade1d)
+                    desc: Add <span class="provider">an entry</span> to <span class="provider">Momentive_user import logs</span> lookup table
+                    input:
+                      lookup_table_id = 38182
+                      parameters:
+                        col1 = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                        col2 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["User_ID"]}')}
+                        col3 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["First_Name"]}')} #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Last_Name"]}')}
+                        col4 = Add |#{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                        col5 = Skipped
+                        col6 = User is  disabled in workday hence not added
+                        col7 = #{_dp('{"pill_type":"output","provider":"foreach","line":"b06a838d","path":["Country"]}')}
+          #75 ACTION clock.pause  (as=8727d875)
+            input:
+              until_time = =(_dp('{"pill_type":"output","provider":"workato_smart_list","line":"31a61ff2","path":["rows",{"path_element_type":"size"}]}').to_i).to_i.seconds.from_now
+              minutes = 5
+          #76 ACTION lookup_table.search_entries  (as=195ba156)
+            desc: Search <span class="provider">entries</span> in <span class="provider">Momentive_supervisor assignment</span> lookup table
+            input:
+              lookup_table_id = 38181
+              parameters:
+                col1 = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+          #77 IF .
+            input:
+              type = compound
+              operand = and
+              conditions:
+                - [0]
+                  operand = present
+                  lhs = #{_dp('{"pill_type":"output","provider":"lookup_table","line":"195ba156","path":["entries",{"path_element_type":"current_item"},"id"]}')}
+                  rhs = None
+            #78 FOREACH .  (as=89699bfe)
+              #79 ACTION workato_service.call_service_async  (as=18227569)
+                desc: Call recipe <span class="provider">Japan_Momentive_Supervisor assignment_v3.0</span> (do not wait for response)
+                input:
+                  flow_id = 43516898
+                  request:
+                    loginname = #{_dp('{"pill_type":"output","provider":"foreach","line":"89699bfe","path":["entry","col2"]}')}
+                    supervisorloginname = #{_dp('{"pill_type":"output","provider":"foreach","line":"89699bfe","path":["entry","col3"]}')}
+                    useruri = #{_dp('{"pill_type":"output","provider":"foreach","line":"89699bfe","path":["entry","col5"]}')}
+                    applicationRootUrl = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}
+                    slug = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_slug"}')}
+                    parentjobid = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                    type = #{_dp('{"pill_type":"output","provider":"foreach","line":"89699bfe","path":["entry","col6"]}')}
+                    companyKey = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+                    childjobid = #{_dp('{"pill_type":"output","provider":"foreach","line":"89699bfe","path":["entry","col4"]}')}
+                    sup_firstname = #{_dp('{"pill_type":"output","provider":"foreach","line":"89699bfe","path":["entry","col8"]}')}
+                    sup_lastname = #{_dp('{"pill_type":"output","provider":"foreach","line":"89699bfe","path":["entry","col9"]}')}
+                    sup_email = #{_dp('{"pill_type":"output","provider":"foreach","line":"89699bfe","path":["entry","col7"]}')}
+                    sup_change_effectivedate = =_dp('{"pill_type":"output","provider":"foreach","line":"89699bfe","path":["entry","col10"]}')
+            #80 ACTION clock.pause  (as=50b7ae05)
+              input:
+                until_time = =(_dp('{"pill_type":"output","provider":"lookup_table","line":"195ba156","path":["entries",{"path_element_type":"size"}]}').to_i * 5).to_i.seconds.from_now
+                minutes = 5
+          #81 ACTION lookup_table.search_entries  (as=b583941b)
+            desc: Search <span class="provider">entries</span> in <span class="provider">Momentive_Supervisor_restriction_records</span> lookup table
+            input:
+              lookup_table_id = 46752
+              parameters:
+                col3 = pending
+          #82 FOREACH .  (as=8bc370e7)
+            #83 ACTION workato_service.call_service_async  (as=21dad1a6)
+              desc: Call recipe <span class="provider">Japan_Supervisor_schedule restriction_assignment_v3.0</span> (do not wait for response)
+              input:
+                flow_id = 43516886
+                request:
+                  rooturl = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}#{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+                  supervisoruri = #{_dp('{"pill_type":"output","provider":"foreach","line":"8bc370e7","path":["entry","col1"]}')}
+                  permissionuri = #{_dp('{"pill_type":"output","provider":"foreach","line":"8bc370e7","path":["entry","col2"]}')}
+                  status = #{_dp('{"pill_type":"output","provider":"foreach","line":"8bc370e7","path":["entry","col3"]}')}
+                  reporturi = #{_dp('{"pill_type":"output","provider":"logger","line":"e715920f","path":["message"]}')}
+                  userfilteruri = #{_dp('{"pill_type":"output","provider":"logger","line":"a9b9a13b","path":["message"]}')}
+                  entryid = #{_dp('{"pill_type":"output","provider":"foreach","line":"8bc370e7","path":["id"]}')}
+          #84 ACTION lookup_table.search_entries  (as=57a8a549)
+            desc: Search <span class="provider">entries</span> in <span class="provider">Momentive_user import logs</span> lookup table
+            input:
+              lookup_table_id = 38182
+              parameters:
+                col1 = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+          #85 ACTION csv_parser.create_csv_lines  (as=a8852f14)
+            input:
+              create_header_line = true
+              column_separator = ,
+              force_quotes = false
+              column_labels = jobid
+childjobid
+userid
+username
+action
+status
+details
+              lines:
+                ____source = #{_dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries"]}')}
+                column_0 = #{_dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries",{"path_element_type":"current_item"},"entry","col1"]}')}
+                column_1 = =_dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries",{"path_element_type":"current_item"},"entry","col4"]}').include?("|") ? _dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries",{"path_element_type":"current_item"},"entry","col4"]}').split("|").last : "NA"
+                column_2 = #{_dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries",{"path_element_type":"current_item"},"entry","col2"]}')}
+                column_3 = #{_dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries",{"path_element_type":"current_item"},"entry","col3"]}')}
+                column_4 = =_dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries",{"path_element_type":"current_item"},"entry","col4"]}').include?("|") ? _dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries",{"path_element_type":"current_item"},"entry","col4"]}').split("|").first : _dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries",{"path_element_type":"current_item"},"entry","col4"]}')
+                column_5 = #{_dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries",{"path_element_type":"current_item"},"entry","col5"]}')}
+                column_6 = #{_dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries",{"path_element_type":"current_item"},"entry","col6"]}')}
+          #86 ACTION logger.log_message  (as=4604282a)
+            desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+            comment: cshare link
+            input:
+              message = https://cshare.replicon.com/?u=8Y5SQoFsjmyD&p=tnXc4mcGn64y
+          #87 ACTION logger.log_message  (as=0dc82cb7)
+            desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+            comment: Log file name
+            input:
+              message = japan_userimport_log_#{_dp('{"pill_type":"output","provider":"logger","line":"6afbd7d5","path":["message"]}')}.csv
+          #88 TRY .
+            #89 ACTION sftp_secondary.upload  (as=782d147d)
+              comment: Logs uploded to cshare
+              input:
+                filename = /userimportlogs/#{_dp('{"pill_type":"output","provider":"logger","line":"0dc82cb7","path":["message"]}')}
+                append = false
+                content = #{_dp('{"pill_type":"output","provider":"csv_parser","line":"a8852f14","path":["csv_lines"]}')}
+            #90 CATCH .  (as=3fb03d8b)
+              input:
+                max_retry_count = 0
+                retry_interval = 2
+              #91 ACTION email.send_mail  (as=fd2f31c8)
+                input:
+                  email_type = html
+                  body = <p>Hi Team,<br /> <br /> The user import  for the  job ID: #{_dp('{"pill_type":"job_context","path":["job_id"]}')} hosted on  #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')} instance has been completed at #{_dp('{"pill_type":"output","provider":"logger","line":"6afbd7d5","path":["message"]}')}, however  the log upload to Cshare has failed. Attached is the log file for reference.</p>
+<ul>
+<li>Recipe ID: #{_dp('{"pill_type":"job_context","path":["recipe_id"]}')}</li>
+  <li>Job ID: #{_dp('{"pill_type":"job_context","path":["job_id"]}')}<br /></li></ul> 
+<p> Please find the attached logs which was to be sent to intended recipients and debug the issue related to Cshare upload.<br /> <br /> Regards,<br /> Deltek Integrations Team</p>
+                  to = prod_integrationalerts@deltek.com
+                  subject = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')} |  Failed while uploading User import Logs to SFTP  - #{_dp('{"pill_type":"job_context","path":["job_created_at"]}')}
+              #92 STOP .
+                input:
+                  stop_with_error = false
+          #93 ACTION logger.log_message  (as=02dd8382)
+            desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+            comment: If logs contains errors
+            input:
+              message = =_dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries"]}').pluck('entry').where(col5: "Error")
+          #94 IF .
+            comment: Error
+            input:
+              type = compound
+              operand = and
+              conditions:
+                - [0]
+                  operand = present
+                  lhs = #{_dp('{"pill_type":"output","provider":"logger","line":"02dd8382","path":["message"]}')}
+                  rhs = None
+            #95 ACTION send_mail_2_0_connector_56_1585918002.Send_mail_with_cshare  (as=d3b55a78)
+              comment: Completed with errors
+              input:
+                toaddress = #{_dp('{"pill_type":"job_context","path":["parameters","emails"]}')}
+                subject = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')} - #{_dp('{"pill_type":"job_context","path":["parameters","country"]}')} | User import completed with errors - #{_dp('{"pill_type":"job_context","path":["job_created_at"]}')}
+                Message = <strong>This is an automated mail, please don't reply</strong><br />
+<br />
+Hello, <br />
+<br />
+The user  import to Replicon is completed with errors at #{_dp('{"pill_type":"output","provider":"logger","line":"6afbd7d5","path":["message"]}')}. Please find the link below to the logs for reference.
+ <br /> <br /><a href="insertlink">Download Logs</a></p>
+<br /><br/>
+<br />
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+<p><br />For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>
+                companykey = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+                filename = #{_dp('{"pill_type":"output","provider":"logger","line":"0dc82cb7","path":["message"]}')}
+                cshare path = 542902 - Momentive/userimportlogs/
+                applicationRootUrl = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}
+                recipeid = #{_dp('{"pill_type":"job_context","path":["recipe_id"]}')}
+                jobid = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                workatoid = #{_dp('{"pill_type":"job_context","path":["user_id"]}')}
+                bccaddress = prod_integrationalerts@deltek.com
+            #96 ELSE .
+              #97 ACTION logger.log_message  (as=fff3f7be)
+                desc: Log <span class="provider">message</span> to <span class="provider">Job report</span>
+                comment: If logs contains warning
+                input:
+                  message = =_dp('{"pill_type":"output","provider":"lookup_table","line":"57a8a549","path":["entries"]}').pluck('entry').where(col5: "Exception")
+              #98 IF .
+                comment: Warning
+                input:
+                  type = compound
+                  operand = and
+                  conditions:
+                    - [0]
+                      operand = present
+                      lhs = #{_dp('{"pill_type":"output","provider":"logger","line":"fff3f7be","path":["message"]}')}
+                      rhs = None
+                #99 ACTION send_mail_2_0_connector_56_1585918002.Send_mail_with_cshare  (as=5f36ea4e)
+                  comment: Completed with warnings
+                  input:
+                    toaddress = #{_dp('{"pill_type":"job_context","path":["parameters","emails"]}')}
+                    subject = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')} - #{_dp('{"pill_type":"job_context","path":["parameters","country"]}')} | User import completed with Exceptions - #{_dp('{"pill_type":"job_context","path":["job_created_at"]}')}
+                    Message = <strong>This is an automated mail, please don't reply</strong><br />
+<br />
+Hello, <br />
+<br />
+The user  import to Replicon is completed with warning at #{_dp('{"pill_type":"output","provider":"logger","line":"6afbd7d5","path":["message"]}')}. Please find the link below to the logs for reference.
+ <br /> <br /><a href="insertlink">Download Logs</a></p>
+<br /></p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+<p><br />For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>
+                    companykey = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+                    filename = #{_dp('{"pill_type":"output","provider":"logger","line":"0dc82cb7","path":["message"]}')}
+                    cshare path = 542902 - Momentive/userimportlogs/
+                    applicationRootUrl = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}
+                    recipeid = #{_dp('{"pill_type":"job_context","path":["recipe_id"]}')}
+                    jobid = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                    workatoid = #{_dp('{"pill_type":"job_context","path":["user_id"]}')}
+                #100 ELSE .
+                  comment: Succesful
+                  #101 ACTION send_mail_2_0_connector_56_1585918002.Send_mail_with_cshare  (as=50e35561)
+                    comment: Completed successfully
+                    input:
+                      toaddress = #{_dp('{"pill_type":"job_context","path":["parameters","emails"]}')}
+                      subject = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')} - #{_dp('{"pill_type":"job_context","path":["parameters","country"]}')} | User import completed successfully - #{_dp('{"pill_type":"job_context","path":["job_created_at"]}')}
+                      Message = <strong>This is an automated mail, please don't reply</strong><br />
+<br />
+Hello, <br />
+<br />
+The user  import to Replicon is completed successfully at #{_dp('{"pill_type":"output","provider":"logger","line":"6afbd7d5","path":["message"]}')}. Please find the link below to the logs for reference.
+ <br /> <br /><a href="insertlink">Download Logs</a></p>
+<br /></p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+<p><br />For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>
+                      companykey = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+                      filename = #{_dp('{"pill_type":"output","provider":"logger","line":"0dc82cb7","path":["message"]}')}
+                      cshare path = 542902 - Momentive/userimportlogs/
+                      applicationRootUrl = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_applicationRootUrl"}')}
+                      recipeid = #{_dp('{"pill_type":"job_context","path":["recipe_id"]}')}
+                      jobid = #{_dp('{"pill_type":"job_context","path":["job_id"]}')}
+                      workatoid = #{_dp('{"pill_type":"job_context","path":["user_id"]}')}
+          #102 ACTION lookup_table.search_entries  (as=a77e5fb6)
+            desc: Search <span class="provider">entries</span> in <span class="provider">Momentive_Supervisor_restriction_records</span> lookup table
+            input:
+              lookup_table_id = 46752
+              parameters:
+                col3 = error
+          #103 IF .
+            input:
+              type = compound
+              operand = and
+              conditions:
+                - [0]
+                  operand = greater_than
+                  lhs = #{_dp('{"pill_type":"output","provider":"lookup_table","line":"a77e5fb6","path":["entries",{"path_element_type":"size"}]}')}
+                  rhs = 0
+            #104 IF .
+              input:
+                type = compound
+                operand = and
+                conditions:
+                  - [0]
+                    operand = present
+                    lhs = #{_dp('{"pill_type":"output","provider":"lookup_table","line":"a77e5fb6","path":["entries",{"path_element_type":"current_item"},"entry","col3"]}')}
+                    rhs = None
+              #105 STOP .
+                input:
+                  stop_with_error = true
+                  stop_reason = #{_dp('{"pill_type":"output","provider":"catch","line":"182e763f","path":["message"]}')}
+          #106 CATCH .  (as=d10e9027)
+            input:
+              max_retry_count = 0
+              retry_interval = 2
+            #107 STOP .
+              input:
+                stop_with_error = true
+                stop_reason = #{_dp('{"pill_type":"output","provider":"catch","line":"182e763f","path":["message"]}')}
+        #108 ELSE .
+          #109 ACTION send_mail_2_0_connector_56_1585918002.Send_mail  (as=d5331e5d)
+            comment: No records were found
+            input:
+              subject = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')} - #{_dp('{"pill_type":"job_context","path":["parameters","country"]}')} | User import completed- No change records found - #{_dp('{"pill_type":"job_context","path":["job_created_at"]}')}
+              toaddress = #{_dp('{"pill_type":"job_context","path":["parameters","emails"]}')}
+              Message = <p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The User Import has been skipped, since there were no records  found.</p><p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>
+              sendmail = Yes
+              companykey = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+    #110 ELSE .
+      #111 ACTION send_mail_2_0_connector_56_1585918002.Send_mail  (as=2d60c9b3)
+        comment: No records were found
+        input:
+          subject = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')} - #{_dp('{"pill_type":"job_context","path":["parameters","country"]}')} | User import completed- No change records found - #{_dp('{"pill_type":"job_context","path":["job_created_at"]}')}
+          toaddress = #{_dp('{"pill_type":"job_context","path":["parameters","emails"]}')}
+          Message = <p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The User Import has been skipped, since there were no records  found.</p><p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>
+          sendmail = Yes
+          companykey = #{_dp('{"pill_type":"account_property","property_name":"GetTenantEndpointDetails_companykey"}')}
+  #112 STOP .
+    input:
+      stop_with_error = false

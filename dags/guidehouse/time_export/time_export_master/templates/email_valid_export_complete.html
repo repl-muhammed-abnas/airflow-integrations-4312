@@ -1,0 +1,10 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon Data Lake
+    time data extract is completed successfully {{" "}}
+    at {{ dag_run.conf.timestamp }}. Please find the extract details for reference.</p>
+<ul>
+    <li>Process Started: {{ dag_run.conf.timestamp }}</li>
+    <li>File Path: {{ params.upload_file_path }}</li>
+    <li>CP File Name: {{ params.cp_file_prefix }}{{ dag_run.conf.timestamp }}.csv.pgp</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

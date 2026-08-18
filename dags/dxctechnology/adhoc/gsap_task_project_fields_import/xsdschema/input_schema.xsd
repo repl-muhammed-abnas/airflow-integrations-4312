@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" targetNamespace="http://csc.com/IF9002/FromGSAPToReplicon/GSAPTask" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MT_GSAPTask_Replicon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Records" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WBS_Name" type="xs:string" />
+              <xs:element name="Task_Name" type="xs:string" />
+              <xs:element name="Task_Code" type="xs:string" />
+              <xs:element name="Task_Start_Date" type="xs:string" />
+              <xs:element name="Task_End_Date" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

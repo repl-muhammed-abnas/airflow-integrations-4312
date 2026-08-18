@@ -1,0 +1,16 @@
+<p>
+    <strong>This is an automated mail, please don't reply</strong>
+</p>
+<p>Hello ,</p>
+<p>
+      The Manual journal using the project cost data from Replicon to Xero has been completed Successfully.{{ " on " + current_time_in_specified_tz() }}.<br /> 
+          <br />Please click on the below link to download the file. <br /> <br />
+          <a href="{{result('generate_download_link')}}" >Download file</a>
+          <br />
+      <p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+      </p>
+    <P>Below are the details of Manual Journal:</P>
+    <p>Narration: {{ result('get_journal_payload')['ManualJournals'][0]['Narration'] }}<br />Date: {{ result('get_journal_payload')['ManualJournals'][0]['Date'] }}<br />Status: {{ result('insert_journal_entries')['ManualJournals'][0]['Status'] if result('insert_journal_entries')['ManualJournals'][0]['Status'] else 'Successfully Created' }}<br />Manual Journal ID: {{ result('insert_journal_entries')['ManualJournals'][0]['ManualJournalID'] if result('insert_journal_entries')['ManualJournals'][0]['ManualJournalID'] else 'N/A' }}</p>
+
+ <p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>
+</p>

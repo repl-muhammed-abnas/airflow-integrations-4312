@@ -1,0 +1,151 @@
+{
+  "_meta": {
+    "version": "1.1",
+    "description": "Spain PUF mapper - IVA compliant with FACe/DIR3 and VeriFactu support",
+    "inherits": "_base.json",
+    "last_updated": "2026-03-16",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Spanish VAT", "FacturaE", "FACe", "VeriFactu"]
+  },
+
+  "country": {
+    "code": "ES",
+    "name": "Spain",
+    "currency": "EUR",
+    "language": "es"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 21.0,
+      "reduced": [10.0],
+      "super_reduced": [4.0],
+      "zero": 0.0
+    },
+    "regional_rates": {
+      "canary_islands": {
+        "igic_standard": 7.0,
+        "igic_reduced": [3.0],
+        "igic_zero": 0.0
+      },
+      "ceuta_melilla": {
+        "ipsi_standard": 10.0,
+        "ipsi_reduced": [0.5, 1.0, 2.0, 4.0, 8.0]
+      }
+    },
+    "tax_categories": {
+      "S": "Tipo general",
+      "AA": "Tipo reducido",
+      "Z": "Tipo cero",
+      "E": "Exento",
+      "AE": "Inversion del sujeto pasivo",
+      "K": "Entrega intracomunitaria",
+      "G": "Exportacion"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9946",
+    "buyer_endpoint_scheme": "9946",
+    "vat_scheme_id": "9946",
+    "company_scheme_id": "9946",
+    "vat_prefix": "ES",
+    "scheme_mappings": {
+      "vat_number": "9946",
+      "nif": "9946",
+      "cif": "9946",
+      "gln": "0088"
+    }
+  },
+
+  "invoice_type_names": {
+    "380": "F1",
+    "381": "R1",
+    "383": "F1"
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": ["ES:OficinaContable", "ES:OrganoGestor", "ES:UnidadTramitadora", "ES:InvoiceSeries", "ES:SpecialRegimeKey"],
+    "public_sector": {
+      "dir3_required": true,
+      "face_platform": true,
+      "registration_data": {
+        "oficina_contable": {
+          "id_type": "ES:OficinaContable",
+          "description": "Accounting Office DIR3 code"
+        },
+        "organo_gestor": {
+          "id_type": "ES:OrganoGestor",
+          "description": "Managing Body DIR3 code"
+        },
+        "unidad_tramitadora": {
+          "id_type": "ES:UnidadTramitadora",
+          "description": "Processing Unit DIR3 code"
+        }
+      }
+    },
+    "verifactu": {
+      "invoice_series_required": true,
+      "special_regime_key_required": true,
+      "default_special_regime_key": "01",
+      "special_regime_keys": {
+        "01": "General regime",
+        "02": "Export",
+        "03": "Special regime for used goods",
+        "04": "Special regime for investment gold",
+        "05": "Special regime for travel agencies",
+        "06": "Special regime for groups of entities",
+        "07": "Special regime for cash accounting",
+        "08": "Operations subject to IPSI/IGIC",
+        "14": "Invoices for advance tax collection",
+        "15": "Invoices with reverse charge"
+      }
+    }
+  },
+
+  "field_mappings": {
+    "additional_header_fields": {
+      "invoice_series": "InvoiceSeries",
+      "special_regime_key": "SpecialRegimeKey"
+    },
+    "additional_buyer_fields": {
+      "oficina_contable": "BuyerOficinaContable",
+      "organo_gestor": "BuyerOrganoGestor",
+      "unidad_tramitadora": "BuyerUnidadTramitadora"
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^ES[A-Z0-9][0-9]{7}[A-Z0-9]$",
+    "nif_pattern": "^[0-9]{8}[A-Z]$",
+    "cif_pattern": "^[A-Z][0-9]{7}[A-Z0-9]$",
+    "postal_code_pattern": "^[0-9]{5}$",
+    "iban_pattern": "^ES[0-9]{22}$",
+    "dir3_pattern": "^[A-Z0-9]{8,10}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "90 dias netos",
+    "contact_department": "Departamento de Contabilidad",
+    "special_regime_key": "01"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "dir3_for_public_sector": true,
+    "face_submission": true,
+    "verifactu_enabled": true
+  },
+
+  "translations": {
+    "invoice": "Factura",
+    "credit_note": "Factura Rectificativa",
+    "total": "Total",
+    "vat": "IVA"
+  }
+}

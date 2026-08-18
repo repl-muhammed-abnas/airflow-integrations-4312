@@ -1,0 +1,98 @@
+{
+  "ai_lines": {
+    "1": "fb9ae6b342206012f482a3a358d907d36c926c37d450382d8609343a3dee98c3",
+    "14": "220e89d83d60c8b7f8270dcf81cf42297793253e041eb796b7b877537d4e6d03",
+    "23": "fcf22bce12178a3ec5d8558c2138a0b17fd9290e7222363bf85b6fb887744a8c",
+    "25": "b78c97c4ac76995e1424aa4ed30842d9a692c252a70058d7931b3007df78f7af",
+    "26": "8c2c3b7d3ef0038bfd0f076631e2121843d3c5c9d846d746a8ee4122c1a5c68d",
+    "27": "522779116c5ab73b528f28c582901728191218c1acc353e118bee70af431b717",
+    "28": "47fa66b60f09a0d5a0b0eb1aaf1534ac3cc0c68726be137c9011630fd932083d",
+    "29": "b90fa85bf84a1f40f461ba7ae0b5bbcf1feb7b8816ade8aa54bde0c90acadf9a",
+    "3": "fc10112683ea35d3e570323f1f20c16a9e27b7ecde71b186830b8ff3ebe6ff47",
+    "30": "7448201424e91ee42812d95bc99c2b535656a0b05c1e3c46bebee6e45dcee5ad",
+    "31": "7a09b718048f3868dc0f261651175c937c349e47c995280aaefcfd06e14a45c1",
+    "32": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+    "34": "928171b4e02779ae98c4f88dcc7194b13dd179baafcb9cead3787dbe7ec98197",
+    "35": "e9275fb5bbe885933e5d9d95fa296758ac24f71cc4f49ce76b6839f10d3c9dfe",
+    "36": "a0ada6a5909f4de536dd0dd522e5ae17018c2d57c74ea66ae77bac4da1cbbf40",
+    "37": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+    "39": "3c55e9056baecdf51790523d9070bba554f340eedd8b7d80b1c808a374bb8305",
+    "4": "299387ca0fa3c2551d7ff5bc6f063fef8871c74aa39bd29541c2c3754a85d842",
+    "40": "b330b8eb301af4f05b2b9880cbfe8676b1c2b4895151f3ed5c81ce231b39104d",
+    "41": "e7500934724d1b8b4d7b3da6b57b7e198611624ab1c6b7c95370f3c1df42102a",
+    "43": "5f73adb1ef97521fc58719e828911901203701c399cea49a8bfa795ecd6ac502",
+    "44": "368aa216efea70ffaefb9104301c705f6412afcd12adca4d8a608b410c299ce8",
+    "45": "f3553de9d6123db18283745bbde3d2619519f05b23b6ef542de7f6d7d20bc294",
+    "46": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+    "48": "2720560f9dc04c56671f5b981b86940637651d3ff3e633a405e88c9a9a586814",
+    "5": "aa8e5683f1b32e6b39a52c142083095bc6d5fadede2746445d2c71ddf4e07a8b",
+    "50": "d0a1e5c7a7fc01b58e8902803fab4585c58830a921f6abd140f8936939767ece",
+    "6": "ba5ec51d07a4ac0e951608704431d59a02b21a4e951acc10505a8dc407c501ee"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 3,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-24T07:41:31.247Z",
+  "file_state": {
+    "file_sha256": "7180ab317dabfd110d84c013848bb76bfa93e34f9a928c6b73a2d086686da30a",
+    "total_file_lines": 53,
+    "total_lines": 43
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "972f9e59b85e00d109fdf0908bf56123b560d3d0adc32dfe8052258db5fc7b2e",
+      "last_known_line": 20,
+      "removed_at": "2026-03-24T07:46:50.628Z"
+    },
+    {
+      "hash": "97bf0891e535e61d8f654e424e2c085862a6d461a5b0b901fea7fb814444772f",
+      "last_known_line": 22,
+      "removed_at": "2026-03-24T07:46:50.628Z"
+    },
+    {
+      "hash": "8bc972d57b34d6943ffdf40820753cda0524a720b73187cc515380ecc50f2a57",
+      "last_known_line": 23,
+      "removed_at": "2026-03-24T07:46:50.628Z"
+    },
+    {
+      "hash": "2e974c5154309b0aa4276bf4f39ec7eec8f53d2da7588a9479c420aa3f61624f",
+      "last_known_line": 24,
+      "removed_at": "2026-03-24T07:46:50.628Z"
+    },
+    {
+      "hash": "a0afb7cafaa355c4b3b558ca30949fd86b2a840aaf9c92d348ded91a54ed47ea",
+      "last_known_line": 25,
+      "removed_at": "2026-03-24T07:46:50.628Z"
+    },
+    {
+      "hash": "9421cfa29854138118b6acae8dde75b341f2970ae928658f67cae3be9216c57a",
+      "last_known_line": 28,
+      "removed_at": "2026-03-24T07:46:50.628Z"
+    },
+    {
+      "hash": "67665b98fe0192d58b8cdde5d008279ae7f55f25f3008f489fd280dfe74446b0",
+      "last_known_line": 3,
+      "removed_at": "2026-03-24T07:52:45.003Z"
+    },
+    {
+      "hash": "a4322acc4e8de58e5f276ef080230f7811340f7e38f74af1243e26655f836bec",
+      "last_known_line": 42,
+      "removed_at": "2026-03-24T07:52:45.003Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\accenture\\webhook_endpoints\\user_sync_ventagepoint\\webhook_master.py",
+  "stats": {
+    "ai_line_count": 28,
+    "ai_line_pct": 65.12,
+    "ai_lines_removed_or_modified": 8
+  },
+  "updated_at": "2026-03-24T07:52:45.003Z",
+  "version": 1
+}

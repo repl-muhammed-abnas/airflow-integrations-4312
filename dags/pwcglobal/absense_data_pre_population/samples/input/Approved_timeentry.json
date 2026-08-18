@@ -1,0 +1,37 @@
+{
+    "PersonResourceActualTime": [
+        {
+            "TransactionDate": "20220615",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "884723b4-842c-488d-8f46-03fa08193a3e"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "fredl004"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "884723b4-842c-488d-8f46-03fa08193a3e"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS001",
+                "WorkItem": {
+                    "WorkItemType": "Test Task"
+                }
+            },
+            "HoursQuantity": "5.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Working time - At Office / at Client",
+            "WorkLocation": "Austria"
+        }
+    ],
+    "content_type": "application/json"
+}

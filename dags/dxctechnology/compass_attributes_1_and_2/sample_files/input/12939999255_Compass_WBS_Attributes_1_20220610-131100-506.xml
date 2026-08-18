@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_Attributes_Replicon xmlns:ns0="http://csc.com/IF5001/FromCOMPASSTOReplicon/Attributes">
+    <Records>
+		<WBS>Project Name with No Tasks 3 - Airflow</WBS>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1</Attribute>
+            <Description>without End date</Description>
+            <EndDate></EndDate>
+        </Attributes>
+        <Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1A</Attribute>
+            <Description>End date b4 P Sdate</Description>
+            <EndDate>20220830</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1B</Attribute>
+            <Description>End date is P Sdate</Description>
+            <EndDate>20220901</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1C</Attribute>
+            <Description>End date After P Sdate</Description>
+            <EndDate>20220909</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1D</Attribute>
+            <Description>with wrong end date</Description>
+            <EndDate>20220231</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1E</Attribute>
+            <Description>Invalid end date</Description>
+            <EndDate>20223102</EndDate>
+        </Attributes>
+        <Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1F</Attribute>
+            <Description>End date B4 P Edate</Description>
+            <EndDate>20220909</EndDate>
+        </Attributes>
+        <Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1G</Attribute>
+            <Description>End date is P Edate</Description>
+            <EndDate>20220930</EndDate>
+        </Attributes>
+	    <Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1H</Attribute>
+            <Description>End date After P Edate</Description>
+            <EndDate>20221230</EndDate>
+        </Attributes>
+    </Records>
+</ns0:MT_Attributes_Replicon>

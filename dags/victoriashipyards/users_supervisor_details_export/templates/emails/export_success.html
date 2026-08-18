@@ -1,0 +1,13 @@
+<p>Hello,<br /> <br />The Replicon users supervisor assignment data export has completed successfully, further details are below: <br /></p>
+<ul>
+    <li>File Name : {{ result('logging_details').export_filename }}.csv.pgp</li>
+    <li>File Path : {{ params.upload_file_path }}</li>
+    <li>File Download Link : <a href="{{ result('generate_download_link') }}">Download File</a></li>
+    <li>Total Record Count : {{ result('query_for_changed_records', 'length') }}</li>
+</ul>
+<p>For any queries, please contact our support team at <a href="https://support.deltek.com/">https://support.deltek.com/</a><br />
+<br />
+<strong>This is an automated mail from Deltek Integration. Please do not reply to this email.</strong><br />
+<br /><br />
+Regards,<br />
+Deltek Inc</p>

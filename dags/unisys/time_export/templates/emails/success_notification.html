@@ -1,0 +1,16 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />
+    Hello, <br />
+    <p>
+      The Unisys Fieldglass Time Export is completed successfully on {{ " " + current_time_in_specified_tz() }}
+    <br />
+
+    <strong>Export Summary:</strong><br />
+    • Company: {{ get_company_key() }}<br />
+    • Records Processed: {{ result('format_logs') | length if result('format_logs') else 'N/A' }}<br />
+    • File Name: {{ dag_run.conf.log_filename if dag_run.conf.log_filename else '' }}<br />
+    • File Path: {{ params.filepath }}
+    • Secondary File Path: {{ params.secondary_filepath }}<br />
+    
+    <br />
+
+    For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc. </p>

@@ -1,0 +1,14 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br />
+    <br />Hello, <br /><br />
+    The Replicon GL Project Time Export completed successfully 
+    on {{ result('process_start_time') }}. Please find the export details for
+    reference.
+</p>
+<ul>
+    {% set records = result("query_data_within_range", "length") %}
+    <li>File Name : {{ result("generate_filename") }} </li>
+    <li>File Path : {{ params.upload_file_path }}</li>
+    <li>Number of Records : {% if records %}{{ records }}{% else %}0{% endif %}</li>
+
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com<br /><br />Regards, <br />Deltek Inc.</p>

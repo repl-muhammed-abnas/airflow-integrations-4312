@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Finland PUF mapper - ALV compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Finnish VAT"]
+  },
+
+  "country": {
+    "code": "FI",
+    "name": "Finland",
+    "currency": "EUR",
+    "language": "fi"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 25.5,
+      "reduced": [10.0, 14.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Yleinen verokanta",
+      "AA": "Alennettu verokanta",
+      "Z": "Nollaverokanta",
+      "E": "Verovapaa",
+      "AE": "Kaannetty verovelvollisuus"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "0037",
+    "buyer_endpoint_scheme": "0037",
+    "vat_scheme_id": "9917",
+    "company_scheme_id": "0037",
+    "vat_prefix": "FI",
+    "scheme_mappings": {
+      "vat_number": "9917",
+      "business_id": "0037",
+      "gln": "0088",
+      "ovt": "0037"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": []
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^FI[0-9]{8}$",
+    "business_id_pattern": "^[0-9]{7}-[0-9]$",
+    "postal_code_pattern": "^[0-9]{5}$",
+    "iban_pattern": "^FI[0-9]{16}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Maksuehto 30 paivaa netto",
+    "contact_department": "Kirjanpito"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false
+  },
+
+  "translations": {
+    "invoice": "Lasku",
+    "credit_note": "Hyvityslasku",
+    "total": "Yhteensa",
+    "vat": "ALV"
+  }
+}

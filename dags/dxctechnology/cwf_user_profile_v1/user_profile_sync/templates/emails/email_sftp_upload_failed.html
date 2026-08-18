@@ -1,0 +1,13 @@
+<p>
+    Hi Team,<br /> <br />
+    The fieldglass cwf user import for {{ get_company_key() }} instance, created on {{ current_time_in_specified_tz() }} has been completed for file - "{{ dag_run.conf.filename }}", however, the log upload to sftp has failed. Attached is the log file for reference.
+</p>
+<ul>
+    <li>DAG ID: {{ params.dag_id }}</li>
+    <li>Job ID: {{ dag_run_ecid() }}</li>
+</ul>
+<p>
+    Please find the attached logs which was to be sent to intended recipients and debug the issue related to sftp upload.
+    <br /> <br /> Regards,<br />
+    Deltek Inc
+</p>

@@ -1,0 +1,12 @@
+<p>Hi Team,<br /> <br /> The Replicon payroll export for the location USA
+    has been completed at {{ result('process_start_time').start_time }}
+    , however the file upload to sftp has failed with error.</p>
+<ul>
+    <li>Country:USA</li>
+    <li>File Name: {{ result('get_file_name')}}.SAP.pgp</li>
+    <li>SFTP Path: {{ params.output_filepath }}</li>
+    <li>ecid: {{ dag_run_ecid() }}</li>
+</ul>
+<p>Please find the attached file to be uploaded to sftp. Upload the file to the given sftp and debug the issue.<br />
+    <br /> Regards,<br /> Deltek Inc
+</p>

@@ -1,0 +1,189 @@
+from datetime import datetime
+import json
+import uuid
+import rail
+
+null = None
+
+def get_date_in_json(date_string):
+    date_obj = datetime.strptime(date_string, "%Y-%m-%d")
+    return {
+        "year": date_obj.year,
+        "month": date_obj.month,
+        "day": date_obj.day
+    }
+
+def get_all_users_payload():
+    return json.dumps({
+        "filters": [
+            {
+                "fieldPath": "root.id",
+                "operator": "equals",
+                "values": list(set(map(lambda timeoff_data: timeoff_data["employeeId"], rail.result("get_timeoff_bookings_from_hibob")['created'])))
+            }
+        ],
+        "humanReadable": "REPLACE"
+    })
+
+def get_bulk_users_payload(dag_run):
+    return {
+        "users": [
+            {
+                "employeeId": dag_run.conf["actual_employee_id"],
+                "loginName": null,
+                "parameterCorrelationId": null
+            }
+        ],
+        "dataLoadOptionUri": null
+    }
+
+def get_timeoff_end_details(dag_run):
+    if dag_run.conf["booking_data"]["endPortion"] != "all_day":
+        relative_duration = "urn:replicon:time-off-relative-duration:half-day"
+    else:
+        relative_duration = "urn:replicon:time-off-relative-duration:full-day"
+    return {
+        "date": get_date_in_json(dag_run.conf["booking_data"]["endDate"]),
+        "timeOfDay": null,
+        "relativeDuration": relative_duration,
+        "specificDuration": null
+    }
+
+def get_put_and_submit_timeoff_payload(dag_run):
+    desc = rail.result('get_timeoff_desc')
+    if dag_run.conf["booking_data"]["type"] == "hours":
+        booked_duration = str(round(float(dag_run.conf["booking_data"]["hoursOnDate"]), 2)).split(".")
+        start_date = dag_run.conf["booking_data"]["date"]
+        relative_duration = null
+        start_specific_duration = {
+            "hours": booked_duration[0],
+            "minutes": str(int((int(booked_duration[1]) * 60)/100)),
+            "seconds": "0",
+            "milliseconds": "0",
+            "microseconds": "0"
+        }
+        timeoff_end = {
+            "date": get_date_in_json(start_date),
+            "timeOfDay": null,
+            "relativeDuration": "urn:replicon:time-off-relative-duration:full-day",
+            "specificDuration": null
+        }
+
+    else:
+        start_date = dag_run.conf["booking_data"]["startDate"]
+        if dag_run.conf["booking_data"]["startPortion"] != "all_day":
+            relative_duration = "urn:replicon:time-off-relative-duration:half-day"
+        else:
+            relative_duration = "urn:replicon:time-off-relative-duration:full-day"
+        start_specific_duration = null
+        timeoff_end = get_timeoff_end_details(dag_run)
+
+    return {
+        "timeOff": {
+            "target": null,
+            "owner": {
+                "uri": rail.result("get_user_info")["userDetails"]["uri"],
+                "loginName": null,
+                "parameterCorrelationId": null
+            },
+            "timeOffType": {
+                "uri": rail.result("get_specfic_time_off_type"),
+                "name": null
+            },
+            "entryConfigurationMethodUri": "urn:replicon:time-off-entry-configuration-method:populate-daily-entries-using-start-end-date-and-schedule",
+            "multiDayUsingStartEndDate": {
+                "timeOffStart": {
+                    "date": get_date_in_json(start_date),
+                    "timeOfDay": null,
+                    "relativeDuration": relative_duration,
+                    "specificDuration": start_specific_duration
+                },
+                "timeOffEnd": timeoff_end
+            },
+            "userExplicitEntries": [],
+            "comments": desc if desc else "",
+            "customFieldValues": [],
+            "objectExtensionFieldValues": [
+                {
+                    "definition": {
+                    "uri":  "urn:replicon-tenant:"+rail.get_tenant_slug()+":object-extension-tag-definition:"+dag_run.conf['booking_id_oef_value'],
+                    "name": null
+                    },
+                    "tag": null,
+                    "numericValue": null,
+                    "textValue": dag_run.conf["booking_data"]['requestId'],
+                    "fileValue": null,
+                    "jsonValue": null
+                }
+            ] if dag_run.conf["booking_id_oef_value"] else [],
+        },
+        "comments": "Submitted by Replicon Admin",
+        "unitOfWorkId": str(uuid.uuid4())
+    }
+
+def get_approve_holiday_booking_payload():
+    return {
+        "timeOffUri": rail.result("put_and_submit_timeoff_booking_for_user")["uri"],
+        "unitOfWorkId": str(uuid.uuid4()),
+        "comments": "Approved by Replicon Admin"
+    }
+
+def get_booking_id_oef_value_payload():
+    return {
+        "page": "1",
+        "pagesize": "100",
+        "columnUris": [
+            "urn:replicon:object-extension-tag-definition-list-column:name",
+            "urn:replicon:object-extension-tag-definition-list-column:object-extension-tag-definition"
+        ],
+        "sort": [],
+        "filterExpression": null
+    }
+
+def get_time_off_details_on_booking_id(dag_run):
+    return {
+        "page": "1",
+        "pagesize": "100",
+        "columnUris": [
+                "urn:replicon:time-off-list-column:time-off",
+                "urn:replicon:time-off-list-column:time-off-type",
+                "urn:replicon-tenant:"+rail.get_tenant_slug()+":time-off-object-extension-column:" + dag_run.conf['booking_id_oef_value'],
+                "urn:replicon:time-off-list-column:start-date",
+                "urn:replicon:time-off-list-column:end-date"
+        ],
+        "sort": [],
+        "filterExpression": {
+            "leftExpression": {
+                "leftExpression": null,
+                "operatorUri": null,
+                "rightExpression": null,
+                "value": null,
+                "filterDefinitionUri": "urn:replicon-tenant:"+rail.get_tenant_slug()+":time-off-object-extension-filter:"+dag_run.conf['booking_id_oef_value']
+            },
+            "operatorUri": "urn:replicon:filter-operator:equal",
+            "rightExpression": {
+                "leftExpression": null,
+                "operatorUri": null,
+                "rightExpression": null,
+                "value": {
+                    "uri": null,
+                    "uris": [],
+                    "bool": null,
+                    "date": null,
+                    "money": null,
+                    "number": null,
+                    "text": dag_run.conf["booking_data"]['requestId'],
+                    "time": null,
+                    "calendarDayDurationValue": null,
+                    "workdayDurationValue": null,
+                    "dateRange": null,
+                    "dateTimeUtc": null,
+                    "dateTimeUtcRange": null,
+                    "numberRange": null
+                },
+                "filterDefinitionUri": null
+            },
+            "value": null,
+            "filterDefinitionUri": null
+        }
+    }

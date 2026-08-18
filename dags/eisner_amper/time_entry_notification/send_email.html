@@ -1,0 +1,46 @@
+<p>
+  <strong> This is an automated mail, please don't reply. </strong> <br />
+  <br />Hi {{ dag_run.conf.user_first_name}} {{ dag_run.conf.user_last_name}}, <br />
+  <br />
+  Please submit your time entries for the following days:
+  <br />
+<table style="border: 0.3px solid black;border-collapse: collapse" border="1">
+  <tr>
+    <th>Entry Date</th>
+    <th>Timesheet Period</th>
+    <th>Scheduled Hours</th>
+    <th>Actual Hours (Including Time off Hours)</th>
+    <th>Missing Hours</th>
+  </tr>
+  {% for item in dataset %}
+   <tr>
+    <td>
+      {{ item.Date_2 }}
+    </td>
+    <td>
+      {{ item.Timesheet_Period }}
+    </td>
+    <td style="text-align:center">
+      {{ item.Scheduled_Work_Hours }}
+    </td>
+    <td style="text-align:center">
+      {{ item.Total_Actual_Hours }}
+    </td>
+    <td style="text-align:center">
+      {{ (item.Scheduled_Work_Hours|int - item.Total_Actual_Hours|int) }}
+    </td>
+    </tr>
+    {% endfor %}
+</table>
+<br />
+</p>
+
+<p><em><span style="font-size: 10pt;">Please login to Replicon to submit your time entries - <a href="https://login.replicon.com/">Link to Replicon​</a>.</span></em></p>
+
+<br />
+<br />
+
+<p>
+<br />Regards,
+  <br />Deltek Inc.
+</p>

@@ -1,0 +1,17 @@
+<p>
+Hi Team,
+<br/> 
+<br /> The Client Import job for {{ get_company_key() }} instance, hosted on {{ get_company_key() }} which was created on {{ dag_run.conf.time }} has been completed, 
+however, the log upload to Cshare has failed. Attached is the log file for reference. 
+Also please move the required Input files accordingly as specified.</p>
+<ul>
+<li>DAG ID: {{ params.dag_id }}</li>
+<li>DAG Run: {{ dag_run_ecid }}</li>
+</ul>
+<br /> Number of Clients Added: {{ result('get_clients_added_count') }} 
+<br /> Number of Clients Updated: {{ result('get_clients_updated_count') }}
+<br /> Number of Clients Disabled: {{ result('get_clients_disabled_count') }} 
+<br />
+<br/>
+<p> Please find the attached logs which was to be sent to intended recipients and debug the issue related to Cshare upload.<br />
+ <br /> Regards,<br /> Deltek Inc</p>

@@ -1,0 +1,11 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon Data Lake {{ result('get_date_window').export_type | capitalize }}
+    time data extract is completed successfully {{" "}}
+    at {{ result('get_date_window').timestamp }}. Please find the extract details for reference.</p>
+<ul>
+    <li>Export Type: {{ result('get_date_window').export_type | capitalize }}</li>
+    <li>Process Started: {{ result('get_date_window').timestamp }}</li>
+    <li>File Path: {{ params.upload_file_path }}</li>
+    <li>PS/India File Name: {{ params.ps_file_prefix }}{{ result('get_date_window').timestamp }}.csv.pgp</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

@@ -1,0 +1,21 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> Time Punch Entry
+    Import
+    job is completed {% if result("filter_error_logs")| load_all_records() | length > 0%}
+    with error
+    {% elif result("filter_exception_logs")| load_all_records() | length > 0%}
+    with exception
+    {%else%}
+    successfully
+    {%endif%} based on the file:
+    {{result("new_file_sensor")|file_name}}.
+    Please find the download link for the log file below:
+    <br /><br />
+    <a href="{{result('generate_download_link')}}">Download log file</a><br />
+    <br />
+</p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+</p>
+{% if result("filter_error_logs")| load_all_records() | length > 0%}
+{%endif%}
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

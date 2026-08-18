@@ -1,0 +1,13 @@
+region = 'us-east-1'
+instance = "trial"
+environment = 'pre-production'
+company_key = 'HorizonMediaGen3afmig'
+replicon_conn_id = 'horizonmediagen3trial'
+sftp_conn_id = "horizonmediagen3trialSFTP"
+max_active_runs = 10
+base_report_name = "Report_For_Autotimesheet submission"
+execution_timeout_days = 1
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+master_dag_schedule_interval = "0 0 * * FRI"
+can_run_batch_task_var_name = ""

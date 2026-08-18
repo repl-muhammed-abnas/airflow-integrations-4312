@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_RemedyOrder_Replicon
+	xmlns:ns0="http://csc.com/IF7000/FromFTPToReplicon/RemedyOrder">
+	<Records>
+		<Project_Code>R28795672600</Project_Code>
+		<Project_Name>AON - Recent Brokerage Issues</Project_Name>
+		<Start_date>07022020</Start_date>
+		<End_date>06072022</End_date>
+		<Project_Status>ACTIVE</Project_Status>
+		<ProjectManager_EmpID>8922</ProjectManager_EmpID>
+		<ProjectCoManager_EmpID>866803</ProjectCoManager_EmpID>
+		<CompanyCode>1639</CompanyCode>
+		<WBS_Element>SC.0949/01-02-05-001</WBS_Element>
+		<PROJ_CODE></PROJ_CODE>
+	</Records>
+	<Records>
+		<Project_Code>R28795672602</Project_Code>
+		<Project_Name>SS-Steve Django</Project_Name>
+		<Start_date>07022020</Start_date>
+		<End_date>06072022</End_date>
+		<Project_Status>ACTIVE</Project_Status>
+		<ProjectManager_EmpID>8922</ProjectManager_EmpID>
+		<ProjectCoManager_EmpID>866803</ProjectCoManager_EmpID>
+		<CompanyCode>1639</CompanyCode>
+		<WBS_Element>SC.0949/01-02-05-001</WBS_Element>
+		<PROJ_CODE></PROJ_CODE>
+	</Records>
+	<Records>
+		<Project_Code>R28795672604</Project_Code>
+		<Project_Name>SS-Steve</Project_Name>
+		<Start_date>07022020</Start_date>
+		<End_date>06072022</End_date>
+		<Project_Status>ACTIVE</Project_Status>
+		<ProjectManager_EmpID>8922</ProjectManager_EmpID>
+		<ProjectCoManager_EmpID>866803</ProjectCoManager_EmpID>
+		<CompanyCode>1639</CompanyCode>
+		<WBS_Element>SC.0949/01-02-05-001</WBS_Element>
+		<PROJ_CODE>R-0001475</PROJ_CODE>
+	</Records>
+	<Records>
+		<Project_Code>R28795672605</Project_Code>
+		<Project_Name>SS-Steve Tewatia</Project_Name>
+		<Start_date>07022020</Start_date>
+		<End_date>06072022</End_date>
+		<Project_Status>ACTIVE</Project_Status>
+		<ProjectManager_EmpID>8922</ProjectManager_EmpID>
+		<ProjectCoManager_EmpID>866803</ProjectCoManager_EmpID>
+		<CompanyCode>1639</CompanyCode>
+		<WBS_Element>SC.0949/01-02-05-001</WBS_Element>
+		<PROJ_CODE>#R-12776&amp;7890</PROJ_CODE>
+	</Records>
+	<Records>
+		<Project_Code>R28795672601</Project_Code>
+		<Project_Name>SS-Steve Simple</Project_Name>
+		<Start_date>07022020</Start_date>
+		<End_date>06072022</End_date>
+		<Project_Status>ACTIVE</Project_Status>
+		<ProjectManager_EmpID>8922</ProjectManager_EmpID>
+		<ProjectCoManager_EmpID>866803</ProjectCoManager_EmpID>
+		<CompanyCode>1639</CompanyCode>
+		<WBS_Element>SC.0949/01-02-05-001</WBS_Element>
+		<PROJ_CODE></PROJ_CODE>
+	</Records>
+	<Records>
+		<Project_Code>R28795672611</Project_Code>
+		<Project_Name>SS-Steve Tewatia</Project_Name>
+		<Start_date>07022020</Start_date>
+		<End_date>06072022</End_date>
+		<Project_Status>INACTIVE</Project_Status>
+		<ProjectManager_EmpID>81240</ProjectManager_EmpID>
+		<ProjectCoManager_EmpID>866803</ProjectCoManager_EmpID>
+		<CompanyCode>1639</CompanyCode>
+		<WBS_Element>SC.0949/01-02-05-001</WBS_Element>
+		<PROJ_CODE></PROJ_CODE>
+	</Records>
+</ns0:MT_RemedyOrder_Replicon>

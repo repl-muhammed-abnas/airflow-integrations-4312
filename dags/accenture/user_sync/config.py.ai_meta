@@ -1,0 +1,35 @@
+{
+  "ai_lines": {
+    "1": "6e78a59a0a185d51a44a88261c1cab1f5b4467a39285b891d6532d235aed2a93",
+    "2": "d49dac9b9fac4463dd07896c232fa77a499821a843577d046ec98505801f370d",
+    "4": "95cf87ded3089811187ad19e6cfa1f11c8833a29624c9c117fddb52ab11ff840",
+    "5": "1ba18d998102e6de249eeebd5830f1ab2b7dafc3be0a1b70f23ccbfd072b26ff",
+    "7": "8adf635e2a46f950118059ec56ff183576d39cc4f877c28d3afaac7b2d715b23",
+    "8": "1d141a1e69adb8e1d973ed2110a577b8e27b302e35c26342eae63dedf5d4f69c"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Write",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-24T07:41:49.924Z",
+  "file_state": {
+    "file_sha256": "4d75bfebd49c2a58e640f265b67277a8e7367593ff69895b3746387ca173728a",
+    "total_file_lines": 8,
+    "total_lines": 6
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\accenture\\user_sync\\config.py",
+  "stats": {
+    "ai_line_count": 6,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-03-24T07:41:49.924Z",
+  "version": 1
+}

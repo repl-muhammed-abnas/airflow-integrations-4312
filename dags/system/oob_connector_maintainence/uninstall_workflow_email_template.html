@@ -1,0 +1,28 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The following
+    out of box connectors were uninstalled since the tenants do not exist and this could potentially cause failure for the workflows.
+    <br> <br>
+<table style="border:1px solid black" border="1">
+    <thead>
+        <tr>
+            <th>Sl No</th>
+            <th>Region - Environment</th>
+            <th>Company Key</th>
+            <th>Connector Name</th>
+            <th>Connector Type</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%- for item in result('disable_uninstall_connectors_list', 'uninstall_connectors') %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ result('filter_connectors_by_companykey', 'region-environment') }}</td>
+            <td>{{ item.company_key }}</td>
+            <td>{{ item.connector_name }}</td>
+            <td>{{ item.install_type }}</td>
+            <td>Uninstalled</td>
+        </tr>
+        {%- endfor %}
+    </tbody>
+</table>
+<p><br />Regards,<br />Deltek Marketplace Team</p>

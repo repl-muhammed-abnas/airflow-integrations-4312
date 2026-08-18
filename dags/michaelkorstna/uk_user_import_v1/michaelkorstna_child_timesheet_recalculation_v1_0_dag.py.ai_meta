@@ -1,0 +1,30 @@
+{
+  "ai_lines": {
+    "12": "c35a38e4f9c6537ac0f91c6ba04e9d343e814fafeb9cc226f98591f238e08c8d"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-13T17:00:26.719Z",
+  "file_state": {
+    "file_sha256": "f5c1d1ef8e77429efec1c71989667e5289db1b067f523cab8cfe4fd51173786e",
+    "total_file_lines": 231,
+    "total_lines": 208
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\michaelkorstna\\uk_user_import_v1\\michaelkorstna_child_timesheet_recalculation_v1_0_dag.py",
+  "stats": {
+    "ai_line_count": 1,
+    "ai_line_pct": 0.48,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-13T17:00:26.719Z",
+  "version": 1
+}

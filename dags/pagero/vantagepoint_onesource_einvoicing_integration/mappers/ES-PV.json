@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Basque Country (Spain) PUF mapper - TicketBAI compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Spanish VAT", "TicketBAI"]
+  },
+
+  "country": {
+    "code": "ES-PV",
+    "name": "Basque Country (Spain)",
+    "currency": "EUR",
+    "language": "eu",
+    "parent_country": "ES"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 21.0,
+      "reduced": [10.0],
+      "super_reduced": [4.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Tipo general",
+      "AA": "Tipo reducido",
+      "Z": "Tipo cero",
+      "E": "Exento",
+      "AE": "Inversion del sujeto pasivo"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9920",
+    "buyer_endpoint_scheme": "9920",
+    "vat_scheme_id": "9920",
+    "company_scheme_id": "9920",
+    "vat_prefix": "ES",
+    "scheme_mappings": {
+      "vat_number": "9920",
+      "nif": "9920",
+      "gln": "0088"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": ["ES-PV:TicketBAI"],
+    "ticketbai": {
+      "enabled": true,
+      "territories": ["Araba/Alava", "Bizkaia", "Gipuzkoa"],
+      "registration_data": {
+        "license_number": {
+          "id_type": "ES-PV:LicenseNumber",
+          "description": "TicketBAI software license number"
+        },
+        "software_name": {
+          "id_type": "ES-PV:SoftwareName",
+          "description": "TicketBAI certified software name"
+        }
+      }
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^ES[A-Z0-9][0-9]{7}[A-Z0-9]$",
+    "nif_pattern": "^[0-9]{8}[A-Z]$",
+    "postal_code_pattern": "^(01|20|48)[0-9]{3}$",
+    "iban_pattern": "^ES[0-9]{22}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "90 egun garbi",
+    "contact_department": "Kontabilitate Saila"
+  },
+
+  "special_rules": {
+    "requires_issue_time": true,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "ticketbai_mandatory": true,
+    "qr_code_required": true,
+    "tbai_identifier_required": true
+  },
+
+  "translations": {
+    "invoice": "Faktura",
+    "credit_note": "Faktura Zuzentzailea",
+    "total": "Guztira",
+    "vat": "BEZ"
+  }
+}

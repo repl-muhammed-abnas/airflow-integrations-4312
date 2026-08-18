@@ -1,0 +1,7 @@
+region = 'eu-central-1'
+environment = 'pre-production'
+company_key = 'pwcdev'
+replicon_conn_id = 'replicon_pwcdev'
+dag_id = 'pwcdev_timesheetprepopulation'
+dag_description = 'PWC Webhook Status check Timesheet Prepopulation'
+webhook_secret = 'pwcdev_timesheetprepopulation_statuscheck_webhook_secret'

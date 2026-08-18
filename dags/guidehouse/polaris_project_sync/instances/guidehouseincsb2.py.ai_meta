@@ -1,0 +1,48 @@
+{
+  "ai_lines": {
+    "48": "59136dc7c5b6778a835da1bd148aa1463a52889311fb9fc3d0805d36f0ca7336",
+    "49": "16790bf5c482109d7b5102f81603c7e49e16f9cdfac34eec56e3185388a9808c",
+    "63": "fa34e7835f5e73fc8e31c01836bc8acb5706749b6bdd5f727b30a6843cac4692"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 5,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-18T12:30:25.991Z",
+  "file_state": {
+    "file_sha256": "1c1518e074b91a60f653a09b5c1325d1b654f074d72381064a6cdf7c974b2453",
+    "total_file_lines": 69,
+    "total_lines": 63
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "3ab7ee6f1143fbdb24fd49d07f30b6025e4ad5c9689c5cb7307c0c87a8b491c5",
+      "last_known_line": 38,
+      "removed_at": "2026-05-25T13:24:00.449Z"
+    },
+    {
+      "hash": "40048a3253fd4492dc94f1b53918b377185c0abf9ff3a9ff5311ebcaf8bd67b5",
+      "last_known_line": 4,
+      "removed_at": "2026-06-03T06:51:01.677Z"
+    },
+    {
+      "hash": "8464758c1e1fa4be94b5797f46b08e269a8ca2ff5788416e14e803a21ce21834",
+      "last_known_line": 5,
+      "removed_at": "2026-06-03T06:51:01.677Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\guidehouse\\polaris_project_sync\\instances\\guidehouseincsb2.py",
+  "stats": {
+    "ai_line_count": 3,
+    "ai_line_pct": 4.76,
+    "ai_lines_removed_or_modified": 3
+  },
+  "updated_at": "2026-06-03T06:51:01.677Z",
+  "version": 1
+}

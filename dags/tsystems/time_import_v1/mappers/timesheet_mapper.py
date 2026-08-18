@@ -1,0 +1,26 @@
+from tsystems.time_import_v1 import config
+
+timesheet_templates = {
+  "Internal only Duration": config.timesheet_dist,
+  "Internal without controls": config.timesheet_dist,
+  "External Employee": config.timesheet_dist,
+  "Shift workers only Duration": config.timesheet_dist,
+  "Shift workers": config.timesheet_inout_dist,
+  "Internal Std": config.timesheet_inout_dist,
+  "HR200 integr. RZ": config.timesheet_inout_dist_with_oef,
+  "HR200 FZ=AZ": config.timesheet_inout_dist_with_oef,
+  "Internal Worktype": config.timesheet_inout_dist_with_oef,
+  "HR200 tariffrei": config.timesheet_inout_dist_with_oef,
+  "HR200 Tarif": config.timesheet_inout_dist_with_oef,
+  "0370_Internal only Duration": config.timesheet_dist,
+  "0370_Shift workers only duration": config.timesheet_dist,
+  "0377_Internal only Duration": config.timesheet_dist,
+  "0377_Shift workers only duration": config.timesheet_dist,
+  "0472_Internal only Duration": config.timesheet_dist,
+  "0472_Shift workers only duration": config.timesheet_dist,
+  "1046_Internal only Duration": config.timesheet_dist,
+  "1046_Shift workers only duration": config.timesheet_dist,
+  "GE_Internal only Duration": config.timesheet_dist,
+  "Students": config.timesheet_dist,
+  "Trainees": config.timesheet_dist,
+}

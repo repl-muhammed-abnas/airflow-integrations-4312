@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties":[
+        {%- for record in dataset %}
+        {
+            "SAP_Counter_ID": "{{record.sap_counter_id}}",
+            "Entry_Date": "{{record.entry_date}}",
+            "Employee_ID": "{{record.employee_id}}",
+            "Activity_Type": "{{record.activity_name}}",
+            "Project_Code": "{{record.project_code}}",
+            "Task_ID": "{{record.task_name}}",
+            "In_Time": "{{record.in_time}}",
+            "Out_Time": "{{record.out_time}}",
+            "Entry_ID": "{{record.short_time_entry_id}}",
+            "Source_system": "{{record.source_system}}",
+            "Crane_capacity": null
+        }
+        {%- endfor %}
+    ]
+}

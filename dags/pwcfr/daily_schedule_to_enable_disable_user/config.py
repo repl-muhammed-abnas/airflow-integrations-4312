@@ -1,0 +1,10 @@
+region="eu-central-1"
+environment="pre-production"
+schedule_interval="0 7,11 * * *"
+cest_timezone="Europe/Paris"
+enabled_user_report_name="User_report_enabledlist"
+disabled_user_report_name="User_report_disabledlist"
+user_schedule_name="FROF"
+max_active_runs = 1
+max_active_runs_child = 10
+log_file_name_prefix="PWC_userstatuschangelogs_"

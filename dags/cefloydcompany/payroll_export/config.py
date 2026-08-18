@@ -1,0 +1,9 @@
+region = 'us-east-1'
+environment = 'pre-production'
+company_key = 'CEFloydCompanyafmig'
+execution_timeout_days = 14
+master_dag_interval = 30
+max_active_runs_master = 1
+adp_export_report = 'Replicon ADP Export - For Integration'
+# pylint: disable=line-too-long
+expected_report_columns = 'User Name,ADP Payroll Company Code,File Number (ADP Pay Statements),REG,OT,PTO,Total Hrs,Home Department Code,Project Code,Task Code,OH Hours Code,UserUri'

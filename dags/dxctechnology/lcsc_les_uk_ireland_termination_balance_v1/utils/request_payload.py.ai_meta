@@ -1,0 +1,31 @@
+{
+  "ai_lines": {
+    "143": "0a31e84ead4d33caec7a3ca5628fa45782e647011ab1d2ab0d6fa8c93b1abdcd",
+    "145": "6afb9fd9466fa3e984cf6e9cdad0daafca759e8351e7cb5f3ccbda077c1512dc"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-22T09:46:07.818Z",
+  "file_state": {
+    "file_sha256": "548c2b9efc3627aea4087c2065726b0fc045911e32437b1c82e83c8ebf36f0d5",
+    "total_file_lines": 186,
+    "total_lines": 170
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\dxctechnology\\lcsc_les_uk_ireland_termination_balance_v1\\utils\\request_payload.py",
+  "stats": {
+    "ai_line_count": 2,
+    "ai_line_pct": 1.18,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-22T09:46:07.818Z",
+  "version": 1
+}

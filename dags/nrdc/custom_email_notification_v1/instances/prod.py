@@ -1,0 +1,27 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from nrdc.custom_email_notification_v1.config import *
+
+instance = "production"
+environment = 'production'
+
+company_key = 'NRDC'
+replicon_conn_id = 'nrdc_replicon_admin'
+
+can_run_batch_task_var_name = f'nrdc_custom_email_notification_can_run_batch_task_{instance}'
+
+# Master DAG IDs
+due_notification_master_dagid = f'nrdc_custom_email_notification_due_notification_master_{instance}_v1'
+due_today_9am_master_dagid = f'nrdc_custom_email_notification_due_today_9am_master_{instance}_v1'
+due_today_4pm_master_dagid = f'nrdc_custom_email_notification_due_today_4pm_master_{instance}_v1'
+overdue_notification_master_dagid = f'nrdc_custom_email_notification_overdue_notification_master_{instance}_v1'
+overdue_7_notification_master_dagid = f'nrdc_custom_email_notification_overdue_7_notification_master_{instance}_v1'
+
+# Child DAG IDs
+overdue_send_mail_c3_dagid = f'nrdc_custom_email_notification_overdue_notification_c3_child_{instance}_v1'
+overdue_send_mail_c4_dagid = f'nrdc_custom_email_notification_overdue_notification_c4_child_{instance}_v1'
+overdue_7_send_mail_c3_dagid = f'nrdc_custom_email_notification_overdue_7_notification_c3_child_{instance}_v1'
+overdue_7_send_mail_c4_dagid = f'nrdc_custom_email_notification_overdue_7_notification_c4_child_{instance}_v1'
+due_notification_send_mail_c3_dagid = f'nrdc_custom_email_notification_due_notification_c3_child_{instance}_v1'
+due_notification_send_mail_c4_dagid = f'nrdc_custom_email_notification_due_notification_c4_child_{instance}_v1'
+due_today_send_mail_c3_dagid = f'nrdc_custom_email_notification_due_today_c3_child_{instance}_v1'
+due_today_send_mail_c4_dagid = f'nrdc_custom_email_notification_due_today_c4_child_{instance}_v1'

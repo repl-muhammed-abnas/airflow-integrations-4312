@@ -1,0 +1,16 @@
+ID_Country;ID_System;ID;Login;FECHA_WORK;HORAS;PEP;TAREA;Comentarios
+DE;SAP;JIRA-001;emp001;01.15.2025;8.0;PRJ001;Development|Backend|API Development;Valid entry with DD.MM.YYYY format
+DE;SAP;JIRA-002;emp002;15/01/2025;4.5;PRJ999;Development|Frontend|UI;Project not available error
+DE;SAP;JIRA-003;emp003;15/01/2025;6.0;PRJ001;InvalidTask|NotFound;Task not available in project error
+DE;SAP;JIRA-004;emp999;15/01/2025;2.0;PRJ001;Development|Backend;User not assigned to project error
+DE;SAP;JIRA-005;emp001;15/01/2025;7.75;PRJ001;Development|Restricted|Task;User not assigned to activity error
+DE;SAP;JIRA-006;emp001;10/01/2020;8.0;PRJ001;Development|Backend;Time entry outside assignment dates
+DE;SAP;JIRA-007;emp001;13.32.2025;8.0;PRJ001;Development|Backend;Invalid date format error
+DE;SAP;JIRA-008;emp001;15/01/2025;abc;PRJ001;Development|Backend;Invalid hours format error
+DE;SAP;JIRA-009;emp001;15/01/2025;25.0;PRJ001;Development|Backend;Hours exceed 24 error
+DE;SAP;JIRA-010;emp001;15/01/2025;-2.0;PRJ001;Development|Backend;Negative hours error
+DE;SAP;JIRA-011;;15/01/2025;8.0;PRJ001;Development|Backend;Missing employee ID
+DE;SAP;JIRA-012;emp001;;8.0;PRJ001;Development|Backend;Missing date
+DE;SAP;JIRA-013;emp001;15/01/2025;;PRJ001;Development|Backend;Missing hours
+DE;SAP;JIRA-014;emp001;15/01/2025;8.0;;Development|Backend;Missing project code
+DE;SAP;JIRA-015;emp001;15/01/2025;8.0;PRJ001;;Missing task code

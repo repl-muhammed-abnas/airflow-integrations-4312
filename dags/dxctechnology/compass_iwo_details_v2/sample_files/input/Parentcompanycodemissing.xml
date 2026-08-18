@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_IWODetails_Replicon
+	xmlns:ns0="http://csc.com/IF5002/FromCOMPASSTOReplicon/IWODetails">
+	<Records>
+		<Header>
+			<WBS>compasschildc1parenttest11</WBS>
+			<ParentCompanyCode></ParentCompanyCode>
+			<ParentWBS>R-10020251.2754</ParentWBS>
+			<ParentServiceOrder></ParentServiceOrder>
+			<ParentProject></ParentProject>
+		</Header>
+		<Assignments>
+			<CompassPersonnelNumber>81164036</CompassPersonnelNumber>
+			<AssignmentStart>20220701</AssignmentStart>
+			<AssignmentEnd>20221230</AssignmentEnd>
+		</Assignments>
+	</Records>
+</ns0:MT_IWODetails_Replicon>

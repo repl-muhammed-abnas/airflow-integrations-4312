@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Norway PUF mapper - MVA compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Norwegian VAT", "EHF"]
+  },
+
+  "country": {
+    "code": "NO",
+    "name": "Norway",
+    "currency": "NOK",
+    "language": "no"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 25.0,
+      "reduced": [12.0, 15.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Standard sats",
+      "AA": "Redusert sats",
+      "Z": "Nullsats",
+      "E": "Fritatt",
+      "AE": "Omvendt avgiftsplikt"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "0192",
+    "buyer_endpoint_scheme": "0192",
+    "vat_scheme_id": "0192",
+    "company_scheme_id": "0192",
+    "vat_prefix": "NO",
+    "vat_suffix": "MVA",
+    "scheme_mappings": {
+      "vat_number": "0192",
+      "org_number": "0192",
+      "gln": "0088"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": []
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^NO[0-9]{9}MVA$",
+    "org_number_pattern": "^[0-9]{9}$",
+    "postal_code_pattern": "^[0-9]{4}$",
+    "iban_pattern": "^NO[0-9]{13}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Betalingsbetingelser 30 dager netto",
+    "contact_department": "Regnskap"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false
+  },
+
+  "translations": {
+    "invoice": "Faktura",
+    "credit_note": "Kreditnota",
+    "total": "Totalt",
+    "vat": "MVA"
+  }
+}

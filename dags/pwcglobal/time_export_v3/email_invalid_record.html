@@ -1,0 +1,12 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The time extract{{" "}}
+    ({{ dag_run.conf.export_period }}) is completed successfully for location {{ dag_run.conf.location }} on {{ dag_run.conf.start_time }}.
+    There are few records found without charge codes or without timesheet period. Please find the below details for reference.</p>
+<ul>
+    <li>Time Export Name: {{ dag_run.conf.export_file_name }}</li>
+    <li>Territory: {{ dag_run.conf.location }}</li>
+    <li>Number of Records: {{ result('invalid_ignored_data', 'length') }}</li>
+    <li>ECID: {{ dag_run_ecid() }}</li>
+    <li>DAG ID: {{ params.dag_id }}</li>
+    <li>Parent DAG ID: {{ params.parent_dag_id }}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

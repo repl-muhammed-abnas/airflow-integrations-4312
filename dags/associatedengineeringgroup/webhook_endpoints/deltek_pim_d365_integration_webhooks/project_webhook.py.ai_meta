@@ -1,0 +1,59 @@
+{
+  "ai_lines": {
+    "1": "73d9f6772c0de1ff0444351e57b71efcf919585d945640a3d5de84e00668323d",
+    "10": "220e89d83d60c8b7f8270dcf81cf42297793253e041eb796b7b877537d4e6d03",
+    "11": "827e6672c9cc8a8e311c4ce0039fc22f1c30e38a80f68e1a15ec4ed3b23f76ff",
+    "12": "0567b9df07e94a1ade87db612daa1dba8ce0aaaf6773246f9e66530864b96b04",
+    "13": "bb9beaa60b15a8693d12e1701c1aa6dbf2ab8e2f6b86633e76efd4e8d45167de",
+    "14": "6b33dfba12f814388e39daa0292cb6b086c7aa5832d6d460050f42239956c3bd",
+    "15": "ec2df0c78951df12724937e6610a3d903bc37eec7e093eb8f0244ce22f3c6869",
+    "16": "90027a06ca36fd5a46988d3340d0b2037206af3c4c727df747d3a8938b70a6d4",
+    "18": "2a75a92aab850b113910eee672815b66a366612f4e7b4bc4efdecec6a555de8b",
+    "2": "0b5a71393f50f9ef3007b8c52f62c74a356027a69b0ddaf4e48e4de439792f6a",
+    "20": "c8c378aa91395bddea6ce3fa5fc8d4359a797c5404ec605da28da352eb7f3a1c",
+    "21": "336af0de0612449c45ae54a9edf95b23515a60ebf9bc350ced5aa1630be57d95",
+    "22": "aa684b44210431b096dc898e2ab1b7a2c581fcfdae43c2882463b72deb328b7e",
+    "23": "9b586739f5ff30f6be6878c62779decdb2d1d4b5e638fee62a5a077b38d920c1",
+    "24": "e3395345e6d19b00a8d6429722d5f625cdb9d32adfc076097d72bb773ed2d1c9",
+    "25": "b47d049e7acc3e67792e4667f9f45b497c9c4e268b689579860451eb6083d282",
+    "26": "86afdf70a95436e883aa7fc5c06a2ab083719054438f1218d15ebdaf287b4bac",
+    "28": "261439296dc07ee3dcf0a8a0e408a8ce8195ae3b81361ac163922cc57ea5a593",
+    "29": "271c97e198ebcc59bff891aeef873689c69c012dc202e6fabf0089023b183b1b",
+    "30": "5cc981c078e5a9a075822c3dbea3a276a7c109072a2e110d9ac0279740d12541",
+    "31": "e47e8c26bfddcba7f9df9b760a011554b3a1d0a04d7ca20e79a91603611e8f50",
+    "32": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+    "34": "e3aa3608124a19b796e85fa78f35ffbb4a80dedc80242de178588663ea980a16",
+    "36": "d0a1e5c7a7fc01b58e8902803fab4585c58830a921f6abd140f8936939767ece",
+    "39": "da4717f05ec863d70761d6bdf4bb2140ee98cd0a19f2728d6e61eb348a87f19c",
+    "5": "f7442a258be0dd2574f68fad128e4fd8bedf8bf65e15aae108f9c36af2f48604",
+    "6": "9d1be1cf458f4272acf73936e27ede87b57ea14eb592de18273458fbeb94bcf0",
+    "7": "6e80677fad532e5b1322eada2b574fd9b6623cbd30966e2c7d3ab0e62f7d93c4",
+    "8": "5651ba5d64baae3458d754b443d37ff6f4463d8769d5fdfede30ab1160ecab33",
+    "9": "15c23cc8826ab9cb363ce1d6519cd4df76e8667a289450999d3e8ab5f9070456"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Write",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-06-09T08:25:00.707Z",
+  "file_state": {
+    "file_sha256": "06a793c77b76bcef891b1d522c3cbdc74c4c147587f7de9b3fcb1233ef965610",
+    "total_file_lines": 39,
+    "total_lines": 30
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\associatedengineeringgroup\\webhook_endpoints\\deltek_pim_d365_integration_webhooks\\project_webhook.py",
+  "stats": {
+    "ai_line_count": 30,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-06-09T08:25:00.707Z",
+  "version": 1
+}

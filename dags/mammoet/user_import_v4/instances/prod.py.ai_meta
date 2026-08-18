@@ -1,0 +1,73 @@
+{
+  "ai_lines": {
+    "10": "69a45c128387d3d153c43d1a916d90a0e9d8b3f4a2d57dd55dd56589bb039bc7",
+    "3": "8048dc7884b11cde6a989e9436e6c81f85e396bd7e8e63094d9c249fde9f4313",
+    "4": "bd778d435ad75d0e1422a26a50b0140da81e189fbb2b631bb2951e808c44ca0b",
+    "42": "eb384ca197aa21584f603f09a4268b39b76b5bfc0719173b0ec75727470c2a7a",
+    "6": "a1fbbeac745bc2711b14de508d772816e3b37047c1cdaa21d86f772839e90bd2",
+    "7": "63e18afa648d5b2c0f1ff82d1954cf93c5c8429b67df3b3baaa48778bb101516",
+    "8": "0bc777e46c6182057b667f75ab4ebad57c3d5dee4ab375b58dc8dedefb9250c8",
+    "9": "1a99db35d5993f6d91acb3aa986564a28ad06947ffab6d1a137ef0058b9b0467"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 8,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-27T09:28:03.783Z",
+  "file_state": {
+    "file_sha256": "c4f755e4af912a583d880460341d5c0065eaea19aeeb9aa9e35785e46b54ab6a",
+    "total_file_lines": 49,
+    "total_lines": 39
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "1a99db35d5993f6d91acb3aa986564a28ad06947ffab6d1a137ef0058b9b0467",
+      "last_known_line": 8,
+      "removed_at": "2026-05-28T08:32:56.914Z"
+    },
+    {
+      "hash": "69a45c128387d3d153c43d1a916d90a0e9d8b3f4a2d57dd55dd56589bb039bc7",
+      "last_known_line": 9,
+      "removed_at": "2026-05-28T08:32:56.914Z"
+    },
+    {
+      "hash": "c98c075666a39d015871a7ee718e681416a4e990a0bc60183a3f071064f40d40",
+      "last_known_line": 4,
+      "removed_at": "2026-05-28T08:47:21.711Z"
+    },
+    {
+      "hash": "ca25f08e83202f5934e35685c1b9b8641c301b13754a845b8d5e94f1a7487d3d",
+      "last_known_line": 8,
+      "removed_at": "2026-05-28T08:47:21.711Z"
+    },
+    {
+      "hash": "90bda8d70afc1646704d3f333e84b3f0fb8903157106e20578302be3f7e33c73",
+      "last_known_line": 9,
+      "removed_at": "2026-05-28T08:47:21.711Z"
+    },
+    {
+      "hash": "70b1a1801c607f7dd71b39380c1c8a26158d3a11b4fc5d9e9ad31a563e372cb8",
+      "last_known_line": 40,
+      "removed_at": "2026-05-28T08:47:27.484Z"
+    },
+    {
+      "hash": "d9b9e73d841cbf94ccf9d2a32122965b89dc7f3ff61ab61ea70b810a31ee8563",
+      "last_known_line": 4,
+      "removed_at": "2026-05-28T09:10:33.120Z"
+    }
+  ],
+  "source_file": "C:\\workspace\\airflow-integrations\\dags\\mammoet\\user_import_v4\\instances\\prod.py",
+  "stats": {
+    "ai_line_count": 8,
+    "ai_line_pct": 20.51,
+    "ai_lines_removed_or_modified": 7
+  },
+  "updated_at": "2026-05-28T11:23:15.271Z",
+  "version": 1
+}

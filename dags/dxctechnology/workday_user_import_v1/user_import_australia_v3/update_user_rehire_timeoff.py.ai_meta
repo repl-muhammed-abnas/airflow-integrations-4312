@@ -1,0 +1,39 @@
+{
+  "ai_lines": {
+    "87": "bcaf09cef50a5e9e025e1da8888cce22d183d1ba9e95a54eb09299c4e769f1db",
+    "88": "db71ef73900c58f800f2b629c5e2aefdb48c6f092810776299dc43692925ec13",
+    "89": "17cd973a1f8f11695ad2ef503d1063de7cf1338e379272f8a058065631ba08d0",
+    "90": "ecb1aab3992d861438f121f6078b0b2bed4291bb8cf4df303ff3ff0818674b45",
+    "91": "173aa8ca575a331334a8fc23191af9fbd85c8e1969ec47d04878eec1e516e931",
+    "92": "aefcf096dabf36399f0c60ea3ab78d99c7c1b71c5c9aab83376b45697731f9d6",
+    "93": "f19a10448c9ba60e93d0abb32aefeb7941f51633abd25f5293fd7c85737fa4a1",
+    "94": "b1c7f373f247dbef22ec708db35a4f6dff5bebb9750620754580a7215b134f95",
+    "95": "aab81fdfa3632011902dd7fb2d29b70493f5abcfdbec08cd58de1c57ca289d8f",
+    "96": "f4f18a83f66b6019329104f9e95fff02b8bf7f9422097a6b03d350d08431f4b6"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-28T14:32:58.538Z",
+  "file_state": {
+    "file_sha256": "dfef5c5736bd61951201c7dc8fb933a35871f9a5224eb98ac19d925817973776",
+    "total_file_lines": 180,
+    "total_lines": 156
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\dxctechnology\\workday_user_import_v1\\user_import_australia_v3\\update_user_rehire_timeoff.py",
+  "stats": {
+    "ai_line_count": 10,
+    "ai_line_pct": 6.41,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-28T14:32:58.538Z",
+  "version": 1
+}

@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "France PUF mapper - Factur-X compatible",
+    "inherits": "_base.json",
+    "last_updated": "2025-01-01",
+    "compliance": ["EN16931", "Factur-X", "Chorus Pro", "Peppol BIS 3.0"]
+  },
+
+  "country": {
+    "code": "FR",
+    "name": "France",
+    "currency": "EUR",
+    "language": "fr"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 20.0,
+      "reduced": [5.5, 10.0],
+      "super_reduced": 2.1,
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Taux normal",
+      "AA": "Taux reduit",
+      "Z": "Taux zero",
+      "E": "Exonere",
+      "AE": "Autoliquidation"
+    },
+    "territories": {
+      "corsica": {
+        "standard": 20.0,
+        "reduced": [10.0, 13.0],
+        "super_reduced": [0.9, 2.1]
+      },
+      "dom": {
+        "guadeloupe": 8.5,
+        "martinique": 8.5,
+        "reunion": 8.5
+      }
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "0009",
+    "buyer_endpoint_scheme": "0009",
+    "vat_scheme_id": "9957",
+    "siret_scheme_id": "0009",
+    "company_scheme_id": "0002",
+    "vat_prefix": "FR",
+    "scheme_mappings": {
+      "vat_number": "9957",
+      "siret": "0009",
+      "siren": "9922",
+      "gln": "0088"
+    }
+  },
+
+  "invoice_type_names": {
+    "380": "B1",
+    "381": "B1",
+    "383": "B1"
+  },
+
+  "extensions": {
+    "required": [],
+    "_comment_required": "FR RegistrationData goes inside supplier Party, not document-level UBLExtensions. Data keys: FR:CapitalSocial, FR:RCSNumber, FR:APE",
+    "optional": ["FR:ServiceCode"],
+    "registration_data": {
+      "capital_social": {
+        "id_type": "FR:CapitalSocial",
+        "description": "Share capital amount",
+        "required": true
+      },
+      "rcs_number": {
+        "id_type": "FR:RCSNumber",
+        "description": "Trade registry number (RCS)",
+        "required": true,
+        "format": "RCS [City] [Number]"
+      },
+      "ape_code": {
+        "id_type": "FR:APE",
+        "description": "Activity code (APE/NAF)",
+        "required": true,
+        "pattern": "^[0-9]{4}[A-Z]$"
+      }
+    },
+    "public_sector": {
+      "service_code": {
+        "id_type": "FR:ServiceCode",
+        "description": "Service code for public entities",
+        "required_for_public": true
+      },
+      "chorus_pro": {
+        "engagement_juridique": "Legal commitment reference",
+        "numero_marche": "Contract number"
+      }
+    }
+  },
+
+  "field_mappings": {
+    "additional_seller_fields": {
+      "siret": "SellerSIRET",
+      "siren": "SellerSIREN",
+      "capital_social": "SellerCapitalSocial",
+      "rcs_number": "SellerRCSNumber",
+      "ape_code": "SellerAPECode"
+    },
+    "additional_buyer_fields": {
+      "siret": "BuyerSIRET",
+      "service_code": "BuyerServiceCode"
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^FR[0-9A-Z]{2}[0-9]{9}$",
+    "siret_pattern": "^[0-9]{14}$",
+    "siren_pattern": "^[0-9]{9}$",
+    "ape_pattern": "^[0-9]{4}[A-Z]$",
+    "postal_code_pattern": "^[0-9]{5}$",
+    "iban_pattern": "^FR[0-9]{25}$",
+    "required_fields": [
+      "invoice_number",
+      "issue_date",
+      "currency_code",
+      "seller_vat_number",
+      "seller_siret"
+    ]
+  },
+
+  "defaults": {
+    "payment_terms": "Paiement a 30 jours",
+    "contact_department": "Service Comptabilite"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "requires_registration_data": true,
+    "requires_siret": true,
+    "chorus_pro_for_public": true
+  },
+
+  "translations": {
+    "invoice": "Facture",
+    "credit_note": "Avoir",
+    "total": "Total",
+    "vat": "TVA",
+    "exempt": "Exonere"
+  }
+}

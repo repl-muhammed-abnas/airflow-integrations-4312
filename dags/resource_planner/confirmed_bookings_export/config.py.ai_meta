@@ -1,0 +1,93 @@
+{
+  "ai_lines": {
+    "1": "2b7cae32489a04e2532889527b37058ebaaaca4a8286fba340344375b0fa3948",
+    "10": "11aa7a64638d9a1a630cfa1a9aa60b3c732c2f201155ff38db669f24a25477a1",
+    "12": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "13": "e48d65cd077e6007dbc98fa10ec64b895af63b8a23bf2a83043f34d6e58138a3",
+    "14": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "15": "10ee554c255188a75cd710a3ebd253a13f2a3d9b887eb88dcb89e1c0b6fef8e5",
+    "16": "e187b302d64c0c7bd3ff0d8910d0a0a28b3ddb87a2cf4ace9deb3c10d3dc1b2a",
+    "17": "35c16c16dbc2350ec584d3fa7210879fbd3de518f2b701e281743d0feb0b5602",
+    "19": "858125ab25d463089517129cd580187c16dd317d571aa3cf6af65392c5d8dad1",
+    "2": "334359b90efed75da5f0ada1d5e6b256f4a6bd0aee7eb39c0f90182a021ffc8b",
+    "20": "520959f34dd6a7d3fffb40845a0d483da16fd9122d09f099b303af6ab4ecbde5",
+    "22": "a385f610df720c5149752fb3b7cc87b82b9b299379a262700d2765546c73c068",
+    "23": "230ef923c58ea37aa7b606c621e4bf81e83f934de6a82607a222c607d6e0664c",
+    "25": "c88be85cce5c176649456e85371851c5226ad836c61486f262c595300f6c979f",
+    "26": "b9c3147e5984375a67a198a27ecd99cb144996f62e092ac189ac0b6e309e239e",
+    "27": "949c58fd2da876946ecb9eacd45ce478f33ca2bb664b89b96aa1258197e3dce1",
+    "28": "ad832672d8308d3f436772a960d5950c9538deb743785d9f62d695c148c0a1d1",
+    "29": "39d3ae1c5c78be1de1b357917ab1cb5ed6b459fe0608ba599ee9893b8adea034",
+    "3": "4f9a1c11128167f1f5f16c72be54c449e972d1ebfbf4d79332421a879073e9d1",
+    "31": "7b2c86ed1106bbcb2a6f5b0f242bec973294fddfb99b7c629a3c8224191909ec",
+    "32": "31b795a0742adf88670d9a5d04bee01bd5a87457543c9af860f0586e4fa197c7",
+    "34": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "35": "9c50a893a07697572db99ffeba67bfba2da24c3efb2d3495f36baf6577a57f25",
+    "36": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "37": "aa51d48f3c1b7c546b2d84e0fd76fcbe5b2aba0acd0be4bdd33cffbd29c13ec7",
+    "38": "0093b32119543d5fc1b40ca05ef8c56d63bd9d86c4119548df80dfbfb54e8637",
+    "39": "31f5816c2e8006ecff1aa9f348bf3bc00f69b09533b0fa6e625490eebd85b2d9",
+    "4": "845d5baf7e3144b17e5aa3a9f54a1d64ac3a5c27068abaf060cd93ed7913c1d8",
+    "41": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "42": "7095daa86c0b74ca0daaad7bd225ee10fdbb5f87f7701a57b4c848f40466feaf",
+    "43": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "44": "cda1669916c625e3e166beecd0dcdfebf10cf9fb8f4011ed66526f1e96699ee2",
+    "45": "6e48ef57a69112d2386346e5bf8e594bd0358d3f73620ec9f12a5b5324c96d2f",
+    "46": "8978f0809bc14d38e186d8351f901e7e9401bdfe92f955881cb177866f712a7f",
+    "47": "5dd1b2688620c727b7d8a981c0b8b76437cf095ab761a0bba4952227c72cec91",
+    "49": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "50": "5a5813f465faebab0b4b6a3531b304afa1ab65c1a0f855461acb84a14f7a114d",
+    "51": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "52": "9af03adc2057e05b28a50d5c12852e143db9fcf1e842da39d53137bbc1289674",
+    "53": "39bf0d021cbc5772e2a499df9d6d1aa7c85163ef3a5ed4be8b8c56725685590e",
+    "54": "334359b90efed75da5f0ada1d5e6b256f4a6bd0aee7eb39c0f90182a021ffc8b",
+    "55": "7c8b38c0561425e1aafb08ae47109ab0a5b5077022d2f16d963c16bea0382f73",
+    "56": "14fb7d369d171b0bb813095b9837d449436ab0b95c344c94db44694e7b56ba7f",
+    "57": "3749cd0897e8c02bff915c876589cb6fecb2e9f40021452cf6b77819227bd20d",
+    "58": "a22b232ad62873889e851866c6dc51ed98d38c3b21a432cc8afabae1b9b87b34",
+    "6": "6e78a59a0a185d51a44a88261c1cab1f5b4467a39285b891d6532d235aed2a93",
+    "7": "d49dac9b9fac4463dd07896c232fa77a499821a843577d046ec98505801f370d",
+    "9": "2f3a5071129ee154580354110dcde6a5e4a36971c57fa5fda4f44c0d7f99020d"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 5,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-15T11:09:27.759Z",
+  "file_state": {
+    "file_sha256": "10406d0d4b54ca625b1dd0e4a6a71be609f591fe756194cfce598fce1cf3abb5",
+    "total_file_lines": 58,
+    "total_lines": 48
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "ff65248cef6a40d06d7470664ceddf0fcc26fe15e39c6018c2efb4f9982dbd54",
+      "last_known_line": 1,
+      "removed_at": "2026-04-23T07:40:10.509Z"
+    },
+    {
+      "hash": "95cf87ded3089811187ad19e6cfa1f11c8833a29624c9c117fddb52ab11ff840",
+      "last_known_line": 10,
+      "removed_at": "2026-04-23T07:40:10.509Z"
+    },
+    {
+      "hash": "a78327224b63c697afb2a6ff1cfef88ee24551b956913f640a2930a246060c21",
+      "last_known_line": 9,
+      "removed_at": "2026-04-23T07:40:10.509Z"
+    }
+  ],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\resource_planner\\confirmed_bookings_export\\config.py",
+  "stats": {
+    "ai_line_count": 48,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 3
+  },
+  "updated_at": "2026-06-04T11:28:15.543Z",
+  "version": 1
+}

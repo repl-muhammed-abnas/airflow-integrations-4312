@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="MSPSProjectAssignmentsAndTasks">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="SystemID"/>
+                <xs:element maxOccurs="unbounded" name="Proj">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="PID" minOccurs="0"/>
+                            <xs:element name="PName" minOccurs="0"/>
+                            <xs:element name="PStatus" minOccurs="0"/>
+                            <xs:element name="PSDate" minOccurs="0"/>
+                            <xs:element name="PEDate" minOccurs="0"/>
+                            <xs:element name="TAssn">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" name="Assn">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="AID" minOccurs="0"/>
+                                                    <xs:element name="EID" minOccurs="0"/>
+                                                    <xs:element name="TID" minOccurs="0"/>
+                                                    <xs:element name="TName" minOccurs="0"/>
+                                                    <xs:element name="TSDate" minOccurs="0"/>
+                                                    <xs:element name="TEDate" minOccurs="0"/>
+                                                    <xs:element name="RemWork" minOccurs="0"/>
+                                                    <xs:element name="WBSE" minOccurs="0"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="PAssn">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" name="EID" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="OTask">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" name="Task">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="TID" minOccurs="0"/>
+                                                    <xs:element name="TName" minOccurs="0"/>
+                                                    <xs:element name="TSDate" minOccurs="0"/>
+                                                    <xs:element name="TEDate" minOccurs="0"/>
+                                                    <xs:element name="RemWork" minOccurs="0"/>
+                                                    <xs:element name="WBSE" minOccurs="0"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

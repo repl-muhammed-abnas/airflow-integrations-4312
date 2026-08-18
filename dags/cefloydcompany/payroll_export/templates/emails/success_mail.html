@@ -1,0 +1,17 @@
+<p>
+    <strong>This is an automated mail, please don't reply.</strong><br />
+    <br />Hello, <br />
+    <br />
+    The ADP Payroll data from Replicon is generated as per below input parameters.
+</p>
+<p>
+    Start date:"{{result('log_startdateformatted')}}"<br />
+    End date:"{{result('log_enddateformatted')}}"<br />
+    ADP Payroll company Code:"{{dag_run.conf.adp_payroll_company_code}}"<br /><br />
+    Please find the link below to download the export file.<br /><br /><a href="{{result('generate_downloadlink')}}">Download File</a><br />
+    <br /><em><span style="font-size: 9pt">The download link is valid for 7 days.</span></em>
+</p>
+<p>
+    For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards,
+    <br />Deltek Inc.
+</p>

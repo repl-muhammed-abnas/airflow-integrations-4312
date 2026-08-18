@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_TimeData_FTP xmlns:ns0="http://csc.com/IF7002/FromRepliconToFTP/TimeData">
+    {%- for row in dataset %}
+	<Records>
+		<Replicon_id>{{row['Entryid']|e}}</Replicon_id>
+		<Unique_id>{{row['Uniqueid']|e}}</Unique_id>
+		<PERNR>{{row['Employeeid']|e}}</PERNR>
+		<ERDAT>{{row['Date']|e}}</ERDAT>
+		<WBS>{{row['Wbs']|e}}</WBS>
+		<VBELN>{{row['Vblen']|e}}</VBELN>
+		<SALES_ITEM>{{row['Salesitem']|e}}</SALES_ITEM>
+		<ATTN_TYPE>{{row['Attendancetype']|e}}</ATTN_TYPE>
+		<PROJ_TIME>{{row['Hours']|e}}</PROJ_TIME>
+		<REMARKS>{{row['Comments']|e}}</REMARKS>
+	</Records>
+    {%- endfor %}
+</ns0:MT_TimeData_FTP>

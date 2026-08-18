@@ -1,0 +1,35 @@
+{
+  "ai_lines": {
+    "30": "097331c6f17b39fca61383883f3695b03056a5d7a0f4cc49a36f9810b2cb300e",
+    "31": "abc78cba91e7d721af0f68c21698a85c3a5f1884a73b9bd397f0dce47a26a530",
+    "32": "92ee77321140388b83365ca20bda8c79d65b13118f1bf8c60cc8521fc3ab0373",
+    "33": "60d872513e0f95788a1455b54e89e2a442c6fca3c663c574c76461a246d5ed4e",
+    "39": "5a2e72ff54d33eefdcf96f389edd21197f5651e56a8e9510716b6032841e3dc3",
+    "40": "3bec4a2180c5271513ac880fbbde256f8c03a95fd06431a932991419edb237de"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-20T11:09:52.038Z",
+  "file_state": {
+    "file_sha256": "8ff011e6d8e7cc8cf92c3c8991b961af4308a24e4698565637a084d4dcec4db6",
+    "total_file_lines": 48,
+    "total_lines": 39
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\resource_planner\\webhooks\\task_resource_allocation_export_endpoints\\webhook_deleted.py",
+  "stats": {
+    "ai_line_count": 6,
+    "ai_line_pct": 15.38,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-20T11:09:52.038Z",
+  "version": 1
+}

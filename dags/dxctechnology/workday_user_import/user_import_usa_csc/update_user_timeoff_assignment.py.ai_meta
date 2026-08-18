@@ -1,0 +1,37 @@
+{
+  "ai_lines": {
+    "208": "f2ffce2901c24f8910764bb34115414a030fe9131766bf5eaa66642d9c7e9da6",
+    "212": "97cab55cb518fe3ed7c23ef2724321f3e44bcf910ccb399aa215b88d9d8fc2b9",
+    "213": "d8a2615c2f7e0c62bbd704dbf325e8edfdead0fe1b77a32795ebe423d3cd350e",
+    "214": "b413c663cff079cde0462a105935e231779f8d046de73d2f7d80424b6e859f90",
+    "247": "3ac8b8b03802ba80cb54c04b1b148aaeb6b70c1f92133d3ce54f696d2925f1df",
+    "248": "6e84c06bcb518a43c363754e23510c49e42ee7f88420a0b9fb2b936173fe7f23",
+    "253": "5637fdd261ffafbefd604ef34aeb0c1db7218c7e8a2d14b6fbd53b718dffd89f",
+    "254": "3060422a83d27b0be5c0fc5fd60cc973526472ec9d0de24125d7f2226d8bd292"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-16T07:00:04.641Z",
+  "file_state": {
+    "file_sha256": "52465ffb3cbf71b7be58941e3b4b7cbb68b7cec07a1f76e7c8e8a752ba52ae01",
+    "total_file_lines": 1023,
+    "total_lines": 898
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\dxctechnology\\workday_user_import\\user_import_usa_csc\\update_user_timeoff_assignment.py",
+  "stats": {
+    "ai_line_count": 8,
+    "ai_line_pct": 0.89,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-16T07:00:16.290Z",
+  "version": 1
+}

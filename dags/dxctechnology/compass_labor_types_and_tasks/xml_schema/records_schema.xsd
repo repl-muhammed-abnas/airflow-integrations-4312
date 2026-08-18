@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Records">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="WBS"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="LabourType">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PersonnelNumber" />
+              <xs:element name="LabourType" />
+              <xs:element name="BillableDefault" />
+              <xs:element name="StartDate" />
+              <xs:element name="EndDate" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Task">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Task" />
+              <xs:element name="StartDate" />
+              <xs:element name="EndDate" />
+              <xs:element name="Description" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="LaborTypes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PersonnelNumber" />
+              <xs:element name="LaborType" />
+              <xs:element name="BillableDefault" />
+              <xs:element name="StartDate" />
+              <xs:element name="EndDate" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Tasks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Task" />
+              <xs:element name="StartDate" />
+              <xs:element name="EndDate" />
+              <xs:element name="Description" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

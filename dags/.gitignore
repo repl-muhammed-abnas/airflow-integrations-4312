@@ -1,0 +1,6 @@
+**/__pycache__
+**/*.pyc
+test
+dev
+.airflowignore
+**/.DS_Store

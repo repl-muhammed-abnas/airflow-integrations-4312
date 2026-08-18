@@ -1,0 +1,4 @@
+HEADR|"G2DX|"DXC|"REPLICON|"|"|"{{ result('get_file_name')}}.SAP|"{{ result('process_start_time_ymd_format')}}|"{{ result('process_start_time_hms_format')}}|"P|"01{%- for record in dataset %}
+{{record.RECTY}}|"{{record.CLIID}}|"{{record.INTCA}}|"{{record.ORDNO}}|"{{record.IOPER}}|"{{record.INFTY}}|"{{record.paycodecode}}|"{{record.BEGDA}}|"{{record.ENDDA}}|"{{record.OBJPS}}|"{{record.SPRPS}}|"{{record.SEQNR}}|"{{record.EXTRA}}|"{{record.paycodecode2}}|"{{record.STDAZ}}|"{{record.BEGUZ}}|"{{record.ENDUZ}}|"{{record.BETRG}}|"{{record.WAERS}}|"{{record.PayCodeHours}}|"{{record.ZEINH}}
+{%- endfor %}
+TRAIL|"{{result('no_of_records_size_including_header_footer')}}

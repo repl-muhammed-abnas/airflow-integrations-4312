@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Records">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Header" minOccurs ="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WBS"/>
+              <xs:element name="ParentCompanyCode"/>
+              <xs:element name="ParentWBS"/>
+              <xs:element name="ParentServiceOrder"/>
+              <xs:element name="ParentProject"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Assignments" minOccurs ="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CompassPersonnelNumber"/>
+              <xs:element name="AssignmentStart"/>
+              <xs:element name="AssignmentEnd"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

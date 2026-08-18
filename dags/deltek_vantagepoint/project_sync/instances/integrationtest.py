@@ -1,0 +1,18 @@
+from deltek_vantagepoint.project_sync.config import *
+
+
+company_key = 'integrationtest'
+replicon_conn_id = f'vp_{company_key}_replicon_conn'
+deltek_vantagepoint_conn_id = f'vp_{company_key}_vp_conn'
+
+basic_auth_user_var = f'deltek_vantagepoint_webhook_username_{company_key}'
+basic_auth_pass_var = f'deltek_vantagepoint_webhook_password_{company_key}'
+can_run_batch_task_var_name = f'Vantagepoint_project_sync_can_run_batch_task_{company_key}'
+
+tenant_email = 'MPTeamReplicon@deltek.com'
+internal_email = 'MPTeamReplicon@deltek.com'
+
+timesheet_field_oef_name_for_lc = 'Labor Codes'
+enable_budget_labor_codes_level = True
+budget_labor_codes_level = "TimesheetFields" # Task / TimesheetFields
+project_resource_enabled = False

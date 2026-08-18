@@ -1,0 +1,7 @@
+region = 'eu-central-1'
+environment = 'pre-production'
+company_key = 'pwcdev'
+replicon_conn_id = 'replicon_pwcdev'
+dag_id = 'pwcdev_projectdata'
+dag_description = 'PWC Webhook Status check Project Import'
+webhook_secret = 'pwcdev_projectdata_statuscheck_webhook_secret'

@@ -1,0 +1,364 @@
+from datetime import datetime, timedelta
+import itertools
+import json
+import ast
+from operator import itemgetter
+import rail
+
+DATE_FORMAT = "%m/%d/%Y"
+null = None
+
+def get_date_from_replicon_date(replicon_date):
+    return datetime(day=replicon_date['day'], month=replicon_date['month'], year=replicon_date['year'])
+
+def get_replicon_date(date_str):
+    if not date_str:
+        return None
+
+    date = datetime.strptime(date_str, DATE_FORMAT)
+    return {
+        'year': date.year,
+        'month': date.month,
+        'day': date.day
+    }
+
+
+def get_all_distinct_activity_names():
+    activity_details_from_payload = rail.load_all_records(rail.result('query_distinct_activities_in_payload'))
+    all_activities_replicon = rail.result('get_all_activity')
+    activity_name_list = []
+    for activity in activity_details_from_payload:
+        if len(activity.split(" ")) <=1:
+            activity_name_list.append(activity)
+        else:
+            for i in activity.split(" "):
+                activity_name_list.append(i)
+
+    unique_activity_names = set(activity_name_list)
+
+    activities_to_create =[]
+    for activity_name in unique_activity_names:
+        if rail.find_first_by_attr_and_get_attr(all_activities_replicon,'displayText',activity_name,'displayText'):
+            activities_to_create.append(activity_name)
+
+    return {
+        'distinct_activity_names': unique_activity_names,
+        'activities_to_create': activities_to_create
+    }
+
+
+def get_placeholder_time_off_to_be_assigned(dag_run, timeoff_type_mapper, timeoff_type):
+
+    if timeoff_type =="[UK] Sick leave":
+        key_mapping_for_feed_felids = {'company_code': 'company_code'}
+        mapper_keys_for_data_retrieve = ['company_code']
+
+    if timeoff_type =="[UK] Annual leave":
+        key_mapping_for_feed_felids = {'company_code': 'company_code'}
+        mapper_keys_for_data_retrieve = ['company_code']
+
+    def is_timeoff_type_mapper_value_found(mapper_data,value_found=False):
+
+        def bool_value_check(key,input_value,mapper_value, value_type):
+            if value_type=="list":
+                return bool(input_value in mapper_value)
+            return bool(input_value == mapper_value)
+
+        for key in mapper_keys_for_data_retrieve:
+            if isinstance(mapper_data[key], list):
+                value_found = bool_value_check(key, dag_run.conf[key_mapping_for_feed_felids.get(key)], mapper_data[key], "list")
+            else:
+                value_found = bool_value_check(key, dag_run.conf[key_mapping_for_feed_felids.get(key)], mapper_data[key], "str")
+
+            if not value_found:
+                break
+
+        return value_found
+
+    for mapper_row in timeoff_type_mapper:
+        if is_timeoff_type_mapper_value_found(mapper_row):
+            return mapper_row['placeholder_policy']
+
+    return null
+
+# pylint: disable=too-many-branches
+def get_time_off_to_be_assigned(dag_run, config):
+    timeoff_types_to_assign = []
+
+    def append_timeoff_types_to_assign(actual_name, placeholder_name):
+        return timeoff_types_to_assign.append({
+                    "actual_timeoff_type_name": actual_name,
+                    "placeholder_timeoff_type_name": placeholder_name
+                })
+    # pylint: disable=too-many-nested-blocks
+    for timeoff_type in config.APPLICABLE_TIME_OFF_TYPES:
+        if timeoff_type in config.GLOBAL_TIME_OFF_TYPES:
+            if (timeoff_type == "[UK] Bought holiday" and dag_run.conf.get('company_code') != '3000') or timeoff_type != "[UK] Bought holiday":
+                append_timeoff_types_to_assign(timeoff_type,"NA")
+
+        if timeoff_type =="[UK] Annual leave":
+            placeholder_policy = get_placeholder_time_off_to_be_assigned(dag_run, config.ANNUAL_TO_PLACEHOLDER, timeoff_type)
+            if placeholder_policy:
+                append_timeoff_types_to_assign(timeoff_type,placeholder_policy)
+
+        if timeoff_type =="[UK] Sick leave":
+            placeholder_policy = get_placeholder_time_off_to_be_assigned(dag_run, config.SICK_TO_PLACEHOLDER, timeoff_type)
+            if placeholder_policy:
+                append_timeoff_types_to_assign(timeoff_type,placeholder_policy)
+
+        if timeoff_type == "[UK] Time Off in Lieu":
+            # v12.3: eligible if the employee type is OT-eligible OR the employee is on
+            # exactly the base 3000 pay rule (config.BASE_3000_PAY_RULE), not any
+            # schedule-suffixed or OT variant of it.
+            is_base_3000_payrule = dag_run.conf.get('payrule_name') == config.BASE_3000_PAY_RULE
+            if dag_run.conf.get('employee_type_name') in config.OT_ELIGIBLE_EMPLOYEE_TYPES or is_base_3000_payrule:
+                append_timeoff_types_to_assign(timeoff_type, "NA")
+
+    return timeoff_types_to_assign
+
+def get_required_time_off_type_details(required_timeoff_types_details,action, mannual_time_off_types=null):
+    log_time_off_type_exception = []
+    exception_message = ""
+    data = rail.result('get_all_time_off_types')
+    all_time_off_types_names = list(map(itemgetter('timeoff_type_name'), data))
+    timeoff_type_names_to_be_assigned = list(map(itemgetter('actual_timeoff_type_name'), required_timeoff_types_details))
+
+    for item in timeoff_type_names_to_be_assigned:
+        if item not in all_time_off_types_names:
+            log_time_off_type_exception.append(item)
+
+    if log_time_off_type_exception:
+        exception_message = f"Time off Type - '{rail.smartjoin_by_delim(log_time_off_type_exception,',')}' not available in Replicon"
+
+    if action =='update':
+        for timeoff_type in mannual_time_off_types:
+            if rail.find_first_by_attr_and_get_attr(rail.result('get_user_time_off_policy_summary'),
+                    'timeoff_type_name', timeoff_type, 'timeoff_type_name'):
+                timeoff_type_names_to_be_assigned.append(timeoff_type)
+
+    return {"time_off_type_exception_log": exception_message if log_time_off_type_exception else [],
+            "result": list(filter(lambda time_off: time_off['timeoff_type_name'] in timeoff_type_names_to_be_assigned,data))}
+
+def assigned_time_offs_types():
+    data = rail.result('get_user_time_off_policy_summary')
+    return list(filter(lambda x: x['enabled'], map(lambda item: {
+        'timeoff_type_name': item['timeoff_type_name'],
+        "timeoff_type_uri": item['timeoff_type_uri'],
+        "enabled": item['enabled'],
+        "policy": item['policy'] if item['policy'] else []
+    }, data)))
+
+def time_off_types_to_be_disabled():
+    def get_policy(item):
+        return rail.find_first_by_attr_and_get_attr(rail.result('get_user_time_off_policy_summary'), 'timeoff_type_uri', item['timeoff_type_uri'], 'policy')
+
+    compare_data = rail.result('get_required_time_off_type_details_to_assign')['result']
+    data = rail.result('assigned_time_offs_types')
+    return list(filter(lambda x: x['status'] == 'No', map(lambda item: {
+        'timeoff_type_name': item['timeoff_type_name'],
+        "timeoff_type_uri": item['timeoff_type_uri'],
+        "enabled": item['enabled'],
+        "status": 'Yes' if rail.find_first_by_attr_and_get_attr(compare_data, 'timeoff_type_uri', item['timeoff_type_uri'], 'timeoff_type_name') else 'No',
+        "policy": get_policy(item)
+    }, data)))
+
+def get_historical_policy_to_assign_list(dag_run, action, for_each_loop):
+    data = rail.result(for_each_loop)['policy']
+    if not data:
+        return []
+    def get_compare_date():
+        if action =="update":
+            return dag_run.conf['change_effective_date']
+        if action =='rehire':
+            return dag_run.conf['start_date']
+        return dag_run.conf['end_date'] if dag_run.conf['end_date'] else dag_run.conf['change_effective_date']
+
+    return list(filter(lambda x: get_date_from_replicon_date(x['effectiveDate']).date()
+            < datetime.strptime(get_compare_date(), DATE_FORMAT).date(), map(lambda item: {
+        'description': item['description'],
+        'effectiveDate': item['effectiveDate'],
+        'policySet': item['policySet']
+    },data )))
+
+def get_no_accrual_policy_line(dag_run, action):
+    effective_date = (datetime.strptime(dag_run.conf['end_date'],DATE_FORMAT)+timedelta(days=1)).strftime(DATE_FORMAT)\
+        if action =='disable' and dag_run.conf['end_date'] else dag_run.conf['change_effective_date']
+    return [{
+        "effectiveDate":get_replicon_date(effective_date),
+        "description": "Effective on"+
+            f"{dag_run.conf['end_date'] if action =='disable'and dag_run.conf['end_date'] else dag_run.conf['change_effective_date']}",
+        "policySet": {
+            "timeOffBalanceEventScripts":[{
+             "script": {
+                "description": "Set initial balance for the first day of a policy",
+                "name": "Starting Balance Set To",
+                "uri": dag_run.conf['starting_balance_script_uri']
+            },
+            "additionalParameters": [{
+                "keyUri": "urn:replicon:script-key:parameter:amount",
+                "value": {
+                "number": rail.result('get_balance_summary_for_user')['timeRemaining']
+                }
+            }]
+            }],
+            "timeOffValidationScripts": [{
+            "script": {
+                "description": "Do not allow the user's time off balance to go below the overdraw threshold",
+                "name": "Prevent balance overdraw",
+                "uri": dag_run.conf['prevent_balance_overdraw_uri']
+            },
+            "additionalParameters": [{
+                "keyUri": "urn:replicon:script-key:parameter:maximum-overdraw",
+                "value": {
+                "number": "0"
+                }
+            }],
+            }]
+        }
+        }]
+
+def get_all_policy_to_assign_for_disable_user():
+    if rail.result('for_each_time_off_type_no_accural')['policy'] and rail.result('get_no_accrual_policy_line'):
+        data =rail.result('get_historical_policy_to_assign_list_disable_user') + rail.result('get_no_accrual_policy_line')
+        return json.dumps(ast.literal_eval(str(data).replace("'script'", "'scriptTarget'")))
+
+    if not rail.result('for_each_time_off_type_no_accural')['policy'] and rail.result('get_no_accrual_policy_line'):
+        data = rail.result('get_no_accrual_policy_line')
+        return json.dumps(ast.literal_eval(str(data).replace("'script'", "'scriptTarget'")))
+
+    if rail.result('for_each_time_off_type_no_accural')['policy'] and not rail.result('get_no_accrual_policy_line'):
+        data =rail.result('get_historical_policy_to_assign_list_disable_user')
+        return json.dumps(ast.literal_eval(str(data).replace("'script'", "'scriptTarget'")))
+
+    return null
+
+def _std_hrs_changed(dag_run):
+    """True if the feed's standard hours differ from the currently assigned value.
+    Used to detect a part-time schedule/hours change (e.g. 3 days -> 4 days) that must
+    re-prorate Annual/Sick leave even without a Full-Time <-> Part-Time flip."""
+    current = dag_run.conf.get('std_hrs')
+    previous = dag_run.conf.get('previous_std_hrs')
+    if not current or not previous:
+        return current != previous
+    try:
+        return float(current) != float(previous)
+    except (TypeError, ValueError):
+        return current != previous
+
+
+def time_off_types_to_be_assigned_update(dag_run, config):
+    data = rail.result('get_required_time_off_type_details_to_assign')['result']
+    compare_data = rail.result('assigned_time_offs_types')
+
+    def get_policy(item):
+        return rail.find_first_by_attr_and_get_attr(rail.result('get_user_time_off_policy_summary'), 'timeoff_type_uri', item['timeoff_type_uri'], 'policy')
+
+    def get_status(item):
+        # pylint: disable=too-many-return-statements
+
+        # Re-prorate Annual/Sick leave when the part-time basis changes, even if the
+        # company (placeholder policy) is unchanged:
+        #   - a Full-Time <-> Part-Time transition (both directions), or
+        #   - a part-time schedule/hours change (std_hrs differs from the assigned value).
+        # Forcing 'No' re-fetches and re-assigns the default policy, which the proration
+        # handler scales by the new ratio (FT->PT and PT schedule changes prorate;
+        # PT->FT restores full entitlement).
+        if item['timeoff_type_name'] in config.PRORATION_TIME_OFF_TYPES:
+            full_part = dag_run.conf.get('full_part')
+            if full_part != dag_run.conf.get('previous_full_part'):
+                return 'No'
+            if full_part == 'Part-Time' and _std_hrs_changed(dag_run):
+                return 'No'
+
+        if item['timeoff_type_name'] == '[UK] Annual leave':
+            current_placeholder = rail.find_first_by_attr_and_get_attr(dag_run.conf['time_off_types_to_assign'],
+                "actual_timeoff_type_name","[UK] Annual leave","placeholder_timeoff_type_name")
+            if dag_run.conf['previous_annual_to_placeholder'] != current_placeholder:
+                return 'No'
+
+        if item['timeoff_type_name'] == '[UK] Sick leave':
+            current_placeholder = rail.find_first_by_attr_and_get_attr(dag_run.conf['time_off_types_to_assign'],
+                "actual_timeoff_type_name","[UK] Sick leave","placeholder_timeoff_type_name")
+            if dag_run.conf['previous_sick_to_placeholder'] != current_placeholder:
+                return 'No'
+
+        if rail.find_first_by_attr_and_get_attr(compare_data, 'timeoff_type_uri', item['timeoff_type_uri'], 'timeoff_type_name'):
+            return 'Yes'
+
+        return 'No'
+
+    return list(filter(lambda x: x['status']=='No',map(lambda item: {
+        'timeoff_type_name': item['timeoff_type_name'],
+        "timeoff_type_uri": item['timeoff_type_uri'],
+        "enabled": rail.find_first_by_attr_and_get_attr(compare_data, 'timeoff_type_uri', item['timeoff_type_uri'], 'enabled'),
+        "status": get_status(item) if dag_run.conf['rehire']!='Yes' else 'No',
+        "policy": get_policy(item)
+    }, data)))
+
+def do_format_logs(dag_run):
+    log_artifacts = []
+    log_records = []
+
+    userlogs = dag_run.conf['userlogs']
+    otherlogs = dag_run.conf['otherlogs']
+
+    if userlogs:
+        if isinstance(userlogs, list):
+            log_artifacts.extend(userlogs)
+        else:
+            log_artifacts.append(userlogs)
+
+    if otherlogs:
+        if isinstance(otherlogs, list):
+            log_artifacts.extend(otherlogs)
+        else:
+            log_artifacts.append(otherlogs)
+
+    if log_artifacts:
+        for log in log_artifacts:
+            each_log_records = rail.load_all_records(log)
+            if each_log_records:
+                log_records.extend(each_log_records)
+
+    final_log_records = []
+
+    final_log_records = list(map(lambda log: {
+        **{
+            'jobid': log['ecid']
+        },
+        **log['properties'],
+        }, log_records))
+
+    rail.set_result(key="error_record_count",val= len(list(filter(lambda x: x['status'] == 'Error', final_log_records ))))
+    rail.set_result(key="success_record_count",val= len(list(filter(lambda x: x['status'] == 'Success', final_log_records ))))
+    rail.set_result(key="exception_record_count",val= len(list(filter(lambda x: x['status'] == 'Exception', final_log_records ))))
+    rail.set_result(key="total_record_count",val= dag_run.conf['total_records'])
+
+    return final_log_records
+
+def get_process_users_dag_ids(parallel_count):
+    active_users =  list(itertools.chain(
+        *list(map(lambda x: (rail.result(
+            f'process_active_users_{x+1}') if rail.result(
+            f'process_active_users_{x+1}') else []), range(parallel_count)))))
+
+    disable_users = list(itertools.chain(
+        *list(map(lambda x: (rail.result(
+            f'process_disable_users_{x+1}') if rail.result(
+            f'process_disable_users_{x+1}') else []), range(parallel_count)))))
+
+    return active_users + disable_users
+
+def get_all_policy_to_assign_update():
+    if rail.result('for_each_time_off_type_policy')['policy'] and rail.result('get_default_time_off_policy_schedule'):
+        data =rail.result('get_historical_policy_to_assign_list') + rail.result('get_default_time_off_policy_schedule')
+        return json.dumps(ast.literal_eval(str(data).replace("'script'", "'scriptTarget'")))
+
+    if not rail.result('for_each_time_off_type_policy')['policy'] and rail.result('get_default_time_off_policy_schedule'):
+        data = rail.result('get_default_time_off_policy_schedule')
+        return json.dumps(ast.literal_eval(str(data).replace("'script'", "'scriptTarget'")))
+
+    if rail.result('for_each_time_off_type_policy')['policy'] and not rail.result('get_default_time_off_policy_schedule'):
+        data =rail.result('get_historical_policy_to_assign_list')
+        return json.dumps(ast.literal_eval(str(data).replace("'script'", "'scriptTarget'")))
+    return null

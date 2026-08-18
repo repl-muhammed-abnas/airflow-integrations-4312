@@ -1,0 +1,30 @@
+{
+  "ai_lines": {
+    "7": "109656bdb8d1f8bf026f02579645651da345a4e2173ffc18123b9c6f54146363"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-25T10:09:11.653Z",
+  "file_state": {
+    "file_sha256": "d0cd7f6536edc95731260165408b65bd48260c196015c4ee081fbad1061a8564",
+    "total_file_lines": 9,
+    "total_lines": 6
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\ascendmaterials\\user_import\\config.py",
+  "stats": {
+    "ai_line_count": 1,
+    "ai_line_pct": 16.67,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-03-25T10:09:11.653Z",
+  "version": 1
+}

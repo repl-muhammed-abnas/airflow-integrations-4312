@@ -1,0 +1,11 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Time Off recalculation job is
+{{ " " }}
+{%- set has_errors = result("get_logged_errors", key="length") > 0 -%}
+{%- if has_errors -%}
+  completed with errors
+{%- else -%}
+      completed successfully
+  {%- endif -%}
+{{ " "}}. Please use the below link to access logs reference. <br /> <br /><a href="{{result('generate_download_link')}}">Download log file</a></p>
+<p>The download link is valid for 7 days.</p>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

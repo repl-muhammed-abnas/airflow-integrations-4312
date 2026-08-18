@@ -1,0 +1,2 @@
+UserFirstName,UserLastName,TimeEntryId,LoginName,iwfr\InternalPerson\PartyId,iwfr\PwCLegalEntity\PartyId,EmployeeId,TransactionDate,ChargeCode,WorkItemType,HoursQuantity,Comments,WorkLocation,WorkCategory,ApprovalStatus,SubmittedOn,TimesheetStartDate,TimesheetEndDate
+Phaedra,Pang,f2f5db4c-3da0-42e4-bebb-9b41019e6561,ppang017,9dc38b92-0ee5-418f-8a3a-837408bdb163,5681afe9-4599-4334-a939-ade4ae8674d1,100531235,20220516,657216,100014060011565,8.00,"",Singapore,"",Approved,20220615,20220515,20220521

@@ -1,0 +1,4 @@
+Level,WBS,Attribute name,Status,Details,Record Count,Job ID
+System,na,112004 - Labour,Exception,Attribute Value Already Exist,1,08a73d9d1e6d596eaa1077f4ca9b3622:18:00:03
+Project,IE1-DMOC1.25.10,112004 - Labour,Success,Attribute Added Successfully,1,08a73d9d1e6d596eaa1077f4ca9b3622:21:00:05:00:06
+Number of Records Processed Successfully: 1,Number of Records with Error: 0,Number of Records with Exception: 1,,

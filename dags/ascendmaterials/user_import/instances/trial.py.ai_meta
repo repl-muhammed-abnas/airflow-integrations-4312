@@ -1,0 +1,50 @@
+{
+  "ai_lines": {
+    "21": "70f8aaa59736e7d8ede30f112586a48f8d8c3272311569837278996b23b5ce6b",
+    "28": "28f0cddcd5cf196e1065af8a00750dc0550ff19b7794dc9a00cc0b10a408a129",
+    "40": "74b3477d5c0b88fcba0a5a2da2e1f7108518898f3eb4f3ed8d44e25a8ff4fdfe",
+    "41": "8c829bf79a67861b7ec944212f970ed77e5b5e20e379c421aa261102b9df8971",
+    "42": "e29a1395b326066d2333dd64eae5460f074daaa558be246694f0cdfe0615606b",
+    "43": "0fc2d39ce76ddd247f05042433c435a5833caf453c196d34c412c14184b50231",
+    "44": "2dc96e03ca13fc35b652ab290dabc7bf23e2a24053f866c722a56ee3c3e63e40",
+    "45": "fcb6786e684d35c08340a379908e097663d9c6ea3c68a125e071155d31da3fe8",
+    "46": "61035cebe934252fc4fd211d0633ac014d7e1dca7860f2d671381a24de75a4fa",
+    "47": "3e343a5092df41e4d4b8ccf48b4bde20169c5775e27a9ff8f7479decad9201ea",
+    "48": "791c8e275dcd74dff8dd995321dbce944be2a3691d40b100d92872e4b2cb8c6a",
+    "49": "4dbe7629381e2fcbd646f8ad21cc9308fed0f19f0406c477ee5b8ede875bc4c2",
+    "50": "771b69d1d8bfc32d5b7ec63c23e650cc7037b521a2f9bb044ba22cb35319a366",
+    "51": "99196eb838ff4441a3266ee77d98591eee74b810ad80bc1a7ad53b94cec55a00",
+    "52": "f5092e85ac2a2eda0140fe296df863c8aa9c7d7d3e8f2e1d5de1f2b94ab75ac0"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 4,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-24T15:52:54.151Z",
+  "file_state": {
+    "file_sha256": "f6e07726496e61e0ca322f682d745968c590d4e7f698ccecc0d526a3a2d1ed8c",
+    "total_file_lines": 52,
+    "total_lines": 43
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "7972ef491f910c54758981a50358ce562de9a19683358075144ef454cdcd8e15",
+      "last_known_line": 39,
+      "removed_at": "2026-03-25T10:09:03.633Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\ascendmaterials\\user_import\\instances\\trial.py",
+  "stats": {
+    "ai_line_count": 15,
+    "ai_line_pct": 34.88,
+    "ai_lines_removed_or_modified": 1
+  },
+  "updated_at": "2026-03-25T10:16:35.415Z",
+  "version": 1
+}

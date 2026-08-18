@@ -1,0 +1,40 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from capgemini.leave_data_extract_global_row_v4_leave_balance.config import *
+
+instance = 'production'
+leave_status = 'leave balance'
+location = 'Europe'
+region_identifier = 'es_it'  # Set 4: SPAIN, ITALY (19,908 users)
+countries = ['SPAIN', 'ITALY']
+
+environment = 'production'
+
+company_key = 'capgemini'
+
+schedule_interval = "0 1 */1 * *"
+
+replicon_conn_id = 'capgemini_replicon_leave_data.integration'
+sftp_conn_id = 'sftp_capgemini_502546_Capgemini'
+pgp_conn_id = 'pgp_capgemini'
+
+# pylint: disable=line-too-long
+expected_report_columns = "Employee ID;Local Employee Number;Time Off Type;Time Off Type Description;Leave Carry Forward;Leave Accrued;Leave Availed;Leave Reset;Leave Balance;Units;Pushed On;User End Date"
+
+export_columns = ['Employee ID', 'Local Employee Number', 'Time Off Type', 'Time Off Type Description',
+                  'Leave Carry Forward', 'Leave Accrued', 'Leave Availed', 'Leave Reset', 'Leave Balance',
+                  'Units', 'Pushed On', 'User End Date']
+
+input_filepath = "/Outbound/LeaveBalance/Input"
+s3_upload_filepath = "Capgemini/Outbound/LeaveBalance/Input"
+filename_prefix = f"Prod_{location.replace(' ', '')}_LeaveBalance"
+filename_seconds_suffix = "20"
+
+report_name = "GTM INT007 FSD LeaveHeader(ISG DB) - EU - ES_IT"
+
+tenant_email = 'groupitrepliconsupportl2@capgemini.com'
+internal_logs_email = '{{ var.value.dagrun_internal_log_email}},capgeminisupportreplicon@deltek.com'
+
+can_run_batch_task_var_name = f'capgemini_leave_data_extract_can_run_batch_task_{instance}'
+
+export_region = f"europe_{region_identifier}"
+leave_balance_export_master_dag_id = f'capgemini_leave_data_extract_global_master_leave_balance_{export_region}_region_{instance}_v4'

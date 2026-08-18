@@ -1,0 +1,15 @@
+<p>Hi Team,<br /> <br /> The time date export for "{{ dag_run.conf.location }}" location has been completed at {{data_interval_end}}, 
+    however the {{ params.type }} upload to sftp has failed with error. </p>
+<ul>
+    <li>DAG ID: {{ params.dag_id }}</li>
+    <li>ECID: {{ dag_run_ecid }}</li>
+    {%- if params.type != 'log file' -%}
+        <li>File Name: Log_{{ dag_run.conf.export_file_name }}.csv</li>
+    {%- else -%}
+        <li>File Name: {{ dag_run.conf.export_file_name }}.csv</li>
+    {%- endif -%}
+    <li>SFTP Path: {{ params.path }}</li>
+</ul>
+<p>
+    Please find the attached {{ params.type }} to be uploaded to sftp. Upload the file to the given sftp and debug the issue.<br />
+    <br /> Regards,<br /> Deltek Inc</p>

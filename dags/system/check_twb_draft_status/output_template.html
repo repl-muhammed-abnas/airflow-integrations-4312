@@ -1,0 +1,18 @@
+<table style="border:1px solid black" border="1">
+<tr>
+<th>Time Export Name</th>
+<th>Time Export Uri</th>
+<th>Creation Date</th>
+<th>Creator</th>
+<th>Status</th>
+</tr>
+{%- for record in dataset %}
+<tr>
+<td> {{ record.time_export_name }} </td>
+<td> {{ record.twb_uri }} </td>
+<td> {{ record.creation_time }} </td>
+<td> {{ record.creator }} </td>
+<td> Draft </td>
+</tr>
+{%- endfor %}
+</table>

@@ -1,0 +1,76 @@
+{
+  "ai_lines": {
+    "153": "6733f0135b801e20d8dbb6e26f48618630900dab39f8daed248bc388eb55a7fd",
+    "154": "2f5aac43e9f8a5ef5a64b4df4d9a579175ae32159c49bd89eb6798774ab42a64",
+    "155": "3fc0e067a03ad9493ab073f7b4845dba9321b6566a76f4605dc44d55fe902ddc",
+    "25": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+    "32": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+    "34": "092f42e76e19ab9af018c001c017300c6c39f1193fb5606f0f703f3c4cc3cc43",
+    "38": "8886b343685b0db76e71a2a61b2f67236d597709fd972fa40e3bfaa90ef03dce",
+    "39": "044ed29593e138a340018824952f9a6b67b632657e7c40c09ceff1841c30ae69",
+    "40": "5cb31a3997bbeed04f36f03fb8622de90f53bbb9d24f1ada77911ef55d7ea4c9",
+    "41": "1a9a19f521565b8e6f3e9340acf6123516ea738fa3c9c84da775ce87ab87e078",
+    "42": "93dfbaa4bbb4633a72f0ef636c3188c0533603ce178b89544fb34f773443f8d0",
+    "43": "86afdf70a95436e883aa7fc5c06a2ab083719054438f1218d15ebdaf287b4bac",
+    "44": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+    "58": "ef9cbd23e4ca1938460a79246da13390d1541a7c7dbfdb8622f16ec788e2da85",
+    "62": "a82822c984ddcda61ff799b0daa1ac99f1a554e17863208f19f135ad66e4bf0a",
+    "63": "053569f094ec52f330d365a471a4c55caada2ec51e067935ccf69037edae5f61",
+    "64": "81a0959eebf916490c89a8c2bb0f7ef6a10cc0c61a61f60d35efcb1545dcf1df",
+    "65": "5f16ca98ba04cbaf2867e04a29d7539bb6557ada356a0faa6d958d4a60e62177",
+    "66": "c3217c466ca1a2acf07da8e2f5870342185367adfab88287a435e7cb8075cfbd",
+    "67": "bbc90975c88ca0e7957a5653e2e19db1071a429938663e1c7c6e836d2edc9492",
+    "70": "b90deb1ba69634b2fae69981d79211b01ec2e84989ca734fdda54738642ac064",
+    "71": "c426da5262f57765658ab668c89e65be9ee88adb6e14537d5cb05f0629351eff",
+    "72": "d0e7f76a80134ce269f1a735ac81b9331af35999de385bc6c2cf28d00f16b551",
+    "73": "cc5b1947b3003df4b4ad8a5469e1c1ab64c75baa777ee8774d902478bd71206f",
+    "74": "7e3dd8bde1fbae13d6535ecbc93d7dd5ee5fedc2e5f682f1aff5ac0b318dbd48",
+    "75": "c32752a55a3a1c05d1f903e8a009d1aa6dce209e11ceb2cf86e062595aaeeec7",
+    "76": "cf37742e38018db603ad6afaf772c803814eca0ad7e4186abb120821ee9da80c",
+    "77": "86afdf70a95436e883aa7fc5c06a2ab083719054438f1218d15ebdaf287b4bac",
+    "80": "ecb2465bfa2d1d68e9a2fcfb2347d2351961ba45dc1673d35134e617ec130582",
+    "81": "a15d29ecc902373b358d2b9eda70c1c60fda5427a802ec335483394defaa5b8c",
+    "82": "e342a1ff0a70bf743c14ae66dfdd0f02fd0fd9f025f77b21338df11077115353",
+    "83": "2e4dfc1b33de7af26a2fec166bff5d28a818fd581a7066f05cbcc74d7814b60b",
+    "84": "8e4b4120b7918596e08e68ad219a77488a36a609de2cc4e33f8902f43f8144fd",
+    "85": "3f8a1013da244fa3adca3f4d939d250169cf52408dd52cfb6dbe0ddd5472d59c",
+    "86": "6a953d398ae0cdd23cd6016e2ba03caf3768897b9da4c72b2ecefe39e138de84",
+    "87": "7d274446402dbfec4e94cf58d2eb61cd76cc9614d6bfb63a2471a90b7acfc0ae",
+    "88": "818603d3e88ac67bf9772c19b6e89b5d8c5dc679f60fca5d2f037844be453984",
+    "90": "f9d48cb43fcaf1dc95a213b594c604ccec946f685d18257baaed016a8ed2ef24",
+    "91": "01f2b83cbb499391fe3333f2f7432947148c6d33b9346f1832b8d87458135a83",
+    "92": "a6c9de36c679c80bf3ca4a3c437f5fcf9c99a41d11f704391eb875fcebd4f3fa",
+    "96": "214fa8e64e6a126e619e43257c9333f18747394b4332e97b0b96645ee771ae1e"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 3,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-10T15:59:02.642Z",
+  "file_state": {
+    "file_sha256": "6fb7cb9d002bdcbfbfcf03bb6c49b6fdae4918d925e89b2af3a79f38232144ae",
+    "total_file_lines": 160,
+    "total_lines": 141
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "968622e57e05f6c793e0c971c8265b564a2d49ba89395aa219f7d8e6f9b8e1bc",
+      "last_known_line": 65,
+      "removed_at": "2026-03-11T08:27:07.012Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\tsystems\\project_import_file_based_v3\\process_clients_child.py",
+  "stats": {
+    "ai_line_count": 41,
+    "ai_line_pct": 29.08,
+    "ai_lines_removed_or_modified": 1
+  },
+  "updated_at": "2026-03-11T08:27:07.012Z",
+  "version": 1
+}

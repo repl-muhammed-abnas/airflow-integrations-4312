@@ -1,0 +1,19 @@
+<p><strong>This is an automated mail, please don't reply.</strong></p>
+
+<p>Hello,</p>
+
+<p>The Replicon Resource Assignment Export is completed on {{ current_time("%Y-%m-%dT%H:%M:%S.%f%z") }}.</p>
+
+<p>Please find the export file in the below SFTP location:</p>
+
+<p>
+    <strong>File path:</strong> {{ params.log_filepath }}<br />
+    <strong>File name:</strong> {{ result("get_file_name") }}
+</p>
+
+<p>For any queries, please contact our support team at <a href="https://support.deltek.com">https://support.deltek.com</a></p>
+
+<p>
+    Regards,<br />
+    Deltek Inc.
+</p>

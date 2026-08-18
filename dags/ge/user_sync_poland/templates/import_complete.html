@@ -1,0 +1,22 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The User Import is
+  {{ "" }}
+  {%- set has_errors = result("get_final_error_exception_count").final_error_record_count > 0 -%}
+  {%- set has_exceptions = result("get_final_error_exception_count").final_exception_record_count > 0 -%}
+  {%- if has_errors -%}
+  completed with errors
+  {%- elif has_exceptions -%}
+  completed with exceptions
+  {%- else -%}
+  completed successfully
+  {%- endif -%}
+  &nbsp;on {{ current_time_in_specified_tz("Europe/Warsaw", "%m/%d/%YT%H:%M:%S") }} . Please find the below link to
+  download the user import logs for reference. <br />
+  <br /><a href="{{result('generate_downloadlink_logs')}}">Download log file</a><br />
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days</span></em></p>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+<p><strong>This is an automated mail from Deltek Integration, Please do not reply to this email.</strong><br /> <br />
+  Regards,<br />
+  Deltek Inc</p>
+</p>

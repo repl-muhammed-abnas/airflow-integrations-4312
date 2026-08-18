@@ -1,0 +1,24 @@
+Hello, <br /> <br />
+Bamboohr timeoff import to Replicon is {{ " " }}
+{%- set has_errors = result("query_log_collection_to_find_error_logs", "length") > 0 -%}
+{%- if has_errors -%}
+completed with failed records.
+{%- else -%}
+completed successfully.
+{%- endif -%}
+{{ "" }}, further details are below: <br />
+<ul>
+  <li>Log File name: {{result('get_email_and_log_file_details').log_file_name}}</li>
+  <li>Log File path: {{ params.log_filepath }}</li>
+  <li>Total Records processed: {{result("compose_logs_collection", "length")}}</li>
+  <li>Successful Record Count: {{result("query_log_collection_to_find_success_logs", "length")}}</li>
+  <li>Error Record Count : {{result("query_log_collection_to_find_error_logs", "length")}}</li>
+</ul>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+  For any queries, please contact our support team at <a
+    href=https://support.deltek.com>https://support.deltek.com</a><br />
+<p><strong>This is an automated mail from Deltek Integration, Please do not reply to this email.</strong><br /> <br />
+  Regards,<br />
+  Deltek Inc</p>

@@ -1,0 +1,38 @@
+{
+  "ai_lines": {
+    "20": "b18dfea781c5bbbfee480b548b963fc35b26d56e25078c6cbb3e241f43fee459",
+    "22": "5ef4797358ca980e1927fa1998f87ad7ce4ba33dca8ff88aa8e8795f7291c434",
+    "9": "29fefdbc1069ac7935c13f5712a7509fc24617c68a2cdac8accb50f9e44b8287"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-24T07:41:42.629Z",
+  "file_state": {
+    "file_sha256": "4a75960fe96e67e8b3904a3badb84553930c3cd1c17fcd768e49615a2f83dc77",
+    "total_file_lines": 22,
+    "total_lines": 14
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "5508c861431c7140e1038408e4af844c6400f94cab7f82bf3d13a57d15bc72b3",
+      "last_known_line": 20,
+      "removed_at": "2026-03-24T07:46:31.764Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\accenture\\webhook_endpoints\\user_sync_ventagepoint\\instances\\trial.py",
+  "stats": {
+    "ai_line_count": 3,
+    "ai_line_pct": 21.43,
+    "ai_lines_removed_or_modified": 1
+  },
+  "updated_at": "2026-03-24T07:46:31.764Z",
+  "version": 1
+}

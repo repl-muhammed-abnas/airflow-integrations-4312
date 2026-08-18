@@ -1,0 +1,37 @@
+{
+  "ai_lines": {
+    "185": "2ae41b5169fa25cfdcd95b9cdeba6e830f7790b474a239a9d05e0b503b44e4ea",
+    "224": "0c9cf37d8275d60cae8be77c404d214cae133a5d7660996ec4442d0e6f678a1c"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 3,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-01T12:59:27.791Z",
+  "file_state": {
+    "file_sha256": "322af41896b576b709a8b3952fb95f6fc3a44c4e56cba08960256a52c14dd1e9",
+    "total_file_lines": 272,
+    "total_lines": 239
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "58a3653b3b01855e1326f798d12867fe42ec497c5d265abab0ceaade86f0b500",
+      "last_known_line": 185,
+      "removed_at": "2026-06-05T10:13:17.986Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\report_comparison\\jobs_data\\main.py",
+  "stats": {
+    "ai_line_count": 2,
+    "ai_line_pct": 0.84,
+    "ai_lines_removed_or_modified": 1
+  },
+  "updated_at": "2026-06-05T10:13:17.986Z",
+  "version": 1
+}

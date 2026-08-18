@@ -1,0 +1,25 @@
+Hello, <br /> <br />
+The User sync for the file name "{{ result('new_file_sensor') | file_name }}" is
+{%- set has_errors = result("check_error_in_final_user_import_logs", key="length") > 0 -%}
+{%- if has_errors -%}
+completed
+{%- else -%}
+{%- if result("check_exception_in_final_user_import_logs", key="length") > 0 -%}
+completed
+{%- else -%}
+completed successfully
+{%- endif -%}
+{%- endif -%}
+{{ "" }}. Please review the import logs at below SFTP location for details. <br /><br />
+<ul>
+  <li>Path: {{ params.log_filepath }}</li>
+  <li>Name: log_{{ result('log_formatted_job_start_time') }}_{{ result('new_file_sensor') | file_name }}</li>
+</ul>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+  For any queries, please contact our support team at <a
+    href=https://support.deltek.com>https://support.deltek.com</a><br />
+<p><strong>This is an automated mail from Deltek Integration, Please do not reply to this email.</strong><br /> <br />
+  Regards,<br />
+  Deltek Inc</p>

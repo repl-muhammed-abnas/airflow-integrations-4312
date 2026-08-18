@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_CostCenter_Replicon xmlns:ns0="http://csc.com/IF9005/FromGSAPToReplicon/CostCenter">
+    <Records>
+        <Cost_Center_Name>CP0ADE1210</Cost_Center_Name>
+        <Cost_Center_Name_parent>X</Cost_Center_Name_parent>
+    </Records>
+</ns0:MT_CostCenter_Replicon>

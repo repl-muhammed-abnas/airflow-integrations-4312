@@ -1,0 +1,21 @@
+<p>
+    <strong>This is an automated mail, please don't reply.</strong><br />
+    <br />
+    Hello,<br />
+    <br />
+    The Replicon time data export to Oracle PPM has completed successfully at {{ current_time_in_specified_tz(params.time_zone) }}.<br />
+    <br />
+    Time entries have been posted to Oracle Fusion Cloud project costs.<br />
+    <br />
+    Replicon Export Name: {{ result('logging_details').time_export_filename }}
+</p>
+<p>
+    <a href="{{result('generate_success_report_link')}}">Download logs</a>
+</p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+<p>
+    For any queries, please contact our support team at https://support.deltek.com<br />
+    <br />
+    Regards,<br />
+    Deltek Inc.
+</p>

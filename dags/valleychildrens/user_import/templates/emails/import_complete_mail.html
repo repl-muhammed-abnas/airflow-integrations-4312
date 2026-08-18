@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <p>Hello,</p>
+    <p>The {{ get_company_key() }} User Import has finished at {{ current_time_in_specified_tz() }}.</p>
+    <table style="border-collapse: collapse;">
+      <tr><td>Total records</td><td>{{ result('format_logs', key='total_record_count') }}</td></tr>
+      <tr><td>Success</td><td>{{ result('format_logs', key='success_record_count') }}</td></tr>
+      <tr><td>Errors</td><td>{{ result('format_logs', key='error_record_count') }}</td></tr>
+      <tr><td>Exceptions</td><td>{{ result('format_logs', key='exception_record_count') }}</td></tr>
+    </table>
+    <p>Log file: <code>{{ params.log_filepath }}/{{ dag_run.conf.log_filename }}</code></p>
+    <p><a href="{{ result('generate_downloadable_link') }}">Download log file</a> (link expires in 7 days)</p>
+    <p>Regards,<br/>Replicon Integration</p>
+  </body>
+</html>

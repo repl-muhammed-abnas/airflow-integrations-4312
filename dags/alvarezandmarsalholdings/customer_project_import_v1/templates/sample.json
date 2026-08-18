@@ -1,0 +1,191 @@
+{
+	"CommercialProject": [
+		{
+			"ProjectID": "P000002CL01",
+			"ProjectName": "Audit SIERRA col Energy_Copy",
+			"StartDate": "2025-03-25",
+			"EndDate": "2026-03-25",
+			"ProjManagerExtId": "PWAKALKAR",
+			"CostCenter": "CL01732530",
+			"ProjectStage": "P003",
+			"ProjectProfileCode": "P001",
+			"ControllingArea": "A000",
+			"FederalProject": "No",
+			"WorkpackageSet": {
+				"WorkPackage": [
+					{
+						"WorkPackageID": "P000002CL01.1.1",
+						"WorkPackageName": "Consulting",
+						"WPStartDate": "2025-03-25",
+						"WPEndDate": "2025-03-25",
+						"NonBillableWP": "",
+						"BillingResponsible": "",
+						"WorkPackageFunctionIsBlocked": "",
+						"WorkitemSet": {
+							"Workitem": [
+								{
+									"Workitem": "306ADVA50",
+									"Workitemname": "306ADVA50 Consultation & risk (EA Only",
+									"WorkpackageID": "P000002CL01.1.1"
+								},
+								{
+									"Workitem": "306ADVA40",
+									"Workitemname": "306ADVA40 Ethics & AML considerations",
+									"WorkpackageID": "P000002CL01.1.1"
+								},
+								{
+									"Workitem": "306ADVA30",
+									"Workitemname": "306ADVA30 Conflict check (PRIME)",
+									"WorkpackageID": "P000002CL01.1.1"
+								},
+								{
+									"Workitem": "306ADVA20",
+									"Workitemname": "306ADVA20 Background company informati",
+									"WorkpackageID": "P000002CL01.1.1"
+								},
+								{
+									"Workitem": "306ADVA10",
+									"Workitemname": "306ADVA10 Pre engagement meetings",
+									"WorkpackageID": "P000002CL01.1.1"
+								}
+							]
+						},
+						"StaffingDataSet": "",
+						"StaffingCostCenter": {
+							"CostCenterEntry": {
+								"WorkPackageID": "P000002CL01.1.1",
+								"CostCenter": "Constant"
+							}
+						}
+					},
+					{
+						"WorkPackageID": "P000002CL01.1.3",
+						"WorkPackageName": "Documentation",
+						"WPStartDate": "2025-03-25",
+						"WPEndDate": "2025-03-25",
+						"NonBillableWP": "",
+						"BillingResponsible": "",
+						"WorkPackageFunctionIsBlocked": "",
+						"WorkitemSet": "",
+						"StaffingDataSet": "",
+						"StaffingCostCenter": {
+							"CostCenterEntry": {
+								"WorkPackageID": "P000002CL01.1.3",
+								"CostCenter": "Constant"
+							}
+						}
+					},
+					{
+						"WorkPackageID": "P000002CL01.1.2",
+						"WorkPackageName": "Auditing",
+						"WPStartDate": "2025-03-25",
+						"WPEndDate": "2026-03-25",
+						"NonBillableWP": "",
+						"BillingResponsible": "",
+						"WorkPackageFunctionIsBlocked": "",
+						"WorkitemSet": "",
+						"StaffingDataSet": "",
+						"StaffingCostCenter": {
+							"CostCenterEntry": {
+								"WorkPackageID": "P000002CL01.1.2",
+								"CostCenter": "Constant"
+							}
+						}
+					}
+				]
+			}
+		},
+		{
+			"ProjectID": "P000024MX01",
+			"ProjectName": "P000024MX01",
+			"StartDate": "2025-04-01",
+			"EndDate": "2026-05-01",
+			"ProjManagerExtId": "ADIXIT",
+			"CostCenter": "MX01890923",
+			"ProjectStage": "P003",
+			"ProjectProfileCode": "P001",
+			"ControllingArea": "A000",
+			"FederalProject": "No",
+			"WorkpackageSet": {
+				"WorkPackage": [
+					{
+						"WorkPackageID": "P000024MX01.1.1",
+						"WorkPackageName": "Consulting",
+						"WPStartDate": "2025-04-01",
+						"WPEndDate": "2026-05-01",
+						"NonBillableWP": "",
+						"BillingResponsible": "",
+						"WorkPackageFunctionIsBlocked": "",
+						"WorkitemSet": {
+							"Workitem": [
+								{
+									"Workitem": "306ADVG10",
+									"Workitemname": "306ADVG10 Estimated Outcome",
+									"WorkpackageID": "P000024MX01.1.1"
+								},
+								{
+									"Workitem": "306ADVA10",
+									"Workitemname": "306ADVA10 Pre engagement meetings",
+									"WorkpackageID": "P000024MX01.1.1"
+								}
+							]
+						},
+						"StaffingDataSet": {
+							"Staffing": [
+								{
+									"WorkPackageID": "P000024MX01.1.1",
+									"StaffedEmployee": "63614"
+								},
+								{
+									"WorkPackageID": "P000024MX01.1.1",
+									"StaffedEmployee": "68585"
+								}
+							]
+						},
+						"StaffingCostCenter": {
+							"CostCenterEntry": {
+								"WorkPackageID": "P000024MX01.1.1",
+								"CostCenter": "Constant"
+							}
+						}
+					},
+					{
+						"WorkPackageID": "P000024MX01.1.2",
+						"WorkPackageName": "IT Services",
+						"WPStartDate": "2025-04-01",
+						"WPEndDate": "2026-05-01",
+						"NonBillableWP": "",
+						"BillingResponsible": "",
+						"WorkPackageFunctionIsBlocked": "",
+						"WorkitemSet": {
+							"Workitem": [
+								{
+									"Workitem": "306ADVA70",
+									"Workitemname": "306ADVA70 Engagement Letter",
+									"WorkpackageID": "P000024MX01.1.2"
+								},
+								{
+									"Workitem": "306ADVA60",
+									"Workitemname": "306ADVA60 Engagement Acceptance Form",
+									"WorkpackageID": "P000024MX01.1.2"
+								}
+							]
+						},
+						"StaffingDataSet": {
+							"Staffing": [{
+								"WorkPackageID": "P000024MX01.1.2",
+								"StaffedEmployee": "TSTACT04"
+							}]
+						},
+						"StaffingCostCenter": {
+							"CostCenterEntry": {
+								"WorkPackageID": "P000024MX01.1.2",
+								"CostCenter": "Constant"
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}

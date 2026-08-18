@@ -1,0 +1,78 @@
+{
+  "ai_lines": {
+    "21": "ec4697e2dfe8e4ca6d057d10ff5de2394174be2dec612d83e948f6bf6793ae48",
+    "24": "5ef1354201393d1be9079cf6acf3f8c1e21eefe99454e81f3bf0c99f3d84b341",
+    "56": "3d9033e137d33d35ffd8390770384ccf21ad721754cc057cdb715fcf349ed1f7"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 5,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-17T07:55:08.606Z",
+  "file_state": {
+    "file_sha256": "0057d2d8a97b631329021899f1750fe4f2aa44ec5bf912d9c2dd1d550ccfb9cb",
+    "total_file_lines": 262,
+    "total_lines": 224
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "79b6ba1837ab778879662f7edcd98f18fc956d6095bc1849f2e9e12be2990adb",
+      "last_known_line": 249,
+      "removed_at": "2026-03-17T13:35:28.985Z"
+    },
+    {
+      "hash": "111e6ff020b4839f4800afa6bc0a96b76a7df21cef40fa9abd21a9e39ca7d498",
+      "last_known_line": 250,
+      "removed_at": "2026-03-17T13:35:28.985Z"
+    },
+    {
+      "hash": "be6c37e88b17d962525adbd5c57e9ef0fc00ec447d70921c85c08aca4649d841",
+      "last_known_line": 251,
+      "removed_at": "2026-03-17T13:35:28.985Z"
+    },
+    {
+      "hash": "c8ecc4c99f005d08dee89220a810d679b12b6e1da394a0aeac9b89d070dcf64e",
+      "last_known_line": 28,
+      "removed_at": "2026-03-17T14:09:32.501Z"
+    },
+    {
+      "hash": "a573dd30bad39dd8e3bafc49ddfc1595e1a94c51894045ef13f35571cd600863",
+      "last_known_line": 21,
+      "removed_at": "2026-03-17T14:35:24.364Z"
+    },
+    {
+      "hash": "7a22153afe5f3846491c92838ca4d3037f1a69e36583aa119a6d439a0951a714",
+      "last_known_line": 24,
+      "removed_at": "2026-03-17T14:35:24.364Z"
+    },
+    {
+      "hash": "5f018e49d21b7a05d192ba776e91b22b637a3038cbbae0293367dd3fbfab16ac",
+      "last_known_line": 27,
+      "removed_at": "2026-03-17T14:35:24.364Z"
+    },
+    {
+      "hash": "16e6f91edbb5b6b00746433db52aada0b0082bf7899529f83ddc3c4768c8b1af",
+      "last_known_line": 29,
+      "removed_at": "2026-03-17T14:35:24.364Z"
+    },
+    {
+      "hash": "65abaa95adf06adf60e6f9f3f0fbe7960a3adace5ffdf3f8c9cbbf8e44e4f667",
+      "last_known_line": 56,
+      "removed_at": "2026-03-17T14:35:31.672Z"
+    }
+  ],
+  "source_file": "C:\\Workspace\\airflow-integrations\\dags\\cie_wipro\\ksa_absconding_employee_notification\\main_dag.py",
+  "stats": {
+    "ai_line_count": 3,
+    "ai_line_pct": 1.34,
+    "ai_lines_removed_or_modified": 9
+  },
+  "updated_at": "2026-03-17T14:35:31.672Z",
+  "version": 1
+}

@@ -1,0 +1,25 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The User
+    Import for Switzerland is{{ " " }}
+    {%- set failure_task = "filter_user_import_failures_switzerland" -%}
+    {%- set has_errors = result( failure_task, key="length") > 0 -%}
+    {%- if has_errors -%}
+    completed with errors
+    {%- else -%}
+    {% set exception_task = "filter_user_import_exception_switzerland" -%}
+    {%- if result(exception_task, key="length") > 0 -%}
+    completed with exceptions
+    {%- else -%}
+    completed successfully
+    {%- endif -%}
+    {%- endif -%}
+    {{ " on " + current_time("%m-%d-%Y-%H-%M-%S.%f%z") }}. Please find the below link to the user import logs for
+    reference: <br />
+    <br />
+    {%- set download_link = 'generate_pre_signed_download_url_switzerland' -%}
+    <a href="{{result(download_link)}}">Download log file</a><br />
+<p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+{%- if has_errors -%}
+{%- endif -%}
+For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

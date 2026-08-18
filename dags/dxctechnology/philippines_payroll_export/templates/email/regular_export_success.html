@@ -1,0 +1,10 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br />
+    <br />Hello, <br /><br />
+    The Replicon philippines overtime and standby payroll export is completed successfully on {{ current_time_in_specified_tz() }}.<br />
+    Please find the export details for reference.
+</p>
+<ul>
+    <li>Payroll export name: {{ dag_run.conf.regular_export_file_name }}</li>
+    <li>Number of Records: {{ result('query_list_in_final_regular_payroll_collection', 'length') }}</li>
+</ul>
+<p>For any queries, please reach out to https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

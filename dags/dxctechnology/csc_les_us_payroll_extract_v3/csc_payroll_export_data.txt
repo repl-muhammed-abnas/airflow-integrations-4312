@@ -1,0 +1,3 @@
+{%- for record in dataset %}
+{{record.Personal_Number}}{{record.Filler1}}{{record.SSN}}{{record.Filler2}}{{record.Date}}{{record.Time_Type}}{{record.Hours}}{{record.LCD_Org}}{{record.Filler3}}
+{%- endfor %}

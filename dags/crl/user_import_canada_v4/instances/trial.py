@@ -1,0 +1,62 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from crl.user_import_canada_v4.config import *
+from crl.user_import_canada_v4.mapper.user_import_mapper_v1 import user_import_mapper
+from crl.user_import_canada_v4.mapper.time_off_type_mapper_v1 import time_off_type_mapper, time_off_type_policy_modify, reference_based_time_off_types
+from crl.user_import_canada_v4.mapper.time_off_type_mapper_v1 import mannual_time_off_types, special_accrual_time_off_types
+from crl.user_import_canada_v4.mapper.time_off_type_mapper_v1 import personal_days_regular_reference_timeoff_types
+from crl.user_import_canada_v4.mapper.special_timeoff_type_accrual_mapper import special_timeoff_type_accrual_mapper
+
+instance = "trial"
+environment = "pre-production"
+
+company_key = "CharlesRiverLaboratoriestrial01"
+replicon_conn_id = "charlesriverlaboratoriestrial01_replicon_riteam"
+sftp_conn_id = "sftp_useast2"
+
+log_filepath = "/CRLTrial/log"
+payload_filepath = "/CRLTrial/Archive"
+
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_failure_alert_email }}'
+
+process_user_import_payload_dagid = f"crl_user_import_canada_process_each_payload_child_{instance}_v4"
+process_users_dagid = f"crl_user_import_canada_process_users_child_{instance}_v4"
+process_supervisor_dagid = f"crl_user_import_canada_process_pending_supervisor_child_{instance}_v4"
+process_log_generation_dagid = f"crl_user_import_canada_process_log_generation_child_{instance}_v4"
+
+process_groups_dagid = f"crl_user_import_canada_process_groups_child_{instance}_v4"
+process_new_company_code_dagid = f"crl_user_import_canada_process_new_company_code_child_{instance}_v4"
+process_new_locations_dagid = f"crl_user_import_canada_process_new_location_child_{instance}_v4"
+process_new_buisness_unit_dagid = f"crl_user_import_canada_process_new_buisness_unit_child_{instance}_v4"
+process_new_cost_center_dagid = f"crl_user_import_canada_process_new_cost_center_child_{instance}_v4"
+
+process_new_users_dagid = f"crl_user_import_canada_process_new_users_child_{instance}_v4"
+process_update_users_dagid = f"crl_user_import_canada_process_update_users_child_{instance}_v4"
+process_disable_users_dagid = f"crl_user_import_canada_process_disable_users_child_{instance}_v4"
+
+process_timeoff_type_no_accrual_dagid = f"crl_user_import_canada_process_timeoff_type_no_accrual_child_{instance}_v4"
+process_timeoff_type_assignment_new_user_dagid = f"crl_user_import_canada_process_timeoff_type_new_user_child_{instance}_v4"
+process_timeoff_type_assignment_montreal_vacation_new_user_dagid = f"crl_user_import_canada_process_timeoff_type_montreal_vacation_new_user_child_{instance}_v4"
+process_timeoff_type_assignment_update_rehire_user_dagid = f"crl_user_import_canada_process_timeoff_type_update_rehire_user_child_{instance}_v4"
+process_timeoff_type_special_accrual_dagid = f"crl_user_import_canada_process_timeoff_type_special_accrual_child_{instance}_v4"
+
+
+disable_user_master_dagid = f'crl_user_import_canada_disable_future_enddate_user_master_{instance}_v4'
+disable_future_enddate_user_child_dagid = f'crl_user_import_canada_disable_future_enddate_user_child_{instance}_v4'
+
+crl_user_import_bearer_token_var = f"crl_user_import_canada_bearer_token_variable_{instance}"
+can_run_batch_task_var_name = f'crl_user_import_canada_run_batch_task_{instance}'
+
+USER_MAPPER = user_import_mapper
+TIMEOFF_TYPE_MAPPER = time_off_type_mapper
+TIMEOFF_TYPE_POLICY_MODIFY = time_off_type_policy_modify
+REFERENCE_BASED_TIME_OFF_TYPES = reference_based_time_off_types
+MANNUAL_TIMEOFF_TYPES = mannual_time_off_types
+SPECIAL_TIMEOFF_TYPES_ACCRUALS = special_timeoff_type_accrual_mapper
+SPECIAL_ACCRUAL_TIMEOFF_TYPE_NAMES = special_accrual_time_off_types
+PERSONAL_DAYS_REFERENCE_TIME_OFF_TYPES = personal_days_regular_reference_timeoff_types
+
+INTEGRATION_USERNAME = 'Team, RI'
+
+disabled = True

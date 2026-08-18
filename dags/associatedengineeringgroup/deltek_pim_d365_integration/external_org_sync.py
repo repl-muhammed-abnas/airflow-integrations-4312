@@ -1,0 +1,264 @@
+"""
+Entity sync DAG: D365 Account -> PIM Organisation (classID=2).
+
+Triggered by the router DAG when a D365 ``account`` entity webhook fires.
+Fetches the account from D365, checks ExternalIntegrationMapping for an
+existing PIM Organisation, then creates or updates accordingly via the
+PIM Standard API (``/XWeb/api/v1/organisations``).
+
+Flow
+----
+ViewDagRunConf -> get_d365_token -> get_pim_token
+  -> fetch_d365_account
+  -> get_entity_mapping (ExternalIntegrationMapping)
+  -> is_entity_exists (IfOperator)
+    -> YES: build_update_body -> update_org_in_pim -> catch_error
+    -> NO:  build_create_body -> create_org_in_pim -> add_org_mapping -> catch_error
+"""
+# pylint:disable=too-many-statements,line-too-long,pointless-statement
+# pylint:disable=expression-not-assigned,import-error
+from datetime import timedelta
+from urllib.parse import quote
+
+from airflow.models import Variable
+import rail
+
+from associatedengineeringgroup.deltek_pim_d365_integration.config import (
+    D365_API_VERSION,
+    D365_ODATA_HEADERS,
+    MAPPING_TYPE_NAMES,
+    PIM_CUSTOM_API,
+    PIM_STANDARD_API_BASE,
+)
+from associatedengineeringgroup.deltek_pim_d365_integration.utils.python_methods import (
+    build_external_org_body,
+    build_add_mapping_body,
+    check_mapping_exists,
+    extract_d365_entity,
+    extract_pim_entity_id,
+    safe_json_response,
+)
+
+
+def create_dag(config):
+    """Create the D365 Account -> PIM Organisation sync DAG."""
+    with rail.create_airflow_dag(
+        dag_id=config.external_org_dag_id,
+        description='Sync D365 Account to PIM Organisation',
+        integration_type='generic',
+        company_key=config.company_key,
+        schedule_interval=None,
+        max_active_runs=config.max_active_runs,
+        tags=['pim_d365', 'external_org', 'sync'],
+        default_args={
+            'execution_timeout': timedelta(days=config.execution_timeout_days)
+        }
+    ) as dag:
+
+        # ── 1. Batch task toggle (default: enabled) ──────────────────────
+        can_run_batch_task = rail.IfOperator(
+            task_id='can_run_batch_task',
+            test=lambda: Variable.get(
+                f'{config.external_org_dag_id}_can_run_batch_task',
+                default_var='true',
+            ).lower() == 'true',
+            yes_task='batch_task',
+            no_task='create_log',
+        )
+
+        batch_task = rail.BatchTaskRunOperator(
+            task_id='batch_task',
+            start_task='create_log',
+            end_task='catch_and_log_errors',
+            execution_timeout=timedelta(days=config.execution_timeout_days),
+        )
+
+        # ── 1b. Create log for sync tracking ─────────────────────────────
+        create_log = rail.CreateLogOperator(task_id='create_log')
+
+        # ── 2. View dag_run conf ────────────────────────────────────────
+        view_conf = rail.ViewDagRunConfOperator(
+            task_id='view_conf'
+        )
+
+        # ── 4. Fetch D365 account ───────────────────────────────────────
+        fetch_d365_account = rail.SimpleHttpOperator(
+            task_id='fetch_d365_account',
+            method='GET',
+            http_conn_id=config.d365_conn_id,
+            endpoint=(
+                f"{D365_API_VERSION}accounts"
+                "({{ dag_run.conf.entity_guid }})"
+                "?$select=accountid,name,ae_formerlyknownas,statecode,"
+                "_parentaccountid_value"
+            ),
+            headers={
+                'Authorization': f"Bearer {{{{ var.value.{config.D365_TOKEN_VAR_PREFIX}_{config.instance} }}}}",
+                **D365_ODATA_HEADERS,
+            },
+            response_filter=lambda r: r.json()
+        )
+
+        # ── 5. Extract entity data ──────────────────────────────────────
+        get_d365_entity = rail.PythonOperator(
+            task_id='get_d365_entity',
+            python_callable=extract_d365_entity('fetch_d365_account')
+        )
+
+        get_entity_mapping = rail.SimpleHttpOperator(
+            task_id='get_entity_mapping',
+            method='GET',
+            http_conn_id=config.pim_conn_id,
+            endpoint=(
+                f"/XWeb/CustomAPI/{PIM_CUSTOM_API['EXTERNAL_INTEGRATION_MAPPING']}"
+                "?function=GetMapping"
+                f"&name={quote(MAPPING_TYPE_NAMES['EXTERNAL_ORG'])}"
+                "&source={{ dag_run.conf.entity_guid }}"
+            ),
+            headers={
+                'Authorization': f"Bearer {{{{ var.value.{config.PIM_TOKEN_VAR_PREFIX}_{config.instance} }}}}",
+                # 'Content-Type': 'application/json',
+            },
+            response_filter=safe_json_response
+        )
+
+        # ── 7. Branch: entity exists? ──────────────────────────────────
+        is_entity_exists = rail.IfOperator(
+            task_id='is_entity_exists',
+            test=check_mapping_exists,
+            yes_task='build_update_body',
+            no_task='build_create_body'
+        )
+
+        # ── 8a. UPDATE branch ──────────────────────────────────────────
+        build_update_body = rail.PythonOperator(
+            task_id='build_update_body',
+            python_callable=build_external_org_body('update')
+        )
+
+        update_org_in_pim = rail.SimpleHttpOperator(
+            task_id='update_org_in_pim',
+            method='PUT',
+            http_conn_id=config.pim_conn_id,
+            endpoint=(
+                f"{PIM_STANDARD_API_BASE}organizations/"
+                "{{ result('get_entity_mapping')[0]['destinationId'] }}"
+            ),
+            headers={
+                'Authorization': f"Bearer {{{{ var.value.{config.PIM_TOKEN_VAR_PREFIX}_{config.instance} }}}}",
+                'Content-Type': 'application/json',
+            },
+            data="{{ result('build_update_body') }}",
+            response_filter=safe_json_response
+        )
+
+        # ── 8b. CREATE branch ─────────────────────────────────────────
+        build_create_body = rail.PythonOperator(
+            task_id='build_create_body',
+            python_callable=build_external_org_body('create')
+        )
+
+        create_org_in_pim = rail.SimpleHttpOperator(
+            task_id='create_entity',
+            method='POST',
+            http_conn_id=config.pim_conn_id,
+            endpoint=f'{PIM_STANDARD_API_BASE}organizations',
+            headers={
+                'Authorization': f"Bearer {{{{ var.value.{config.PIM_TOKEN_VAR_PREFIX}_{config.instance} }}}}",
+                'Content-Type': 'application/json',
+            },
+            data="{{ result('build_create_body') }}",
+            response_filter=extract_pim_entity_id
+        )
+
+        # ── 9. Add mapping after create ────────────────────────────────
+        prepare_mapping_body = rail.PythonOperator(
+            task_id='prepare_mapping_body',
+            python_callable=build_add_mapping_body(MAPPING_TYPE_NAMES['EXTERNAL_ORG'])
+        )
+
+        add_org_mapping = rail.SimpleHttpOperator(
+            task_id='add_org_mapping',
+            method='POST',
+            http_conn_id=config.pim_conn_id,
+            endpoint=(
+                f"/XWeb/CustomAPI/"
+                f"{PIM_CUSTOM_API['EXTERNAL_INTEGRATION_MAPPING']}"
+                f"?function=AddMapping&name={quote(MAPPING_TYPE_NAMES['EXTERNAL_ORG'])}"
+            ),
+            headers={
+                'Authorization': f"Bearer {{{{ var.value.{config.PIM_TOKEN_VAR_PREFIX}_{config.instance} }}}}",
+                'Content-Type': 'application/json',
+            },
+            data="{{ result('prepare_mapping_body') }}",
+            response_filter=safe_json_response,
+        )
+        
+        # ── 10. Logging ───────────────────────────────────────────────
+        catch_and_log_errors = rail.WriteLogOperator(
+            task_id='catch_and_log_errors',
+            log="{{ result('create_log') }}",
+            trigger_rule='one_failed',
+            severity='Error',
+            message='{{ get_error_message() }}',
+            properties={
+                'entity_type': 'ExternalOrg',
+                'entity_guid': '{{ dag_run.conf.entity_guid }}',
+                'entity_name': "{{ result('get_d365_entity').get('name', '') if result('get_d365_entity') else '' }}",
+                'action': 'Sync',
+                'status': 'Error',
+                'details': '{{ get_error_message() }}',
+                'jobid': '{{ dag_run_ecid() }} | {{ dag_run.run_id }}',
+            },
+        )
+
+        should_log_error = rail.IfOperator(
+            task_id='should_log_error',
+            test=lambda: not bool(
+                rail.get_current_context()['dag_run'].conf.get('triggered_by')),
+            yes_task='trigger_error_log',
+            no_task=None,
+        )
+
+        trigger_error_log = rail.TriggerDagRunOperator(
+            task_id='trigger_error_log',
+            trigger_dag_id=config.error_log_dag_id,
+            conf={
+                'entity_type': 'ExternalOrg',
+                'entity_guid': '{{ dag_run.conf.entity_guid }}',
+                'entity_name': "{{ result('get_d365_entity').get('name', '') if result('get_d365_entity') else '' }}",
+                'action': 'Sync',
+                'status': 'Error',
+                'details': '{{ get_error_message() }}',
+                'jobid': '{{ dag_run_ecid() }} | {{ dag_run.run_id }}',
+            },
+            wait_for_completion=False,
+        )
+
+        # ── Task wiring ────────────────────────────────────────────────
+        can_run_batch_task >> rail.Label('Yes') >> batch_task >> catch_and_log_errors
+        can_run_batch_task >> rail.Label('No') >> create_log
+
+        create_log >> fetch_d365_account >> get_d365_entity
+        get_d365_entity >> get_entity_mapping >> is_entity_exists
+
+        # Update branch
+        (
+            is_entity_exists >> rail.Label('Entity exists') >>
+            build_update_body >> update_org_in_pim >> catch_and_log_errors
+        )
+
+        # Create branch
+        (
+            is_entity_exists >> rail.Label('Entity does not exist') >>
+            build_create_body >> create_org_in_pim >>
+            prepare_mapping_body >> add_org_mapping >> catch_and_log_errors
+        )
+
+        catch_and_log_errors >> should_log_error
+        should_log_error >> rail.Label('Yes') >> trigger_error_log
+
+        return dag
+
+
+rail.for_each_instance(create_dag)

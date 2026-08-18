@@ -1,0 +1,4 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The user import job is {{ result('email_subject_line') }} on {{params.today}}. 
+    Please find the below link to download the user import logs for reference. <br /> <br /><a href="{{result('generate_downloadlink')}}" >Download log file</a></p>
+    <p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+    <p> {{ result('email_body') }}</p>

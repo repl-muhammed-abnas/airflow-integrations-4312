@@ -1,0 +1,10 @@
+<p>Hi Team,<br /> <br /> The time date export for "{{ dag_run.conf['companycode'] }}" companycode has been completed at "{{ result('get_current_datetime') }}"
+     however the file upload to sftp has failed with error.</p>
+    <ul>
+    <li>ecid ID:: {{ dag_run_ecid() }}</li>
+    <li>Instance: {{ params.username }}</li>
+    <li>File Name: "{{ result('get_file_name') }}.csv"</li>
+    <li>SFTP Path: "{{ result('check_for_sftp_filepath').input_filepath }}"</li>
+    <li>Error: "{{ get_error_message() }}"</li>
+    </ul>
+    <p>Please find the attached file to be uploaded to sftp. Upload the file to the given sftp and debug the issue.<br /> <br /> Regards,<br /> Deltek Inc</p>

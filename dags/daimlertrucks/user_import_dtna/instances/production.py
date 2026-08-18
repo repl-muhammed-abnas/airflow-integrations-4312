@@ -1,0 +1,16 @@
+region = 'us-east-1'
+environment = 'production'
+instance = "daimlertrucks"
+company_key = 'daimlertrucks'
+replicon_conn_id = 'daimlertrucks_replicon_replicon'
+can_run_batch_task_var_name = f'daimlertrucks_user_import_can_run_batch_task_{instance}'
+sftp_conn_id = "sftp_daimlertrucks_540697"
+input_filepath = "/Production/User/AddUser"
+archive_filepath = "/Production/User/Archive"
+execution_timeout_days = 14
+child_dag_max_active_runs = 2
+master_dag_interval = 30
+tenant_email = "Replicon-Support@daimlertruck.com"
+internal_logs_email = '{{ var.value.dagrun_internal_log_email }}'
+alert_email = '{{ var.value.dagrun_failure_alert_email }}'
+pacific_timezone = 'US/Pacific'

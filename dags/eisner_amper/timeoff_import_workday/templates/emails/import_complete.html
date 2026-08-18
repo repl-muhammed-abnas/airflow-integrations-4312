@@ -1,0 +1,34 @@
+<p>Hello,<br /> <br />The Replicon Workday TimeOff Import is
+  {{" "}}
+  {%- set has_errors = result("format_logs").error_count > 0 -%}
+  {%- if has_errors -%}
+  completed with errors
+  {%- else -%}
+  {%- if result("format_logs").exception_count > 0 -%}
+  completed with exceptions
+  {%- else -%}
+  completed successfully
+  {%- endif -%}
+  {%- endif -%}
+  {{ "" }}, further details are below: <br /></p>
+<ul>
+  <li>Source file name : {{ result('get_email_log_details').input_filename }}</li>
+  <li>Record count : {{ result('get_email_log_details').total_record_count }}</li>
+  <li>Log file name : {{ result('get_email_log_details').log_file_name }}</li>
+  <li>Log file path : {{ result('get_email_log_details').log_filepath }}</li>
+  <li>Log file link : <a href="{{ result('generate_download_link')}}">Download Log File</a></li>
+  <li>Job start time : {{ result('get_email_log_details').start_time}}</li>
+  <li>Job end time : {{ result('get_email_log_details').job_end_time }}</li>
+  <li>Job duration : {{ result('get_email_log_details').job_duration_minutes }} minutes</li>
+</ul>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+<p>For any queries, please contact our support team at <a
+    href="https://support.deltek.com/">https://support.deltek.com/</a><br />
+  <br />
+  <strong>This is an automated mail from Deltek Integration. Please do not reply to this email.</strong><br />
+  <br /><br />
+  Regards,<br />
+  Deltek Inc
+</p>

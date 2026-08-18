@@ -1,0 +1,28 @@
+{
+  "ai_lines": {},
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Write",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-06-01T12:27:27.145Z",
+  "file_state": {
+    "file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "total_file_lines": 0,
+    "total_lines": 0
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "C:\\Workspaces\\airflow-integrations\\dags\\pim\\d365_integration\\utils\\__init__.py",
+  "stats": {
+    "ai_line_count": 0,
+    "ai_line_pct": 0.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-06-01T12:27:27.145Z",
+  "version": 1
+}

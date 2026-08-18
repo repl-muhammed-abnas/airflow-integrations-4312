@@ -1,0 +1,29 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from dxctechnology.fieldglass_workorder_import.config import *
+from dxctechnology.fieldglass_workorder_import.mapper.dxc_cwf_user_mapper import cwf_user_mapper
+
+instance = "trial"
+replicon_conn_id = "dxctrial01-replicon-RepliconIntFG"
+company_key = "DXCTrial01"
+sftp_conn_id = "sftp_useast2"
+pgp_conn_id = "pgp_dxctrial01_cwfworkorder_import"
+sftp_import_filepath = "/DXC/CWFWorkorder/input"
+sftp_archive_filepath = "/DXC/CWFWorkorder/archive/"
+sftp_log_filepath = "/DXC/CWFWorkorder/log/"
+tenant_mail = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_mail = '{{ var.value.dagrun_failure_alert_email }}'
+dxc_cwf_mapper=cwf_user_mapper
+can_run_batch_task_var_name=f'dxctechnology_workorder_sync_{instance}_can_run_batch_task'
+can_decrypt_file_var_name="dxctrial01_decrypt_filename"
+main_dag_id=f"dxctechnology_fieldglass_workorder_import_master_{instance}"
+c1_file_to_replicon_dag_id=f"dxctechnology_fieldglass_workorder_import_c1_workorder_file_to_replicon_child_{instance}"
+update_c1_user_details_dag_id=f"dxctechnology_fieldglass_workorder_c1_update_user_details_child_{instance}"
+compass_pseudo_constractor_update_dag_id=f"dxctechnology_fieldglass_workorder_compass_pseudo_contract_user_update_child_{instance}"
+compass_file_to_replicon_dag_id=f"dxctechnology_fieldglass_workorder_import_compass_workorder_file_to_replicon_child_{instance}"
+compass_workorder_import_dag_id=f"dxctechnology_fieldglass_workorder_compass_import_child_{instance}"
+update_compass_purchase_order_blob_dag_id=f"dxctechnology_fieldglass_workorder_compass_update_purchase_order_blob_details_child_{instance}"
+update_compass_user_details_dag_id=f"dxctechnology_fieldglass_workorder_compass_update_user_details_child_{instance}"
+gsap_file_to_replicon_dag_id=f"dxctechnology_fieldglass_workorder_import_gsap_workorder_file_to_replicon_child_{instance}"
+update_gsap_purchase_order_blob_dag_id=f"dxctechnology_fieldglass_workorder_gsap_update_purchase_order_blob_details_child_{instance}"
+update_gsap_user_details_dag_id=f"dxctechnology_fieldglass_workorder_gsap_update_user_details_child_{instance}"

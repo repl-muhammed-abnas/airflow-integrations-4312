@@ -1,0 +1,26 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> There were {{
+    result('get_long_queued_running_dags').dag_count }} long running DAG runs{{ " " }} from past {{
+    result('get_long_queued_running_dags').threshold }} hour(s).
+    <br> <br>
+<table style="border:1px solid black" border="1">
+    <thead>
+        <tr>
+            <th>Sl No</th>
+            <th>DAG ID</th>
+            <th>Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%- for item in result('get_count_of_dagruns') %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ item.dag_id }}</td>
+            <td>{{ item.count }}</td>
+        </tr>
+        {%- endfor %}
+    </tbody>
+</table>
+<br>
+Please click on the below link to download the DAG run list in csv format. <br /> <br /><a href="{{ result('generate_download_link') }}">download_dag_run_csv</a></p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 4 days.</span></em></p>
+<p><br />Regards,<br />Deltek Inc</p>

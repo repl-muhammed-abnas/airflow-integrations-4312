@@ -1,0 +1,39 @@
+{
+  "ai_lines": {
+    "100": "c67708ede3c83217aff4c0253a841e928bd3cfdac901e4477d295f7efd5e27d2",
+    "101": "5d2e31bb5aa49a1a077bfa660c65c7e6beac957239d6378d0fee309e4ed34dd5",
+    "103": "a0dce7690f65d899a075ff52cf6ded4cc3824feeb98c257a3e51947b32178629",
+    "104": "a04b6a0a1cba6bf805b86fd314f2ca180ef909c5d62efb7d4e1a7a55db5764e2",
+    "105": "bbf6a60337ec0ee59b432c224b5e639ded718fb1d7959499518f2fc2e1d70914",
+    "106": "f8e250315a01ea774e3049608e922c13663d65027871b54545b8f39f4b551d7f",
+    "107": "e455586d7ee9a6a3616ee702b180c886aa693836dd5833518483bd8f8e977858",
+    "108": "10b28319899d6b866b7e8622b1a8f1d1006b21f516354376b5ed477a87859ef7",
+    "109": "09ddc4155e4b00e0bf4faaee7725623052b95ee1b1957b4c45443d848418b8a4",
+    "99": "0ffac4b5a0b089d77032af8a42f10d64b3c8eed4f7188aa6d1613389c7aa5a1b"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-28T14:36:11.180Z",
+  "file_state": {
+    "file_sha256": "4f3c4e2e5fd37b50e53f92dc1d159a8903e5948c2a58815fdaed0aadf0a9388c",
+    "total_file_lines": 192,
+    "total_lines": 161
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\dxctechnology\\workday_user_import_v1\\user_import_costa_rica\\process_rehire_user_timeoff_assignment.py",
+  "stats": {
+    "ai_line_count": 10,
+    "ai_line_pct": 6.21,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-28T14:36:11.180Z",
+  "version": 1
+}

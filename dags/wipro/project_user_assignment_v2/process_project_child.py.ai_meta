@@ -1,0 +1,30 @@
+{
+  "ai_lines": {
+    "48": "657f3ebd7dc0ae740aee23f7f1233632311e66a4d07748e172852b73b4114637"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-28T15:44:45.507Z",
+  "file_state": {
+    "file_sha256": "f49714c231b0c0ce7f90764faa2606d88ece82d7452bd8d6f1940e6c8cafeb3b",
+    "total_file_lines": 373,
+    "total_lines": 315
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\wipro\\project_user_assignment_v2\\process_project_child.py",
+  "stats": {
+    "ai_line_count": 1,
+    "ai_line_pct": 0.32,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-03-28T15:44:45.507Z",
+  "version": 1
+}

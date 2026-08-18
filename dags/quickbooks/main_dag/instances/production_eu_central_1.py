@@ -1,0 +1,17 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from quickbooks.main_dag.config import *
+
+instance = 'production'
+
+region = 'eu-central-1'
+environment = 'production'
+company_key = f"airflow{region.replace('-', '')}"
+replicon_conn_id = 'airflow-replicon-admin'
+
+timezone_iana = 'Europe/Paris'
+
+can_run_batch_task_var_name = f'standard_quickbooks_online_main_dag_{instance}_can_run_batch_task'
+
+client_import_dag = f"standard_quickbooks_online_{region.replace('-', '_')}_client_import_{instance}"
+invoice_export_dag = f"standard_quickbooks_online_{region.replace('-', '_')}_invoice_export_{instance}"
+invoice_status_update_dag = f"standard_quickbooks_online_{region.replace('-', '_')}_invoice_status_update_{instance}"

@@ -1,0 +1,98 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Greece PUF mapper - FPA compliant with myDATA support",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Greek VAT", "myDATA"]
+  },
+
+  "country": {
+    "code": "GR",
+    "name": "Greece",
+    "currency": "EUR",
+    "language": "el"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 24.0,
+      "reduced": [6.0, 13.0],
+      "zero": 0.0
+    },
+    "regional_rates": {
+      "aegean_islands": {
+        "standard": 17.0,
+        "reduced": [4.0, 9.0]
+      }
+    },
+    "tax_categories": {
+      "S": "Kanonikos syntelestis",
+      "AA": "Meiwmenos syntelestis",
+      "Z": "Midenikos syntelestis",
+      "E": "Apallagi",
+      "AE": "Antistrofi epivari"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9933",
+    "buyer_endpoint_scheme": "9933",
+    "vat_scheme_id": "9933",
+    "company_scheme_id": "9933",
+    "vat_prefix": "EL",
+    "scheme_mappings": {
+      "vat_number": "9933",
+      "afm": "9933",
+      "gln": "0088"
+    }
+  },
+
+  "extensions": {
+    "required": ["GR:myDATA"],
+    "optional": [],
+    "mydata": {
+      "enabled": true,
+      "mark_required": true,
+      "uid_required": true,
+      "invoice_types": {
+        "1.1": "Sales Invoice",
+        "1.2": "Sales Invoice / Intra-community Supplies",
+        "1.3": "Sales Invoice / Third Country Supplies",
+        "1.4": "Sales Invoice / Sale on Behalf of Third Parties",
+        "2.1": "Service Rendered Invoice",
+        "5.1": "Credit Invoice / Associated"
+      }
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^EL[0-9]{9}$",
+    "afm_pattern": "^[0-9]{9}$",
+    "postal_code_pattern": "^[0-9]{5}$",
+    "iban_pattern": "^GR[0-9]{25}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Pliroteo se 30 imeres",
+    "contact_department": "Logistirio"
+  },
+
+  "special_rules": {
+    "requires_issue_time": true,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "mydata_reporting": true,
+    "mark_required": true
+  },
+
+  "translations": {
+    "invoice": "Timologio",
+    "credit_note": "Pistotiko Timologio",
+    "total": "Synolo",
+    "vat": "FPA"
+  }
+}

@@ -1,0 +1,10 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />
+    Hello, <br /> <br /> The Replicon payroll export for Costa Rica is completed successfully on {{ result('log_start_time').starttime }}. Please find the export details for reference. </p>
+<ul>
+<li>File Name: {{result('log_required_filename')}}.csv.pgp </li>
+<li>File Path: {{params.file_upload_path}} </li>
+<li>Number of Records: {{ result('create_collection_finalpayrolldata','length') }} </li>
+<li>Log File Name: Log_{{ result('log_required_filename') }} </li>
+<li>Log File Path: {{params.log_upload_path}} </li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

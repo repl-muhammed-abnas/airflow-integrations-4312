@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_WBSMaster_Replicon xmlns:ns0="http://csc.com/IF9001/FromGSAPToReplicon/WBSMaster">
+  {%- for record in dataset %}
+  <Records>
+    <WBS_Name>{{ record.WBS_Name|e }}</WBS_Name>
+    <WBS_Code>{{ record.WBS_Code|e }}</WBS_Code>
+    <Company_Code>{{ record.Company_Code|e }}</Company_Code>
+    <Project_Type>{{ record.Project_Type|e }}</Project_Type>
+    <Profit_Centre>{{ record.Profit_Centre|e }}</Profit_Centre>
+    <Task_Indicator>{{ record.Task_Indicator|e }}</Task_Indicator>
+    <Project_Start>{{ record.Project_Start|e }}</Project_Start>
+    <Project_End>{{ record.Project_End|e }}</Project_End>
+    <Primary_Project_Manager_ID>{{ record.Primary_Project_Manager_ID|e }}</Primary_Project_Manager_ID>
+    <Primary_Project_Manager_Name>{{ record.Primary_Project_Manager_Name|e }}</Primary_Project_Manager_Name>
+    <WBS_Currency>{{ record.WBS_Currency|e }}</WBS_Currency>
+    <Parent_Project>{{ record.Parent_Project|e }}</Parent_Project>
+    <WBS_Parent_Project>{{ record.WBS_Parent_Project|e }}</WBS_Parent_Project>
+    <Salesforce_Opportunity_ID>{{ record.Salesforce_Opportunity_ID|e }}</Salesforce_Opportunity_ID>
+    <Sold_to_Party>{{ record.Sold_to_Party|e }}</Sold_to_Party>
+    <Customer_Name>{{ record.Customer_Name|e }}</Customer_Name>
+    <Controlling_Area>{{ record.Controlling_Area|e }}</Controlling_Area>
+    <PSA_Flag>{{ record.PSA_Flag|e }}</PSA_Flag>
+    <Reference_Mandatory>{{ record.Reference_Mandatory|e }}</Reference_Mandatory>
+    <Comments_Mandatory>{{ record.Comments_Mandatory|e }}</Comments_Mandatory>
+  </Records>
+  {%- endfor %}
+</ns0:MT_WBSMaster_Replicon>

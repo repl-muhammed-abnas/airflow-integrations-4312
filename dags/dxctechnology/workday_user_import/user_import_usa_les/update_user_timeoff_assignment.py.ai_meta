@@ -1,0 +1,38 @@
+{
+  "ai_lines": {
+    "134": "78fd4f73a800a819f10d04b78fee60df8576fb4a107c3ad8fda59893f5eebae7",
+    "135": "6e84c06bcb518a43c363754e23510c49e42ee7f88420a0b9fb2b936173fe7f23",
+    "140": "5637fdd261ffafbefd604ef34aeb0c1db7218c7e8a2d14b6fbd53b718dffd89f",
+    "141": "3060422a83d27b0be5c0fc5fd60cc973526472ec9d0de24125d7f2226d8bd292",
+    "145": "751541076dc7f8ccb15902932ce0f99779a5505b5cb7519c35e964b561a2ff01",
+    "90": "f2ffce2901c24f8910764bb34115414a030fe9131766bf5eaa66642d9c7e9da6",
+    "94": "97cab55cb518fe3ed7c23ef2724321f3e44bcf910ccb399aa215b88d9d8fc2b9",
+    "95": "d8a2615c2f7e0c62bbd704dbf325e8edfdead0fe1b77a32795ebe423d3cd350e",
+    "96": "b413c663cff079cde0462a105935e231779f8d046de73d2f7d80424b6e859f90"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-16T06:57:49.802Z",
+  "file_state": {
+    "file_sha256": "0a53756899c387a654c14b2d84a8e80125021ed6023bb97f07ffe7b3bbc69e57",
+    "total_file_lines": 789,
+    "total_lines": 692
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\dxctechnology\\workday_user_import\\user_import_usa_les\\update_user_timeoff_assignment.py",
+  "stats": {
+    "ai_line_count": 9,
+    "ai_line_pct": 1.3,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-16T06:58:00.296Z",
+  "version": 1
+}

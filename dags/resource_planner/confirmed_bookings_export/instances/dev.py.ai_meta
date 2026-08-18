@@ -1,0 +1,70 @@
+{
+  "ai_lines": {
+    "1": "4d79856fd75da17a9e3678ac7def65919f6f9f4473166276b7dd2d2634787097",
+    "10": "cf6c2cd75e8cead5387a2255386a13231467d702ff6493b530a2a634726c8c18",
+    "11": "65682d2bd519251ef565456e5dfd917e1697a49f3854bbc231f508ad07384f01",
+    "13": "7041372511b830cbaf050b02c8368b7e0e046791080ba5adcc28b3664c700b55",
+    "14": "0dcf55a548204e2c29b8bd6d7840bb2ee44b3a6afbdd41bc84c401d318ede6e9",
+    "15": "7c019df5cb246b41e1dd221aa92412408cfba23ce7d510196dfc5edf571cad81",
+    "17": "9ff8632cf4a802f31f816c92116773b4907dfd6cf89a5c3568b27f768d4f2160",
+    "18": "6e938d10b28254862a77eeda20f8dc954606dced059183cd52cbc4adf8f73dd2",
+    "19": "d9416d38deab00436c7141956d1a5c72744dcd0de8f96fc5bedd8e13e030ebbc",
+    "2": "8d8d601b6a151926bb846065426798e8390b069d14e4129f1ce3853bba618478",
+    "20": "cada5eaf2bee350d5c6ad9d082713dc977f88d2e5af574a7351030f237a2fc52",
+    "21": "a93be75c68b2aec5dcff3eb8ba118c846dbbdf4b4e90b6ddcc92512ede90d7e9",
+    "23": "f8291ce7bc15bf608de5925637e1f0748f30d5448b78774f29f938c021710119",
+    "24": "5ac21a68350127781c025c19d1f6b18d67ebdcd847946b46518fcd687a6de27a",
+    "25": "f72e3b4fc6937fcf380b604a313fac511d2b2d05f376be9539ee18a267123dd7",
+    "26": "eceda8632dcd70b0de21dcb86c7f528324b95eace98f8e3d64aca8f60aaf6ea6",
+    "27": "cfae0d4248f7142f7b17f826cd7a519280e312577690e957830d23dcf35a3fff",
+    "28": "40e20cfa6fce45b2eef5a818c040808f8b572b2ec621bfa17b0546edd19c56e3",
+    "3": "1c80ee441a56d69acae99266605441b0bb38a078dd24cafe32771d718f2b86a4",
+    "30": "01c1653d28761c72d652c32a9861bb266144dbf82bcf546617cccc374c9de712",
+    "31": "3af998fb5f0e2f40d46972a178c5faeac6709e3393b6410375c9095977cdc451",
+    "5": "1508d004589b41a6699f8dd59938baa9f8ceb12d2be98fe963dd3c0aa37efdcb",
+    "6": "6e78a59a0a185d51a44a88261c1cab1f5b4467a39285b891d6532d235aed2a93",
+    "7": "d49dac9b9fac4463dd07896c232fa77a499821a843577d046ec98505801f370d",
+    "9": "60229ed83e3750ea9d6f63db0b823a66f6a11e32cd32a78d5de8c725f41bfb1d"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 6,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-15T11:09:38.348Z",
+  "file_state": {
+    "file_sha256": "6793b0e3287d7a0b2736a77aab5a8ff13426f5bda53adbe448673d0ee63e3579",
+    "total_file_lines": 31,
+    "total_lines": 25
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "21f5707961a268c05f165e79986279472a6c0242974bae4a20e3c5327c7ea74b",
+      "last_known_line": 13,
+      "removed_at": "2026-04-23T07:40:12.275Z"
+    },
+    {
+      "hash": "cd31cc2081069c1bc755b64080b8bb86749ec275d0cc1a136cbc4ecc462f18bc",
+      "last_known_line": 17,
+      "removed_at": "2026-04-23T07:40:12.275Z"
+    },
+    {
+      "hash": "2d98720d107c7086c8c29577bb703b4c6e5072b245d3b390ab69575b4e7a1dd8",
+      "last_known_line": 25,
+      "removed_at": "2026-06-10T15:13:06.030Z"
+    }
+  ],
+  "source_file": "C:\\workspace\\airflow-integrations\\dags\\resource_planner\\confirmed_bookings_export\\instances\\dev.py",
+  "stats": {
+    "ai_line_count": 25,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 3
+  },
+  "updated_at": "2026-06-10T15:13:06.030Z",
+  "version": 1
+}

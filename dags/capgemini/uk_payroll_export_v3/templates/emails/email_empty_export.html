@@ -1,0 +1,6 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon {{ params.entries_for }} payroll export for "{{ dag_run.conf.cost_center_group_name }}" cost center group for United Kingdom is completed successfully
+    {{ " at " + current_time_in_specified_tz(params.time_zone) }}. There are no records to export.
+
+<p><strong>Cost Center Group:</strong> {{ dag_run.conf.cost_center_group_name }} ({{ dag_run.conf.cost_centers_list }} cost centers)</p>
+
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

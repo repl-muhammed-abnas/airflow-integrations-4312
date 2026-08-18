@@ -1,0 +1,73 @@
+{
+    "Sender": "ORACLEPROD",
+    "SenderEnvironment": "Production",
+    "Identifier": "227979",
+    "WorkManagement": [
+        {
+            "ConfidentialFlag": "false",
+            "EngagementPartyRole": [
+                {
+                    "PartyId": "f4628e95-b210-4b3b-86b3-2eae2af2d40b",
+                    "PrimaryPartyName": "Tuatahi First Fibre Limited",
+                    "PartyAlternateIdentifierType": "1840175",
+                    "PartyAlternateIdentifierValue": "97114266",
+                    "EngagementPartyRoleType": "Contracting Client",
+                    "EngagementPartyRoleTypeId": "18281403"
+                }
+            ],
+            "ChargeCode": [
+                {
+                    "ChargeCode": "646995",
+                    "ChargeCodeName": "Information Disclosure Agreed Upon Procedures 31 March 2022 00k4L00000FxteIQAR",
+                    "ChargeCodeDescription": "Information Disclosure Agreed Upon Procedures 31 March 2022 00k4L00000FxteIQAR",
+                    "ChargeCodeType": "External Engagement Project",
+                    "ChargeCodeTypeId": "18281412",
+                    "ChargeCodeStartDate": "2022-08-01",
+                    "ChargeCodeEndDate": "2022-11-30",
+                    "CurrentStatus": {
+                        "OpenForTime": "true"
+                    },
+                    "MandatoryTextFlag": "false",
+                    "PartyRole": [
+                        {
+                            "PartyId": "b886a7f0-9c89-48a9-be0b-eb2337697c8d",
+                            "PartyRoleType": "PwC Delivery Legal Entity",
+                            "PartyRoleTypeId": "18281400"
+                        }
+                    ],
+                    "InternalPersonRole": [
+                        {
+                            "InternalPersonRoleType": "",
+                            "InternalPersonRoleTypeId": "",
+                            "InternalWorkRelationship": {
+                                "InternalPerson": {
+                                    "PartyId": ""
+                                },
+                                "PwCLegalEntity": {
+                                    "PartyId": ""
+                                }
+                            }
+                        }
+                    ],
+                    "CostCentre": {
+                        "CostCentreCode": "NZD332"
+                    },
+                    "WorkItem": [
+                        {
+                            "WorkItemType": "Billable - Time",
+                            "WorkItemTypeId": "100018425496769"
+                        }
+                    ],
+                    "EngagementLine": [
+                        {
+                            "EngagementLineDescription": "Information Disclosure Agreed Upon Procedures 31 March 2022 00k4L00000FxteIQAR",
+                            "EngagementLineType": "Time and Material",
+                            "EngagementLineTypeId": "12667271"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "content_type": "application/json"
+}

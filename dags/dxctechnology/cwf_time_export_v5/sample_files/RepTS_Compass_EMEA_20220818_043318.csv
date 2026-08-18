@@ -1,0 +1,3 @@
+Work_Order_Id,Last_Name,First_Name,Date,Week_Start_Date,Cost_Center_Code,Task_Code,Rate_Category_Code,UOM,Mon_Hrs,Tue_Hrs,Wed_Hrs,Thu_Hrs,Fri_Hrs,Sat_Hrs,Sun_Hrs,[c] CATW 
+117,Duncan,Emily,04/03/2021,04/03/2021,C110299951,799,ST,Hr,0,0,0,0,0,0,18,No
+117,Duncan,Emily,04/03/2021,04/03/2021,C110299951,Hours Worked - Billable,DT,Hr,0,0,0,0,0,0,5,No

@@ -1,0 +1,39 @@
+{
+  "ai_lines": {
+    "10": "90bcb5c72d7e67a002b5f8c4d6c2170dedd0cea84113686dbfb5a9b4d9d39d72",
+    "11": "d931ef3dfd6d7262b606070da5990f6268c8f73a66541dcd7f28aaa139c6c9ff",
+    "12": "300e08c8ab73f2fd49026824b999d0ab122cab79a71f887d3e7723afab430130",
+    "16": "68ae9bfb6cd180d5f56d6071782373854fa8d0ce437945b1fe40e8a685ef48c0",
+    "25": "68ae9bfb6cd180d5f56d6071782373854fa8d0ce437945b1fe40e8a685ef48c0",
+    "5": "017e40c84ec3f9771bf4906f7ccea74a670cc7981104fd4e6fe1251e16a82b9b",
+    "6": "85c85caadbc76bed759fccdc9a8e63e16b9a401c38ce5780a1425394da75fd50",
+    "7": "8a4ff440d8f0e97f77143bb42f564051aa834eb301d2309b6b7d30c278fab7b6",
+    "8": "9ab0a8d56908cfb77626dc6c930bbdaea719704b624947cfa0a4d47641b6b4dc",
+    "9": "2fb86d5c73a1db8d2b7eea3193f78252680367f949af2dd2fd7f9e4d36b541dd"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-29T07:35:41.517Z",
+  "file_state": {
+    "file_sha256": "3a861b16b6c79b28532194ce6d5d12c0ab2dc13bd0b75ec9e6509454c3986b4e",
+    "total_file_lines": 212,
+    "total_lines": 212
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\dxctechnology\\workday_user_import_v1\\user_import_philippines_v3\\mapper\\timeoff_mapper.py",
+  "stats": {
+    "ai_line_count": 10,
+    "ai_line_pct": 4.72,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-29T07:35:41.517Z",
+  "version": 1
+}

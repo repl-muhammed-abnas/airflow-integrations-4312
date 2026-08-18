@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Belgium PUF mapper - BTW/TVA compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Belgian VAT"]
+  },
+
+  "country": {
+    "code": "BE",
+    "name": "Belgium",
+    "currency": "EUR",
+    "language": "nl"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 21.0,
+      "reduced": [6.0, 12.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Standaard tarief",
+      "AA": "Verlaagd tarief",
+      "Z": "Nultarief",
+      "E": "Vrijgesteld",
+      "AE": "Verlegging"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9956",
+    "buyer_endpoint_scheme": "9956",
+    "vat_scheme_id": "9956",
+    "company_scheme_id": "0208",
+    "vat_prefix": "BE",
+    "scheme_mappings": {
+      "vat_number": "9956",
+      "enterprise_number": "0208",
+      "gln": "0088"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": [],
+    "hermes": {
+      "buyer_email_required": true,
+      "accounting_contact_required": true
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^BE[0-9]{10}$",
+    "enterprise_number_pattern": "^[0-9]{10}$",
+    "postal_code_pattern": "^[0-9]{4}$",
+    "iban_pattern": "^BE[0-9]{14}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number", "buyer_email"]
+  },
+
+  "defaults": {
+    "payment_terms": "Betaalbaar binnen 30 dagen",
+    "contact_department": "Boekhouding"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "hermes_email_mandatory": true
+  },
+
+  "translations": {
+    "invoice": "Factuur",
+    "credit_note": "Creditnota",
+    "total": "Totaal",
+    "vat": "BTW"
+  }
+}

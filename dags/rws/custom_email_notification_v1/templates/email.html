@@ -1,0 +1,81 @@
+<!-- header -->
+<table class="wrapper" style="width: 100%; padding: 0px; margin: 0px;" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+    <tbody>
+    <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+    <table style="width: 100%; max-width: 600px; margin: 0 auto; display: block; border-bottom: 2px solid #007ac9;" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+    <td style="padding: 15px 15px 7px 15px;"><a href="http://www.replicon.com" target="_blank" rel="noopener"><img title="Replicon" src="https://www.replicon.com/wp-content/uploads/2018/03/Replicon-TI-logo_RGB-small.png" alt="Replicon" width="276" height="42" align="left" border="0" /></a></td>
+    <td align="right">&nbsp;</td>
+    </tr>
+    </tbody>
+    </table>
+    </td>
+    <td>&nbsp;</td>
+    </tr>
+    </tbody>
+    </table>
+    <!-- body -->
+    <table class="wrapper" style="width: 100%; padding: 0px; margin: 0px;" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+    <tbody>
+    <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+    <table style="width: 100%; max-width: 600px; margin: 0 auto; display: block;" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+    <td style="padding: 15px; font-family: 'Helvetica Neue','Helvetica',Helvetica, Arial,sans-serif; font-size: 14px; line-height: 1.6;">
+        <p>Hello {{result('get_user_details').displayText}},</p>
+        <p> {{ result('load_query_data') | length }} timesheets are waiting for your approval.</p>
+    <p>The following timesheets are waiting for the approval: </p>
+    <p>
+        <html>
+            <body>
+                <table style="border: 1px solid black;" border="1">
+                    <tr>
+                        <th>Timesheet period</th>
+                        <th>Username</th>
+                    </tr>
+                        {% for entry in result('load_query_data') %}
+                            <tr>
+                                <td>{{ entry['timesheetperiod'] }}</td>
+                                <td>{{ entry['user'] }}</td>
+                            </tr>
+                        {% endfor %}
+                </table>
+            </body>
+        </html>
+    </p>
+    <p><a class="buttonLink" style="display: inline-block; padding: 6px 8px; color: #fff; text-decoration: none; background-color: #1071b0;" href="https://login.replicon.com/DefaultV2.aspx" target="_blank" rel="noopener">Login to Replicon</a></p>
+    <p>
+        <p>Thank You,<br /><br />Replicon Team.</p>
+    </p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </td>
+    <td>&nbsp;</td>
+    </tr>
+    </tbody>
+    </table>
+    <!-- footer -->
+    <table class="wrapper" style="width: 100%; padding: 0px; margin: 0px;" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+    <tbody>
+    <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+    <table style="width: 100%; max-width: 600px; margin: 0 auto; display: block; border-top: 2px solid #007ac9;" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+    <td style="padding: 15px; font-family: 'Helvetica Neue','Helvetica',Helvetica, Arial,sans-serif; font-size: 14px; line-height: 1.6;"><a style="text-decoration: none;" href="http://www.replicon.com/" target="_blank" rel="noopener">www.replicon.com</a> <span style="color: #888888;"> | The Time Intelligence<sup style="font-size: 8px;">TM</sup> Company</span></td>
+    </tr>
+    </tbody>
+    </table>
+    </td>
+    <td>&nbsp;</td>
+    </tr>
+    </tbody>
+    </table>

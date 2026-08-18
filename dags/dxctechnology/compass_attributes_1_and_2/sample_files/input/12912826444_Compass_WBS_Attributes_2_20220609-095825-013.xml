@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_Attributes_Replicon xmlns:ns0="http://csc.com/IF5001/FromCOMPASSTOReplicon/Attributes">
+    <Records>
+        <WBS>DE1-DBN07.01.50</WBS>
+        <Attributes>
+            <AttributeNumber>2</AttributeNumber>
+            <Attribute>10802277</Attribute>
+            <Description></Description>
+            <EndDate>20250202</EndDate>
+        </Attributes>
+    </Records>
+</ns0:MT_Attributes_Replicon>

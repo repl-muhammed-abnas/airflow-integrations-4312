@@ -1,0 +1,5 @@
+HEADR|"G2DX|"DXC|"REPLICON|"|"|"{{ dag_run.conf.file_name }}.SAP|"{{ dag_run.conf.logging_details.current_date_ymd }}|"{{ dag_run.conf.logging_details.current_time_hms }}|"P|"01
+{%- for record in dataset %}
+{{record.RECTY}}|"{{record.CLIID}}|"{{record.INTCA}}|"{{record.ORDNO}}|"{{record.IOPER}}|"{{record.INFTY}}|"{{record.paycodecode}}|"{{record.BEGDA}}|"{{record.ENDDA}}|"{{record.OBJPS}}|"{{record.SPRPS}}|"{{record.SEQNR}}|"{{record.EXTRA}}|"{{record.paycodecode2}}|"{{record.STDAZ}}|"{{record.BEGUZ}}|"{{record.ENDUZ}}|"{{record.BETRG}}|"{{record.WAERS}}|"{{record.PayCodeHours}}|"{{record.ZEINH}}
+{%- endfor %}
+TRAIL|"{{result('no_of_records_size_including_header_footer')}}

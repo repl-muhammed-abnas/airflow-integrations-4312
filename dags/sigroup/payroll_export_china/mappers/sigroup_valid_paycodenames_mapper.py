@@ -1,0 +1,21 @@
+valid_paycodename_china = [
+    'China Overtime 1.5',
+    'China Overtime 2.0',
+    'China Overtime 3.0',
+    'China Shift Allowance',
+    'China Night Shift Allowance',
+    'China On Duty Allowance',
+    'China Comp Time Payout',
+    'CH-Supplemental Leave PY-Payout',
+    'CH- Supplemental Leave CY-Payout',
+    'China Statutory Leave CY-Payout',
+    'Annual Leave Payout',
+    'APAC Unpaid Leave',
+    'A-ShiftD',
+    'A-ShiftN',
+    'A-OnDuty200',
+    'A-OnDuty300',
+    'A-OnDuty400',
+    'A-OnDuty500',
+    'A-OnDuty600'
+]

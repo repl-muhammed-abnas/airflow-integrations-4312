@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_IWOAssignment_Replicon xmlns:ns0="http://csc.com/IF9004/FromGSAPToReplicon/IWOAssignment">
+   <Records>
+      <WBS_Name>StephenWBStest</WBS_Name>
+      <Employee_ID>10000112</Employee_ID>
+      <Task_level_1>00</Task_level_1>
+      <User_Assignment_Start_date>28.04.2007</User_Assignment_Start_date>
+      <User_Assignment_End_Date>31.08.2007</User_Assignment_End_Date>
+   </Records>
+</ns0:MT_IWOAssignment_Replicon>

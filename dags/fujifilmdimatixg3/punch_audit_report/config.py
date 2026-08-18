@@ -1,0 +1,9 @@
+region = 'us-east-1'
+environment = 'pre-production'
+max_active_runs_master = 1
+max_active_runs_child = 5
+execution_timeout_days = 14
+schedule_time_zone = 'America/New_York'
+schedule_interval = '0 5 * * 2'
+link_expiration_period_seconds= 30*24*60*60
+report_name = 'User report for Punch Audit Report'

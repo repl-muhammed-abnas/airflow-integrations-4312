@@ -1,0 +1,18 @@
+<p>
+    <strong>
+        This is an automated mail, please don't reply.
+    </strong>
+    <br />
+    <br />Hello,
+    <br />
+    <br />
+    The Replicon Timesheet Approval automation run was successful and all the eligible timesheets have been been successfully approved on
+    {{ current_time_in_specified_tz() }}.
+    <br />
+    <br />
+    <strong>Timesheet:</strong> {{ "All eligible Timesheet approved successfully" if
+    result("get_timesheet_waiting_for_approval") else
+    "There is no Timesheet to be approved" }}
+    <br />
+     
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Replicon Inc. </p>

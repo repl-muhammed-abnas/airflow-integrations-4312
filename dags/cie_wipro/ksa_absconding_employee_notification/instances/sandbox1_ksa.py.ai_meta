@@ -1,0 +1,31 @@
+{
+  "ai_lines": {
+    "47": "bde47a0b0b9cc8e696749b4c4ad27a0f346a35a0437cbddd13e4d0e46469e51a",
+    "48": "e533da09a77c723c87e7815ed9d656b65556f3679c8a9941cb92e48bb4f2169b"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-17T07:54:22.970Z",
+  "file_state": {
+    "file_sha256": "331644a4e8bdf853737a48499c3c33a6384800cb17ee3b5a6c415f8d24c04bb1",
+    "total_file_lines": 48,
+    "total_lines": 37
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "C:\\Workspace\\airflow-integrations\\dags\\cie_wipro\\ksa_absconding_employee_notification\\instances\\sandbox1_ksa.py",
+  "stats": {
+    "ai_line_count": 2,
+    "ai_line_pct": 5.41,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-03-17T07:54:22.970Z",
+  "version": 1
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <p>Dear {{ dag_run.conf.get("User Name") }},</p>
+    <br>
+    {% set date_string = dag_run.conf['Entry Date'] %}
+    {% set date_object = macros.datetime.strptime(date_string, "%d.%m.%Y") %}
+    <p>As your timesheet for {{ date_object.strftime('%d-%b-%Y') }} remains incomplete even after sending two reminders, this date is now considered as absence from work and leave has been automatically deducted.</p>
+    
+    <p><strong>What action can you take now?</strong></p>
+
+    <ul>
+        <li>
+            If you were working on this date, update your efforts at The Dot > My Time > Replicon time management > My Timesheet.
+        </li>
+    </ul>
+      
+    <p>Once effort is updated raise request for leave reversal.</p>
+
+    <p><strong>Important: Transactions on My Timesheet & Time Off, such as submitting efforts or modifying leave, can be backdated only up to 30 calendar days.</strong></p>
+    
+    <p>Ignore this message if you have already updated your efforts and submitted a leave reversal for  {{ date_object.strftime('%d-%b-%Y') }}.</p>
+    
+    <p>If you have questions or need assistance, raise a ticket via <a href="https://apc01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwittywebevents.wipro.com%2Femail-analytics%2Fapi%2Ft%2Fl%3FobjId%3D64d5e6d9e4b03915d296fe15&data=05%7C02%7Cminakshi.menon%40wipro.com%7Ca95344a9e7b1412a074308dc4c8bc09b%7C258ac4e4146a411e9dc879a9e12fd6da%7C0%7C0%7C638469410381869368%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=lZ7JNLH%2B04849Q6F4E6Hznu%2BYY5llDx%2FUi8dHRelagQ%3D&reserved=0"><strong>WiServe</strong></a> > Report and issue > GPO (Global People Operations) or for any technical concerns raise under Application Support.</p>
+    
+    <p>Read the full TMS Policy at The Dot > Policy hub</p>
+    
+    <p>***This is an auto generated mail. Please do not reply.***</p>
+</body>
+</html>

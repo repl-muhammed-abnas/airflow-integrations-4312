@@ -1,0 +1,30 @@
+<p>Hello,<br /> <br />The Replicon Project Sync from Costpoint has {{" "}}
+  {%- set has_errors = result("get_errored_logs") -%}
+  {%- if has_errors -%}
+  completed with errors
+  {%- else -%}
+  {%- if result("get_exception_logs") -%}
+  completed with exceptions
+  {%- else -%}
+  completed successfully
+  {%- endif -%}
+  {%- endif -%}
+  , further details are below: <br /></p>
+<ul>
+  <li>Source input : Costpoint API</li>
+  <li>Record count : {{ result("get_project_logs") | length }}</li>
+  <li>Log file name : {{ result("log_filename") }}</li>
+  <li>Log file link : <a href="{{ result('generate_download_link')}}">Download Log File</a></li>
+</ul><br />
+<em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+<p>For any queries, please contact our support team at <a
+    href="https://support.deltek.com/">https://support.deltek.com/</a><br />
+  <br />
+  <strong>This is an automated mail from Deltek Integration. Please do not reply to this email.</strong><br />
+  <br /><br />
+  Regards,<br />
+  Deltek Inc
+</p>

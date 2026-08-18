@@ -1,0 +1,20 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> Replicon 
+    Report Data is successful , The following Timesheets are approved. Please check.
+
+        <table style="width: 50%; border-collapse: collapse; margin: 20px 0;">
+            {% set count = namespace(value=0) %}
+            <tr>
+                <td style="border: 1px solid #233142; padding: 8px; text-align: center;"><b>Sr. No.</b></td>
+                <td style="border: 1px solid #233142; padding: 8px; text-align: center;"><b>User Name</b></td>
+                <td style="border: 1px solid #233142; padding: 8px; text-align: center;"><b>Timesheet Period</b></td>
+            </tr>
+            {% for item in result("get_email").get("value") %}
+            {% set count.value = count.value + 1 %}
+            <tr>
+                <td style="border: 1px solid #233142; padding: 8px; text-align: center;">{{ count.value }}</td>
+                <td style="border: 1px solid #233142; padding: 8px; text-align: center;">{{ item['User Name'] }}</td>
+                <td style="border: 1px solid #233142; padding: 8px; text-align: center;">{{ item['Timesheet Period'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    <p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Replicon Inc.</p>

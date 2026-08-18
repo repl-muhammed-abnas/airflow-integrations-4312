@@ -1,0 +1,23 @@
+from alvarezandmarsalholdings.time_export.time_export_master.config import *
+from alvarezandmarsalholdings.time_export.time_export_workday.instances.UAT import time_export_to_workday_dag_id
+from alvarezandmarsalholdings.time_export.time_export_s4hc_v2.instances.uat import time_export_to_s4hc_dag_id
+from alvarezandmarsalholdings.time_export.timeoff_export_workday.instances.UAT import timeoff_export_to_workday_dag_id
+
+instance = "UAT"
+
+company_key = "AlvarezandMarsalHoldingsUAT"
+
+replicon_conn_id = "alvarezandmarsalholdingsuat_replicon_radmin1"
+
+master_dag_id = f"AlvarezandMarsalHoldings_time_and_timeoff_export_master_dag_{instance}"
+
+previous_run_success_check = f"AlvarezandMarsalHoldings_time_and_timeoff_export_previous_run_success_check_variable_{instance}"
+
+time_export_to_workday_dag_id = time_export_to_workday_dag_id
+timeoff_export_to_workday_dag_id = timeoff_export_to_workday_dag_id
+time_export_to_s4hc_dag_id = time_export_to_s4hc_dag_id
+
+lookback_days_for_failed_master_dags = 7
+
+can_use_maintenance_window = f"AlvarezandMarsalHoldings_time_and_timeoff_export_can_use_maintenance_window_{instance}"
+maintenance_window_mapper = f"AlvarezandMarsalHoldings_time_and_timeoff_export_maintenance_window_mapper_{instance}"

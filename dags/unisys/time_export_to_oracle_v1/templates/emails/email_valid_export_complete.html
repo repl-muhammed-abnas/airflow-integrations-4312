@@ -1,0 +1,17 @@
+<p>Hello,<br /> <br />The Replicon time export to Oracle has completed successfully at {{ current_time_in_specified_tz(params.time_zone) }}, further details are below:<br /></p>
+<ul>
+    <li>Process Started : {{ result('process_start_time') }}</li>
+    <li>Date Range : {{ result("logging_details").export_start_date }} - {{ result("logging_details").export_end_date }}</li>
+    <li>File Name : {{ result('logging_details').time_export_filename }}.csv.pgp</li>
+    <li>File Path : {{ params.upload_file_path }}</li>
+    <li>Secondary File Path : {{ params.secondary_upload_file_path }}</li>
+    <li>Number of Records : {{ result('write_time_data_to_csv') | load_all_records | length }}</li>
+    <li>Log File Path : {{ params.log_file_path }}</li>
+    <li>Log File Name : Log_{{ result('logging_details').time_export_filename }}.txt</li>
+</ul>
+<p>For any queries, please contact our support team at <a href="https://support.deltek.com/">https://support.deltek.com/</a><br />
+<br />
+<strong>This is an automated mail from Deltek Integration. Please do not reply to this email.</strong><br />
+<br /><br />
+Regards,<br />
+Deltek Inc</p>

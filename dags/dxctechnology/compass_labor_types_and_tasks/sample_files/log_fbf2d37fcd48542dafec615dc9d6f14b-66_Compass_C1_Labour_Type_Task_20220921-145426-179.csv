@@ -1,0 +1,6 @@
+29/09/2022T18:58:15,Number of Rows: 4,Function: C1 Task and Labor Type,,,
+IE1-IWR2 .01.01.01.20,TESTER_10002,,Success,Updated successfully,fbf2d37fcd48542dafec615dc9d6f14b:23:00:19:02:04:00:04
+IE1-IWR2 .01.01.01.20,DEV_10002,,Success,Created successfully,fbf2d37fcd48542dafec615dc9d6f14b:23:00:19:03:02:00:04
+IE1-IWR2 .01.01.01.20,TESTER,,Success,Updated successfully,fbf2d37fcd48542dafec615dc9d6f14b:23:00:19:01:07:00:04
+IE1-IWR2 .01.01.01.20,HELPER,,Success,Updated successfully,fbf2d37fcd48542dafec615dc9d6f14b:23:00:19:00:07:00:04
+Number of Records Processed Successfully: 4,Number of Records with Error: 0,Number of Records with Exception: 0,,,

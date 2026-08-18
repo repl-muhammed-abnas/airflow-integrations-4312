@@ -1,0 +1,7 @@
+EmployeeID,ReferenceID,TimeOffEntryID,Status,Details,JobID,12/09/2022T10:39:58,Number of Rows:5,Function: Vialto Partners Time off Import inbound,,,
+432156,Testing Time Off,wxyz,Success,Time off Added Successfully,3b4d72561c7e550db069306cc360d181:20:00:05:00:07
+432156,ABSENCE_PLAN-6-161,112233,Success,Time off Added Successfully,3b4d72561c7e550db069306cc360d181:20:00:05:01:07
+432156,Testing Time Off,abcd,Success,Time off updated Successfully,3b4d72561c7e550db069306cc360d181:20:00:05:02:07
+432156,Testing Time Off,test123,Success,Time off updated Successfully,3b4d72561c7e550db069306cc360d181:20:00:05:03:08
+TESTEMP2,Testing Time Off,yaad,Success,Time off Added Successfully,3b4d72561c7e550db069306cc360d181:20:01:05:00:07
+Number of Records Errored: 0,Number of Records Processed Successfully: 5,Number of Records with Exception: 0,,,

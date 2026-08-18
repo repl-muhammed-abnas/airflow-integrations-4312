@@ -1,0 +1,20 @@
+timeoff_codes = {
+    "[MAR] Unpaid Leave": "CSS",
+    "[MAR] Annual Leave": "CPA",
+    "[MAR] Annual Leave E-F": "CPA",
+    "[MAR] Breastfeeding": "ALA",
+    "[MAR] Circumcision Leave": "CIR",
+    "[MAR] Death of a family member": "DCD",
+    "[MAR] Death of family members and parents": "DCI",
+    "[MAR] Disciplinary Absence": "ABS",
+    "[MAR] Marriage Leave": "MAR",
+    "[MAR] Maternity Leave": "CMT",
+    "[MAR] Paternity Leave": "NAI",
+    "[MAR] Recovery Leave": "RCP",
+    "[MAR] Resignation leave": "ABJ",
+    "[MAR] Sick Leave": "MAL",
+    "[MAR] Surgical operation leave": "OCH",
+    "[MAR] Unjustified absence": "ABI",
+    "[MAR] Work accident Long Term": "ACL",
+    "[MAR] Work accident Short Term": "ACC"
+}

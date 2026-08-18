@@ -1,0 +1,50 @@
+{
+  "ai_lines": {
+    "1": "4d79856fd75da17a9e3678ac7def65919f6f9f4473166276b7dd2d2634787097",
+    "10": "3079c5d870e3445f740f7a48801b98234687bf1415d28a4792a2c7b1c7a519ae",
+    "12": "d96b433779e7feb4cc27a266fffea72b0e4bd741884fc82e98dc58973c42c273",
+    "14": "974d31ba50e1180e0d571f13dabd8e7af97b8582f1d8c36f13de7deaad20ef82",
+    "15": "7b3b45a63746193623dda5fca5f98401e2b83cec82b9b962042b2c1dd03e0fc0",
+    "16": "aed11af7933feafa238bb4ef6c2fa02d27b24c9b6b603d45608bc1d479d984f2",
+    "17": "5555e2ccf2f2faa9ebd41aaea624f9893b263ed12cf7364bc008667f4296b68a",
+    "19": "8f5a30e55af1af1765ccb99e8465614e626b1841ec3b1424b5cf5d411d134754",
+    "2": "e40579a1222f108f1f18abb6919a8fdc2ee86ae0c541c0ca1bb38794b5215b33",
+    "20": "ca4e7f4ff330b96d5b2b7a67b5bec049e899924e22d624a681dc697b38057331",
+    "21": "8595dba60bf8bfa6997dea56667bde92400833b21ec5c13dc63fce9968a6cc8e",
+    "23": "d0c16d2631db6b055a878fe4faae5ad240410655b1ba45d9e48426740bbb212a",
+    "24": "1865e0414da7e7f0d0eb7922ad5b76e60a3f6e77436e2db644d265fb45d3137e",
+    "26": "f653660ff9c96de81ebc3acf0a30cdc2db6b4dddbf2ab6727aa4cf4491730f8e",
+    "27": "7db1e99a1bcc337be485b16067bf453cf9e0b5f71cede89ebdb1460c657f5b60",
+    "28": "934b1ca7c75da6cd982970aafa6cdbddcc4ecedbad2b8bbf643b85720abb2a0d",
+    "29": "d8e1774385836ea155e0a3e9b02809d27fe4e3d6299dba578a16bfd07849e037",
+    "4": "bacd1ff47e02a0ba31206f9f58fb56c671b6fa5934f2255b6203fe8c17d62484",
+    "5": "7625398833a8cf5b3589d70ba1436265f804d8a5687063364b6152b23667e940",
+    "7": "7a7a57dd844c95d736bdf40fdaa0097ef128566baf6368d536a2f98f41ef09dc",
+    "9": "4f06e3afc39b49ad9e689524ffa1750e2ef77edb77cc12827ac16daffbc7aabd"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Write",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-06T16:34:59.723Z",
+  "file_state": {
+    "file_sha256": "5fc83da0f1e3ea4bd56501503504c0e01c0c52aa640da4185c1ba1ab439c66be",
+    "total_file_lines": 29,
+    "total_lines": 21
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "C:\\Workspaces\\airflow-integrations\\dags\\bearingpoint\\sap_h4s4_timeoff_booking_import_v1\\instances\\prod.py",
+  "stats": {
+    "ai_line_count": 21,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-06T16:34:59.723Z",
+  "version": 1
+}

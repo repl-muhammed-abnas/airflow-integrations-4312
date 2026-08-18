@@ -1,0 +1,12 @@
+region = 'eu-central-1'
+environment = 'pre-production'
+company_key = 'NECAUafmig'
+replicon_conn_id = 'NECAUafmig_replicon_admin'
+user_shift_report_name = "***Shift Assignment for Time Off User reference_V2"
+time_zone = 'Australia/Melbourne'
+dag_max_active_tasks = 128
+execution_timeout_days = 14
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_internal_testing_email }}'
+schedule_interval_weekly = '0 4 * * 0'
+master_dag_active_runs = 1

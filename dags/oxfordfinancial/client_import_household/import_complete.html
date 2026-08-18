@@ -1,0 +1,27 @@
+<strong>
+    This is an automated mail, please don't reply.</strong><br />
+<br />
+Hello, <br />
+<br />
+The Client Import job is{{" "}}
+{%- set has_errors = result("get_errored_logs", key="length") > 0 -%}
+{%- if has_errors -%}
+completed with errors based on the file - {{ dag_run.conf.filename }}. Please analyse the logs attached and share the
+customer feedback.
+<br />
+<br />
+For any queries, please contact our support team at https://support.deltek.com <br />
+<br />
+Regards, <br />
+Deltek Inc.
+{%- else -%}
+completed successfully based on the file - {{ dag_run.conf.filename }}. Please find the attached logs for
+reference.<br />
+<p>
+    <br />
+    For any queries, please contact our support team at https://support.deltek.com
+    <br />
+    <br />Regards, <br />
+    Deltek Inc.
+</p>
+{%- endif -%}

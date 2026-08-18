@@ -1,0 +1,22 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br />
+    <br />Hello, <br /><br />
+    The Auto Shift Assignment for Existing users is completed with error for the location {{dag_run.conf.country}}
+    on {{ current_time_in_specified_tz("America/New_York") }}. Please find the details for
+    reference.
+</p>
+<ul>
+    <li>Total Records: {{result('query_enabled_users_data','length')}}</li>
+    <li>Start Date: {{result('get_startdate_enddate').string_startdate}}</li>
+    <li>End Date: {{result('get_startdate_enddate').string_enddate}}</li>
+    <li>Location: {{dag_run.conf.country}}</li>
+    <li>Failed Records: {{ result('format_logs', 'error_record_count')}}</li>
+
+</ul>
+Please find the below link to the logs for reference: <br />
+<br />
+{%- set download_link = 'generate_presigned_url' -%}
+<a href="{{result(download_link)}}">Download log file</a><br />
+<p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

@@ -1,0 +1,66 @@
+{
+  "ai_lines": {
+    "1": "4d79856fd75da17a9e3678ac7def65919f6f9f4473166276b7dd2d2634787097",
+    "10": "33b3329825e78eb32dde1a444ba75f3ec1bc8bdbe599fe2229587237018eab00",
+    "13": "5b784b11cf88206e26ef3e5768c85225638caa3192825025d7805648f7a0c9f4",
+    "14": "59a643fd1a884d596b4f2babb025d913e2ff2285ed62e9f1ecbc5ad78a48e0c4",
+    "15": "ba5dd1e27f3dff64a1bf68f7aceb9959292ef0c0a56727a70a7d7ecd3ae228c7",
+    "16": "ba5ec51d07a4ac0e951608704431d59a02b21a4e951acc10505a8dc407c501ee",
+    "18": "21f5707961a268c05f165e79986279472a6c0242974bae4a20e3c5327c7ea74b",
+    "19": "0dcf55a548204e2c29b8bd6d7840bb2ee44b3a6afbdd41bc84c401d318ede6e9",
+    "2": "795dbeb1358e168cde0f038e8734743da39c06dc308f76d40487d6904d9fc87d",
+    "20": "a4b8b341671c16fa692d06e42573a85b63205622767e609d8720b9f3a6e117bc",
+    "21": "7c019df5cb246b41e1dd221aa92412408cfba23ce7d510196dfc5edf571cad81",
+    "23": "397045f0ed94441404eb0ce5df5039d4961bbc70c441a664bc3c59f137eeb5d8",
+    "24": "5ac21a68350127781c025c19d1f6b18d67ebdcd847946b46518fcd687a6de27a",
+    "25": "f72e3b4fc6937fcf380b604a313fac511d2b2d05f376be9539ee18a267123dd7",
+    "26": "eceda8632dcd70b0de21dcb86c7f528324b95eace98f8e3d64aca8f60aaf6ea6",
+    "27": "cfae0d4248f7142f7b17f826cd7a519280e312577690e957830d23dcf35a3fff",
+    "28": "8595dba60bf8bfa6997dea56667bde92400833b21ec5c13dc63fce9968a6cc8e",
+    "3": "1c80ee441a56d69acae99266605441b0bb38a078dd24cafe32771d718f2b86a4",
+    "30": "01c1653d28761c72d652c32a9861bb266144dbf82bcf546617cccc374c9de712",
+    "31": "3af998fb5f0e2f40d46972a178c5faeac6709e3393b6410375c9095977cdc451",
+    "32": "95cf87ded3089811187ad19e6cfa1f11c8833a29624c9c117fddb52ab11ff840",
+    "33": "31b795a0742adf88670d9a5d04bee01bd5a87457543c9af860f0586e4fa197c7",
+    "5": "fbe8d2c7139fd71231289622554e67036e75c52e8d6f5e14c27c1d5842dcb2f9",
+    "6": "6e78a59a0a185d51a44a88261c1cab1f5b4467a39285b891d6532d235aed2a93",
+    "7": "7625398833a8cf5b3589d70ba1436265f804d8a5687063364b6152b23667e940",
+    "9": "60229ed83e3750ea9d6f63db0b823a66f6a11e32cd32a78d5de8c725f41bfb1d"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 3,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-06-01T08:05:49.301Z",
+  "file_state": {
+    "file_sha256": "1f5f2f03cd70933100b176327c883f9f66680e477f68a9e0bec17e2647092aff",
+    "total_file_lines": 33,
+    "total_lines": 27
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "02ba263f8eee30a83f71ccba7cda852819abee3bcf2f19a2fc39fc8bd779fe95",
+      "last_known_line": 11,
+      "removed_at": "2026-06-09T08:32:37.165Z"
+    },
+    {
+      "hash": "2d98720d107c7086c8c29577bb703b4c6e5072b245d3b390ab69575b4e7a1dd8",
+      "last_known_line": 25,
+      "removed_at": "2026-06-10T15:13:38.515Z"
+    }
+  ],
+  "source_file": "C:\\workspace\\airflow-integrations\\dags\\resource_planner\\task_resource_allocation_export\\instances\\prod.py",
+  "stats": {
+    "ai_line_count": 26,
+    "ai_line_pct": 96.3,
+    "ai_lines_removed_or_modified": 2
+  },
+  "updated_at": "2026-06-10T15:13:38.515Z",
+  "version": 1
+}

@@ -1,0 +1,104 @@
+{
+  "ai_lines": {
+    "1": "c411ab8c6a9ccae2bb538ad46a315f960bab6275b80fbdd4a8577f02f7014462",
+    "10": "0ddaa28d60e0ebefae81b654c32ea950d982de80db69ddcd8e6a4a5e699036dd",
+    "11": "33fccecb235071b1ee63da4ad7449b012f9262b2b17ee04dd2844a0cd1827782",
+    "12": "53bf6369e26db76b6d010839158706fa00105c63fa75d63aecc9986ddcb27de9",
+    "13": "46909210c3fc110d9a6182a33a81f179313ecd592f58693ed599f51e0b1f5979",
+    "14": "cfae0d4248f7142f7b17f826cd7a519280e312577690e957830d23dcf35a3fff",
+    "2": "c9a3fe179e85933d4f3bbc08d05c70a86be357b17c58777ea34d5f58c08809f4",
+    "3": "d26eaca06b71e34043b35bb99418ac6f881bda6c1de029784b199f0db96f5a04",
+    "4": "9f9587127d8f5bc03368b811f87a0a4e1391e08575e0d01bd595642d39bbd435",
+    "5": "fb3fa6244e2b87b6f41d4c7dc11bfc7a3829dd2f608fb86d921ea9b1d1e4c4fa",
+    "6": "c3cb021c0d327227b79ca6a697fa71fdebe23299733b8b3937d70109d3861c18",
+    "7": "5c0a9984e6e3e8051a10f6694c6a475df3ee48293a12b1281637d80c76f28086",
+    "8": "04d08602b4b3cc11809a3a64e3e69d36b9b06fa66d4f9efe040dd5c381b4b8c6",
+    "9": "026851f9930a1759a50562d8e4252b193c52c387ed2f34beec9f70abe75b1c33"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Write",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-28T06:27:03.017Z",
+  "file_state": {
+    "file_sha256": "83b4ca2d25e6f4d8ab96d4728a3fe576ec15ebc30aa5a86087875e12cf3cca63",
+    "total_file_lines": 14,
+    "total_lines": 14
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "5b405d08ff3b53da48f368d428128928144874c00c38dc298e472ecbdf980b76",
+      "last_known_line": 10,
+      "removed_at": "2026-04-28T06:30:31.503Z"
+    },
+    {
+      "hash": "83f00b2752a3c760ac5fba64f55738c59dd4ab5f2fc8fcebbf73701c76785c3c",
+      "last_known_line": 11,
+      "removed_at": "2026-04-28T06:30:31.503Z"
+    },
+    {
+      "hash": "30411289be65e137e52e448b3df399bb0c3e5561b257e6d27a3044a35d8c8292",
+      "last_known_line": 12,
+      "removed_at": "2026-04-28T06:30:31.503Z"
+    },
+    {
+      "hash": "aabdf44f2b186d2da67dd281666364bc8b5c009a7ced2794f7ed580dcd9c15a6",
+      "last_known_line": 13,
+      "removed_at": "2026-04-28T06:30:31.503Z"
+    },
+    {
+      "hash": "980a4cd3115238849a2e79e64a0009d2315e11779fbb95853e819e26ccc29d52",
+      "last_known_line": 2,
+      "removed_at": "2026-04-28T06:30:31.503Z"
+    },
+    {
+      "hash": "a300e9264c9cf021001084e40461d9a093e7aa065a8c1d6b37aeafdb325366c1",
+      "last_known_line": 3,
+      "removed_at": "2026-04-28T06:30:31.503Z"
+    },
+    {
+      "hash": "4bfabd161a6a19c8740714f40b559c574c7b6d13f0e3644abe623b1c03dd5c5f",
+      "last_known_line": 4,
+      "removed_at": "2026-04-28T06:30:31.503Z"
+    },
+    {
+      "hash": "b6eb4a023725fd282aa2d94fb7482d708540445e1352693fa2927493a6772e30",
+      "last_known_line": 5,
+      "removed_at": "2026-04-28T06:30:31.503Z"
+    },
+    {
+      "hash": "cfe1d007567dd9e588dedf66f4090ba3d61b9e4c86d0c0ec608ed9c297551654",
+      "last_known_line": 6,
+      "removed_at": "2026-04-28T06:30:31.503Z"
+    },
+    {
+      "hash": "89041c5b8b9201a0663caf180fd1e15390135e4a4d47d174ace5d3ba10a728ec",
+      "last_known_line": 7,
+      "removed_at": "2026-04-28T06:30:31.503Z"
+    },
+    {
+      "hash": "d0c77a0af6584f32aa11525a37abece2d51fe0abde6fb7556118dcc660f66b0a",
+      "last_known_line": 8,
+      "removed_at": "2026-04-28T06:30:31.503Z"
+    },
+    {
+      "hash": "30549a8ebe976e27de6f4e0df120b806e64047ca7018694045c398d4e6b1defd",
+      "last_known_line": 9,
+      "removed_at": "2026-04-28T06:30:31.503Z"
+    }
+  ],
+  "source_file": "c:\\workspaces\\airflow-integrations\\dags\\guidehouse\\workday_user_import\\mappers\\holiday_entitlement_mapper.py",
+  "stats": {
+    "ai_line_count": 14,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 12
+  },
+  "updated_at": "2026-04-28T06:30:31.503Z",
+  "version": 1
+}

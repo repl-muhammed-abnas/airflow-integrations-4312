@@ -1,0 +1,191 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Base/Default PUF mapper - inherited by all country mappers",
+    "last_updated": "2025-01-01"
+  },
+
+  "country": {
+    "code": "XX",
+    "name": "Default",
+    "currency": "USD",
+    "language": "en"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 0.0,
+      "reduced": [],
+      "zero": 0.0
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "0088",
+    "buyer_endpoint_scheme": "0088",
+    "vat_scheme_id": "9906",
+    "company_scheme_id": "0088"
+  },
+
+  "invoice_type_mapping": {
+    "INV": "380",
+    "SINV": "380",
+    "CR": "381",
+    "CRN": "381",
+    "DBN": "383"
+  },
+
+  "field_mappings": {
+    "_comment": "Maps Python internal dict keys to VP XML element names. Keys MUST match PUFConverter internal keys so the parser can iterate this map directly.",
+    "header": {
+      "source_id": "SourceId",
+      "print_identifier": "PrintIdentifier",
+      "erp_doc_num": "ERPDocNum",
+      "erp_doc_date": "ERPDocDate",
+      "erp_doc_time": "ERPDocTime",
+      "erp_doc_code": "ERPDocCode",
+      "doc_type": "DocType",
+      "doc_type1": "DocType1",
+      "supply_date": "SupplyDate",
+      "supply_end_date": "SupplyEndDate",
+      "prepayment_applicable": "PrepaymentApplicable",
+      "billing_arrangement": "BillingArrangement",
+      "transaction_flag": "TransactionFlag",
+      "currency_code": "InvCurrencyCode",
+      "tax_currency_code": "TaxCurrencyCode",
+      "preceding_invoice_ref": "PrecedingInvoiceRef",
+      "preceding_invoice_date": "PrecedingInvoiceDate",
+      "buyer_id": "BuyerID",
+      "buyer_name": "BuyerName",
+      "buyer_vat_num": "BuyerVATNum",
+      "buyer_other_id": "BuyerOtherID",
+      "buyer_other_id_desc": "BuyerOtherIDDesc",
+      "buyer_street": "BuyerAddrStreet",
+      "buyer_additional_street": "BuyerAddrAdditionalStreet",
+      "buyer_building_num": "BuyerAddrBuildingNum",
+      "buyer_additional_num": "BuyerAddrAdditionalNum",
+      "buyer_city": "BuyerAddrCity",
+      "buyer_postal_code": "BuyerAddrPostalCode",
+      "buyer_state": "BuyerAddrState",
+      "buyer_district": "BuyerAddrDistrict",
+      "buyer_country_code": "BuyerAddrCountryCode",
+      "buyer_email": "BuyerEmailID",
+      "payment_terms": "PaymentTerms",
+      "taxable_amount": "InvTaxableAmt",
+      "amount_without_vat": "InvAmtWithoutVAT",
+      "vat_amount": "InvVATAmt",
+      "amount_with_vat": "InvAmtWthVAT",
+      "amount_due": "AmtDueForPayment",
+      "due_date": "DueDate",
+      "sales_order_num": "SalesOrderNum",
+      "accounting_voucher_num": "AccountingVoucherNum",
+      "seller_id": "SellerID",
+      "seller_country_code": "SellerCountryCode",
+      "region": "Region"
+    },
+    "line": {
+      "line_id": "InvoiceLineId",
+      "item_name": "ItemName",
+      "vat_category": "VATCatCode",
+      "vat_exemption_reason_code": "VATExemptionReasonCode",
+      "vat_exemption_reason_text": "VATExemptionReasonText",
+      "gross_price": "GrossPrice",
+      "net_price": "NetPrice",
+      "price_base_quantity": "PriceBaseQuantity",
+      "quantity": "Quantity",
+      "net_price_x_quantity": "NetPriceXQuantity",
+      "taxable_value": "TaxableValue",
+      "vat_rate": "VATRate",
+      "vat_amount": "VATAmt",
+      "line_amount_total": "LineAmtTotal",
+      "currency": "GrossPriceCurrency",
+      "hsn_code": "HSNCode",
+      "item_classification_code": "ItemClassificationCode"
+    },
+    "tax_breakdown": {
+      "category_code": "VATBDCategoryCode",
+      "rate": "VATBDRate",
+      "taxable_amount": "VATBDCatTaxableAmt",
+      "taxable_amount_sar": "VATBDCatTaxableAmtSAR",
+      "tax_amount": "VATBDCatTaxAmt",
+      "tax_amount_sar": "VATBDCatTaxAmtSAR",
+      "currency": "VATBDCatTaxableAmtCurrency",
+      "tax_currency": "VATBDCatTaxAmtCurrency",
+      "exemption_reason_code": "VATBDExemptionReasonCode",
+      "exemption_reason_text": "VATBDExemptionReasonText",
+      "tax_scheme_id": "VATBDTaxSchemeID"
+    },
+    "notes": {
+      "note": "InvoiceNote"
+    },
+    "prepayments": {
+      "adjustment_id": "PrepaymentAdjustmentIdentifier",
+      "prepayment_id": "PrepaymentID",
+      "vat_category_code": "PrepaymentVATCategoryCode",
+      "vat_rate": "PrepaymentVATRate",
+      "taxable_amount_sar": "PrepaymentVATCategoryTaxableAmountSAR",
+      "taxable_amount": "PrepaymentVATCategoryTaxableAmount",
+      "taxable_amount_currency": "CurrencyforPrepaymentVATcategoryTaxableAmount",
+      "tax_amount_sar": "PrepaymentVATCategoryTaxAmountSAR",
+      "tax_amount": "PrepaymentVATCategoryTaxAmount",
+      "tax_amount_currency": "CurrencyforPrepaymentVATCategoryTaxAmount"
+    },
+    "payment_modes": {
+      "identifier": "PaymentModeIdentifer",
+      "mode": "PaymentMode",
+      "specified": "PaymentModeSpecified",
+      "description": "PaymentModeDescription",
+      "iban": "PaymentIBAN",
+      "bic": "PaymentBIC",
+      "account_name": "PaymentAccountName"
+    },
+    "preceding_invoices": {
+      "identifier": "PrecedingInvoiceReferenceIdentifer",
+      "reference": "PrecedingInvoiceRef"
+    },
+    "credit_debit_reasons": {
+      "identifier": "ReasonForCreditDebitNoteIdentifier",
+      "reason": "ReasonForCreditDebitNote",
+      "specified": "ReasonForCreditDebitNoteSpecified"
+    }
+  },
+
+  "invoice_type_names": {},
+
+  "puf_namespaces": {
+    "default": "urn:pagero:PageroUniversalFormat:Invoice:1.0",
+    "default_credit_note": "urn:pagero:PageroUniversalFormat:CreditNote:1.0",
+    "cbc": "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2",
+    "cac": "urn:pagero:CommonAggregateComponents:1.0",
+    "ext": "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2",
+    "puf": "urn:pagero:ExtensionComponent:1.0"
+  },
+
+  "puf_headers": {
+    "customization_id": "urn:pagero.com:puf:billing:2.0",
+    "profile_id": "urn:pagero.com:puf:billing:1.0"
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": []
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": ".*",
+    "required_fields": ["invoice_number", "issue_date", "currency_code"],
+    "max_decimal_places": {
+      "amounts": 2,
+      "quantities": 4,
+      "rates": 2
+    }
+  },
+
+  "defaults": {
+    "unit_code": "EA",
+    "payment_means_code": "30",
+    "tax_category": "S"
+  }
+}

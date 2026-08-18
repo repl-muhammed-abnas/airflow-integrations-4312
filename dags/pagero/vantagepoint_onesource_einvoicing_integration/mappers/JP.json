@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Japan PUF mapper - JCT (Consumption Tax) compliant with Qualified Invoice System",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["Peppol BIS 3.0", "Japanese JCT", "Qualified Invoice System"]
+  },
+
+  "country": {
+    "code": "JP",
+    "name": "Japan",
+    "currency": "JPY",
+    "language": "ja"
+  },
+
+  "tax_system": {
+    "type": "JCT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 10.0,
+      "reduced": [8.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Hyojun zeiritsu",
+      "AA": "Keigen zeiritsu",
+      "Z": "Hikazei",
+      "E": "Menjo"
+    },
+    "qualified_invoice": {
+      "enabled": true,
+      "issuer_registration_required": true
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "0221",
+    "buyer_endpoint_scheme": "0221",
+    "vat_scheme_id": "0221",
+    "company_scheme_id": "0221",
+    "scheme_mappings": {
+      "tax_id": "0221",
+      "corporate_number": "0221",
+      "gln": "0088",
+      "gtin": "0160"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": ["JP:QualifiedInvoice"],
+    "qualified_invoice": {
+      "registration_number_required": true,
+      "registration_data": {
+        "issuer_registration": {
+          "id_type": "JP:QualifiedInvoiceIssuer",
+          "description": "Qualified Invoice Issuer Registration Number",
+          "pattern": "^T[0-9]{13}$"
+        }
+      }
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^T[0-9]{13}$",
+    "corporate_number_pattern": "^[0-9]{13}$",
+    "postal_code_pattern": "^[0-9]{3}-[0-9]{4}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_registration_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Getsumatsujime yokugetsuhatsukababarai",
+    "contact_department": "Keiribu"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "qualified_invoice_issuer": true,
+    "consumption_tax_breakdown": true
+  },
+
+  "translations": {
+    "invoice": "Seikyusho",
+    "credit_note": "Credit Note",
+    "total": "Gokei",
+    "vat": "Shohi-zei"
+  }
+}

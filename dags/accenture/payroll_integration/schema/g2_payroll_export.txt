@@ -1,0 +1,7 @@
+{%- set h = result('fetch_file_header')[0] -%}
+{{ h.CustRECTY }}|"{{ h.CustUSRID }}|"{{ h.CustCLNAM }}|"{{ h.CustCNAME }}|"{{ h.CustPHONE }}|"{{ h.CustEMAIL }}|"{{ h.CustFNAME }}|"{{ h.CustRUNDT }}|"{{ h.CustRUNTM }}|"{{ h.CustRUNTY }}|"{{ h.CustVERNO }}|"{{ h.CustAUTH1 }}|"{{ h.CustAUTH2 }}|"{{ h.CustKEY03 }}|"{{ h.CustCONTYP }}|"{{ h.CustCONVAL }}|"{{ h.CustAFNAM }}|"{{ h.CustPDFLG }}|"{{ h.CustPDORG }}|"{{ h.CustPDLOADID }}|"{{ h.CustFGSCD }}
+{%- for record in dataset %}
+{{record.RECTY}}|"{{record.CLIID}}|"{{record.INTCA}}|"{{record.ORDNO}}|"{{record.IOPER}}|"{{record.INFTY}}|"{{record.SUBTY}}|"{{record.BEGDA}}|"{{record.ENDDA}}|"{{record.OBJPS}}|"{{record.SPRPS}}|"{{record.SEQNR}}|"{{record.EXTRA}}|"{{record.LGART}}|"{{record.STDAZ}}|"{{record.BEGUZ}}|"{{record.ENDUZ}}|"{{record.BETRG}}|"{{record.WAERS}}|"{{record.ANZHL}}|"{{record.ZEINH}}|"{{record.VTKEN}}|"{{record.BWGRL}}|"{{record.AUFKZ}}|"{{record.ENDOF}}|"{{record.UFLD1}}|"{{record.UFLD2}}|"{{record.UFLD3}}|"{{record.KEYPR}}|"{{record.TRFGR}}|"{{record.TRFST}}|"{{record.PRAKN}}|"{{record.PRAKZ}}|"{{record.OTYPE}}|"{{record.PLANS}}|"{{record.VERSL}}|"{{record.EXBEL}}|"{{record.WTART}}|"{{record.TDLANGU}}|"{{record.TDSUBLA}}|"{{record.TDTYPE}}
+{%- endfor %}
+{%- set f = result('fetch_file_footer')[0] %}
+{{ f.CustRECTY }}|"{{ f.CustRECCT | int }}

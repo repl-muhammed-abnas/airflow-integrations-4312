@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Netherlands PUF mapper - BTW compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-02-11",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Dutch VAT", "SI-UBL 2.0"]
+  },
+
+  "country": {
+    "code": "NL",
+    "name": "Netherlands",
+    "currency": "EUR",
+    "language": "nl"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 21.0,
+      "reduced": [9.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Standaard tarief",
+      "AA": "Verlaagd tarief",
+      "Z": "Nultarief",
+      "E": "Vrijgesteld",
+      "AE": "Verlegging",
+      "K": "Intracommunautaire levering",
+      "G": "Uitvoer"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "0106",
+    "buyer_endpoint_scheme": "0106",
+    "vat_scheme_id": "9944",
+    "company_scheme_id": "0106",
+    "vat_prefix": "NL",
+    "scheme_mappings": {
+      "vat_number": "9944",
+      "kvk": "0106",
+      "gln": "0088",
+      "oin": "0190"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": []
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^NL[0-9]{9}B[0-9]{2}$",
+    "kvk_pattern": "^[0-9]{8}$",
+    "postal_code_pattern": "^[0-9]{4}\\s?[A-Z]{2}$",
+    "iban_pattern": "^NL[0-9]{2}[A-Z]{4}[0-9]{10}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Betaling binnen 30 dagen",
+    "contact_department": "Boekhouding"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false
+  },
+
+  "translations": {
+    "invoice": "Factuur",
+    "credit_note": "Creditnota",
+    "total": "Totaal",
+    "vat": "BTW"
+  }
+}

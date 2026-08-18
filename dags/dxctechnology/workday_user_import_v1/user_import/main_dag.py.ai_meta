@@ -1,0 +1,30 @@
+{
+  "ai_lines": {
+    "784": "5f501bf81cb3b99b10d41af8579c1df4764872801e2bfc7c00d427c55e69a6aa"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-27T06:52:52.993Z",
+  "file_state": {
+    "file_sha256": "b8308f3f7fe856ee1ac8dacd369854a055af02dc2d78a7b6b9677a62a7d4a087",
+    "total_file_lines": 1182,
+    "total_lines": 1057
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\dxctechnology\\workday_user_import_v1\\user_import\\main_dag.py",
+  "stats": {
+    "ai_line_count": 1,
+    "ai_line_pct": 0.09,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-27T06:52:52.993Z",
+  "version": 1
+}

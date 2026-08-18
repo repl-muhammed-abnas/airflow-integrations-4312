@@ -1,0 +1,25 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The PIF template
+  project import is {{" "}}
+  {%- set has_errors = result("get_errored_logs", key="length") > 0 -%}
+  {%- if has_errors -%}
+  completed with errors
+  {%- else -%}
+  {%- if result("get_exception_logs", key="length") > 0 -%}
+  completed with exceptions
+  {%- elif result("get_skipped_logs", key="length") > 0 -%}
+  completed with skipped records
+  {%- else -%}
+  completed successfully
+  {%- endif -%}
+  {%- endif -%}
+  {{ " based on the file - " + dag_run.conf.filename }}.
+  <br>
+  Please find the below link to download the import logs for reference. <br /> <br /><a
+    href="{{result('generate_download_link')}}">Download log file</a>
+</p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+  For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

@@ -1,0 +1,14 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br />
+    <br />Hello, <br /><br />
+    The Replicon Termination export is completed successfully for the location USA
+    on {{ result('process_start_time').start_time }}. Please find the export details for
+    reference.
+</p>
+<ul>
+    <li>File Name: {{ result('get_file_name')}}.SAP.pgp</li>
+    <li>File Path: {{params.output_filepath}}</li>
+    <li>Country: USA</li>
+    <li>Number of Records: {{result('query_list_in_final_payroll_collection','length')}}</li>
+
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

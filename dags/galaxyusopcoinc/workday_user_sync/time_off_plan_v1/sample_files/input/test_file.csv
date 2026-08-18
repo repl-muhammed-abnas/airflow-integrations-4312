@@ -1,0 +1,5 @@
+TimeOffPlan|DisplayName|UnitOfTime|Country|PeriodSchedule|EnabledforWorkerType|ReferenceID|PlanType
+"CAN Annual Leave"|"Annual Leave"|"Hours"|"Canada"|"Monthly"|"Employee"|""|"test"
+"CAN Annual Leave"|"Annual Leave"|"Hours"|"Canada"|"Monthly"|"Employee"|"test_time_off"|"test"
+"AUS Annual Leave"|"Annual Leave"|"Hours"|"Australia"|"Monthly"|"Employee"|"Annual Leave"|"test"
+"AUS Annual Leave"|"Annual Leave"|"Hours"|"Canada"|"Monthly"|"Employee"|"test_time_off_1"|"test"

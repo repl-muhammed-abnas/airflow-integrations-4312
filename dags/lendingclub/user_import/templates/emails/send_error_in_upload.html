@@ -1,0 +1,6 @@
+<p>Hi Team,<br /> <br /> The user import  for the  ecid ID: {{ dag_run_ecid() }} hosted on {{ params.company_key }} 
+    instance has been completed at {{ result('get_current_time') }}, however  the log upload to Cshare has failed. Attached is the log file for reference.</p>
+    <ul>
+    <li>ecid ID: {{ dag_run_ecid() }} </li>
+    </ul> 
+    <p> Please find the attached logs which was to be sent to intended recipients and debug the issue related to Cshare upload.<br /> <br /> Regards,<br /> Deltek Inc</p>

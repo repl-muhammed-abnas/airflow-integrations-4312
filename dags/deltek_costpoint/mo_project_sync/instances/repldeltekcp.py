@@ -1,0 +1,37 @@
+region = 'us-east-1'
+environment = 'qa'
+instance = "repldeltekcp"
+company_key = 'repldeltekcp'
+replicon_conn_id = f'replicon_{company_key}'
+deltek_cospoint_conn_id = f'deltek_costpoint_{company_key}'
+odbc_conn_id = f'Replicon_deltek_odbc_{company_key}'
+last_run_date_var_name = f'{company_key}_deltek_costpoint_mo_sync_last_run_date'
+get_data_in_chunk_var_name = f'{company_key}_deltek_costpoint_mo_sync_get_data_in_chunk'
+time_zone = 'US/Eastern'
+execution_timeout_days = 14
+child_dag_max_active_runs = 5
+date_time_format = "%Y-%m-%dT%H:%M:%S"
+costpoint_date_format = '%Y-%m-%d %H:%M:%S'
+can_run_batch_task_var_name = f'{company_key}_deltek_costpoint_mo_sync_run_batch_task'
+schedule_interval = "*/1 * * * *"
+master_dag_interval = 30
+tenant_email = "MPTeamReplicon@deltek.com"
+internal_email = "MPTeamReplicon@deltek.com"
+cp_timezone = "America/New_York"
+project_manager_permission_name = 'Project Manager'
+deltek_cospoint_company_ids = ['1', '04', '6', '5', '3', '2']
+proj_user_company = 'Company'
+log_generation_dag_interval = '0 * * * *'
+dag_max_active_tasks = 10000
+lookup_log_timestamp_var = f'deltek_costpoint_mo_import_{instance}_lookup_log_timestamp'
+lookup_log_timestamp_hours = 1
+alert_email = "MPTeamReplicon@deltek.com"
+child_dag_log_generation_max_active_runs = 20
+project_leader_approval = True
+proj_referance_project_id = 'Build Project'
+proj_mo_project_flag = 'Is MO Project ?'
+billable_uri = "urn:replicon:time-and-expense-entry-type:billable"
+
+# MO query
+mo_query = f"""SELECT M.MO_ID, M.BLD_PROJ_ID, R.MO_OPER_SEQ_NO, R.MO_OPER_STEP_NO, R.WC_ID, M.ORD_DT, M.TIME_STAMP FROM MO_HDR M
+            JOIN MO_ROUTING R ON M.MO_ID = R.MO_ID WHERE M.S_MO_STATUS_CD in ('C', 'F', 'L', 'S') and M.TIME_STAMP > ?"""

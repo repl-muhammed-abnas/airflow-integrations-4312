@@ -1,0 +1,32 @@
+<p>
+  <strong> This is an automated mail, please don't reply. </strong> <br />
+  <br />Hello {{dag_run.conf['supervisorname'].split(',')[-1].split(' ')[1]}}, <br />
+  <br />
+  Your below team members do not have any shift assigned for next week:
+  <br />
+  <table style= "border: 0.3px solid black;border-collapse: collapse"  border="1">
+  <tr>
+  <th>User Names</th>
+  </tr>
+  {% for item in dataset %}
+    {% if (loop.index <= 20) %}
+      <tr><td>
+      {{ item.user }}
+      </tr></td>
+    {% endif %}
+  {% endfor %}
+  </table>
+  <br />
+</p>
+  <p><em><span style="font-size: 10pt;">The above user list is restricted to 20 user names. To view full list you may click on the following link - <a href="{{result('generate_download_link')}}">Download ​List​</a>.</span></em></p>
+  <p><em><span style="font-size: 9pt;">Note: The download link is valid for 7 days.</span></em></p>
+  Please log into the system to check the details and assign shifts to the above employees.
+  <br />
+  <br />
+  Knowledge Article link to be provided
+  <br />
+
+<p>
+  For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards,
+  <br />Deltek Inc.
+</p>

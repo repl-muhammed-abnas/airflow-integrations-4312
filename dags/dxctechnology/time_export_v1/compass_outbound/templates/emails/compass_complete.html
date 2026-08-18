@@ -1,0 +1,12 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />
+Hello, <br /> <br />
+The Replicon time extract for Compass - {{ params.code_2 }} is completed successfully at {{ current_time_in_specified_tz() }}.
+Please find the export file details below:<br /><br />
+File path: {{ params.sftp_path }} <br />
+File name: {{ params.code_1 }}_{{ dag_run.conf.twbname }}.xml <br />
+Payload Identifier: {{ dag_run.conf | attr_or_default(params.unique_id_attr) }}
+<br /></p>
+<p>
+Regards,<br />
+Deltek Inc.
+</p>

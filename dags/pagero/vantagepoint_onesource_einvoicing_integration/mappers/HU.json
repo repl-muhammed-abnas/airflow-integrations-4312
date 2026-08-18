@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Hungary PUF mapper - AFA compliant with NAV reporting",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Hungarian VAT", "NAV Online Invoice"]
+  },
+
+  "country": {
+    "code": "HU",
+    "name": "Hungary",
+    "currency": "HUF",
+    "language": "hu"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 27.0,
+      "reduced": [5.0, 18.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Altalanos kulcs",
+      "AA": "Kedvezmenyes kulcs",
+      "Z": "Nulla kulcs",
+      "E": "Mentes",
+      "AE": "Forditott adozas",
+      "K": "Kozossegen beluli ertekesites",
+      "G": "Export"
+    },
+    "exemption_code_defaults": {
+      "E": "VATEX-EU-132",
+      "Z": "VATEX-EU-Z",
+      "AE": "VATEX-EU-AE",
+      "K": "VATEX-EU-IC",
+      "G": "VATEX-EU-G",
+      "O": "VATEX-EU-O"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9910",
+    "buyer_endpoint_scheme": "9910",
+    "vat_scheme_id": "9910",
+    "company_scheme_id": "9910",
+    "vat_prefix": "HU",
+    "scheme_mappings": {
+      "vat_number": "9910",
+      "tax_number": "9910",
+      "gln": "0088"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": ["HU:NAV"],
+    "nav": {
+      "enabled": true,
+      "online_invoice_reporting": true,
+      "threshold": 100000,
+      "threshold_currency": "HUF",
+      "registration_data": {
+        "nav_verification_code": {
+          "id_type": "HU:NAVVerificationCode",
+          "description": "NAV Online Invoice verification code"
+        }
+      }
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^HU[0-9]{8}$",
+    "tax_number_pattern": "^[0-9]{8}-[0-9]-[0-9]{2}$",
+    "postal_code_pattern": "^[0-9]{4}$",
+    "iban_pattern": "^HU[0-9]{26}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Fizetes 30 napon belul",
+    "contact_department": "Konyveles"
+  },
+
+  "special_rules": {
+    "requires_issue_time": true,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "nav_reporting_mandatory": true,
+    "nav_threshold_reporting": true
+  },
+
+  "translations": {
+    "invoice": "Szamla",
+    "credit_note": "Helyesbito szamla",
+    "total": "Osszesen",
+    "vat": "AFA"
+  }
+}

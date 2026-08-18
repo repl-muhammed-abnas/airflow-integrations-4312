@@ -1,0 +1,14 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon global time data extract is completed successfully {{" "}}
+    for date range {{ result("export_period").export_start_date }} - {{ result("export_period").export_end_date }} at {{ current_time_in_specified_tz(params.time_zone) }}. There are no records in the export. Please find the extract details for reference.</p>
+<ul>
+    <li>Process Started: {{ result("process_start_time") }}</li>
+    <li>File Name: {{ dag_run.conf.time_export_name }}.csv.pgp</li>
+    <li>File Path: {{ params.upload_file_path }}</li>
+    <li>Location: {{ params.location }}</li>
+    <li>Total Hours: 0.0</li>
+    <li>Number of Records: 0</li>
+    <li>Date Range: {{ result("export_period").export_start_date }} - {{ result("export_period").export_end_date }}</li>
+    <li>Log Filename: log_{{ dag_run.conf.time_export_name }}.csv</li>
+    <li>Log Filepath: {{ params.log_filepath }}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

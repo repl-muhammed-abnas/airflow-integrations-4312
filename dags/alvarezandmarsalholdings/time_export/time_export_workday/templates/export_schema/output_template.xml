@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    {%- for record in dataset %}
+    <row>
+    <Worker_Reference>{{ record.Worker_Reference|e }}</Worker_Reference>
+    <Worker_Time_Block_Reference>{{ record.Worker_Time_Block_Reference|e }}</Worker_Time_Block_Reference>
+    <Delete_Time_Block>{{ record.Delete_Time_Block|e }}</Delete_Time_Block>
+    <Time_Entry_Code_Reference>{{ record.Time_Entry_Code_Reference|e }}</Time_Entry_Code_Reference>
+    <Date>{{ record.Date|e }}</Date>
+    <Quantity>{{ record.Quantity|e }}</Quantity>
+    <In_Date_Time>{{ record.In_Date_Time|e }}</In_Date_Time>
+    <Out_Date_Time>{{ record.Out_Date_Time|e }}</Out_Date_Time>
+    <Out_Reason_Reference>{{ record.Out_Reason_Reference|e }}</Out_Reason_Reference>
+    <Comment>{{ record.Comment|e }}</Comment>
+    </row>
+    {%- endfor %}
+</root>

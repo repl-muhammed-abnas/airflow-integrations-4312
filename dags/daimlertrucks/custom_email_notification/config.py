@@ -1,0 +1,14 @@
+instance = 'trial'  # for trial , kept it empty to retain the old dag id with logs in QA Env
+region = 'us-east-1'
+environment = 'pre-production'
+company_key = 'DaimlerTrucksafmig'
+replicon_conn_id = 'DaimlerTrucksafmig'
+debug = False
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_internal_testing_email }}'
+max_active_runs = 1
+execution_timeout_days = 1
+can_run_batch_task_var_name = f"daimlertrucks_custom_email_notification_{instance}_can_run_batch_task"
+master_dag_schedule_interval = "0 18 * * Mon-Fri"

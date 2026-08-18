@@ -1,0 +1,36 @@
+<body>
+  <p>Hello,</p>
+
+  <p>The Replicon Activity Type import has {{ " " }}
+    {%- set has_errors = result("format_logs", key="error_record_count") > 0 -%}
+    {%- if has_errors -%}
+    completed with errors
+    {%- else -%}
+    {%- if result("format_logs", key="exception_record_count") > 0 -%}
+    completed with exceptions
+    {%- else -%}
+    completed successfully
+    {%- endif -%}
+    {%- endif -%}
+    {{ "" }}, further details are below: <br /></p>
+
+  <ul>
+    <li>Source File name : {{ result('new_file_sensor') | file_name }} </li>
+    <li>Log File name : {{ result('get_email_details').log_file_name }}</li>
+    <li>Log File Path : {{ result('get_email_details').log_filepath }} </li>
+    <li>Log File link : <a href="{{ result('generate_download_link')}}">Download Log</a></li>
+    <li>Job start time : {{ result('log_start_time')}}</li>
+    <li>Job end time : {{ result('get_email_details').job_end_time }} </li>
+    <li>Job duration : {{ result('get_email_details').job_duration }} minutes</li>
+    <li>Total Record count : {{ result('create_input_data_collection', 'length')}}</li>
+  </ul>
+
+  <p>
+    {%- if has_errors -%}
+    {%- endif -%}
+    For any queries, please contact our support team at <a
+      href=https://support.deltek.com>https://support.deltek.com</a><br />
+  <p><strong>This is an automated mail from Deltek Integration, Please do not reply to this email.</strong><br /> <br />
+    Regards,<br />
+    Deltek Inc</p>
+</body>

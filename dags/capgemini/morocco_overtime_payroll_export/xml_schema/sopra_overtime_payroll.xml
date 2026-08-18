@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ZY90-replicon>
+	<interface90>
+		<interface90_id>
+			<number90_id>Time</number90_id>
+			<dateinterface90>{{ current_time_in_specified_tz(fmt="%Y-%m-%d-%H.%M.%S") }}</dateinterface90>
+		</interface90_id>
+		<salaries>
+            {%- for record in dataset %}
+			<salarie_id>
+				<matricule>{{ record.employee_id|e }}</matricule>
+				<codeEV>{{ record.paycode|e }}</codeEV>
+				<format>{{ record.format|e }}</format>
+				<nbrbas>{{ record.nbrbas|e }}</nbrbas>
+				<monsal>{{ record.hours|e }}</monsal>
+				<datevaleur>{{ record.entrydate|e }}</datevaleur>
+				<entitlement>{{ record.entitlement|e }}</entitlement>
+			</salarie_id>
+            {%- endfor %}
+		</salaries>
+	</interface90>
+</ZY90-replicon>

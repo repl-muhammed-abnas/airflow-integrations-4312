@@ -1,0 +1,19 @@
+# {COUNTRY_NAME} Placeholder Mappers
+# TODO: Define placeholder time-off policy mappings.
+# Maps company code to the placeholder policy for placeholder-based time-off types.
+
+vacation_leave_placeholder_timeoff_types = [
+    {
+        "company_code": "All",              # TODO: Or specific company code (e.g. "8300")
+        "placeholder_policy": "[XXX] Vacation - Default Policy"  # TODO: Policy name
+    }
+]
+
+# TODO: Add additional placeholder mappers if your country has multiple
+# placeholder-based time-off types (e.g. sick leave).
+# sick_leave_placeholder_timeoff_types = [
+#     {
+#         "company_code": "All",
+#         "placeholder_policy": "[XXX] Sick Leave - Default Policy"
+#     }
+# ]

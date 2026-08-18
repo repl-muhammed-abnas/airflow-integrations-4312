@@ -1,0 +1,68 @@
+{
+  "ai_lines": {
+    "281": "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+    "282": "3a624b00d91f21861a038c338edbb1f7a00b9a64c79ae0f0cbaac8f9454d4be4",
+    "283": "d61bbff2f3cff5adbf1fe418690ed5324e495ef027b944d453b4ff4ac4e0e854",
+    "284": "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+    "290": "e01e20b23a894c46bcfd005d0fa04b57e80764a9fe261cd72e4e6b2f72a8aea4",
+    "291": "5c8c7ea8fea9f5a71485e66a28786377266810a1473a45b185e8fa00dfe1aa73",
+    "292": "c946505e7268b7d7a0c5502a604a90a535107917bb0359252d428b904896e741",
+    "295": "8e3ba2afbc0cf5db4a776445f6ffacd37eb6dc7653b1c3b0d4d506e3f36c1dc9",
+    "296": "f48e74d115f68aca7a23aabb7dcbe1bcac97122a479eb6fed64885df4f5d079e",
+    "298": "64b08b478441e2ca6c3208ab06b8e48b63968cbff1d93a468c0d0a9c91043c7b",
+    "299": "ab24af3f2e6d43b7333a9d64e2a6d4556cdf2b67256259b76163047ab15a7c79",
+    "300": "b6f5b8cf35032c751eaf7321fa629490c8f7aedcba7f2b76be3a873fa8308b2f",
+    "302": "320b6803623ed9716a6d7abd985aadabb7044720320e815bf83b418968d8d7de",
+    "311": "24f7937ccb32d25fe3f53e73e944f5c4ce337676611604dcb8c85d2175669b95",
+    "53": "28d86778615f6af47bb1bc4f40face756749768e5111f114cfa234a5060c25af",
+    "56": "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+    "57": "d3b37d49488eafc39b59782d558784a70b7d407a1efb3089184fde6afb24dc75",
+    "58": "1d3617008c7ff06f4bf5cd5661592cb21eeab981aeefe0b42927440e858fbbd6",
+    "59": "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+    "64": "13d96e74bb24ee8b9264b647a6b9d22129b390c23db1b25f14c740bcbd0c1da3",
+    "67": "293a00eb34bad905fb321c795f5e2c3fd7768587bed71c0a2f65948421a581f0",
+    "71": "f17b964d425da924a0187df0ca6386cff72b9121530aec5cdc8ba53d97cfbeaf",
+    "72": "56861fd0c11a9b255a0d337024027a3297bbac1cbdbf4f2d0756ad2d1df9601b",
+    "73": "36c2d14d275e42af9951b043c4ee4e379c9ae915d877764ac746ab2b6c9f3beb",
+    "74": "00cd1e9c12ed89d3316f8e68b7fc38a22c3eb339ef055d07a470bbd63eb523d2",
+    "75": "aab81fdfa3632011902dd7fb2d29b70493f5abcfdbec08cd58de1c57ca289d8f",
+    "76": "e1489ca7b0bd502b3e67a0d1352e1f37615e8ebfae81ae63a61b85ce444e4c22",
+    "77": "56861fd0c11a9b255a0d337024027a3297bbac1cbdbf4f2d0756ad2d1df9601b",
+    "78": "36c2d14d275e42af9951b043c4ee4e379c9ae915d877764ac746ab2b6c9f3beb",
+    "79": "41a79a983c55cf9e86c6acc903988bcac9895cb5eb0271a7998cdb145d6a01d7",
+    "80": "aab81fdfa3632011902dd7fb2d29b70493f5abcfdbec08cd58de1c57ca289d8f",
+    "81": "b8d1918176757f7935444fcf43fbbdd5f055a65dc3bfbdc1dd1f925edd564a5b",
+    "82": "8e7e8847602881e1b1e83c627c6ed11c5350cfe0b39fc82fde8ae60b3c1b22cf"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 3,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-10T15:58:28.378Z",
+  "file_state": {
+    "file_sha256": "04234c9ef017bcfacaa5456c6a66bfd47b6f52cc1136780e30d64e79aad125a9",
+    "total_file_lines": 318,
+    "total_lines": 290
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "e9430597df946c7d241c58a09119d073198ee0f4e4f4fab1b5e0e99dbaba5251",
+      "last_known_line": 304,
+      "removed_at": "2026-03-11T08:26:42.880Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\tsystems\\project_import_file_based_v3\\utils\\request_payload.py",
+  "stats": {
+    "ai_line_count": 33,
+    "ai_line_pct": 11.38,
+    "ai_lines_removed_or_modified": 1
+  },
+  "updated_at": "2026-03-11T08:26:42.880Z",
+  "version": 1
+}

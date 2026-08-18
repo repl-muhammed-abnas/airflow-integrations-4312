@@ -1,0 +1,8 @@
+﻿Employee ID;Entry Date;In time;Out time;WorkType;Project ID;Task Name;Billing rate name;Activity;Hours;Comments
+Z0000022;05/07/2025;;;;Test_T&M;Task1_Test_T&M;SZ15373838;Waiting time;8;Dev Unit Testing
+1234;03/07/2025;9:00;18:00;Training;89738;Requirement Gathering & Analysis;SZ15373838;Working time;8;Dev Unit Testing
+1234;04/07/2025;9:00;18:00;Training;89738;Data Migration & Validation;SZ15373838;Working time;8;Dev Unit Testing
+1234;05/07/2025;9:00;18:00;Training;89738;Solution Design & Configuration;SZ15373838;Working time;4;Dev Unit Testing
+1234;05/07/2025;9:00;18:00;Training;89738;Data Migration & Validation;SZ15373838;Working time;4;Dev Unit Testing
+V00000435;03/07/2025;10:00;19:00;;BaseUAT_Sta_Wc_6207;Workcouncil Representative;SZ15373838;Working time;5;Dev Unit Testing
+V00000435;03/07/2025;10:00;19:00;;3;Gathering client requirements;SZ15373838;Working time;3;Dev Unit Testing

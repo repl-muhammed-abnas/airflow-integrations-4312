@@ -1,0 +1,11 @@
+region = 'us-east-1'
+environment = 'pre-production'
+company_key = 'frontdoorincafmig'
+execution_timeout_days = 14
+master_dag_interval = 30
+max_active_runs_child = 1
+max_active_runs_master = 1
+enable_user_report_name = 'Enabled Users - For Inetgration'
+expected_report_columns = 'User Name,Login Name,Employee ID,UserUri'
+time_zone = "America/Chicago"
+schedule_interval = '0 22 * * *'

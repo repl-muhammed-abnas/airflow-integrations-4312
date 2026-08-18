@@ -1,0 +1,30 @@
+{
+  "ai_lines": {
+    "1162": "475c1804f3edf6f2be2c5f17ca54110829809cfe570263f012a8e104be5b99d3"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-06-17T09:56:37.281Z",
+  "file_state": {
+    "file_sha256": "cad444852d5b16b4f952cd0d5c297751949236c6a2a4b91ee6d8d747a92c82ae",
+    "total_file_lines": 1942,
+    "total_lines": 1696
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\sammedkawade\\Workspaces\\airflow-integrations\\dags\\dxctechnology\\workday_user_import_v1\\user_import_philippines_v3\\utils\\request_payload.py",
+  "stats": {
+    "ai_line_count": 1,
+    "ai_line_pct": 0.06,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-06-17T09:56:37.281Z",
+  "version": 1
+}

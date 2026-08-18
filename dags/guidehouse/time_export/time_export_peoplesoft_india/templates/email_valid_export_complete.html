@@ -1,0 +1,12 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon {{ dag_run.conf.financial_system }} {{ dag_run.conf.export_type | capitalize }}
+    time data extract is completed successfully {{" "}}
+    at {{ dag_run.conf.timestamp }}. Please find the extract details for reference.</p>
+<ul>
+    <li>Export Type: {{ dag_run.conf.export_type | capitalize }}</li>
+    <li>Process Started: {{ dag_run.conf.timestamp }} </li>
+    <li>File Name: {{ dag_run.conf.time_export_name }}.csv.pgp</li>
+    <li>File Path: {{ params.upload_file_path }}</li>
+    <li>Number of Records: {{ result('write_export_csv') | load_all_records | length }}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

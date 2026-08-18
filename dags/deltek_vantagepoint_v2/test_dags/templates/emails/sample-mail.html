@@ -1,0 +1,111 @@
+<p>Hello,</p>
+
+<p>The <strong>VP-Replicon User Sync Integration Test</strong> for <strong></strong> has completed on 2026-06-19 18:55:16 UTC.</p>
+
+<h3>Overall Status: PASSED</h3>
+
+<h3>Scenario Results</h3>
+<table border="1" cellpadding="6" cellspacing="0">
+    <tr>
+        <th>Scenario</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Error</th>
+    </tr>
+    
+    <tr>
+        <td>Scenario 1</td>
+        <td>Initial Sync - new user created in Replicon</td>
+        <td><strong>SUCCESS</strong></td>
+        <td>-</td>
+    </tr>
+    
+    <tr>
+        <td>Scenario 2a</td>
+        <td>Webhook Create - user synced to Replicon</td>
+        <td><strong>SUCCESS</strong></td>
+        <td>-</td>
+    </tr>
+    
+    <tr>
+        <td>Scenario 2b</td>
+        <td>Webhook Create - supervisor permission assigned</td>
+        <td><strong>SUCCESS</strong></td>
+        <td>-</td>
+    </tr>
+    
+    <tr>
+        <td>Scenario 3</td>
+        <td>Webhook Update - field changes propagated to Replicon</td>
+        <td><strong>SUCCESS</strong></td>
+        <td>-</td>
+    </tr>
+    
+    <tr>
+        <td>Scenario 4</td>
+        <td>Webhook Delete - user disabled in Replicon</td>
+        <td><strong>SUCCESS</strong></td>
+        <td>-</td>
+    </tr>
+    
+    <tr>
+        <td>Scenario 5</td>
+        <td>Webhook Reactivate - user re-enabled in Replicon</td>
+        <td><strong>SUCCESS</strong></td>
+        <td>-</td>
+    </tr>
+    
+</table>
+
+<h3>Test Coverage</h3>
+<table border="1" cellpadding="6" cellspacing="0">
+    <tr>
+        <th>DAG ID</th>
+        <th>Total Tasks</th>
+        <th>Executed</th>
+        <th>Missed</th>
+        <th>Coverage %</th>
+    </tr>
+    
+    <tr>
+        <td>standard_deltek_vantagepoint_us_east_1_user_sync_main_qa</td>
+        <td>34</td>
+        <td>31</td>
+        <td>3</td>
+        <td><strong>91.2%</strong></td>
+    </tr>
+    
+    <tr>
+        <td>standard_deltek_vantagepoint_us_east_1_process_each_user_sync_child_qa</td>
+        <td>13</td>
+        <td>9</td>
+        <td>4</td>
+        <td><strong>69.2%</strong></td>
+    </tr>
+    
+</table>
+
+
+<h3>Missed Tasks</h3>
+<table border="1" cellpadding="6" cellspacing="0">
+    <tr>
+        <th>DAG ID</th>
+        <th>Missed Tasks</th>
+    </tr>
+    
+    <tr>
+        <td>standard_deltek_vantagepoint_us_east_1_user_sync_main_qa</td>
+        <td>batch_task, fail_child_dag_error, get_supervisor_user_details_from_vp</td>
+    </tr>
+    
+    <tr>
+        <td>standard_deltek_vantagepoint_us_east_1_process_each_user_sync_child_qa</td>
+        <td>add_supervisor_assignment_log, catch_error, check_exceptions_for_logging, remove_supervisor</td>
+    </tr>
+    
+</table>
+
+
+<p><em>Test Run ID: manual__2026-06-19T17:08:24.242694+00:00</em></p>
+<p><strong>This is an automated mail from Deltek Integrations. Please do not reply to this email.</strong><br/>
+Regards,<br/>Deltek Inc</p>

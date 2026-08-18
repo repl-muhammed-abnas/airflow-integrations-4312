@@ -1,0 +1,18 @@
+{
+    "webhook": {
+        "data": {
+            "fields": [
+                {
+                    "soServiceOrderNumber": "SORD01000127293",
+                    "soServiceOrderDescription": "Pump Stations PS- WetWell Level Sensors ROUTE - Quarterly - Inst",
+                    "soRequestID": "INST090-SEN-LEV",
+                    "soServiceOrderStatus": "Completed",
+                    "umRequestedByID30": "CHUFFMAN",
+                    "soRequestedDate": "2023-04-17",
+                    "soDateCompleted": "2023-05-04",
+                    "umPhysicalLocation": ""
+                }
+            ]
+        }
+    }
+}

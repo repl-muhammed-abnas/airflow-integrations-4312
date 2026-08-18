@@ -1,0 +1,30 @@
+{
+  "ai_lines": {
+    "28": "114aa0456574adbe6203585a142d2d02ec9f217fe22ee52d5d926cfdbefc87c7"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-25T06:57:27.298Z",
+  "file_state": {
+    "file_sha256": "14138597e1c1e34f068dc4c713652f32cc0180b977904f81126afd5d2216c63c",
+    "total_file_lines": 28,
+    "total_lines": 28
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspaces\\airflow-integrations\\dags\\guidehouse\\timesheet_sync\\instances\\guidehouseincsb2.py",
+  "stats": {
+    "ai_line_count": 1,
+    "ai_line_pct": 3.57,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-25T06:57:27.298Z",
+  "version": 1
+}

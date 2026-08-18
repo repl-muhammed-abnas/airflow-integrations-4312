@@ -1,0 +1,138 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Serbia PUF mapper - PDV compliant with eFaktura/SEF support",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Serbian VAT", "eFaktura", "SEF"]
+  },
+
+  "country": {
+    "code": "RS",
+    "name": "Serbia",
+    "currency": "RSD",
+    "language": "sr"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 20.0,
+      "reduced": [10.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Opsta stopa",
+      "AA": "Snizena stopa",
+      "Z": "Nulta stopa",
+      "E": "Oslobodeno",
+      "AE": "Obrnuto zaracunavanje",
+      "O": "Van sistema PDV"
+    },
+    "exemption_code_defaults": {
+      "E": "VATEX-RS-PDV",
+      "AE": "VATEX-RS-AE",
+      "O": "VATEX-RS-O"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9948",
+    "buyer_endpoint_scheme": "9948",
+    "vat_scheme_id": "9948",
+    "company_scheme_id": "9948",
+    "vat_prefix": "RS",
+    "scheme_mappings": {
+      "vat_number": "9948",
+      "pib": "9948",
+      "mb": "9948",
+      "gln": "0088"
+    },
+    "additional_seller_ids": {
+      "pib": "9948",
+      "mb": "9948"
+    },
+    "additional_buyer_ids": {
+      "pib": "9948",
+      "mb": "9948",
+      "jbkjs": "RS:JBKJS"
+    }
+  },
+
+  "extensions": {
+    "required": ["RS:eFaktura"],
+    "optional": ["RS:JBKJS"],
+    "efaktura": {
+      "enabled": true,
+      "sef_platform": true,
+      "mandatory_b2g": true,
+      "mandatory_b2b": true,
+      "registration_data": {
+        "sef_id": {
+          "id_type": "RS:SEFId",
+          "description": "Sistema eFaktura invoice ID"
+        },
+        "status": {
+          "id_type": "RS:Status",
+          "description": "Invoice status in SEF",
+          "values": ["DRAFT", "SENT", "APPROVED", "REJECTED", "CANCELLED"]
+        },
+        "jbkjs": {
+          "id_type": "RS:JBKJS",
+          "description": "Jedinstveni broj korisnika javnih sredstava (for public sector)"
+        }
+      }
+    }
+  },
+
+  "field_mappings": {
+    "additional_seller_fields": {
+      "pib": "SellerPIB",
+      "mb": "SellerMB"
+    },
+    "additional_buyer_fields": {
+      "pib": "BuyerPIB",
+      "mb": "BuyerMB",
+      "jbkjs": "BuyerJBKJS"
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^RS[0-9]{9}$",
+    "pib_pattern": "^[0-9]{9}$",
+    "mb_pattern": "^[0-9]{8}$",
+    "jbkjs_pattern": "^[0-9]{5}$",
+    "postal_code_pattern": "^[0-9]{5}$",
+    "iban_pattern": "^RS[0-9]{20}$",
+    "required_fields": [
+      "invoice_number",
+      "issue_date",
+      "currency_code",
+      "seller_vat_number",
+      "seller_pib"
+    ]
+  },
+
+  "defaults": {
+    "payment_terms": "Placanje u roku od 30 dana",
+    "contact_department": "Racunovodstvo"
+  },
+
+  "special_rules": {
+    "requires_issue_time": true,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "efaktura_mandatory_b2g": true,
+    "efaktura_mandatory_b2b": true,
+    "sef_registration_required": true,
+    "jbkjs_for_public_sector": true
+  },
+
+  "translations": {
+    "invoice": "Faktura",
+    "credit_note": "Knjizno odobrenje",
+    "total": "Ukupno",
+    "vat": "PDV"
+  }
+}

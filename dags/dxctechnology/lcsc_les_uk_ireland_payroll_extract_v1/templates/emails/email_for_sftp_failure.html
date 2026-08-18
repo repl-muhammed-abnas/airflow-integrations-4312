@@ -1,0 +1,12 @@
+<p>Hi Team,<br /> <br />The Replicon payroll export for {{ dag_run.conf.region }} {{ dag_run.conf.location_name }} location and "{{ dag_run.conf.division_code }}" company code is completed
+    at {{ current_time_in_specified_tz() }}, however the file upload to sftp has failed with error.</p>
+<ul>
+    <li>Country:{{ dag_run.conf.location_name }}</li>
+    <li>Company Code:{{ dag_run.conf.division_code }}</li>
+    <li>File Name: {{ dag_run.conf.file_name }}.SAP.pgp</li>
+    <li>SFTP Path: {{ params.output_filepath }}</li>
+    <li>ecid: {{ dag_run_ecid() }}</li>
+</ul>
+<p>Please find the attached file to be uploaded to sftp. Upload the file to the given sftp and debug the issue.<br /><br />
+Regards,<br />
+Deltek Inc</p>

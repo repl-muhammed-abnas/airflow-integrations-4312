@@ -1,0 +1,10 @@
+region = 'eu-central-1'
+instance = 'trial'
+environment = 'pre-production'
+company_key = f"airflowsandbox{region.replace('-', '')}"
+replicon_conn_id = 'airflowsandbox-replicon-admin'
+webhook_secret = 'airflow_connector_ui_hmac_secret'
+execution_timeout_days = 14
+sumo_conn_id = 'sumologic-connector-logger'
+airflow_connector_ui_connid = 'airflow_connector_ui_endpoint'
+max_active_runs = 1

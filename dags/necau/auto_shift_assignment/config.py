@@ -1,0 +1,12 @@
+region = 'eu-central-1'
+environment = 'pre-production'
+company_key = 'NECAUafmig'
+replicon_conn_id = 'NECAUafmig_replicon_admin'
+user_shift_report_name = "***Auto Shift Assignment-Master***"
+time_zone = 'Australia/Melbourne'
+dag_max_active_runs = 10
+dag_max_active_tasks = 128
+execution_timeout_days = 14
+schedule_interval_weekly = '0 4  * * 6'
+schedule_interval_daily = '0 4,13,18 * * 1-5'
+master_dag_active_runs = 1

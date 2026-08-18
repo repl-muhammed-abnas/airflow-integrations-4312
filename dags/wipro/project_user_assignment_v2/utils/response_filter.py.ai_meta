@@ -1,0 +1,36 @@
+{
+  "ai_lines": {
+    "12": "be4b99692a1b500d4a569ea4bc7cc62323b50f2d9cc8f3a25777e8647490c478",
+    "13": "18f554249e8cac2bc49b401827554791acaa42f05ec879ebb361e9e8ef31e071",
+    "2": "3e2206f1d8ae6fcb7bd46174c3542abb5252169f636cbdae27047ee35eb53a93",
+    "3": "858e1febd3aed4581229ac990a200aac1a3fbdf5b8fbb3221463795d57a280bc",
+    "4": "2f2e47f34ea3487c0c11e06fecaf9325a7970fc0f62079d56f9d4439fc9dc208",
+    "5": "009c8a90c185568607757313855df4557aa61351168b7299dd9e7ea3f8730a54",
+    "6": "cf9408dab335300a47504588a6ca7252744da3ec793434bb2da5a9ecfed47351"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-03T16:07:06.352Z",
+  "file_state": {
+    "file_sha256": "5ced03601aa6dc91a96e37277af4018a7728e0cb2668549e9a4db6cb310791aa",
+    "total_file_lines": 36,
+    "total_lines": 31
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\wipro\\project_user_assignment_v2\\utils\\response_filter.py",
+  "stats": {
+    "ai_line_count": 7,
+    "ai_line_pct": 22.58,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-03T16:07:06.352Z",
+  "version": 1
+}

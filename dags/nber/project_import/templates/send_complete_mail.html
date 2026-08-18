@@ -1,0 +1,22 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />
+    Hello,<br /><br />
+
+    The Replicon Grant import is {{" "}}
+    {%- if result("load_all_logs", key="error_record_count") > 0 -%}
+    {{" "}}Completed with errors
+    {%- elif result("load_all_logs", key="exception_record_count") > 0 -%}
+    {{" "}}Completed with exceptions
+    {%- else -%}
+    {{" "}}Completed Successfully -
+    {%- endif -%}
+    {{ " on " + current_time_in_specified_tz() }}.
+</p>
+Please click on the below link to download the logs and review. <br /> <br /><a
+    href="{{result('generate_downloadable_link')}}">Download log</a></p>
+<p>
+    {%- if result("load_all_logs", key="error_record_count") > 0 -%}
+    {%- endif -%}
+    For any queries, please reach out to https://support.deltek.com <br /><br />
+    Regards,<br />
+    Deltek Inc.
+</p>

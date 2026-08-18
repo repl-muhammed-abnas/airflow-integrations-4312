@@ -1,0 +1,18 @@
+<p>Hello, <br />
+<br />The Replicon payroll export of termination balances for {{ dag_run.conf.region }} {{ dag_run.conf.location }} is completed successfully at {{ current_time_in_specified_tz() }}.
+    Please find the extract details for reference. </p>
+<ul>
+    <li>Process Started: {{ result('process_start_time') }}
+    <li>Termination Extract File Name: {{ dag_run.conf.file_name }}.SAP.pgp</li>
+    <li>File Path: {{ params.output_filepath }}</li>
+    <li>Number of Records in termination extract: {{ result('query_valid_termination_balance_data', 'length') }}</li>
+    <li>Termination Log File Name: log_{{ dag_run.conf.file_name }}.SAP</li>
+    <li>Log File Path: {{ params.log_filepath }}</li>
+    <li>Process Ended: {{ result('process_end_time') }}  </li>
+</ul>
+<p>For any queries, please contact our support team at <a href="https://support.deltek.com/">https://support.deltek.com/</a><br />
+<br />
+<strong>This is an automated mail from Deltek Integrations. Please do not reply to this email.</strong><br />
+<br />
+Regards,<br />
+Deltek Inc</p>

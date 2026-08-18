@@ -1,0 +1,23 @@
+{
+    "Company": "{{ dag_run.conf.user_location}}",
+    "MessageType": "120TimeReportBatch",
+    "TransactionId": "{{ dag_run.conf.transaction_id}}",
+    "Payload": [
+        {
+            "Date": "2023-11-11",
+            "SubmitDate": "2023-11-11",
+            "ProjectID": " US000000263",
+            "TimeReportID": "6501a02285de8dbdd2e83278",
+            "Category": "USPM_O",
+            "ActivityID": "104-002441",
+            "Resource": "ky-bou",
+            "ExternalComment": "A comment",
+            "Department": 160,
+            "LegalUnit": "104",
+            "Billable": "True",
+            "Hours": 0.5,
+            "Rate": "350",
+            "Currency": "USD"
+        }
+    ]
+}

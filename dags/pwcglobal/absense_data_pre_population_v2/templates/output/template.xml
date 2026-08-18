@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ErrorLogs>
+  {%- for record in dataset %}
+  <ErrorLog>
+    <Identity></Identity>
+    <Date>{{ record.Date|e }}</Date>
+    <System>Replicon</System>
+    <FileName></FileName>
+    <ApplicationName>Replicon_Time prepopulation</ApplicationName>
+    <InstanceName>{{ get_company_key() }}</InstanceName>
+    <CompRefId></CompRefId>
+    <PartyId>{{ record.UserPartyID|e }}</PartyId>
+    <Level>{{ record.Status|e }}</Level>
+    <Class></Class>
+    <Message>{{ record.Message|e }}</Message>
+    <EntityId></EntityId>
+    <EntityName></EntityName>
+    <EntityType></EntityType>
+    <AdditionalInfo>{{ record.Details|e }}</AdditionalInfo>
+    <LoggedDateTime></LoggedDateTime>
+  </ErrorLog>
+  {%- endfor %}
+</ErrorLogs>

@@ -1,0 +1,33 @@
+<p>
+    <strong>This is an automated mail, please don't reply.</strong>
+    <br /><br />Hello, <br /><br />
+    The Replicon user import for mccarthy job is{{" "}}
+    {%- set has_errors = result("get_errored_logs", key="length") > 0 -%}
+    {%- if has_errors -%}
+    completed with errors
+    {%- else -%}
+    {%- if result("get_exception_logs", key="length") > 0 -%}
+    completed with exceptions
+    {%- else -%}
+    completed successfully
+    {%- endif -%}
+    {%- endif -%}
+    {{" on " + current_time_in_specified_tz("America/Los_Angeles") }}.<br /><br />
+    Please find the log file details and summary below for reference:
+</p>
+<ul>
+    <li>File path: {{ params.log_filepath }}</li>
+    <li>File name: /Logs_{{ dag_run_ecid() }}_{{ dag_run.conf.filename }}.csv</li>
+    <li>Number of records: {{ dag_run.conf.inputfilesize }}</li>
+    <li>Number of success records: {{ result("get_success_logs", key="length") }}</li>
+    <li>Number of exceptions records: {{ result("get_exception_logs", key="length") }}</li>
+    <li>Number of skipped records: {{ result("get_skipped_logs", key="length") }}</li>
+    <li>Number of errored records: {{ result("get_errored_logs", key="length") }}</li>
+</ul>
+<p>
+    {%- if has_errors -%}
+    {%- endif -%}
+    For any queries, please contact our support team at https://support.deltek.com <br /><br />
+    Regards, <br />
+    Deltek Inc.
+</p>

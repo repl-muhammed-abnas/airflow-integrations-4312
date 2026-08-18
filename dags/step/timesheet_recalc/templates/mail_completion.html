@@ -1,0 +1,8 @@
+<p><strong>This is an automated email. Please do not reply.</strong></p>
+<p>Hello,</p>
+<p>The Timesheet Re-calculation task is completed for the date range {{ result('get_logging_details').timerange_start_time }} - {{ result('get_logging_details').timerange_end_time }}.
+    Please find the attached logs for reference. <br />Total timesheets: {{ result('query_valid_input_records', 'length') }} <br />
+    Timesheets recalculated: {{ result('filter_master_log', 'length') }}
+</p>
+<p>please contact our support team at https://support.deltek.com for any further assistance.</p>
+<p>Regards,<br />Deltek Inc.</p>

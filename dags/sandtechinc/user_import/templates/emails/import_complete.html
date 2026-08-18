@@ -1,0 +1,36 @@
+<p>Hello,</p>
+
+<p>The Replicon user import for <strong>{{ get_company_key() }}</strong> {{ status_message }} on {{ current_time_in_specified_tz("US/Eastern") }}.</p>
+
+{% if has_errors %}
+<p><strong>Errors were encountered during processing.</strong></p>
+{% elif has_exceptions %}
+<p><strong>Some records were processed with exceptions.</strong></p>
+{% else %}
+<p><strong>All records were processed successfully.</strong></p>
+{% endif %}
+
+<p><strong>Processing Summary</strong></p>
+<ul>
+    <li>Total Records in File: {{ total_records }}</li>
+    <li>Records Processed: {{ processed_records }}</li>
+    <li>Records Skipped (No Changes): {{ skipped_records }}</li>
+    <li>New Users Created: {{ new_users }}</li>
+    <li>Users Updated: {{ updated_users }}</li>
+    <li>Exceptions: {{ exception_count }}</li>
+    <li>Errors: {{ error_count }}</li>
+</ul>
+
+<p><strong>Log File Details</strong></p>
+<ul>
+    <li>File path: {{ log_filepath }}</li>
+    <li>File name: {{ log_filename }}</li>
+</ul>
+
+<p>Please review the log file for detailed information about each record processed.</p>
+
+<p>For any queries, please contact our support team at <a href="https://support.deltek.com">https://support.deltek.com</a></p>
+
+<p><strong>This is an automated mail from Deltek Integration, Please do not reply to this email.</strong><br /><br />
+Regards,<br />
+Deltek Inc</p>

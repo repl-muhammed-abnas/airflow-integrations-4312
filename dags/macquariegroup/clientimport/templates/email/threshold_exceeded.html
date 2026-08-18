@@ -1,0 +1,10 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br />
+<br /> Hello, <br />
+<br /> The client Import job is skipped as the number of delta records to process in the file 'Client.csv' has exceeded the allowed threshold of 10000 records.</p>
+<ul>
+    <li>New: {{ result('query_new_clients', 'length') if result('query_new_clients') else 0 }}</li>
+    <li>Update: {{ result('query_existing_clients_tobe_updated', 'length') if result('query_existing_clients_tobe_updated') else 0 }}</li>
+    <li>Disable: {{ result('query_clients_tobe_disabled', 'length') if result('query_clients_tobe_disabled') else 0 }}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /> 
+<br /> Regards, <br /> Deltek Inc.</p> 

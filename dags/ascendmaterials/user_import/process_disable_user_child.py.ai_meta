@@ -1,0 +1,80 @@
+{
+  "ai_lines": {
+    "174": "2287e016694011db4468c3f1297c2ea1af4a1ac8b46f7756eabed10f098961fa",
+    "180": "999fbbee2f03ba9a9284e236d2698d0a21dedc28bc8c8a97c4cfa35f47620887",
+    "192": "c862375f6e62c319a573a1a091c3cc03e093cfd70a408fca4fa0c53424db3bcc",
+    "199": "f41e4e973731714ba6d68b66350489b69da4fc3b3d6c9f020704525a7a9509d3",
+    "204": "8fb3034e48ff9d3186692764f47bb53098c3b6d55d6179a9ee7a73a1d614f4aa",
+    "207": "db1fcb058b5e277b03152eee57257dc74038326470b7b1756f6cd47556eceb6f",
+    "211": "89790bfd402c20556a7572848d095edc523014c81afd116da3de9c2aa9529718",
+    "212": "8e3358d3fe6212626c73c717cfcc4c6506a9be9f3a906b402b036ce374879b44",
+    "214": "4754f66517615fda759ee1c4c391a9be8777b65e94aebfcd4fb2dde47c183d52",
+    "216": "469801bc5eb7c5e6c974604edd23fd6e8f804be1c7da54a645dd18bf399270b2",
+    "230": "5fe1b4e64a1af7814a2cc23a37c499545d83d91c9696acbc71f4615998a2214a",
+    "234": "83a2cdbfa75d1a5fa5a75beaabe6e9d0456e0caeb79bc897a293174823d41c24",
+    "237": "b70a062ba40ff364f2659094f86495aa9fe34a29bbbe688914a0e2944d38b49d",
+    "243": "3e1289913f8026753977aa4d939c3c2781a36b16ada510dc22151797e3e3cb04",
+    "248": "af363f3806f035192801e5ffcab6a4f47952871710d91cd06d68100f25a26d15",
+    "249": "047d46068bd33108a3d2d5083812899b137eceec3254e037dd6d6a00a4f02174",
+    "39": "ecd546cf0d13b6e97fcb6b3b483fff3e736f773daec276bdeb4c75e1b416b800",
+    "200": "4754f66517615fda759ee1c4c391a9be8777b65e94aebfcd4fb2dde47c183d52",
+    "213": "6a953d398ae0cdd23cd6016e2ba03caf3768897b9da4c72b2ecefe39e138de84",
+    "215": "f41e4e973731714ba6d68b66350489b69da4fc3b3d6c9f020704525a7a9509d3",
+    "218": "b89100986d53fef2c45fba204973a76e7a195263f7bde59b91de26e2eb109971",
+    "63": "6a953d398ae0cdd23cd6016e2ba03caf3768897b9da4c72b2ecefe39e138de84",
+    "64": "f41e4e973731714ba6d68b66350489b69da4fc3b3d6c9f020704525a7a9509d3",
+    "65": "4754f66517615fda759ee1c4c391a9be8777b65e94aebfcd4fb2dde47c183d52",
+    "68": "bac428ae5622c1bd7791f547289672d2c335943044eda97ce2086d005b4c2dcf"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 4,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-27T08:58:11.584Z",
+  "file_state": {
+    "file_sha256": "c19be1b05a3c9dd63e4c252cb878d023007c107e7b608bd42ed6ce541d8e7f0b",
+    "total_file_lines": 248,
+    "total_lines": 218
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "c862375f6e62c319a573a1a091c3cc03e093cfd70a408fca4fa0c53424db3bcc",
+      "last_known_line": 232,
+      "removed_at": "2026-03-25T11:47:29.293Z"
+    },
+    {
+      "hash": "4ecbc48aa7361f912a2916a336371ac28ade0ec51ea3981348dde6973f8afc0e",
+      "last_known_line": 235,
+      "removed_at": "2026-03-25T11:47:45.067Z"
+    },
+    {
+      "hash": "c5a2f46b4738954daed4f2191a6f724a8a757e31dd380009dcd33b71e45f2bff",
+      "last_known_line": 246,
+      "removed_at": "2026-03-25T11:47:45.067Z"
+    },
+    {
+      "hash": "20204b9bc8376256101a724779a7521ce62979bf4cf53ddf614d47e8cd9c0c7d",
+      "last_known_line": 247,
+      "removed_at": "2026-03-25T11:47:45.067Z"
+    },
+    {
+      "hash": "fca4650f3cb2d63a5f1252574dd3383b24bf15f756b34371ba5c4358e302193c",
+      "last_known_line": 248,
+      "removed_at": "2026-03-25T11:47:45.067Z"
+    }
+  ],
+  "source_file": "C:\\Workspaces\\airflow-integrations\\dags\\ascendmaterials\\user_import\\process_disable_user_child.py",
+  "stats": {
+    "ai_line_count": 25,
+    "ai_line_pct": 10.08,
+    "ai_lines_removed_or_modified": 5
+  },
+  "updated_at": "2026-03-28T15:50:29.829Z",
+  "version": 1
+}

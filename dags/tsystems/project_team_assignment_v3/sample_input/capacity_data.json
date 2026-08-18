@@ -1,0 +1,78 @@
+{
+  "instance" : "trial",
+  "assignment_id": "25393",
+  "cost_object_id": "M-XXX-123456789-01",
+  "decidalo_project_id": "1505237",
+  "individual_id": "1782",
+  "search_period_end": "2025-12-31T00:00:00.000Z",
+  "search_period_start": "2025-12-01T00:00:00.000Z",
+  "user_permission_list": [
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:9f27bc47-8d40-4664-889e-f68288e52adb",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:f971bba9-afc2-4a06-80a7-9517249363c4",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:7f47635f-7036-4774-a334-f745bf40e4b4",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:1f6d4a55-8b00-46c7-aad5-7df1b12ee24d",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:6dbe21cd-69f9-4e36-ba81-a1462ff9ec41",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:284d23b7-c4df-4af0-ae51-12ca170e01f4",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:b16e30a5-c684-41f5-82a1-0877c901fb6c",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:0837f4d3-b9c8-4dd2-8e1a-e1a77bbfc2f5",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:cdb6313e-4cf4-4138-958e-068c51e1a90a",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:12d3f7b2-42b6-43f5-90e3-8f35445224cf",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:e47df0ac-2fee-406e-8f68-c6b0b740cc87",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:4a2e9237-21c5-40ec-a7c1-d3509c54b4e1",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:9d37464f-73ae-46ee-a6f6-704dbdc50139",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:502fe554-47c5-4953-97bf-f6280d883169",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:98c2a5c1-5c52-4e4f-9692-c8b09ee88c23",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:091460d8-020f-4fcb-89b1-03ae01e0f3ad",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:b16dc906-cddb-4921-a2a6-4572ecabcc4d",
+    "urn:replicon-tenant:f27530dee3bc4299a3256ca5d4ddc4f5:permission-set:2e37ef03-8d11-4791-94a0-3ecf79392135"
+  ],
+  "data": {
+    "relatedEntity": [
+      {
+        "id": "1505237",
+        "@referredType": "project"
+      },
+      {
+        "id": "M-XXX-123456789-01",
+        "@referredType": "costObject"
+      }
+    ],
+    "relatedParty": {
+      "id": "1782",
+      "role": "Project Assignee",
+      "@referredType": "individual"
+    },
+    "searchPeriod": {
+      "startDateTime": "2025-12-01T00:00:00Z",
+      "endDateTime": "2025-12-31T00:00:00Z"
+    },
+    "capacity": [
+      {
+        "plannedOrActualCapacity": "planned",
+        "applicableTimePeriod": {
+          "validFor": {
+            "startDateTime": "2025-12-01T00:00:00Z",
+            "endDateTime": "2025-12-01T00:00:00Z"
+          }
+        },
+        "humanCapacityAmount": {
+          "capacityAmount": "4",
+          "unitOfMeasurement": "h"
+        }
+      },
+      {
+        "plannedOrActualCapacity": "planned",
+        "applicableTimePeriod": {
+          "validFor": {
+            "startDateTime": "2025-12-31T00:00:00Z",
+            "endDateTime": "2025-12-31T00:00:00Z"
+          }
+        },
+        "humanCapacityAmount": {
+          "capacityAmount": "4",
+          "unitOfMeasurement": "h"
+        }
+      }
+    ]
+  }
+}

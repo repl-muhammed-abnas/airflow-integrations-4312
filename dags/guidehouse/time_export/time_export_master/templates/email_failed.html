@@ -1,0 +1,20 @@
+<div>
+    <strong>This is an automated mail, please don't reply.</strong><br />
+    <br />
+    Hello,<br />
+    <br />
+    The Replicon Data Lake time data export has failed at {{ dag_run.conf.timestamp }}.
+</div>
+<p>One or more steps in the Data Lake outbound time extract did not complete successfully. Please review the Airflow task logs for the run id <code>{{ dag_run.run_id }}</code> and take corrective action.</p>
+<ul>
+    <li>DAG: {{ dag_run.dag_id }}</li>
+    <li>Run ID: {{ dag_run.run_id }}</li>
+    <li>Process Started: {{ dag_run.conf.timestamp }}</li>
+</ul>
+<p>Once the underlying issue is resolved, the affected records will be picked up in the next export.</p>
+<p>
+    For any queries, please contact our support team at https://support.deltek.com<br />
+    <br />
+    Regards,<br />
+    Deltek Inc.
+</p>

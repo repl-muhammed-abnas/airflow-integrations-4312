@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    {%- for record in dataset %}
+    <row>
+    <Worker>{{ record.Worker|e }}</Worker>
+    <Time_Off_Entry_ID>{{ record.Time_Off_Entry_ID|e }}</Time_Off_Entry_ID>
+    <Date>{{ record.Date|e }}</Date>
+    <Requested>{{ record.Requested|e }}</Requested>
+    <Time_Off_Type_Reference>{{ record.Time_Off_Type_Reference|e }}</Time_Off_Type_Reference>
+    </row>
+    {%- endfor %}
+</root>

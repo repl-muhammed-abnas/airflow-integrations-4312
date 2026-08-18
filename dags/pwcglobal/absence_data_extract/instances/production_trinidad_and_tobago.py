@@ -1,0 +1,27 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from pwcglobal.absence_data_extract.config import *
+
+region = 'eu-central-1'
+environment = 'production'
+
+instance = 'production'
+company_key = "PwC"
+
+location = 'Trinidad and Tobago'
+location_code = 'TTO'
+report_name = "***Absence Extract automation -Trinidad and Tobago"
+# Time: 2am Trinidad and Tobago (UTC -4)
+schedule_interval = "0 2 * * *"
+schedule_timezone = 'America/Virgin'
+replicon_conn_id = 'pwcglobal-replicon-eu.automation'
+allowed = "Yes"
+time_zone = 'America/Virgin'
+
+sftp_conn_id = 'pwcglobal-MFT-PRD-replicon'
+output_filepath = '/PwCGBL_RepliconGlobal_PRD/PRD/Outbound/Time/'
+log_filepath = '/PwCGBL_RepliconGlobal_PRD/PRD/Outbound/Time/_logs/'
+alternate_log_path = ""
+
+tenant_email = 'gbl_replicon_support_team@pwc.com'
+internal_logs_email = '{{ var.value.dagrun_internal_log_email }}'
+alert_email = '{{ var.value.dagrun_failure_alert_email }}'

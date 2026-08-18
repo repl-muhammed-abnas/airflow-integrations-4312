@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_GSAPBillingKey_Replicon xmlns:ns0="http://csc.com/IF9003/FromGSAPToReplicon/GSAPBillingKey">
+  {%- for record in dataset %}
+  <Records>
+    <WBS_Name>{{ record.WBS_Name|e }}</WBS_Name>
+    <Task_Name>{{ record.Task_Name|e }}</Task_Name>
+    <Task_Code>{{ record.Task_Code|e }}</Task_Code>
+  </Records>
+  {%- endfor %}
+</ns0:MT_GSAPBillingKey_Replicon>

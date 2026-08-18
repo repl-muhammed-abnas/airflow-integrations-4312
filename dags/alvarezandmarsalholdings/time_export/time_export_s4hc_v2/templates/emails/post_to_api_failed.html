@@ -1,0 +1,21 @@
+<p>
+    Hi Team, <br />
+    <br />
+    The Replicon Time Export to S4HC is completed successfully on
+    {{current_time_in_specified_tz()}} But the integration failed to post the data to API.
+    However, the json payload has been uploaded to the SFTP folder.
+    Additionally, we have stopped the integration to avoid further failures.
+    Please look into this and contact the support team at https://support.deltek.com to resume the integration once the
+    api issue is resolved.
+</p>
+<ul>
+    <li>
+        Export file name:{{dag_run.conf.time_export_name | replace(":", "-") }}.xml
+    </li>
+    <li>SFTP filepath: {{params.sftp_upload_path}}</li>
+</ul>
+<p>
+    <br />
+    Regards,<br />
+    Deltek Integrations Centre of Excellence
+</p>

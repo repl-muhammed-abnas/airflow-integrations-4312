@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   {%- for record in dataset %}
+   <Records>
+	   <Employee_ID>{{ record.employeeid|e }}</Employee_ID>
+      <Date>{{ record.date|e }}</Date>
+      <WBS>{{ record.wbs|e }}</WBS>
+      <AttendanceAbsenceType>{{ record.attendancetypecode|e }}</AttendanceAbsenceType>
+      <LaborType>{{ record.labortype|e }}</LaborType>
+      <BILLABLEINDICATOR>{{ record.billableindicator|e }}</BILLABLEINDICATOR>
+      <Hours>{{ record.hours|e }}</Hours>
+      <TASKS>{{ record.task|e }}</TASKS>
+      <Attribute1>{{ record.attributecode1|e }}</Attribute1>
+      <Attribute2>{{ record.attributecode2|e }}</Attribute2>
+      <SHORTTEXT>{{ record.shorttext|e }}</SHORTTEXT>
+      <BillingKey>{{ record.billingkey|e }}</BillingKey>
+      <GSAPTask>{{ record.gsaptask|e }}</GSAPTask>
+      <GSAPBillableFlag>{{ record.gsapbillableflag|e }}</GSAPBillableFlag>
+      <Replicon_Unique_ID>{{ record.repliconuniqueid|e }}</Replicon_Unique_ID>
+      <Home_ERP>{{ record.homeerp|e }}</Home_ERP>
+      <Parent_Project_ERP>{{ record.parentprojecterp|e }}</Parent_Project_ERP>
+      <Home_Location>{{ record.homelocation|e }}</Home_Location>
+      <TimeOff>{{ record.timeoff|e }}</TimeOff>
+      <Project_Type_Flag>{{ record.projecttypeflag|e }}</Project_Type_Flag>
+   </Records>
+   {%- endfor %}
+</root>

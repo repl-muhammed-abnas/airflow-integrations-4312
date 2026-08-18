@@ -1,0 +1,50 @@
+"""
+Dev instance for VP UKG Pro Employee Sync v2.
+
+Local-dev fallback so the DAGs parse without the middleware committing real
+per-customer instance files. In higher environments `integration-platform-api`
+writes one instance file per customer into this folder via GitHub commits.
+
+`schedule_interval = None` ensures this fallback never auto-runs; trigger
+manually from the Airflow UI.
+"""
+# pylint: disable=invalid-name,unused-import
+from vp_ukgpro_integration_v2.employee_sync.config import (
+    max_active_runs,
+    execution_timeout_days,
+    initial_sync_time,
+    tenant_email,
+)
+
+# --- Routing scope ---
+region = 'us-east-1'
+environment = 'pre-production'
+
+# --- Customer identity ---
+instance = 'dev'
+customer_slug = instance
+customer_id = 'dev'
+customer_name = 'Dev Sample Customer'
+customer_email = None
+
+# --- Integration identity (passed to child DAGs via dag_run.conf) ---
+client_id = 'dev'
+integration_id = '00000000-0000-0000-0000-000000000000'
+integration_type = 'vp_ukgpro_employee_sync_v2'
+company_key = f"airflowsandbox{region.replace('-', '')}"
+
+middleware_conn_id = f'middleware_conn_{instance}'
+
+# --- Scheduling / lifecycle ---
+schedule_interval = None
+disabled = False
+
+# --- Airflow connections (config_helper resolves these onto dag_run.conf) ---
+ukgpro_conn_id = f'ukgpro_conn_{instance}'
+vantagepoint_conn_id = f'vantagepoint_conn_{instance}'
+
+extras = {
+    'company_code':    None,
+    'org_level2_code': None,
+    'org_level3_code': None,
+}

@@ -1,0 +1,18 @@
+<?xml version= "1.0" encoding= "UTF-8" ?>
+<pd:PaymentData xmlns:xsi= 'http://www.w3.org/2001/XMLSchema-instance'
+xmlns:cp= 'http://www.cloudpay.net/common/1.0'
+xmlns:pd= 'http://www.cloudpay.net/paymentdata/2.1'
+xsi:schemaLocation='http: //www.cloudpay.net/common/1.0 common-1.0.xsd
+http: //www.cloudpay.net/paymentdata/2.1 paymentdata-2.1.xsd'>
+<pd:FileHeader>
+<cp:Version>2.1</cp:Version>
+<cp:FileId>{{result("get_file_name")}}</cp:FileId>
+<cp:CreationDate>{{result("get_main_payload_fields").creationdate}}</cp:CreationDate>
+<cp:ExtractFromDate>{{result("get_main_payload_fields").extractfromdate}}</cp:ExtractFromDate>
+<cp:ExtractToDate>{{result("get_main_payload_fields").extracttodate}}</cp:ExtractToDate>
+</pd:FileHeader>
+<pd:EmployeeGroup>
+<pd:PayrollId>{{dag_run.conf.payrollid}}</pd:PayrollId>
+{{result('filter_employeedata_xml')}}
+</pd:EmployeeGroup>
+</pd:PaymentData>

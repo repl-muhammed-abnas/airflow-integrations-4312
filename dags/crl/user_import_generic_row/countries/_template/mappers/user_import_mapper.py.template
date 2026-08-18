@@ -1,0 +1,32 @@
+# {COUNTRY_NAME} User Import Mapper
+# TODO: Define mapper rows for your country.
+# Each row maps a combination of feed field values to Replicon configuration values.
+# Unused matching keys should be set to "All" or "NA".
+
+user_import_mapper = [
+    {
+        # --- Matching Keys (from feed) ---
+        "location_level_1": "XXX",          # TODO: Country code (e.g. "ISR", "CHE")
+        "location_level_2": "All",
+        "location_level_3": "All",
+        "company_code": "All",
+        "reg_temp": "Regular",              # TODO: Or specific value
+        "pay_type": "Salaried",             # TODO: Or specific value
+        "full_part": "Full-time",           # TODO: Or specific value
+        "activity_type": "All",
+
+        # --- Output Keys (Replicon configuration) ---
+        "employee_type": "XXX_Salaried",            # TODO: Employee type name in Replicon
+        "timesheet_template": "XXX_Salaried",       # TODO: Timesheet template name
+        "payrule_name": "XXX_Payrule",              # TODO: Pay rule name
+        "timesheet_period": "XXX - Weekly",          # TODO: Timesheet period name
+        "holiday_calendar": "XXX_Holiday Calendar",  # TODO: Holiday calendar name
+        "timezone": "(UTC+0:00) Time Zone Name",     # TODO: Timezone display text
+        "work_week": "Monday - Sunday",              # TODO: Work week (first day - last day)
+        "schedule_type": "Office Schedule",
+        "schedule_policy": "Default Shift Schedule Policy",
+        "default_schedule": "XXX_SCHEDULE",          # TODO: Default schedule code
+        "overtime_eligible": False,                   # TODO: True if OT eligible
+    },
+    # TODO: Add more rows for different location/employee type combinations
+]

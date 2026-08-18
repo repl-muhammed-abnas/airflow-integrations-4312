@@ -1,0 +1,51 @@
+"""
+Dev instance for VP UKG Pro Journal Sync v2.
+
+Local-dev fallback so the DAGs parse without the middleware committing real
+per-customer instance files. In higher environments `integration-platform-api`
+writes one instance file per customer into this folder via GitHub commits.
+
+`schedule_interval = None` ensures this fallback never auto-runs; trigger
+manually from the Airflow UI.
+"""
+# pylint: disable=line-too-long,unused-import,invalid-name,import-error
+from vp_ukgpro_integration_v2.journal_sync.config import (
+    max_active_runs,
+    execution_timeout_days,
+    initial_sync_time,
+    tenant_email,
+)
+
+# --- Routing scope ---
+region = 'us-east-1'
+environment = 'pre-production'
+
+# --- Customer identity ---
+instance = 'dev'
+customer_slug = instance
+customer_id = 'dev'
+customer_name = 'Dev Sample Customer'
+customer_email = None
+
+# --- Integration identity (passed to child DAGs via dag_run.conf) ---
+client_id = 'dev'
+integration_id = '00000000-0000-0000-0000-000000000000'
+integration_type = 'vp_ukgpro_journal_sync_v2'
+company_key = f"airflowsandbox{region.replace('-', '')}"
+
+# --- Scheduling / lifecycle ---
+schedule_interval = None
+disabled = False
+
+# --- Notifications (read directly as config.notification_email) ---
+notification_email = 'MPTeamReplicon@deltek.com'
+
+middleware_conn_id = f'middleware_conn_{instance}'
+
+# --- Airflow connections (config_helper resolves these onto dag_run.conf) ---
+ukgpro_conn_id = f'ukgpro_conn_{instance}'
+vantagepoint_conn_id = f'vantagepoint_conn_{instance}'
+
+extras = {
+    'wbs_mapping': None,
+}

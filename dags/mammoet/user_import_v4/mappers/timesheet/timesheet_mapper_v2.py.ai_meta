@@ -1,0 +1,36 @@
+{
+  "ai_lines": {
+    "1": "0053579c03e737207f4ded18cd356ce9499a3fff29c70ab48f8396cdfec8cbb8",
+    "2": "c76df5f30f37978cdaae317aa56ec75abfa6be68f07f0c75acdc74020a22c707",
+    "3": "72c740b1d749dadfc81935b1e11b4bbe23f192bf1af0de25bbe86c53832a38ac",
+    "4": "358ffe46596a4b7f4c45bcdcafb48a01daf3e5a211721663f9cc20ff2a87c926",
+    "5": "d9672bc5766f69056ed73fac607ae08ccf2aa8a5ad05e50009dfd30cc1400617",
+    "6": "c672894763ad106f6f99cf390ac90fad7de29812858947d5ff31afa83a97b4a8",
+    "9": "127f1d4ae35e410f1ac19cf3e9f5a2a1245a9821898ecb8019032739346826ed"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Write",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-15T07:59:51.566Z",
+  "file_state": {
+    "file_sha256": "32390748251d761e15b90717f72b6ee6c6f8a074a50b16b6fcde46cc50152d66",
+    "total_file_lines": 9,
+    "total_lines": 7
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\mammoet\\user_import_v4\\mappers\\timesheet\\timesheet_mapper_v2.py",
+  "stats": {
+    "ai_line_count": 7,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-15T07:59:51.566Z",
+  "version": 1
+}

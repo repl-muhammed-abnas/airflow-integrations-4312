@@ -1,0 +1,9 @@
+ <p>Hi Team,<br /> <br /> Task import to Replicon for {{ get_company_key() }} instance, hosted on {{ get_company_key() }},
+    created on {{current_time("%d%m%Y%H%M%S")}} has been completed for file {{ result("new_file_sensor") | file_name }}, however, the log upload to sftp has failed.
+    Attached is the log file for reference.</p>
+ <ul>
+    <li>DAG ID: {{ params.dag_id }}</li>
+    <li>DAG Run: {{ dag_run_ecid }}</li>
+ </ul>
+ <p>Please find the attached logs which was to be sent to intended recipients and debug the issue related to sftp upload.<br />
+ <br /> Regards,<br /> Deltek Inc</p>

@@ -1,0 +1,10 @@
+region = 'us-east-2'
+environment = 'pre-production'
+company_key = 'dxctrial01'
+replicon_conn_id = 'dxctrial01'
+sftp_conn_id = 'sftp_airflowmig_useast2'
+max_active_runs = 128
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email ='{{ var.value.dagrun_internal_testing_email }}'
+disabled = True

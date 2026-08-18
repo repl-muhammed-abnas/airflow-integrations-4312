@@ -1,0 +1,9 @@
+﻿Reported by;Employee ID;Entry Date;In time;Out time;WorkType;Project ID;Task Name;Billing rate name;Activity;Hours;Comments
+11350522;1234;9/5/2025;9:00;18:00;Traveltime;F.236435345;Master Task 1;SZ123456;Travel time;4.5;No OT
+11350522;1234;9/5/2025;9:00;18:00;Worktime;F.620700123;Customer Business Consultancy;Consultant;worktime;4.5;No OT
+11350522;1234;9/5/2025;9:00;18:00;;F.236435345;Master Task 1;;Travel time;4.5;No OT
+11350522;1234;9/5/2025;9:00;18:00;;F.620700123;Customer Business Consultancy;;worktime;4.5;No OT
+11350522;1234;9/5/2025;;;;F.236435345;Master Task 1;;Travel time;4.5;No OT
+11350522;1234;9/5/2025;;;;F.620700123;Customer Business Consultancy ;;worktime;4.5;No OT
+11350522;1234;9/6/2025;;;;F.236435345;General|Master Task 1;;Travel time;4.5;No OT
+11350522;1234;9/6/2025;;;;F.620700123;General|Customer Business Consultancy;;worktime;4.5;No OT

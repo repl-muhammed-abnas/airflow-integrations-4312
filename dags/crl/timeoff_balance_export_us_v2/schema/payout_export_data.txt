@@ -1,0 +1,5 @@
+HEADR|"GVECRL|"Charles River|"Charles River|"|"|"{{ result('get_file_name')}}.SAP|"{{ result('process_start_time').ymd_format}}|"{{ result('process_start_time').hms_format}}|"P|"01|"|"|"|"|"|"|"|"|"|"
+{%- for record in dataset %}
+{{record.RECTY}}|"{{record.CLIID}}|"{{record.INTCA}}|"{{record.ORDNO}}|"{{record.IOPER}}|"{{record.INFTY}}|"{{record.SUBTY}}|"{{record.BEGDA}}|"{{record.ENDDA}}|"{{record.OBJPS}}|"{{record.SPRPS}}|"{{record.SEQNR}}|"{{record.EXTRA}}|"{{record.LGART}}|"{{record.STDAZ}}|"{{record.BEGUZ}}|"{{record.ENDUZ}}|"{{record.BETRG}}|"{{record.WAERS}}|"{{record.ANZHL}}|"{{record.ZEINH}}|"{{record.VTKEN}}|"{{record.BWGRL}}|"{{record.AUFKZ}}|"{{record.ENDOF}}|"{{record.UFLD1}}|"{{record.UFLD2}}|"{{record.UFLD3}}|"{{record.KEYPR}}|"{{record.TRFGR}}|"{{record.TRFST}}|"{{record.PRAKN}}|"{{record.PRAKZ}}|"{{record.OTYPE}}|"{{record.PLANS}}|"{{record.VERSL}}|"{{record.EXBEL}}|"{{record.WTART}}|"{{record.TDLANGU}}|"{{record.TDSUBLA}}|"{{record.TDTYPE}}
+{%- endfor %}
+TRAIL|"{{result('no_of_records_size_including_header_footer')}}

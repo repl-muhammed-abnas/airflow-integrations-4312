@@ -1,0 +1,23 @@
+<html>
+<body>
+    {%- set file_data = result(params.file_result_task) -%}
+    {%- set change_order_filename = file_data.change_order_file if file_data.change_order_file else None -%}
+    {%- set job_cost_filename = file_data.job_cost_file if file_data.job_cost_file else None -%}
+
+    <p><strong>Error:</strong> Both Change Order Report and Job Cost Detail Report are required but not all files were found.</p>
+    <h3>Files Status:</h3>
+    <ul>
+        <li>Change Order Report (QTool Change Order Report):
+            <strong>{{ change_order_filename if change_order_filename else 'Not Found' }}</strong>
+        </li>
+        <li>Job Cost Detail Report (QTool Job Cost Detail):
+            <strong>{{ job_cost_filename if job_cost_filename else 'Not Found' }}</strong>
+        </li>
+    </ul>
+    <p>Please ensure both CSV files are provided.</p>
+    <p>For any queries, please email us at <a href="mailto:procoreintegrationsupport@deltek.com">procoreintegrationsupport@deltek.com</a></p>
+    <br />
+    Regards,<br />
+    Deltek
+</body>
+</html>

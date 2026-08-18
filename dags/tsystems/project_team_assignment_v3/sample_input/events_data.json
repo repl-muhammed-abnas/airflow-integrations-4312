@@ -1,0 +1,71 @@
+{
+  "instance": "trial",
+  "data": [
+    {
+      "time": "2024-08-08T16:13:27+02:00",
+      "id": "79da514c-99e9-4907-ad7d-af17439a4c38",
+      "type": "resource.reservation.create.event.v1",
+      "source": "Decidalo",
+      "specversion": "1.0",
+      "datacontenttype": "application/json",
+      "data": {
+        "resourceReservationItem": {
+          "id": "25393",
+          "appliedCapacity": {
+            "plannedOrActualCapacity": "planned",
+            "humanCapacityAmount": {
+              "capacityAmount": "8832",
+              "unitOfMeasurement": "m"
+            }
+          },
+          "relatedEntity": [
+            { "id": "1505237", "@referredType": "project" },
+            { "id": "29216", "@referredType": "resourceReservation" },
+            { "id": "M-XXX-123456789-01", "@referredType": "CostObject" }
+          ],
+          "relatedParty": [
+            { "id": "1782", "role": "assignedHumanResource", "@referredType": "individual" }
+          ],
+          "state": "Confirmed",
+          "validFor": {
+            "startDateTime": "2025-12-01T00:00:00Z",
+            "endDateTime": "2025-12-31T00:00:00Z"
+          }
+        }
+      }
+    },
+    {
+      "time": "2024-08-08T16:13:27+02:00",
+      "id": "8fff96bd-46e7-4124-8d39-93004c9874c6",
+      "type": "resource.reservation.update.event.v1",
+      "source": "Decidalo",
+      "specversion": "1.0",
+      "datacontenttype": "application/json",
+      "data": {
+        "resourceReservationItem": {
+          "id": "25393",
+          "appliedCapacity": {
+            "plannedOrActualCapacity": "planned",
+            "humanCapacityAmount": {
+              "capacityAmount": "8832",
+              "unitOfMeasurement": "m"
+            }
+          },
+          "relatedEntity": [
+            { "id": "1505237", "@referredType": "project" },
+            { "id": "29216", "@referredType": "resourceReservation" },
+            { "id": "M-XXX-123456789-01", "@referredType": "CostObject" }
+          ],
+          "relatedParty": [
+            { "id": "1782", "role": "assignedHumanResource", "@referredType": "individual" }
+          ],
+          "state": "Confirmed",
+          "validFor": {
+            "startDateTime": "2025-12-01T00:00:00Z",
+            "endDateTime": "2025-12-31T00:00:00Z"
+          }
+        }
+      }
+    }
+  ]
+}

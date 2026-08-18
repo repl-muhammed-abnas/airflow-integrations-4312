@@ -1,0 +1,2 @@
+region = 'all'
+environment = 'all'

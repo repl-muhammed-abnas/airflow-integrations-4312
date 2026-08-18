@@ -1,0 +1,12 @@
+region = 'us-west-2'
+instance = 'devops'
+environment = 'devops'
+company_key = f"airflowsandbox{region.replace('-', '')}"
+replicon_conn_id = 'airflowsandbox-replicon-admin'
+webhook_secret = 'airflow_connector_ui_hmac_secret'
+can_run_batch_task_var_name = f'airflow_connection_dag_{instance}_can_run_batch_task'
+execution_timeout_days = 14
+max_active_runs = 16
+revoke_client_token_var = f"revoke_oob_connectors_{instance}"
+default_revoke_client_token = ['intuit', 'xero', 'zendesk']
+sumo_conn_id = 'sumologic-connector-logger'

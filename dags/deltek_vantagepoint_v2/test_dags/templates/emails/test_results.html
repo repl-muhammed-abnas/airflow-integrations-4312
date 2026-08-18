@@ -1,0 +1,55 @@
+<p>Hello,</p>
+
+<p>The <strong>VP-Replicon User Sync Integration Test</strong> for <strong>{{ dag_run.conf.get('company_key', '') }}</strong> has completed on {{ current_time_in_specified_tz(fmt="%Y-%m-%d %H:%M:%S UTC") }}.</p>
+
+<h3>Overall Status: {{ result('collect_test_results').overall_status }}</h3>
+
+<h3>Scenario Results</h3>
+<table border="1" cellpadding="6" cellspacing="0">
+    <tr>
+        <th>Scenario</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Error</th>
+    </tr>
+    {% for s in result('collect_test_results').scenarios %}
+    <tr>
+        <td>{{ s.name }}</td>
+        <td>{{ s.description }}</td>
+        <td><strong>{{ s.status }}</strong></td>
+        <td>{{ s.error or '-' }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>Test Coverage</h3>
+<table border="1" cellpadding="6" cellspacing="0">
+    <tr>
+        <th>DAG ID</th>
+        <th>Total Tasks</th>
+        <th>Executed</th>
+        <th>Missed</th>
+        <th>Coverage %</th>
+        <th>Missed Tasks</th>
+    </tr>
+    {% for c in result('collect_test_results').coverage %}
+    <tr>
+        <td>{{ c.dag_id }}</td>
+        <td>{{ c.total_tasks }}</td>
+        <td>{{ c.executed_tasks }}</td>
+        <td>{{ c.missed_tasks }}</td>
+        <td><strong>{{ c.coverage_pct }}%</strong></td>
+        <td>{{ c.missed_task_ids }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p><em>Test Run ID:
+{% if result('collect_test_results').dag_run_link %}
+<a href="{{ result('collect_test_results').dag_run_link }}">{{ dag_run.run_id }}</a>
+{% else %}
+{{ dag_run.run_id }}
+{% endif %}
+</em></p>
+<p><strong>This is an automated mail from Deltek Integrations. Please do not reply to this email.</strong><br/>
+Regards,<br/>Deltek Inc</p>

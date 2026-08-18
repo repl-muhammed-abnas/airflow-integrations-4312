@@ -1,0 +1,46 @@
+"""Configuration settings for T-Systems Time Import integration."""
+
+region = "eu-central-1"
+environment = "pre-production"
+
+# Timezone Configuration
+timezone = 'Etc/UTC'
+
+# Processing Configuration
+process_parallel_count = 2 # Number of parallel child DAGs
+max_active_runs_master = 1
+max_active_runs_child = 4
+max_active_runs_log_gen_child = 1
+csv_separator = ';'
+execution_timeout_days = 14
+file_sensor_timeout = 5  # Timeout in minutes
+
+# Column Mapping
+column_mapping = {
+    'Employee ID': 'employee_id', 
+    'Entry Date': 'entry_date',
+    'In time': 'in_time',
+    'Out time': 'out_time',
+    'WorkType': 'work_type',
+    'Project ID': 'project_id',
+    'Task Name': 'task_name',
+    'Billing rate name': 'billing_rate_name',
+    'Activity': 'activity',
+    'Hours': 'hours',
+    'Comments': 'comments'
+}
+
+# Validation Configuration
+mandatory_fields = ['employee_id', 'entry_date']
+entry_dateformat = '%d/%m/%Y'
+time_format = '%H:%M'
+
+# User OEF
+worktype = 'WorkType HR200'
+worktype_tarif = 'WorkType HR200 Tarif'
+worktype_tariffrei = 'WorkType HR200 Tariffrei'
+
+# Timesheet Types
+timesheet_dist = 'Time Distribution only'
+timesheet_inout_dist = 'In/Out plus Time Distribution'
+timesheet_inout_dist_with_oef = 'In/Out with Time entry against Custom field plus Time distribution'

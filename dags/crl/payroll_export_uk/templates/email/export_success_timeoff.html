@@ -1,0 +1,18 @@
+<p>
+    <br />Hello, <br /><br />
+    The Replicon Timeoff export for UK has been completed successfully
+    at {{ dag_run.conf.process_start_time }}. Please find the export details for reference.
+</p>
+<ul>
+    <li>File Name: {{ dag_run.conf.timeoff_file_name }}.SAP.pgp</li>
+    <li>File Path: {{params.output_filepath}}</li>
+    <li>Country: UK</li>
+    <li>Number of Records: {{ dag_run.conf.collection_length }}</li>
+    <li>Log File Name: log_{{ dag_run.conf.timeoff_file_name }}_{{ dag_run.conf.ymd_format }}{{ dag_run.conf.hms_format }}.txt</li>
+    <li>Log File Path: {{ params.output_filepath }}</li>
+</ul>
+
+<p>For any queries, please contact our support team at https://support.deltek.com <br />
+    <p><strong>This is an automated mail from Deltek Integration, Please do not reply to this email</strong><br /></p>
+    <br />Regards, <br />Deltek Inc.
+</p>

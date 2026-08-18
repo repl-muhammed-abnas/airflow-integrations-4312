@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Czech Republic PUF mapper - DPH compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-02-11",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Czech VAT", "ISDOC"]
+  },
+
+  "country": {
+    "code": "CZ",
+    "name": "Czech Republic",
+    "currency": "CZK",
+    "language": "cs"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 21.0,
+      "reduced": [12.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Zakladni sazba",
+      "AA": "Snizena sazba",
+      "Z": "Nulova sazba",
+      "E": "Osvobozeno",
+      "AE": "Preneseni danove povinnosti",
+      "K": "Intrakomunitarni dodani",
+      "G": "Vyvoz"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9929",
+    "buyer_endpoint_scheme": "9929",
+    "vat_scheme_id": "9929",
+    "company_scheme_id": "0154",
+    "vat_prefix": "CZ",
+    "scheme_mappings": {
+      "vat_number": "9929",
+      "ico": "0154",
+      "gln": "0088"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": []
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^CZ[0-9]{8,10}$",
+    "ico_pattern": "^[0-9]{8}$",
+    "postal_code_pattern": "^[0-9]{3}\\s?[0-9]{2}$",
+    "iban_pattern": "^CZ[0-9]{22}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Splatnost 30 dnu",
+    "contact_department": "Ucetni oddeleni"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false
+  },
+
+  "translations": {
+    "invoice": "Faktura",
+    "credit_note": "Dobropis",
+    "total": "Celkem",
+    "vat": "DPH"
+  }
+}

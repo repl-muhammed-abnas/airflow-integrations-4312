@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ZYWV-replicon>
+	<interfaceWV>
+		<interfaceWV_id>
+			<numberWV_id>Term Balances</numberWV_id>
+			<dateinterfaceWV>{{ current_time_in_specified_tz(fmt="%Y-%m-%d-%H.%M.%S") }}</dateinterfaceWV>
+		</interfaceWV_id>
+		<salaries>
+            {%- for record in dataset %}
+			<salarie_id>
+				<codeSOLDE>{{ record.paycode|e }}</codeSOLDE>
+				<matricule>{{ record.employee_id|e }}</matricule>
+				<soldeACQUIS>{{ record.current_year_balance|e }}</soldeACQUIS>
+				<soldePRIS>{{ record.leaves_availed|e }}</soldePRIS>
+				<soldeRESTE>{{ record.leave_balance|e }}</soldeRESTE>
+				<codemouvement>{{ record.transaction_type|e }}</codemouvement>
+				<horodatage>{{ record.horodatage|e }}</horodatage>
+			</salarie_id>
+            {%- endfor %}
+		</salaries>
+	</interfaceWV>
+</ZYWV-replicon>

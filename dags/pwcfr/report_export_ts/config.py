@@ -1,0 +1,9 @@
+region = 'eu-central-1'
+environment = 'pre-production'
+company_key = 'pwcfrafmig'
+schedule_interval = "0 0 * * *"
+report_name = '3_monitoring_TS'
+time_zone = "Europe/Paris"
+execution_timeout_days = 14
+max_active_runs_master = 1
+max_active_runs_child = 1

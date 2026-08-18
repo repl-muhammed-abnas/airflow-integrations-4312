@@ -1,0 +1,28 @@
+<p>
+    <strong>This is a automated mail, please don't reply</strong>
+</p>
+<p>Hello ,</p>
+<p>
+    The User sync into Replicon has been processed {{" "}}
+    {%- set has_errors = result("get_errored_logs", key="length") > 0 -%}
+    {%- if has_errors -%}
+        and completed with errors{{" "}}
+    {%- endif -%}
+    based on filename - {{ dag_run.conf.filename }} on {{ dag_run.conf.time }}.
+</p>
+<p>
+    {%- if dag_run.conf.import_type == "Caribbean User import" -%}
+        Import logs has been attached for reference&nbsp;
+    {%- else -%}
+        Import logs has been placed in the SFTP under logs folder for reference.
+    {%- endif -%}
+</p>
+<p>
+    {%- if has_errors -%}
+        For any queries, please contact our support team at https://support.deltek.com <br /><br />
+    {%- else -%}
+        please contact our support team at https://support.deltek.com for any further assistance <br /><br />
+    {%- endif -%}
+    Regards, <br />
+    Deltek Inc.
+</p>

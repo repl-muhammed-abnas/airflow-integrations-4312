@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_TIME_Replicon xmlns:ns0="http://csc.com/IF5005/FromRepliconTOCOMPASS/TIME">
+  <COMPASSRegion>{{ region | first | attr_or_default('name') }}</COMPASSRegion>
+  {%- for record in records %}
+   <Records>
+      <RepliconDXCUniqueIdentifier>{{ record.shortid|e }}</RepliconDXCUniqueIdentifier>
+      <ExternalSystemIdentifier>{{ record.externalsystemidentifier|e }}</ExternalSystemIdentifier>
+      <PersonnelNumber>{{ record.perner|e }}</PersonnelNumber>
+      <WorkDate>{{ record.date|e }}</WorkDate>
+      <WBS>{{ record.projectname|e }}</WBS>
+      <AttendanceAbsenceType>{{ record.attendanceabsencetype|e }}</AttendanceAbsenceType>
+      <Hours>{{ record.hours|e }}</Hours>
+      <ShortText>{{ record.comments|e }}</ShortText>
+      <IWOExternalSystem>{{ record.iwoexternalsystem|e }}</IWOExternalSystem>
+      <Attribute1>{{ record.attribute1|e }}</Attribute1>
+      <Attribute2>{{ record.attribute2|e }}</Attribute2>
+      <ExternalProjectTask>{{ record.externalprojecttask|e }}</ExternalProjectTask>      
+      <CustomerField1>{{ record.cfield1|e }}</CustomerField1>
+      <CustomerField2>{{ record.cfield2|e }}</CustomerField2>
+      <CustomerField3>{{ record.cfield3|e }}</CustomerField3>
+      <WorkOrder>{{ record.workorder|e }}</WorkOrder>
+      <WorkOrderRateType>{{ record.ratetype|e }}</WorkOrderRateType>
+      <TMRole>{{ record.tmrole|e }}</TMRole>
+      <BDOpportunityID>{{ record.bdopportunityid|e }}</BDOpportunityID>
+   </Records>
+  {%- endfor %}
+</ns0:MT_TIME_Replicon>

@@ -1,0 +1,44 @@
+{
+  "ai_lines": {
+    "18": "62969d7ef99ce83ba953a5ccc6bd22e6c2838b1740f02ff0b5ba9b090626d660",
+    "19": "e0e31af90b68dc10332f2703547a48e4784849b5d49428993a1c84b2e0737fc2",
+    "20": "82157f9e75eb66dea541da18c65fffc47edb751594e50fa8da432d178ceb4b59",
+    "22": "397045f0ed94441404eb0ce5df5039d4961bbc70c441a664bc3c59f137eeb5d8",
+    "23": "5ac21a68350127781c025c19d1f6b18d67ebdcd847946b46518fcd687a6de27a",
+    "24": "f72e3b4fc6937fcf380b604a313fac511d2b2d05f376be9539ee18a267123dd7",
+    "25": "eceda8632dcd70b0de21dcb86c7f528324b95eace98f8e3d64aca8f60aaf6ea6",
+    "26": "cfae0d4248f7142f7b17f826cd7a519280e312577690e957830d23dcf35a3fff",
+    "27": "40e20cfa6fce45b2eef5a818c040808f8b572b2ec621bfa17b0546edd19c56e3"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 4,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-24T11:24:22.052Z",
+  "file_state": {
+    "file_sha256": "d926e9a7564e207ab663fe8b7b636fffc20ab05f870cacff1d1ff3b7c4a55c26",
+    "total_file_lines": 33,
+    "total_lines": 27
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "2d98720d107c7086c8c29577bb703b4c6e5072b245d3b390ab69575b4e7a1dd8",
+      "last_known_line": 24,
+      "removed_at": "2026-06-10T15:13:24.711Z"
+    }
+  ],
+  "source_file": "C:\\workspace\\airflow-integrations\\dags\\resource_planner\\project_task_export_bulk\\instances\\dev2.py",
+  "stats": {
+    "ai_line_count": 9,
+    "ai_line_pct": 33.33,
+    "ai_lines_removed_or_modified": 1
+  },
+  "updated_at": "2026-06-10T15:13:24.711Z",
+  "version": 1
+}

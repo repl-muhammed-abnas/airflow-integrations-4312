@@ -1,0 +1,4 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Replicon user sync  is {{ result('invoke_custom_ruby_code_7').subject }} on {{ current_time() }}. Please find the log file details below for reference: <br /><br />
+    File name:  log_{{ result('log_formatted_time') }}_{{ dag_run_ecid()}}.csv<br />
+    SFTP path: {{ params.logfilepath }} <br /></p>
+    <p>{{ result('invoke_custom_ruby_code_7').body }}</p> 

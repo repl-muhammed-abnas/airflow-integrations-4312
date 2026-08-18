@@ -1,0 +1,18 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Auto population of optional holiday booking is skipped.<br />
+    This is due to the following reason:<br />
+    {%- set type = params.type -%}
+    {%- if type == "timeoff_type" -%}
+        timeoff type not available in Replicon.<br/>
+        {{ params.timeoff_type }}
+    {%- endif -%}
+
+    {%- if type == "states" -%}
+        states not available in Replicon.<br/>
+        {{ result("get_states_not_available") }}
+    {%- endif -%}
+
+    {%- if type == "holiday_cal" -%}
+        holiday calendars not available in Replicon.<br/>
+        {{ result("get_holiday_cal_not_available") }}
+    {%- endif -%}
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

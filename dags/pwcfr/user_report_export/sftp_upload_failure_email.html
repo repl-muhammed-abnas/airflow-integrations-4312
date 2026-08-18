@@ -1,0 +1,19 @@
+<p>
+    Hi Team, 
+    <br>
+    <br> 
+    The scheduled report export job for the report "{{params.report_name}}",hosted on {{get_company_key()}}
+    has been completed on {{current_time_in_specified_tz()}},however the file upload to SFTP has failed.
+</p>
+<ul>
+    <li>Recipe ID: {{ dag_run.dag_id}}</li>
+    <li>Job ID: {{ ecid() }}</li>
+</ul>
+<p>
+    Please find the attached file which was to be uploaded to FTP location and debug the issue related to FTP upload.
+    <br>
+    <br>
+    Regards,
+    <br>
+    Deltek Inc
+</p>

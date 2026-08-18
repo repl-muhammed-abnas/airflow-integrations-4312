@@ -1,0 +1,10 @@
+region = 'eu-central-1'
+environment = 'pre-production'
+company_key = 'rwsafmig'
+schedule_interval = '50 12 * * 1-5'
+timezone='Etc/UTC'
+max_active_runs = 1
+approver = 'HR, Payroll'
+execution_timeout_days = 14
+user_list_report="**User List Data"
+timesheet_report="**Timesheet Approval Report"

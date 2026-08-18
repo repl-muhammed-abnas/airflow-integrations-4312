@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body style="font-family: Arial, sans-serif; font-size: 14px; color: #333; line-height: 1.6;">
+    <p><strong>This is an automated mail, please don't reply.</strong></p>
+    <br />
+    <p>Hello,</p>
+    <p>
+      The <strong>Journal Sync Integration</strong> has not created a Cash Disbursement in Vantagepoint due to the following error. Please review the error, correct the file, and upload it again:
+    </p>
+    
+    <p>
+      <b>Batch:</b> <strong>{{ result('read_cash_disbursement_data')['Batch'] }}</strong>
+    </p>
+    <p>
+      <b>Error Message:</b><br/>
+      {{ ti.xcom_pull(task_ids='check_cd_failure_reason', key='error_message') }}
+    </p>
+    <p>
+      For any queries, please reach out to 
+      <a href="https://support.deltek.com" target="_blank">Deltek Support</a>.
+    </p>
+    <p>Regards,<br/>Deltek Inc.</p>
+  </body>
+</html>

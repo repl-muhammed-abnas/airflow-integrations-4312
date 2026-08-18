@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Persons">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="Person">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="LoginName"/>
+                            <xs:element name="FirstName"/>
+                            <xs:element name="LastName"/>
+                            <xs:element name="EmailAddress"/>
+                            <xs:element name="EmployeeType"/>
+                            <xs:element name="EmployeeID"/>
+                            <xs:element name="WorkdayID"/>
+                            <xs:element name="StartDate"/>
+                            <xs:element name="EndDate" />
+                            <xs:element name="IsLoginEnabled"/>
+                            <xs:element name="AuthenticationType"/>
+                            <xs:element name="TimeSheetTemplate"/>
+                            <xs:element name="TimeSheetApprovalPath"/>
+                            <xs:element name="TimesheetPeriodType"/>
+                            <xs:element name="HolidayCalendar"/>
+                            <xs:element name="TimeZone"/>
+                            <xs:element name="AddUserPermission"/>
+                            <xs:element name="ScheduleType"/>
+                            <xs:element name="Workweek"/>
+                            <xs:element name="CompanyCode"/>
+                            <xs:element name="LegalEntity"/>
+                            <xs:element name="Country"/>
+                            <xs:element name="Supervisor"/>
+                            <xs:element name="Grade"/>
+                            <xs:element name="HomeofficeLocation"/>
+                            <xs:element name="Prefix" />
+                            <xs:element name="ResourceRole"/>
+                            <xs:element name="ProfileStatus"/>
+                            <xs:element name="LoSCode"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,12 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br />
+    <br />Hello, <br /><br />
+    The Replicon payroll export for "{{dag_run.conf.payroll_location_name}}" is completed successfully
+     on {{current_time_in_specified_tz()}}.<br />
+     Please find the export details for reference.
+</p>
+<ul>
+    <li>Country: {{dag_run.conf.payroll_location_name}}</li>
+    <li>Payroll export name: {{result('get_logging_details').payroll_export_name}}</li>
+    <li>Number of Records: {{result('filter_payroll_data', 'length')}}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

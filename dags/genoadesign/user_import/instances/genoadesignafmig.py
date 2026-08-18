@@ -1,0 +1,20 @@
+region = 'us-east-1'
+environment = 'pre-production'
+instance = "GenoaDesignafmig"
+company_key = 'GenoaDesignafmig'
+replicon_conn_id = 'GenoaDesignafmig_User_Import'
+can_run_batch_task_var_name = f'GenoaDesignafmig_user_import_can_run_batch_task_{instance}'
+sftp_conn_id = "sftp_data_import"
+input_filepath = "/GenoaDesignafmig/input"
+archive_filepath = "/GenoaDesignafmig/archive"
+referance_filepath = "/GenoaDesignafmig/reference"
+log_filepath = "/GenoaDesignafmig/logs"
+execution_timeout_days = 14
+child_dag_max_active_runs = 2
+master_dag_interval = 30
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_failure_alert_email }}'
+pacific_timezone = 'US/Pacific'
+
+disabled = True

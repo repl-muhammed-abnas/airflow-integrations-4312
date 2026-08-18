@@ -1,0 +1,39 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> There were {{
+    result('get_long_running_task_dags').task_count }} long running Task runs{{ " " }} from past {{
+    result('get_long_running_task_dags').threshold }} minute(s).
+    <br> <br>
+<table style="border:1px solid black" border="1">
+    <thead>
+        <tr>
+            <th>Sl No</th>
+            <th>DAG ID</th>
+            <th>Task ID</th>
+            <th>State</th>
+            <th>DAG Run ID</th>
+            <th>Start Date (ISO Format)</th>
+            <th>Duration</th>
+            <th>DAG Run Link</th>
+            <th>Latest Heartbeat</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%- for item in result('get_long_running_task_dags').dags %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ item.dag_id }}</td>
+            <td>{{ item.task_id }}</td>
+            <td>{{ item.state }}</td>
+            <td>{{ item.run_id }}</td>
+            <td>{{ item.start_date }}</td>
+            <td>{{ item.duration }}</td>
+            <td><a href='{{ item.link }}'> {{ item.link }}</a></td>
+            <td>{{ item.latest_heartbeat }}</td>
+        </tr>
+        {%- endfor %}
+    </tbody>
+</table>
+<br>
+Please click on the below link to download the Task run list in csv format. <br /> <br /><a
+    href="{{ result('generate_download_link') }}">download_task_run_csv</a></p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 4 days.</span></em></p>
+<p><br />Regards,<br />Deltek Inc</p>

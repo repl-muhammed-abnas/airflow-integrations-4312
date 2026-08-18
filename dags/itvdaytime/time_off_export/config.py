@@ -1,0 +1,13 @@
+region = 'eu-central-1'
+environment = 'pre-production'
+company_key = 'itvdaytimetrial01'
+max_active_runs = 1
+report_name = "***Replicon-Timeoff Export Integration Base Report"
+schedule_interval = None
+replicon_conn_id = 'replicon-itvdaytime-radmin'
+sftp_conn_id = 'test-sftp'
+output_file_path = '/itvtrial01/time_off_export/'
+log_file_path = '/itvtrial01/time_off_export/'
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_internal_testing_email }}'

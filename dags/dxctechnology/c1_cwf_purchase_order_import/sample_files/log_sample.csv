@@ -1,0 +1,11 @@
+12/09/2022T10:00:57,Number of Rows: 4,Function: C1 Purchaseorder balance
+Purchaseorder_update,,99748588,1102,9500007802,ignored,Workorder/Personnelnumber/Companycode is missing,9bd0e3b934055d94992efa2d4f35eb71:18
+Purchaseorder_update,HPWO00091427,,1102,9500007802,ignored,Workorder/Personnelnumber/Companycode is missing,9bd0e3b934055d94992efa2d4f35eb71:18
+Purchaseorder_update,HPWO00091427,99748588,,9500007802,ignored,Workorder/Personnelnumber/Companycode is missing,9bd0e3b934055d94992efa2d4f35eb71:18
+Purchaseorder_update,HPWO00091427,,1102,9500007802,ignored,Multiple employee record found in Replicon,9bd0e3b934055d94992efa2d4f35eb71:32
+User_attributes_update,HPWO00091427,99748563,1102,9500007802,success,Updated user attributes related to Purhaseorder balance in Replicon,9bd0e3b934055d94992efa2d4f35eb71:36:00:02
+User_attributes_update,,99748588,1102,9500007802,success,Updated user attributes related to Purhaseorder balance in Replicon,9bd0e3b934055d94992efa2d4f35eb71:36:01:02
+Purchaseorder_update,HPWO00091427,99748563,1102,9500007802,success,Added Purchaseorder balance in Replicon,9bd0e3b934055d94992efa2d4f35eb71:38:00:13
+Purchaseorder_update,,99748588,1102,9500007802,success,Added Purchaseorder balance in Replicon,9bd0e3b934055d94992efa2d4f35eb71:38:01:13
+Purchaseorder_update,HPWO00091427,99748588,,9500007802,success,Added Purchaseorder balance in Replicon,9bd0e3b934055d94992efa2d4f35eb71:38:01:13
+Number of Records Processed Successfully: 5,Number of Records with Error: 0,Number of Records with Exception: 4,,,,,,,

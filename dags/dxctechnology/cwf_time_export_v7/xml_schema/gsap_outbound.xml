@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_TimeData_Replicon xmlns:ns0="http://csc.com/IF9000/FromRepliconToGSAP/TimeData">
+  {%- for record in dataset %}
+ <Records>
+  <Replicon_Unique_ID>{{record.Replicon_Unique_ID|e}}</Replicon_Unique_ID>
+  <Workday_PERNR>{{record.Workday_PERNR|e}}</Workday_PERNR>
+  <Date>{{record.Date|e}}</Date>
+  <GSAP_WBS>{{record.GSAP_WBS|e}}</GSAP_WBS>
+  <Billing_Key>{{record.Billing_Key|e}}</Billing_Key>
+  <Billing_Indicator>{{record.Billing_Indicator|e}}</Billing_Indicator>
+  <Tasks>{{record.Tasks|e}}</Tasks>
+  <Hours>{{record.Hours|e}}</Hours>
+  <Attendance_Absence_Type>{{record.Attendance_Absence_Type|e}}</Attendance_Absence_Type>
+  <Status>{{record.Status|e}}</Status>
+  <Remarks>{{record.Remarks|e}}</Remarks>
+  <Reference_Number>{{record.Reference_Number|e}}</Reference_Number>
+ </Records>
+ {%- endfor %}
+</ns0:MT_TimeData_Replicon>

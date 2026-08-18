@@ -1,0 +1,96 @@
+{
+  "payload": {
+    "A_EnterpriseProjects": [
+      {
+        "Project": "S.CP01_QAPR_TCOETEST",
+        "ProjectDescription": "Corporate PMO_QAPR_TCOETEST",
+        "ProjectProfileCode": "YP04",
+        "ProcessingStatus": "10",
+        "ResponsibleCostCenter": "US01890938",
+        "ProjectStartDate": "2025-10-01",
+        "ProjectEndDate": "2099-12-31",
+        "ControllingArea": "A000",
+        "EntProjTimeRecgIsBlkd": "",
+        "ProjectManager": "",
+        "StaffingRule": "A",
+        "A_EnterpriseProjectElementType": [
+          {
+            "ParentProject": "S.CP01_QAPR_TCOETEST",
+            "ProjectElement": "S.CP01_QAPR_TCOETEST.BR01",
+            "ProjectElementDescription": "GESS Dashboard.BR01",
+            "PlannedStartDate": "2025-10-01",
+            "PlannedEndDate": "2099-12-31",
+            "EntProjTimeRecgIsBlkd": "",
+            "ProcessingStatus": "10",
+            "YY1_BillingRespProjEl_PTD": "",
+            "StaffingCostCenter": [
+              {
+                "CostCenter": "US04180145"
+              },
+              {
+                "CostCenter": "US0601379A"
+              },
+              {
+                "CostCenter": "US1900981A"
+              },
+              {
+                "CostCenter": "US2001478A"
+              }
+            ],
+            "StaffedEmployee": [
+              {
+                "StaffedEmployee": "42882TST"
+              },
+              {
+                "StaffedEmployee": "999999"
+              },
+              {
+                "StaffedEmployee": "67810"
+              },
+              {
+                "StaffedEmployee": "TST67810"
+              },
+              {
+                "StaffedEmployee": "120998"
+              },
+              {
+                "StaffedEmployee": "64844"
+              },
+              {
+                "StaffedEmployee": "Test EID 25"
+              },
+              {
+                "StaffedEmployee": "agency temp.test"
+              },
+              {
+                "StaffedEmployee": "68910"
+              },
+              {
+                "StaffedEmployee": "66118"
+              },
+              {
+                "StaffedEmployee": "76079"
+              }
+            ]
+          },
+          {
+            "ParentProject": "S.CP01_QAPR_TCOETEST",
+            "ProjectElement": "S.CP01_QAPR_TCOETEST.BR02",
+            "ProjectElementDescription": "GESS Dashboard.BR02",
+            "PlannedStartDate": "2025-10-01",
+            "PlannedEndDate": "2099-12-31",
+            "EntProjTimeRecgIsBlkd": "",
+            "ProcessingStatus": "10",
+            "YY1_BillingRespProjEl_PTD": "90407",
+            "StaffingCostCenter": [
+              {
+                "CostCenter": "US04180145"
+              }
+            ],
+            "StaffedEmployee": []
+          }
+        ]
+      }
+    ]
+  }
+}

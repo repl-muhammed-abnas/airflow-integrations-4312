@@ -1,0 +1,421 @@
+{
+    "PersonResourceActualTime": [
+        {
+            "TransactionDate": "20220920",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "254d17c7-2964-43a2-aac8-5a275b6bef7c"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "ltissot001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "110002576"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS003",
+                "WorkItem": {
+                    "WorkItemType": ""
+                }
+            },
+            "HoursQuantity": "8.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Absence - Vacation",
+            "WorkLocation": "Switzerland"
+        },
+        {
+            "TransactionDate": "20220920",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "254d17c7-2964-43a2-aac8-5a275b6bef7c"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "ltissot001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "110002576"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS003",
+                "WorkItem": {
+                    "WorkItemType": ""
+                }
+            },
+            "HoursQuantity": "8.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Absence - Vacation",
+            "WorkLocation": "Switzerland"
+        },
+        {
+            "TransactionDate": "20220921",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "254d17c7-2964-43a2-aac8-5a275b6bef7c"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "ltissot001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "110002576"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS003",
+                "WorkItem": {
+                    "WorkItemType": ""
+                }
+            },
+            "HoursQuantity": "8.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Absence - Vacation",
+            "WorkLocation": "Switzerland"
+        },
+        {
+            "TransactionDate": "20220922",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "254d17c7-2964-43a2-aac8-5a275b6bef7c"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "ltissot001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "110002576"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS003",
+                "WorkItem": {
+                    "WorkItemType": ""
+                }
+            },
+            "HoursQuantity": "8.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Absence - Vacation",
+            "WorkLocation": "Switzerland"
+        },
+        {
+            "TransactionDate": "20220623",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "254d17c7-2964-43a2-aac8-5a275b6bef7c"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "ltissot001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "110002576"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS003",
+                "WorkItem": {
+                    "WorkItemType": ""
+                }
+            },
+            "HoursQuantity": "8.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Absence - Vacation",
+            "WorkLocation": "Switzerland"
+        },
+        {
+            "TransactionDate": "20220924",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "054c4bed-70b8-4a86-977c-c4d8fef26298"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "shusar001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "100776218"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS001",
+                "WorkItem": {
+                    "WorkItemType": "Test task"
+                }
+            },
+            "HoursQuantity": "4.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Working time - At Office / at Client",
+            "WorkLocation": "Austria"
+        },
+        {
+            "TransactionDate": "20220924",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "054c4bed-70b8-4a86-977c-c4d8fef26298"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "shusar001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "100776218"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS001",
+                "WorkItem": {
+                    "WorkItemType": "Test task"
+                }
+            },
+            "HoursQuantity": "9.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Working time - At Office / at Client",
+            "WorkLocation": "Austria"
+        },
+        {
+            "TransactionDate": "20220925",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "054c4bed-70b8-4a86-977c-c4d8fef26298"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "shusar001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "100776218"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS001",
+                "WorkItem": {
+                    "WorkItemType": "Test task"
+                }
+            },
+            "HoursQuantity": "9.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Working time - At Office / at Client",
+            "WorkLocation": "Austria"
+        },
+        {
+            "TransactionDate": "20220925",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "054c4bed-70b8-4a86-977c-c4d8fef26298"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "shusar001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "100776218"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS001",
+                "WorkItem": {
+                    "WorkItemType": "Test task"
+                }
+            },
+            "HoursQuantity": "9.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Working time - At Office / at Client",
+            "WorkLocation": "Austria"
+        },
+        {
+            "TransactionDate": "20220926",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "054c4bed-70b8-4a86-977c-c4d8fef26298"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "shusar001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "100776218"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS001",
+                "WorkItem": {
+                    "WorkItemType": "Test task"
+                }
+            },
+            "HoursQuantity": "9.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Working time - At Office / at Client",
+            "WorkLocation": "Austria"
+        },
+        {
+            "TransactionDate": "20220926",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "054c4bed-70b8-4a86-977c-c4d8fef26298"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "shusar001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "100776218"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS001",
+                "WorkItem": {
+                    "WorkItemType": "Test task"
+                }
+            },
+            "HoursQuantity": "9.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Working time - At Office / at Client",
+            "WorkLocation": "Austria"
+        },
+        {
+            "TransactionDate": "20220926",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "054c4bed-70b8-4a86-977c-c4d8fef26298"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "shusar001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "100776218"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS001",
+                "WorkItem": {
+                    "WorkItemType": "Test task"
+                }
+            },
+            "HoursQuantity": "9.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Working time - At Office / at Client",
+            "WorkLocation": "Austria"
+        },
+        {
+            "TransactionDate": "20220927",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "054c4bed-70b8-4a86-977c-c4d8fef26298"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "shusar001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "100776218"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS001",
+                "WorkItem": {
+                    "WorkItemType": "Test task"
+                }
+            },
+            "HoursQuantity": "9.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Working time - At Office / at Client",
+            "WorkLocation": "Austria"
+        }
+    ],
+    "content_type": "application/json"
+}

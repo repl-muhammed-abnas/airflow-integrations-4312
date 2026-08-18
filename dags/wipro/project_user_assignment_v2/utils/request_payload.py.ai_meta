@@ -1,0 +1,39 @@
+{
+  "ai_lines": {
+    "170": "8103c862884775e1a941098972472d261e7e2c19aaad60d543a52715c400202d",
+    "171": "2dae3c6a31465aa1cb66f7704695406e863fe2e2b312fe5b49c2119ea55f02d9",
+    "215": "6299ee368725843ad2e1640601e3cfdfa313b8b3f87d940ea8fbd4960d6fe9e6",
+    "216": "ae0b9e41643e7cde66286fd92684fee32c3e793bcb1e8455b0ece1e5d33ee1e2",
+    "27": "2a44168318e224e1f830fe9ab620aa00dd4f7b3fb19ef4399abf59593cf0756d",
+    "5": "07513704f2b375eb24baaa8bb6738ab2034cb7eee022ace2d238c8b130a46619",
+    "77": "9556700e74a6bb3a536bfb3dcbc310540fff485c77100368c4f807638c2543fa",
+    "78": "2b5fcf342c493d108cbb8f169ab611a41de8594adab2293eca311e5c5221e2e3",
+    "79": "c7dd35f0421d957c29de95cffa3e1dd6a0454fe597248882f119659e26d3fa18",
+    "84": "f48e74d115f68aca7a23aabb7dcbe1bcac97122a479eb6fed64885df4f5d079e"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 4,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-03T14:26:16.236Z",
+  "file_state": {
+    "file_sha256": "5b8e88e2c22abc114ebf914a53f9b10bbf3d106ea8e5a20fd35ee782e0cad68f",
+    "total_file_lines": 361,
+    "total_lines": 340
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\wipro\\project_user_assignment_v2\\utils\\request_payload.py",
+  "stats": {
+    "ai_line_count": 10,
+    "ai_line_pct": 2.94,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-03T14:26:43.078Z",
+  "version": 1
+}

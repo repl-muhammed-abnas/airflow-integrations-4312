@@ -1,0 +1,51 @@
+{
+  "ai_lines": {
+    "1": "4d79856fd75da17a9e3678ac7def65919f6f9f4473166276b7dd2d2634787097",
+    "10": "1284deb0cec1f6110a7ba08f2038ec3d9d238439efc6bb7af5f39e534d6454d5",
+    "12": "434483372a10b5e43a2e58447f968c28bda86a3a5461cd177cd7adf88624233f",
+    "14": "5f82cedd566cbb54f75a780a6c327fa3d44de7574dc4933cf04faf9ea72f5108",
+    "15": "d40cc030941085fb32c33f446bf47622f053fd69e835faa75ae248555bb4ae14",
+    "17": "c438e75b742ec197d77e2506bfad312d80af16efc3e7b92b2f7d27672c36a732",
+    "18": "34281748d4e9c4f82d6abfd8ec96a0ef02ac5a4e6f916e7e67e8005398680b3f",
+    "19": "f7a24be723df7584f03d5a451040dc56d1e608f354059f6b76843cf76e6753de",
+    "2": "1f3292ecf33ff7e02fa0e4b57f182cba0b4aff0f363001c902449c797a90514f",
+    "20": "94e5c5958ba2b6f6e4729d883ba3cefc24433742712596de6252e9a2e2fcebf9",
+    "22": "b530bd3f21172480d4ddd7303d03167755b7abe65f2f5875c81d40d1fd7fe49f",
+    "23": "f534d5f1a2bb9ea061d40fdbbd7c4fda5c26c2314304d6a65952f5c82412c2ef",
+    "24": "1ab095bfa169b68d9d6f8739c26e6d8ed2032cc91affbbde0a501b4b8e678ae9",
+    "25": "10c716a0a6c25d9525cf6d7a9bb9181e6b629a25a3c0220e3f7b4af8d2cb94b2",
+    "27": "cabeac7e3aaf3d50a5661209de34150b54add99dee80c6b1b1736120cdf687f1",
+    "28": "7a4d10c620c6fcbae251a11e031536002465a6e934c6e5e70001d522060644d6",
+    "29": "53237b8b4f5473513f1c3952f8c3426a9c04aefc51ca13e1f737c86af016c411",
+    "30": "cbf9c77131685a046c06a81686706c7c2d1d4c3ede7332b3de5571a3ba9447c9",
+    "4": "6c3bebc91369bf49caf4278f39cd33a44af1102a17ad3a32b4e29a27aa95a6cc",
+    "5": "9422e6335f475de1dbca323d191ef7bcc6be027d7ea01cfdf69069749ad7092a",
+    "7": "fb55c7bf01220ddc797f2229bba91fba680b012a78724ba76fdceb4e2f625ce7",
+    "8": "c0833fc5188edc49145aa95b8f6bc2a227bbc8e5b9f7dc13a2b34db44f9ae3e7"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-28T14:34:34.193Z",
+  "file_state": {
+    "file_sha256": "d4235db877c67d7242637a1d55135f6315306457771449faae6285d47816b8d9",
+    "total_file_lines": 30,
+    "total_lines": 22
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\resource_planner\\webhooks\\task_resource_allocation_export_endpoints\\instances\\qa.py",
+  "stats": {
+    "ai_line_count": 22,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-29T07:46:13.273Z",
+  "version": 1
+}

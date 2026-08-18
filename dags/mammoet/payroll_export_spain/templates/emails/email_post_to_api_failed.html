@@ -1,0 +1,16 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br />
+    <br />Hello, <br /><br />
+    The Replicon payroll data export for "{{dag_run.conf.payroll_location_name}}" is completed successfully
+     on {{current_time_in_specified_tz()}} but, the payroll data Post to API endpoint has failed.
+    <br /> However, the JSON payload has been uploaded to the backup SFTP folder.
+</p>
+<ul>
+    <li>Export file name:{{dag_run.conf.export_name}}_{{dag_run.conf.index}}.json</li>
+    <li>SFTP Backup upload filepath: {{params.sftp_upload_path}}</li>
+</ul>
+<p>
+    We request you to please debug the issue related to API.<br />
+    For any queries, please contact our support team at https://support.deltek.com<br /> <br />
+    Regards,<br />
+    Deltek Inc
+</p>

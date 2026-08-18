@@ -1,0 +1,12 @@
+<p>Hello,<br /> <br />The Replicon time export to Oracle has completed successfully at {{ current_time_in_specified_tz(params.time_zone) }}, further details are below:<br /></p>
+<ul>
+    <li>Process Started : {{ result('process_start_time') }}</li>
+    <li>Date Range : {{ result("logging_details").export_start_date }} - {{ result("logging_details").export_end_date }}</li>
+    <li>Number of Records : 0</li>
+</ul>
+<p>For any queries, please contact our support team at <a href="https://support.deltek.com/">https://support.deltek.com/</a><br />
+<br />
+<strong>This is an automated mail from Deltek Integration. Please do not reply to this email.</strong><br />
+<br /><br />
+Regards,<br />
+Deltek Inc</p>

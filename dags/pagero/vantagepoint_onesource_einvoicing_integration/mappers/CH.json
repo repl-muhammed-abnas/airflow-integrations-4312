@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Switzerland PUF mapper - MWST/TVA/IVA compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-02-11",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Swiss VAT"]
+  },
+
+  "country": {
+    "code": "CH",
+    "name": "Switzerland",
+    "currency": "CHF",
+    "language": "de"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 8.1,
+      "reduced": [2.6],
+      "special": [3.8],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Normalsatz",
+      "AA": "Reduzierter Satz",
+      "Z": "Nullsatz",
+      "E": "Steuerbefreit",
+      "O": "Nicht im Geltungsbereich"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9927",
+    "buyer_endpoint_scheme": "9927",
+    "vat_scheme_id": "9927",
+    "company_scheme_id": "9927",
+    "vat_prefix": "CHE",
+    "scheme_mappings": {
+      "vat_number": "9927",
+      "uid": "0183",
+      "gln": "0088"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": []
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^CHE-?[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\s?(MWST|TVA|IVA)$",
+    "uid_pattern": "^CHE-?[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}$",
+    "postal_code_pattern": "^[0-9]{4}$",
+    "iban_pattern": "^CH[0-9]{19}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Zahlbar innerhalb von 30 Tagen",
+    "contact_department": "Buchhaltung"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false
+  },
+
+  "translations": {
+    "invoice": "Rechnung",
+    "credit_note": "Gutschrift",
+    "total": "Gesamtbetrag",
+    "vat": "MWST"
+  }
+}

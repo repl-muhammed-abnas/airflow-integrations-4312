@@ -1,0 +1,21 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br />Replicon user sync
+  from SAP to Replicon is {{ " " }}
+  {%- set has_errors = result("format_log_records", key="get_logged_errors") > 0 -%}
+  {%- if has_errors -%}
+  completed with errors
+  {%- else -%}
+  {%- if result("format_log_records", key="get_logged_exceptions") > 0 -%}
+  completed with exceptions
+  {%- else -%}
+  completed successfully
+  {%- endif -%}
+  {%- endif -%}
+  {{ " on " + current_time_in_specified_tz() }}. Please find the below link to the logs for reference. <br /> <br />
+  <a href="{{result('generate_log_file_link')}}">Download log file</a><br /> <br />
+  <em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em><br />
+<p>Payload ecid: {{ dag_run.conf.master_ecid }}</p>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+  For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

@@ -1,0 +1,23 @@
+role_approval_path_mapper = {
+    "timesheet_approval_path": 'Belgium TS Approval',
+    "timeoff_approval_path_group": "Belgium - LT Time off Approval path",
+    "timeoff_approval_path": "Belgium - Time off Approval path",
+    "l1_manager": "L1 Manager (Belgium)",
+    "end_user_manager": "End User (Managers)",
+    "project_manager": "Belgium Project Manager",
+    "hr_manager": "Belgium - GEO HR",
+    "default_user_permission": "Project Resource",
+    "foreign_manager_emp_type": "Foreign Managers",
+    "ot_request_template": "Belgium OT Pre-approval",
+    "ot_request_approval_path": "Belgium Pre-approval Overtime",
+    "schedule_type": "Belgium Office Schedule",
+    "payrule": "Belgium Payrule",
+    "timesheet_template": "Belgium Prepopulated Timesheet",
+    "time_zone": "(UTC+1:00) Central European Standard Time",
+    "timesheet_system_approval_path": "System Approval",
+    "timesheet_period": "Weekly starting on Monday",
+    "default_holiday_calender": "Belgium",
+    "project_supervisor_permission":"Project Manager",
+    "schedule_supervisor_permission":"Schedule Manager",
+    "resource_supervisor_permission":"Resource Manager"
+}

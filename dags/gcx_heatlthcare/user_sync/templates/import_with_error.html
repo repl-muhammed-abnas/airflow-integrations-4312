@@ -1,0 +1,24 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Replicon user
+    import is completed with errors on {{ current_time_in_specified_tz(tz="America/New_York") }}. Please find the log
+    file details below for
+    reference:
+    <br />
+<ul>
+    <li>Number of records: {{ result("create_user_collection", "length") + result("query_new_manager_records", "length")
+        }} </li>
+    <li>Number of records processed: {{ result("create_delta_collection", "length") +
+        result("query_new_manager_records", "length") }}</li>
+    <li>Number of success records: {{ result("format_logs", "success_record_count") }}</li>
+    <li>Number of exceptions records: {{ result("format_logs", "exception_record_count") }}</li>
+    <li>Number of errored records: {{ result("format_logs", "error_record_count") }}</li>
+    <li>Number of new users to add: {{ result("format_logs", "add_record_count") }}</li>
+    <li>Number of users to update: {{ result("format_logs", "update_record_count") }}</li>
+</ul>
+</p>
+<p>Please click on the below link to download the logs and review. <br /> <br /><a
+        href="{{result('generate_download_link')}}">Download log file</a><br />
+    <br /><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em>
+</p>
+https://support.deltek.com
+<br /><br />Regards, <br />Deltek Inc.
+</p>

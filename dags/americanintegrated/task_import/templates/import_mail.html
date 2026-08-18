@@ -1,0 +1,13 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Project task
+    addition job for existing projects is completed {% if result("filter_for_error_logs")| load_all_records() | length >
+    0%}\
+    with errors
+    {%else%}
+    successfully
+    {%endif%}. The log file -
+    "taskassignmentlogs_{{current_time_in_specified_tz(fmt="%m-%d-%Y", tz="US/Pacific")}}_{{dag_run_ecid()}}.csv" is
+    available at /task/logs for your reference.</p>
+{% if result("filter_for_error_logs")| load_all_records() | length > 0%}
+{%endif%}
+<p>For any queries, please reach out to https://support.deltek.com <br /><br />Regards,<br />Integration
+    Alerts<br />Deltek Inc.</p>

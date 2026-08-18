@@ -1,0 +1,61 @@
+{
+  "ai_lines": {
+    "207": "c00d205563ead878038f1f3369f7af2f8bb79b88a439335be7fe73a7b5eb50f6"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-23T09:29:12.661Z",
+  "file_state": {
+    "file_sha256": "75c16bfeca58e8a6d75930de0ca2ede94d71ba3d9b2bdc30bc53be1dfc2da6cd",
+    "total_file_lines": 329,
+    "total_lines": 282
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "5d488ffc5873435d63f70a6d0828ea6fbf7f775c5644db213004cf3d55eb967d",
+      "last_known_line": 202,
+      "removed_at": "2026-03-23T09:31:15.243Z"
+    },
+    {
+      "hash": "4ff7e7f66efbbc0207c52825e1ed6a1381bda4b6e19440ffeedb9d5dc1776772",
+      "last_known_line": 203,
+      "removed_at": "2026-03-23T09:31:15.243Z"
+    },
+    {
+      "hash": "922da377eb6f7ec4a1fe4f866d790ac911fc8cc84d1ae99811a10e8f12aa4228",
+      "last_known_line": 204,
+      "removed_at": "2026-03-23T09:31:15.243Z"
+    },
+    {
+      "hash": "446ee2406056a3c3ddd3a65b913b5a4bc58bcf2734dc16af4b1b1c3c38e079e0",
+      "last_known_line": 205,
+      "removed_at": "2026-03-23T09:31:15.243Z"
+    },
+    {
+      "hash": "ba5b50c02537bdb3147e169a663c307ab33335a4c0798c503bee6047f6637b5a",
+      "last_known_line": 206,
+      "removed_at": "2026-03-23T09:31:15.243Z"
+    },
+    {
+      "hash": "571b1076cedc370b5679ab447d1b886ed2c6c4f98ac1b158aca64b879f37ab5b",
+      "last_known_line": 213,
+      "removed_at": "2026-03-23T09:31:15.243Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\eisner_amper\\time_export_s4hc\\process_time_export.py",
+  "stats": {
+    "ai_line_count": 1,
+    "ai_line_pct": 0.35,
+    "ai_lines_removed_or_modified": 6
+  },
+  "updated_at": "2026-03-23T09:31:15.243Z",
+  "version": 1
+}

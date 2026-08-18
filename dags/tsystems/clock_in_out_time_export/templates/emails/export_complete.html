@@ -1,0 +1,14 @@
+<p><strong>This is an automated mail from Deltek Integration, Please do not reply to this email.</strong><br /> <br />Hello, <br />
+    <br /> The Replicon Clock In/Out Time Export is completed successfully on
+    {{ result("process_end_time") }}
+    . Please find the extract details for reference.
+</p>
+<ul>
+    <li>Export Date: {{  params.export_date }}
+    <li>Export File Name: {{ result('generate_filename') }}</li>
+    <li>Number of Records in export: {{result('query_valid_records', 'length')}}</li>
+    <li>Process Start Time:{{  result("process_start_time")}}</li>
+    <li>Process End Time:{{  result("process_end_time")}}</li>
+</ul>
+<p>For any queries, please contact our support team at <a
+    href=https://support.deltek.com>https://support.deltek.com</a> <br /><br />Regards, <br />Deltek Inc.</p>

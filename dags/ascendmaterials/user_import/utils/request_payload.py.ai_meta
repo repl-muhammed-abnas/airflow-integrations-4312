@@ -1,0 +1,36 @@
+{
+  "ai_lines": {
+    "145": "4f0a0962673d39c7afb273e838977a0ceecfe4cd7dfa6d86dc49e22bce2688f5",
+    "109": "8604c5c2f7cd887cd798f6cc9cd83ec4a9aa00595b0c3e0d6505e06b6e9a4330",
+    "118": "476e20703421be9aa7412dee650c1733f7b05ed567d67ba2cd6821cea38b96be",
+    "119": "fb07d090425a2a186f4375b99a28b9976a06de049cc6a3af262a96c9854c4585",
+    "120": "8d1a9696b8be590c0289d336cda6eaab44b69b08b918bec8028bc585fa48b728",
+    "232": "6d8a20814742e5401fa00612111c9d2823290514884e317c5852649c3dc1f22e",
+    "357": "bf2dfee1f4440b523c47ac07491d9327acd37820025e6292d971ef24b6fbf4c3"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 5,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Edit",
+      "Write"
+    ]
+  },
+  "created_at": "2026-03-24T13:44:52.076Z",
+  "file_state": {
+    "file_sha256": "f9c29e437b2f7965f5a0eca195acb7a283adfa5f2d3fb156ea559c1b2d5e16fd",
+    "total_file_lines": 372,
+    "total_lines": 357
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\ascendmaterials\\user_import\\utils\\request_payload.py",
+  "stats": {
+    "ai_line_count": 7,
+    "ai_line_pct": 1.96,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-03-26T06:17:27.548Z",
+  "version": 1
+}

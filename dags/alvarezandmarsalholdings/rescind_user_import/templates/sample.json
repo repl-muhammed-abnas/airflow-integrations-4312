@@ -1,0 +1,14 @@
+{
+	"Worker": [
+	{
+		"Employee_ID": "10256",
+		"Event_Identifier": "RESCIND",
+		"Rescind_Date": "01/15/2025"
+	},
+	{
+		"Employee_ID": "10257",
+		"Event_Identifier": "RESCIND",
+		"Rescind_Date": "01/15/2025"
+	}
+	]
+}

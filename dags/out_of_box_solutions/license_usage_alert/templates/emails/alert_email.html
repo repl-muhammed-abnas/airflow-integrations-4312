@@ -1,0 +1,83 @@
+<!-- header -->
+<table class="wrapper" style="width: 100%; padding: 0px; margin: 0px;" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+    <tbody>
+    <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+    <table style="width: 100%; max-width: 600px; margin: 0 auto; display: block; border-bottom: 2px solid #007ac9;" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+    <td style="padding: 15px 15px 7px 15px;"><a href="http://www.replicon.com" target="_blank" rel="noopener"><img title="Replicon" src="https://www.replicon.com/wp-content/uploads/2018/03/Replicon-TI-logo_RGB-small.png" alt="Replicon" width="276" height="42" align="left" border="0" /></a></td>
+    <td align="right">&nbsp;</td>
+    </tr>
+    </tbody>
+    </table>
+    </td>
+    <td>&nbsp;</td>
+    </tr>
+    </tbody>
+    </table>
+    <!-- body -->
+    <table class="wrapper" style="width: 100%; padding: 0px; margin: 0px;" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+    <tbody>
+    <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+    <table style="width: 100%; max-width: 600px; margin: 0 auto; display: block;" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+    <td style="padding: 15px; font-family: 'Helvetica Neue','Helvetica',Helvetica, Arial,sans-serif; font-size: 14px; line-height: 1.6;">
+    <p>Hello,</p>
+    <p>You are receiving this message as you have subscribed to the automated license usage notification. Please note that your organization's Replicon licenses usage has reached your pre-defined alert criteria.<br /><br />
+        <html>
+            <body>
+                <table style="border: 1px solid black;" border="1">
+                    <tr>
+                        <th style="text-align: center;">Products</th>
+                        <th style="text-align: center;">Licenses puchased</th>
+                        <th style="text-align: center;">Licenses assigned</th>
+                        <th>Available licenses</th>
+                            {% for i in dataset %}
+                            <tr>
+                                <td style="text-align: center;">{{i.product}}</td>
+                                <td style="text-align: center;">{{i.licensespuchased}}</td>
+                                <td style="text-align: center;">{{i.licensesassigned}}</td>
+                                <td style="text-align: center;">{{i.licensesremaining}}</td>
+                            </tr>
+                            {% endfor %}
+                    </tr>
+                </table>
+            </body>
+        </html>
+        <br /><br />Please ensure that you have a sufficient amount of available licenses remaining in order to prevent potential user provisioning errors.</p>
+    <p>Administrator-level users have access to the "Manage Account" section in Replicon where they can view in real time the current license assignment and usage, as well as the ability to purchase additional licenses. </p>
+    <p><a class="buttonLink" style="display: inline-block; padding: 6px 8px; color: #fff; text-decoration: none; background-color: #1071b0;" href="https://global.replicon.com/go/?d={{result('encode_base64')}}" target="_blank" rel="noopener">Go to Manage Account&nbsp;</a></p>
+    <p>Should you need any further assistance, please don't hesitate to contact us at https://support.deltek.com<br /><br />Your Replicon Team
+    </p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </td>
+    <td>&nbsp;</td>
+    </tr>
+    </tbody>
+    </table>
+    <!-- footer -->
+    <table class="wrapper" style="width: 100%; padding: 0px; margin: 0px;" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+    <tbody>
+    <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+    <table style="width: 100%; max-width: 600px; margin: 0 auto; display: block; border-top: 2px solid #007ac9;" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+    <td style="padding: 15px; font-family: 'Helvetica Neue','Helvetica',Helvetica, Arial,sans-serif; font-size: 14px; line-height: 1.6;"><a style="text-decoration: none;" href="http://www.replicon.com/" target="_blank" rel="noopener">www.replicon.com</a> <span style="color: #888888;"> | The Time Intelligence<sup style="font-size: 8px;">TM</sup> Company</span></td>
+    </tr>
+    </tbody>
+    </table>
+    </td>
+    <td>&nbsp;</td>
+    </tr>
+    </tbody>
+    </table>

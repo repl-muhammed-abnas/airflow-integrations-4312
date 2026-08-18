@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Records">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ProjectDefinition"/>
+        <xs:element name="ProjectDescription"/>
+        <xs:element name="DXCProjectID"/>
+        <xs:element name="WBSElementName"/>
+        <xs:element name="InternalSAPObjectNumber"/>
+        <xs:element name="PrimaryWBSOwner1"/>
+        <xs:element name="PrimaryWBSOwnerName"/>
+        <xs:element name="CompanyCode"/>
+        <xs:element name="ProjectType"/>
+        <xs:element name="AccountAssignmentIndicator"/>
+        <xs:element name="Currency"/>
+        <xs:element name="ContractLineStartDate"/>
+        <xs:element name="ContractLineEndDate"/>
+        <xs:element name="WBSSTATUS"/>
+        <xs:element name="ContractType"/>
+        <xs:element name="WBSOwner2"/>
+        <xs:element name="WBSOwner2Name"/>
+        <xs:element name="Changedby"/>
+        <xs:element name="Changedon"/>
+        <xs:element name="IWO"/>
+        <xs:element name="ICWBSNumber"/>
+        <xs:element name="ServiceOrderNumber"/>
+        <xs:element name="ServiceOrderType"/>
+        <xs:element name="ServiceOrderText"/>
+        <xs:element name="CreatedOnDate"/>
+        <xs:element name="ChangedOnDate"/>
+        <xs:element name="ServiceOrderCompanyCode"/>
+        <xs:element name="Plant"/>
+        <xs:element name="ServiceOrderSystemStatus"/>
+        <xs:element name="BasicStartDate"/>
+        <xs:element name="BasicFinishDate"/>
+        <xs:element name="ServiceOrderInternalSAPobjectnumber"/>
+        <xs:element name="SOPersonResponsible"/>
+        <xs:element name="SOPersonResponsibleName"/>
+        <xs:element name="SOPartnerWBSOwner2"/>
+        <xs:element name="SOPartnerWBSOwner2Name"/>
+        <xs:element name="ResponsibleCostCenter"/>
+        <xs:element name="ServiceOffering"/>
+        <xs:element name="SalesforceOpportunityID"/>
+        <xs:element name="SalesforceOpportunityName"/>
+        <xs:element name="HigherLevelCustomerID"/>
+        <xs:element name="HigherLevelCustomerName"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

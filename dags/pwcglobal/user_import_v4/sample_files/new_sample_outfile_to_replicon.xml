@@ -1,0 +1,41 @@
+﻿<Root>
+    <Person>
+        <LoginName>abc004</LoginName>
+        <FirstName>Alice</FirstName>
+        <LastName>Bastien</LastName>
+        <EmailAddress>bastien@pwc.com</EmailAddress>
+        <EmployeeType>PwC Worker</EmployeeType>
+        <EmployeeID>d5e2-e3ea-4000-989e-000f589fatc24</EmployeeID>
+        <WorkdayID>300828834</WorkdayID>
+        <StartDate>20220101</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate>IT Timesheet</TimeSheetTemplate>
+        <TimeSheetApprovalPath>System Approval</TimeSheetApprovalPath>
+        <TimesheetPeriodType>Weekly without crossing starting Sunday</TimesheetPeriodType>
+        <HolidayCalendar>Public holidays for BE</HolidayCalendar>
+        <TimeZone>Europe/Warsaw</TimeZone>
+        <AddUserPermission>End User</AddUserPermission>
+        <ScheduleType>0.00|7.70|7.70|7.70|7.70|7.70|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode>RAS - RCC|BEL135</CompanyCode>
+        <LegalEntity>8e6d32fc-fcae-4293-b1cf-2d1f3c0c7194</LegalEntity>
+        <Country>Italy</Country>
+        <Supervisor>2cf28299-2218-4e28-bb04-60e590fc4988||8e6d32fc-fcae-4293-b1cf-2d1f3c0c7194</Supervisor>
+        <Grade>Administrative</Grade>
+        <HomeofficeLocation>BEL</HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Administrative</ResourceRole>
+        <ProfileStatus>Active</ProfileStatus>
+        <LoSCode>ASR</LoSCode>
+        <FTEPercent>100.00</FTEPercent>
+        <FTEPercentEffectiveDate>20230101</FTEPercentEffectiveDate>
+        <LineManagerpartyID>e6ea4d40-0b78-44d2-9cdb-e01ddd53fa95</LineManagerpartyID>
+        <LineManagerLegalEntitypartyID>8e6d32fc-fcae-4293-b1cf-2d1f3c0c7194</LineManagerLegalEntitypartyID>
+        <TimeEntryApprovalPath>IT_Overtime_Approval</TimeEntryApprovalPath>
+        <TOIL>N</TOIL>
+        <Payrule>IT Regular</Payrule>
+        <supervisoryOrgName>Supervisory Organization Name (ABC)</supervisoryOrgName>
+    </Person>
+</Root>

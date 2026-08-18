@@ -1,0 +1,30 @@
+import json
+from vp_xero_integration_v2.posted_journal_sync.config import *  # noqa: F401,F403
+
+CATALOG_ID = "vp_xero_integration_v2"
+RECIPE_ID = "posted_journal_sync"
+CUSTOMER_ID = "<customer_id>"
+
+instance = "<customer_id>"
+customer_slug = "<customer_id>"
+customer_id = "<customer_id>"
+customer_name = "<customer_name>"
+customer_email = None
+
+client_id = "airflow_connector_proxy"
+integration_id = "<uuid-from-ipa>"
+integration_type = "vp_xero_integration_v2__posted_journal_sync"
+company_key = "airflowsandboxuseast1"
+
+# --- Airflow connections (config_helper resolves these onto dag_run.conf) ---
+vantagepoint_conn_id = "vp_<customer_id>_<deployment_slug>_vantagepoint_connid"
+xero_conn_id = "vp_<customer_id>_<deployment_slug>_xero_connid"
+
+schedule_interval = default_schedule_interval
+disabled = True
+
+notification_email = globals().get('tenant_email', None)
+extras = {
+    'TRANS_TYPE': 'je',
+    'initial_sync_time': None,
+}

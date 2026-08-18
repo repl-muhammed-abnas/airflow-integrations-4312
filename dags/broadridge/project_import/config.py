@@ -1,0 +1,13 @@
+region = 'us-east-1'
+environment = 'pre-production'
+company_key = 'broadridgeafmig'
+execution_timeout_days = 14
+master_dag_interval = 30
+max_active_runs_child = 1
+max_active_runs_child1 = 5
+max_active_runs_master = 1
+report_name = "Project Data"
+task_report_name = "***Project and task code check"
+schedule_interval = "0 0 * * *"
+schedule_interval1 = "0 22 * * *"
+time_zone = "America/Denver"

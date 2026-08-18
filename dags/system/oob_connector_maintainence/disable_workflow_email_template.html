@@ -1,0 +1,32 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The following
+    out of box connectors were disabled since the tenants were disabled and this could potentially cause failure for the workflows.
+    <br> <br>
+<table style="border:1px solid black" border="1">
+    <thead>
+        <tr>
+            <th>Sl No</th>
+            <th>Region - Environment</th>
+            <th>Company Key</th>
+            <th>Connector Name</th>
+            <th>Workflow ID</th>
+            <th>Connector Type</th>
+            <th>Swimlane</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%- for item in result('gather_workflows_to_disable') %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ result('filter_connectors_by_companykey', 'region-environment') }}</td>
+                <td>{{ item.company_key }}</td>
+                <td>{{ item.connector_name }}</td>
+                <td>{{ item.workflow_id }}</td>
+                <td>{{ item.install_type }}</td>
+                <td>{{ item.swimlane }}</td>
+                <td>Disabled</td>
+            </tr>
+        {%- endfor %}
+    </tbody>
+</table>
+<p><br />Regards,<br />Deltek Marketplace Team</p>

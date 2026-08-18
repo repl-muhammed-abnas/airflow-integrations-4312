@@ -1,0 +1,23 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />
+Hello,<br /><br />
+{%- set has_errors = result("format_logs", key="error_record_count") > 0 -%}
+{%- set has_exceptions = result("format_logs", key="exception_record_count") > 0 -%}
+The user import{{ " is " }}
+{%- if has_errors -%}
+  completed with errors
+{%- elif has_exceptions -%}
+  completed with exceptions
+{%- else -%}
+  {%- if result("format_logs", key="skipped_record_count") > 0 and result("format_logs", key="success_record_count") == 0 -%}
+    completed with skipped records
+  {%- else -%}
+    completed successfully
+  {%- endif -%}
+{%- endif -%}
+{{ " for the file - " + (result('new_file_sensor') | file_name) + " on " + current_time("%m/%d/%YT%H:%M:%S") }}.
+The logs have been placed in sftp (log file path: {{ params.log_filepath }}{{ result('get_logfile_name') }}) for reference.
+</p>
+<p>
+For any queries, please contact our support team at https://support.deltek.com<br /><br />
+Regards,<br />Deltek Inc.
+</p>

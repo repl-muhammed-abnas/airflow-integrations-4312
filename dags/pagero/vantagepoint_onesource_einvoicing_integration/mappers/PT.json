@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Portugal PUF mapper - IVA compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Portuguese VAT", "CIUS-PT"]
+  },
+
+  "country": {
+    "code": "PT",
+    "name": "Portugal",
+    "currency": "EUR",
+    "language": "pt"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 23.0,
+      "reduced": [6.0, 13.0],
+      "zero": 0.0
+    },
+    "regional_rates": {
+      "azores": {
+        "standard": 18.0,
+        "reduced": [5.0, 10.0]
+      },
+      "madeira": {
+        "standard": 22.0,
+        "reduced": [5.0, 12.0]
+      }
+    },
+    "tax_categories": {
+      "S": "Taxa normal",
+      "AA": "Taxa reduzida",
+      "Z": "Taxa zero",
+      "E": "Isento",
+      "AE": "Autoliquidacao"
+    },
+    "exemption_code_defaults": {
+      "E": "VATEX-EU-132",
+      "Z": "VATEX-EU-Z",
+      "AE": "VATEX-EU-AE"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9946",
+    "buyer_endpoint_scheme": "9946",
+    "vat_scheme_id": "9946",
+    "company_scheme_id": "9946",
+    "vat_prefix": "PT",
+    "scheme_mappings": {
+      "vat_number": "9946",
+      "nif": "9946",
+      "gln": "0088"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": []
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^PT[0-9]{9}$",
+    "nif_pattern": "^[0-9]{9}$",
+    "postal_code_pattern": "^[0-9]{4}-[0-9]{3}$",
+    "iban_pattern": "^PT50[0-9]{21}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Pagamento a 30 dias",
+    "contact_department": "Contabilidade"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false
+  },
+
+  "translations": {
+    "invoice": "Fatura",
+    "credit_note": "Nota de Credito",
+    "total": "Total",
+    "vat": "IVA"
+  }
+}

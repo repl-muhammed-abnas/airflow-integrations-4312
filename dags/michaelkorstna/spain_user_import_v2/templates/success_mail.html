@@ -1,0 +1,7 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />
+    Hello, <br /> <br />
+    The {{ params.jobtype }} is {{ result('get_meta_data_for_logs').subject }} on {{ current_time('%m/%d/%YT%H:%M:%S') }}. Please find the below link to download the user import logs for reference. <br /> <br />
+    <a href="{{result('generate_download_link')}}">Download log file</a> </p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em>
+</p>
+{{ result('get_meta_data_for_logs').body }}

@@ -1,0 +1,30 @@
+{
+  "ai_lines": {
+    "5": "e991acad79cced05843f2b5a17a4824350b917d62d2746ab1edc35f5b5fb6dfc"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-14T08:22:23.375Z",
+  "file_state": {
+    "file_sha256": "d481886c83f6e8886f440081552443a55efedf995be8bfc24fb1cc3b6bfa3a57",
+    "total_file_lines": 102,
+    "total_lines": 76
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\dxctechnology\\workday_user_import_v1\\user_import_uki_es_v2\\instances\\sandbox2.py",
+  "stats": {
+    "ai_line_count": 1,
+    "ai_line_pct": 1.32,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-14T08:22:23.375Z",
+  "version": 1
+}

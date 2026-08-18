@@ -1,0 +1,10 @@
+region = 'eu-central-1'
+environment = "pre-production"
+time_zone = "Etc/UTC"
+master_max_active_run = 1
+max_active_run_child = 3
+max_active_run_sub_child = 3
+execution_timeout = 14
+can_process_payload_var = "wipro_user_import_can_process_payload"
+can_process_batch_task = "wipro_user_import_can_process_batch_task_nl"
+invalid_dates = ["9999-12-31", "0000-00-00"]

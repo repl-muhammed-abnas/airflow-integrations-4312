@@ -1,0 +1,31 @@
+{
+  "ai_lines": {
+    "300": "4d140e409b88c6facd86a32ca1233447bd38ad8be0ef95aace389468d066ec37",
+    "304": "f0dc4317b1f0c3c5b7ac006f368c0792f134d68af45790be44ee4dc0a4050367"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-07T08:52:10.715Z",
+  "file_state": {
+    "file_sha256": "279591caaa812e46b478dcdc86a1a67c01ed167c32fd7e68488a58ee4e185927",
+    "total_file_lines": 401,
+    "total_lines": 374
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "C:\\Workspaces\\airflow-integrations\\dags\\bearingpoint\\sap_h4s4_timeoff_booking_import_v1\\utils\\request_payload.py",
+  "stats": {
+    "ai_line_count": 2,
+    "ai_line_pct": 0.53,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-07T08:52:10.715Z",
+  "version": 1
+}

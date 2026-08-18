@@ -1,0 +1,20 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from galaxyusopcoinc.webhook_endpoints.time_import.config import *
+from galaxyusopcoinc.time_data_import_v1.instances.prod import TOTAL_BATCHES
+
+instance = "prod"
+environment = "production"
+
+company_key = "GalaxyUSOpcoInc"
+replicon_conn_id = "galaxyusopcoinc_replicon_timeimport"
+
+# DAG IDs
+master_dag_id = f"galaxyusopcoinc_time_import_webhook_master_{instance}"
+child_dag_id = f"galaxyusopcoinc_timedata_import_process_payload_child_{instance}_v1"
+
+# Token variables
+galaxyusopcoinc_time_import_bearer_token_var = f"galaxyusopcoinc_time_import_bearer_token_variable_{instance}"
+
+master_max_active_run = 20
+
+TOTAL_BATCHES = TOTAL_BATCHES

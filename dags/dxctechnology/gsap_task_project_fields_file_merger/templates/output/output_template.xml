@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_GSAPTask_Replicon xmlns:ns0="http://csc.com/IF9002/FromGSAPToReplicon/GSAPTask">
+  {%- for record in dataset %}
+  <Records>
+    <WBS_Name>{{ record.WBS_Name|e }}</WBS_Name>
+    <Task_Name>{{ record.Task_Name|e }}</Task_Name>
+    <Task_Code>{{ record.Task_Code|e }}</Task_Code>
+    <Task_Start_Date>{{ record.Task_Start_Date|e }}</Task_Start_Date>
+    <Task_End_Date>{{ record.Task_End_Date|e }}</Task_End_Date>
+  </Records>
+  {%- endfor %}
+</ns0:MT_GSAPTask_Replicon>

@@ -1,0 +1,11 @@
+region = 'us-east-1'
+environment = 'pre-production'
+max_active_runs_master = 1
+max_active_runs_child = 4
+execution_timeout_days = 14
+execution_timeout_hours = 12
+hourly_cost_report_for_project_costing = "Hourly Cost report for Project Costing"
+expense_report_for_project_costing = "Expense report for Project Costing"
+hourly_cost_report_generation_batch_uri = "tungsten_construction_llc_hourly_cost_report_generation_batch_uri"
+expense_report_generation_batch_uri = "tungsten_construction_llc_expense_report_generation_batch_uri"
+CURRENCY_PREFIX = "$"

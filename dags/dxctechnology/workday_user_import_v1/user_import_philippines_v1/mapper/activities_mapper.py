@@ -1,0 +1,77 @@
+# Activity configuration based on ActivityMapper.csv
+null = None
+
+ACTIVITY_MAPPER = [
+    {"code": "400-Project Attendance", "name": "Project Attendance", "restrictions": []},
+    {"code": "401-Consulting", "name": "Consulting", "restrictions": []},
+    {"code": "405-Rqmts Determination", "name": "Rqmts Determination", "restrictions": []},
+    {"code": "406-Rqmts Validation", "name": "Rqmts Validation", "restrictions": []},
+    {"code": "411-Design", "name": "Design", "restrictions": []},
+    {"code": "412-Implementation", "name": "Implementation", "restrictions": []},
+    {"code": "413-Documentation", "name": "Documentation", "restrictions": []},
+    {"code": "414-Testing", "name": "Testing", "restrictions": []},
+    {"code": "415-Programming", "name": "Programming", "restrictions": []},
+    {"code": "421-Quality Management", "name": "Quality Management", "restrictions": []},
+    {"code": "422-Knowledge Management", "name": "Knowledge Management", "restrictions": []},
+    {"code": "431-Project Management", "name": "Project Management", "restrictions": []},
+    {"code": "432-Project Administration", "name": "Project Administration", "restrictions": []},
+    {"code": "433-Project Meetings", "name": "Project Meetings", "restrictions": []},
+    {"code": "434-Project Reports", "name": "Project Reports", "restrictions": []},
+    {"code": "441-Service Management", "name": "Service Management", "restrictions": []},
+    {"code": "442-Network Management", "name": "Network Management", "restrictions": []},
+    {"code": "443-First Level Support", "name": "First Level Support", "restrictions": []},
+    {"code": "444-Product Support", "name": "Product Support", "restrictions": []},
+    {"code": "445-Second Level Support", "name": "Second Level Support", "restrictions": []},
+    {"code": "446-Third Level Support", "name": "Third Level Support", "restrictions": []},
+    {"code": "451-Proposal Prep&Es", "name": "Proposal Prep&Es", "restrictions": []},
+    {"code": "452-Bid Evaluation", "name": "Bid Evaluation", "restrictions": []},
+    {"code": "453-General Bus Dev", "name": "General Bus Dev", "restrictions": []},
+    {"code": "454-Fairs and Events", "name": "Fairs and Events", "restrictions": []},
+    {"code": "457-Release Management", "name": "Release Management", "restrictions": []},
+    {"code": "458-Crisis Management", "name": "Crisis Management", "restrictions": []},
+    {"code": "459-Reporting for Serv Mgmt", "name": "Reporting for Serv Mgmt", "restrictions": []},
+    {"code": "461-Incident Management", "name": "Incident Management", "restrictions": []},
+    {"code": "462-Operations Management", "name": "Operations Management", "restrictions": []},
+    {"code": "463-Problem Management", "name": "Problem Management", "restrictions": []},
+    {"code": "464-Information Management", "name": "Information Management", "restrictions": []},
+    {"code": "465-Change Management", "name": "Change Management", "restrictions": []},
+    {"code": "466-Service Level Management", "name": "Service Level Management", "restrictions": []},
+    {"code": "467-Availability Management", "name": "Availability Management", "restrictions": []},
+    {"code": "468-Capacity Management", "name": "Capacity Management", "restrictions": []},
+    {"code": "469-Configuration Management", "name": "Configuration Management", "restrictions": []},
+    {"code": "491-Train Prep & Dlv", "name": "Train Prep & Dlv", "restrictions": []},
+    {"code": "492-Project Training Received", "name": "Project Training Received", "restrictions": []},
+    {"code": "493-Project Travel", "name": "Project Travel", "restrictions": []},
+    {
+        "code": "499-Standby",
+        "name": "Standby",
+        "restrictions": [
+            {
+                "field": "job_level",
+                "operator": "in",
+                "values": ['8', '9', '10', '11', '12', '13', '14']
+            },
+            {
+                "field": "work_shift",
+                "operator": "not_in",
+                "values": ["ES - No Shift Premium (Philippines)".lower()]
+            }
+        ]
+    },
+    {"code": "700-General Attendance", "name": "General Attendance", "restrictions": []},
+    {"code": "705-Meetings", "name": "Meetings", "restrictions": []},
+    {"code": "710-Travel", "name": "Travel", "restrictions": []},
+    {"code": "715-BPO HC Admin Time", "name": "BPO HC Admin Time", "restrictions": []},
+    {"code": "720-Administration", "name": "Administration", "restrictions": []},
+    {"code": "725-BPO HC Corporate Training", "name": "BPO HC Corporate Training", "restrictions": []},
+    {"code": "730-Training Received", "name": "Training Received", "restrictions": []},
+    {"code": "735-Training Delivered", "name": "Training Delivered", "restrictions": []},
+    {"code": "740-Management", "name": "Management", "restrictions": []},
+    {"code": "750-People Management", "name": "People Management", "restrictions": []},
+    {"code": "760-Knowledge Management", "name": "Knowledge Management", "restrictions": []},
+    {"code": "770-Counseling/Mentoring", "name": "Counseling/Mentoring", "restrictions": []},
+    {"code": "775-Unassigned", "name": "Unassigned", "restrictions": []},
+    {"code": "776-Voluntary Service", "name": "Voluntary Service", "restrictions": []},
+    {"code": "777-Union Activities", "name": "Union Activities", "restrictions": []},
+    {"code": "796-Military Service Pt/Shift", "name": "Military Service Pt/Shift", "restrictions": []}
+]

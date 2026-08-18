@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_GSAPTask_Replicon xmlns:ns0="http://csc.com/IF9002/FromGSAPToReplicon/GSAPTask">
+    <Records>
+        <WBS_Name>31006291</WBS_Name>
+        <Task_Name>TAKSTEST01</Task_Name>
+        <Task_Code>Task Test 01 for F142D</Task_Code>
+        <Task_Start_Date>01.06.2024</Task_Start_Date>
+        <Task_End_Date>12.07.2024</Task_End_Date>
+    </Records>
+</ns0:MT_GSAPTask_Replicon>

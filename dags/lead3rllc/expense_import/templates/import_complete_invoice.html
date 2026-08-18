@@ -1,0 +1,20 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Expense Invoice
+  Import is {{ "" }}
+  {%- set has_errors = result("format_logs", key="error_record_count") > 0 -%}
+  {%- set has_exceptions = result("format_logs", key="exception_record_count") > 0 -%}
+  {%- if has_errors -%}
+  completed with errors
+  {%- elif has_exceptions -%}
+  completed with exceptions
+  {%- else -%}
+  completed successfully
+  {%- endif -%}
+  &nbsp; based on the file - '{{dag_run.conf.input_filename}}'. Please find below, the link to the logs for reference.
+  <br />
+  <br /><a href="{{result('generate_downloadlink_logs')}}">Download log file</a><br />
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days</span></em></p>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+  For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

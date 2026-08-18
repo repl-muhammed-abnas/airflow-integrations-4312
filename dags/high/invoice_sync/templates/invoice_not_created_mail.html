@@ -1,0 +1,9 @@
+Replicon Invoice not moved to Xero. Invoice: {{ dag_run.conf.invoiceNumberText }} <br/>
+<br/>
+Reason: Client not in Xero.<br/>
+Client Name: {{ dag_run.conf.client.name }}<br/>
+Job ID: {{dag_run_ecid()}}<br>
+<br>
+For any queries, please contact our support team at https://support.deltek.com<br>
+<p>Regards,<br>
+Deltek Inc</p>

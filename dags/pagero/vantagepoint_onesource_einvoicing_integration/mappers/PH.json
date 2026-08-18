@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Philippines PUF mapper - VAT compliant with BIR e-Invoice",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["Peppol BIS 3.0", "Philippine VAT", "BIR e-Invoice"]
+  },
+
+  "country": {
+    "code": "PH",
+    "name": "Philippines",
+    "currency": "PHP",
+    "language": "en"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 12.0,
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "VATable",
+      "Z": "Zero-rated",
+      "E": "VAT Exempt"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "0197",
+    "buyer_endpoint_scheme": "0197",
+    "vat_scheme_id": "0197",
+    "company_scheme_id": "0197",
+    "scheme_mappings": {
+      "tin": "0197",
+      "gln": "0088"
+    }
+  },
+
+  "invoice_type_names": {
+    "380": "01",
+    "381": "01",
+    "383": "01"
+  },
+
+  "extensions": {
+    "required": ["PH:PTU"],
+    "optional": ["PH:BIR"],
+    "bir": {
+      "enabled": true,
+      "e_invoice_compliance": true,
+      "registration_data": {
+        "tin": {
+          "id_type": "PH:TIN",
+          "description": "Tax Identification Number",
+          "format": "XXX-XXX-XXX-XXX"
+        },
+        "branch_code": {
+          "id_type": "PH:BranchCode",
+          "description": "BIR Branch Code"
+        }
+      }
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{3}$",
+    "tin_pattern": "^[0-9]{3}-[0-9]{3}-[0-9]{3}(-[0-9]{3,5})?$",
+    "postal_code_pattern": "^[0-9]{4}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_tin"]
+  },
+
+  "defaults": {
+    "payment_terms": "Net 30 days",
+    "contact_department": "Accounting Department"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "bir_compliance": true
+  },
+
+  "translations": {
+    "invoice": "Invoice",
+    "credit_note": "Credit Memo",
+    "total": "Total",
+    "vat": "VAT"
+  }
+}

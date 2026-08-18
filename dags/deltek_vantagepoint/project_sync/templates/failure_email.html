@@ -1,0 +1,56 @@
+<p>
+    <strong>This is an automated mail, please don't reply.</strong>
+    <br />
+    <br />
+    <br />
+    Hello,
+    <br />
+    <br />
+    The Deltek Vantagepoint Project sync is completed with failures/exceptions.
+    <br />
+    <br />
+    <!-- ONLY FOR TESTING -->
+    <!-- <table cellpadding="5" cellspacing="0" style="border:1px solid Silver; font-size:small" border="1">
+        <thead>
+            <tr align="center">
+                <th bgcolor="LightBlue">Sl No</th>
+                <th bgcolor="LightBlue">Project Code</th>
+                <th bgcolor="LightBlue">Action</th>
+                <th bgcolor="LightBlue">Status</th>
+                <th bgcolor="LightBlue">Message</th>
+                <th bgcolor="LightBlue">ECID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%- for item in result('search_exceptions') | load_all_records %}
+            <tr>
+                <td bgcolor="LightBlue">{{ loop.index }}</td>
+                <td>{{ item['properties']['code'] }}</td>
+                <td>{{ item['properties']['action'] }}</td>
+                <td>{{ item['properties']['status'] }}</td>
+                <td>{{ item['properties']['reason'] }}</td>
+                <td>{{ item['ecid'] }}</td>
+            </tr>
+            {%- endfor %}
+        </tbody>
+    </table> -->
+    <br />
+    <br />
+    Please click on the below link to download the logs and review in csv format.
+    <br />
+    <a href="{{ result('generate_download_link') }}">Download Logs</a>
+</p>
+<p>
+    <em>
+        <span style="font-size: 9pt">
+            The download link is valid for 7 days.
+        </span>
+    </em>
+</p>
+<br />
+<br />
+<p>
+    For any queries, please contact our support team at https://support.deltek.com <br /><br />
+    Regards, <br />
+    Deltek Inc.
+</p>

@@ -1,0 +1,48 @@
+{
+  "ai_lines": {
+    "10": "9c89bfe0dfa55608e757e884645e2c38ec81b22bbda37a8aec2d602ec77cb505",
+    "11": "c7dc9e83fd3fc68424a8aab46e4e1b72811c947fb2f294f0f47878de140c59ae",
+    "18": "1de2ac097502b67571f75899c06f3650c3169f72be5910b03aa0452ebaa31465",
+    "19": "4249d45f5f3e55319fcd4434fc3342a96862b36b232c98c671bb98bc6489fca4",
+    "20": "562d04bfb16cf39fcd217a13f4ec82651de29c582026803eb2c377624e06036e",
+    "21": "ba5ec51d07a4ac0e951608704431d59a02b21a4e951acc10505a8dc407c501ee",
+    "29": "d96a876b37ae92004d687d505918494045b2581e132ed8048bab7958d451d906",
+    "37": "324be7a4d54da126e447dc5c96bfc7914ca46b7682f1ae12b52b322f47906ed7",
+    "43": "f8883ebd59e74f8b51536aa50264eaf457e6b448f9e5303c0b5a07fddf26f766",
+    "62": "3425d869cf79885738819549a050ef6432a3ba60b18863b9ac15eb3c96139255",
+    "68": "b5622093c300e380a9440ba45326c7e6a34fe73865188762fa24f3c32eda0bdb",
+    "69": "9465eec4d1c6070fdc7f53718126d4ef6bf9d6e472f08210e9fa5412c2697d79",
+    "70": "55bfadd6681f474b82c77bc097387962fab54109ff2f808a5af7a4a02a5d08fb"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 7,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-06-08T06:41:15.019Z",
+  "file_state": {
+    "file_sha256": "11ac0992dea855c9ed2a7be39ee9046b4a57a500ed379a510f67e7bcfd6c9118",
+    "total_file_lines": 111,
+    "total_lines": 94
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "050ede823c449cf4afca5350608f2f418ab77748c5b9f1b6312fbc44b26298e8",
+      "last_known_line": 43,
+      "removed_at": "2026-06-09T08:41:32.153Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\associatedengineeringgroup\\deltek_pim_d365_integration\\d365_and_pim_token_refresh.py",
+  "stats": {
+    "ai_line_count": 13,
+    "ai_line_pct": 13.83,
+    "ai_lines_removed_or_modified": 1
+  },
+  "updated_at": "2026-06-09T08:42:13.307Z",
+  "version": 1
+}

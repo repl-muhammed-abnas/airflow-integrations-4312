@@ -1,0 +1,47 @@
+{
+  "ai_lines": {
+    "3": "8048dc7884b11cde6a989e9436e6c81f85e396bd7e8e63094d9c249fde9f4313",
+    "4": "c98c075666a39d015871a7ee718e681416a4e990a0bc60183a3f071064f40d40",
+    "40": "70b1a1801c607f7dd71b39380c1c8a26158d3a11b4fc5d9e9ad31a563e372cb8",
+    "6": "a1fbbeac745bc2711b14de508d772816e3b37047c1cdaa21d86f772839e90bd2",
+    "7": "63e18afa648d5b2c0f1ff82d1954cf93c5c8429b67df3b3baaa48778bb101516",
+    "8": "ca25f08e83202f5934e35685c1b9b8641c301b13754a845b8d5e94f1a7487d3d",
+    "9": "90bda8d70afc1646704d3f333e84b3f0fb8903157106e20578302be3f7e33c73"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 6,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-15T07:23:42.074Z",
+  "file_state": {
+    "file_sha256": "13d9c91f027c433bdcfc770ac1e253f911a31bfe3ff6382c64290f43783a0d06",
+    "total_file_lines": 48,
+    "total_lines": 39
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "1a99db35d5993f6d91acb3aa986564a28ad06947ffab6d1a137ef0058b9b0467",
+      "last_known_line": 8,
+      "removed_at": "2026-05-28T08:34:57.921Z"
+    },
+    {
+      "hash": "69a45c128387d3d153c43d1a916d90a0e9d8b3f4a2d57dd55dd56589bb039bc7",
+      "last_known_line": 9,
+      "removed_at": "2026-05-28T08:34:57.921Z"
+    }
+  ],
+  "source_file": "C:\\workspace\\airflow-integrations\\dags\\mammoet\\user_import_v4\\instances\\trial.py",
+  "stats": {
+    "ai_line_count": 7,
+    "ai_line_pct": 17.95,
+    "ai_lines_removed_or_modified": 2
+  },
+  "updated_at": "2026-05-28T08:34:57.921Z",
+  "version": 1
+}

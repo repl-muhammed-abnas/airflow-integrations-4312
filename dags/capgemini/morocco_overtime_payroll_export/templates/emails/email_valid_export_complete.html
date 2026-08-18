@@ -1,0 +1,19 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon overtime payroll data extract to SOPRA for Morocco for {{ params.costcenters_placeholder }} cost centers is completed successfully
+    {{ " at " + current_time_in_specified_tz(params.time_zone) }}. Please find the extract details for reference.</p>
+{%- if params.costcenters_placeholder == "MA01" -%}
+    {%- set filename = result("logging_details").ma01_export_filename -%}
+    {%- set record_count = result("query_ma01_costcenter_payroll_data", "length") -%}
+{%- else -%}
+    {%- set filename = result("logging_details").ma02_ma03_export_filename -%}
+    {%- set record_count = result("query_ma02_ma03_costcenter_payroll_data", "length") -%}
+{%- endif -%}
+<ul>
+    <li>Process Started: {{ result("logging_details").process_start_time }}</li>
+    <li>Date Range: {{ result("logging_details").export_start_date }} - {{ result("logging_details").export_end_date }}</li>
+    <li>Cost Centers: {{ params.costcenters }}</li>
+    <li>File Name: {{ filename }}.xml.pgp</li>
+    <li>File Path: {{ params.upload_file_path }}</li>
+    <li>Location: {{ params.location }}</li>
+    <li>Number of Records: {{ record_count }}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

@@ -1,0 +1,20 @@
+region = 'us-east-2'
+environment = 'pre-production'
+company_key = 'dxcsandboxinternal'
+replicon_conn_id = 'dxcsandboxinternal-RepliconIntC1'
+sftp_conn_id = "repliconsftp"
+input_filepath = "/Production/Inbound/Att_1_2/Input"
+archive_filepath = "/Production/Inbound/Att_1_2/Archive"
+log_filepath = "/Production/Inbound/Att_1_2/logs"
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_internal_testing_email }}'
+
+file_sensor_timeout = 10
+child_dag_sync_attribute_1_2_max_active_runs = 10
+execution_timeout_days = 14
+child_dag_sync_attribute_system_level = 1
+child_dag_sync_each_attribute_project_level_max_active_runs = 10
+child_wbs_dag_sync_attribute_1_2_max_active_runs = 10
+master_dag_interval = 30
+disabled = True

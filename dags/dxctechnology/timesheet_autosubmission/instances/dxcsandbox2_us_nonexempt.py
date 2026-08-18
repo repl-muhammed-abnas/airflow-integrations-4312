@@ -1,0 +1,29 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from dxctechnology.timesheet_autosubmission.config import *
+
+instance = 'DXCSandbox2'
+region = 'us-east-2'
+environment = 'pre-production'
+company_key = 'DXCSandbox2'
+replicon_conn_id = 'dxcsandbox2-replicon-RepliconIntC1'
+sumo_conn_id = 'sumologic-exportlogger'
+sftp_conn_id = 'sftp_dxcsandbox2_timesheetautosubmission'
+# pylint: disable=line-too-long
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+sftp_upload_path = '/timesheetautosubmission/logs/'
+extract_report_name = 'Timesheets for Auto Submission - COMPASS'
+report_filter_timesheetperiod = 'TimesheetPeriodFilter'
+report_filter_approvalstatus = 'ApprovalStatusFilter'
+report_filter_currentdivision = 'CurrentDivisionFilter'
+report_filter_employeetype = 'CurrentEmployeeTypeGroupFilter'
+dag_max_active_runs = 10
+dag_max_active_tasks = 128
+execution_timeout_days = 14
+batch_size = 50
+country = 'US'
+entity = 'COMPASS'
+identifier_filename = 'ES'
+timesheet_status_value = '0'  # Not Approved status
+employee_type = 'Non Exempt - Hourly'
+schedule = '30 21 * * SAT'
+identifier_dagname = '_NonExempt'

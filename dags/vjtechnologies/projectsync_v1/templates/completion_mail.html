@@ -1,0 +1,6 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />
+    Hello, <br /> <br />
+    The  project import job is {{ result('get_statuses').subjectoutput }} on {{ dag_run.conf.jobstarttime }}. Please find the below link to download the report extract. 
+    <br /> <br /><a href="{{result('generate_download_link')}}">Download Logs</a><br />
+    <p><em><span style="font-size: 10pt;">The download link is valid for 7 days.</span></em></p>
+    <p>{{ result('get_statuses').bodyoutput}} </p> 

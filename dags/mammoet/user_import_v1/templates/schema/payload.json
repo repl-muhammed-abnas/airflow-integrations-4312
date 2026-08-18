@@ -1,0 +1,56 @@
+// 
+{
+    "payload_identifier": "unique_id_per_payload",
+    "users": [ //Max Limit 500
+        {
+            "login_name": "login_name_value",
+            "employee_status": "employee_status_value",
+            "employee_id": "employee_id_value",
+            "start_date": "start_date_value",
+            "last_name": "last_name_value",
+            "first_name": "first_name_value",
+            "end_date": "end_date_value",
+            "email_id": "email_id_value",
+            "group_effective_start_date": "group_effective_start_date_value",
+            "time_zone": "time_zone_value",
+            "timeoff_profile_code": "timeoff_profile_code_value",
+            "pay_grade_name": "pay_grade_name_value",
+            "employee_type_name": "employee_type_name_value",
+            "location": "location_value",
+            "location_code": "location_code_value",
+            "legal_entity": "legal_entity_value",
+            "legal_entity_code": "legal_entity_code_value",
+            "cost_center": "cost_center_value",
+            "cost_center_code": "cost_center_code_value",
+            "manager_id": "manager_id_value",
+            "office_schedule_name": "office_schedule_name_value",
+            "payrule_name": "payrule_name_value",
+            "voluntary_ot": "voluntary_ot_value"
+        },
+        {
+            "login_name": "login_name_value2",
+            "employee_status": "employee_status_value2",
+            "employee_id": "employee_id_value2",
+            "start_date": "start_date_value2",
+            "last_name": "last_name_value2",
+            "first_name": "first_name_value2",
+            "end_date": "end_date_value2",
+            "email_id": "email_id_value2",
+            "group_effective_start_date": "group_effective_start_date_value2",
+            "time_zone": "time_zone_value2",
+            "timeoff_profile_code": "timeoff_profile_code_value2",
+            "pay_grade_name": "pay_grade_name_value2",
+            "employee_type_name": "employee_type_name_value2",
+            "location": "location_value2",
+            "location_code": "location_code_value2",
+            "legal_entity": "legal_entity_value2",
+            "legal_entity_code": "legal_entity_code_value2",
+            "cost_center": "cost_center_value2",
+            "cost_center_code": "cost_center_code_value2",
+            "manager_id": "manager_id_value2",
+            "office_schedule_name": "office_schedule_name_value2",
+            "payrule_name": "payrule_name_value2",
+            "voluntary_ot": "voluntary_ot_value2"
+        }
+    ]
+} 

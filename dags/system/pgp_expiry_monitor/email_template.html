@@ -1,0 +1,100 @@
+<p>Hello Team,<br /><br />
+
+The following PGP encryption keys require attention. Please review and take necessary action to avoid integration failures.
+</p>
+
+<strong>Region:</strong> {{ result('check_pgp_key_expiry').region }} |
+<strong>Environment:</strong> {{ result('check_pgp_key_expiry').environment }}<br /><br />
+
+{%- if result('check_pgp_key_expiry').expired %}
+<h3 style="color: #c62828;">Expired Keys ({{ result('check_pgp_key_expiry').expired | length }})</h3>
+<p style="color: #555;">These keys have expired and integrations using them will fail with PGP encryption errors.</p>
+<table style="border: 1px solid #ddd; border-collapse: collapse; width: 100%;" border="1">
+    <thead>
+        <tr style="background-color: #fce4ec;">
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Sl No</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Connection ID</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Key Name</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Creation Date</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Expiry Date</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Validity</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%- for item in result('check_pgp_key_expiry').expired %}
+        <tr style="background-color: #fff;">
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ loop.index }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ item.conn_id }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ item.uid }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ item.created_at }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ item.expires_at }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ item.validity }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd; color: #c62828;"><strong>Expired {{ item.days_left | abs }} days ago</strong></td>
+        </tr>
+        {%- endfor %}
+    </tbody>
+</table>
+<br />
+{%- endif %}
+
+{%- if result('check_pgp_key_expiry').expiring_soon %}
+<h3 style="color: #ef6c00;">Expiring Soon ({{ result('check_pgp_key_expiry').expiring_soon | length }})</h3>
+<p style="color: #555;">These keys will expire within {{ result('check_pgp_key_expiry').warning_days_min }}-{{ result('check_pgp_key_expiry').warning_days_max }} days. Integrations will fail after the expiry date.</p>
+<table style="border: 1px solid #ddd; border-collapse: collapse; width: 100%;" border="1">
+    <thead>
+        <tr style="background-color: #fff3e0;">
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Sl No</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Connection ID</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Key Name</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Creation Date</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Expiry Date</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Validity</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%- for item in result('check_pgp_key_expiry').expiring_soon %}
+        <tr style="background-color: #fff;">
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ loop.index }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ item.conn_id }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ item.uid }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ item.created_at }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ item.expires_at }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ item.validity }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd; color: #ef6c00;"><strong>Expiring in {{ item.days_left }} days</strong></td>
+        </tr>
+        {%- endfor %}
+    </tbody>
+</table>
+<br />
+{%- endif %}
+
+<hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;" />
+
+<div style="background-color: #f5f5f5; padding: 15px; border-radius: 4px;">
+    <strong>Required Actions:</strong>
+    <ol style="margin: 10px 0; padding-left: 20px;">
+        <li style="margin-bottom: 8px;">Review the PGP keys listed above and identify the affected integrations for each customer.</li>
+        <li style="margin-bottom: 8px;">Raise a <strong>separate support case</strong> for each affected customer at <a href="mailto:repliconsupport@deltek.com">repliconsupport@deltek.com</a> with the following details:
+            <ul style="margin-top: 5px;">
+                <li>PGP key file name, Connection ID, and Expiry Date</li>
+                <li>List of impacted integrations</li>
+                <li>Impact: File encryption/decryption operations will fail</li>
+                <li>Expected behavior once the key expires or has expired</li>
+                <li>Request the customer to submit a Change Request (CR) with the renewed PGP key</li>
+            </ul>
+        </li>
+        <li style="margin-bottom: 8px;">Support team to contact the customer, inform them about the PGP key expiry, request a renewed PGP public key, and guide them to submit a Change Request (CR) with the updated key.</li>
+        <li style="margin-bottom: 8px;">Upon CR approval, update the Airflow connection with the new PGP key and verify that the integration is functioning correctly.</li>
+    </ol>
+</div>
+
+<p style="color: #555; margin-top: 15px;"><strong>Note:</strong> File encryption and decryption operations will fail for integrations using expired PGP keys until they are renewed.</p>
+
+<p>
+<br /><br />
+<strong>This is an automated mail from Deltek Integration. Please do not reply to this email.</strong><br /><br />
+Regards,<br />
+Deltek Inc
+</p>

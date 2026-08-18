@@ -1,0 +1,16 @@
+cost_centers = [
+    "SBU NCE | SBU-00001",
+    "SBU FS | SBU-00002",
+    "SBU AMERICAS | SBU-00003",
+    "ABL NCE | ABL-00001",
+    "GBL BSV | GBL-00001",
+    "GBL CIS | GBL-00002",
+    "GBL I_D | GBL-00003",
+    "GBL INVENT | GBL-00004",
+    "GBL ERD | GBL-00005",
+    "COMCOR_Invest | GLO-00001",
+    "OTHER_UNITS | GLO-00002",
+    "OTHER DEL UNIT | GLO-00003",
+    "GB01 - Capgemini UK Plc.(FS) | GB01",
+    "INFORMATION RISK MANAGEMENT LTD | GB06"
+]

@@ -1,0 +1,9 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />
+    Hello, <br /> <br />
+    The user import is based on the file - {{ result('new_file_sensor') | file_name }}.</p>
+<p>The detailed logs have been placed in sftp for reference.</p>
+<ul>
+<li>Log file path: {{ params.logfilepath }} </li>
+<li>Log file name: Logs_{{dag_run_ecid()}}_{{result('new_file_sensor') | file_name}} </li>
+</ul>{{ result('get_error_exception_checks').body }}
+ 

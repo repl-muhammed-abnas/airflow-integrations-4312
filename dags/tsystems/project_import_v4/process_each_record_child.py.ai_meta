@@ -1,0 +1,103 @@
+{
+  "ai_lines": {
+    "130": "efa107c18fe0a51708eeafe455f1955385d5a4123bc2814bd0057967e9783af9",
+    "138": "9da553e19c037dd8fb790bb4be71d4c033b613fef75e8408b193ba69625700b8",
+    "199": "4553522f9f7d7ce8d0cd39897445e382ea9d32124941a5efe80632eb47ff1b60"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-24T17:04:41.308Z",
+  "file_state": {
+    "file_sha256": "4039536de1f898a4ad7d05be53abdbe602ffe502fb8f291795eff43f8b65378e",
+    "total_file_lines": 344,
+    "total_lines": 302
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "903165c89d8939e51d42387b1e82e282808153eb83d6b4921ed742a720bfba5a",
+      "last_known_line": 124,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "2df05922f2dda61104f5d98dd219fd978356c9bdf26addbd96d5db079d5d411c",
+      "last_known_line": 125,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "35a025f4183d730731d561a5111e4e2645878c7e2226529db56e74b8d7c97416",
+      "last_known_line": 126,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "740c05f6af0cf92bf64a9c9103cb76c0ba0ae4cd8203c7aa877e6c4eb5e8a8de",
+      "last_known_line": 127,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "5c12aa2fae4aebd3603b78bb4f45c04b91cafefc49f98d6363efdf4b05bcc695",
+      "last_known_line": 128,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "c37987e095ae0479db0c271fbe5df18c57f5b330dfbaebe7f56834a393fa175d",
+      "last_known_line": 129,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "72ce5660c521cb45d665319e8fb18f6cc52a1a42df7b3e48a60c1e1e0e865ead",
+      "last_known_line": 142,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "69c38d4df51159126f82ec822667e87fd228fd5105617fae9493b35f32908a40",
+      "last_known_line": 150,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "0528d7d20194aa5d2059f5d379a86e8e1d7fca904ba4e877819c923885a6b625",
+      "last_known_line": 151,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "ca902657bb8d861868b4ead87f3764de108d428a3c0aad8bd1137da31afd6142",
+      "last_known_line": 152,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "d233005b342815de4f2e8152949158291fda0d42a374d250eefc4137be2738c2",
+      "last_known_line": 153,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "dbfbdef050753ee4d53c0331fd2757c7f1f885be77a1e9adb78657be82a0ba75",
+      "last_known_line": 155,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "fb36021391e78434f9931b52f9e5de9af91ac2ce51143b981af84a22242da3ba",
+      "last_known_line": 156,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    },
+    {
+      "hash": "008dbd18703627980ee2a243bd41de49c7d019ada372e90641153ceadb28d536",
+      "last_known_line": 157,
+      "removed_at": "2026-04-24T18:00:42.810Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\tsystems\\project_import_v4\\process_each_record_child.py",
+  "stats": {
+    "ai_line_count": 3,
+    "ai_line_pct": 0.99,
+    "ai_lines_removed_or_modified": 14
+  },
+  "updated_at": "2026-04-24T18:00:42.810Z",
+  "version": 1
+}

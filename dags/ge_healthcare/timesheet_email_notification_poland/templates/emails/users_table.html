@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <table style="border: 1px solid black;" border="1">
+            <tr>
+                <th>Username</th>
+                <th>Timesheet period</th>
+            </tr>
+            {%- for record in dataset %}
+            <tr>
+                <td>{{ record.user }}</td>
+                <td>{{ record.timesheetperiod }}</td>
+            </tr>
+            {%- endfor %}
+            <tr>
+
+            </tr>
+        </table>
+    </body>
+</html>

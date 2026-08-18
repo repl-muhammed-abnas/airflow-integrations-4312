@@ -1,0 +1,22 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Annual leave
+    time off balance transfer for Switzerland is{{ " " }}
+    {%- set has_errors = result("check_for_error_log", key="length") > 0 -%}
+    {%- if has_errors -%}
+    completed with errors
+    {%- else -%}
+    {%- if result("check_for_exception_log", key="length") > 0 -%}
+    completed with exceptions
+    {%- else -%}
+    completed successfully
+    {%- endif -%}
+    {%- endif -%}
+    {{ " on " + result("dag_run_log_time_info").current_date_time }}. Please find the link
+    below to the logs for reference.: <br />
+    <br />Log file link : <a href="{{result('generate_download_link')}}">Download log file</a><br />
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days</span></em></p>
+<p>
+    {%- if has_errors -%}
+    {%- endif -%}
+    For any queries, please contact our support team at <a
+        href=https://support.deltek.com>https://support.deltek.com</a><br /><br />
+    Regards,<br />Integration Alerts<br />Deltek Inc.</p>

@@ -1,0 +1,104 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Croatia PUF mapper - PDV compliant with Fiskalizacija support",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Croatian VAT", "Fiskalizacija"]
+  },
+
+  "country": {
+    "code": "HR",
+    "name": "Croatia",
+    "currency": "EUR",
+    "language": "hr"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 25.0,
+      "reduced": [5.0, 13.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Standardna stopa",
+      "AA": "Snizena stopa",
+      "Z": "Nulta stopa",
+      "E": "Oslobodeno",
+      "AE": "Prijenos porezne obveze"
+    },
+    "exemption_code_defaults": {
+      "E": "VATEX-EU-132",
+      "Z": "VATEX-EU-Z",
+      "AE": "VATEX-EU-AE"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9934",
+    "buyer_endpoint_scheme": "9934",
+    "vat_scheme_id": "9934",
+    "company_scheme_id": "9934",
+    "vat_prefix": "HR",
+    "scheme_mappings": {
+      "vat_number": "9934",
+      "oib": "9934",
+      "gln": "0088"
+    }
+  },
+
+  "invoice_type_names": {
+    "380": "P1",
+    "381": "P1",
+    "383": "P1"
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": ["HR:Fiskalizacija"],
+    "fiskalizacija": {
+      "enabled": true,
+      "jir_required": true,
+      "zki_required": true,
+      "registration_data": {
+        "jir": {
+          "id_type": "HR:JIR",
+          "description": "Jedinstveni identifikator racuna"
+        },
+        "zki": {
+          "id_type": "HR:ZKI",
+          "description": "Zastitni kod izdavatelja"
+        }
+      }
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^HR[0-9]{11}$",
+    "oib_pattern": "^[0-9]{11}$",
+    "postal_code_pattern": "^[0-9]{5}$",
+    "iban_pattern": "^HR[0-9]{19}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Placanje u roku od 30 dana",
+    "contact_department": "Racunovodstvo"
+  },
+
+  "special_rules": {
+    "requires_issue_time": true,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "fiskalizacija_mandatory": true
+  },
+
+  "translations": {
+    "invoice": "Racun",
+    "credit_note": "Odobrenje",
+    "total": "Ukupno",
+    "vat": "PDV"
+  }
+}

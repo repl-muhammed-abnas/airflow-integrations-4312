@@ -1,0 +1,20 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Replicon
+  resource and billing assignment sync for C1 IWO Lean Staffing job is{{ " " }}
+  {%- set has_errors = result("get_errored_logs", key="length") > 0 -%}
+  {%- if has_errors -%}
+  completed with errors
+  {%- else -%}
+  {%- if result("get_exception_logs", key="length") > 0 -%}
+  completed with exceptions
+  {%- else -%}
+  completed successfully
+  {%- endif -%}
+  {%- endif -%}
+  {{ " on " + current_time() }}. Please find the log file details below for reference: <br /> <br />
+  File path: {{ params.log_filepath }}<br />
+  File name: log_{{ ecid() | replace(":", "-") }}_{{ result("new_file_sensor") | file_base }}.csv</p>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+  For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

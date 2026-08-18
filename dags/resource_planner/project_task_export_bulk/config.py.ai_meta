@@ -1,0 +1,35 @@
+{
+  "ai_lines": {
+    "22": "49c3e94071bb80c503d0b677bea6624e90b37e61b2e00a3ae4c45222fa388827",
+    "23": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "24": "3c7511a27b8048892996952c00d1294f334ced4391597b676d58c610cfb2c042",
+    "25": "c72e8b97aa7e2963d29c1427b524b49cb0ff02343d71be2ab9d51b63bcc81408",
+    "26": "3749cd0897e8c02bff915c876589cb6fecb2e9f40021452cf6b77819227bd20d",
+    "27": "8d24595584a0fe6270f5e9b085e5a80543806e57e81189e350ddfce056b66e54"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-20T10:56:37.734Z",
+  "file_state": {
+    "file_sha256": "3835e896110211c878f48868e968b3293088739c1ef93211cf5a69317d465a69",
+    "total_file_lines": 27,
+    "total_lines": 22
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\resource_planner\\project_task_export_bulk\\config.py",
+  "stats": {
+    "ai_line_count": 6,
+    "ai_line_pct": 27.27,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-20T10:56:37.734Z",
+  "version": 1
+}

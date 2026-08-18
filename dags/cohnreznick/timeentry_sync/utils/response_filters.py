@@ -1,0 +1,65 @@
+from uuid import uuid4
+import rail
+
+null = None
+
+
+def get_value(item, index, pluck_key):
+    return item[index].get(pluck_key)
+
+
+def get_timesheet_details(response):
+    if not response['rows']:
+        return []
+    return list(map(lambda ts: {
+        "timesheet_status": get_value(ts['cells'], 0, 'textValue'),
+        "timesheet_status_uri": get_value(ts['cells'], 0, 'uri'),
+        "timesheet_uri": get_value(ts['cells'], 1, 'uri'),
+        "timesheet_date_range": get_value(ts['cells'], 2, 'dateRangeValue'),
+        "user_uri": get_value(ts['cells'], 3, 'uri'),
+        "uuid": str(uuid4())
+    }, response['rows']))
+
+
+def get_rounded_duration(durationvalue):
+    if not durationvalue:
+        return 0
+    return round((float(durationvalue['hours']) + float(
+        durationvalue['minutes'] / 60) + float(durationvalue['seconds'] / 3600)), 2)
+
+
+def get_timeentries_list(response):
+    rows = response['rows']
+    return list(map(lambda row: {
+        "timeentryrevisiongroup": rail.find_first_by_attr_and_get_attr(row['cells'], 'objectType', 'urn:replicon:object-type:time-entry-revision-group', 'uri'),
+        "entrydate": rail.find_first_by_attr_and_get_attr(row['cells'], 'dataType', 'urn:replicon:list-type:date', 'textValue'),
+        "hours": rail.find_first_by_attr_and_get_attr(row['cells'], 'dataType', 'urn:replicon:list-type:calendar-day-duration', 'calendarDayDurationValue'),
+        "projectname": rail.find_first_by_attr_and_get_attr(row['cells'], 'objectType', 'urn:replicon:object-type:project', 'textValue'),
+        "projecturi": rail.find_first_by_attr_and_get_attr(row['cells'], 'objectType', 'urn:replicon:object-type:project', 'uri'),
+        "taskname": rail.find_first_by_attr_and_get_attr(row['cells'], 'objectType', 'urn:replicon:object-type:task', 'textValue'),
+        "taskuri": rail.find_first_by_attr_and_get_attr(row['cells'], 'objectType', 'urn:replicon:object-type:task', 'uri'),
+        "timeentryid": row['cells'][5]['textValue'] if row['cells'][5] and row['cells'][5]['textValue'] else null,
+        "comments": row['cells'][6]['textValue'] if row['cells'][6] and row['cells'][6]['dataType'] != 'urn:replicon:list-type:null' else null,
+        "duration": get_rounded_duration(
+                    rail.find_first_by_attr_and_get_attr(row['cells'], 'dataType', 'urn:replicon:list-type:calendar-day-duration', 'calendarDayDurationValue')),
+        "approvalstatus": rail.find_first_by_attr_and_get_attr(row['cells'], 'objectType', 'urn:replicon:object-type:approval-status', 'textValue')
+    }, rows)) if rows else []
+
+
+def get_timeentry_column_uri(response):
+    return rail.find_first_by_attr_and_get_attr(response[0]['columns'], 'displayText', 'EntryID', 'uri') if response[0]['columns'] else null
+
+
+def get_timeentry_filter_definition_uri(response):
+    return rail.find_first_by_attr_and_get_attr(response, 'name', 'EntryID', 'uri') if response else null
+
+
+def get_billing_rates_filter(response):
+    if not response['rows']:
+        return []
+    return list(map(lambda billing_rate: {
+        "name": get_value(billing_rate['cells'], 0, 'textValue'),
+        "uri": get_value(billing_rate['cells'], 0, 'uri'),
+        "description": get_value(billing_rate['cells'], 1, 'textValue'),
+        "enabled": get_value(billing_rate['cells'], 2, 'textValue')
+    }, response['rows']))

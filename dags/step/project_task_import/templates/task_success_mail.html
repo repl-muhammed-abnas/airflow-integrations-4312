@@ -1,0 +1,12 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Task/Ticket
+    Import job is {{" "}}{%- set failure_task = "filter_for_task_creation_errors" -%}
+    {%- set has_errors = result( failure_task, key="length") > 0 -%}
+    {%- if has_errors -%}
+    completed with errors
+    {%- else -%}
+    completed successfully
+    {%- endif -%} {{" "}} based on the file - '{{result("get_import_file_name")}}'.
+    Please use the below link to access the log file. <br /> <br /><a
+        href="{{result('generate_pre_signed_url')}}">Download extract file</a></p>
+<p><em><span style="font-size: 10pt;">The download link is valid for 7 days.</span></em></p>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

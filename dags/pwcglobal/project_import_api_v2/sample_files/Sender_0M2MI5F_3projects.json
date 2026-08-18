@@ -1,0 +1,394 @@
+{
+    "Sender": "0M2MI5F",
+    "SenderEnvironment": "Prod",
+    "Identifier": "AGJhZpBsglbvNM-fsM4xXpidYk1b",
+    "WorkManagement": [
+        {
+            "ConfidentialFlag": "false",
+            "EngagementPartyRole": [
+                {
+                    "PartyId": "63d08e8e-5d39-4eac-8071-fff44cb578c7",
+                    "PrimaryPartyName": "Guidewire Software, Inc.",
+                    "EngagementPartyRoleType": "Contracting Client",
+                    "EngagementPartyRoleTypeId": "18281428",
+                    "PartyAlternateIdentifierType": "1840175",
+                    "PartyAlternateIdentifierValue": "91027985"
+                }
+            ],
+            "ChargeCode": [
+                {
+                    "ChargeCode": "DEE00030324.1.1",
+                    "ChargeCodeName": "Guidewire Inc.,_CRT - Expat Tax Compliance",
+                    "ChargeCodeType": "External Engagement Project",
+                    "ChargeCodeTypeId": "18281412",
+                    "ChargeCodeStartDate": "2019-01-01",
+                    "ChargeCodeEndDate": "2022-12-31",
+                    "CurrentStatus": {
+                        "OpenForTime": "true"
+                    },
+                    "MandatoryTextFlag": "false",
+                    "PartyRole": [
+                        {
+                            "PartyId": "ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9",
+                            "PartyRoleType": "PwC Delivery Legal Entity",
+                            "PartyRoleTypeId": "18281400"
+                        }
+                    ],
+                    "InternalPersonRole": [
+                        {
+                            "InternalPersonRoleType": "Project Delivery Partner",
+                            "InternalPersonRoleTypeId": "Project Delivery Partner",
+                            "InternalWorkRelationship": {
+                                "InternalPerson": {
+                                    "PartyId": "92a73525-8b00-4694-ae2c-62d6cbf28518"
+                                },
+                                "PwCLegalEntity": {
+                                    "PartyId": "ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9"
+                                }
+                            }
+                        },
+                        {
+                            "InternalPersonRoleType": "Project Delivery Manager",
+                            "InternalPersonRoleTypeId": "Project Delivery Manager",
+                            "InternalWorkRelationship": {
+                                "InternalPerson": {
+                                    "PartyId": "552756b4-ecf0-461d-9f07-67c95c23802b"
+                                },
+                                "PwCLegalEntity": {
+                                    "PartyId": "ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9"
+                                }
+                            }
+                        }
+                    ],
+                    "CostCentre": {
+                        "CostCentreCode": "DE01000213"
+                    },
+                    "WorkItem": [
+                        {
+                            "WorkItemType": "Project support",
+                            "WorkItemTypeId": "P387"
+                        },
+                        {
+                            "WorkItemType": "Admin / Billing",
+                            "WorkItemTypeId": "P203"
+                        },
+                        {
+                            "WorkItemType": "Meeting",
+                            "WorkItemTypeId": "P014"
+                        },
+                        {
+                            "WorkItemType": "Out of scope / Assignee consulting",
+                            "WorkItemTypeId": "P045"
+                        },
+                        {
+                            "WorkItemType": "Review of follow-up tax notice",
+                            "WorkItemTypeId": "P041"
+                        },
+                        {
+                            "WorkItemType": "Review of other tax notices",
+                            "WorkItemTypeId": "P042"
+                        },
+                        {
+                            "WorkItemType": "Objection",
+                            "WorkItemTypeId": "P043"
+                        },
+                        {
+                            "WorkItemType": "Tax Calculation",
+                            "WorkItemTypeId": "P044"
+                        },
+                        {
+                            "WorkItemType": "Client Consulting (CRT)",
+                            "WorkItemTypeId": "P046"
+                        },
+                        {
+                            "WorkItemType": "Income tax return",
+                            "WorkItemTypeId": "P036"
+                        },
+                        {
+                            "WorkItemType": "Income tax return - Additional services",
+                            "WorkItemTypeId": "P037"
+                        },
+                        {
+                            "WorkItemType": "Questions Assignee",
+                            "WorkItemTypeId": "P038"
+                        },
+                        {
+                            "WorkItemType": "Inquiry tax office",
+                            "WorkItemTypeId": "P039"
+                        },
+                        {
+                            "WorkItemType": "Review of initial tax notice",
+                            "WorkItemTypeId": "P040"
+                        }
+                    ],
+                    "EngagementLine": [
+                        {
+                            "EngagementLineDescription": "",
+                            "EngagementLineType": "Time and Material",
+                            "EngagementLineTypeId": "18281363"
+                        }
+                    ]
+                },
+                {
+                    "ChargeCode": "DEE00030324.1.2",
+                    "ChargeCodeName": "Guidewire Inc.,_CRT - GM Consulting Services",
+                    "ChargeCodeType": "External Engagement Project",
+                    "ChargeCodeTypeId": "18281412",
+                    "ChargeCodeStartDate": "2019-01-01",
+                    "ChargeCodeEndDate": "2022-12-31",
+                    "CurrentStatus": {
+                        "OpenForTime": "true"
+                    },
+                    "MandatoryTextFlag": "false",
+                    "PartyRole": [
+                        {
+                            "PartyId": "ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9",
+                            "PartyRoleType": "PwC Delivery Legal Entity",
+                            "PartyRoleTypeId": "18281400"
+                        }
+                    ],
+                    "InternalPersonRole": [
+                        {
+                            "InternalPersonRoleType": "Project Delivery Partner",
+                            "InternalPersonRoleTypeId": "Project Delivery Partner",
+                            "InternalWorkRelationship": {
+                                "InternalPerson": {
+                                    "PartyId": "92a73525-8b00-4694-ae2c-62d6cbf28518"
+                                },
+                                "PwCLegalEntity": {
+                                    "PartyId": "ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9"
+                                }
+                            }
+                        },
+                        {
+                            "InternalPersonRoleType": "Project Delivery Manager",
+                            "InternalPersonRoleTypeId": "Project Delivery Manager",
+                            "InternalWorkRelationship": {
+                                "InternalPerson": {
+                                    "PartyId": "552756b4-ecf0-461d-9f07-67c95c23802b"
+                                },
+                                "PwCLegalEntity": {
+                                    "PartyId": "ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9"
+                                }
+                            }
+                        }
+                    ],
+                    "CostCentre": {
+                        "CostCentreCode": "DE01000213"
+                    },
+                    "WorkItem": [
+                        {
+                            "WorkItemType": "Project support",
+                            "WorkItemTypeId": "P387"
+                        },
+                        {
+                            "WorkItemType": "Admin / Billing",
+                            "WorkItemTypeId": "P203"
+                        },
+                        {
+                            "WorkItemType": "Meeting",
+                            "WorkItemTypeId": "P014"
+                        },
+                        {
+                            "WorkItemType": "Out of scope / Assignee consulting",
+                            "WorkItemTypeId": "P045"
+                        },
+                        {
+                            "WorkItemType": "Review of follow-up tax notice",
+                            "WorkItemTypeId": "P041"
+                        },
+                        {
+                            "WorkItemType": "Review of other tax notices",
+                            "WorkItemTypeId": "P042"
+                        },
+                        {
+                            "WorkItemType": "Objection",
+                            "WorkItemTypeId": "P043"
+                        },
+                        {
+                            "WorkItemType": "Tax Calculation",
+                            "WorkItemTypeId": "P044"
+                        },
+                        {
+                            "WorkItemType": "Client Consulting (CRT)",
+                            "WorkItemTypeId": "P046"
+                        },
+                        {
+                            "WorkItemType": "Income tax return",
+                            "WorkItemTypeId": "P036"
+                        },
+                        {
+                            "WorkItemType": "Income tax return - Additional services",
+                            "WorkItemTypeId": "P037"
+                        },
+                        {
+                            "WorkItemType": "Questions Assignee",
+                            "WorkItemTypeId": "P038"
+                        },
+                        {
+                            "WorkItemType": "Inquiry tax office",
+                            "WorkItemTypeId": "P039"
+                        },
+                        {
+                            "WorkItemType": "Review of initial tax notice",
+                            "WorkItemTypeId": "P040"
+                        },
+                        {
+                            "WorkItemType": "Payroll",
+                            "WorkItemTypeId": "P047"
+                        },
+                        {
+                            "WorkItemType": "Payroll Support",
+                            "WorkItemTypeId": "P048"
+                        },
+                        {
+                            "WorkItemType": "OOS Payroll",
+                            "WorkItemTypeId": "P049"
+                        },
+                        {
+                            "WorkItemType": "OOS Implementation",
+                            "WorkItemTypeId": "P051"
+                        },
+                        {
+                            "WorkItemType": "Implementation",
+                            "WorkItemTypeId": "P050"
+                        },
+                        {
+                            "WorkItemType": "Management",
+                            "WorkItemTypeId": "P052"
+                        }
+                    ],
+                    "EngagementLine": [
+                        {
+                            "EngagementLineDescription": "",
+                            "EngagementLineType": "Time and Material",
+                            "EngagementLineTypeId": "18281363"
+                        }
+                    ]
+                },
+                {
+                    "ChargeCode": "DEE00030324.1.3",
+                    "ChargeCodeName": "Guidewire Inc.,_CRT - Sozialversicherung",
+                    "ChargeCodeType": "External Engagement Project",
+                    "ChargeCodeTypeId": "18281412",
+                    "ChargeCodeStartDate": "2019-01-01",
+                    "ChargeCodeEndDate": "2022-12-31",
+                    "CurrentStatus": {
+                        "OpenForTime": "true"
+                    },
+                    "MandatoryTextFlag": "false",
+                    "PartyRole": [
+                        {
+                            "PartyId": "ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9",
+                            "PartyRoleType": "PwC Delivery Legal Entity",
+                            "PartyRoleTypeId": "18281400"
+                        }
+                    ],
+                    "InternalPersonRole": [
+                        {
+                            "InternalPersonRoleType": "Project Delivery Partner",
+                            "InternalPersonRoleTypeId": "Project Delivery Partner",
+                            "InternalWorkRelationship": {
+                                "InternalPerson": {
+                                    "PartyId": "92a73525-8b00-4694-ae2c-62d6cbf28518"
+                                },
+                                "PwCLegalEntity": {
+                                    "PartyId": "ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9"
+                                }
+                            }
+                        },
+                        {
+                            "InternalPersonRoleType": "Project Delivery Manager",
+                            "InternalPersonRoleTypeId": "Project Delivery Manager",
+                            "InternalWorkRelationship": {
+                                "InternalPerson": {
+                                    "PartyId": "552756b4-ecf0-461d-9f07-67c95c23802b"
+                                },
+                                "PwCLegalEntity": {
+                                    "PartyId": "ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9"
+                                }
+                            }
+                        }
+                    ],
+                    "CostCentre": {
+                        "CostCentreCode": "DE01000213"
+                    },
+                    "WorkItem": [
+                        {
+                            "WorkItemType": "Project support",
+                            "WorkItemTypeId": "P387"
+                        },
+                        {
+                            "WorkItemType": "Admin / Billing",
+                            "WorkItemTypeId": "P203"
+                        },
+                        {
+                            "WorkItemType": "Consulting",
+                            "WorkItemTypeId": "P066"
+                        },
+                        {
+                            "WorkItemType": "SHP",
+                            "WorkItemTypeId": "P065"
+                        },
+                        {
+                            "WorkItemType": "Reimbursement § 26 SGB IV",
+                            "WorkItemTypeId": "P064"
+                        },
+                        {
+                            "WorkItemType": "Reimbursement § 210 SGB VI",
+                            "WorkItemTypeId": "P063"
+                        },
+                        {
+                            "WorkItemType": "EC application",
+                            "WorkItemTypeId": "P062"
+                        },
+                        {
+                            "WorkItemType": "KiG application",
+                            "WorkItemTypeId": "P061"
+                        },
+                        {
+                            "WorkItemType": "AUV application",
+                            "WorkItemTypeId": "P060"
+                        },
+                        {
+                            "WorkItemType": "S1 Application",
+                            "WorkItemTypeId": "P059"
+                        },
+                        {
+                            "WorkItemType": "App KV / PV application",
+                            "WorkItemTypeId": "P058"
+                        },
+                        {
+                            "WorkItemType": "AV application",
+                            "WorkItemTypeId": "P057"
+                        },
+                        {
+                            "WorkItemType": "Voluntary RV-application",
+                            "WorkItemTypeId": "P056"
+                        },
+                        {
+                            "WorkItemType": "RV application",
+                            "WorkItemTypeId": "P055"
+                        },
+                        {
+                            "WorkItemType": "CoC application",
+                            "WorkItemTypeId": "P054"
+                        },
+                        {
+                            "WorkItemType": "SV Briefing",
+                            "WorkItemTypeId": "P053"
+                        }
+                    ],
+                    "EngagementLine": [
+                        {
+                            "EngagementLineDescription": "",
+                            "EngagementLineType": "Time and Material",
+                            "EngagementLineTypeId": "18281363"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "content_type": "application/json"
+}

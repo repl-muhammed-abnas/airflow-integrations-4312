@@ -1,0 +1,47 @@
+<style>
+    p, ul, li {
+        font:small/1.5 Arial,Helvetica,sans-serif;
+        font-weight: 400;
+    }
+    table {
+        font-size: 12px;
+        border:2px solid black;
+        border-collapse: collapse;
+    }
+    th {
+        background-color: rgb(173, 216, 230);
+        border:1px solid black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        white-space: nowrap;
+    }
+
+    td {
+        border:1px solid black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    th, td {
+        padding: 5px;
+    }
+</style>
+<br></br>
+<p>*** This is an automated e-mail generated from Replicon Support. Please don't reply ***&nbsp;</p>
+<p>Dear Customer,</p>
+<p>While monitoring your CloudClock connectivity, we detected that your {%- for record in dataset %} <strong>{{ record["Clock"] }}</strong> CloudClock(s) has not synced with your Replicon instance in the last {{ (record["Last_Update"])[:-4] }}. Typically, your CloudClock should automatically sync with your Replicon instance every 5 minutes.</p>
+<p>This delay may have prevented some time punches from being posted to timesheets. Below is the current status of your unsynced time punches:</p> 
+
+<li><span style="font-weight: 400;">Number of time punches </span><strong>yet to sync</strong><span style="font-weight: 400;">: {{ record["Unsent_Punches"] }}</span>
+    {%- endfor %}
+
+<p>Here are some simple steps you can follow to resolve common sync issues:</p>
+<ul>
+    <li>Restart your CloudClock device and app</li>
+    <li>Ensure your device is on and the CloudClock app is in the foreground</li>
+    <li>Check that your device is connected to the internet. You can do this by launching its browser and visiting a website.</li>
+    <li>Try force syncing punches without waiting for the automatic sync: Press the top, right-hand corner of home scan screen and hold for 10 seconds. Then, in the admin screen that displays, select a date range and tap the Sync Punches button.</li>
+    <li><a href="http://www.replicon.com/help/setting-up-cloudclock" target="_blank" rel="noopener">Enable automatic updates</a>&nbsp;to ensure you&rsquo;re always using the latest version of the app</li>
+</ul>
+<p>Refer to <a href="http://www.replicon.com/help/troubleshooting-cloudclock-issues" target="_blank" rel="noopener">Troubleshooting CloudClock issues</a>&nbsp;for more ways to handle sync issues.</p>
+<p>NOTE: You can now view your CloudClock device status from within Replicon. To do this, go to Administration &gt; System and Security &gt; Manage CloudClocks. Refer to <a href="https://www.replicon.com/help/monitoring-the-status-of-your-cloudclocks" target="_blank" rel="noopener">Monitoring the status of your CloudClocks</a>&nbsp;for more information on this feature.</p>
+<p><strong>If you require further assistance, kindly mail us or call us.</strong></p>
+<p><strong>Thanks,<br />Deltek Support Services<br />Contact us: https://support.deltek.com<br />Phone: US 1-877-862-2519, AUS 1800-223-198 and Other Countries +800-8622-5192</strong></p>

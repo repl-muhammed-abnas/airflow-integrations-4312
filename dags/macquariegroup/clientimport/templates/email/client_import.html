@@ -1,0 +1,20 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Client Import job is {{ "" }}
+  {%- set has_errors = result("get_errored_logs", key="length") > 0 -%}
+  {%- if has_errors -%}
+    completed with errors
+  {%- else -%}
+    {%- if result("get_exception_logs", key="length") > 0 -%}
+        completed with exceptions
+    {%- else -%}
+        completed successfully
+    {%- endif -%}
+  {%- endif -%}
+  " based on the file - 'Client.csv'. Please find the below link to the Client import logs for reference. <br />
+  <br />
+  Number of Clients Added: {{ result('get_clients_added_count', 'length') }} <br />
+  Number of Clients Updated: {{ result('get_clients_updated_count', 'length') }} <br />
+  Number of Clients Disabled: {{ result('get_clients_disabled_count', 'length') }} <br />
+  <br />
+  Please use the below link to access the log file. <br /> <br /><a href="{{result('generate_download_link')}}">Download log</a></p>
+  <p><em><span style="font-size: 10pt;">The download link is valid for 7 days.</span></em></p>
+  <p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

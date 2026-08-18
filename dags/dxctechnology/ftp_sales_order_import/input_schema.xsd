@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://csc.com/IF7000/FromFTPToReplicon/RemedyOrder" xmlns="http://csc.com/IF7000/FromFTPToReplicon/RemedyOrder" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="MT_RemedyOrder_Replicon" type="DT_RemedyOrder_Replicon"/>
+	<xsd:complexType name="DT_RemedyOrder_Replicon">
+		<xsd:sequence>
+			<xsd:element name="Records" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Project_Code" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="Project_Name" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="Start_date" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="End_date" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="Project_Status" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="ProjectManager_EmpID" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="ProjectCoManager_EmpID" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="CompanyCode" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="WBS_Element" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="PROJ_CODE" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

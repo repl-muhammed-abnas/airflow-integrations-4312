@@ -1,0 +1,30 @@
+<p>
+    <strong>
+        <em><span style="font-family: 'Calibri',sans-serif;">This is a automated mail, please don't
+                reply&nbsp;</span></em>
+    </strong>
+</p>
+<p>
+    Hello,
+</p>
+<p>
+    The User sync into Replicon has been processed based on filename {{ dag_run.conf.filename }} on{{" "}}
+    {{ dag_run.conf.jobstarttime }} and is{{" "}}
+    {%- set has_errors = result("get_errored_logs", key="length") > 0 -%}
+    {%- if has_errors -%}
+    completed with errors
+    {%- else -%}
+    completed successfully
+    {%- endif -%}
+    <br />
+    Import logs has been attached for reference.
+</p>
+{%- if has_errors -%}
+{%- endif -%}
+<p>
+    Please contact our support team at https://support.deltek.com for any further clarification.
+</p>
+<p>
+    Thanks, <br />
+    Deltek Inc.
+</p>

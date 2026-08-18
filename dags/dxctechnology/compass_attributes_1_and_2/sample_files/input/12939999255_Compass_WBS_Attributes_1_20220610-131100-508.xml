@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_Attributes_Replicon xmlns:ns0="http://csc.com/IF5001/FromCOMPASSTOReplicon/Attributes">
+    <Records>
+        <WBS>Project Name with No Tasks - Airflow</WBS>
+        <Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1</Attribute>
+            <Description>without End date</Description>
+            <EndDate></EndDate>
+        </Attributes>
+        <Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1A</Attribute>
+            <Description>End date is past</Description>
+            <EndDate>20211204</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1B</Attribute>
+            <Description>End date is current</Description>
+            <EndDate>20220909</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1C</Attribute>
+            <Description>End date Future</Description>
+            <EndDate>20230131</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1D</Attribute>
+            <Description>with wrong end date</Description>
+            <EndDate>20220231</EndDate>
+        </Attributes>
+		<Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>Attribute 1E</Attribute>
+            <Description>Invalid end date</Description>
+            <EndDate>20223102</EndDate>
+        </Attributes>
+    </Records>
+</ns0:MT_Attributes_Replicon>

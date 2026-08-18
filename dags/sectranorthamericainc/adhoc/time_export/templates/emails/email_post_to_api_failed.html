@@ -1,0 +1,8 @@
+<p>Hi Team,
+    <br /> <br /> The Replicon time data export is completed successfully Job created at {{current_time_in_specified_tz()}} has been failed while posting to the API,
+     however, the JSON payload has been uploaded to the backup SFTP folder.</p>
+<ul>
+<li>Export file name:{{dag_run.conf.time_export_name}}.json</li>
+<li>SFTP Backup upload filepath: {{params.sftp_upload_path}}</li>
+</ul>
+<p>Please find the attached logs which was to be sent to intended recipients and debug the issue related to sftp upload.<br /> <br /> Regards,<br /> Deltek Inc</p>

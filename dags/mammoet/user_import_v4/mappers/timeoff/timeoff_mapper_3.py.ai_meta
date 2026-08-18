@@ -1,0 +1,32 @@
+{
+  "ai_lines": {
+    "11": "a3eb980f31e201595f628d16849a4c92d0b568ce21d7c32f634f168aacfd7b75",
+    "5": "3b7e95e20fa93df16dd0b8fdb1cbae6a79d5b4f7ffe14a6b83aaa0de88a740a9",
+    "6": "fa9263d7599349389f592d95f9a4cc550648a3e9459bbda72d40dd0dc6613ddf"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-15T07:22:18.425Z",
+  "file_state": {
+    "file_sha256": "43dae9d5f097720d385451ca14800b357cb751cc3e71155ed5a60155369f6839",
+    "total_file_lines": 11,
+    "total_lines": 8
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\mammoet\\user_import_v4\\mappers\\timeoff\\timeoff_mapper_3.py",
+  "stats": {
+    "ai_line_count": 3,
+    "ai_line_pct": 37.5,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-15T07:22:18.425Z",
+  "version": 1
+}

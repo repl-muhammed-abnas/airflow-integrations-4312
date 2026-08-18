@@ -1,0 +1,56 @@
+<ErrorLogs>
+  <ErrorLog>
+    <Identity></Identity>
+    <Date>2022-09-06 10:21:00.625</Date>
+    <System>Replicon</System>
+    <FileName></FileName>
+    <ApplicationName>Replicon_Time prepopulation</ApplicationName>
+    <InstanceName>PwCinternal</InstanceName>
+    <CompRefId></CompRefId>
+    <PartyId>53a32a60-bee7-49a3-94c6-0d5006620996</PartyId>
+    <Level>SUCCESS</Level>
+    <Class></Class>
+    <Message>Time entry deleted successfully since 0 hours received in feed</Message>
+    <EntityId></EntityId>
+    <EntityName></EntityName>
+    <EntityType></EntityType>
+    <AdditionalInfo>Timeentrydate:20220615|Hours:0.00|Project-Task:ATE00007623.1.1-</AdditionalInfo>
+    <LoggedDateTime><LoggedDateTime>
+  </ErrorLog>
+  <ErrorLog>
+    <Identity></Identity>
+    <Date>2022-09-06 10:20:53.734</Date>
+    <System>Replicon</System>
+    <FileName></FileName>
+    <ApplicationName>Replicon_Time prepopulation</ApplicationName>
+    <InstanceName>PwCinternal</InstanceName>
+    <CompRefId></CompRefId>
+    <PartyId>53a32a60-bee7-49a3-94c6-0d5006620996</PartyId>
+    <Level>SUCCESS</Level>
+    <Class></Class>
+    <Message>Time entry deleted successfully since 0 hours received in feed</Message>
+    <EntityId></EntityId>
+    <EntityName></EntityName>
+    <EntityType></EntityType>
+    <AdditionalInfo>Timeentrydate:20220614|Hours:0.00|Project-Task:ATE00007623.1.1-</AdditionalInfo>
+    <LoggedDateTime><LoggedDateTime>
+  </ErrorLog>
+  <ErrorLog>
+    <Identity></Identity>
+    <Date>2022-09-06 10:21:06.739</Date>
+    <System>Replicon</System>
+    <FileName></FileName>
+    <ApplicationName>Replicon_Time prepopulation</ApplicationName>
+    <InstanceName>PwCinternal</InstanceName>
+    <CompRefId></CompRefId>
+    <PartyId>53a32a60-bee7-49a3-94c6-0d5006620996</PartyId>
+    <Level>SUCCESS</Level>
+    <Class></Class>
+    <Message>Time entry deleted successfully since 0 hours received in feed</Message>
+    <EntityId></EntityId>
+    <EntityName></EntityName>
+    <EntityType></EntityType>
+    <AdditionalInfo>Timeentrydate:20220616|Hours:0.00|Project-Task:ATE00007623.1.1-</AdditionalInfo>
+    <LoggedDateTime><LoggedDateTime>
+  </ErrorLog>
+</ErrorLogs>

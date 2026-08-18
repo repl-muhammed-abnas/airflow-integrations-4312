@@ -1,0 +1,32 @@
+{
+  "ai_lines": {
+    "51": "9b58b4ced2461c19e1076233b9cea992f23593a749c7b28860b1025388f95002",
+    "52": "c1133c978433e166656215da26e4618befc9ac1d395c75d3365c5b7a189d85c7",
+    "6": "c23db849dde24956e8eb48ba5205eeef75553fabc7b82c220d70e9f86783e1b1"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-14T08:23:40.567Z",
+  "file_state": {
+    "file_sha256": "277cd061d4f1a5626b13ed2cfda0f6b7ed96c988027b4546907306f92b57337d",
+    "total_file_lines": 107,
+    "total_lines": 77
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\dxctechnology\\workday_user_import_v1\\user_import_uki_csc_v2\\instances\\trial.py",
+  "stats": {
+    "ai_line_count": 3,
+    "ai_line_pct": 3.9,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-14T08:23:42.856Z",
+  "version": 1
+}

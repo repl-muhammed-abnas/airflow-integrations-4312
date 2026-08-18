@@ -1,0 +1,23 @@
+role_approval_path_mapper = {
+    "timesheet_approval_path": 'KSA Approval - L1 Manager',
+    "timeoff_approval_path": "KSA Approval",
+    "l1_manager": "L1 Manager (KSA)",
+    "end_user_manager": "End User (Managers)",
+    "project_manager": "KSA Project Supervisor",
+    "hr_manager": "KSA Geo HR",
+    "default_user_permission": "Project Resource with Reports",
+    "foreign_manager_emp_type": "Foreign Managers",
+    "payrule": "KSA Custom Payrule",
+    "timesheet_template": "KSA Timesheet - STANDARD",
+    "time_zone": "(UTC+3:00) Arabic Standard Time",
+    "timesheet_system_approval_path": "System Approval",
+    "timesheet_period": "Weekly starting on Sunday",
+    "default_holiday_calender": "Wipro KSA Holiday Calendar",
+    "project_supervisor_permission":"Project Manager",
+    "supervisor_permission": "Supervisor",
+    "resource_supervisor_permission":"Resource Manager",
+    "schedule_policy":"KSA Shift Policy",
+    "ot_request_template":	"Saudi Arabia OT - Request",
+    "ot_request_approval_path":	"KSA Approval - L1 Manager",
+    "payrate":"SAR"
+}

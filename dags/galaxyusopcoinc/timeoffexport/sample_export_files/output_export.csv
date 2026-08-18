@@ -1,0 +1,8 @@
+EmployeeID,TimeOffEntryID,TimeOffDate,TimeOffAmount,ReferenceID(TimeOffCode),StartTime,EndTime,TimeOffType,PositionID,Comments,Units
+EMPLOYEE-6-6391,199,2022-08-23,8.00,ABSENCE_PLAN-6-161,,,CAN Vacation,Position-6-6541,,Hours
+EMPLOYEE-6-6391,233,2022-09-01,8.00,ABSENCE_PLAN-6-161,,,CAN Vacation,Position-6-6541,,Hours
+TESTEMP2,200,2022-08-25,8.00,,,,Test day TO,,,Workdays
+TESTEMP2,201,2022-08-23,8.00,,,,Test day TO,,,Workdays
+TESTEMP2,203,2022-08-30,8.00,,,,Test day TO,,,Workdays
+TESTEMP2,232,2022-09-01,8.00,,,,Test day TO,,,Workdays
+TESTEMP2,232,2022-09-02,8.00,,,,Test day TO,,,Workdays

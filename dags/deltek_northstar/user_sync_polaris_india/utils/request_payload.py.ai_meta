@@ -1,0 +1,142 @@
+{
+  "ai_lines": {
+    "606": "45b0d52d8f918e1a0959b79e35fef531da38a9c69d368fa50f21ac7f8f275554",
+    "608": "9a91b12c5a98343381506bbf60533b25e6e6e221f466e1c996a36cd89f6f3552",
+    "613": "89dafdf4f992504a6cb7f496ae00d9ac81fc2e92ad59a6b91ad1972ef5fef9b2",
+    "615": "237bc5c81bfb5b2d6c4ecc4000313cb81bcc6e47a23aa2a66801f44f8cfd3d4f",
+    "616": "9f11d86ae2a12b4e6436244b6d2c249003b39b11e4fadf1f1709b7ed021b6205",
+    "621": "a5803f738375e6d6fc23a5afab9ee1a7a1b7414e9da93b71e516c7a5730e4f07",
+    "674": "cfe7fa614e55d51ac63198b9aa45cb297520895d65bbab9d45bf78b8beff0de7"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 7,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-30T18:29:04.612Z",
+  "file_state": {
+    "file_sha256": "4a4cf31f8b8d5a0a5b583c9237ec5e12b8afcdbea023ca0f6f546b7e25f2721c",
+    "total_file_lines": 1428,
+    "total_lines": 1337
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "b3f1692c4d390cad4e99c921977912c66e05808908479125045cabbbadba1531",
+      "last_known_line": 606,
+      "removed_at": "2026-03-30T18:31:58.909Z"
+    },
+    {
+      "hash": "f0347378d3ceea8bfb40ea3c37a305ce247bebea71fda5b5059ee1299b016823",
+      "last_known_line": 608,
+      "removed_at": "2026-03-30T18:31:58.909Z"
+    },
+    {
+      "hash": "4b9f8dd8c21f223ff24bc75e88c979d01053f0f890fc0639289d77aec6c24fc2",
+      "last_known_line": 613,
+      "removed_at": "2026-03-30T18:31:58.909Z"
+    },
+    {
+      "hash": "6d227f357a2e2d940706edaaae7437fb4da4908927bf0b36d75c3df23327485f",
+      "last_known_line": 619,
+      "removed_at": "2026-03-30T18:31:58.909Z"
+    },
+    {
+      "hash": "3fb95b5e57036ed8cee4dd362ee7e542b02e237516d9b5271f565283fec9fff2",
+      "last_known_line": 606,
+      "removed_at": "2026-03-30T18:36:24.894Z"
+    },
+    {
+      "hash": "410419053df94430f4c632d21e336ab19a45071745ef0e4a06130f4eacc5ca17",
+      "last_known_line": 676,
+      "removed_at": "2026-03-30T18:36:34.338Z"
+    },
+    {
+      "hash": "2bd2a6fa51180288648d23710e410cbd2f12d6e80db7c4f1ffd0889912c2622c",
+      "last_known_line": 606,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "2bbeeaa699e436f6b8e30a56f61fd26465741371cb3e562fa0d25ec2c59755ec",
+      "last_known_line": 613,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "53345013b656826be795069fb42b9793030c62a4c6292e68c6eff6ee70c1b979",
+      "last_known_line": 616,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "005f83e7a7651dd3517a7c3e113be0146222846c65548db24d737bfb8d42614a",
+      "last_known_line": 617,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "0d2f689c80955317713a4de0539a78c3f512e701f2e3dca8664c5d881ba06d19",
+      "last_known_line": 622,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "5f456e9eb2e79f704f65c6c14cef77d22bf8a5c8daad377942c2f874a93056a6",
+      "last_known_line": 624,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "23bf8ee8a3a987c13f0081e33c2bf1a8d986038348913d6d733965c87760dd7e",
+      "last_known_line": 628,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "bcf63353e06ab5d4420aacb40a21bba9917b9f5d32bc3ef78432861f6e855c75",
+      "last_known_line": 633,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "1d85eadcf589f2f26531707815fd459a3f5afe782aa34c8081f447334a0dc7a3",
+      "last_known_line": 637,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "6fdfa88a80b69280ab9195c56bd85e661a385e1b1d17684d7e7ef0d031ef9732",
+      "last_known_line": 638,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "74ec3b63d2c5743e21030aa7d4b044ee08ac8e3b2ea9b6f0768422e4ba2c5950",
+      "last_known_line": 642,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "1b5fe7f42a76b15d4b9da6c750bbae426e8d292af23154f04d6ad29385a7993c",
+      "last_known_line": 643,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "0c724c8f170e7c5e38134b6f44356ed7de7283d470860f76ba280689d4230cb1",
+      "last_known_line": 677,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "5fece50e5449022f2995693dc569c7a3f6636aa1f2aa505c68ad57d349d30079",
+      "last_known_line": 678,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    },
+    {
+      "hash": "35034778e4e60f2ebf6bf5c7cbbe77f779be93f60bd1b8cc55730ce86eee2eca",
+      "last_known_line": 684,
+      "removed_at": "2026-03-30T18:45:35.347Z"
+    }
+  ],
+  "source_file": "c:\\workspaces\\airflow-integrations\\dags\\deltek_northstar\\user_sync_polaris_india\\utils\\request_payload.py",
+  "stats": {
+    "ai_line_count": 7,
+    "ai_line_pct": 0.52,
+    "ai_lines_removed_or_modified": 21
+  },
+  "updated_at": "2026-03-30T18:45:35.347Z",
+  "version": 1
+}

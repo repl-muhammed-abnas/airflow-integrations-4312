@@ -1,0 +1,8 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon place of work data extract to SOPRA for France for {{ dag_run.conf.export_month }} month is completed successfully
+    {{ " at " + current_time_in_specified_tz(params.time_zone) }}. Please find the extract details for reference.</p>
+<ul>
+    <li>Export Period: {{ dag_run.conf.export_start_date }} - {{ dag_run.conf.export_end_date }}</li>
+    <li>File Name: {{ dag_run.conf.export_filename }}.pgp</li>
+    <li>File Path: {{ params.upload_file_path }}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

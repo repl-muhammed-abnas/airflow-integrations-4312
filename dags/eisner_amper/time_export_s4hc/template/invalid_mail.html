@@ -1,0 +1,10 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon Time Data
+    extract for SAP HANA is skipped at {{params.Created_time}} at Properties due to error records.</p>
+<ul>
+    <li>File Name: Error_Timesheet_{{ result("get_logging_details")["current_date"] }}.json</li>
+    <li>Number Of Records: {{ result('create_time_data_collection', 'length') }}</li>
+    <li>Error Records: {{ result("query_invalid_records", "length")}}</li>
+    <li>Error File Name: Error_Timesheet_{{ result("get_logging_details")["current_date"] }}.csv</li>
+    <li>Error File Path: /Production/Time Data to S4HC/Error</li>
+</ul>
+<p>Regards,<br />Deltek Inc.</p>

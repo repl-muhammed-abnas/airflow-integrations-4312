@@ -1,0 +1,9 @@
+region = "eu-central-1"
+environment = "pre-production"
+master_max_active_runs = 1
+child_max_active_runs = 5
+time_off_policy_parallel_count=5
+execution_timeout_days = 14
+user_data_report_name = "User list - For Integration"
+user_report_columns = "User Name,User Email,Employee ID,UserUri,User Status"
+schedule_interval = "* */30 * * *"

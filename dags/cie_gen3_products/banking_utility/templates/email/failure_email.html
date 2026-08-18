@@ -1,0 +1,13 @@
+<p>
+    Hi Team,<br /> <br />
+    The Replicon Custom Comp Time Accrual of {{ get_company_key() }} instance, hosted on {{ current_time_in_specified_tz() }} has been failed while approving the timesheet.
+</p>
+<ul>
+    <li>DAG ID: {{ params.dag_id }}</li>
+    <li>Job ID: {{ dag_run_ecid() }}</li>
+</ul>
+<p>
+    please take a look at it as DAG belong to CIE Team.
+    <br /> <br /> Regards,<br />
+    Replicon Inc.
+</p>

@@ -1,0 +1,22 @@
+role_approval_path_mapper = {
+    "timesheet_approval_path": 'Supervisor',
+    "timeoff_approval_path": "Austria - Approval Path",
+    "l1_manager": "L1 Manager (AT)",
+    "end_user_manager": "End User (Managers)",
+    "project_manager": "Austria Project Manager",
+    "hr_manager": "Austria - GEO HR",
+    "default_user_permission": "Project Resource with Reports",
+    "foreign_manager_emp_type": "Foreign Managers",
+    "ot_request_template": "AT - Overtime Request",
+    "ot_request_approval_path": "Supervisor",
+    "time_zone": "(UTC+1:00) Central European Standard Time",
+    "timesheet_system_approval_path": "System Approval",
+    "timeoff_system_approval_path": "Austria Approval Leadership Level",
+    "timesheet_period": "Austria Timesheet Frequency",
+    "schedule_policy": "Austria Schedule Policy",
+    "activity_list": ["Mobile Working", "Office Working", "Passive Travel /Passiv-Reisen"],
+    "holiday_calendar": "Austria",
+    "punch_policy":"Austria_Punch_Policy",
+    "schedule": "Austria Schedule - 38.5 Hours - Mon to Fri",
+    "timesheet_template": "AT-Full Time employee - All In"
+}

@@ -1,0 +1,33 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Time import is
+  {{" "}}
+  {%- set has_errors = result("format_logs").error_count > 0 -%}
+  {%- if has_errors -%}
+  completed with errors
+  {%- else -%}
+  {%- if result("format_logs").exception_count > 0 -%}
+  completed with exceptions
+  {%- else -%}
+  completed successfully
+  {%- endif -%}
+  {%- endif -%}
+  {{ " at " + current_time_in_specified_tz(fmt="%m%d%YT%H%M%S") }} for the file "{{ result('new_file_sensor') |
+  file_name }}". Please find
+  further details are below: <br /><br />
+<ul>
+  <li>Source File name: {{ result('new_file_sensor') | file_name }}</li>
+  <li>Log File name: {{result("get_log_file_name").log_file}}</li>
+  <li>Log File path: {{params.log_file_path}}</li>
+  <li>Job start time: {{result('get_log_file_name').job_start_time}}</li>
+  <li>Job end time: {{result('get_log_file_name').job_end_time}}</li>
+  <li>Job duration: {{result('get_log_file_name').job_duration}} minutes</li>
+  <li>Total Record count: {{ result("create_import_data_collection","length")}} </li>
+  <li>Successful Record Count: {{result("format_logs").success_count}}</li>
+  <li>Exception Record Count : {{result("format_logs").exception_count}}</li>
+  <li>Error Record Count : {{result("format_logs").error_count}}</li>
+</ul>
+
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+  For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Replicon
+  Inc.</p>

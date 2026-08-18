@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_Attributes_Replicon xmlns:ns0="http://csc.com/IF5001/FromCOMPASSTOReplicon/Attributes">
+	<Records>
+		<WBS>IE1-DMOC1.25.10</WBS>
+		<Attributes>
+			<AttributeNumber>1</AttributeNumber>
+			<Attribute>0022</Attribute>
+			<Description>TestRIT</Description>
+			<EndDate>20220306</EndDate>
+		</Attributes>
+		<Attributes>
+			<AttributeNumber>1</AttributeNumber>
+			<Attribute>0022</Attribute>
+			<Description>Test</Description>
+			<EndDate>20220307</EndDate>
+		</Attributes>
+	</Records>
+	<Records>
+		<WBS>IE1-DMOC1.25.10</WBS>
+		<Attributes>
+			<AttributeNumber>1</AttributeNumber>
+			<Attribute>112004</Attribute>
+			<Description>Labour</Description>
+			<EndDate>20220306</EndDate>
+		</Attributes>
+	</Records>
+</ns0:MT_Attributes_Replicon>

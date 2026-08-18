@@ -1,0 +1,33 @@
+{
+  "ai_lines": {
+    "141": "16e5e0e4bb3baae4b14820a817e82a28668ec73da37d54d198928c0da5935bcc",
+    "142": "f66b4f87cf25897aa6d5d7362856ee2902bc84231a6a95df1975ce3909e60276",
+    "161": "0af451b0bb62df798ba2f04ee315243acd860eaf9479ea0d2ed5f9cfd8b39691",
+    "162": "b4ba1a8416f6a2fcbec0eba980508d3a21f85953f762c150ea13ae6d49c91bcd"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-10T16:01:17.805Z",
+  "file_state": {
+    "file_sha256": "92b69cb14a71587994a54f7aabbe00e396b71ae340cbb3ce3e8b5c1215a9fdb4",
+    "total_file_lines": 247,
+    "total_lines": 212
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\tsystems\\project_import_file_based_v3\\process_each_record_child.py",
+  "stats": {
+    "ai_line_count": 4,
+    "ai_line_pct": 1.89,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-03-10T16:01:28.296Z",
+  "version": 1
+}

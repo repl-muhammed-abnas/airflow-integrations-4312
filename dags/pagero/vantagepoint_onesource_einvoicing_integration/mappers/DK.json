@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Denmark PUF mapper - MOMS compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-02-11",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Danish VAT", "OIOUBL"]
+  },
+
+  "country": {
+    "code": "DK",
+    "name": "Denmark",
+    "currency": "DKK",
+    "language": "da"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 25.0,
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Standardsats",
+      "Z": "Nulsats",
+      "E": "Momsfri",
+      "AE": "Omvendt betalingspligt",
+      "K": "EU-leverance",
+      "G": "Eksport"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "0184",
+    "buyer_endpoint_scheme": "0184",
+    "vat_scheme_id": "9902",
+    "company_scheme_id": "0184",
+    "vat_prefix": "DK",
+    "scheme_mappings": {
+      "vat_number": "9902",
+      "cvr": "0184",
+      "gln": "0088",
+      "ean": "0088"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": []
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^DK[0-9]{8}$",
+    "cvr_pattern": "^[0-9]{8}$",
+    "postal_code_pattern": "^[0-9]{4}$",
+    "iban_pattern": "^DK[0-9]{16}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Betaling inden 30 dage netto",
+    "contact_department": "Bogholderiet"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "nemhandel_required_for_public": true
+  },
+
+  "translations": {
+    "invoice": "Faktura",
+    "credit_note": "Kreditnota",
+    "total": "Total",
+    "vat": "Moms"
+  }
+}

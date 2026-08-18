@@ -1,0 +1,50 @@
+{
+  "ai_lines": {
+    "1": "5e40f73521ff46db090c354600498e9167e3a2a7934effde051039be23cb0827",
+    "11": "a6b7bac109ea5fd4f983e035928cdaaae462e762ea272eeebdd5a20ca7c794e0",
+    "12": "2972f30b43599f38e967f3e4169e3b85bd0e79102b144ffb6f9965985e79900b",
+    "13": "2833fa349b3f6456587db6dbcae4ec19453151320d435484a4c22a03b3c554cf",
+    "14": "3ada39b52aa4f533adb580b0d492869b1c7b53c87f4851ccef9794c16419f610",
+    "16": "7726b595036d94608a0c0ae0e73cb86c071e7b678048319092222605b140fd70",
+    "17": "31b795a0742adf88670d9a5d04bee01bd5a87457543c9af860f0586e4fa197c7",
+    "19": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "2": "334359b90efed75da5f0ada1d5e6b256f4a6bd0aee7eb39c0f90182a021ffc8b",
+    "20": "49c3e94071bb80c503d0b677bea6624e90b37e61b2e00a3ae4c45222fa388827",
+    "21": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "22": "12abfd7f0c7cdf58d5c32227af08007c6bfa3326b86be8c5b67525d8c36f7583",
+    "23": "bb5e6536201adf8c6a75e70f2ac9066c99df64fcf2dbf9b3c72ff9ff53522993",
+    "24": "3749cd0897e8c02bff915c876589cb6fecb2e9f40021452cf6b77819227bd20d",
+    "25": "c9716efea4b428bd392ee4e2fe70f74f200fbe9255d6375e8cbc3834d0208fb8",
+    "3": "10d78f913243816b7f63dc88db8f02f8412c24cb99838fb48fd9285c9b3540f5",
+    "4": "857ca6d0f51ef800b5649115904a87189aee7467138f9af79eef0512b7fe739d",
+    "5": "f1972da3f0f49e589134e13f0fb8fea497c85bf8c7724da4e4c3c3a73e28753f",
+    "6": "d3bf943eb9e8eba1de705e4f09b0b99059ecfbbf20591686baadcf3288e875fc",
+    "8": "6e78a59a0a185d51a44a88261c1cab1f5b4467a39285b891d6532d235aed2a93",
+    "9": "d49dac9b9fac4463dd07896c232fa77a499821a843577d046ec98505801f370d"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-11T07:06:18.716Z",
+  "file_state": {
+    "file_sha256": "9eac912f246d1d18555cca7cfe846e04e143178f6d22fe5a584c9a64fe07cf5b",
+    "total_file_lines": 25,
+    "total_lines": 21
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\resource_planner\\ensure_project_tasks\\config.py",
+  "stats": {
+    "ai_line_count": 21,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-20T11:02:15.363Z",
+  "version": 1
+}

@@ -1,0 +1,21 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from dxctechnology.compass_attribute_1_2_move_files.config import *
+
+region = 'us-east-2'
+environment = 'pre-production'
+
+company_key = 'DXCSandbox2'
+replicon_conn_id = 'dxcsandbox2-replicon-RepliconIntCompass'
+instance = "DXCSandbox2"
+sub_erp = "NT1"
+
+sftp_conn_id = "dxcsandbox2-sftp-628172_Compass"
+input_filepath = "/Test/Inbound/COMPASSAttributes1&2/NT1/Input"
+attribute1_filepath = "/Test/Inbound/COMPASSAttributes1&2/Projectfields/Attribute1/NT1/Input"
+attribute2_filepath = "/Test/Inbound/COMPASSAttributes1&2/Projectfields/Attribute2/NT1/Input"
+
+archive_filepath = "/Test/Inbound/COMPASSAttributes1&2/NT1/Archive"
+
+tenant_email = 'dxcintegrationlogsreplicon@deltek.com'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_failure_alert_email }}'

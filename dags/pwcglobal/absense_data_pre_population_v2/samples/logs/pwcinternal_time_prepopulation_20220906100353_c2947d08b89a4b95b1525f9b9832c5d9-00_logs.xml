@@ -1,0 +1,20 @@
+<ErrorLogs>
+  <ErrorLog>
+    <Identity></Identity>
+    <Date>2022-09-06 10:03:05.221</Date>
+    <System>Replicon</System>
+    <FileName></FileName>
+    <ApplicationName>Replicon_Time prepopulation</ApplicationName>
+    <InstanceName>PwCinternal</InstanceName>
+    <CompRefId></CompRefId>
+    <PartyId>66667de5-01a7-4978-a12c-4cd86c58d295</PartyId>
+    <Level>SUCCESS</Level>
+    <Class></Class>
+    <Message>Time entry populated successfully</Message>
+    <EntityId></EntityId>
+    <EntityName></EntityName>
+    <EntityType></EntityType>
+    <AdditionalInfo>Timeentrydate:20220929|Hours:6.00|Project-Task:ABS001-TT1</AdditionalInfo>
+    <LoggedDateTime><LoggedDateTime>
+  </ErrorLog>
+</ErrorLogs>

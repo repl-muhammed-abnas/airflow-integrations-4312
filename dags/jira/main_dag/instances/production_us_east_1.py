@@ -1,0 +1,19 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from jira.main_dag.config import *
+
+instance = 'production'
+
+region = 'us-east-1'
+environment = 'production'
+company_key = f"airflow{region.replace('-', '')}"
+replicon_conn_id = 'airflow-replicon-admin'
+
+timezone_iana = 'America/Los_Angeles'
+
+can_run_batch_task_var_name = f'standard_jira_main_dag_{instance}_can_run_batch_task'
+
+close_task_dag = f"standard_jira_{region.replace('-', '_')}_close_task_{instance}"
+create_task_dag = f"standard_jira_{region.replace('-', '_')}_create_task_{instance}"
+project_import_dag = f"standard_jira_{region.replace('-', '_')}_project_import_{instance}"
+user_export_dag = f"standard_jira_{region.replace('-', '_')}_user_export_{instance}"
+create_user_dag = f"standard_jira_{region.replace('-', '_')}_create_user_{instance}"

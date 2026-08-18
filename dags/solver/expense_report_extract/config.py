@@ -1,0 +1,9 @@
+region = 'us-east-1'
+environment = 'pre-production'
+company_key = 'solverafmig'
+schedule_interval_friday = '0 14 * * 5'
+schedule_interval_sunday = '0 6 * * sun'
+timezone='America/Los_Angeles'
+max_active_runs = 1
+execution_timeout_days = 14
+expense_incurred_report="Expense Incurred Date Details_Automation"

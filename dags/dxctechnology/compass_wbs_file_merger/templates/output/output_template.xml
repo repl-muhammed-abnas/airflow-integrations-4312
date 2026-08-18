@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_WBSMaster_Replicon xmlns:ns0="http://csc.com/IF5000/FromCOMPASSTOReplicon/WBSMaster">
+  {%- for record in dataset %}
+  <Records>
+    <WBS>{{ record.WBS|e }}</WBS>
+    <WBSDescription>{{ record.WBSDescription|e }}</WBSDescription>
+    <Status>{{ record.Status|e }}</Status>
+    <CompanyCode>{{ record.CompanyCode|e }}</CompanyCode>
+    <ProjectType>{{ record.ProjectType|e }}</ProjectType>
+    <ProjectStart>{{ record.ProjectStart|e }}</ProjectStart>
+    <ProjectEnd>{{ record.ProjectEnd|e }}</ProjectEnd>
+    <PersonResponsible1>{{ record.PersonResponsible1|e }}</PersonResponsible1>
+    <PersonResponsible2>{{ record.PersonResponsible2|e }}</PersonResponsible2>
+    <TimeTrackingRequiredAttribute>{{ record.TimeTrackingRequiredAttribute|e }}</TimeTrackingRequiredAttribute>
+    <GlobalWBSIndicator>{{ record.GlobalWBSIndicator|e }}</GlobalWBSIndicator>
+    <IWOWBSIndicator>{{ record.IWOWBSIndicator|e }}</IWOWBSIndicator>
+    <Project>{{ record.Project|e }}</Project>
+    <ProjectDescription>{{ record.ProjectDescription|e }}</ProjectDescription>
+    <ClientID>{{ record.ClientID|e }}</ClientID>
+    <ClientName>{{ record.ClientName|e }}</ClientName>
+    <OpportunityID>{{ record.OpportunityID|e }}</OpportunityID>
+    <OpportunityName>{{ record.OpportunityName|e }}</OpportunityName>
+  </Records>
+  {%- endfor %}
+</ns0:MT_WBSMaster_Replicon>

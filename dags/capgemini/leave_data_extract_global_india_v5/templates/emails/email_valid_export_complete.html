@@ -1,0 +1,8 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon leave data extract for {{ params.timoff_status }} for
+    {{ " " + params.location }} is completed successfully
+    {{ " at " + result('logging_details')['process_start_time'] }}. Please find the extract details for reference.</p>
+<ul>
+    <li>File Name: {{ result("logging_details").export_filename }}.csv.pgp</li>
+    <li>File Path: {{ params.upload_file_path }}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

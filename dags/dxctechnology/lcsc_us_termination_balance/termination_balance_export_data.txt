@@ -1,0 +1,3 @@
+{%- for record in dataset %}
+{{record.personnelnumber}}{{record.subtype}}{{record.timequota}}{{record.begindate}}
+{%- endfor %}

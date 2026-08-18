@@ -1,0 +1,10 @@
+region = 'us-east-1'
+environment = 'pre-production'
+company_key = 'HorizonMediaGen3afmig'
+schedule_interval = "0 9 * * 1-5"
+time_zone = "America/New_York"
+disable_user_timesheets_report_name = 'Disable user timesheets'
+execution_timeout_days = 14
+max_active_runs_child=5
+max_active_runs_master=1
+batch_size=50

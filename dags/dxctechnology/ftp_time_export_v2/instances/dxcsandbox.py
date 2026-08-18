@@ -1,0 +1,14 @@
+region = 'us-east-2'
+environment = 'pre-production'
+company_key = 'DXCSandbox'
+replicon_conn_id = 'dxcsandbox-replicon-RepliconIntFTP'
+sumo_conn_id = 'sumologic-exportlogger'
+sftp_conn_id = 'dxcsandbox-sftp-628172_FTP'
+http_conn_id = 'dxcsandbox-dxc-REPLICON_POQ'
+tenant_email = 'dxcintegrationlogsreplicon@deltek.com'
+internal_email = '{{ var.value.dagrun_internal_testing_email }}'
+exception_email = '{{ var.value.dagrun_failure_alert_email }}'
+sftp_upload_path = '/Test/Outbound/FTPTimeExtract'
+row_threshold = 400000
+dag_id = 'dxctechnology_time_export_ftp_v2'
+disabled = True

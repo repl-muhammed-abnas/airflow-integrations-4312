@@ -1,0 +1,92 @@
+{
+  "ai_lines": {
+    "1": "4cbf3faf6f37b35c49affe52606949e6f7069f14ba0a4d6e60c99dd9cef967aa",
+    "10": "0c9da5fcba90fbb85dab3a6eaa5fb15c3e39b1dc31a1edcd5ade24071f522b02",
+    "11": "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+    "12": "49fe3f81ad40ff8379c47b308e079a363528765aeeb255a4193a36aa2be33c3a",
+    "13": "ce968cc06a27eb6fa3d118118b27bf71f0313c70da55d3a7f4c83f105358abb9",
+    "14": "e65ac89bd60cf2250446d3343c4acbbd785b654d4a6c27e7e759b6c99b2f104d",
+    "15": "0c9da5fcba90fbb85dab3a6eaa5fb15c3e39b1dc31a1edcd5ade24071f522b02",
+    "16": "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+    "17": "ed3ab513c5a7455129b4ae1d75206462cd942ff5548964158835ea48f665b0c8",
+    "18": "10036dc27246aeb175dfbfbe44cacc5e06cef7555a526c1ce795697d0ea0fecc",
+    "19": "e65ac89bd60cf2250446d3343c4acbbd785b654d4a6c27e7e759b6c99b2f104d",
+    "2": "90c49dca1bf66b0ea506be1da8d66ddbff50b0786f9ac98c0e2108403d636b30",
+    "20": "0c9da5fcba90fbb85dab3a6eaa5fb15c3e39b1dc31a1edcd5ade24071f522b02",
+    "21": "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+    "22": "fbc763742f8a1f606e39d5abeb75a89dac84ca422d7f7493595c1adae2b77d40",
+    "23": "095aff80b256c85b18d27e3fa404194324befa412ccf7d8551934f5b179611b7",
+    "24": "e65ac89bd60cf2250446d3343c4acbbd785b654d4a6c27e7e759b6c99b2f104d",
+    "25": "0c9da5fcba90fbb85dab3a6eaa5fb15c3e39b1dc31a1edcd5ade24071f522b02",
+    "26": "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+    "27": "b43e83b3e481dcb09f25e2f70ed570e78ba1a0cd74213d40d9fc15509c4816c1",
+    "28": "8fb86bed7b4273a2a2414316d562713a3fe01de5d507b365f3e8240933b09cb2",
+    "29": "e65ac89bd60cf2250446d3343c4acbbd785b654d4a6c27e7e759b6c99b2f104d",
+    "3": "1caa7acda6696b61973b67609bc3335bc51b850de3bf162717e82ef5d1bf545c",
+    "30": "0c9da5fcba90fbb85dab3a6eaa5fb15c3e39b1dc31a1edcd5ade24071f522b02",
+    "31": "28d86778615f6af47bb1bc4f40face756749768e5111f114cfa234a5060c25af",
+    "32": "d10b36aa74a59bcf4a88185837f658afaf3646eff2bb16c3928d0e9335e945d2",
+    "4": "e65ac89bd60cf2250446d3343c4acbbd785b654d4a6c27e7e759b6c99b2f104d",
+    "5": "0c9da5fcba90fbb85dab3a6eaa5fb15c3e39b1dc31a1edcd5ade24071f522b02",
+    "6": "58636dd91683339092f700bf39dd97cef08ab7e1a75e5ae24bdc7de2ecf16d40",
+    "7": "9e7fe469b3ad33a2c828af54a40cee0eff11d2346cb847ab15544e24c5e8817a",
+    "8": "6f803735c2b8fe4b9b1803bf392c78b596bf3718840fb41861795cd18b097325",
+    "9": "e65ac89bd60cf2250446d3343c4acbbd785b654d4a6c27e7e759b6c99b2f104d"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 4,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-15T08:00:06.472Z",
+  "file_state": {
+    "file_sha256": "7cce2ef55d37562ed21a218afe2bca24eaa824abb3b6ffebe25059412a718a16",
+    "total_file_lines": 32,
+    "total_lines": 32
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "a4f32143449db1b73a3657f4641154290cc792161635a61700a27766977f545a",
+      "last_known_line": 12,
+      "removed_at": "2026-05-22T06:40:43.854Z"
+    },
+    {
+      "hash": "cb95de62b0fa3f073f9ad1a18e9831663bf4828fcedd95d8402abc304f0280da",
+      "last_known_line": 13,
+      "removed_at": "2026-05-22T06:40:43.854Z"
+    },
+    {
+      "hash": "49fe3f81ad40ff8379c47b308e079a363528765aeeb255a4193a36aa2be33c3a",
+      "last_known_line": 12,
+      "removed_at": "2026-05-22T09:57:53.771Z"
+    },
+    {
+      "hash": "ce968cc06a27eb6fa3d118118b27bf71f0313c70da55d3a7f4c83f105358abb9",
+      "last_known_line": 13,
+      "removed_at": "2026-05-22T09:57:53.771Z"
+    },
+    {
+      "hash": "a4f32143449db1b73a3657f4641154290cc792161635a61700a27766977f545a",
+      "last_known_line": 12,
+      "removed_at": "2026-05-28T08:47:35.563Z"
+    },
+    {
+      "hash": "cb95de62b0fa3f073f9ad1a18e9831663bf4828fcedd95d8402abc304f0280da",
+      "last_known_line": 13,
+      "removed_at": "2026-05-28T08:47:35.563Z"
+    }
+  ],
+  "source_file": "C:\\workspace\\airflow-integrations\\dags\\mammoet\\user_import_v4\\mappers\\work_week\\work_week_mapper_v1.py",
+  "stats": {
+    "ai_line_count": 32,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 6
+  },
+  "updated_at": "2026-05-28T08:47:35.563Z",
+  "version": 1
+}

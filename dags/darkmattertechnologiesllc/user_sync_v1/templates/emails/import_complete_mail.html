@@ -1,0 +1,25 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The user import is
+    &nbsp;
+    {%- set has_errors = result("format_logs").get_record_summary.failed > 0 -%}
+    {%- if has_errors -%}
+    completed with errors
+    {%- else -%}
+    {%- if (result("format_logs").get_record_summary.exception > 0) or (result("format_logs").get_record_summary.skipped
+    > 0) -%}
+    completed with exceptions
+    {%- else -%}
+    completed successfully
+    {%- endif -%}
+    {%- endif -%}
+    &nbsp;for {{ result('new_file_sensor_to_process') | file_name }} at {{ params.today }}. Please find below, log file
+    details. <br />
+    <br />'Log path' : {{ params.log_path }} <br />
+    <br />'Log file' : {{ result('get_logfile_name') }} <br />
+    {%- if has_errors -%}
+    <br />
+</p>
+<br />
+<br />
+{%- endif -%}
+<p><br />For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards,
+    <br />Deltek Inc.</p>

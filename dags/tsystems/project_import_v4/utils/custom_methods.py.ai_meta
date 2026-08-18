@@ -1,0 +1,389 @@
+{
+  "ai_lines": {
+    "10": "7b779e3b5ee2195595c8b9cd60d0fcc61e3dc674d530ac312c0abb4f39484225",
+    "11": "5f2f1de66be77fe0f3b36270b0bc202a763d6c579729a863ccc2e194c348159c",
+    "12": "d53193b444202ebad9b03b9606646da04b1c9ac1cb2a8f2e5781912dfe1964d7",
+    "13": "8a8c6b4983877e8ceadab3fd52a724a9ae0e46fb7dd79de35c6efef1d1e42011",
+    "14": "da488a04cf2e34b42ea314cac71e0c659a722f8c6694e21c099e610287f5bcfd",
+    "15": "fe1743d14564c76fe460599c918c74f706084f421115cf436002ad9514dcd470",
+    "16": "49ba773770feb3e7a55447767cb477b099aa769218228215868e9883624209eb",
+    "17": "8c42600c669d37de59f5ec1a0a3adcc9ef2cf7423a67de07bfaa8b04f8d57af8",
+    "18": "135cbfdd595bf463305a1a21cb6687573110762cf526ead216adf8c1ff514495",
+    "19": "51f7213dbf673dfdbc436fd32c49fb41a7bac087d17d96483e0d02d8ad5748ec",
+    "20": "fa51bfbda3f780941b7cb3a1489a3b3b699819b08f5370866df743912e810e1f",
+    "22": "e09ffc71ba69f965006077ca109ae9e7cfbe5069909704c24497b4eaf0092df4",
+    "23": "b63fff96a8f04d7ce48ed4356cbd25b3f8fccf9d0727a159ec0abfcc987c6b4d",
+    "24": "87c6b2101aba50f0760ec8b2961405f592965a5e6d83a12c034591d2266ee144",
+    "25": "00972c1d55d423e45df7e77b85f958840cc500eafd1002d29e96580c29c7a1e2",
+    "26": "2d1c39d174767ca576163438483273b99d117029fed01e9411738d721bff7bf0",
+    "27": "28d86778615f6af47bb1bc4f40face756749768e5111f114cfa234a5060c25af",
+    "275": "40a9941102d48fdc17098f0b7e9f77a1649f502a15b2bd8f3b06a346e3d43860",
+    "279": "2a44168318e224e1f830fe9ab620aa00dd4f7b3fb19ef4399abf59593cf0756d",
+    "28": "701551f584403d939aff627d58a88bc6c79f5833d0825c29a6c722a6106e01c1",
+    "29": "24ecef2f4477c017900d62a357ad5878ccba6dc64ab1725c56de7b4e99693069",
+    "32": "343eb659a87b35f02161bf67fb3e7be2dbab4828ff2b417c98a50692fac15505",
+    "35": "5e0a0033fc6f16ed77ca2767fbe9827cca8cdca8ceb68453a571f137b23d77dd",
+    "36": "d3dc71c62d30e97abab8c7a874ced69387fd86ff7e0d3434a2fd1f1d6f6dcb00",
+    "38": "c4f859ba4662f756592e69356d5b422bfb3ad8744cd74e2d0142bc613660bf13",
+    "39": "8af592bccca477ba9d10154e66a55b6eb8f4f4babd63e7ad7cc3820207f5345f",
+    "40": "16e7bbf1f26ba375518f926068746e1cb8e1c19f2ce33dca62673314d19f55b5",
+    "41": "7d89dcc942cf69ccab7cd17ef3d1227955533620820b1453df94eea4c2ef60eb",
+    "43": "237bc5c81bfb5b2d6c4ecc4000313cb81bcc6e47a23aa2a66801f44f8cfd3d4f",
+    "44": "5007a8a35753b14321a9f68df129fde5794f1d129b1ec725b25f054cbf60c52e",
+    "441": "d53193b444202ebad9b03b9606646da04b1c9ac1cb2a8f2e5781912dfe1964d7",
+    "45": "71791768a572bd2fb3acd2e0afa6b1c163f85c09d9233e3d785f8208e3419efb",
+    "46": "19d229bd889fe9727dd819adc994b5641aaacdbd5fd15183641a535d62d42f59",
+    "467": "c94f2f6f372b7580bfa044adc2baa7338648791e5270602f26af1a770ac18f1d",
+    "47": "e5b285daed6ba04eacda7ce67321eb8a397a4988593e19baa648363f2f5826d5",
+    "48": "881b48133ff6443f565bddc85bfe88b4f51a418f68e7c76520921e717e6831e8",
+    "5": "eb4d28ab1173d442e0f5b6ca4681c8a6239fa246fff9d7ef48bab991fb2ef16d",
+    "50": "bd1343d57a2ffe60b1c38fe38e5a37639cc71753e66030700ffbd02dd1a02333",
+    "51": "18933cbd0517e4092eaadacc311deeb5b30cba544cd23c045d5aab408a0890a4",
+    "52": "e9159c463adf454791d011f05cfba0a659fdcec12a635800146342e567c3c4ee",
+    "53": "295baa191461dd12bc7948820496d4a1c46f4c83a577f7c99b889fdb2988a27c",
+    "54": "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+    "55": "0cd451aa35f084e891aeea86da0c9ecf976cf9a506214b0ad60e3c25e6b3ac4b",
+    "56": "bc85c1243b44a3e5e1b73cd66851b8c5c51a84fd5986e6c6f61e31cdfc8588bb",
+    "57": "9a284e83a60bbae3ffa8594906d9fe64bad619c9cd3b04ee3ab990e2f5707de8",
+    "58": "0e38d880317b3e9432bfb4a3977343688ba4354b04aeb5cabf2d9b4d885f6c3b",
+    "59": "3d85597bbf6feb6b6e5a4ba9cda57ec0ecc388886ca249bae0c4e060307e95c8",
+    "60": "1b05a2663455df23052287adc4f7319ce01c5899a59a31b445028e411c79a408",
+    "692": "185058e5d56815440c7503735d65824ca6ddd6063300817d2f92e2bf37fe1ba1",
+    "693": "7c2649af45d2450c6aba108d36b643ebc06776c59d29e7db8eb3c3bb070c464f",
+    "741": "bf3d66f41034c8948fdec3ab4db9763af32ad50a768072d127562f8f11d8c1fc",
+    "742": "168ed58aa045ceefcae10cbffcae0e055c57d68711e6ddcf896dcdbff83548c6",
+    "743": "df5b60d88a1ff5ebaa7bfeddc186a27f2e43cdec45c40295e06616082184bfcb",
+    "744": "85475f24e65efdf112102176bc609982fc354883422f9e12501baaabe8e66f8a",
+    "745": "26a0d7849c318dccc6f8adb3b39d12e263b6280811bc48ac52b537d7e43412db",
+    "746": "8ce8689be42237098be02105417221113f6cfad95aebf6d032bf4aa84f2336e6",
+    "747": "bdce82c41a99d5d0e86eb7941511f981c60b5cd00b12babb4a722549606eced9",
+    "748": "84f770be6317a7958bd32428ae302d678fc47744dac991e37af8fea287c27d9c",
+    "752": "025b102d9edacf4c3a5c1302ea146bdc2a3c903a17beb223afa67cea57e016a6",
+    "753": "8526e4c523750b1ea4529fda6ad6ccc8b25d33735d24ebfe6d7fe3971f211cee",
+    "754": "0f74026d6d6b0b9e6061cd401f22410c20c35aa0f43f12685b82b77619601a08",
+    "755": "fd85a44f67c2d9960d07483d43f6daa8d246577b025f991f7ff753e5aeb5ee31",
+    "8": "fef90c2a94e0a6199a5f66d87a619026c608748a4ee6300e9220924044cd97d6",
+    "946": "c906c835cdbb2f5ac051d73758e85ecebc620f2f41f55e53888826fee9f40503"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 8,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-22T09:26:22.700Z",
+  "file_state": {
+    "file_sha256": "3e9656d140fbd1103b56f510ffe776342e87264519c9aa09a4bfc7d78fa52a77",
+    "total_file_lines": 1037,
+    "total_lines": 870
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "ed3f21c6615d9e997291483f08a8e30fcd29ce8f8b100b10e0a618893b785dce",
+      "last_known_line": 687,
+      "removed_at": "2026-04-23T14:09:12.331Z"
+    },
+    {
+      "hash": "b0d334969d93d5b140311db73684a47816e870fbccf448147e18daf7a1895444",
+      "last_known_line": 688,
+      "removed_at": "2026-04-23T14:09:12.331Z"
+    },
+    {
+      "hash": "9b6985cc8e85039926138e90b97dbd609e9c78299a2c3c5833a1c57183a609ed",
+      "last_known_line": 689,
+      "removed_at": "2026-04-23T14:09:12.331Z"
+    },
+    {
+      "hash": "27d686b2fc3f6476c8c16522a3533392e41bc18a0bc854dd3df8b9ba3455abfb",
+      "last_known_line": 690,
+      "removed_at": "2026-04-23T14:09:12.331Z"
+    },
+    {
+      "hash": "489cad2d4baf8f123ae5f5011fb9788d4320bc1b039cdaf98197264ea18d5e92",
+      "last_known_line": 10,
+      "removed_at": "2026-04-23T14:13:35.223Z"
+    },
+    {
+      "hash": "2d1072048adfb718a90c372dbea8f0a41bddc349f8f0914104f99e7c85756730",
+      "last_known_line": 11,
+      "removed_at": "2026-04-23T14:13:35.223Z"
+    },
+    {
+      "hash": "0b9f22959f8ba32ec0d80f5cde5b72369620c49169244864168aacbe3366d93a",
+      "last_known_line": 12,
+      "removed_at": "2026-04-23T14:13:35.223Z"
+    },
+    {
+      "hash": "eda622a61cbcc8720972e65e107f4948ea73e4f35f76695ea6c74bcc66e247ce",
+      "last_known_line": 13,
+      "removed_at": "2026-04-23T14:13:35.223Z"
+    },
+    {
+      "hash": "2955eea261555c5a804467b09f73c51765ee8a5832b8eda1838cd8730d93cade",
+      "last_known_line": 14,
+      "removed_at": "2026-04-23T14:13:35.223Z"
+    },
+    {
+      "hash": "ccc32e9141a4af5f3238d3e14462529fb932d8ed0fce347c81d4ed4ac38d12bf",
+      "last_known_line": 15,
+      "removed_at": "2026-04-23T14:13:35.223Z"
+    },
+    {
+      "hash": "c25644830e86b37c09d00c6aa38dfe55be234d6e948e38d90e940166e1ced4cf",
+      "last_known_line": 18,
+      "removed_at": "2026-04-23T14:13:35.223Z"
+    },
+    {
+      "hash": "4f4ce37665465d5f2e390799a1bdc19152a39b1b93287b5a9a1351002efc5784",
+      "last_known_line": 19,
+      "removed_at": "2026-04-23T14:13:35.223Z"
+    },
+    {
+      "hash": "33934b53064f60bb824c9ce0dd15966ca8677158ae70bde36665c64b398be903",
+      "last_known_line": 22,
+      "removed_at": "2026-04-23T14:13:35.223Z"
+    },
+    {
+      "hash": "896aae5cda76e2a102b63bce1d7ded4376cb81b03e47f24caa8bc1d4f4b5a243",
+      "last_known_line": 23,
+      "removed_at": "2026-04-23T14:13:35.223Z"
+    },
+    {
+      "hash": "5fa963f48259c6c3777427ce10282da9cb27bcc63811893a48341bd10df93ce6",
+      "last_known_line": 8,
+      "removed_at": "2026-04-23T14:13:35.223Z"
+    },
+    {
+      "hash": "89ddbb562fe20887787e05a75f322d3f7ec150d2cd5eb2ebdc38a59a6933411a",
+      "last_known_line": 9,
+      "removed_at": "2026-04-23T14:13:35.223Z"
+    },
+    {
+      "hash": "a6ed1acca261433dcff218d114d4e2a4d5cce31c3c2de713d6bf0344ee9c88b9",
+      "last_known_line": 10,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "331149ebf5cef4cc8bec1488390ea8b8933f1e51c240a7772361b79245378574",
+      "last_known_line": 11,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "f21cafd3fb073bf8145cf29c40f9a426720dbd9821ad015c4bdd05e1a8e79b0d",
+      "last_known_line": 12,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "1cd069fe78bd7100461546a2769f301648361c567f6ba650398e09f9a37278f4",
+      "last_known_line": 13,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "145e43835ccd6a79c783716ff20b5f47fbc462d839656fbb28a8ade00bf19423",
+      "last_known_line": 14,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "334359b90efed75da5f0ada1d5e6b256f4a6bd0aee7eb39c0f90182a021ffc8b",
+      "last_known_line": 15,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "211f013430bdeeaada20a6a3e0f9ed919e95d06f7841744616fc9caae42d068d",
+      "last_known_line": 16,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "610701fa361163a75876b66f0e54c0ad3b18b1a946b1d22c0af2103cfb6e75c4",
+      "last_known_line": 17,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "d032a18ffb74f47d51b8b3f31c7017d11db25eba6488bc8e43abbc2d64cb00b8",
+      "last_known_line": 18,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "626b469373401a7369f44896fb06c2021298f27f49cb912beb73a874200657f2",
+      "last_known_line": 19,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "79f48cdc20d19a5b26c5fe8bbc99428950826703261fa03cbdb57174a016fe78",
+      "last_known_line": 20,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "0d53c636604ed7c74f750495f3cdd2a54918271ea08956a76dcfaeeb4276af2c",
+      "last_known_line": 21,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "d9906a7ffedb195ed633106723a490535580d857434527d5247990903e75963a",
+      "last_known_line": 22,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "717dc92fd6e66b7ab5d185a5dae962ad228aab00fcef6fb5323d8370c23a96e8",
+      "last_known_line": 26,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "3bbe364ba15d16661a3d1f6229b5c03e4056932ee4399bb4e2eb92d69f594d5b",
+      "last_known_line": 8,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "9ca5b9adde85afa517b9181f49ae38e60847db147b2983ef6bed6783ce0d9c29",
+      "last_known_line": 9,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "527aab56fe8efe9606772621798ca5abf2fbebe64511d674b026eda144dfcd7d",
+      "last_known_line": 920,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "bd8b5f278f63e0f37078100b9047fd0c6e5ee5a76156348db2b49c5937aa2d2a",
+      "last_known_line": 921,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "20963fe702bd64c7f508f10347f84315dc6b0ea3a28b2afb4f86ba25d9ed0110",
+      "last_known_line": 925,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "92f91f1b58069be3e65707afde5a11e23ddb24dd954607128209eaa1d91df277",
+      "last_known_line": 934,
+      "removed_at": "2026-04-24T14:49:43.641Z"
+    },
+    {
+      "hash": "2c68f248697af638b06c02f409def8b6dad94143ee0d15b464b3d24d6ae399cc",
+      "last_known_line": 24,
+      "removed_at": "2026-04-24T16:51:48.375Z"
+    },
+    {
+      "hash": "586b2cbff0d59b8e980225e0d76208748fcee1d579216bfd04bf5713238eebaa",
+      "last_known_line": 26,
+      "removed_at": "2026-04-24T16:51:48.375Z"
+    },
+    {
+      "hash": "104ac5901890f379709a1904cb254bd4dc2f179bbbe5c34b528484af878019ad",
+      "last_known_line": 27,
+      "removed_at": "2026-04-24T16:51:48.375Z"
+    },
+    {
+      "hash": "0ba01ff867b46901e130a876f1ea465dd8742b73427e0d776750c371a90b04e8",
+      "last_known_line": 30,
+      "removed_at": "2026-04-24T16:51:48.375Z"
+    },
+    {
+      "hash": "872ddb1b0aa275f5b3f86ba7deed4c17b6d35597ebcb78dbe88487819da58f39",
+      "last_known_line": 31,
+      "removed_at": "2026-04-24T16:51:48.375Z"
+    },
+    {
+      "hash": "60b90e9e074282ae062991d04dc5c885b9b3610d3563756b6621081d6ab2ee6d",
+      "last_known_line": 32,
+      "removed_at": "2026-04-24T16:51:48.375Z"
+    },
+    {
+      "hash": "3fd4ae6e4dbe1bf5599a7a5fe82a0f0b8772c8b265799f7905c995ae54d1bc46",
+      "last_known_line": 33,
+      "removed_at": "2026-04-24T16:51:48.375Z"
+    },
+    {
+      "hash": "38b5c48b5d48f09b796a7b1578096f302e514d83871e0e517bdd9c71704caf53",
+      "last_known_line": 36,
+      "removed_at": "2026-04-24T16:51:48.375Z"
+    },
+    {
+      "hash": "cae7dc20338fd5744838e4e2cd2fdc43d68ce8999b341a52199f2f0a3bb625c8",
+      "last_known_line": 37,
+      "removed_at": "2026-04-24T16:51:48.375Z"
+    },
+    {
+      "hash": "cde70224fe7d802886ebdd909025e84b2d1daef1affa498fc2eedbf1719dd74e",
+      "last_known_line": 32,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "6a31b482492363efe10e046b1318d518153ece1f7e61d3ffdddf18f1a4c14a95",
+      "last_known_line": 33,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "43fc0fa1b7f4427d4621b72a76172346fb7a000841e2602b04dd593b497b3579",
+      "last_known_line": 35,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "3da996d5e3a129c072e9b7870b9c93eeb4bae05a507d4ade121852ce7d298426",
+      "last_known_line": 36,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "abb4214478e98faff27eaf7c94a3372afd87d99f7de23ed635c0bbefc601fa40",
+      "last_known_line": 37,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "adee80bd84dafacf8a86b0a2755e5fc1ccc093d8e66966a886d68b6ecbb2cf96",
+      "last_known_line": 42,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "9f48dd54145b976e55b680af23ea295f78579b23673202537e8a9b080c323275",
+      "last_known_line": 43,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "857c969192d25bb5c279af2a307b7d25fe4d2c503b4f0294ba6906b17e9db4b0",
+      "last_known_line": 44,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "5c8dae615f7efa2f6bde725d556725a5fc9ca3e09957730bff8fd25658f97db6",
+      "last_known_line": 47,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "03d6dfa501e691935d88f433de20b2fa3f62dbfd7e161c685fe2100811544403",
+      "last_known_line": 49,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "c5ef33f5e62cb10d72b190d8fda93138332826aac934247a731871129ca66c24",
+      "last_known_line": 50,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "fae6350e2655a37472f5491106c7618caf641702d0656ebb2428b3a2845a21a6",
+      "last_known_line": 52,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "2bb72f3cc19a27eaa692feca99ce2b21406aaa4a869d62b6c1ba00e55d8f80ea",
+      "last_known_line": 53,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    },
+    {
+      "hash": "264629da0f5c6ca2f339c6292edd9562e8c88c28d01d2126d7adc177101b5aec",
+      "last_known_line": 54,
+      "removed_at": "2026-04-24T17:03:39.464Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\tsystems\\project_import_v4\\utils\\custom_methods.py",
+  "stats": {
+    "ai_line_count": 64,
+    "ai_line_pct": 7.36,
+    "ai_lines_removed_or_modified": 59
+  },
+  "updated_at": "2026-04-24T17:03:39.464Z",
+  "version": 1
+}

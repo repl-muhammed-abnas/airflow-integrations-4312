@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_Attributes_Replicon xmlns:ns0="http://csc.com/IF5001/FromCOMPASSTOReplicon/Attributes">
+    <Records>
+        <WBS>CL1-DMO01.02.10</WBS>
+        <Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>05</Attribute>
+            <Description>Project Management</Description>
+            <EndDate>20221204</EndDate>
+        </Attributes>
+        <Attributes>
+            <AttributeNumber>1</AttributeNumber>
+            <Attribute>26</Attribute>
+            <Description>DomReP-Retail</Description>
+            <EndDate>20221204</EndDate>
+        </Attributes>
+    </Records>
+</ns0:MT_Attributes_Replicon>

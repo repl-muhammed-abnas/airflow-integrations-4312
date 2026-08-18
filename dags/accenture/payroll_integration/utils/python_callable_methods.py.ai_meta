@@ -1,0 +1,48 @@
+{
+  "ai_lines": {
+    "11": "15b1e49a94a6eb303a35f55b5872b1f3f6f3ce7c177fb33eabf976d6d85d2b37",
+    "12": "e5bb97f243b013db9f754cc450e5ea160c8a627aa3f5a1b27636080973be16db",
+    "13": "4ac459b6f30265c209ff23b8bb099afae98995c6cb03fbb2787947ea2dc74def",
+    "14": "cf9408dab335300a47504588a6ca7252744da3ec793434bb2da5a9ecfed47351",
+    "15": "6e1cebc32d371b87308c821e6db18048b6ed1cf17cc44ca6e25d8511c76a6bb4",
+    "16": "b8399222a2f988dd66a77250fde94e9653e244f7eba124b6cf038d90d22a7739",
+    "17": "ee3d82ca80e0c589093b26ae7ab7acb91e7f454cbe7bc82e5e11d0032def3c81",
+    "18": "4a5b196b47e8ca13f61bde8deccf4663486768307cf1b3ead06b518020262f34",
+    "21": "8056874495a7c5b62f34ba9fde1cfff150cb10d24cc0c014958961537f9eeef5",
+    "22": "0cb46f5f1af0e7214f1878df6ebbe94c010ec52b3654f9b96587b0b9a822b493",
+    "26": "c9c75b95566ae368e7a9e6820318f354539b7ec70ebc2c7cab4aadc1ac1bec87",
+    "5": "5214a8218534ea12bc6d48b746f8e65e486eda827a88a2bf52c0f660d94befe6",
+    "50": "92f79aecafd517f1e5ec5534ba2204214526d9a1ed12a2797152c87c25da8d52",
+    "52": "676bb5de392a201ed04aea4affe799b58c0ce242e2ba4d905e6055a4dc2ed563",
+    "55": "97432d3e3f6e161f3e031f4662912a296cff04fd3b06fd74230eda762df028f8",
+    "6": "dc283290761fae46fea79655bf811b3006802cb210c7e50709474171d0cbfc99",
+    "7": "830cce40c29f8695984c4fde6f35e6be8f5ac12b740dd8a2571ec95f84c0dd24",
+    "8": "cf9408dab335300a47504588a6ca7252744da3ec793434bb2da5a9ecfed47351",
+    "9": "c94f2f6f372b7580bfa044adc2baa7338648791e5270602f26af1a770ac18f1d"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-06-04T13:24:54.654Z",
+  "file_state": {
+    "file_sha256": "6e99290a8caeb437dfee29ae63b780adf682706e963f4f998191052c3e60ff05",
+    "total_file_lines": 96,
+    "total_lines": 82
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\accenture\\payroll_integration\\utils\\python_callable_methods.py",
+  "stats": {
+    "ai_line_count": 19,
+    "ai_line_pct": 23.17,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-06-04T13:25:02.116Z",
+  "version": 1
+}

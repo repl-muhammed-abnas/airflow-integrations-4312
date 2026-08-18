@@ -1,0 +1,85 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Germany PUF mapper",
+    "inherits": "_base.json",
+    "last_updated": "2025-01-01",
+    "compliance": ["EN16931", "XRechnung", "Peppol BIS 3.0"]
+  },
+
+  "country": {
+    "code": "DE",
+    "name": "Germany",
+    "currency": "EUR",
+    "language": "de"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 19.0,
+      "reduced": [7.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Regelsteuersatz",
+      "AA": "Ermaessigter Steuersatz",
+      "Z": "Nullsatz",
+      "E": "Steuerbefreit",
+      "AE": "Umgekehrte Steuerschuldnerschaft",
+      "K": "Innergemeinschaftliche Lieferung",
+      "G": "Ausfuhrlieferung"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9930",
+    "buyer_endpoint_scheme": "9930",
+    "vat_scheme_id": "9930",
+    "company_scheme_id": "0204",
+    "vat_prefix": "DE",
+    "scheme_mappings": {
+      "vat_number": "9930",
+      "leitweg_id": "0204",
+      "gln": "0088",
+      "duns": "0060"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": ["leitweg_id"],
+    "xrechnung": {
+      "buyer_reference_required": true,
+      "leitweg_id_for_public_sector": true
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^DE[0-9]{9}$",
+    "postal_code_pattern": "^[0-9]{5}$",
+    "iban_pattern": "^DE[0-9]{20}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number", "bank_bic"],
+    "bic_required_for_sepa": true
+  },
+
+  "defaults": {
+    "payment_terms": "Zahlbar innerhalb von 30 Tagen",
+    "contact_department": "Buchhaltung"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "requires_bic_for_bank_transfer": true
+  },
+
+  "translations": {
+    "invoice": "Rechnung",
+    "credit_note": "Gutschrift",
+    "total": "Gesamtbetrag",
+    "vat": "Mehrwertsteuer"
+  }
+}

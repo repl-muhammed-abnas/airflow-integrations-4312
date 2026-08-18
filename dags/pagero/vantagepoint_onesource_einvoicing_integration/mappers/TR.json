@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Turkey PUF mapper - KDV compliant with e-Fatura/e-Arsiv support",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Turkish VAT", "e-Fatura", "e-Arsiv"]
+  },
+
+  "country": {
+    "code": "TR",
+    "name": "Turkiye",
+    "currency": "TRY",
+    "language": "tr"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 20.0,
+      "reduced": [1.0, 10.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Standart oran",
+      "AA": "Indirimli oran",
+      "Z": "Sifir oran",
+      "E": "Muaf",
+      "AE": "Ters vergilendirme",
+      "K": "AB ici tedarik",
+      "G": "Ihracat"
+    },
+    "withholding_rates": {
+      "1/2": 50.0,
+      "2/3": 66.67,
+      "3/5": 60.0,
+      "4/5": 80.0,
+      "9/10": 90.0
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9935",
+    "buyer_endpoint_scheme": "9935",
+    "vat_scheme_id": "9935",
+    "company_scheme_id": "9935",
+    "vat_prefix": "TR",
+    "scheme_mappings": {
+      "vat_number": "9935",
+      "vkn": "9935",
+      "tckn": "9935",
+      "mersis": "9935",
+      "gln": "0088"
+    },
+    "additional_seller_ids": {
+      "vkn": "9935",
+      "mersis": "9935"
+    },
+    "additional_buyer_ids": {
+      "vkn": "9935",
+      "tckn": "9935"
+    }
+  },
+
+  "extensions": {
+    "required": ["TR:eFatura"],
+    "optional": ["TR:eArsiv", "TR:Withholding", "TR:Exemption"],
+    "efatura": {
+      "enabled": true,
+      "gib_platform": true,
+      "mandatory_b2b": true,
+      "ettn_required": true,
+      "registration_data": {
+        "ettn": {
+          "id_type": "TR:ETTN",
+          "description": "Evrensel Tekil Tanimlama Numarasi (UUID)",
+          "format": "UUID"
+        },
+        "gib_postbox": {
+          "id_type": "TR:GIBPostbox",
+          "description": "GIB e-Fatura postbox alias"
+        }
+      },
+      "invoice_scenarios": {
+        "TEMELFATURA": "Basic Invoice",
+        "TICARIFATURA": "Commercial Invoice",
+        "IHRACAT": "Export Invoice",
+        "YOLCUBERABERFATURA": "Traveler with Goods",
+        "EARSIVFATURA": "e-Archive Invoice"
+      },
+      "invoice_types": {
+        "SATIS": "Sales Invoice",
+        "IADE": "Return Invoice",
+        "TEVKIFAT": "Withholding Invoice",
+        "ISTISNA": "Exemption Invoice",
+        "OZELMATRAH": "Special Tax Base Invoice",
+        "IHRACKAYITLI": "Export Registered Invoice"
+      }
+    },
+    "earsiv": {
+      "enabled": true,
+      "for_non_efatura_registered": true,
+      "internet_sales": true
+    },
+    "withholding": {
+      "id_type": "TR:Withholding",
+      "tevkifat_codes": {
+        "601": "Construction works",
+        "602": "Security services",
+        "603": "Cleaning services",
+        "604": "Printing services",
+        "606": "Waste collection",
+        "607": "Advertising services",
+        "608": "Real estate services",
+        "609": "Transport services"
+      }
+    }
+  },
+
+  "field_mappings": {
+    "additional_header_fields": {
+      "ettn": "ETTN",
+      "scenario": "InvoiceScenario",
+      "invoice_type": "InvoiceType",
+      "withholding_code": "WithholdingCode"
+    },
+    "additional_seller_fields": {
+      "vkn": "SellerVKN",
+      "mersis": "SellerMERSIS",
+      "trade_registry": "SellerTradeRegistry",
+      "tax_office": "SellerTaxOffice"
+    },
+    "additional_buyer_fields": {
+      "vkn": "BuyerVKN",
+      "tckn": "BuyerTCKN",
+      "tax_office": "BuyerTaxOffice"
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^TR[0-9]{10,11}$",
+    "vkn_pattern": "^[0-9]{10}$",
+    "tckn_pattern": "^[0-9]{11}$",
+    "mersis_pattern": "^[0-9]{16}$",
+    "postal_code_pattern": "^[0-9]{5}$",
+    "iban_pattern": "^TR[0-9]{24}$",
+    "required_fields": [
+      "invoice_number",
+      "issue_date",
+      "currency_code",
+      "seller_vat_number",
+      "seller_vkn",
+      "seller_tax_office",
+      "ettn"
+    ]
+  },
+
+  "defaults": {
+    "payment_terms": "30 gun icerisinde odeme",
+    "contact_department": "Muhasebe Departmani",
+    "scenario": "TEMELFATURA",
+    "invoice_type": "SATIS"
+  },
+
+  "special_rules": {
+    "requires_issue_time": true,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "efatura_mandatory_b2b": true,
+    "earsiv_for_b2c": true,
+    "ettn_required": true,
+    "gib_integration": true,
+    "tax_office_required": true,
+    "withholding_invoice_support": true,
+    "exemption_invoice_support": true
+  },
+
+  "translations": {
+    "invoice": "Fatura",
+    "credit_note": "Iade Faturasi",
+    "total": "Toplam",
+    "vat": "KDV"
+  }
+}

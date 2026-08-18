@@ -1,0 +1,28 @@
+<p><strong>This is an automated mail, please don't reply.</strong></p>
+
+<p>Hello,</p>
+
+<p>The Project Import job is
+    {%- if result("filter_project_import_failures", key="length") > 0 -%}
+    {{" "}}completed with errors
+    {%- elif result("filter_project_import_exception", key="length") > 0 -%}
+    {{" "}}completed with exceptions
+    {%- else -%}
+    {{" "}}completed successfully
+    {%- endif -%}
+    {{" "}}based on the file - <strong>{{ result('new_file_sensor') | file_name }}</strong> on <strong>{{
+        current_time_in_specified_tz(fmt="%d/%m/%Y/T%H%M%S", tz="Etc/UTC") }}</strong>. The logs have been updated to
+    SFTP for reference.</p>
+
+<p>
+    Log file name: <strong>{{ result('get_log_file_name') }}</strong><br />
+    Log file path: <strong>{{ params.file_path }}</strong>
+</p>
+
+{%- if result("filter_project_import_failures", key="length") > 0 or result("filter_project_import_exception",
+key="length") > 0 -%}
+{%- endif -%}
+
+<p>For any queries, please reach out to support@replicon.com</p>
+
+<p>Regards, <br />Deltek Inc.</p>

@@ -1,0 +1,208 @@
+<mxfile host="65bd71144e">
+    <diagram name="Polaris-RP Integration" id="rp-polaris-architecture">
+        <mxGraphModel dx="2694" dy="2513" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1400" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="Polaris → Resource Planner — Integration Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="320" y="20" width="1180" height="36" as="geometry"/>
+                </mxCell>
+                <mxCell id="subtitle" value="Forward + Reverse data flows between Polaris and RP — all DAGs, sources, integrations, and target tables • v1.0 • 2026-05-06" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2" parent="1" vertex="1">
+                    <mxGeometry x="320" y="56" width="1180" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_box" value="Legend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="1600" y="-140" width="360" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_a" value="Software System (Polaris / RP)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="1620" y="-100" width="320" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_b" value="Polaris-side Source (Report / Webhook event)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="1620" y="-70" width="320" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_c" value="Integration DAG (Polaris → RP)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="1620" y="-40" width="320" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_d" value="Integration DAG (RP → Polaris) — reverse" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="1620" y="-10" width="320" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_e" value="Target Table (MSSQL)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#F5F5F5;strokeColor=#666666;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="1630" y="24" width="320" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_line_solid" value="Scheduled / pulled (report or query)" style="text;html=1;align=left;verticalAlign=middle;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="1690" y="64" width="260" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_line_solid_arrow" value="" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1630" y="71.38" as="sourcePoint"/>
+                        <mxPoint x="1686" y="71.38" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="legend_line_dashed" value="Event-driven (Polaris webhook push)" style="text;html=1;align=left;verticalAlign=middle;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="1690" y="80" width="260" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_line_dashed_arrow" value="" style="endArrow=classic;html=1;dashed=1;strokeColor=#D79B00;strokeWidth=2" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1630" y="87.38" as="sourcePoint"/>
+                        <mxPoint x="1686" y="87.38" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="polaris_sys" value="Polaris&#xa;&lt;font style=&quot;font-size: 10px&quot;&gt;[Software System]&lt;/font&gt;&#xa;&lt;br/&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;Replicon Polaris PSM&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;arcSize=8" parent="1" vertex="1">
+                    <mxGeometry x="80" y="160" width="200" height="940" as="geometry"/>
+                </mxCell>
+                <mxCell id="rp_sys" value="Resource Planner&#xa;&lt;font style=&quot;font-size: 10px&quot;&gt;[Software System]&lt;/font&gt;&#xa;&lt;br/&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;Deltek Resource Planning&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;arcSize=8" parent="1" vertex="1">
+                    <mxGeometry x="1800" y="160" width="180" height="940" as="geometry"/>
+                </mxCell>
+                <mxCell id="forward_container" value="Forward Integrations: Polaris → Resource Planner" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6C8EBF;dashed=0;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;fontSize=13;fontStyle=1;arcSize=4" parent="1" vertex="1">
+                    <mxGeometry x="320" y="200" width="1460" height="700" as="geometry"/>
+                </mxCell>
+                <mxCell id="reverse_container" value="Reverse Integration: Resource Planner → Polaris" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#9673A6;dashed=0;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;fontSize=13;fontStyle=1;arcSize=4" parent="1" vertex="1">
+                    <mxGeometry x="320" y="900" width="1460" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="src_alloc_created" value="Task-Resource Allocation&#xa;&lt;b&gt;Created&lt;/b&gt; (webhook event)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="380" y="220" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="src_alloc_modified" value="Task-Resource Allocation&#xa;&lt;b&gt;Modified&lt;/b&gt; (webhook event)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="380" y="305" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="src_alloc_deleted" value="Task-Resource Allocation&#xa;&lt;b&gt;Deleted&lt;/b&gt; (webhook event)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="380" y="390" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="src_alloc_report" value="&lt;b&gt;Allocation Project-User-Task Report&lt;/b&gt;&#xa;+ GraphQL allocations query" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="380" y="475" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="src_proj_task" value="&lt;b&gt;Project + (Project + Task) Report&lt;/b&gt;&#xa;Polaris hierarchy snapshot" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="380" y="565" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="src_timeoff_types" value="&lt;b&gt;TimeOff Types (LWAPI)&lt;/b&gt;&#xa;Replicon legacy SOAP API" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="380" y="650" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="src_user" value="&lt;b&gt;User Report&lt;/b&gt;&#xa;Polaris users + employee IDs" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="380" y="735" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="src_timeoff_booking" value="&lt;b&gt;TimeOff Booking Report&lt;/b&gt;&#xa;Approved time-off entries" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="380" y="820" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="int_alloc_delta" value="&lt;b&gt;Task Allocation Webhook Integration&lt;/b&gt;&#xa;Delta (event-driven)&#xa;3 sub-DAGs: added / modified / deleted" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="780" y="305" width="280" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="int_alloc_bulk" value="&lt;b&gt;Task Allocation Bulk Integration&lt;/b&gt;&#xa;Scheduled full-snapshot reconciliation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="780" y="475" width="280" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="int_proj_delta" value="&lt;b&gt;Project Tasks Delta Integration&lt;/b&gt;&#xa;Schedule: incremental upsert" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="780" y="555" width="280" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="int_proj_bulk" value="&lt;b&gt;Project Tasks Bulk Integration&lt;/b&gt;&#xa;Periodic full reconciliation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="780" y="615" width="280" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="int_timeoff_types" value="&lt;b&gt;TimeOff Types Integration&lt;/b&gt;&#xa;Schedule: type catalog sync" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="780" y="685" width="280" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="int_user" value="&lt;b&gt;User Integration (Delta)&lt;/b&gt;&#xa;Schedule: user catalog sync" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="780" y="755" width="280" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="int_timeoff_booking" value="&lt;b&gt;TimeOff Booking Integration (Delta)&lt;/b&gt;&#xa;Schedule: time-off entries sync" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="780" y="820" width="280" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="tbl_rp_source" value="&lt;b&gt;dbo.rp_source&lt;/b&gt;&#xa;Allocations + Users" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#F5F5F5;strokeColor=#666666;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="380" width="220" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="tbl_rp_source_time_code" value="&lt;b&gt;dbo.rp_source_time_code&lt;/b&gt;&#xa;Project Tasks + TimeOff Types" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#F5F5F5;strokeColor=#666666;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="600" width="220" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="tbl_rp_booking" value="&lt;b&gt;dbo.rp_booking_confirmation&lt;/b&gt;&#xa;TimeOff Bookings" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#F5F5F5;strokeColor=#666666;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="820" width="220" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="rev_int" value="&lt;b&gt;Confirmed Bookings Export (RP → Polaris)&lt;/b&gt;&#xa;Master DAG + 3 page-children + op-DAGs (CREATE / UPDATE)&#xa;Reads dbo.rp_source rows where outbound_pending_op IS NOT NULL,&#xa;dispatches per-booking Polaris GraphQL mutations." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;align=center;verticalAlign=middle" parent="1" vertex="1">
+                    <mxGeometry x="700" y="965" width="600" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_polaris_alloc_c" value="" style="endArrow=classic;html=1;dashed=1;strokeColor=#D79B00;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.15;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF" parent="1" source="polaris_sys" target="src_alloc_created" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_polaris_alloc_m" value="" style="endArrow=classic;html=1;dashed=1;strokeColor=#D79B00;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF" parent="1" source="polaris_sys" target="src_alloc_modified" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_polaris_alloc_d" value="" style="endArrow=classic;html=1;dashed=1;strokeColor=#D79B00;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF" parent="1" source="polaris_sys" target="src_alloc_deleted" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_polaris_alloc_r" value="" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.32;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF" parent="1" source="polaris_sys" target="src_alloc_report" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_polaris_proj" value="" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.42;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF" parent="1" source="polaris_sys" target="src_proj_task" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_polaris_to_types" value="" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.51;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF" parent="1" source="polaris_sys" target="src_timeoff_types" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_polaris_user" value="" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF" parent="1" source="polaris_sys" target="src_user" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_polaris_to_booking" value="" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.69;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF" parent="1" source="polaris_sys" target="src_timeoff_booking" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_alloc_c_int" value="POST /webhook" style="endArrow=classic;html=1;dashed=1;strokeColor=#D79B00;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="src_alloc_created" target="int_alloc_delta" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_alloc_m_int" value="POST /webhook" style="endArrow=classic;html=1;dashed=1;strokeColor=#D79B00;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="src_alloc_modified" target="int_alloc_delta" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_alloc_d_int" value="POST /webhook" style="endArrow=classic;html=1;dashed=1;strokeColor=#D79B00;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="src_alloc_deleted" target="int_alloc_delta" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_alloc_r_int" value="report + GraphQL" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="src_alloc_report" target="int_alloc_bulk" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_proj_delta" value="report" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="src_proj_task" target="int_proj_delta" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_proj_bulk" value="report" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="src_proj_task" target="int_proj_bulk" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_timeoff_types_int" value="LWAPI call" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="src_timeoff_types" target="int_timeoff_types" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_user_int" value="report" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="src_user" target="int_user" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_timeoff_booking_int" value="report" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="src_timeoff_booking" target="int_timeoff_booking" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_alloc_delta_tbl" value="UPSERT" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="int_alloc_delta" target="tbl_rp_source" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_alloc_bulk_tbl" value="UPSERT" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="int_alloc_bulk" target="tbl_rp_source" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_proj_delta_tbl" value="UPSERT" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="int_proj_delta" target="tbl_rp_source_time_code" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_proj_bulk_tbl" value="UPSERT" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="int_proj_bulk" target="tbl_rp_source_time_code" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_timeoff_types_tbl" value="UPSERT" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="int_timeoff_types" target="tbl_rp_source_time_code" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_timeoff_booking_tbl" value="UPSERT" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="int_timeoff_booking" target="tbl_rp_booking" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_tbl_src_rp" value="reads" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.32;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="tbl_rp_source" target="rp_sys" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_tbl_tc_rp" value="reads" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="tbl_rp_source_time_code" target="rp_sys" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_tbl_book_rp" value="reads" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="tbl_rp_booking" target="rp_sys" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_rp_revint" value="reads&#xa;outbound_pending_op rows" style="endArrow=classic;html=1;strokeColor=#9673A6;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.85;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="rp_sys" target="rev_int" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_revint_polaris" value="GraphQL mutations:&#xa;create / update allocations" style="endArrow=classic;html=1;strokeColor=#9673A6;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.85;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;fontSize=10" parent="1" source="rev_int" target="polaris_sys" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="&lt;b&gt;dbo.rp_source_resources&lt;/b&gt;&lt;br&gt;User Employee ids" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#F5F5F5;strokeColor=#666666;fontSize=12;align=center;verticalAlign=middle" vertex="1" parent="1">
+                    <mxGeometry x="1280" y="715" width="220" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,14 @@
+<p>Hi Team,<br /> <br />The Replicon payroll extract for Australia for the location
+    {{dag_run.conf.location_name}} has been completed at {{ current_time_in_specified_tz() }}
+    , however the log upload to sftp has failed with error.</p>
+<ul>
+    <li>Country: {{dag_run.conf.location_name}}</li>
+    <li>Company Code: {{dag_run.conf.division_name}}</li>
+    <li>Log File Name: log_{{ result('get_file_name')}}.txt</li>
+    <li>SFTP Path: {{ params.log_filepath }}</li>
+    <li>ecid: {{ dag_run_ecid() }}</li>
+</ul>
+<p>Please find the attached log file to be uploaded to sftp. Upload the file to the given sftp and debug the
+    issue.<br />
+    <br /> Regards,<br /> Deltek Inc.
+</p>

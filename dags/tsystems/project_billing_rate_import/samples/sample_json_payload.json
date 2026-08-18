@@ -1,0 +1,58 @@
+{
+    "id": "e8031fc9-0e6c-4cf4-8cda-9cde66169e0a",
+    "time": "2024-08-08T16:13:27+02:00",
+    "source": "some system",
+    "specversion": "1.0",
+    "type": "cost.object.update.event.v1",
+    "datacontenttype": "application/json",
+    "data": {
+        "product": {
+            "id": "<BillingRate ID>",
+            "description": "<Billingtext>",
+            "status": "active",
+            "@type": "BillingRate",
+            "relatedParty": [
+                {
+                    "id": "12345",
+                    "@referredType": "Individual",
+                    "role": "ResourceAssignee"
+                }
+            ],
+            "characteristic4Contract": [
+                {
+                    "value": "123",
+                    "key": "costObject"
+                },
+                {
+                    "value": "x2",
+                    "key": "category"
+                },
+                {
+                    "value": "SI",
+                    "key": "source Control"
+                },
+                {
+                    "value": "123",
+                    "key": "accounting Area"
+                }
+            ],
+            "productPrice": [
+                {
+                    "unitOfMeasure": "hourly",
+                    "price": {
+                        "dutyFreeAmount": {
+                            "unit": "<currency>",
+                            "value": "100"
+                        }
+                    }
+                }
+            ],
+            "productCharacteristic": [
+                {
+                    "name": "<RateType>",
+                    "valueType": "BillingRateType"
+                }
+            ]
+        }
+    }
+}

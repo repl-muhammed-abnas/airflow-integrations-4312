@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_WBSANDServiceOrder_Replicon xmlns:ns0="http://csc.com/IF1383/FromC1ToReplicon/WBSAndServiceOrder">
+    <Records>
+        <ProjectDefinition>R-010137475_Test1</ProjectDefinition>
+        <ProjectDescription>Denali Water Solutions - HDLL, MDLL_Test1</ProjectDescription>
+        <DXCProjectID>R-010137475.0001_Test1</DXCProjectID>
+        <WBSElementName>Denali Water Solutions - HDLL, MDLL_Test1</WBSElementName>
+        <InternalSAPObjectNumber>PR00155248_Test1</InternalSAPObjectNumber>
+        <PrimaryWBSOwner1>11540100</PrimaryWBSOwner1>
+        <PrimaryWBSOwnerName>Heskett, Cynthia</PrimaryWBSOwnerName>
+        <CompanyCode>1453</CompanyCode>
+        <ProjectType>RV</ProjectType>
+        <AccountAssignmentIndicator>X</AccountAssignmentIndicator>
+        <Currency>USD</Currency>
+        <ContractLineStartDate>20220110</ContractLineStartDate>
+        <ContractLineEndDate>20230109</ContractLineEndDate>
+        <WBSSTATUS>REL/SETC/BUDG/ACPT</WBSSTATUS>
+        <ContractType>ZMIL</ContractType>
+        <WBSOwner2>11577879</WBSOwner2>
+        <WBSOwner2Name>Blackshire, Andrea</WBSOwner2Name>
+        <Changedby>BATCHADM</Changedby>
+        <Changedon>20220115</Changedon>
+        <IWO></IWO>
+        <ICWBSNumber></ICWBSNumber>
+        <ServiceOrderNumber></ServiceOrderNumber>
+        <ServiceOrderType></ServiceOrderType>
+        <ServiceOrderText></ServiceOrderText>
+        <CreatedOnDate></CreatedOnDate>
+        <ChangedOnDate></ChangedOnDate>
+        <ServiceOrderCompanyCode></ServiceOrderCompanyCode>
+        <Plant></Plant>
+        <ServiceOrderSystemStatus></ServiceOrderSystemStatus>
+        <BasicStartDate></BasicStartDate>
+        <BasicFinishDate></BasicFinishDate>
+        <ServiceOrderInternalSAPobjectnumber></ServiceOrderInternalSAPobjectnumber>
+        <SOPersonResponsible></SOPersonResponsible>
+        <SOPersonResponsibleName></SOPersonResponsibleName>
+        <SOPartnerWBSOwner2></SOPartnerWBSOwner2>
+        <SOPartnerWBSOwner2Name></SOPartnerWBSOwner2Name>
+        <ResponsibleCostCenter></ResponsibleCostCenter>
+        <ServiceOffering>A-CODS</ServiceOffering>
+        <SalesforceOpportunityID>OPX-0021045575_Test1</SalesforceOpportunityID>
+        <SalesforceOpportunityName></SalesforceOpportunityName>
+        <HigherLevelCustomerID>0000005765_Test1</HigherLevelCustomerID>
+        <HigherLevelCustomerName>Cornerstone OnDemand_Test1</HigherLevelCustomerName>
+    </Records>
+</ns0:MT_WBSANDServiceOrder_Replicon>

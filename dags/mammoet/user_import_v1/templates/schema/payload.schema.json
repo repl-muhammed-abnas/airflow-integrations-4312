@@ -1,0 +1,216 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "payload_identifier": {
+        "type": "string"
+      },
+      "users": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "login_name": {
+                "type": "string"
+              },
+              "employee_status": {
+                "type": "string"
+              },
+              "employee_id": {
+                "type": "string"
+              },
+              "start_date": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "first_name": {
+                "type": "string"
+              },
+              "end_date": {
+                "type": "string"
+              },
+              "email_id": {
+                "type": "string"
+              },
+              "group_effective_start_date": {
+                "type": "string"
+              },
+              "time_zone": {
+                "type": "string"
+              },
+              "timeoff_profile_code": {
+                "type": "string"
+              },
+              "pay_grade_name": {
+                "type": "string"
+              },
+              "employee_type_name": {
+                "type": "string"
+              },
+              "location": {
+                "type": "string"
+              },
+              "location_code": {
+                "type": "string"
+              },
+              "legal_entity": {
+                "type": "string"
+              },
+              "legal_entity_code": {
+                "type": "string"
+              },
+              "cost_center": {
+                "type": "string"
+              },
+              "cost_center_code": {
+                "type": "string"
+              },
+              "manager_id": {
+                "type": "string"
+              },
+              "office_schedule_name": {
+                "type": "string"
+              },
+              "payrule_name": {
+                "type": "string"
+              },
+              "voluntary_ot": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "login_name",
+              "employee_status",
+              "employee_id",
+              "start_date",
+              "last_name",
+              "first_name",
+              "end_date",
+              "email_id",
+              "group_effective_start_date",
+              "time_zone",
+              "timeoff_profile_code",
+              "pay_grade_name",
+              "employee_type_name",
+              "location",
+              "location_code",
+              "legal_entity",
+              "legal_entity_code",
+              "cost_center",
+              "cost_center_code",
+              "manager_id",
+              "office_schedule_name",
+              "payrule_name",
+              "voluntary_ot"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "login_name": {
+                "type": "string"
+              },
+              "employee_status": {
+                "type": "string"
+              },
+              "employee_id": {
+                "type": "string"
+              },
+              "start_date": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "first_name": {
+                "type": "string"
+              },
+              "end_date": {
+                "type": "string"
+              },
+              "email_id": {
+                "type": "string"
+              },
+              "group_effective_start_date": {
+                "type": "string"
+              },
+              "time_zone": {
+                "type": "string"
+              },
+              "timeoff_profile_code": {
+                "type": "string"
+              },
+              "pay_grade_name": {
+                "type": "string"
+              },
+              "employee_type_name": {
+                "type": "string"
+              },
+              "location": {
+                "type": "string"
+              },
+              "location_code": {
+                "type": "string"
+              },
+              "legal_entity": {
+                "type": "string"
+              },
+              "legal_entity_code": {
+                "type": "string"
+              },
+              "cost_center": {
+                "type": "string"
+              },
+              "cost_center_code": {
+                "type": "string"
+              },
+              "manager_id": {
+                "type": "string"
+              },
+              "office_schedule_name": {
+                "type": "string"
+              },
+              "payrule_name": {
+                "type": "string"
+              },
+              "voluntary_ot": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "login_name",
+              "employee_status",
+              "employee_id",
+              "start_date",
+              "last_name",
+              "first_name",
+              "end_date",
+              "email_id",
+              "group_effective_start_date",
+              "time_zone",
+              "timeoff_profile_code",
+              "pay_grade_name",
+              "employee_type_name",
+              "location",
+              "location_code",
+              "legal_entity",
+              "legal_entity_code",
+              "cost_center",
+              "cost_center_code",
+              "manager_id",
+              "office_schedule_name",
+              "payrule_name",
+              "voluntary_ot"
+            ]
+          }
+        ]
+      }
+    },
+    "required": [
+      "payload_identifier",
+      "users"
+    ]
+  }

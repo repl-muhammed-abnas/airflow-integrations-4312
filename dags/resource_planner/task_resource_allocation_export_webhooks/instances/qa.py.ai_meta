@@ -1,0 +1,48 @@
+{
+  "ai_lines": {
+    "1": "4d79856fd75da17a9e3678ac7def65919f6f9f4473166276b7dd2d2634787097",
+    "10": "cf6c2cd75e8cead5387a2255386a13231467d702ff6493b530a2a634726c8c18",
+    "11": "65682d2bd519251ef565456e5dfd917e1697a49f3854bbc231f508ad07384f01",
+    "13": "21f5707961a268c05f165e79986279472a6c0242974bae4a20e3c5327c7ea74b",
+    "14": "0dcf55a548204e2c29b8bd6d7840bb2ee44b3a6afbdd41bc84c401d318ede6e9",
+    "15": "c0833fc5188edc49145aa95b8f6bc2a227bbc8e5b9f7dc13a2b34db44f9ae3e7",
+    "16": "7c019df5cb246b41e1dd221aa92412408cfba23ce7d510196dfc5edf571cad81",
+    "18": "01c1653d28761c72d652c32a9861bb266144dbf82bcf546617cccc374c9de712",
+    "19": "3af998fb5f0e2f40d46972a178c5faeac6709e3393b6410375c9095977cdc451",
+    "2": "42200f72567ff65e56361ae4251db42eb0d27dbbe8ea24c612c01f5ade20d942",
+    "21": "72afa1d72af7bc6b549647b76c1504ea8c9cb3f8a528f283d7b1a8481bc62619",
+    "22": "588d66f3a57e4c45531904c89c29b89cf8aadc3978a7d7df16f6127ff23097c3",
+    "23": "e2b4c30bf6f141d2af93da766b9be9160f6aabba48ff69f676f0167672b4c876",
+    "24": "f649c10e090265f8cf779aabaf893e4e7c5fb9381084fcb361e20ab34c60d120",
+    "3": "1c80ee441a56d69acae99266605441b0bb38a078dd24cafe32771d718f2b86a4",
+    "5": "6c3bebc91369bf49caf4278f39cd33a44af1102a17ad3a32b4e29a27aa95a6cc",
+    "6": "6e78a59a0a185d51a44a88261c1cab1f5b4467a39285b891d6532d235aed2a93",
+    "7": "d49dac9b9fac4463dd07896c232fa77a499821a843577d046ec98505801f370d",
+    "9": "60229ed83e3750ea9d6f63db0b823a66f6a11e32cd32a78d5de8c725f41bfb1d"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-28T14:33:49.479Z",
+  "file_state": {
+    "file_sha256": "fcf20c118265aebc7945c0b544b34adebc4c5e2378ef9ddf067f9aaf1c1e6887",
+    "total_file_lines": 24,
+    "total_lines": 19
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\resource_planner\\task_resource_allocation_export_webhooks\\instances\\qa.py",
+  "stats": {
+    "ai_line_count": 19,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-29T07:46:03.031Z",
+  "version": 1
+}

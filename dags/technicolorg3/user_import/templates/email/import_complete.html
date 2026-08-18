@@ -1,0 +1,37 @@
+<p>
+    <strong>This is an automated mail, please don't reply.</strong>
+    <br /> <br />Hello, <br /> <br />
+    The user import is{{" "}}
+    {%- set has_errors = result("get_errored_logs", key="length") > 0 -%}
+    {%- if has_errors -%}
+    completed with errors
+    {%- else -%}
+    {%- if result("get_exception_logs", key="length") > 0 -%}
+    completed with exceptions
+    {%- else -%}
+    completed successfully
+    {%- endif -%}
+    {%- endif -%}
+    {{ " based on the file - " + dag_run.conf.filename }}.<br />
+    {%- set has_new_locations = result("get_new_locations", "length") > 0 -%}
+    {%- if has_new_locations -%}
+    During this import new location(s) were identified and are indicated in the logs.
+    Please contact our support team at https://support.deltek.com to have the new location(s) included in the
+    integration mapper.
+    {%- endif -%}
+    <br />
+</p>
+<p>
+    The detailed logs have been placed in sftp for reference
+</p>
+<ul>
+    <li>Log file path: {{ params.log_filepath }}</li>
+    <li>Log file name:: Logs_{{ dag_run.conf.time }}_{{ dag_run.conf.filename }}.csv</li>
+</ul>
+<p>
+    {%- if has_errors -%}
+    {%- endif -%}
+    For any queries, please contact our support team at https://support.deltek.com <br /><br />
+    Regards, <br />
+    Deltek Inc.
+</p>

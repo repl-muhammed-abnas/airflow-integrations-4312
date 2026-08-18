@@ -1,0 +1,10 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />
+  Hi Team,<br /> <br /> The user import  for the  Job ID: {{dag_run_ecid()}} hosted on  
+  {{ get_company_key() }} instance has been completed at {{result('dag_trigger_time').y_m_d_h_m_s}}, 
+  however the log upload to Cshare has failed. Attached is the log file for reference.</p>
+  <ul>
+    <li>DAG ID: {{ params.dag_id }}</li>
+    <li>Job ID: {{ dag_run_ecid() }}<br /></li>
+  </ul> 
+  <p> Please find the attached logs which was to be sent to intended recipients and debug the issue related to Cshare upload.<br /> 
+  <br /> Regards,<br /> Deltek Inc</p>

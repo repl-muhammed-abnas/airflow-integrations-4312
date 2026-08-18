@@ -1,0 +1,17 @@
+<p>
+    <br />Hello, <br /><br />
+    The Replicon Termination Balance Export for UK is completed successfully at
+   {{ result('process_start_time').start_time }}. Please find the extract details for reference.
+</p>
+<ul>
+    <li>Termination Extract File Name: {{ result("get_file_name")}}.SAP.pgp</li>
+    <li>File Path: {{params.output_filepath}}</li>
+    <li>Number of Records in termination extract: {{result('query_valid_termination_balance_data', 'length')}}</li>
+    <li>Termination Log File Name: log_{{ result('get_file_name')}}{{ result('process_end_time').ymd_format }}{{ result('process_end_time').hms_format }}.txt</li>
+    <li>Log File Path: {{params.log_filepath}}</li>
+</ul>
+
+<p>For any queries, please contact our support team at https://support.deltek.com <br />
+    <p><strong>This is an automated mail from Deltek Integration, Please do not reply to this email</strong><br /></p>
+    <br />Regards, <br />Deltek Inc.
+</p>

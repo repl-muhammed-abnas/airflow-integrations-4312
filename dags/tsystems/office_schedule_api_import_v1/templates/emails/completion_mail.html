@@ -1,0 +1,37 @@
+<body>
+  <p>Hello,</p>
+  
+  <p>The Replicon Office Schedule Import has {{ " " }}
+    {%- set has_errors = result("format_logs", key="error_record_count") > 0 -%}
+    {%- if has_errors -%}
+      completed with errors
+    {%- else -%}
+      {%- if result("format_logs", key="exception_record_count") > 0 -%}
+          completed with exceptions
+      {%- else -%}
+          completed successfully
+      {%- endif -%}
+    {%- endif -%}
+    , further details are below:</p>
+  
+  <p>Source input/File name : "{{ dag_run.conf.payload.FileName }}"</p>
+  
+  <p>Record count : "{{ result('create_schedule_list_collection', 'length') }}"</p>
+  
+  <p>Log file name : "{{ result('get_email_details').log_file_name }}"</p>
+  
+  <p>Log file path/link : <a href="{{result('generate_download_link')}}">Download log file</a></p>
+  
+  <p>Job start time : "{{ result('job_started_time') }}"</p>
+  
+  <p>Job end time : "{{ result('get_email_details').job_end_time }}"</p>
+  
+  <p>Job duration : "{{ result('get_email_details').job_duration }} minutes"</p>
+  
+  <p>For any queries, please contact our support team at <a href="https://support.deltek.com">https://support.deltek.com</a></p>
+  
+  <p>This is an automated mail from Deltek Integration, Please do not reply to this email.</p>
+  
+  <p>Regards,<br>
+  Deltek Inc</p>
+</body>

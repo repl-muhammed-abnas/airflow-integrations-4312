@@ -1,0 +1,185 @@
+        get_yesterday_date = rail.PythonOperator(
+            task_id='get_yesterday_date',
+            # python_callable=lambda: (request_payload.get_today_utc_date(
+            # ) - timedelta(days=1)).strftime("%m/%d/%Y"),
+            python_callable=lambda: '04/11/2021',
+        )
+
+        get_12weeks_date = rail.PythonOperator(
+            task_id='get_12weeks_date',
+            # python_callable=lambda: (request_payload.get_today_utc_date(
+            # ) - timedelta(days=request_payload.get_today_utc_date().weekday()-84)).strftime("%m/%d/%Y"),
+            python_callable=lambda: '04/03/2021',
+        )
+
+        get_field_glass_report_batch_results = rail.RepliconServiceOperator(
+            task_id="get_field_glass_report_batch_results",
+            endpoint="/services/ReportService1.svc/GetReportGenerationBatchResults",
+            data={
+                'reportGenerationBatchUri': "{{result('generate_field_glass_report_batch')}}"},
+            # for testing remove later
+            response_filter=lambda response: {
+                'reportGenerationResults': [
+                    {
+                        'error': None,
+                        'filterValues': [
+                            {
+                                'reportFilterUri': 'urn:replicon-tenant:036e775fa7bc42f98b12fc214205d771:report-filter:b9d92fd6d69d454b9fca4277ee40725b;approvaldatefilter',
+                                'value': None
+                            },
+                            {
+                                'reportFilterUri': 'urn:replicon-tenant:036e775fa7bc42f98b12fc214205d771:report-filter:b9d92fd6d69d454b9fca4277ee40725b;approvaldatefilter',
+                                'value': '04/11/2021'
+                            },
+                            {
+                                'reportFilterUri': 'urn:replicon-tenant:036e775fa7bc42f98b12fc214205d771:report-filter:b9d92fd6d69d454b9fca4277ee40725b;approvaldatefilter',
+                                'value': '04/11/2021'
+                            }
+                        ],
+                        'payload': 'User Last Name,User First Name,Entry Date,Timesheet Period,Timesheet Start Date,Attendance Type Code,Rate Type,Total Hrs,Company Code Code,Login Name,Location,Cost Center\r\nDuncan,Emily,4 April 2021,3 April 2021 - 9 April 2021,3 April 2021,,Double Time,3.00,C1,23179054@sittest.com,,C110299951\r\nDuncan,Emily,5 April 2021,3 April 2021 - 9 April 2021,3 April 2021,799,Straight Time,9.00,C1,23179054@sittest.com,,C110299951\r\nDuncan,Emily,6 April 2021,3 April 2021 - 9 April 2021,3 April 2021,799,Straight Time,9.00,C1,23179054@sittest.com,,C110299951\r\nDuncan,Emily,6 April 2021,3 April 2021 - 9 April 2021,3 April 2021,,Double Time,2.00,C1,23179054@sittest.com,,C110299951\r\nDuncan,Emily,4 April 2021,3 April 2021 - 9 April 2021,3 April 2021,,Double Time,3.00,COMPASS,23179054@sittest.com,India,C110299951\r\nDuncan,Emily,5 April 2021,3 April 2021 - 9 April 2021,3 April 2021,799,Straight Time,9.00,COMPASS,23179054@sittest.com,India,C110299951\r\nDuncan,Emily,6 April 2021,3 April 2021 - 9 April 2021,3 April 2021,799,Straight Time,9.00,COMPASS,23179054@sittest.com,India,C110299951\r\nDuncan,Emily,6 April 2021,3 April 2021 - 9 April 2021,3 April 2021,,Double Time,2.00,COMPASS,23179054@sittest.com,India,C110299951\r\n',
+                        'reportUri': 'urn:replicon-tenant:036e775fa7bc42f98b12fc214205d771:report:3188d3c7-a70d-4739-87fa-ea1001bc278c'
+                    }
+                ]
+            },
+        )
+
+
+        getkeyvalue_for_dxc_po_rate = rail.RepliconServiceCallForEachItemOperator(
+            task_id='getkeyvalue_for_dxc_po_rate',
+            endpoint="/services/GenericKeyValueStoreService1.svc/GetKeyValue",
+            items='{{ result("query_list_uniqueusersforc1") }}',
+            flatten=True,
+            data={
+                "keyNamespace": "DXC_PurchaseOrderRateTypesBalanceDetails",
+                "key": "{{item}}"
+            },
+            # all_result_data_handler=lambda data: list(
+            #     map(lambda item:  {'key': item['key'], 'jsonValue': json.loads(item['jsonValue'])}, data)),
+            # for testing to remove later
+            all_result_data_handler=lambda data: [
+                {
+                    'key': '23179054@sittest.com',
+                    'jsonValue': [
+                        {
+                            'workOrderNumber': 'ABWO00091282_first',
+                            'personnelNumber': '12345678',
+                            'firstName': 'REPLICONSV',
+                            'lastName': '117',
+                            'companyCode': '1010',
+                            'purchaseOrder': '1234567890',
+                            'poItem': '55555',
+                            'itemStartDate': '03/04/2021',
+                            'itemEndDate': '07/04/2022',
+                            'regularTimeBalance': '10.41 ',
+                            'overtimeBalance': '10.41 ',
+                            'doubleTimeBalance': '10.41 ',
+                            'loginName': '23179054@sittest.com',
+                            'employeeId': '10000117',
+                            'effectiveDateOfBalance': '06/07/2021'
+                        }
+                    ]
+                },
+                {
+                    'key': '23179054@sittest.com',
+                    'jsonValue': [
+                        {
+                            'workOrderNumber': 'ABWO00091282_last',
+                            'personnelNumber': '12345678',
+                            'firstName': 'REPLICONSV',
+                            'lastName': '117',
+                            'companyCode': '1010',
+                            'purchaseOrder': '1234567890',
+                            'poItem': '55555',
+                            'itemStartDate': '03/04/2021',
+                            'itemEndDate': '07/04/2022',
+                            'regularTimeBalance': '10.41 ',
+                            'overtimeBalance': '10.41 ',
+                            'doubleTimeBalance': '10.41 ',
+                            'loginName': '23179054@sittest.com',
+                            'employeeId': '10000117',
+                            'effectiveDateOfBalance': '06/07/2021'
+                        }
+                    ]
+                }
+            ]
+        )
+
+        getkeyvalue_compass_rates = rail.RepliconServiceCallForEachItemOperator(
+            task_id='getkeyvalue_compass_rates',
+            endpoint="/services/GenericKeyValueStoreService1.svc/GetKeyValue",
+            items='{{ result("query_list_compass_uniqueusers") }}',
+            flatten=True,
+            data={
+                "keyNamespace": "DXC_WorkOrderRateTypeRates",
+                "key": "{{item}}"
+            },
+            # all_result_data_handler=lambda data: list(
+            #     map(lambda item:  {'key': item['key'], 'jsonValue': json.loads(item['jsonValue'])}, data)),
+            # to test remove later
+            all_result_data_handler=lambda data: [
+                {
+                    'key': '23179054@sittest.com',
+                    'jsonValue': [
+                        {
+                            'workOrderId': 'ABWO00091282_1first',
+                            'revisionNumber': '0',
+                            'contingentworkerId': '10000117',
+                            'workOrderStartDate': '03/04/2021',
+                            'workOrderEndDate': '07/04/2022',
+                            'workOrderStatus': 'Confirmed',
+                            'workerFirstName': 'REPLICONSV',
+                            'workerLastName': '117',
+                            'costCenterCode': 'QAC Test RIA',
+                            'billRateCategory': 'DT',
+                            'billRate': '4',
+                            'RateUnit': 'Hr',
+                            'siteCountryUseWithWorkerBasedReport': 'IRL',
+                            'taskCode': '',
+                            'wO_CATW': 'Yes',
+                            'wO_workerType': 'Compass',
+                            'financeSystem': 'ES',
+                            'remainingSpend': '50',
+                            'ccCompanyCode': 'IEEU',
+                            'actualBillRateCategory': 'Double Time',
+                            'projectUri': 'urn:replicon-tenant:036e775fa7bc42f98b12fc214205d771:project:51',
+                            'projectName': 'QAC Test RIA',
+                            'userUri': 'urn:replicon-tenant:036e775fa7bc42f98b12fc214205d771:user:122706',
+                            'loginName': '23179054@sittest.com',
+                            'effectiveDateOfBalance': '03/01/2021'
+                        }
+                    ]
+                },
+                {
+                    'key': '23179054@sittest.com',
+                    'jsonValue': [
+                        {
+                            'workOrderId': 'ABWO00091282_2last',
+                            'revisionNumber': '0',
+                            'contingentworkerId': '10000117',
+                            'workOrderStartDate': '03/04/2021',
+                            'workOrderEndDate': '07/04/2022',
+                            'workOrderStatus': 'Confirmed',
+                            'workerFirstName': 'REPLICONSV',
+                            'workerLastName': '117',
+                            'costCenterCode': 'QAC Test RIA',
+                            'billRateCategory': 'DT',
+                            'billRate': '4',
+                            'RateUnit': 'Hr',
+                            'siteCountryUseWithWorkerBasedReport': 'IRL',
+                            'taskCode': '',
+                            'wO_CATW': 'Yes',
+                            'wO_workerType': 'Compass',
+                            'financeSystem': 'ES',
+                            'remainingSpend': '50',
+                            'ccCompanyCode': 'IEEU',
+                            'actualBillRateCategory': 'Double Time',
+                            'projectUri': 'urn:replicon-tenant:036e775fa7bc42f98b12fc214205d771:project:51',
+                            'projectName': 'QAC Test RIA',
+                            'userUri': 'urn:replicon-tenant:036e775fa7bc42f98b12fc214205d771:user:122706',
+                            'loginName': '23179054@sittest.com',
+                            'effectiveDateOfBalance': '03/01/2021'
+                        }
+                    ]
+                }
+            ]
+        )

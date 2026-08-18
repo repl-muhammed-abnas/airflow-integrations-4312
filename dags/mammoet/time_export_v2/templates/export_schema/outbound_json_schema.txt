@@ -1,0 +1,21 @@
+{
+  "TimeData": [
+    {
+      "SAP_Counter_ID": "123456789",
+      "Entry_Date": "2024-12-15",
+      "Employee_ID": "dummy_emp_id",
+      "Activity_Type": "dummy_activity_type",
+      "Project_Code": "PRJ_CODE_123",
+      "Task_ID": "TASK_ID_123",
+      "In_Time": "16:00:00",
+      "Out_Time": "00:00:00",
+      "Entry_ID": "123456",
+      "Source_system": "Replicon",
+      "Crane_capacity": "",
+      "Hours": "8.00",
+      "Time_Entry_Type": "",
+      "Account_Indicator": "",
+      "Replicon_Unique_ID": "453d8cf6-a3e9-43b3-85f3-4eb16f3c8ca0"
+    }
+  ]
+}

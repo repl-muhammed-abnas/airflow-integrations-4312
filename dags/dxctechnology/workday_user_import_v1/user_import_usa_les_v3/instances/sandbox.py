@@ -1,0 +1,38 @@
+from dxctechnology.workday_user_import_v1.user_import.config import *
+from dxctechnology.workday_user_import_v1.user_import.mappers.master_mapper import MAPPER
+
+instance = "sandbox"
+
+version = "v3"
+process_time_off_accrual_dag_version = "v1"
+ia_version = "v1"
+
+environment = "pre-production"
+can_run_batch_task_var_name_usa_les = f"dxctechnology_workday_user_import_usa_les_can_run_batch_task_variable_{instance}"
+
+company_key = "dxcsandbox"
+replicon_conn_id = "replicon_dxcsandbox_x.workday_1"
+sftp_conn_id = "sftp_dxcsandbox_628172_Workday"
+
+DXC_WORKDAY_USER_SYNC_USER_MAPPER = MAPPER
+
+process_time_off_accrual = f"dxctechnology_workday_user_sync_timeoff_assignment_policy_update_for_no_accrual_child_{instance}_{process_time_off_accrual_dag_version}"
+
+# USA LES
+usa_les_process_users_child_dag_id = f"dxctechnology_workday_user_import_usa_les_process_users_child_{instance}_{version}"
+usa_lse_add_user_dag_id = f"dxctechnology_workday_user_import_process_usa_les_add_user_child_dag_{instance}_{version}"
+usa_lse_update_user_dag_id = f"dxctechnology_workday_user_import_process_usa_les_update_user_child_dag_{instance}_{version}"
+usa_lse_update_user_timeoff_assignment_dag_id = f"dxctechnology_workday_user_import_process_usa_les_update_user_timeoff_child_dag_{instance}_{version}"
+usa_lse_add_user_timeoff_assignment_dag_id = f"dxctechnology_workday_user_import_process_usa_les_add_user_timeoff_child_dag_{instance}_{version}"
+usa_les_us_sick_leave_non_california_user_timeoff_assignment_dag_id = f"dxctechnology_workday_user_import_usa_les_us_sick_leave_timeoff_assignment_non_california_{instance}_{version}"
+usa_les_us_holiday_user_timeoff_assignment_dag_id = f"dxctechnology_workday_user_import_usa_les_us_holiday_timeoff_assignment_{instance}_{version}"
+workday_user_import_usa_les_users_update_user_rehire_timeoff_process_child_dag = f"dxctechnology_workday_user_import_process_usa_les_rehire_user_timeoff_assignment_child_{instance}_{version}"
+
+workday_user_import_ia_zero_timeoff_assignment_child_dag = f"dxctechnology_workday_user_import_ia_zero_timeoff_assignment_child_{instance}_{ia_version}"
+workday_user_import_ia_one_timeoff_assignment_child_dag = f"dxctechnology_workday_user_import_ia_one_timeoff_assignment_child_{instance}_{ia_version}"
+
+# Cleanup child DAG ID for disabled users
+delete_future_entries_child_dag_id = f"dxctechnology_workday_user_sync_delete_future_entries_child_{instance}_v2"
+
+# Overrides: bump max_active_runs to 10 for this environment (base defaults in config.py are unchanged, so production is not affected)
+max_active_run_process_each_users_costa_rica = 10

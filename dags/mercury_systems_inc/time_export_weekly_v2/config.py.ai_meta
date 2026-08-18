@@ -1,0 +1,48 @@
+{
+  "ai_lines": {
+    "1": "241ebab871d4f5e4afcd3e198094fec54e67442e18ca004d9932341dfd5bcae3",
+    "11": "489aa0e2d106ad58204a6f7be1a2c5b0fbad33126fe536547fed3114fe394bea",
+    "13": "66aa7e7cd4b221863bef48c0d32ce592b4b35bb956c64224dc316ebd37a7238d",
+    "14": "2de6c2833733a9194be641cb38b97ced1919421d937b19c8c06da06eee78f2f4",
+    "15": "1510247dd95acbd4f84e80bea60edd0acf77a77d51bdcd39fb17c877bbd70614",
+    "16": "48e7fbb6a0131f9253e0f04cac83131d5bc829667efa15deaf98596b0c6244a9",
+    "17": "0d1d8617dd49f85953c5e1cf596b922b5b7dbe906b3e7e806cca3a6844b44fb5",
+    "18": "d7d2a68d71686148cdc162aaff5895f2a8f51dcb6442e4de39887b32162c3263",
+    "19": "569d200544188bac8eab7c8eadcd6c41941cb6a5bbdd8df14200e99145e5cfa2",
+    "2": "fb55c7bf01220ddc797f2229bba91fba680b012a78724ba76fdceb4e2f625ce7",
+    "20": "7b16cba0ee24c6c69ac3d894c49012de9af31244dbdb2608f8f5438e5ece2aa2",
+    "22": "76b66f07782dc24c3629802ec28a3fe768c9dbcb7f83b91c9c046f376bea333d",
+    "23": "9f7c64bda9cef1faa8457c84caeac0a63f36bb494172eb2e097774a87eca3c3c",
+    "24": "e6687146d2bbb43d460eed773eada92f946f7619849443e7a9999b13acaa9879",
+    "4": "95cf87ded3089811187ad19e6cfa1f11c8833a29624c9c117fddb52ab11ff840",
+    "5": "fb7174fdbb890a850633e293b7705ded65d6d5f31f9e9d22eaead952d10b9ebe",
+    "6": "b5034b936e3cfea66f6e6aefee61dd5f4898fde73c55c01b11fd91d4ceff081a",
+    "8": "1a3ecefaed26486e678883f17c26c63b6be76515519cf16b2fd33052f54ea73f",
+    "9": "06f8932df34593662454d5011d01044825eda971b27553416351db9bfc2a5b4d"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Write",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-08T15:39:01.362Z",
+  "file_state": {
+    "file_sha256": "b74ffbd48ec1fe81fdd4509d6d421b457006ab4c6637c68c729997cc6550797f",
+    "total_file_lines": 24,
+    "total_lines": 19
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\mercury_systems_inc\\time_export_weekly_v2\\config.py",
+  "stats": {
+    "ai_line_count": 19,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-08T15:39:01.362Z",
+  "version": 1
+}

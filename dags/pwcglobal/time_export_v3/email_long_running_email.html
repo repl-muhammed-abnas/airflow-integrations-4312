@@ -1,0 +1,6 @@
+<p>Hi Team,<br /> <br /> There is a long running job for time data export for since {{ result('get_last_child_location_dagrun').execution_date }}</p>
+<ul>
+    <li>DAG ID: {{ result('get_last_child_location_dagrun').dag_id }}</li>
+    <li>DAG Run ID: {{ result('get_last_child_location_dagrun').run_id }}</li>
+</ul>
+<p>Please check the job and debug the reason.<br /> <br />Regards,<br />Deltek Inc</p>

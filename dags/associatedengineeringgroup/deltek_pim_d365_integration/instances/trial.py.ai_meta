@@ -1,0 +1,278 @@
+{
+  "ai_lines": {
+    "15": "71b170cc4b2d548fa3a4ebd3b9c59d9fd19bae7ee0de78ebb6123cf7e346ada4",
+    "16": "66097b6e46878fe85d7ff53b95b108ce4081f516a013738575f0a15c052fa6ac",
+    "17": "40e20cfa6fce45b2eef5a818c040808f8b572b2ec621bfa17b0546edd19c56e3",
+    "18": "ca4e7f4ff330b96d5b2b7a67b5bec049e899924e22d624a681dc697b38057331",
+    "22": "8c7967fe54303dcd390cd32494056578dd1514074a5b118688e7bb6ae26bd3b2",
+    "3": "b387857852638f5e85b0eca152f020ceb94767747d179dbc79c2dc442543f706",
+    "4": "6e78a59a0a185d51a44a88261c1cab1f5b4467a39285b891d6532d235aed2a93",
+    "9": "0e733756d9c100bf2a7b7d2c5af988bff1179525e4e608b74dfeed4e93ccaac9"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 11,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-06-01T12:26:07.488Z",
+  "file_state": {
+    "file_sha256": "f8f93a7c94096462709bc69eea7268d3b254c9b36df1f933ae7fa0639de2795c",
+    "total_file_lines": 25,
+    "total_lines": 19
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "ceb28faf05186a2b9f4260561f113a705c75d5fc4735611d86983018344ead69",
+      "last_known_line": 35,
+      "removed_at": "2026-06-01T12:36:42.441Z"
+    },
+    {
+      "hash": "87633a98a999a5c60ad316e171e075b44ef2db44468afbd77446413695569e25",
+      "last_known_line": 18,
+      "removed_at": "2026-06-01T12:37:22.702Z"
+    },
+    {
+      "hash": "49a1099ae926f94b981b81cf4b18e25a0e2212da6edbc6bc2102d41c19d42ec0",
+      "last_known_line": 19,
+      "removed_at": "2026-06-01T12:37:22.702Z"
+    },
+    {
+      "hash": "76a8a52f57560dfcd78887e184e922aba171df95cf5cd87236d47a1403eca291",
+      "last_known_line": 20,
+      "removed_at": "2026-06-01T12:37:22.702Z"
+    },
+    {
+      "hash": "a35d48c9301c86520b9a91326c953926e032e5b948d3c2743b6e31ed87d5ee0d",
+      "last_known_line": 21,
+      "removed_at": "2026-06-01T12:37:22.702Z"
+    },
+    {
+      "hash": "5a304386a2bac7ca989c5f4c20c90e301fe63dfd77486e919e589a6e59fb67e3",
+      "last_known_line": 22,
+      "removed_at": "2026-06-01T12:37:22.702Z"
+    },
+    {
+      "hash": "db0a5f4e42c17d5818c7d4e599472e65f61dd26222fe16e3e92d1ccb9f1df0c6",
+      "last_known_line": 23,
+      "removed_at": "2026-06-01T12:37:22.702Z"
+    },
+    {
+      "hash": "31bb6473db660920320784be2b0ebd37e1891b66d5be26b045a217fb0b983d13",
+      "last_known_line": 24,
+      "removed_at": "2026-06-01T12:37:22.702Z"
+    },
+    {
+      "hash": "9c9ea2be6aaa6d20708e6d4e17ec04e72af484ef027e17441f9747bb78e3bd8c",
+      "last_known_line": 25,
+      "removed_at": "2026-06-01T12:37:22.702Z"
+    },
+    {
+      "hash": "fdeefe96381472e95b1baafe126f3611b855c9f7671f867852ca4f53b9111ad7",
+      "last_known_line": 26,
+      "removed_at": "2026-06-01T12:37:22.702Z"
+    },
+    {
+      "hash": "f64a6a74369dd9383c8f0a740638f8da959c081f3b20bfea890b2dd28511165d",
+      "last_known_line": 27,
+      "removed_at": "2026-06-01T12:37:22.702Z"
+    },
+    {
+      "hash": "995acdb94cc14847b918c75df18f08ec2cb52a3b7e26fe1e4ff5d25a33303d94",
+      "last_known_line": 28,
+      "removed_at": "2026-06-01T12:37:22.702Z"
+    },
+    {
+      "hash": "c5eae229bbc9b5217352f4f6bb729bcd24ece87af1be605f939831ca78cef5e0",
+      "last_known_line": 1,
+      "removed_at": "2026-06-09T07:48:26.725Z"
+    },
+    {
+      "hash": "4f6d3a8098b23d103889e06799e175d0133bbd9e19f985c90e9ec73c68666cec",
+      "last_known_line": 16,
+      "removed_at": "2026-06-09T07:48:26.725Z"
+    },
+    {
+      "hash": "4b20163acb2fc68a3a4f192e3b23dded2417630dc07fc30c99e0298fc106da83",
+      "last_known_line": 18,
+      "removed_at": "2026-06-09T07:48:26.725Z"
+    },
+    {
+      "hash": "2b2d3d280ec9890e3a0f2fb250c185d422b06131d4ef80796314d2d26c80831b",
+      "last_known_line": 19,
+      "removed_at": "2026-06-09T07:48:26.725Z"
+    },
+    {
+      "hash": "b2d3ebf7ce3b40a7a5f2924eda9a0868d564a282e803a4dd78b2b68b2a255864",
+      "last_known_line": 20,
+      "removed_at": "2026-06-09T07:48:26.725Z"
+    },
+    {
+      "hash": "ca5663e3d5699cd6e88e31f8baf1fe24d7895ece73b1d4285cf61f5705ddb570",
+      "last_known_line": 21,
+      "removed_at": "2026-06-09T07:48:26.725Z"
+    },
+    {
+      "hash": "f7c7bc5236dc4bb3c0d720962f67b0268f8ccb8c02d8ebea10a44ebfe7242562",
+      "last_known_line": 22,
+      "removed_at": "2026-06-09T07:48:26.725Z"
+    },
+    {
+      "hash": "bbf53dae8b223c791653adafd0c4a49f62c0b3a83176cb063fc1f2605ba8139d",
+      "last_known_line": 23,
+      "removed_at": "2026-06-09T07:48:26.725Z"
+    },
+    {
+      "hash": "4e87429c2beceb84ae8f16dd4fc77e36b5f4144a71825382172fb2a997388e9a",
+      "last_known_line": 24,
+      "removed_at": "2026-06-09T07:48:26.725Z"
+    },
+    {
+      "hash": "bbc344bd9bde339ecf9a29e95aa71d308c160beffa858d68059bcef555ecd690",
+      "last_known_line": 25,
+      "removed_at": "2026-06-09T07:48:26.725Z"
+    },
+    {
+      "hash": "816e4969c4fe05ff3f761bec51a551ddf8c114389b41eb7a9838c71f26c14dc7",
+      "last_known_line": 26,
+      "removed_at": "2026-06-09T07:48:26.725Z"
+    },
+    {
+      "hash": "f2c33fcc901900242a286d2aa0a18672c255b8badd927670ab66db59fe45fc20",
+      "last_known_line": 6,
+      "removed_at": "2026-06-09T07:48:26.725Z"
+    },
+    {
+      "hash": "5c4688e3c1ee3aecda2246830b648e4ddbba4deb666ab90343436ab1a3a97f27",
+      "last_known_line": 24,
+      "removed_at": "2026-06-09T07:52:03.597Z"
+    },
+    {
+      "hash": "24b5791cfb920649ac13fa9edcb35d989f8e9627255995cd5e7dbc3c7e768606",
+      "last_known_line": 25,
+      "removed_at": "2026-06-09T07:52:03.597Z"
+    },
+    {
+      "hash": "5c4688e3c1ee3aecda2246830b648e4ddbba4deb666ab90343436ab1a3a97f27",
+      "last_known_line": 26,
+      "removed_at": "2026-06-09T07:52:03.597Z"
+    },
+    {
+      "hash": "150298ac94813151a654582cee3182af26d059361dd78d90b0e106f981d8ace6",
+      "last_known_line": 27,
+      "removed_at": "2026-06-09T07:52:03.597Z"
+    },
+    {
+      "hash": "79e024363d2191815506acbb77a154ff2f495f5dbeafd6f68316ab049e611604",
+      "last_known_line": 28,
+      "removed_at": "2026-06-09T07:52:03.597Z"
+    },
+    {
+      "hash": "5c4688e3c1ee3aecda2246830b648e4ddbba4deb666ab90343436ab1a3a97f27",
+      "last_known_line": 30,
+      "removed_at": "2026-06-09T07:52:03.597Z"
+    },
+    {
+      "hash": "22079b9f1a358007471ec4c7310337fb838f5e299b82c1d858d3945cc32047b5",
+      "last_known_line": 31,
+      "removed_at": "2026-06-09T07:52:03.597Z"
+    },
+    {
+      "hash": "5c4688e3c1ee3aecda2246830b648e4ddbba4deb666ab90343436ab1a3a97f27",
+      "last_known_line": 32,
+      "removed_at": "2026-06-09T07:52:03.597Z"
+    },
+    {
+      "hash": "c746599029d7cf3d6b2306624b0b37e9dd2e9f256ccfc71567c1496bd4981168",
+      "last_known_line": 33,
+      "removed_at": "2026-06-09T07:52:03.597Z"
+    },
+    {
+      "hash": "d4f90a4ffed3818601230edd98fb70c0a3486a3977ad1cad034f19cc21540f7e",
+      "last_known_line": 10,
+      "removed_at": "2026-06-09T08:18:54.553Z"
+    },
+    {
+      "hash": "fcc5775fd7857741dbf5062fc2640274e4b3cebc88f7170c3a041be04398c520",
+      "last_known_line": 11,
+      "removed_at": "2026-06-09T08:18:54.553Z"
+    },
+    {
+      "hash": "06482f0f5d1c0a0ca10ae2cc4520d5b06de369a02f002134a69c3e7dcb0daa43",
+      "last_known_line": 12,
+      "removed_at": "2026-06-09T08:18:54.553Z"
+    },
+    {
+      "hash": "5c4688e3c1ee3aecda2246830b648e4ddbba4deb666ab90343436ab1a3a97f27",
+      "last_known_line": 16,
+      "removed_at": "2026-06-09T08:18:54.553Z"
+    },
+    {
+      "hash": "5c4688e3c1ee3aecda2246830b648e4ddbba4deb666ab90343436ab1a3a97f27",
+      "last_known_line": 18,
+      "removed_at": "2026-06-09T08:18:54.553Z"
+    },
+    {
+      "hash": "39de72607e18126b46da997341ccfa859d759fc0442fa6cca29e6565b2070c5d",
+      "last_known_line": 20,
+      "removed_at": "2026-06-09T08:18:54.553Z"
+    },
+    {
+      "hash": "6b908ba6e664efad10ccb304616610e660e546c12f9d1dea49d2e79ff3a12f2a",
+      "last_known_line": 14,
+      "removed_at": "2026-06-09T16:01:45.744Z"
+    },
+    {
+      "hash": "3901c31ba1a2aa96fb9c431ae6bfc60ab8768fbac6f0e5c1d92be4393e062f25",
+      "last_known_line": 16,
+      "removed_at": "2026-06-09T16:01:45.744Z"
+    },
+    {
+      "hash": "3ef41792a30f900aa92683ee6e56db5d0c435d2b0774434e66fcd78be2fb7ceb",
+      "last_known_line": 17,
+      "removed_at": "2026-06-09T16:01:45.744Z"
+    },
+    {
+      "hash": "22ee0f7d9c4b6a382517843e56b071359242ce5116f11f0985541d263561718e",
+      "last_known_line": 18,
+      "removed_at": "2026-06-09T16:01:45.744Z"
+    },
+    {
+      "hash": "c15e70028ce2c211072d0a31dd0517154635521ba5cc05fb5f893550dbe4acc8",
+      "last_known_line": 19,
+      "removed_at": "2026-06-09T16:01:45.744Z"
+    },
+    {
+      "hash": "abcd102216cc5699573e04af8e272968f5ba2468febbbbe41ee6df0ae6827ac9",
+      "last_known_line": 20,
+      "removed_at": "2026-06-09T16:01:45.744Z"
+    },
+    {
+      "hash": "e648a999f94b93dc587cab2966305175379ac613095d30adbd0f38be7006ec03",
+      "last_known_line": 6,
+      "removed_at": "2026-06-09T16:01:45.744Z"
+    },
+    {
+      "hash": "7a7e89de042cf3f6c203bf4deff71980fb8457b081e702ca44a4fb784214648f",
+      "last_known_line": 7,
+      "removed_at": "2026-06-09T16:01:45.744Z"
+    },
+    {
+      "hash": "39e89e0b2fe940f3d9ce5be02ee222ebfc9d21b46997b67384cf89cabe91455d",
+      "last_known_line": 16,
+      "removed_at": "2026-06-09T18:34:40.251Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\associatedengineeringgroup\\deltek_pim_d365_integration\\instances\\trial.py",
+  "stats": {
+    "ai_line_count": 8,
+    "ai_line_pct": 42.11,
+    "ai_lines_removed_or_modified": 48
+  },
+  "updated_at": "2026-06-09T18:34:40.251Z",
+  "version": 1
+}

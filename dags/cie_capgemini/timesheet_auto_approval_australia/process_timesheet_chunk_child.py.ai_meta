@@ -1,0 +1,31 @@
+{
+  "ai_lines": {
+    "40": "7e3dd8bde1fbae13d6535ecbc93d7dd5ee5fedc2e5f682f1aff5ac0b318dbd48",
+    "41": "7148eb7c65ad82d615593c73b880f67cf6f29e3405959f8ac961fe60fc6d1be9"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-01-30T10:44:31.188Z",
+  "file_state": {
+    "file_sha256": "874b7845939bdd27a5fc59d6e5041215afdc94e9ed3486b78cde18a6ad52dabe",
+    "total_file_lines": 134,
+    "total_lines": 117
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "C:\\Workspace\\airflow-integrations\\dags\\cie_capgemini\\timesheet_auto_approval_australia\\process_timesheet_chunk_child.py",
+  "stats": {
+    "ai_line_count": 2,
+    "ai_line_pct": 1.71,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-01-30T10:44:31.188Z",
+  "version": 1
+}

@@ -1,0 +1,120 @@
+{
+  "ai_lines": {
+    "125": "21784d1a146c838c79c8b82a0a5387f4e8e7cb09d12a71f2e748f3910e87b5d9",
+    "126": "6e6ab7650dd11efd3dc227154a586ec4cc28d3c4e56510c0ec756e104479c24f",
+    "286": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+    "319": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+    "352": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+    "462": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+    "563": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+    "626": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+    "725": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+    "832": "84723f9f8d3f1c679dfb6608f40e5e3ecc03b6f9572062521c01919815106e84",
+    "836": "25497c0f7512d949621183b8c514cc5b7e81e77817fa2db1d53e3ee28f885a6a",
+    "847": "84723f9f8d3f1c679dfb6608f40e5e3ecc03b6f9572062521c01919815106e84",
+    "851": "25497c0f7512d949621183b8c514cc5b7e81e77817fa2db1d53e3ee28f885a6a",
+    "871": "ddbf9a7da99ead6febb20d079ce01e24932152863c95bbb0bea2086c295f93c4",
+    "874": "a40dedae26a704ab6717edf30f249ba95c2317b34ac63aa5ba945b1088844089"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 27,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-06-21T14:59:09.946Z",
+  "file_state": {
+    "file_sha256": "f590b4f88dedceb4ca8e83b2bc176c8828108e2f98b556cae0b944eb35b89524",
+    "total_file_lines": 926,
+    "total_lines": 818
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "84723f9f8d3f1c679dfb6608f40e5e3ecc03b6f9572062521c01919815106e84",
+      "last_known_line": 832,
+      "removed_at": "2026-06-22T02:37:50.561Z"
+    },
+    {
+      "hash": "25497c0f7512d949621183b8c514cc5b7e81e77817fa2db1d53e3ee28f885a6a",
+      "last_known_line": 836,
+      "removed_at": "2026-06-22T02:37:50.561Z"
+    },
+    {
+      "hash": "84723f9f8d3f1c679dfb6608f40e5e3ecc03b6f9572062521c01919815106e84",
+      "last_known_line": 847,
+      "removed_at": "2026-06-22T02:37:50.561Z"
+    },
+    {
+      "hash": "25497c0f7512d949621183b8c514cc5b7e81e77817fa2db1d53e3ee28f885a6a",
+      "last_known_line": 851,
+      "removed_at": "2026-06-22T02:37:50.561Z"
+    },
+    {
+      "hash": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+      "last_known_line": 725,
+      "removed_at": "2026-06-22T02:38:00.909Z"
+    },
+    {
+      "hash": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+      "last_known_line": 724,
+      "removed_at": "2026-06-22T02:38:09.856Z"
+    },
+    {
+      "hash": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+      "last_known_line": 723,
+      "removed_at": "2026-06-22T02:38:18.145Z"
+    },
+    {
+      "hash": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+      "last_known_line": 722,
+      "removed_at": "2026-06-22T02:38:26.736Z"
+    },
+    {
+      "hash": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+      "last_known_line": 721,
+      "removed_at": "2026-06-22T02:38:37.913Z"
+    },
+    {
+      "hash": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+      "last_known_line": 720,
+      "removed_at": "2026-06-22T02:38:44.001Z"
+    },
+    {
+      "hash": "1f06a383f1a48308b454e43ecbdbc11bf91fa179fb3cfa3eff709620b747dea8",
+      "last_known_line": 719,
+      "removed_at": "2026-06-22T02:38:50.248Z"
+    },
+    {
+      "hash": "37713fdc28a7310bcece3eb033a570e619fc8d11bd3f69bb67ad8d57af7502c5",
+      "last_known_line": 835,
+      "removed_at": "2026-06-22T02:44:59.493Z"
+    },
+    {
+      "hash": "37713fdc28a7310bcece3eb033a570e619fc8d11bd3f69bb67ad8d57af7502c5",
+      "last_known_line": 849,
+      "removed_at": "2026-06-22T02:44:59.493Z"
+    },
+    {
+      "hash": "7e6b3ddab2600ee80dfda8ca4bbfc2ad9d8bef0f47f88231c8b7d94d3633df0f",
+      "last_known_line": 871,
+      "removed_at": "2026-06-22T04:14:39.388Z"
+    },
+    {
+      "hash": "5a853ab133a1a2d395413d09ef4a67ca759366649c63e341939f49615e0691b3",
+      "last_known_line": 874,
+      "removed_at": "2026-06-22T04:14:39.388Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\associatedengineeringgroup\\deltek_pim_d365_integration\\project_sync.py",
+  "stats": {
+    "ai_line_count": 15,
+    "ai_line_pct": 1.83,
+    "ai_lines_removed_or_modified": 15
+  },
+  "updated_at": "2026-06-22T04:14:39.388Z",
+  "version": 1
+}

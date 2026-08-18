@@ -1,0 +1,19 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The timesheet
+  autosubmission/approval run for timeoff is {{ " " }}
+  {%- set has_errors = result("get_errored_logs", key="length") > 0 -%}
+  {%- if has_errors -%}
+  completed with errors
+  {%- else -%}
+  completed successfully
+  {%- endif -%}
+  {{ " on " + current_time() }}
+  <br>
+  Please click on the below link to download the logs and review. <br /> <br /><a
+    href="{{result('generate_download_link')}}">Download log</a>
+</p>
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+  For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

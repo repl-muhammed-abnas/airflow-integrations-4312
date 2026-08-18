@@ -1,0 +1,9 @@
+region = 'eu-central-1'
+environment = "pre-production"
+time_zone = "Etc/UTC"
+master_max_active_runs = 1
+max_active_parallel_runs = 15
+max_active_child_runs = 15
+execution_timeout_days=14
+sumo_conn_id="sumologic-dagrunlogger"
+submit_time_child_max_active_runs = 5

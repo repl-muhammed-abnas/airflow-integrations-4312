@@ -1,0 +1,41 @@
+{
+  "ai_lines": {
+    "36": "2a9d1f030fec907cd012cfc2092416fc18560c909d27653838ce738f632017f4",
+    "37": "f41e40fe3dc690d8c8128942f8f63f2dd2ff2b978ef00cbf52ccfbb7b4c920f6",
+    "38": "926ba0b0135cf387bc838281c55bf6017346ac0c8cd97fd5b8f357576bdf2963",
+    "39": "4103f119cbf8b3aeee0ae218dd3314f6d063bdc4942629dffb898bfe3e65099c",
+    "40": "eb3d025ac7ab857ed68cab12717e6881178834757841b6739e32e4d18a61f787",
+    "41": "c31232b82cb1e5f21606e9c9fd092ff18f9e871f4f4cfa3c6ba7ab2ef577f158",
+    "42": "7cdd3c0f5fc31bcc5f1fb5c3a572afd5db81e397b03f40bfd46efb60947de0eb",
+    "43": "c3baa9620f1218322063b738924a40eff893f9a8f6349c3b4479fac54120ea1f",
+    "44": "8a15a2e04cf4dfecca3ca9bcaa87178ce07c1b667d5a3eaa118698d6c6cc6391",
+    "45": "bed70f40fd5cb9797549a65b7275b42f29d99e498f525cb51d72ecef85d6f495",
+    "46": "e58f3d25c310b2ff6bf66357418b550cd773896ed57ef2070ae25ce000c4aa89",
+    "47": "d82c009e402b6522ca50db129c95bfd493786c29ae4807eb320699326a9801bd"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-13T16:59:44.406Z",
+  "file_state": {
+    "file_sha256": "b3d826277a9ca5a51e60e7850eaa891b68d1ce75e51faaf878481309d3778cf5",
+    "total_file_lines": 47,
+    "total_lines": 39
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\michaelkorstna\\uk_user_import_v1\\instances\\trial.py",
+  "stats": {
+    "ai_line_count": 12,
+    "ai_line_pct": 30.77,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-13T16:59:44.406Z",
+  "version": 1
+}

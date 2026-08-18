@@ -1,0 +1,152 @@
+{
+  "ai_lines": {
+    "109": "44478ef1022127ca17ebb9f30e64c79324caea5a79bf513ab502a991d2b5d47b",
+    "117": "64a3d76ce7975758197c32604fced50130c133eed7786e22c217dcb048c946a3",
+    "124": "a4213a46ce1dc74bcd242fe3d52eb37d523b6409ce752e003d433ee47e30c0a6",
+    "130": "1dadeeca7adc82edc705dc712d499a1e794dd616525b637e6225fd0b66374508",
+    "133": "e6772bca846f2ca75e8f0ec90970bb673f7fd33b49b890b76c21707bdeb6b2c6",
+    "2": "246d66ffbac9c10d5911e86d92ccf4027b7003be3e114fcbf57a21093c82e739",
+    "220": "bf18fb25301532fa9d81d2704e5446ef0895572eae8e284222de4dd753af678b",
+    "221": "d818a3da6c22dc2210074aec79706b1366febd9501029f8ec98c0e90ca8be188",
+    "222": "70c1f3848329d4cf79329f72bd5bdd437cefdef1977a30c9bc7c642b8fcc91c8",
+    "224": "6e1960afc09a7890562190f0ea8b16ac8ff4da0be97728f1595704cfa02e600d",
+    "225": "be4c7015d02a234520db088a84d3bed2948af55043d4e11c94ae32c8e28d5813",
+    "226": "8c60165f3111ff6ea994275c53db7d2c8a5d4b444814d74e3bffb3c5123a3bdf",
+    "35": "968a203e997c1c5214e4e83dfd3638d6f2a859afdf8a57c6c86b56855825818c",
+    "36": "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+    "37": "9d38e9803afa1a77539b69393c78080ec7067480a3325c8642e9c8319f3f88cb",
+    "38": "f3ff720b28728220e8e1effda303d4d785d325a7345c649b1738dfb0f0b94f3a",
+    "39": "e75e0758b880b73de98b90637d3a122e6008d98fecbaab9ae9593a0daec9168b",
+    "40": "c7fecba7421afe7775a8a6a72a82f3c4f87b557c6f9786e4b342af9130361c73",
+    "41": "5fbbf53db0c3afa68c7f96eb68b51647c81dd5a5777d4ceab8090b56b786eb4d",
+    "42": "bb853ba2fecb1bc9310e5544a45ab8eea22bd09a7c8aa78466a0a74cefeffa01",
+    "43": "2a7ceeb53735c9e34edc326f38fa8096861b309989f6918bda80778366269e67",
+    "44": "6aa795c015f75f4cc70f4b8347d52d575cdf27c6597f9c2d29ac27368dc3e9a7",
+    "45": "2bb72f3cc19a27eaa692feca99ce2b21406aaa4a869d62b6c1ba00e55d8f80ea",
+    "46": "565ae717dba673462b511273a236b25fc12a726062842652d7a94ad065843892",
+    "47": "264629da0f5c6ca2f339c6292edd9562e8c88c28d01d2126d7adc177101b5aec",
+    "50": "283ddce72d19d05a18b210fd7a764b830585f70fde9625455ca42999de429980",
+    "62": "08abe4693785d34b4672e012e0e385a20a37e24b675faa639678c9595d264422",
+    "63": "fcb180992192c24389ae8f39b4859261400a13a822162f0aef5cb41d21e0c218",
+    "64": "a722e207b9916830669d4eb687b125109461f6532b45b47d8aab280a6fde6f12",
+    "65": "49d247b6dea28b80a2a8c6fc275cfd66ffaecf20e54fbf01413ecdaf4aa28cdf",
+    "66": "901dc18ac1f2d548968c48e0ce2bc2f8a5ecbd529866472d0db7de25e48cdc01",
+    "67": "f6f3492f776f1ddff756fbd8984d1b2c473072641d020f1bf84d912b4656feb4",
+    "68": "1b08813d38b9b75c19fa15fe8fbf7c5d6270eb4c476ffda2eea75366639a533e",
+    "69": "60ae469429913c6b2c756b8581790298d28a8e55391d62b1132d22beeb40b60d",
+    "70": "ca0926c1ca211605d63948bf7501a1d47b46a44a3a4c97049d66f87b1f90c153",
+    "71": "d9684592e1fc0509762af1de64cec2ebcf8b6d3fe6e2ad62e3be83a4c8c5f31c",
+    "72": "4c706d31864207361e637432a351a3e1c5190aaea95e0b595c5a090b507b7510",
+    "74": "69d375653a277fb16bf9d0843be0d3b89946c610a374aae6a0c8ee0658f558c3",
+    "75": "25c55fb466fe955dd40f5b7a086ad93119ebf6964ece1b564fddedd2e0f04cc6",
+    "76": "7ce4777db92de2c10f36ba999696bf18d5f4c54809967d948e5413b5ee334698",
+    "77": "a2d3fbea7b0b0cb8f5d1a91a23294b7b578951004c8973193fe97baeda6cf7b2",
+    "78": "62a678a8f397e5882a036035a1bddd22e660831f2ee6caba76b937aeaec6cc33",
+    "79": "5f9c352a11ed410cb9cce4092299ea020e4fed92eff57efb4493d2804e672d7c",
+    "80": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+    "81": "5ed4f92b8cb33aadbb230ab5b841a5a2b75383389c51ae1100066070f6e08730",
+    "82": "6e068eb90e0a1c29cd1a447803b23a60ec5f912a64310ef6a697e6a7fe8935d9",
+    "83": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 14,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-17T08:04:38.522Z",
+  "file_state": {
+    "file_sha256": "6f32058a2fc77ac54e5cdca311626cc0db099308ff5f1335fa56ab12659cff44",
+    "total_file_lines": 228,
+    "total_lines": 184
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "b7e502bd1cdd38f6ab2b68e85017b3b7dc607e9c51f21289d4bc9b424349c60b",
+      "last_known_line": 35,
+      "removed_at": "2026-03-17T08:08:35.212Z"
+    },
+    {
+      "hash": "75178235bb7fb4cb19f32c574a5d3ed07462db309836bb3d0185a00a86f209e1",
+      "last_known_line": 38,
+      "removed_at": "2026-03-17T08:08:35.212Z"
+    },
+    {
+      "hash": "5389ef2384370aab3df57a0af376ab40cc067d6c8514a69cfe7189aed5b541c1",
+      "last_known_line": 43,
+      "removed_at": "2026-03-17T08:08:35.212Z"
+    },
+    {
+      "hash": "d4a4bb3e76f2769161f2bb1d15df704215829e8ad4fec4d48182a1b09f97acd7",
+      "last_known_line": 45,
+      "removed_at": "2026-03-17T08:08:35.212Z"
+    },
+    {
+      "hash": "af62c9dc2064d2e4716d4c70aa0229f9e7ebb35a5ddd991ca32326d54e5e2ee2",
+      "last_known_line": 132,
+      "removed_at": "2026-03-17T08:08:50.691Z"
+    },
+    {
+      "hash": "f863a86ef9c6fa8a6b93c74b36bc3db45ee95a42a1b2761d43c7fbba6955332d",
+      "last_known_line": 82,
+      "removed_at": "2026-03-17T14:10:02.147Z"
+    },
+    {
+      "hash": "ad61a3fd3c5af74bf77f5bd89e404d155ea0d6c1d62e867c3ad4ebd8b5c20d57",
+      "last_known_line": 134,
+      "removed_at": "2026-03-17T14:10:14.646Z"
+    },
+    {
+      "hash": "685d30510f61b5f490925b065f8d950e7d7eb07e80af8107ed546a5d309b4b5e",
+      "last_known_line": 50,
+      "removed_at": "2026-03-17T14:35:40.859Z"
+    },
+    {
+      "hash": "a66e2f1f62d5cffcabda56165885e417552f97911ed1376a72f5f94379f91dee",
+      "last_known_line": 111,
+      "removed_at": "2026-03-17T14:35:50.064Z"
+    },
+    {
+      "hash": "ecc629b9493d97db7bc2e8342e6cfd0596341164b9fa493412b473bc68ce5a47",
+      "last_known_line": 119,
+      "removed_at": "2026-03-23T13:49:06.013Z"
+    },
+    {
+      "hash": "cb8e7060ec6a0e34a821b74f14baa50262f2a3bb969849f398ac299bfe856b4f",
+      "last_known_line": 124,
+      "removed_at": "2026-03-23T13:49:06.013Z"
+    },
+    {
+      "hash": "bf2e753d47bf677c2982a20c42611fad6b55c1c049a77620b9a5ed31226d01bf",
+      "last_known_line": 127,
+      "removed_at": "2026-03-23T13:49:06.013Z"
+    },
+    {
+      "hash": "55e3845fe5ac4c2a1dc4bc54130bc29a1933e4e14c8c2847e2f071c4a80a00f8",
+      "last_known_line": 128,
+      "removed_at": "2026-03-23T13:49:06.013Z"
+    },
+    {
+      "hash": "b43a33ea795bdc10078f358fccbf2296eaf41dafe43af6d0f9041f12531dace8",
+      "last_known_line": 134,
+      "removed_at": "2026-03-23T13:49:06.013Z"
+    },
+    {
+      "hash": "23f426709611780b61833e09b39459cf038537751a527755319277ea87591ea3",
+      "last_known_line": 140,
+      "removed_at": "2026-03-23T13:49:06.013Z"
+    }
+  ],
+  "source_file": "C:\\Workspace\\airflow-integrations\\dags\\cie_wipro\\ksa_absconding_employee_notification\\utils\\python_callable_method.py",
+  "stats": {
+    "ai_line_count": 47,
+    "ai_line_pct": 25.54,
+    "ai_lines_removed_or_modified": 15
+  },
+  "updated_at": "2026-05-05T07:28:00.263Z",
+  "version": 1
+}

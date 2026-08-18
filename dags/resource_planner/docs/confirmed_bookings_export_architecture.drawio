@@ -1,0 +1,532 @@
+<mxfile host="app.diagrams.net" modified="2026-05-06T14:00:00.000Z" agent="confirmed-bookings-export-architecture" version="22.1.16" type="device">
+  <diagram name="1. Architecture Overview" id="arch-overview">
+    <mxGraphModel dx="2200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="Confirmed Bookings Export — RP → Polaris&#10;Architecture Overview" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="20" width="700" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vars" value="&lt;b&gt;Airflow Variables (per instance)&lt;/b&gt;&#10;rp_confirmed_bookings_cursor_dev (R/W)&#10;rp_tenant_id_dev (R)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="280" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="trigger" value="&lt;b&gt;Trigger&lt;/b&gt;&#10;Manual / Schedule (None in dev)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="420" y="120" width="280" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="master" value="&lt;b&gt;MASTER DAG&lt;/b&gt;&#10;resource_planner_confirmed_bookings_export_dev&#10;max_active_runs=1  (cursor read-modify-write is serial)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="270" width="640" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="child1" value="&lt;b&gt;Page Child 1&lt;/b&gt;&#10;..._child_dev_1&#10;pages 1, 4, 7, 10…&#10;max_active_runs=3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="220" y="430" width="280" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="child2" value="&lt;b&gt;Page Child 2&lt;/b&gt;&#10;..._child_dev_2&#10;pages 2, 5, 8, 11…&#10;max_active_runs=3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="700" y="430" width="280" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="child3" value="&lt;b&gt;Page Child 3&lt;/b&gt;&#10;..._child_dev_3&#10;pages 3, 6, 9, 12…&#10;max_active_runs=3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="1180" y="430" width="280" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="op_create" value="&lt;b&gt;Op-DAG: CREATE&lt;/b&gt;&#10;..._op_create_dev&#10;ONE run per booking with ADD days&#10;max_active_runs=10" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d4e1f5;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="500" y="640" width="320" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="op_update" value="&lt;b&gt;Op-DAG: UPDATE/DELETE&lt;/b&gt;&#10;..._op_update_dev&#10;ONE run per booking with UPDATE/DELETE days&#10;(DELETE = setHours:0 within scheduleRules)&#10;max_active_runs=10" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d4e1f5;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="900" y="640" width="340" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="gateway" value="&lt;b&gt;Backend Gateway (FastAPI)&lt;/b&gt;&#10;POST  /api/v1/rp/confirmedBookings/batches&#10;POST  /api/v1/rp/confirmedBookings&#10;PATCH /api/v1/rp/confirmedBookings/markPushed&#10;POST  /api/v1/rp/confirmedBookings/failures&#10;GET   /api/v1/rp/confirmedBookings/failures&#10;PATCH /api/v1/rp/confirmedBookings/failures/{id}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="920" width="500" height="170" as="geometry" />
+        </mxCell>
+
+        <mxCell id="polaris" value="&lt;b&gt;Polaris (Replicon)&lt;/b&gt;&#10;GraphQL (POST /graphql):&#10;  • createTaskResourceUserAllocation&#10;  • updateTaskResourceUserAllocation (PARTIAL)&#10;  • putTaskResourceEstimate&#10;REST (POST /services/...):&#10;  • ImportService1.svc/BulkGetUsers3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="700" y="920" width="500" height="170" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mssql" value="&lt;b&gt;MSSQL: dbo.rp_source&lt;/b&gt;&#10;Work queue filter:&#10;  outbound_pending_op IS NOT NULL&#10;  AND last_updated_date IN (cursor, upperBound]&#10;Per-row signal: ADD / UPDATE / DELETE&#10;markPushed clears the signal" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;spacingLeft=20;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="80" y="1140" width="500" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="retry_dag" value="&lt;b&gt;Sync-Failure Retry DAG&lt;/b&gt;&#10;..._sync_failure_retry_dev&#10;schedule: */30 * * * *  (or manual)&#10;Re-fires page-children with conf.failureId" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="1500" y="430" width="320" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend_t" value="&lt;b&gt;Legend&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1500" y="920" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_a" value="Airflow DAG / Task" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="1500" y="950" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_g" value="Backend Gateway (FastAPI)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="1500" y="985" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_p" value="Polaris (External)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="1500" y="1020" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_v" value="Airflow Variable" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="1500" y="1055" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_d" value="Database" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="1500" y="1090" width="320" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_var_master" value="reads cursor" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;fontSize=10" edge="1" source="vars" target="master" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_trigger_master" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=10" edge="1" source="trigger" target="master" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_master_gw_batches" value="POST /batches" style="endArrow=classic;html=1;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle" edge="1" source="master" target="gateway" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_master_c1" value="trigger_child_1" style="endArrow=classic;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10" edge="1" source="master" target="child1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_master_c2" value="trigger_child_2" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10" edge="1" source="master" target="child2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_master_c3" value="trigger_child_3" style="endArrow=classic;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10" edge="1" source="master" target="child3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_c2_create" value="trigger_creates&#10;(per booking)" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10" edge="1" source="child2" target="op_create" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c2_update" value="trigger_updates&#10;(per booking)" style="endArrow=classic;html=1;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;fontSize=10" edge="1" source="child2" target="op_update" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_child_gw" value="POST /confirmedBookings (page)&#10;PATCH /failures/{id} (resolve)&#10;POST /failures (log)" style="endArrow=classic;html=1;dashed=1;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.7;entryY=0;entryDx=0;entryDy=0;fontSize=10;edgeStyle=orthogonalEdgeStyle" edge="1" source="child2" target="gateway" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_child_polaris" value="POST /services/.../BulkGetUsers3&#10;(employeeId → user URN)" style="endArrow=classic;html=1;dashed=1;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;fontSize=10;edgeStyle=orthogonalEdgeStyle" edge="1" source="child2" target="polaris" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_create_polaris" value="GraphQL CREATE + putEstimate" style="endArrow=classic;html=1;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle" edge="1" source="op_create" target="polaris" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_update_polaris" value="GraphQL PARTIAL update" style="endArrow=classic;html=1;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle" edge="1" source="op_update" target="polaris" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_create_gw" value="PATCH /markPushed" style="endArrow=classic;html=1;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle" edge="1" source="op_create" target="gateway" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_update_gw" value="PATCH /markPushed" style="endArrow=classic;html=1;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle" edge="1" source="op_update" target="gateway" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_gw_db" value="SELECT / UPDATE&#10;(work queue + clear signal)" style="endArrow=classic;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;fontSize=10" edge="1" source="gateway" target="mssql" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_master_var" value="advance_cursor:&#10;Variable.set = upperBound" style="endArrow=classic;html=1;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;edgeStyle=orthogonalEdgeStyle" edge="1" source="master" target="vars" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_retry_gw" value="GET /failures?status=PENDING_RETRY" style="endArrow=classic;html=1;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle" edge="1" source="retry_dag" target="gateway" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_retry_c3" value="re-trigger&#10;(with failureId)" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10" edge="1" source="retry_dag" target="child3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="2. Master DAG flow" id="master-flow">
+    <mxGraphModel dx="2200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="m_title" value="Master DAG — Task Flow&#10;resource_planner_confirmed_bookings_export_dev" style="text;html=1;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="20" width="700" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_view" value="view_dag_run_conf" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m_capt" value="capture_master_run_id&#10;(PythonOperator)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="200" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m_prep" value="prepare_metadata_request&#10;(reads Variable: cursor)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="290" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m_fetch" value="fetch_batch_metadata&#10;POST /confirmedBookings/batches&#10;(server stamps upperBound = NOW)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="380" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m_has" value="has_pages&#10;(IfOperator)&#10;pageCount &gt; 0?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="80" y="490" width="220" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_groups" value="compute_page_groups&#10;Split [1..pageCount]&#10;by ((p-1) % 3) + 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="380" y="500" width="240" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_t1" value="trigger_child_1&#10;TriggerDagRunForEachItem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="700" y="380" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m_t2" value="trigger_child_2&#10;TriggerDagRunForEachItem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="700" y="510" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m_t3" value="trigger_child_3&#10;TriggerDagRunForEachItem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="700" y="640" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_combine" value="combine_child_run_ids&#10;Flatten 3 lists into one" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1020" y="510" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m_wait" value="wait_for_all_children&#10;WaitForDagRunsSensor&#10;execution_timeout=2h" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1340" y="500" width="240" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_adv" value="advance_cursor&#10;trigger_rule=&quot;all_done&quot;&#10;Variable.set(cursor) = upperBound" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="1620" y="500" width="240" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_end" value="end_task&#10;trigger_rule=&quot;all_done&quot;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1700" y="710" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_e1" value="" style="endArrow=classic;html=1" edge="1" source="m_view" target="m_capt" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e2" value="" style="endArrow=classic;html=1" edge="1" source="m_capt" target="m_prep" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e3" value="" style="endArrow=classic;html=1" edge="1" source="m_prep" target="m_fetch" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e4" value="" style="endArrow=classic;html=1" edge="1" source="m_fetch" target="m_has" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e_no" value="No" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;fontSize=11;fontStyle=1" edge="1" source="m_has" target="m_adv" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="190" y="710"/><mxPoint x="1620" y="710"/></Array></mxGeometry></mxCell>
+        <mxCell id="m_e_yes" value="Yes" style="endArrow=classic;html=1;fontSize=11;fontStyle=1" edge="1" source="m_has" target="m_groups" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e5" value="" style="endArrow=classic;html=1" edge="1" source="m_groups" target="m_t1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e6" value="" style="endArrow=classic;html=1" edge="1" source="m_groups" target="m_t2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e7" value="" style="endArrow=classic;html=1" edge="1" source="m_groups" target="m_t3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e8" value="" style="endArrow=classic;html=1" edge="1" source="m_t1" target="m_combine" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e9" value="" style="endArrow=classic;html=1" edge="1" source="m_t2" target="m_combine" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e10" value="" style="endArrow=classic;html=1" edge="1" source="m_t3" target="m_combine" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e11" value="" style="endArrow=classic;html=1" edge="1" source="m_combine" target="m_wait" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e12" value="" style="endArrow=classic;html=1" edge="1" source="m_wait" target="m_adv" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m_e13" value="" style="endArrow=classic;html=1" edge="1" source="m_adv" target="m_end" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="m_note" value="Notes:&#10;• upperBound is server-stamped at /batches and echoed into every child's conf.&#10;• has_pages = No path skips trigger fan-out and goes straight to advance_cursor.&#10;• advance_cursor runs even if some children fail (sync-failure DAG owns replay).&#10;• max_active_runs=1 ensures cursor read-modify-write is serial across master runs." style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;spacingLeft=10;spacingTop=10;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="800" width="900" height="120" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="3. Page-Child DAG flow" id="child-flow">
+    <mxGraphModel dx="2200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="c_title" value="Page-Child DAG — Task Flow&#10;resource_planner_confirmed_bookings_export_child_dev_{1,2,3}" style="text;html=1;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="20" width="900" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c_view" value="view_dag_run_conf" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c_capt" value="capture_page_conf&#10;(PythonOperator)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="200" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_prep" value="prepare_page_request&#10;Build payload from conf" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="290" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_fetch" value="fetch_page&#10;POST /confirmedBookings&#10;(booking-cohesive page)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="380" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_resolve" value="resolve_user_uris&#10;RepliconServiceOperator&#10;POST /services/.../BulkGetUsers3&#10;Returns {employeeId: user URN}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="80" y="490" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c_class" value="classify_and_build&#10;Per-day op routing:&#10;  ADD → creates list (collapsed scheduleRules)&#10;  UPDATE/DELETE → updates list (mixed setHours)&#10;Attaches tenant_id + pushed_rows" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c_has" value="has_work&#10;(IfOperator)&#10;total_count &gt; 0?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="540" y="630" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c_tc" value="trigger_creates&#10;TriggerDagRunForEachItem&#10;→ op_create runs" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d4e1f5;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="800" y="490" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_wc" value="wait_for_create_runs&#10;WaitForDagRunsSensor&#10;execution_timeout=2h" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1100" y="490" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_tu" value="trigger_updates&#10;TriggerDagRunForEachItem&#10;→ op_update runs" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d4e1f5;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="800" y="620" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_wu" value="wait_for_update_runs&#10;WaitForDagRunsSensor&#10;execution_timeout=2h" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1100" y="620" width="240" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c_resolveF" value="resolve_failure_if_present&#10;trigger_rule=&quot;all_success&quot;&#10;PATCH /failures/{id} = RESOLVED&#10;(only if conf.failureId set)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1400" y="620" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c_logF" value="log_sync_failure&#10;trigger_rule=&quot;one_failed&quot;&#10;POST /failures&#10;(records replay recipe)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
+          <mxGeometry x="1400" y="800" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c_end" value="end_task&#10;trigger_rule=&quot;all_done&quot;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1740" y="700" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c_e1" value="" style="endArrow=classic;html=1" edge="1" source="c_view" target="c_capt" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e2" value="" style="endArrow=classic;html=1" edge="1" source="c_capt" target="c_prep" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e3" value="" style="endArrow=classic;html=1" edge="1" source="c_prep" target="c_fetch" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e4" value="" style="endArrow=classic;html=1" edge="1" source="c_fetch" target="c_resolve" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e5" value="" style="endArrow=classic;html=1" edge="1" source="c_resolve" target="c_class" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e6" value="" style="endArrow=classic;html=1" edge="1" source="c_class" target="c_has" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e_no" value="No" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;fontStyle=1" edge="1" source="c_has" target="c_end" parent="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="640" y="800"/><mxPoint x="1810" y="800"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="c_e_yes" value="Yes" style="endArrow=classic;html=1;fontStyle=1" edge="1" source="c_has" target="c_tc" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e7" value="" style="endArrow=classic;html=1" edge="1" source="c_tc" target="c_wc" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e8" value="" style="endArrow=classic;html=1" edge="1" source="c_wc" target="c_tu" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e9" value="" style="endArrow=classic;html=1" edge="1" source="c_tu" target="c_wu" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e10" value="" style="endArrow=classic;html=1" edge="1" source="c_wu" target="c_resolveF" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e11" value="" style="endArrow=classic;html=1" edge="1" source="c_resolveF" target="c_end" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e12" value="any failed" style="endArrow=classic;html=1;dashed=1;fontStyle=2;edgeStyle=orthogonalEdgeStyle" edge="1" source="c_wu" target="c_logF" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="c_e13" value="" style="endArrow=classic;html=1" edge="1" source="c_logF" target="c_end" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="c_note" value="Notes:&#10;• Sequential trigger types (creates → updates) — CREATE settles before any PARTIAL on the same allocation runs.&#10;• Each trigger_* spawns N op-DAG runs (one per booking).&#10;• Each WaitForDagRunsSensor blocks until all its op-runs reach a terminal state (success or failure).&#10;• log_sync_failure (one_failed) fires once any of the critical upstream tasks ends in FAILED state — captures replay recipe.&#10;• User URI resolution (BulkGetUsers3) happens once per page using employeeId — no caching (deleted users handled correctly)." style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;spacingLeft=10;spacingTop=10;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="980" width="1300" height="140" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="4. Op-CREATE DAG flow" id="op-create-flow">
+    <mxGraphModel dx="2200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="oc_title" value="Op-CREATE DAG — Task Flow&#10;resource_planner_confirmed_bookings_op_create_dev&#10;(one run per booking with ADD days)" style="text;html=1;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="20" width="900" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="oc_view" value="view_dag_run_conf" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_capt" value="capture_conf&#10;(stash dag_run.conf in XCom)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="240" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_exec" value="execute_create&#10;Polaris GraphQL mutation:&#10;  createTaskResourceUserAllocation&#10;  (with collapsed scheduleRules)&#10;Treats &quot;already exists&quot; as success." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;spacingLeft=10;spacingTop=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_estim" value="put_task_resource_estimate&#10;Polaris GraphQL mutation:&#10;  putTaskResourceEstimate&#10;  (taskId + resourceUserId)&#10;Idempotent — PUT semantics." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;spacingLeft=10;spacingTop=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="80" y="480" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_prep" value="prepare_mark_pushed&#10;Build payload from conf.pushed_rows" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="500" y="500" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_mark" value="mark_pushed&#10;PATCH /confirmedBookings/markPushed&#10;Clears outbound_pending_op for this&#10;booking's ADD-day rows." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=10;spacingTop=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="800" y="500" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_resolveF" value="resolve_failure_if_present&#10;trigger_rule=&quot;all_success&quot;&#10;PATCH /failures/{id} = RESOLVED&#10;(only if conf.failureId set)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;spacingTop=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="1180" y="500" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_logF" value="log_sync_failure&#10;trigger_rule=&quot;one_failed&quot;&#10;POST /failures (replay recipe)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
+          <mxGeometry x="1180" y="700" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_end" value="end_task&#10;trigger_rule=&quot;all_done&quot;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1520" y="600" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="oc_e1" value="" style="endArrow=classic;html=1" edge="1" source="oc_view" target="oc_capt" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="oc_e2" value="" style="endArrow=classic;html=1" edge="1" source="oc_capt" target="oc_exec" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="oc_e3" value="" style="endArrow=classic;html=1" edge="1" source="oc_exec" target="oc_estim" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="oc_e4" value="" style="endArrow=classic;html=1" edge="1" source="oc_estim" target="oc_prep" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="oc_e5" value="" style="endArrow=classic;html=1" edge="1" source="oc_prep" target="oc_mark" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="oc_e6" value="" style="endArrow=classic;html=1" edge="1" source="oc_mark" target="oc_resolveF" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="oc_e7" value="" style="endArrow=classic;html=1" edge="1" source="oc_resolveF" target="oc_end" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="oc_e8" value="any failed" style="endArrow=classic;html=1;dashed=1;fontStyle=2" edge="1" source="oc_mark" target="oc_logF" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="oc_e9" value="" style="endArrow=classic;html=1" edge="1" source="oc_logF" target="oc_end" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="oc_note" value="Self-healing CREATE:&#10;If a previous run created the allocation but its response was lost (network blip, container kill), a retry hits Polaris with the same allocationId.&#10;Polaris responds &quot;already exists&quot;. handle_create_response treats that as success → put_task_resource_estimate runs (idempotent PUT) → markPushed clears the row signal.&#10;No manual cleanup needed; eventual consistency is preserved." style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;spacingLeft=10;spacingTop=10;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="850" width="1100" height="120" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="5. Op-UPDATE DAG flow" id="op-update-flow">
+    <mxGraphModel dx="2200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="ou_title" value="Op-UPDATE DAG — Task Flow&#10;resource_planner_confirmed_bookings_op_update_dev&#10;(one run per booking with UPDATE/DELETE days)" style="text;html=1;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="20" width="900" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ou_view" value="view_dag_run_conf" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ou_capt" value="capture_conf" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="240" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ou_exec" value="execute_update&#10;Polaris GraphQL mutation:&#10;  updateTaskResourceUserAllocation&#10;  allocationEditMode: PARTIAL&#10;  scheduleRules: [...]&#10;Mixed setHours per rule:&#10;  UPDATE day → setHours = day.hours&#10;  DELETE day → setHours = 0&#10;Naturally idempotent." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="80" y="320" width="360" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ou_prep" value="prepare_mark_pushed&#10;Build payload from conf.pushed_rows" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="540" y="380" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ou_mark" value="mark_pushed&#10;PATCH /confirmedBookings/markPushed&#10;Clears outbound_pending_op for this&#10;booking's UPDATE+DELETE day rows." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=10;spacingTop=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="840" y="380" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ou_resolveF" value="resolve_failure_if_present&#10;trigger_rule=&quot;all_success&quot;&#10;PATCH /failures/{id} = RESOLVED&#10;(only if conf.failureId set)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;spacingTop=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="1220" y="380" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ou_logF" value="log_sync_failure&#10;trigger_rule=&quot;one_failed&quot;&#10;POST /failures (replay recipe)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
+          <mxGeometry x="1220" y="600" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ou_end" value="end_task&#10;trigger_rule=&quot;all_done&quot;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1560" y="480" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ou_e1" value="" style="endArrow=classic;html=1" edge="1" source="ou_view" target="ou_capt" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ou_e2" value="" style="endArrow=classic;html=1" edge="1" source="ou_capt" target="ou_exec" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ou_e3" value="" style="endArrow=classic;html=1" edge="1" source="ou_exec" target="ou_prep" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ou_e4" value="" style="endArrow=classic;html=1" edge="1" source="ou_prep" target="ou_mark" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ou_e5" value="" style="endArrow=classic;html=1" edge="1" source="ou_mark" target="ou_resolveF" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ou_e6" value="" style="endArrow=classic;html=1" edge="1" source="ou_resolveF" target="ou_end" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ou_e7" value="any failed" style="endArrow=classic;html=1;dashed=1;fontStyle=2" edge="1" source="ou_mark" target="ou_logF" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ou_e8" value="" style="endArrow=classic;html=1" edge="1" source="ou_logF" target="ou_end" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="ou_note" value="Why one mutation per booking (instead of one per day):&#10;• Polaris's PARTIAL update accepts a scheduleRules array — each rule has its own dateRange and setHours.&#10;• Multi-day PARTIAL with a single dateRange spreads hours by availability (don't honor per-day values).&#10;• So we collapse consecutive days with same hours into one rule, but keep different-hour days as separate rules.&#10;• DELETE is encoded as a setHours=0 rule within the same scheduleRules array — no separate DELETE op-DAG." style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;spacingLeft=10;spacingTop=10;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="780" width="1400" height="140" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="6. Sync-Failure Retry DAG" id="sync-retry-flow">
+    <mxGraphModel dx="2200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="sr_title" value="Sync-Failure Retry DAG — Task Flow&#10;resource_planner_confirmed_bookings_sync_failure_retry_dev" style="text;html=1;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="20" width="900" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sr_view" value="view_dag_run_conf" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="sr_fetch" value="fetch_pending_failures&#10;GET /confirmedBookings/failures&#10;?status=PENDING_RETRY&amp;limit=100" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="80" y="200" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sr_has" value="has_failures&#10;count &gt; 0?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="120" y="320" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sr_groups" value="compute_retry_groups&#10;Split failures by ((pageNumber-1) % 3) + 1&#10;(matches master DAG's routing scheme)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="420" y="320" width="320" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sr_t1" value="trigger_retry_child_1&#10;TriggerDagRunForEachItem&#10;(injects conf.failureId)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="800" y="220" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sr_t2" value="trigger_retry_child_2&#10;TriggerDagRunForEachItem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="800" y="320" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sr_t3" value="trigger_retry_child_3&#10;TriggerDagRunForEachItem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="800" y="420" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sr_combine" value="combine_retry_run_ids" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1120" y="320" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sr_wait" value="wait_for_all_retries&#10;WaitForDagRunsSensor&#10;execution_timeout=2h" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1400" y="320" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sr_end" value="end_task" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1700" y="335" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sr_e1" value="" style="endArrow=classic;html=1" edge="1" source="sr_view" target="sr_fetch" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="sr_e2" value="" style="endArrow=classic;html=1" edge="1" source="sr_fetch" target="sr_has" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="sr_e_no" value="No" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;fontStyle=1" edge="1" source="sr_has" target="sr_end" parent="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="220" y="500"/><mxPoint x="1770" y="500"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="sr_e_yes" value="Yes" style="endArrow=classic;html=1;fontStyle=1" edge="1" source="sr_has" target="sr_groups" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="sr_e3" value="" style="endArrow=classic;html=1" edge="1" source="sr_groups" target="sr_t1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="sr_e4" value="" style="endArrow=classic;html=1" edge="1" source="sr_groups" target="sr_t2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="sr_e5" value="" style="endArrow=classic;html=1" edge="1" source="sr_groups" target="sr_t3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="sr_e6" value="" style="endArrow=classic;html=1" edge="1" source="sr_t1" target="sr_combine" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="sr_e7" value="" style="endArrow=classic;html=1" edge="1" source="sr_t2" target="sr_combine" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="sr_e8" value="" style="endArrow=classic;html=1" edge="1" source="sr_t3" target="sr_combine" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="sr_e9" value="" style="endArrow=classic;html=1" edge="1" source="sr_combine" target="sr_wait" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="sr_e10" value="" style="endArrow=classic;html=1" edge="1" source="sr_wait" target="sr_end" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="sr_note" value="Notes:&#10;• Schedule: None (manual) in dev — flip to e.g. */30 * * * * in prod to drain PENDING_RETRY every half hour.&#10;• Each triggered child re-fetches the page using the same (cursor, upperBound, pageSize, pageNumber) → identical row set.&#10;• On success, child's resolve_failure_if_present PATCHes the failure record to RESOLVED.&#10;• If a failure record's attempt_count crosses 5, the gateway escalates it to MANUAL_REVIEW status (on next failure log)." style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;spacingLeft=10;spacingTop=10;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="600" width="1400" height="120" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="7. Data flow on rp_source" id="data-flow">
+    <mxGraphModel dx="2200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="d_title" value="Data Flow — outbound_pending_op lifecycle on dbo.rp_source" style="text;html=1;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="20" width="900" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d_writer" value="&lt;b&gt;Upstream Writer (out of scope)&lt;/b&gt;&#10;Sets outbound_pending_op = ADD/UPDATE/DELETE&#10;and bumps last_updated_date when a row's state changes." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="500" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d_table" value="&lt;b&gt;dbo.rp_source&lt;/b&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="220" width="200" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d_batches" value="&lt;b&gt;1. /confirmedBookings/batches&lt;/b&gt;&#10;Server stamps upperBound = NOW(IST)&#10;COUNT DISTINCT source_booking_id&#10;Filter:&#10;  source_system = sourceSystem&#10;  AND outbound_pending_op IS NOT NULL&#10;  AND last_updated_date &gt; cursor&#10;  AND last_updated_date &lt;= upperBound" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="440" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d_page" value="&lt;b&gt;2. /confirmedBookings (page)&lt;/b&gt;&#10;Booking-cohesive paging: a source_booking_id&#10;always lands on a single page.&#10;CTE selects pageSize source_booking_ids&#10;ordered by source_booking_id.&#10;Outer SELECT pulls all day-rows for those&#10;bookings (same filter as /batches)." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="640" y="280" width="440" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d_mp" value="&lt;b&gt;3. PATCH /markPushed&lt;/b&gt;&#10;UPDATE rp_source SET outbound_pending_op = NULL&#10;FROM rp_source s&#10;JOIN (VALUES (sb_1, wd_1), …) AS v(...)&#10;  ON s.source_booking_id = v.source_booking_id&#10;  AND s.work_date = v.work_date&#10;WHERE s.source_system = sourceSystem&#10;  AND s.outbound_pending_op IS NOT NULL&#10;  (chunked at 500 rows = 1000 params)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="640" y="480" width="440" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d_cursor" value="&lt;b&gt;4. Variable.set (advance_cursor)&lt;/b&gt;&#10;After all op-DAGs settle (success or failure):&#10;Variable.set(rp_confirmed_bookings_cursor_dev)&#10;  = upperBound from /batches response&#10;Next master run will use this as &quot;cursor&quot;." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10" vertex="1" parent="1">
+          <mxGeometry x="640" y="720" width="440" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d_e1" value="INSERT/UPDATE&#10;sets outbound_pending_op" style="endArrow=classic;html=1;fontSize=10" edge="1" source="d_writer" target="d_table" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="d_e2" value="SELECT counts" style="endArrow=classic;html=1;dashed=1;fontSize=10" edge="1" source="d_batches" target="d_table" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="d_e3" value="SELECT day rows" style="endArrow=classic;html=1;dashed=1;fontSize=10" edge="1" source="d_page" target="d_table" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="d_e4" value="UPDATE sets NULL" style="endArrow=classic;html=1;fontSize=10" edge="1" source="d_mp" target="d_table" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="d_window" value="&lt;b&gt;Snapshot window guarantees&lt;/b&gt;&#10;upperBound is server-stamped ONCE at /batches and reused by every page query &amp; every op-DAG run during this master cycle.&#10;The window is half-open: (cursor, upperBound]&#10;  • A row updated at exactly upperBound belongs to THIS run.&#10;  • A row updated at upperBound + epsilon belongs to the NEXT run.&#10;  • Rows that flip outbound_pending_op to non-NULL between /batches and page-fetch are excluded (counted but missing) — they get picked up next cycle." style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;spacingLeft=10;spacingTop=10;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="380" width="500" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d_lifecycle" value="&lt;b&gt;Per-row lifecycle (a single (source_booking_id, work_date) tuple)&lt;/b&gt;&#10;1. Writer flips outbound_pending_op from NULL → ADD/UPDATE/DELETE (and bumps last_updated_date).&#10;2. Master /batches counts it; page query returns it; child classifies; op-DAG dispatches the matching mutation.&#10;3. On op-DAG success, markPushed flips outbound_pending_op back to NULL.&#10;4. Subsequent master runs ignore this row (filter excludes NULL) until the writer flips it again." style="text;html=1;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;spacingLeft=10;spacingTop=10;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="600" width="500" height="180" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+</mxfile>

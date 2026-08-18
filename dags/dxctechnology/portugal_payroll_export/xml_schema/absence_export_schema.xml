@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+{%- for record in dataset %}
+<EMPLEADOS>
+  {%- for empleados in record.EMPLEADOS %}
+  {%- for empleado in empleados.EMPLEADO %}
+  <EMPLEADO TIPO="{{empleado.TIPO}}" NUMERO="{{empleado.NUMERO}}">
+    {%- for proceso in empleado.PROCESO %}
+    <PROCESO PERIODO="{{proceso.PERIODO}}" TT="{{proceso.TT}}" PAC="{{proceso.PAC}}"/>
+    {%- endfor %}
+    {%- for seccion in empleado.SECCION %}
+      <SECCION ID="{{seccion.ID}}">
+        {%- for ausencia in seccion.AUSENCIA %}
+        <AUSENCIA INICIO="{{ausencia.INICIO}}" FIN="{{ausencia.FIN}}" MOTIVO="{{ausencia.MOTIVO}}" HORAS="{{ausencia.HORAS}}" ACCION="{{ausencia.ACCION}}">{{ausencia.HOURS}}</AUSENCIA>
+        {%- endfor %}
+      </SECCION>
+    {%- endfor %}
+  </EMPLEADO>
+  {%- endfor %}
+  {%- endfor %}
+</EMPLEADOS>
+{%- endfor %}

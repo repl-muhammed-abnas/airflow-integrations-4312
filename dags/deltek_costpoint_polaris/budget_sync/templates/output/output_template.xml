@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Worksheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  {%- for record in dataset %}
+  <Record>
+    <Project_ID>{{ record.projectid|e }}</Project_ID>
+    <Period_End_Date>{{ record.projectenddate|e }}</Period_End_Date>
+    <ID_Type>{{ record.idtype|e }}</ID_Type>
+    <ID>{{ record.id|e }}</ID>
+    <Pool_Org_ID>{{ record.poolorgid|e }}</Pool_Org_ID>
+    <Account_ID>{{ record.accountid|e }}</Account_ID>
+    <PLC>{{ record.plc|e }}</PLC>
+    <Hours>{{ record.hours|e }}</Hours>
+  </Record>
+  {%- endfor %}
+</Worksheet>

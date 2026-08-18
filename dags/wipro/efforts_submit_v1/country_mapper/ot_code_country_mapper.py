@@ -1,0 +1,31 @@
+ot_code_country_list_trial={
+    "Spain":"",
+    "Germany":"DEOT",
+    "France":"FROT",
+    "Portugal":"",
+    "Netherlands":"",
+    "Romania":"",
+    "Saudi Arabia": "SAOT",
+    "Poland":"",
+    "Belgium": "",
+    "Ireland": "",
+    "Austria": "",
+    "Switzerland": "CHOT",
+    "United Kingdom": "",
+}
+
+ot_code_country_list_prod = {
+    "Spain":"",
+    "Germany":"DEOT",
+    "France":"FROT",
+    "Portugal":"",
+    "Netherlands":"",
+    "Romania":"",
+    "Saudi Arabia": "SAOT",
+    "Poland":"",
+    "Belgium": "",
+    "Ireland": "",
+    "Austria": "",
+    "Switzerland": "CHOT",
+    "United Kingdom": "",
+}

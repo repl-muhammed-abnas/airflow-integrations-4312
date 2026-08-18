@@ -1,0 +1,14 @@
+instance = "trial"
+region = 'us-east-1'
+environment = 'production'
+execution_timeout_days = 14
+master_dag_max_active_runs = 1
+child_dag_max_active_runs = 2
+company_key = 'NarrativeResearchInctrial01'
+airflow_connector_ui_connid = 'airflow_connector_ui_endpoint'
+hmac_secret = 'airflow_connector_ui_hmac_secret'
+replicon_conn_id = 'NarrativeResearchInctrial01_replicon_kshirley'
+can_run_batch_task_var_name = f'{company_key}_quickbooks_online_invoice_export_{instance}_can_run_batch_task'
+provider = 'quickbooks'
+workflow = 'invoice_export'
+notification_email = "girishac@deltek.com"

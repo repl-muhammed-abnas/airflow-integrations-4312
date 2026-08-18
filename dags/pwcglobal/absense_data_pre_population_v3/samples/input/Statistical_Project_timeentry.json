@@ -1,0 +1,37 @@
+{
+    "PersonResourceActualTime": [
+        {
+            "TransactionDate": "20220705",
+            "TimeEntryID": "",
+            "InternalWorkRelationship": {
+                "InternalPerson": {
+                    "PartyId": "d2930e0a-550c-4af5-baf4-35b43b941da4"
+                },
+                "PwCLegalEntity": {
+                    "PartyId": ""
+                },
+                "PartyAlternateIdentifier": [
+                    {
+                        "AlternateIdentifierType": "PwC GUID",
+                        "AlternateIdentifierValue": "ieutgeb001"
+                    },
+                    {
+                        "AlternateIdentifierType": "Employee ID",
+                        "AlternateIdentifierValue": "100773447"
+                    }
+                ]
+            },
+            "ChargeCode": {
+                "ChargeCode": "ABS001",
+                "WorkItem": {
+                    "WorkItemType": ""
+                }
+            },
+            "HoursQuantity": "9.00",
+            "Comments": "A1_A$A",
+            "WorkType": "Working time - At Office / at Client",
+            "WorkLocation": "Austria"
+        }
+],
+    "content_type": "application/json"
+}

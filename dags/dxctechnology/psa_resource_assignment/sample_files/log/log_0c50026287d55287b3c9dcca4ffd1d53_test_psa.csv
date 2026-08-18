@@ -1,0 +1,3 @@
+PERN__C,WBS__C,Transaction_Type__C,Status__C,Status_Description__C,Replicon_Job__ID
+111222333424,airflowstest1312,Update,Success,Gsap PSA Resource Assignment Sync Successfull for this User,0c50026287d55287b3c9dcca4ffd1d53:18:00:13:01:10
+Number of Records Processed Successfully: 1,Number of Records with Error: 0,Number of Records with Exception: 0,,

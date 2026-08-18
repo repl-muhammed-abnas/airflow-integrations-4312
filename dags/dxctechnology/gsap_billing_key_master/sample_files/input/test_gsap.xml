@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_GSAPBillingKey_Replicon xmlns:ns0="http://csc.com/IF9003/FromGSAPToReplicon/GSAPBillingKey">
+   <Records>
+      <WBS_Name>StephenWBStest</WBS_Name>
+      <Task_Name>01</Task_Name>
+      <Task_Code>TEST</Task_Code>
+   </Records>
+</ns0:MT_GSAPBillingKey_Replicon>

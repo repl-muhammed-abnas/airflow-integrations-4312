@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <p>
+      Hello Devs,
+      <br />
+      <br />
+      There are {{result('get_disabled_dag_details').dag_count}} Inactive DAGs
+      with no dagruns more than {{result('get_disabled_dag_details').threshold}}
+      days on {{result('get_disabled_dag_details').reg_env}} and these DAGs
+      would be disabled from airflow UI as part of below pull request.
+      <br />
+      <br />
+      URL : {{result('update_instance_files_to_disable').pull_request}}
+      <br />
+      <br />
+      Please review the DAGs from the attachment or PR and add your comments
+      into PR to exclude specific DAG.
+      <br />
+      <br />
+      A formal communication would be sent once this PR is merged.
+      <br />
+      <br />
+      Thanks,
+      <br />
+      Replicon Integration Team.
+    </p>
+  </body>
+</html>

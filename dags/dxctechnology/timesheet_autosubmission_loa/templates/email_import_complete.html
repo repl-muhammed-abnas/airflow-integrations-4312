@@ -1,0 +1,25 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br />
+  <br />Hello, <br /> <br /> The Replicon Timesheet Auto-Submission for LOA users is {{ " " }}
+  {%- set has_errors = result("format_logs", key="error_record_count") > 0 -%}
+  {%- if has_errors -%}
+  completed with errors
+  {%- else -%}
+  completed successfully
+  {%- endif -%}
+  {{ " on " + current_time_in_specified_tz() }}
+  <br />
+  Please find the log file details below for reference: <br />
+<p>
+<ul>
+  <li>File name: logs_{{ dag_run_ecid() | replace(":", "-") }}_timesheet_auto_submission_loa_{{dag_run.conf.erp}}.csv
+  </li>
+  <li>File path: {{ params.log_filepath}}</li>
+  <li>ERP: {{ dag_run.conf.erp}} </li>
+  <li>Date Range: {{dag_run.conf.report_start_date}} - {{dag_run.conf.report_end_date}}</li>
+</ul>
+</p>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+  For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.
+</p>

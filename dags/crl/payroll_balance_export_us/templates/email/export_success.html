@@ -1,0 +1,15 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br />
+    <br /> The Replicon payroll export for Payroll balance file for {{params.location}} is completed successfully on
+    {{ current_time_in_specified_tz() }}
+    . Please find the extract details for reference.
+</p>
+<ul>
+    <li>Process Started: {{ result('process_start_time') }}
+    <li>Payroll balance Extract File Name: {{ params.file_name}}</li>
+    <li>File Path: {{params.output_filepath}}</li>
+    <li>Number of Records in Payroll balance extract: {{result('query_valid_balance_data', 'length')}}</li>
+    <li>Payroll balance Log File Name: Log_{{ params.file_name}}</li>
+    <li>Log File Path: {{params.log_filepath}}</li>
+    <li>Process Ended: {{ result('process_end_time') }} </li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

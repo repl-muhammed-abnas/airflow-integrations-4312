@@ -1,0 +1,39 @@
+<p><strong>This is an automated mail, please don't reply.</strong></p>
+<p>Hello,</p>
+<p>
+  The Source Opportunities Project Sync run for <strong>{{ get_company_key() }}</strong> completed with failures
+  on {{ current_time_in_specified_tz() }}.<br />
+</p>
+<p>
+  <strong>{{ result('format_failure_report', 'op_failures_total') }}</strong> op-DAG failure(s) across
+  <strong>{{ result('format_failure_report', 'page_failures_total') }}</strong> page(s).
+  The cursor was <strong>NOT</strong> advanced — the next scheduled run will retry this whole window.
+  Full per-row detail is attached as <code>failures.csv</code>.
+</p>
+{% if result('format_failure_report', 'master_failed_count') %}
+<p>
+  Master DAG had <strong>{{ result('format_failure_report', 'master_failed_count') }}</strong> failed task(s):
+  {{ result('format_failure_report', 'master_failed_task_ids') | join(', ') }}
+</p>
+{% endif %}
+{% if result('format_failure_report', 'pages_summary') %}
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Page</th>
+    <th>Op failures</th>
+    <th>Failed page tasks</th>
+    <th>Error excerpt</th>
+  </tr>
+  {% for page in result('format_failure_report', 'pages_summary') %}
+  <tr>
+    <td>{{ page.page_number }}</td>
+    <td>{{ page.op_failure_count }}</td>
+    <td>{{ page.failed_task_ids_str }}</td>
+    <td><code>{{ page.error_excerpt }}</code></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+<br />
+<p>For any queries, please contact our support team at https://support.deltek.com</p>
+<p>Regards,<br />Deltek Inc.</p>

@@ -1,0 +1,14 @@
+region = 'us-east-2'
+environment = 'pre-production'
+company_key = 'dxcsandboxinternal'
+replicon_conn_id = 'dxcsandboxinternal-replicon-RepliconIntFTP'
+sumo_conn_id = 'sumologic-exportlogger'
+sftp_conn_id = 'sftp_Airflowmig_useast2'
+http_conn_id = 'dxcsandboxinternal-dxc-REPLICON_POQ'
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_email = '{{ var.value.dagrun_internal_testing_email }}'
+exception_email = '{{ var.value.dagrun_internal_testing_email }}'
+sftp_upload_path = '/Test/Outbound/FTPTimeExtract'
+row_threshold = 400000
+dag_id = 'dxctechnology_time_export_ftp_v2_dxcsandboxinternal'
+disabled = True

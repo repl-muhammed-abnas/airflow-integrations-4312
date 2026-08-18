@@ -1,0 +1,3 @@
+detnumber,detsurname,detg1name1,lphlap,blank,lphkey,blank,blank,lphseqn,lphtypecd,lphtypecd.trn,lphstart,lphend,lphapproved,lphdaytake,lphhrstake,lphupddate,blank
+Staff Member,Surname,First Name,Form Code,Form Code Desc,LPH Workflow Key,Creation Date,Creation Time,Sequence,Leave Type,Description,Start Date,End Date,Workflow Status,Days Taken,Hours Taken,Date Stamp,Time Stamp
+"87444","Baird","Paul","LAP","","PERS0104202201042022","","",1,"PERS","Personal Leave",01/04/2022,01/04/2022,"Approved",1.00000000,7.50000000,04/04/2022,""

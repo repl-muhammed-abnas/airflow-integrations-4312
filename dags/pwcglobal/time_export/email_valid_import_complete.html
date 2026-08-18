@@ -1,0 +1,19 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The time extract is completed successfully for{{" "}}
+    location "{{ dag_run.conf.location }}" on {{ dag_run.conf.start_time }}. Please find the extract details for reference.</p>
+<ul>
+    <li>Process Started: {{ dag_run.conf.start_time }}</li>
+    <li>File Name: {{ dag_run.conf.export_file_name }}.csv</li>
+    <li>File Path: {{ params.upload_file_path }}</li>
+    {%- if params.secondary_upload_filepath != None -%}
+        <li>Secondary File Path: {{ params.secondary_upload_filepath }}</li>
+    {%- endif -%}
+    <li>Territory: {{ dag_run.conf.location }}</li>
+    <li>Number of Records: {{ result('get_export_file_log_count').recordcount }}</li>
+    <li>Log File Name: Log_{{ dag_run.conf.export_file_name }}.csv</li>
+    <li>Log File Path: {{ params.log_filepath }}</li>
+    {%- if params.secondary_log_filepath != None -%}
+        <li>Secondary Log File Path: {{ params.secondary_log_filepath }}</li>
+    {%- endif -%}
+    <li>Process Ended: {{ result('get_export_file_log_count').processended }}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

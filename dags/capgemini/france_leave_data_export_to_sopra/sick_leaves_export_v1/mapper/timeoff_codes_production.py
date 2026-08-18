@@ -1,0 +1,17 @@
+timeoff_codes = {
+    "[FRA] C - Accident de trajet": "ATJ",
+    "[FRA] C - Accident de travail": "ATV",
+    "[FRA] C - Adoption": "ADO",
+    "[FRA] C - Congé deuil enfant": "DEU",
+    "[FRA] C - Maladie": "MAL",
+    "[FRA] C - Maladie (longue durée)": "MAL",
+    "[FRA] C - Maladie professionnelle": "MPF",
+    "[FRA] C - Maternité": "MAT",
+    "[FRA] C - Paternité hospitalisation nouveau-né": "PAA",
+    "[FRA] C - Congé co-parent obligatoire (UES Capgemini)": "PAT",
+    "[FRA] C - Congé co-parent en option (UES Capgemini)": "PAT",
+    "[FRA] C - Paternité Accueil de l'enfant obligatoire (UES Altran)": "PAT",
+    "[FRA] C - Paternité Accueil de l'enfant en option (UES Altran)": "PAT",
+    "[FRA] C - Congé naissance supplémentaire PERIODE 1": "NA1",
+    "[FRA] C - Congé naissance supplémentaire PERIODE 2": "NA2"
+}

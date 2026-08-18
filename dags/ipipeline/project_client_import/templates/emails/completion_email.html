@@ -1,0 +1,30 @@
+Hello, <br /> <br />
+The Replicon Project and Client Import from Salesforce has {{ " " }}
+{%- set has_errors = result("format_logs").total_error_logs_count > 0 -%}
+{%- if has_errors -%}
+completed with errors
+{%- else -%}
+{%- if result("format_logs").total_exception_logs_count > 0 -%}
+completed with exceptions
+{%- else -%}
+completed successfully
+{%- endif -%}
+{%- endif -%}
+{{ "" }}, further details are below: <br />
+<ul>
+  <li>Log File name: {{result('get_email_and_log_file_details').log_file_name}}</li>
+  <li>Download link for Log: <a href="{{result('generate_download_link_for_logs')}}">Download log file</a></li>
+  <li>Job start time: {{dag_run.conf.job_start_time}}</li>
+  <li>Job end time: {{result('get_email_and_log_file_details').job_end_time}}</li>
+  <li>Job duration: {{result('get_email_and_log_file_details').job_duration}} minutes</li>
+</ul>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+</p>
+
+For any queries, please contact our support team at <a
+  href=https://support.deltek.com>https://support.deltek.com</a><br />
+<p><strong>This is an automated mail from Deltek Integration, Please do not reply to this email.</strong><br /> <br />
+  Regards,<br />
+  Deltek Inc</p>

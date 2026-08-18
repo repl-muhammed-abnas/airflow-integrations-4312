@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_POBalance_ECC xmlns:ns0="http://csc.com/IF1387/FromC1ToReplicon/POBalance">
+    <Records>
+        <WorkOrderNumber>HPWO00091427</WorkOrderNumber>
+        <PersonnelNumber>99748563</PersonnelNumber>
+        <FirstName>SLII TEST</FirstName>
+        <LastName>WOEXTENSION</LastName>
+        <CompanyCode>1102</CompanyCode>
+        <PurchaseOrder>9500007802</PurchaseOrder>
+        <POItem>00010</POItem>
+        <Item_StartDate>04/24/2021</Item_StartDate>
+        <Item_EndDate>10/28/2022</Item_EndDate>
+        <RegularTimeBalance>3160.00 </RegularTimeBalance>
+        <OvertimeBalance>316.00 </OvertimeBalance>
+        <DoubleTimeBalance>158.00 </DoubleTimeBalance>
+    </Records>
+    <Records>
+        <WorkOrderNumber></WorkOrderNumber>
+        <PersonnelNumber>99748588</PersonnelNumber>
+        <FirstName>SLII TEST</FirstName>
+        <LastName>WOEXTENSION</LastName>
+        <CompanyCode>1102</CompanyCode>
+        <PurchaseOrder>9500007802</PurchaseOrder>
+        <POItem>00010</POItem>
+        <Item_StartDate>04/24/2021</Item_StartDate>
+        <Item_EndDate>10/28/2022</Item_EndDate>
+        <RegularTimeBalance>3160.00 </RegularTimeBalance>
+        <OvertimeBalance>316.00 </OvertimeBalance>
+        <DoubleTimeBalance>158.00 </DoubleTimeBalance>
+    </Records>
+    <Records>
+        <WorkOrderNumber>HPWO00091427</WorkOrderNumber>
+        <PersonnelNumber></PersonnelNumber>
+        <FirstName>SLII TEST</FirstName>
+        <LastName>WOEXTENSION</LastName>
+        <CompanyCode>1102</CompanyCode>
+        <PurchaseOrder>9500007802</PurchaseOrder>
+        <POItem>00010</POItem>
+        <Item_StartDate>04/24/2021</Item_StartDate>
+        <Item_EndDate>10/28/2022</Item_EndDate>
+        <RegularTimeBalance>3160.00 </RegularTimeBalance>
+        <OvertimeBalance>316.00 </OvertimeBalance>
+        <DoubleTimeBalance>158.00 </DoubleTimeBalance>
+    </Records>
+    <Records>
+        <WorkOrderNumber>HPWO00091427</WorkOrderNumber>
+        <PersonnelNumber>99748588</PersonnelNumber>
+        <FirstName>SLII TEST</FirstName>
+        <LastName>WOEXTENSION</LastName>
+        <CompanyCode></CompanyCode>
+        <PurchaseOrder>9500007802</PurchaseOrder>
+        <POItem>00010</POItem>
+        <Item_StartDate>04/24/2021</Item_StartDate>
+        <Item_EndDate>10/28/2022</Item_EndDate>
+        <RegularTimeBalance>3160.00 </RegularTimeBalance>
+        <OvertimeBalance>316.00 </OvertimeBalance>
+        <DoubleTimeBalance>158.00 </DoubleTimeBalance>
+    </Records>
+</ns0:MT_POBalance_ECC>

@@ -1,0 +1,13 @@
+instance = 'devops'
+region = 'us-west-2'
+environment = 'devops'
+company_key = f"airflowsandbox{region.replace('-', '')}"
+execution_timeout_days = 14
+master_dag_max_active_runs = 10
+child_dag_max_active_runs = 15
+replicon_conn_id = 'airflowsandbox-replicon-admin'
+airflow_connector_ui_connid = 'airflow_connector_ui_endpoint'
+hmac_secret = 'airflow_connector_ui_hmac_secret'
+can_run_batch_task_var_name = f'standard_quickbooks_online_invoice_status_update_{instance}_can_run_batch_task'
+provider = 'quickbooks'
+workflow = 'invoice_status_update'

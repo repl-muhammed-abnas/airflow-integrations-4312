@@ -1,0 +1,101 @@
+{
+	"PersonResourceActualTime": [
+		{
+			"TransactionDate": "",
+			"TimeEntryID": "62605ebbd1dff000061bd9b7",
+			"InternalWorkRelationship": {
+				"InternalPerson": {
+					"PartyId": "53a32a60-bee7-49a3-94c6-0d5006620996"
+				},
+				"PwCLegalEntity": {
+					"PartyId": ""
+				},
+				"PartyAlternateIdentifier": [
+					{
+						"AlternateIdentifierType": "PwC GUID",
+						"AlternateIdentifierValue": ""
+					},
+					{
+						"AlternateIdentifierType": "Employee ID",
+						"AlternateIdentifierValue": "100770786"
+					}
+				]
+			},
+			"ChargeCode": {
+				"ChargeCode": "ATE00007623.1.1",
+				"WorkItem": {
+					"WorkItemType": ""
+				}
+			},
+			"HoursQuantity": "",
+			"Comments": "A1_A$A",
+			"WorkType": "Working time - At Office / at Client",
+			"WorkLocation": "Austria"
+		},
+		{
+			"TransactionDate": "20220615",
+			"TimeEntryID": "62605ee5d1dff000061bd9f8",
+			"InternalWorkRelationship": {
+				"InternalPerson": {
+					"PartyId": "53a32a60-bee7-49a3-94c6-0d5006620996"
+				},
+				"PwCLegalEntity": {
+					"PartyId": ""
+				},
+				"PartyAlternateIdentifier": [
+					{
+						"AlternateIdentifierType": "PwC GUID",
+						"AlternateIdentifierValue": "oheidemann002"
+					},
+					{
+						"AlternateIdentifierType": "Employee ID",
+						"AlternateIdentifierValue": "100770786"
+					}
+				]
+			},
+			"ChargeCode": {
+				"ChargeCode": "",
+				"WorkItem": {
+					"WorkItemType": ""
+				}
+			},
+			"HoursQuantity": "0.00",
+			"Comments": "NF_COI",
+			"WorkType": "Working time - At Office / at Client",
+			"WorkLocation": "Austria"
+		},
+		{
+			"TransactionDate": "20220616",
+			"TimeEntryID": "62605f0bd1dff000061bda4d",
+			"InternalWorkRelationship": {
+				"InternalPerson": {
+					"PartyId": "53a32a60-bee7-49a3-94c6-0d5006620996"
+				},
+				"PwCLegalEntity": {
+					"PartyId": ""
+				},
+				"PartyAlternateIdentifier": [
+					{
+						"AlternateIdentifierType": "PwC GUID",
+						"AlternateIdentifierValue": "oheidemann002"
+					},
+					{
+						"AlternateIdentifierType": "Employee ID",
+						"AlternateIdentifierValue": "100770786"
+					}
+				]
+			},
+			"ChargeCode": {
+				"ChargeCode": "ATE00007623.1.1",
+				"WorkItem": {
+					"WorkItemType": ""
+				}
+			},
+			"HoursQuantity": "-2",
+			"Comments": "OOS_123",
+			"WorkType": "Working time - At Office / at Client",
+			"WorkLocation": "Austria"
+		}
+	],
+	"content_type": "application/json"
+}

@@ -1,0 +1,10 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon Time Data
+    extract for SAP HANA is failed at {{ current_time_in_specified_tz() }} to the API end
+    point. The Time Data Extract is placed in
+    the SFTP back folder.</p>
+<ul>
+    <li>Path: /Production/Time Data to S4HC/BackUp/</li>
+    <li>Filename: Timesheet_{{ result('get_logging_details')['file_name_format'] }}.json</li>
+    <li>Error: {{ result("handle_endpoint_response") }}</li>
+</ul>
+<p>Regards,<br />Deltek Inc.</p>

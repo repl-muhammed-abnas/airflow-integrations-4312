@@ -1,0 +1,23 @@
+<html>
+  <body>
+    <p>
+      Hello Devs,
+      <br />
+      <br />
+      There are {{result('get_instance_paths_to_change').ignored_list_count}} Inactive DAGs
+      with no dagruns more than {{result('get_disabled_dag_details').threshold}}
+      days on {{result('get_disabled_dag_details').reg_env}} and these DAG(s) are marked to be ignored.
+      <br />
+      <br />
+      Please validate the Ignore list and make the necessary changes accordingly to the Airflow variable
+      <br />
+      <br />
+      Variable Name: "{{result('get_instance_paths_to_change').ignore_list_var_name}}". 
+      <br />
+      <br />
+      Thanks,
+      <br />
+      Replicon Integration Team.
+    </p>
+  </body>
+</html>

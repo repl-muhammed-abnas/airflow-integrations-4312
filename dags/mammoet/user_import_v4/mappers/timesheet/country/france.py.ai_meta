@@ -1,0 +1,43 @@
+{
+  "ai_lines": {
+    "1": "e7fea1df09751beaf319124119c343da969f695b96df38dca2df6d0d9b9ed131",
+    "10": "9117e1913ad9e4129d41363238800aeea66952385333e3eab76674dbf03cfef5",
+    "11": "316220dd5b757f23c705235bc01854c3a2793209822de756ec4a806ff762e32d",
+    "12": "94017aeb31744b08198d68357201676aff4f7882f4074a3d93ba02c44aee6f91",
+    "13": "15715d5ca91fe9c1de7947083abca074bb304712ebf119996712abf31472579f",
+    "14": "cfae0d4248f7142f7b17f826cd7a519280e312577690e957830d23dcf35a3fff",
+    "2": "d8f07a6d4759713d9790b05c6bf673559888434df3be7983d66df67bc3bc3cfb",
+    "3": "51f6af5e03d60bb927819c1e8bfe952477ebc40616d056cad340c7f232fe01e1",
+    "4": "08d1ca329d788711b6dd14b739eb7bff961e9c2a4e5bdcfb56c66d82acaa3088",
+    "5": "316220dd5b757f23c705235bc01854c3a2793209822de756ec4a806ff762e32d",
+    "6": "1870aec4bc8441ab71c14594150b8a3530414e2a0ce45e7761bcb15cae31aa6c",
+    "7": "7ba39f30701902df44b5c7bfb5cbf4a6da91bcbd4e6acc9c0600a352e7d8a36c",
+    "8": "d8f07a6d4759713d9790b05c6bf673559888434df3be7983d66df67bc3bc3cfb",
+    "9": "51f6af5e03d60bb927819c1e8bfe952477ebc40616d056cad340c7f232fe01e1"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Write",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-15T07:22:25.633Z",
+  "file_state": {
+    "file_sha256": "33eb4ef3446626dc50659a384a8e01136fa37110448be4f0601ba358dc1cc08f",
+    "total_file_lines": 14,
+    "total_lines": 14
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\mammoet\\user_import_v4\\mappers\\timesheet\\country\\france.py",
+  "stats": {
+    "ai_line_count": 14,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-15T07:22:25.633Z",
+  "version": 1
+}

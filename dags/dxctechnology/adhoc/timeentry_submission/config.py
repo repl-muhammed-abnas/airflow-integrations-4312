@@ -1,0 +1,11 @@
+region = 'us-east-2'
+environment = 'pre-production'
+company_key = 'dxctrial01'
+replicon_conn_id = 'implementation_replicon'
+sftp_conn_id = 'sftp_useast2'
+max_active_runs_master = 1
+child_process_execution_timeout = 14
+child_wait_execution_timeout = 14
+master_dag_interval = 30
+max_active_runs_child = 128
+disabled = True

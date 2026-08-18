@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  {%- for record in dataset %}
+ <Records>
+  <Employee_ID>{{record.PERSNO|e}}</Employee_ID>
+  <Date>{{record.DATE|e}}</Date>
+  <WBS>{{record.WBS|e}}</WBS>
+  <AttendanceAbsenceType>{{record.AttendanceAbsenceType|e}}</AttendanceAbsenceType>
+  <LaborType>{{record.LaborType|e}}</LaborType>
+  <BILLABLEINDICATOR>{{record.BILLABLEINDICATOR|e}}</BILLABLEINDICATOR>
+  <Hours>{{record.Hours|e}}</Hours>
+  <TASKS>{{record.TASKS|e}}</TASKS>
+  <Attribute1>{{record.Attribute1|e}}</Attribute1>
+  <Attribute2>{{record.Attribute2|e}}</Attribute2>
+  <SHORTTEXT>{{record.SHORTTEXT|e}}</SHORTTEXT>
+  <BillingKey>{{record.BillingKey|e}}</BillingKey>
+  <GSAPTask>{{record.GSAPTask|e}}</GSAPTask>
+  <GSAPBillableFlag>{{record.GSAPBillableFlag|e}}</GSAPBillableFlag>
+  <RepliconUniqueID>{{record.RepliconUniqueID|e}}</RepliconUniqueID>
+  <Home_ERP>{{record.Home_ERP|e}}</Home_ERP>
+  <Child_Project_ERP>{{record.Child_Project_ERP|e}}</Child_Project_ERP>
+  <Home_Location>{{record.Home_Location|e}}</Home_Location>
+  <TimeOff>{{record.TimeOff|e}}</TimeOff>
+  <Project_Type_Flag>{{record.Project_Type_Flag|e}}</Project_Type_Flag>
+ </Records>
+ {%- endfor %}
+</root>

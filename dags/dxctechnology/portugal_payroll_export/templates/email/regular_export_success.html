@@ -1,0 +1,11 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Replicon payroll export for Portugal is completed successfully on {{ dag_run.conf.timenow }}.
+    Please find the export details for reference. </p>
+    <ul>
+        <li>Process started: {{ dag_run.conf.timenow }}</li>
+        <li>Payroll extract file name: {{ result('current_export_name').variable_filename }}.pgp</li>
+        <li>File path: {{ params.output_filepath }}</li>
+        <li>Company Code: {{ dag_run.conf.division }}</li>
+        <li>Number of records in payroll extract: {{ result('create_valid_data_collection', 'length') }}</li>
+        <li>Process ended: {{ current_time_in_specified_tz("America/New_York","%Y-%m-%dT%H:%M:%S") }}</li>
+    </ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

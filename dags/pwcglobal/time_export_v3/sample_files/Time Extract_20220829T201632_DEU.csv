@@ -1,0 +1,10 @@
+TransactionDate,TimeEntryId,iwfr\InternalPerson\PartyId,iwfr\PwCLegalEntity\PartyId,Timesheet Start Date,Timesheet End Date,HoursQuantity,Comments,WorkLocation,WorkCategory,ResourceRole,ChargeCode,WorkItemType
+15/08/2022,235428,007715db-2dc7-4c61-9862-f83ff47fd3a8,ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9,14/08/2022,20/08/2022,7.00,,Germany,,Senior Manager,DEA00000091,,
+15/08/2022,235544,08218cf6-44a0-48fd-838f-91942c53f298,ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9,14/08/2022,20/08/2022,8.00,,Germany,,Partner,DEA00000091,,
+15/08/2022,235753,19934b49-7734-45a8-a26f-3d641dbc1e10,ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9,14/08/2022,20/08/2022,8.00,,Germany,,Manager,DEA00000091,,
+15/08/2022,235024,1b06a7c0-5594-4648-9978-3f7067040de4,ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9,14/08/2022,20/08/2022,8.00,,Germany,,Partner,DEA00000091,,
+15/08/2022,236386,3cb3341b-719a-4d90-922f-b63fcf94f408,ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9,14/08/2022,20/08/2022,8.00,,Germany,,Administrative,DEA00000091,,
+15/08/2022,236466,5bd376dd-13e7-4f17-8bb0-6dabb6a899e7,ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9,14/08/2022,20/08/2022,8.00,,Germany,,Manager,DEA00000091,,
+15/08/2022,236125,625d8415-98b3-40f5-bb65-76bd5bcbacde,ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9,14/08/2022,20/08/2022,8.00,,Germany,,Manager,DEA00000091,,
+15/08/2022,235229,63ff61c3-3592-405f-83bf-848cf424c766,ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9,14/08/2022,20/08/2022,7.50,,Germany,,Manager,DEA00000091,,
+15/08/2022,235736,65441763-ac66-4c1a-aaa3-3cd589d67390,ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9,14/08/2022,20/08/2022,8.00,,Germany,,Partner,DEA00000091,,

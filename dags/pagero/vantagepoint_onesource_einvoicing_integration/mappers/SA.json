@@ -1,0 +1,227 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Saudi Arabia PUF mapper - VAT compliant with ZATCA Phase 2 (FATOORA)",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["Peppol BIS 3.0", "Saudi VAT", "ZATCA Phase 2", "FATOORA"]
+  },
+
+  "country": {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "currency": "SAR",
+    "language": "ar"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 15.0,
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Standard rate 15%",
+      "Z": "Zero rated",
+      "E": "Exempt",
+      "O": "Out of scope"
+    },
+    "exemption_reasons": {
+      "VATEX-SA-29": "Financial services",
+      "VATEX-SA-29-7": "Life insurance",
+      "VATEX-SA-30": "Residential real estate",
+      "VATEX-SA-32": "Exports",
+      "VATEX-SA-33": "International transport",
+      "VATEX-SA-34-1": "Supply of gold and silver",
+      "VATEX-SA-34-2": "Qualifying metals",
+      "VATEX-SA-34-3": "Exports to GCC",
+      "VATEX-SA-34-4": "Intra-GCC",
+      "VATEX-SA-34-5": "Medicines and medical equipment",
+      "VATEX-SA-35": "Local transport",
+      "VATEX-SA-36": "Education",
+      "VATEX-SA-EDU": "Private education",
+      "VATEX-SA-HEA": "Private healthcare"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "SA:CRN",
+    "buyer_endpoint_scheme": "SA:NAT",
+    "vat_scheme_id": "0190",
+    "company_scheme_id": "0190",
+    "scheme_mappings": {
+      "vat_number": "0190",
+      "crn": "SA:CRN",
+      "oth": "SA:OTH",
+      "gln": "0088"
+    },
+    "additional_seller_ids": {
+      "crn": "SA:CRN"
+    }
+  },
+
+  "extensions": {
+    "required": ["SA:InvoiceTypeCode", "SA:UUID", "SA:QRCode"],
+    "optional": ["SA:PreviousInvoiceHash", "SA:PaymentMeans"],
+    "zatca": {
+      "phase": 2,
+      "enabled": true,
+      "uuid_required": true,
+      "qr_code_required": true,
+      "cryptographic_stamp_required": true,
+      "registration_data": {
+        "uuid": {
+          "id_type": "SA:UUID",
+          "description": "Universally Unique Identifier for invoice",
+          "format": "UUID v4"
+        },
+        "invoice_type_code": {
+          "id_type": "SA:InvoiceTypeCode",
+          "description": "ZATCA invoice type code",
+          "transaction_codes": {
+            "0100000": "Tax Invoice",
+            "0200000": "Simplified Tax Invoice",
+            "0100100": "Third Party Invoice",
+            "0100010": "Nominal Invoice",
+            "0100001": "Summary Invoice",
+            "0101000": "Self-Billed Invoice",
+            "0200010": "Nominal Simplified",
+            "0200001": "Summary Simplified"
+          },
+          "invoice_type": {
+            "388": "Tax Invoice",
+            "383": "Debit Note",
+            "381": "Credit Note"
+          }
+        },
+        "qr_code": {
+          "id_type": "SA:QRCode",
+          "description": "Base64 encoded QR code with TLV data",
+          "tlv_fields": [
+            "Seller Name",
+            "VAT Number",
+            "Timestamp",
+            "Invoice Total",
+            "VAT Amount",
+            "Hash",
+            "ECDSA Signature",
+            "ECDSA Public Key"
+          ]
+        },
+        "previous_invoice_hash": {
+          "id_type": "SA:PIH",
+          "description": "SHA-256 hash of previous invoice"
+        }
+      }
+    },
+    "address_requirements": {
+      "building_number": {
+        "id_type": "KSA-17",
+        "description": "Building number (4 digits)",
+        "required": true
+      },
+      "plot_id": {
+        "id_type": "KSA-23",
+        "description": "Plot identification"
+      },
+      "district": {
+        "id_type": "KSA-3",
+        "description": "District/neighborhood name",
+        "required": true
+      },
+      "additional_street": {
+        "id_type": "KSA-19",
+        "description": "Additional street name"
+      }
+    },
+    "payment_means": {
+      "valid_codes": [10, 30, 42, 48, 1],
+      "10": "Cash",
+      "30": "Bank transfer",
+      "42": "Bank account",
+      "48": "Bank card",
+      "1": "Not defined"
+    }
+  },
+
+  "invoice_type_mapping": {
+    "INV": "388",
+    "SINV": "388",
+    "CR": "381",
+    "CRN": "381",
+    "DBN": "383"
+  },
+
+  "invoice_type_names": {
+    "388": "0100000",
+    "381": "0100000",
+    "383": "0100000"
+  },
+
+  "field_mappings": {
+    "additional_header_fields": {
+      "uuid": "InvoiceUUID",
+      "invoice_type_code": "InvoiceTypeCode",
+      "previous_hash": "PreviousInvoiceHash",
+      "supply_date": "SupplyDate"
+    },
+    "additional_seller_fields": {
+      "crn": "SellerCRN",
+      "building_number": "SellerBuildingNumber",
+      "plot_id": "SellerPlotId",
+      "district": "SellerDistrict"
+    },
+    "additional_buyer_fields": {
+      "building_number": "BuyerBuildingNumber",
+      "district": "BuyerDistrict"
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^3[0-9]{13}3$",
+    "crn_pattern": "^[0-9]{10}$",
+    "building_number_pattern": "^[0-9]{4}$",
+    "postal_code_pattern": "^[0-9]{5}$",
+    "iban_pattern": "^SA[0-9]{22}$",
+    "uuid_pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+    "required_fields": [
+      "invoice_number",
+      "issue_date",
+      "currency_code",
+      "seller_vat_number",
+      "uuid",
+      "invoice_type_code",
+      "seller_building_number",
+      "seller_district"
+    ]
+  },
+
+  "defaults": {
+    "payment_terms": "Net 30 days",
+    "contact_department": "Finance Department",
+    "invoice_type_code": "0100000"
+  },
+
+  "special_rules": {
+    "requires_issue_time": true,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false,
+    "zatca_phase_2": true,
+    "uuid_mandatory": true,
+    "qr_code_mandatory": true,
+    "cryptographic_stamp_mandatory": true,
+    "invoice_counter_mandatory": true,
+    "pih_mandatory": true,
+    "supply_date_conditional": true,
+    "building_number_mandatory": true,
+    "simplified_invoice_threshold": 1000
+  },
+
+  "translations": {
+    "invoice": "Fatura",
+    "credit_note": "Ishaar Daa'in",
+    "total": "Al-Ijmali",
+    "vat": "Daribat al-Qima al-Mudafa"
+  }
+}

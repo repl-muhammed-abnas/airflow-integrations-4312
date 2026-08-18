@@ -1,0 +1,42 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from crl.timeoff_balance_export_us_v1.config import *
+from crl.timeoff_balance_export_us_v1.mapper.payroll_calendar_mapper import CANADA_PAYROLL_CALENDER_MAPPER
+from crl.timeoff_balance_export_us_v1.mapper.employee_type_mapper import EMPLOYEE_TYPE_MAPPER
+
+instance = 'uat'
+
+region = 'us-east-1'
+environment = 'pre-production'
+
+company_key = 'CharlesRiverLaboratoriesSandbox'
+replicon_conn_id = 'CharlesRiverLaboratoriesSandbox_repliconint_payrollexport'
+sftp_conn_id = 'sftp_CharlesRiverLaboratoriestrial01_adp'
+pgp_conn_id = 'pgp_crltrial_adp_payroll_export'
+secondary_encrypted_sftp_conn_id = 'sftp_charlesriverlaboratoriessandbox_603355'
+
+tenant_email = 'Sean.Cotto@crl.com,Janet.Janocha@crl.com,Padmapooshanam.Chandrasekaran@crl.com,Prasanthi.Takkellapati@crl.com,LakshmanaRao.Mandala@crl.com,SAPCPISUPPORT@charlesriverlabs.com'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_failure_alert_email }}'
+
+
+
+output_filepath = '/put'
+secondary_encrypted_output_filepath = '/Test/Outbound/USA ADP Payroll'
+
+time_zone = "America/New_York"
+
+
+CANADA_PAYROLL_CALENDER_MAPPER_TO_USE = CANADA_PAYROLL_CALENDER_MAPPER
+EMPLOYEE_TYPE_MAPPER_TO_USE = EMPLOYEE_TYPE_MAPPER
+
+adp_gv_system = 'Q'
+gv_system_number = '1'
+
+crl_timeoff_balance_export_master = f"crl_timeoff_balance_export_master_usa_{instance}_v1"
+crl_daily_timeoff_balance_export_master = f"crl_daily_timeoff_balance_export_master_usa_{instance}_v1"
+crl_dec_31st_udf_update_master = f"crl_dec_31st_udf_update_master_usa_{instance}_v1"
+process_udf_update_child_dag = f"crl_timeoff_process_udf_update_child_usa_{instance}_v1"
+# pylint: disable=line-too-long
+expected_report_columns = "Employee ID,Login Name,useruri,Time Off Type,Time Off Balance,Sick Payout Eligible,User Start Date,User End Date,Business Unit (Current)"
+
+disabled=True

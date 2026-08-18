@@ -1,0 +1,10 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from dxctechnology.ftp_time_export_v6.config import *
+from dxctechnology.ftp_time_export_v6.mappers.timeoff_types_mapper import timeoff_types_to_exclude
+from dxctechnology.ftp_time_export_v6.mappers.timetype_standby_units_mapper import timetype_standby_units_to_exclude
+
+instance = "trial"
+execution_timeout_days = 14
+
+timeoff_types_to_exclude_mapper = timeoff_types_to_exclude
+timetype_standby_units_to_exclude_mapper = timetype_standby_units_to_exclude

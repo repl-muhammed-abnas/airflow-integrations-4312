@@ -1,0 +1,47 @@
+from dxctechnology.workday_user_import_v1.user_import.config import *
+from dxctechnology.workday_user_import_v1.user_import.mappers.master_mapper import MAPPER
+
+instance = "sandbox"
+
+version = "v2"
+ia_version = "v1"
+no_accrual_version = "v1"
+
+environment = "pre-production"
+
+company_key = "dxcsandbox"
+replicon_conn_id = "replicon_dxcsandbox_x.workday_1"
+sftp_conn_id = "sftp_dxcsandbox_628172_Workday"
+
+DXC_WORKDAY_USER_SYNC_USER_MAPPER = MAPPER
+
+# INDIA
+india_process_users_child_dag_id = f"dxctechnology_workday_user_import_india_process_users_child_{instance}_{version}"
+india_add_user_dag_id = f"dxctechnology_workday_user_import_india_process_add_user_child_{instance}_{version}"
+india_add_user_timeoff_assignment_dag_id = f"dxctechnology_workday_user_import_india_process_add_user_timeoff_assignment_child_{instance}_{version}"
+india_update_user_dag_id = f"dxctechnology_workday_user_import_india_process_update_user_child_dag_{instance}_{version}"
+india_update_user_timeoff_assignment_dag_id = f"dxctechnology_workday_user_import_india_process_update_user_timeoff_assignment_child_{instance}_{version}"
+india_rehire_user_timeoff_assignment_dag_id = f"dxctechnology_workday_user_import_india_process_rehire_user_timeoff_assignment_child_{instance}_{version}"
+india_timeoff_assignment_ind_sick_casual_dag_id = f"dxctechnology_workday_user_import_india_process_sick_casual_timeoff_assignment_child_{instance}_{version}"
+india_update_user_ia_0_timeoff_assignment_dag_id = f"dxctechnology_workday_user_import_india_process_ia_0_timeoff_assignment_child_{instance}_{version}"
+india_update_user_ia_1_timeoff_assignment_dag_id = f"dxctechnology_workday_user_import_india_process_ia_1_timeoff_assignment_child_{instance}_{version}"
+india_process_time_off_no_accrual_dag_id = f"dxctechnology_workday_user_sync_timeoff_assignment_policy_update_for_no_accrual_child_{instance}_{no_accrual_version}"
+
+can_run_batch_task_var_name_india = f"dxctechnology_workday_user_import_india_can_run_batch_task_{instance}"
+
+workday_user_import_ia_zero_timeoff_assignment_child_dag = f"dxctechnology_workday_user_import_ia_zero_timeoff_assignment_child_{instance}_{ia_version}"
+workday_user_import_ia_one_timeoff_assignment_child_dag = f"dxctechnology_workday_user_import_ia_one_timeoff_assignment_child_{instance}_{ia_version}"
+
+# Cleanup child DAG ID for disabled users
+delete_future_entries_child_dag_id = f"dxctechnology_workday_user_sync_delete_future_entries_child_{instance}_v2"
+
+# Overrides: bump max_active_runs to 10 for this environment (base defaults in config.py are unchanged, so production is not affected)
+max_active_run_add_user_india = 10
+max_active_run_add_user_timeoff_assignemnt_india = 10
+max_active_run_ind_sick_casual_timeoff_assignment_india = 10
+max_active_run_process_each_users_india = 10
+max_active_run_rehire_user_timeoff_assignement_costa_rica = 10
+max_active_run_update_user_ia_0_timeoff_assignment_india = 10
+max_active_run_update_user_ia_1_timeoff_assignment_india = 10
+max_active_run_update_user_india = 10
+max_active_run_update_user_timeoff_assignment_india = 10

@@ -1,0 +1,17 @@
+<p><strong>This is an automated mail, please don't reply</strong></p>
+<p>Hello,</p>
+<p>The automatic sync for approved time entries from Replicon to QuickBooks Online is {% if
+    result('check_error_records') | is_truthy %}completed with errors{% else %}completed successfully{% endif %} on {{
+    current_time_in_specified_tz(result('get_configured_timezone'), fmt='%m/%d/%Y') }}.</p>
+<ul>
+    <li>User Name: {{ dag_run.conf.timesheet_owner }}</li>
+    <li>Timesheet Period Synced: {{ dag_run.conf.timesheet_period }}</li>
+</ul>
+<p>Please find the below link to download the time sync logs for reference.<br /><br />
+    <a href="{{ result('generate_time_sync_log_download_link') }}">Download log file</a>
+</p>
+<p><em><span style="font-size: 10pt;">The download link is valid for 30 days.</span></em></p>
+{% if result('check_error_records') | is_truthy %}
+{% endif %}
+<p>If you have questions, please write to support@replicon.com</p>
+<p>Thanks,<br />Replicon Inc.</p>

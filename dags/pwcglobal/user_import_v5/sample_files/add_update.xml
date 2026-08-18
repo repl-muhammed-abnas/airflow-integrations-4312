@@ -1,0 +1,126 @@
+﻿<Persons>
+    <Person>
+        <LoginName>mfoppen001_add1_test8</LoginName>
+        <FirstName>Melissa_add1_test8</FirstName>
+        <LastName>Foppen_add1_test8</LastName>
+        <EmailAddress>melissa.d.foppen_add1_test8@pwc.com</EmailAddress>
+        <EmployeeType>PwC Worker</EmployeeType>
+        <EmployeeID>765066ac-2b88-4de3-bbff-a411f83dcc6e_add1_test8</EmployeeID>
+        <WorkdayID>101016879_add1_test8</WorkdayID>
+        <StartDate>20210629</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate>NZL Timesheet PwC Worker</TimeSheetTemplate>
+        <TimeSheetApprovalPath>System Approval</TimeSheetApprovalPath>
+        <TimesheetPeriodType>Weekly without crossing starting Sunday</TimesheetPeriodType>
+        <HolidayCalendar>Public holidays for New Zealand</HolidayCalendar>
+        <TimeZone>Pacific/Auckland</TimeZone>
+        <AddUserPermission>End User</AddUserPermission>
+        <ScheduleType>0.00|7.50|7.50|7.50|7.50|7.50|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode>NZ CONS - Management Consulting|NZD381</CompanyCode>
+        <LegalEntity>b886a7f0-9c89-48a9-be0b-eb2337697c8d</LegalEntity>
+        <Country>Country_test8</Country>
+        <Supervisor>765066ac-2b88-4de3-bbff-a411f83dcc6e_add2_test8||b886a7f0-9c89-48a9-be0b-eb2337697c8d</Supervisor>
+        <Grade>Specialist_add1_test8</Grade>
+        <HomeofficeLocation>NZL</HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Specialist_add1_test8</ResourceRole>
+        <ProfileStatus>Active</ProfileStatus>
+        <LoSCode>ADVS_add1_test8</LoSCode>
+    </Person>
+    <Person>
+        <LoginName>mfoppen001_add2_test8</LoginName>
+        <FirstName>Melissa_add2_test8</FirstName>
+        <LastName>Foppen_add2_test8</LastName>
+        <EmailAddress>melissa.d.foppen_add2_test8@pwc.com</EmailAddress>
+        <EmployeeType>PwC Worker</EmployeeType>
+        <EmployeeID>765066ac-2b88-4de3-bbff-a411f83dcc6e_add2_test8</EmployeeID>
+        <WorkdayID>101016879_add2_test8</WorkdayID>
+        <StartDate>20210629</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate></TimeSheetTemplate>
+        <TimeSheetApprovalPath>System Approval</TimeSheetApprovalPath>
+        <TimesheetPeriodType></TimesheetPeriodType>
+        <HolidayCalendar>invalid</HolidayCalendar>
+        <TimeZone>Pacific/Auckland</TimeZone>
+        <AddUserPermission>End User</AddUserPermission>
+        <ScheduleType>0.00|7.50|7.50|7.50|7.50|7.50|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode>NZ CONS - Management Consulting|NZD381</CompanyCode>
+        <LegalEntity>b886a7f0-9c89-48a9-be0b-eb2337697c8d</LegalEntity>
+        <Country>New Zealand</Country>
+        <Supervisor>88f3a056-7374-4911-823d-da4a9ea21faa||b886a7f0-9c89-48a9-be0b-eb2337697c8d</Supervisor>
+        <Grade>Specialist_add2_test8</Grade>
+        <HomeofficeLocation>NZL</HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Specialist_add2_test8</ResourceRole>
+        <ProfileStatus>Active</ProfileStatus>
+        <LoSCode>ADVS_add2_test8</LoSCode>
+    </Person>
+    <Person>
+        <LoginName>mfoppen001_add3_test8</LoginName>
+        <FirstName></FirstName>
+        <LastName></LastName>
+        <EmailAddress>melissa.d.foppen_add3_test8.pwc.com</EmailAddress>
+        <EmployeeType></EmployeeType>
+        <EmployeeID></EmployeeID>
+        <WorkdayID>101016879_add3_test8</WorkdayID>
+        <StartDate>20210629_invalid</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate>NZL Timesheet PwC Worker</TimeSheetTemplate>
+        <TimeSheetApprovalPath>System Approval</TimeSheetApprovalPath>
+        <TimesheetPeriodType></TimesheetPeriodType>
+        <HolidayCalendar>Public holidays for New Zealand</HolidayCalendar>
+        <TimeZone>Pacific/Auckland</TimeZone>
+        <AddUserPermission>End User</AddUserPermission>
+        <ScheduleType>0.00|7.50|7.50|7.50|7.50|7.50|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode></CompanyCode>
+        <LegalEntity></LegalEntity>
+        <Country>New Zealand</Country>
+        <Supervisor></Supervisor>
+        <Grade>Specialist_add3_test8</Grade>
+        <HomeofficeLocation>NZL</HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Specialist_add3_test8</ResourceRole>
+        <ProfileStatus>Active</ProfileStatus>
+        <LoSCode>ADVS_add3_test8</LoSCode>
+    </Person>
+    <Person>
+        <LoginName>ibodolan001</LoginName>
+        <FirstName>Cristina</FirstName>
+        <LastName>Wallner</LastName>
+        <EmailAddress>cristina.wallner@pwc.com</EmailAddress>
+        <EmployeeType>PwC Worker</EmployeeType>
+        <EmployeeID>0174cc8d-771e-4521-9c22-a4b4d3eb4113</EmployeeID>
+        <WorkdayID>100776625</WorkdayID>
+        <StartDate>20160301</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate>AUT Timesheet</TimeSheetTemplate>
+        <TimeSheetApprovalPath>System Approval</TimeSheetApprovalPath>
+        <TimesheetPeriodType>Weekly without crossing starting Sunday</TimesheetPeriodType>
+        <HolidayCalendar>Public holidays for Austria</HolidayCalendar>
+        <TimeZone>Europe/Warsaw</TimeZone>
+        <AddUserPermission>End User</AddUserPermission>
+        <ScheduleType>0.00|0.00|0.00|0.00|0.00|0.00|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode>TLS FS Asset Managem|AT18000050</CompanyCode>
+        <LegalEntity>5715ad3e-bf5d-46a2-a831-e68192667608</LegalEntity>
+        <Country>Austria</Country>
+        <Supervisor>765066ac-2b88-4de3-bbff-a411f83dcc6e_add2_test8||5715ad3e-bf5d-46a2-a831-e68192667608</Supervisor>
+        <Grade>Manager</Grade>
+        <HomeofficeLocation>Wien - AUT</HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Manager</ResourceRole>
+        <ProfileStatus>LoA</ProfileStatus>
+        <LoSCode>Tax</LoSCode>
+    </Person>
+</Persons>

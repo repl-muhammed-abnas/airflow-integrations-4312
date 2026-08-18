@@ -1,0 +1,17 @@
+<p>Hi All,</p>
+<p>Please note that we have not received the acknowledgment for the previous export(s) below.</p>
+<table style="border:1px solid black" border="1">
+<tr>
+<th>Payload Identifier</th>
+<th>Created Date Time</th>
+</tr>
+{%- for record in dataset %}
+<tr>
+<td> {{ record.identifier }} </td>
+<td> {{ record.creation_time }} </td>
+</tr>
+{%- endfor %}
+</table>
+<p>Please look into this on priority and contact our support team at https://support.deltek.com for any clarifications</p>
+<p>Regards,</p>
+<p>Replicon Support</p>

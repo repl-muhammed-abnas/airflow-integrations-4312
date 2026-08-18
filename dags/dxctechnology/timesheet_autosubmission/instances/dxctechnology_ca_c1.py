@@ -1,0 +1,29 @@
+# pylint: disable=wildcard-import unused-wildcard-import
+from dxctechnology.timesheet_autosubmission.config import *
+
+instance = 'DXCTechnology'
+region = 'us-east-2'
+environment = 'production'
+company_key = 'DXCTechnology'
+replicon_conn_id = 'dxctechnology-replicon-RepliconIntC1'
+sumo_conn_id = 'sumologic-exportlogger'
+sftp_conn_id = 'sftp_dxctechnology_timesheetautosubmission'
+# pylint: disable=line-too-long
+tenant_email = 'dxcintegrationlogsreplicon@deltek.com'
+sftp_upload_path = '/Timesheetautosubmission/c1logs/'
+extract_report_name = 'Timesheets for Auto Submission - C1'
+report_filter_timesheetperiod = 'TimesheetPeriodFilter'
+report_filter_approvalstatus = 'ApprovalStatusFilter'
+report_filter_currentdivision = 'CurrentDivisionFilter'
+report_filter_employeetype = None
+dag_max_active_runs = 10
+dag_max_active_tasks = 128
+execution_timeout_days = 14
+batch_size = 50
+country = 'Canada'
+entity = 'C1'
+identifier_filename = 'C1'
+employee_type = None
+timesheet_status_value = '0' # Not Approved status
+schedule = '30 21 * * FRI'
+identifier_dagname = ''

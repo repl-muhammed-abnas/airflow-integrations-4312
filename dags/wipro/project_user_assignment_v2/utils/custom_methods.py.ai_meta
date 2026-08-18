@@ -1,0 +1,65 @@
+{
+  "ai_lines": {
+    "133": "eb8c1768dd059d2bd3293ed67be5525891e018d98f3120bc78c7f00846f92f81",
+    "135": "70d54de2d29d67f84bb8e649969f099138b0b3ffe132d88e845476ee7c77f584",
+    "137": "f87324d9b59bf87e94e48091370072e417ba8e9a482c1f2c0e172028016b808f",
+    "138": "54dfe752dc4bd1596a243305cd5f302ea89f121fc163ac3b4ea4bacc3dcb42da",
+    "139": "9f77638a59ae56bdfeb31d2ca54deb009f6cd67494756d9876f74cb8539b0609",
+    "222": "dfb58b8c29df4ff69ddacb2c9ca6936c1ce986bbd2b5cb7212bc3ec7e3014057",
+    "223": "99213b038d6264e57963d861c6d32c959240eee6d147113576d05048b281fa01",
+    "224": "4ed3c7b0d9d3a4de030e06c5b025da142084e748190576d492e1bfe469c32dda",
+    "226": "4c1559acc0647e7bd621bcb0b1186ddb5815c59db600bd497465a86c16d4c22f",
+    "227": "14d59677ae2ae73e24a4b7ad6f3f45ba9e5038ea115c08f7fd3022bb62c058ee",
+    "228": "a6c0ebfad3add1d6ead56ed22e6255c06eb1cfdb88a451446228bfe78df370db",
+    "229": "9ecaa8d8bb3ae193c4a5bb81b37554ac8a066912527a2d97a4b67fb3b83638f7",
+    "230": "7dae5d98728b8a633e8d1c6281a9254df1b5bdf07053124cd16f4b9dc0d19a75",
+    "231": "4f72c96d49278100d7359eb19f0144533a34fa73bc7b9b7aa5ba08d32b58167d",
+    "232": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+    "233": "bc0b3c19f8985e08c37f3dca322be4a1a254f6c3bea4492a98b64292c7da87bf",
+    "234": "d305b6cd9d915a997f01f7866a029542cb6d612f933a44fa1ccf03c2bcf23cc2",
+    "236": "201fb206cae9800a79d639e3820ae16039c0fb02b6a071e381000f393367e9f4",
+    "244": "4fd4a0df874b1dfc03e5a8260c3059cfe56bf79b7b5fbde2796077dc0e960a89",
+    "246": "4d7d29b8fd16d43d0b7a00174b0a6d771dd0acc0b5b1cc0476151690f2507fca"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 4,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-28T15:44:39.466Z",
+  "file_state": {
+    "file_sha256": "0dd90cb23b6c243f75b9b4bd960609afd940536d10bf387d18b1378f11e3d2c1",
+    "total_file_lines": 246,
+    "total_lines": 210
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "880632012ecdefac20d51fe8bf7ff42ab70922a84a09cca7fbaed9e5370b4a91",
+      "last_known_line": 138,
+      "removed_at": "2026-04-03T16:07:16.887Z"
+    },
+    {
+      "hash": "5047567cc999b21b39f4ff2324314084fd07d499d984432ed9617519523c830e",
+      "last_known_line": 139,
+      "removed_at": "2026-04-03T16:07:16.887Z"
+    },
+    {
+      "hash": "a37d143f1c239e1a3c98ea36c4573c17fc8e2bb7105604962119694a85ca2b90",
+      "last_known_line": 140,
+      "removed_at": "2026-04-03T16:07:16.887Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\wipro\\project_user_assignment_v2\\utils\\custom_methods.py",
+  "stats": {
+    "ai_line_count": 20,
+    "ai_line_pct": 9.52,
+    "ai_lines_removed_or_modified": 3
+  },
+  "updated_at": "2026-04-03T16:07:16.887Z",
+  "version": 1
+}

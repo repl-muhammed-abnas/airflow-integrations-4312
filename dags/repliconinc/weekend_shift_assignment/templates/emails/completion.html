@@ -1,0 +1,33 @@
+<p>
+  <br />Hi Team, <br />
+  <br />
+  Please find the Weekend Shift Roster for {{
+  result("get_logging_details")["weekend_shift_start_date"] }} to {{
+  result("get_logging_details")["weekend_shift_end_date"] }}
+  <br />
+</p>
+<table border="1">
+  <tr>
+    <th bgcolor="#1C6EA4">Month</th>
+    <th bgcolor="#1C6EA4">Date</th>
+    <th bgcolor="#1C6EA4">Employee ID</th>
+    <th bgcolor="#1C6EA4">Name</th>
+    <th bgcolor="#1C6EA4">Shift</th>
+    <th bgcolor="#1C6EA4">Type</th>
+  </tr>
+  {% for shift in result("get_shift_assignments") %}
+  <tr>
+    <td>{{ shift["ShiftMonth"] }}</td>
+    <td>{{ shift["ShiftDate"] }}</td>
+    <td>{{ shift["EmployeeID"] }}</td>
+    <td>{{ result('get_all_user_details') | find_first_by_attr_and_get_attr('employeeid', shift["EmployeeID"], 'name')}}</td>
+    <td>{{ shift["ShiftTime"] }}</td>
+    <td>Weekend Shift</td>
+  </tr>
+  {% endfor %}
+</table>
+<p>Thank you,<br /></p>
+<p>
+  Replicon Integration Team<br />NOTE: This is a custom notification sent by
+  RIT, please don't reply to this mail..
+</p>

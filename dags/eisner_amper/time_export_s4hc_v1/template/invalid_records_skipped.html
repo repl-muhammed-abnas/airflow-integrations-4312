@@ -1,0 +1,10 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon Time Data extract for SAP HANA is skipped at {{ result("get_logging_details")["current_date"] }} due to error records.</p>
+<ul>
+<li>Sequence Number: {{ dag_run.conf.index }}</li>
+<li>File Name: Timesheet_{{ dag_run.conf.index }}_{{ result('get_logging_details')['file_name_format'] }}.json</li>
+<li>Number Of Records: {{ dag_run.conf.postingsdata | length }}</li>
+<li>Error Records: {{ result('query_invalid_enriched_records') | length }}</li>
+<li>Error File Name: Error_Timesheet_{{ dag_run.conf.index }}_{{ result('get_logging_details')['file_name_format'] }}.csv</li>
+<li>Error File Path: {{ params.error_file_path }}</li>
+</ul>
+<p>Regards,<br />Deltek Inc.</p>

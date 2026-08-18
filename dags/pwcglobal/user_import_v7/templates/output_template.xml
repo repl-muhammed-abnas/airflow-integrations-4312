@@ -1,0 +1,21 @@
+<ErrorLogs>
+  {%- for record in dataset %}
+  <ErrorLog>
+    <Date>{{ record.Date }}</Date>
+    <System>Replicon</System>
+    <FileName>{{ result("new_file_sensor") | file_base }}.xml</FileName>
+    <ApplicationName>Replicon_PMDM</ApplicationName>
+    <InstanceName>{{ get_company_key() }}</InstanceName>
+    <CompRefId>{{ record.LegalentityID }}</CompRefId>
+    <PartyId>{{ record.UserPartyID }}</PartyId>
+    <LoginName>{{ record.LoginName|e }}</LoginName>
+    <Level>{{ record.Status }}</Level>
+    <Class></Class>
+    <Message>{{ record.Details|e }}</Message>
+    <EntityId>{{ record.Ecid|e }}</EntityId>
+    <EntityName>Internal jobID</EntityName>
+    <EntityType></EntityType>
+    <AdditionalInfo></AdditionalInfo>
+  </ErrorLog>
+  {%- endfor %}
+</ErrorLogs>

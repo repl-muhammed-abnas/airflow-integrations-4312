@@ -1,0 +1,8 @@
+<p>
+    <strong>This is an automated mail, please don't reply.</strong>
+    <br /> <br />Hello, 
+    <br /> <br /> The  Replicon project field sync for gsap task is completed with errors
+    {{ " on " + current_time() }}. Please find the log file details below for reference: <br /> <br />
+    File path: {{ params.log_filepath }}<br />
+    File name: log_{{ dag_run_ecid() | replace(":", "-") }}_{{ result("new_file_sensor") | file_base }}.csv
+</p>

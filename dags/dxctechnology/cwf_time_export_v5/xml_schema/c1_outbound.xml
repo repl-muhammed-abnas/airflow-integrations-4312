@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:MT_TimeData_ECC xmlns:ns0="http://csc.com/IF1385/FromRepliconToC1/TimeData">
+  {%- for record in dataset %}
+ <Records>
+  <PERSNO>{{record.Employeeid|e}}</PERSNO>
+  <DATE>{{record.Date|e}}</DATE>
+  <TASKTYPE>{{record.Tasktype|e}}</TASKTYPE>
+  <CostCenter>{{record.Costcenter|e}}</CostCenter>
+  <ActivityType>{{record.Activitytype|e}}</ActivityType>
+  <RECWBSELEMENT>{{record.Recwbselement|e}}</RECWBSELEMENT>
+  <RecOrder>{{record.Recorder|e}}</RecOrder>
+  <LaborType>{{record.Labortype|e}}</LaborType>
+  <BILLABLEINDICATOR>{{record.Billableindicator|e}}</BILLABLEINDICATOR>
+  <TASKS>{{record.Task|e}}</TASKS>
+  <HOURS>{{record.Hours|e}}</HOURS>
+  <ATTENABSENCETYPE>{{record.Attendencetype|e}}</ATTENABSENCETYPE>
+  <SHORTTEXT>{{record.Comments|e}}</SHORTTEXT>
+  <RepliconUniqueID>{{record.Entryid|e}}</RepliconUniqueID>
+  <ActivityNumber>{{record.Activitynumber|e}}</ActivityNumber>
+  <SendingOrder>{{record.Sendingorder|e}}</SendingOrder>
+  <SendPOitem>{{record.Sendpoitem|e}}</SendPOitem>
+  <OPP_ID></OPP_ID>
+ </Records>
+ {%- endfor %}
+</ns0:MT_TimeData_ECC>

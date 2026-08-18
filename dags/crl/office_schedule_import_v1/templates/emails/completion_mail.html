@@ -1,0 +1,32 @@
+Hello, <br /> <br />
+The Replicon Office Schedule Import from SAP has {{ " " }}
+{%- set has_errors = result('format_logs', 'error_record_count') > 0 -%}
+{%- if has_errors -%}
+completed with errors
+{%- else -%}
+{%- if result("format_logs", key="exception_record_count") > 0 -%}
+completed with exceptions
+{%- else -%}
+completed successfully
+{%- endif -%}
+{%- endif -%}
+{{ "" }}, further details are below: <br />
+<ul>
+  <li>Job start time: {{dag_run.conf.job_start_time}}</li>
+  <li>Job end time: {{result('get_email_and_log_file_details').job_end_time}}</li>
+  <li>Job duration: {{result('get_email_and_log_file_details').job_duration}} minutes</li>
+  <li>Log File name: {{result('get_email_and_log_file_details').log_file_name}}</li>
+  <li>Log File path: {{ params.log_filepath }}</li>
+  <li>Log File download link: <a href="{{result('generate_download_link')}}">Download log file</a></li>
+</ul>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+<p><em><span style="font-size: 9pt;">The download link is valid for 7 days.</span></em></p>
+</p>
+
+For any queries, please contact our support team at <a
+  href=https://support.deltek.com>https://support.deltek.com</a><br />
+<p><strong>This is an automated mail from Deltek Integration, Please do not reply to this email.</strong><br /> <br />
+  Regards,<br />
+  Deltek Inc</p>

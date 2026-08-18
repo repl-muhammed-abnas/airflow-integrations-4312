@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ZYAG-replicon>
+	<interfaceAG>
+		<interfaceAG_id>
+			<numberAG_id>Sick Leaves</numberAG_id>
+			<dateinterfaceAG>{{ current_time_in_specified_tz(fmt="%Y-%m-%d-%H.%M.%S") }}</dateinterfaceAG>
+		</interfaceAG_id>
+		<salaries>
+            {%- for record in dataset %}
+			<salarie_id>
+				<codeAG>{{ record.paycode|e }}</codeAG>
+				<matricule>{{ record.employee_id|e }}</matricule>
+				<datdeb>{{ record.booking_start_date|e }}</datdeb>
+				<datfin>{{ record.booking_end_date|e }}</datfin>
+				<temdeb>{{ record.day_start_indicator|e }}</temdeb>
+				<temfin>{{ record.day_end_indicator|e }}</temfin>
+				<unite2>{{ record.hours|e }}</unite2>
+				<cleunique>{{ record.short_id|e }}</cleunique>
+				<codemouvement>{{ record.transaction_type|e }}</codemouvement>
+				<horodatage>{{ record.horodatage|e }}</horodatage>
+				<initialorextension>{{ record.initialorextension|e }}</initialorextension>
+				<workedstartday>{{ record.workedstartday|e }}</workedstartday>
+			</salarie_id>
+            {%- endfor %}
+		</salaries>
+	</interfaceAG>
+</ZYAG-replicon>

@@ -1,0 +1,100 @@
+{
+  "webhook": {
+    "data": {
+      "timesheet": {
+        "dataType": "urn:replicon:list-type:object",
+        "objectType": "urn:replicon:object-type:timesheet",
+        "slug": ".test-employee1/2026-3-9",
+        "uri": "urn:replicon-tenant:725db1f260144a2080f0f545f3c6a97a:timesheet:dfa1d2e3-61bc-4e13-9fe2-722c8b5e2776"
+      },
+      "dateRange": {
+        "dataType": "urn:replicon:list-type:date-range",
+        "dateRangeValue": {
+          "endDate": {
+            "day": 15,
+            "month": 3,
+            "year": 2026
+          },
+          "startDate": {
+            "day": 9,
+            "month": 3,
+            "year": 2026
+          }
+        },
+        "textValue": "Mar 9, 2026 - Mar 15, 2026"
+      },
+      "user": {
+        "dataType": "urn:replicon:list-type:object",
+        "objectType": "urn:replicon:object-type:user",
+        "slug": "test-employee1",
+        "textValue": "test, Employee1",
+        "uri": "urn:replicon-tenant:725db1f260144a2080f0f545f3c6a97a:user:961"
+      },
+      "status": {
+        "dataType": "urn:replicon:list-type:object",
+        "objectType": "urn:replicon:object-type:timesheet-status-2",
+        "textValue": "Approved",
+        "uri": "urn:replicon:timesheet-status-2:approved"
+      },
+      "regularHours": {
+        "calendarDayDurationValue": {
+          "hours": 0,
+          "microseconds": 0,
+          "milliseconds": 0,
+          "minutes": 0,
+          "seconds": 0
+        },
+        "dataType": "urn:replicon:list-type:calendar-day-duration",
+        "textValue": "0.00"
+      },
+      "overtimeHours": {
+        "calendarDayDurationValue": {
+          "hours": 0,
+          "microseconds": 0,
+          "milliseconds": 0,
+          "minutes": 0,
+          "seconds": 0
+        },
+        "dataType": "urn:replicon:list-type:calendar-day-duration",
+        "textValue": "0.00"
+      },
+      "timeOffHours": {
+        "calendarDayDurationValue": {
+          "hours": 0,
+          "microseconds": 0,
+          "milliseconds": 0,
+          "minutes": 0,
+          "seconds": 0
+        },
+        "dataType": "urn:replicon:list-type:calendar-day-duration",
+        "textValue": "0.00"
+      },
+      "totalHours": {
+        "calendarDayDurationValue": {
+          "hours": 0,
+          "microseconds": 0,
+          "milliseconds": 0,
+          "minutes": 0,
+          "seconds": 0
+        },
+        "dataType": "urn:replicon:list-type:calendar-day-duration",
+        "textValue": "0.00"
+      },
+      "approvalDate": {
+        "dataType": "urn:replicon:list-type:date",
+        "dateValue": {
+          "day": 15,
+          "month": 3,
+          "year": 2026
+        },
+        "textValue": "Mar 15, 2026"
+      },
+      "calculationStatus": {
+        "dataType": "urn:replicon:list-type:object",
+        "objectType": "urn:replicon:object-type:timesheet-script-calculation-status",
+        "textValue": "Up to Date",
+        "uri": "urn:replicon:timesheet-script-calculation-status:up-to-date"
+      }
+    }
+  }
+}

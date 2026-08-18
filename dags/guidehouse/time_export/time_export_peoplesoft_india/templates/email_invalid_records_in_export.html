@@ -1,0 +1,16 @@
+<div>
+    <strong>This is an automated mail, please don't reply.</strong><br />
+    <br />
+    Hello,<br />
+    <br />
+    The Replicon {{ dag_run.conf.export_type | capitalize }} Time Data Export to {{ dag_run.conf.financial_system }} is cancelled for {{ dag_run.conf.timestamp }}.
+</div>
+<p>There are records without employee id, which is impacting the time export. Please look into this and make appropriate corrections.</p>
+<p>To download the impacting records click <a href="{{ result('generate_download_link_missing_employeeid_records_csv') }}">here</a></p>
+<p>Note: Once the entries have been corrected and approved the records will be available in next export</p>
+<p>
+    For any queries, please contact our support team at https://support.deltek.com<br />
+    <br />
+    Regards,<br />
+    Deltek Inc.
+</p>

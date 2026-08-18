@@ -1,0 +1,42 @@
+{
+  "ai_lines": {
+    "533": "d010d015b832a923bbc80ab67a9acf404871ded8b51dc500c34c82431bab1056",
+    "534": "34918e9defce71d2e4ced3f989b70e36c3c61ca0591ccc344d5437dff8f8ed82",
+    "535": "0be259f1c6a44a0bec63b099cbed4932cab344c7adf6c567a32bc5243d843429",
+    "536": "40a9941102d48fdc17098f0b7e9f77a1649f502a15b2bd8f3b06a346e3d43860",
+    "537": "5e635035490b9eb57c450ec190f09532aef0371e1f51a98564e4cdef6b636d90",
+    "538": "526f5049ade565b3e50ba786f989b6a1cc7981799d9530c94a7ee5e37dca6b2c",
+    "539": "2a44168318e224e1f830fe9ab620aa00dd4f7b3fb19ef4399abf59593cf0756d",
+    "540": "de0c6202d8a50b4722dee58a7b6849790a660aee5f18927648bb138f8f904d6b",
+    "541": "33bc07ea87b0505352fb0f586cdcc612ca86823531c5d60beffe5d94de9bc376",
+    "542": "30e5004ec7fd505bdb6e6d4a55f0c9ea686b5f60c3c48baa71885cac25c68efd",
+    "543": "0d98b1e0d15c4c960746e4ad58ed096ec8b14774f0428590de3020c8989c7b74",
+    "544": "d36139c16be11f7be5bb88a14c83aebebcb4f03a88a0c4354c5cd8ae7f0270b9",
+    "547": "225263de31a570a8daeecbd4d1b01cc302a85beaa1f30c1daf50487f9ffe0cb0"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-20T07:58:15.054Z",
+  "file_state": {
+    "file_sha256": "08c70be945d54eb14ff89fe2b926771f0c38e11e49860e8a6cabf9300c340358",
+    "total_file_lines": 1297,
+    "total_lines": 1139
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\dxctechnology\\workday_user_import_v1\\user_import_canada_v1\\utils\\request_payload.py",
+  "stats": {
+    "ai_line_count": 13,
+    "ai_line_pct": 1.14,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-20T07:58:15.054Z",
+  "version": 1
+}

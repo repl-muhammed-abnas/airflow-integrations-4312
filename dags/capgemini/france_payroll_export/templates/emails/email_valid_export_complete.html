@@ -1,0 +1,18 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /><br />Hello, <br /><br />The Replicon payroll data extract to {{ params.export_to }} for France is completed successfully
+    {{ " at " + current_time_in_specified_tz(params.time_zone) }}. Please find the extract details for reference.</p>
+{%- if params.export_to == "SOPRA" -%}
+    {%- set filename = dag_run.conf.exportdetails.sopra_export_filename -%}
+    {%- set format = "xml" -%}
+{%- else -%}
+    {%- set filename = dag_run.conf.exportdetails.gfs_export_filename -%}
+    {%- set format = "csv" -%}
+{%- endif -%}
+<ul>
+    <li>Process Started: {{ dag_run.conf.exportdetails.process_start_time }}</li>
+    <li>File Name: {{ filename }}.{{ format }}.pgp</li>
+    <li>File Path: {{ params.upload_file_path }}</li>
+    <li>Location: {{ params.location }}</li>
+    <li>Number of Records: {{ result("write_payroll_data_csv") | load_all_records | length }}</li>
+    <li>Date Range: {{ dag_run.conf.exportdetails.export_start_date }} - {{ dag_run.conf.exportdetails.export_end_date }}</li>
+</ul>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>

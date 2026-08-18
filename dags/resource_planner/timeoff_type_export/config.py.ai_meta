@@ -1,0 +1,35 @@
+{
+  "ai_lines": {
+    "10": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "11": "49c3e94071bb80c503d0b677bea6624e90b37e61b2e00a3ae4c45222fa388827",
+    "12": "7b73a38759c31fb15a9635e6b5ab5e3ae9ff6286ef6557e3fe46c3995cb5c9f8",
+    "13": "768175320041d5f2d7acc3983ce3c63429ca6722d2600e878ad814edbdbd2887",
+    "14": "3749cd0897e8c02bff915c876589cb6fecb2e9f40021452cf6b77819227bd20d",
+    "15": "d4063d7a30e4f66718d4673725a119989cab3fe66aff01a1d3aa96657110a29f"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-05-20T10:11:56.525Z",
+  "file_state": {
+    "file_sha256": "deecbed88ac9f8f4e195f33b9a25bdb8691db26ecef605aaaed0296b92a92dfc",
+    "total_file_lines": 15,
+    "total_lines": 12
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\workspace\\airflow-integrations\\dags\\resource_planner\\timeoff_type_export\\config.py",
+  "stats": {
+    "ai_line_count": 6,
+    "ai_line_pct": 50.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-05-20T10:11:56.525Z",
+  "version": 1
+}

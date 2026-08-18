@@ -1,0 +1,9 @@
+<p>Hi Team,<br /> <br /> The Replicon task sync for Compass Attributes {{ params.attributenumber }} for get_company_key() instance, hosted on get_company_key(),
+    created on {{current_time()}} has been completed for file {{ dag_run_ecid() }}, however, the log upload to sftp has failed. 
+    Attached is the log file for reference. <br /> <br />
+DAG ID: {{ params.dag_id }}<br />
+DAG Run: {{ run_id }}<br />
+Log File name: log_{{ dag_run_ecid() | replace(":", "-") }}_{{ result("new_file_sensor") | file_base }}}.csv</p>
+<p>
+Please find the attached logs which was to be sent to intended recipients and debug the issue related to sftp upload
+<br /><br />Regards,<br />Deltek Inc</p>

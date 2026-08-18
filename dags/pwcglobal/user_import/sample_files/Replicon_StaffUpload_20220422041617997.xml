@@ -1,0 +1,250 @@
+﻿<Persons>
+    <Person>
+        <LoginName>mfoppen001</LoginName>
+        <FirstName>Melissa</FirstName>
+        <LastName>Foppen</LastName>
+        <EmailAddress>melissa.d.foppen@pwc.com</EmailAddress>
+        <EmployeeType>PwC Worker</EmployeeType>
+        <EmployeeID>765066ac-2b88-4de3-bbff-a411f83dcc6e</EmployeeID>
+        <WorkdayID>101016879</WorkdayID>
+        <StartDate>20210629</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate>NZL Timesheet PwC Worker</TimeSheetTemplate>
+        <TimeSheetApprovalPath>System Approval</TimeSheetApprovalPath>
+        <TimesheetPeriodType>Weekly without crossing starting Sunday</TimesheetPeriodType>
+        <HolidayCalendar>Public holidays for New Zealand</HolidayCalendar>
+        <TimeZone>Pacific/Auckland</TimeZone>
+        <AddUserPermission>End User</AddUserPermission>
+        <ScheduleType>0.00|7.50|7.50|7.50|7.50|7.50|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode>NZ CONS - Management Consulting|NZD381</CompanyCode>
+        <LegalEntity>b886a7f0-9c89-48a9-be0b-eb2337697c8d</LegalEntity>
+        <Country>New Zealand</Country>
+        <Supervisor>88f3a056-7374-4911-823d-da4a9ea21faa||b886a7f0-9c89-48a9-be0b-eb2337697c8d</Supervisor>
+        <Grade>Specialist</Grade>
+        <HomeofficeLocation>NZL</HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Specialist</ResourceRole>
+        <ProfileStatus>Active</ProfileStatus>
+        <LoSCode>ADVS</LoSCode>
+    </Person>
+    <Person>
+        <LoginName>ibodolan001</LoginName>
+        <FirstName>Cristina</FirstName>
+        <LastName>Wallner</LastName>
+        <EmailAddress>cristina.wallner@pwc.com</EmailAddress>
+        <EmployeeType>PwC Worker</EmployeeType>
+        <EmployeeID>0174cc8d-771e-4521-9c22-a4b4d3eb4113</EmployeeID>
+        <WorkdayID>100776625</WorkdayID>
+        <StartDate>20160301</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate>AUT Timesheet</TimeSheetTemplate>
+        <TimeSheetApprovalPath>System Approval</TimeSheetApprovalPath>
+        <TimesheetPeriodType>Weekly without crossing starting Sunday</TimesheetPeriodType>
+        <HolidayCalendar>Public holidays for Austria</HolidayCalendar>
+        <TimeZone>Europe/Warsaw</TimeZone>
+        <AddUserPermission>End User</AddUserPermission>
+        <ScheduleType>0.00|0.00|0.00|0.00|0.00|0.00|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode>TLS FS Asset Managem|AT18000050</CompanyCode>
+        <LegalEntity>5715ad3e-bf5d-46a2-a831-e68192667608</LegalEntity>
+        <Country>Austria</Country>
+        <Supervisor>e2bb0cc0-aa6d-47a3-88c2-9551763cc6d9||5715ad3e-bf5d-46a2-a831-e68192667608</Supervisor>
+        <Grade>Manager</Grade>
+        <HomeofficeLocation>Wien - AUT</HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Manager</ResourceRole>
+        <ProfileStatus>LoA</ProfileStatus>
+        <LoSCode>Tax</LoSCode>
+    </Person>
+    <Person>
+        <LoginName>rchytrosze004</LoginName>
+        <FirstName>Rafal</FirstName>
+        <LastName>Chytroszek</LastName>
+        <EmailAddress>r.chytroszek@ch.pwc.com</EmailAddress>
+        <EmployeeType>Contingent Worker</EmployeeType>
+        <EmployeeID>8a6e871a-e8d4-46f9-9127-a6de43f176a3</EmployeeID>
+        <WorkdayID>110000911</WorkdayID>
+        <StartDate>20161101</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate>CHE Timesheet punch card</TimeSheetTemplate>
+        <TimeSheetApprovalPath>Project Manager</TimeSheetApprovalPath>
+        <TimesheetPeriodType>Weekly without crossing starting Sunday</TimesheetPeriodType>
+        <HolidayCalendar>Public holiday for Zurich</HolidayCalendar>
+        <TimeZone>Europe/Warsaw</TimeZone>
+        <AddUserPermission>End User</AddUserPermission>
+        <ScheduleType>0.00|0.00|0.00|0.00|0.00|0.00|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode>ASR Competence Centre|CH10101091</CompanyCode>
+        <LegalEntity>ea5d8532-b488-4270-8e77-adc40703771f</LegalEntity>
+        <Country>Switzerland</Country>
+        <Supervisor>db18c2a9-8652-4861-80da-fd9c0b66da76||ea5d8532-b488-4270-8e77-adc40703771f</Supervisor>
+        <Grade>Specialist</Grade>
+        <HomeofficeLocation>CHE</HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Specialist</ResourceRole>
+        <ProfileStatus>Active</ProfileStatus>
+        <LoSCode>ASR</LoSCode>
+    </Person>
+    <Person>
+        <LoginName>rpezda004</LoginName>
+        <FirstName>Robert</FirstName>
+        <LastName>Pezda</LastName>
+        <EmailAddress>pezda.robert@uk.pwc.com</EmailAddress>
+        <EmployeeType>Contingent Worker</EmployeeType>
+        <EmployeeID>1f04d714-1637-4132-a3a7-aa817f8a165e</EmployeeID>
+        <WorkdayID>110000912</WorkdayID>
+        <StartDate>20161101</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate>CHE Timesheet punch card</TimeSheetTemplate>
+        <TimeSheetApprovalPath>Project Manager</TimeSheetApprovalPath>
+        <TimesheetPeriodType>Weekly without crossing starting Sunday</TimesheetPeriodType>
+        <HolidayCalendar>Public holiday for Zurich</HolidayCalendar>
+        <TimeZone>Europe/Warsaw</TimeZone>
+        <AddUserPermission>End User</AddUserPermission>
+        <ScheduleType>0.00|0.00|0.00|0.00|0.00|0.00|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode>ASR Competence Centre|CH10101091</CompanyCode>
+        <LegalEntity>ea5d8532-b488-4270-8e77-adc40703771f</LegalEntity>
+        <Country>Switzerland</Country>
+        <Supervisor>db18c2a9-8652-4861-80da-fd9c0b66da76||ea5d8532-b488-4270-8e77-adc40703771f</Supervisor>
+        <Grade>Specialist</Grade>
+        <HomeofficeLocation>CHE</HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Specialist</ResourceRole>
+        <ProfileStatus>Active</ProfileStatus>
+        <LoSCode>ASR</LoSCode>
+    </Person>
+    <Person>
+        <LoginName>kati002</LoginName>
+        <FirstName>Karim</FirstName>
+        <LastName>Ati</LastName>
+        <EmailAddress>karim.a.ati@pwc.com</EmailAddress>
+        <EmployeeType>PwC Worker</EmployeeType>
+        <EmployeeID>33867ec4-3da0-4cb4-8ba4-b1f5d8ff7fcb</EmployeeID>
+        <WorkdayID>101007141</WorkdayID>
+        <StartDate>20210515</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate>DEU Timesheet</TimeSheetTemplate>
+        <TimeSheetApprovalPath>System Approval</TimeSheetApprovalPath>
+        <TimesheetPeriodType>Weekly without crossing starting Sunday</TimesheetPeriodType>
+        <HolidayCalendar>Public holidays for Frankfurt a.M.</HolidayCalendar>
+        <TimeZone>Europe/Berlin</TimeZone>
+        <AddUserPermission>End User</AddUserPermission>
+        <ScheduleType>0.00|0.00|0.00|0.00|0.00|0.00|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode>ASR IS Mitte|DE01000194</CompanyCode>
+        <LegalEntity>ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9</LegalEntity>
+        <Country>Germany</Country>
+        <Supervisor>da6797d9-7daa-4edb-aeab-a7539334b4f4||ff6d5af8-9ae6-47d9-8317-eaa8b0e2e7b9</Supervisor>
+        <Grade>Intern/Trainee</Grade>
+        <HomeofficeLocation>DEU</HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Intern/Trainee</ResourceRole>
+        <ProfileStatus>Active</ProfileStatus>
+        <LoSCode>ASR</LoSCode>
+    </Person>
+    <Person>
+        <LoginName>jtantra001</LoginName>
+        <FirstName>Johandy</FirstName>
+        <LastName>Tantra</LastName>
+        <EmailAddress>johandy.tantra@pwc.com</EmailAddress>
+        <EmployeeType>PwC Worker</EmployeeType>
+        <EmployeeID>b85143fa-e817-45d5-bd80-bd19a9232bb3</EmployeeID>
+        <WorkdayID>100899471</WorkdayID>
+        <StartDate>20190506</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate></TimeSheetTemplate>
+        <TimeSheetApprovalPath></TimeSheetApprovalPath>
+        <TimesheetPeriodType></TimesheetPeriodType>
+        <HolidayCalendar></HolidayCalendar>
+        <TimeZone></TimeZone>
+        <AddUserPermission></AddUserPermission>
+        <ScheduleType>0.00|8.00|8.00|8.00|8.00|8.00|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode>Digital Innovation &amp; Products|SPP495</CompanyCode>
+        <LegalEntity>daa72462-3852-45ad-b04f-cbadfbcb94a4</LegalEntity>
+        <Country>Singapore</Country>
+        <Supervisor>530dd2ab-ad10-4f2a-b0a1-574cd43f6a0c||daa72462-3852-45ad-b04f-cbadfbcb94a4</Supervisor>
+        <Grade>Manager</Grade>
+        <HomeofficeLocation></HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Manager</ResourceRole>
+        <ProfileStatus>Active</ProfileStatus>
+        <LoSCode>ADVS</LoSCode>
+    </Person>
+    <Person>
+        <LoginName>enielsenge001</LoginName>
+        <FirstName>Esmae</FirstName>
+        <LastName>Nielsen Gerlach</LastName>
+        <EmailAddress>esmae.linn.nielsen.gerlach@pwc.com</EmailAddress>
+        <EmployeeType>PwC Worker</EmployeeType>
+        <EmployeeID>c7b1df5c-99e1-4151-9d2d-bfc71984e957</EmployeeID>
+        <WorkdayID>101156385</WorkdayID>
+        <StartDate>20211101</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate>NLD Timesheet PwC Worker</TimeSheetTemplate>
+        <TimeSheetApprovalPath>System Approval</TimeSheetApprovalPath>
+        <TimesheetPeriodType>Weekly without crossing starting Sunday</TimesheetPeriodType>
+        <HolidayCalendar>Standard Calendar for NL</HolidayCalendar>
+        <TimeZone>Europe/Warsaw</TimeZone>
+        <AddUserPermission>End User</AddUserPermission>
+        <ScheduleType>0.00|8.00|8.00|8.00|8.00|8.00|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode>TAX P&amp;O HR Cloud&amp;Transform|NL11000281</CompanyCode>
+        <LegalEntity>17217a88-de26-475b-82bf-cb08f2a14c7e</LegalEntity>
+        <Country>Netherlands</Country>
+        <Supervisor>ee4766eb-692f-4357-8b20-7169fe7f3a14||17217a88-de26-475b-82bf-cb08f2a14c7e</Supervisor>
+        <Grade>Senior Associate 2</Grade>
+        <HomeofficeLocation>NLD</HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Senior Associate 2</ResourceRole>
+        <ProfileStatus>Active</ProfileStatus>
+        <LoSCode>Tax</LoSCode>
+    </Person>
+    <Person>
+        <LoginName></LoginName>
+        <FirstName>Wiert</FirstName>
+        <LastName>Smid</LastName>
+        <EmailAddress>wiert.smid@pwc.com</EmailAddress>
+        <EmployeeType>PwC Worker</EmployeeType>
+        <EmployeeID>ca6088de-7c98-48bb-a873-ca6032a0d57d</EmployeeID>
+        <WorkdayID>100624646</WorkdayID>
+        <StartDate>20160101</StartDate>
+        <EndDate></EndDate>
+        <IsLoginEnabled>Yes</IsLoginEnabled>
+        <AuthenticationType>SSO</AuthenticationType>
+        <TimeSheetTemplate>NLD Timesheet PwC Worker</TimeSheetTemplate>
+        <TimeSheetApprovalPath>System Approval</TimeSheetApprovalPath>
+        <TimesheetPeriodType>Weekly without crossing starting Sunday</TimesheetPeriodType>
+        <HolidayCalendar>Standard Calendar for NL</HolidayCalendar>
+        <TimeZone>Europe/Warsaw</TimeZone>
+        <AddUserPermission>End User</AddUserPermission>
+        <ScheduleType>0.00|8.00|8.00|8.00|8.00|8.00|0.00</ScheduleType>
+        <Workweek>Sunday to Saturday</Workweek>
+        <CompanyCode>Audit Methodology|NL12000381</CompanyCode>
+        <LegalEntity>f30abfab-4c61-4f45-b40c-1ab13706fd3c</LegalEntity>
+        <Country>Netherlands</Country>
+        <Supervisor>2dcf1978-a211-4c55-9640-091dfd5e22c5||f30abfab-4c61-4f45-b40c-1ab13706fd3c</Supervisor>
+        <Grade>Director</Grade>
+        <HomeofficeLocation>NLD</HomeofficeLocation>
+        <Prefix></Prefix>
+        <ResourceRole>Director</ResourceRole>
+        <ProfileStatus>Active</ProfileStatus>
+        <LoSCode>ASR</LoSCode>
+    </Person>
+</Persons>

@@ -1,0 +1,9 @@
+region="eu-central-1"
+environment="pre-production"
+max_active_runs_master = 1
+max_active_runs_child = 1
+project_source_systems = ["pf1", "wp1"]
+project_import_log_filename={"pf1":"Project_Import_LogsPF1", "wp1":"Project_import_WP1"}
+cest_time_zone="Europe/Dublin"
+schedule_interval='30 * * * *'
+execution_timeout_days = 14

@@ -1,0 +1,20 @@
+timeoff_mapper_names = {
+  "Holiday": "Leave",
+  "Sick Leave": "Leave",
+  "Maternity Leave": "Leave",
+  "Shared Parental Leave": "Leave",
+  "Paternity Leave": "Leave",
+  "Jury Service": "Leave",
+  "Conference Attendance": "Conferences",
+  "Unpaid Leave - Other": "Leave",
+  "Keep In Touch (KIT) Day": "Leave",
+  "Shared Parental Leave in Touch (SPLIT) day": "Leave",
+  "Compassionate Leave": "Leave",
+  "Paid - Other": "Leave",
+  "Sabbatical leave": "Leave",
+  "Unpaid Parental Leave": "Leave",
+  "Time Off In Lieu (TOIL)": "Leave",
+  "STEM/Volunteering Event": "Leave",
+  "Medical appointment": "Leave",
+  "Paid - USA (Federal & State) holidays": "Leave"
+}

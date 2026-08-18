@@ -1,0 +1,31 @@
+region = 'eu-central-1'
+environment = 'pre-production'
+company_key = 'PwCinternal'
+replicon_conn_id = 'replicon_pwcglobal'
+sftp_conn_id = "sftp_pwc_userimport"
+secondary_sftp_conn_id = "sftp_pwc_userimport"
+user_report_name = "***User report***"
+punch_entrypolicy_log_name = "user_import_punch_entrypolicy"
+location_dag_id = 'pwcglobal_user_import_location_child'
+schedule_dag_id = 'pwcglobal_user_import_schedule_child'
+supervisor_dag_id = 'pwcglobal_user_import_supervisor_child'
+user_dag_id = 'pwcglobal_user_import_user_child'
+user_add_dag_id = 'pwcglobal_user_import_add_user_child'
+user_update_dag_id = 'pwcglobal_user_import_update_user_child'
+tableview_settings_dag_id = 'pwcglobal_user_import_put_tableview_settings'
+location_dag_max_active_runs = 1
+schedule_dag_max_active_runs = 1
+user_dag_max_active_runs = 5
+supervisor_dag_max_active_runs = 5
+dag_max_active_tasks = 10000
+execution_timeout_days = 14
+report_process_size = 5000
+
+input_filepath = "/PwCGlobal/User_Import/input"
+archive_filepath = "/PwCGlobal/User_Import/archive"
+log_filepath = "/PwCGlobal/User_Import/logs"
+secondary_log_filepath = ""
+
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_internal_testing_email }}'

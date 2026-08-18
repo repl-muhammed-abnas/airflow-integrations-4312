@@ -1,0 +1,167 @@
+{
+  "payload": {
+    "A_EnterpriseProjects": [
+      {
+        "Project": "S.02",
+        "ProjectDescription": "Time off",
+        "ProjectProfileCode": "YP04",
+        "ProcessingStatus": "00",
+        "ResponsibleCostCenter": "US01890938",
+        "ProjectStartDate": "2020-03-01",
+        "ProjectEndDate": "2030-03-01",
+        "ProjectManager": "SBASTIA",
+        "EntProjTimeRecgIsBlkd": "",
+        "ControllingArea": "A000",
+        "A_EnterpriseProjectElementType": [
+          {
+            "ParentProject": "",
+            "ProjectElement": "S.02",
+            "ProjectElementDescription": "Time off",
+            "PlannedStartDate": "2020-03-01",
+            "PlannedEndDate": "2030-03-01",
+            "EntProjTimeRecgIsBlkd": "",
+            "ProcessingStatus": "00",
+            "YY1_BillingRespProjEl_PTD": "",
+            "StaffedEmployee": [
+              {
+                "StaffedEmployee": "61161"
+              },
+              {
+                "StaffedEmployee": "61162"
+              }
+            ],
+            "StaffingCostCenter": {
+              "CostCenter": ""
+            }
+          },
+          {
+            "ParentProject": "S.02",
+            "ProjectElement": "S.02.102",
+            "ProjectElementDescription": "Time Off",
+            "PlannedStartDate": "2020-03-01",
+            "PlannedEndDate": "2030-03-01",
+            "EntProjTimeRecgIsBlkd": "",
+            "ProcessingStatus": "00",
+            "YY1_BillingRespProjEl_PTD": "",
+            "StaffedEmployee": [
+              {
+                "StaffedEmployee": "61161"
+              },
+              {
+                "StaffedEmployee": "61162"
+              }
+            ],
+            "StaffingCostCenter": {
+              "CostCenter": ""
+            }
+          },
+          {
+            "ParentProject": "S.02.102",
+            "ProjectElement": "S.02.102.1",
+            "ProjectElementDescription": "Time off personal Leave US01",
+            "PlannedStartDate": "2020-03-01",
+            "PlannedEndDate": "2030-03-01",
+            "EntProjTimeRecgIsBlkd": "",
+            "ProcessingStatus": "00",
+            "YY1_BillingRespProjEl_PTD": "90407",
+            "StaffedEmployee": [
+              {
+                "StaffedEmployee": "61161"
+              },
+              {
+                "StaffedEmployee": "61162"
+              }
+            ],
+            "StaffingCostCenter": {
+              "CostCenter": ""
+            }
+          },
+          {
+            "ParentProject": "S.02.102",
+            "ProjectElement": "S.02.102.2",
+            "ProjectElementDescription": "Time off personal Leave IN01",
+            "PlannedStartDate": "2020-03-01",
+            "PlannedEndDate": "2030-03-01",
+            "EntProjTimeRecgIsBlkd": "",
+            "ProcessingStatus": "00",
+            "YY1_BillingRespProjEl_PTD": "",
+            "StaffedEmployee": [
+              {
+                "StaffedEmployee": "61161"
+              },
+              {
+                "StaffedEmployee": "61162"
+              }
+            ],
+            "StaffingCostCenter": {
+              "CostCenter": ""
+            }
+          },
+          {
+            "ParentProject": "S.02.102",
+            "ProjectElement": "S.02.102.3",
+            "ProjectElementDescription": "Time off personal Leave MX01",
+            "PlannedStartDate": "2020-03-01",
+            "PlannedEndDate": "2030-03-01",
+            "EntProjTimeRecgIsBlkd": "",
+            "ProcessingStatus": "00",
+            "YY1_BillingRespProjEl_PTD": "",
+            "StaffedEmployee": [
+              {
+                "StaffedEmployee": "61161"
+              },
+              {
+                "StaffedEmployee": "61162"
+              }
+            ],
+            "StaffingCostCenter": {
+              "CostCenter": ""
+            }
+          },
+          {
+            "ParentProject": "S.02.102",
+            "ProjectElement": "S.02.102.4",
+            "ProjectElementDescription": "Time off personal Leave CO01",
+            "PlannedStartDate": "2020-03-01",
+            "PlannedEndDate": "2030-03-01",
+            "EntProjTimeRecgIsBlkd": "",
+            "ProcessingStatus": "00",
+            "YY1_BillingRespProjEl_PTD": "",
+            "StaffingCostCenter": {
+              "CostCenter": ""
+            },
+            "StaffedEmployee": [
+              {
+                "StaffedEmployee": "61161"
+              },
+              {
+                "StaffedEmployee": "61162"
+              }
+            ]
+          },
+          {
+            "ParentProject": "S.02.102",
+            "ProjectElement": "S.02.102.5",
+            "ProjectElementDescription": "Time off personal Leave CL01",
+            "PlannedStartDate": "2020-03-01",
+            "PlannedEndDate": "2030-03-01",
+            "EntProjTimeRecgIsBlkd": "",
+            "ProcessingStatus": "00",
+            "YY1_BillingRespProjEl_PTD": "",
+            "StaffingCostCenter": {
+              "CostCenter": ""
+            },
+            "StaffedEmployee": [
+              {
+                "StaffedEmployee": "61161"
+              },
+              {
+                "StaffedEmployee": "61162"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

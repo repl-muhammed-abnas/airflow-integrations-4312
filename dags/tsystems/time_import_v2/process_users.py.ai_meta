@@ -1,0 +1,66 @@
+{
+  "ai_lines": {
+    "100": "b42223acc9220409d7e5c32447d847d06925f16495b9577b8c660e1e298bc075",
+    "101": "7ddf242eb6882236c87610610b31e079a4baee6284e93c7cdf583e5f1ea338ea",
+    "102": "d1ab961ec2f4363925ee85fac2b16a039ba1528b5cac0f35c42f4c957629190a",
+    "335": "ae03c3f5ec35665e43a0e383f9281ec3746a1308032e776c4a8ea866e6203b38",
+    "336": "58c8f15906d818c71feb057e49b5bfc101123a9ef0b923a5714cb2a34a3f9060",
+    "337": "55af20a4c5775e69cc945a29b3aaccceb8216c3a25685c8b2abb7d9864c3164c",
+    "338": "04ddd8b7ba5c595b4f220945e1edd8eb07ecb25cfd062d1a63b1fcf5e441d7f3",
+    "339": "327b34d23327ab5aa5e050ae19338e85387742a7fdad4be59fe1c44e33c40bcd",
+    "340": "c0e8b575232e2effbcf5328aca11e09bafe5291f4db224663fb56aba295b508c",
+    "341": "d95a6ef980dcafc66b518b97a7531ca2d6fb29f1601f02ae2a4c07469ed21479",
+    "342": "1f31d1a8025c840f1ed0f6632e2c50d7fec40870fc9e51b8937f15893a7ecee5",
+    "345": "4cede9438229577a5162909d7ab703ac893acac8e46762bdec2e84ad46655add",
+    "346": "f30d208e631cf1d4416c7570ff01079b452e018ee9d35f14f8844a29986e75cf",
+    "347": "d51cb2409ab7ef81375aaf9d46e940f80e7022b4ec865b7df3acaa5e48b78873",
+    "351": "0cc1e8e63063925edf107811e614c7c952c415245c6c69b1b3ea713899f590e6",
+    "360": "9b5753f47593236d08f4d73aeb064969aefacd3207b29437472935a441722bbe",
+    "361": "85b8b5de162c43ce39452923741acecd392820693c3a77fb02db411a139c0ab2",
+    "405": "bf1eb0774eefd4c68a606c7b5c6ac996f07cc6a9e784190052b141ec65f6316e",
+    "406": "637b1c5161686065c59f82819be0aa4e0fc29c357ae1f94637006b46e4665669",
+    "407": "7028e30bdd698673fb24471b770f67b49194b06e97ea572c0812011fb5f650ae",
+    "41": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+    "51": "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+    "66": "3f77e4d400aeb219e335cb05210ea63ac66ac3c4303e2042f244a68975d5e44a",
+    "91": "db805b6986ae927c32e065af48208619f5d16e6a8a8506ebb1e5393cfc43086f",
+    "92": "e5dcba3b740fe228b045e68557780799cdf75c625442aa8d4c598f1bdf7f44b4",
+    "93": "6afe2632432cbc48456f1d1d2a7dcfec7ce42a14c8bcdfd30fae255f4d44d89e",
+    "95": "54bd9dec7790af7482fa20bbbfd62e4ba236743b06b5a8f3c098c668a57300d0",
+    "96": "d0fc4b6a9305377eef0dbad4d3b8189039598e8188ad73aa34bf7a35c74ca0d7",
+    "97": "0616dbe83715899d40745433c34f2780fd2fe0ea097c27fa825fd12aa31088b9",
+    "98": "6fcd85b380c1f7c4fdb25f5052117856e6700e0eee02caf29b993dc34daf609d",
+    "99": "82ab78a20a7d908f686daf3a6af3809ec8176156d7b0a9edf975eac36b2d5974"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 3,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-23T12:37:53.878Z",
+  "file_state": {
+    "file_sha256": "1ade4cf0d87be83024b7e63ff8a26ea5a44e6117efcabb0df36cfd2cdfaed40d",
+    "total_file_lines": 411,
+    "total_lines": 369
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "3795794b8a91d0e0b0ec5b88bc1f549734e2539fb7d470ec467960a5005f62f9",
+      "last_known_line": 326,
+      "removed_at": "2026-03-23T12:45:52.008Z"
+    }
+  ],
+  "source_file": "c:\\workspaces\\airflow-integrations\\dags\\tsystems\\time_import_v2\\process_users.py",
+  "stats": {
+    "ai_line_count": 31,
+    "ai_line_pct": 8.4,
+    "ai_lines_removed_or_modified": 1
+  },
+  "updated_at": "2026-03-23T12:46:02.046Z",
+  "version": 1
+}

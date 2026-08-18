@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook
+	xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+	xmlns:o="urn:schemas-microsoft-com:office:office"
+	xmlns:x="urn:schemas-microsoft-com:office:excel"
+	xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+	xmlns:html="http://www.w3.org/TR/REC-html40">
+	<Styles>
+		<Style ss:ID="s0">
+			<NumberFormat ss:Format="Short Date" />
+		</Style>
+	</Styles>
+	<Worksheet ss:Name="Import Reported Time Blocks">
+		<Table>
+			<Row>
+				<Cell ss:MergeAcross="1">
+					<Data ss:Type="String">Import Reported Time Blocks</Data>
+				</Cell>
+			</Row>
+			<Row>
+				<Cell>
+					<Data ss:Type="String">Area</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">All</Data>
+				</Cell>
+			</Row>
+			<Row>
+				<Cell>
+					<Data ss:Type="String">Restrictions</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Required</Data>
+				</Cell>
+			</Row>
+			<Row>
+				<Cell>
+					<Data ss:Type="String">Format</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Text</Data>
+				</Cell>
+			</Row>
+			<Row>
+				<Cell>
+					<Data ss:Type="String">Fields</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Header Key*</Data>
+				</Cell>
+			</Row>
+ 			{{ result('get_data') }} 
+			<Row />
+		</Table>
+		<WorksheetOptions
+			xmlns="urn:schemas-microsoft-com:office:excel">
+			<PageSetup>
+				<Layout x:Orientation="Portrait" />
+				<PageMargins />
+			</PageSetup>
+			<Print />
+		</WorksheetOptions>
+	</Worksheet>
+	<Worksheet ss:Name="Reported Time Block Data">
+		<Table>
+			<Row>
+				<Cell ss:MergeAcross="52">
+					<Data ss:Type="String">Reported Time Block Data</Data>
+				</Cell>
+			</Row>
+			<Row>
+				<Cell>
+					<Data ss:Type="String">Area</Data>
+				</Cell>
+				<Cell ss:MergeAcross="51">
+					<Data ss:Type="String">All</Data>
+				</Cell>
+			</Row>
+			<Row>
+				<Cell>
+					<Data ss:Type="String">Restrictions</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Required</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Required</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Required</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Optional</Data>
+				</Cell>
+			</Row>
+			<Row>
+				<Cell>
+					<Data ss:Type="String">Format</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Text</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Text</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Employee_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Worker_Time_Block_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Y/N</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Time_Code_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Project_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Project_Plan_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">YYYY-MM-DD</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Number (10,6)</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">DateTime</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">DateTime</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Clock_Event_Type</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Position_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Y/N</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Project_Worker_Role_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Number (10,6)</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Business_Unit_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Cost_Center_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Organization_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Organization_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Organization_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Organization_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Organization_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Organization_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Organization_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Organization_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Organization_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Organization_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_1_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_2_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_3_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_4_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_5_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_06_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_07_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_08_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_09_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_10_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_11_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_12_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_13_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_14_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom_Worktag_15_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Fund_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Gift_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Grant_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Job_Profile_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Location_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Program_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Organization_Reference_ID</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Text</Data>
+				</Cell>
+			</Row>
+			<Row>
+				<Cell>
+					<Data ss:Type="String">Fields</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Header Key</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Line Key</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Worker*</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Worker Time Block</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Delete Time Block</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Time Entry Code</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Project</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Project Task</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Date</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Quantity</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">In Date Time</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Out Date Time</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Out Reason</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Position+</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Do Not Bill</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Project Role</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Override Rate</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Business Unit</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Cost Center</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Organization 01</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Organization 02</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Organization 03</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Organization 04</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Organization 05</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Organization 06</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Organization 07</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Organization 08</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Organization 09</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Organization 10</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 01</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 02</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 03</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 04</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 05</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 06</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 07</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 08</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 09</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 10</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 11</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 12</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 13</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 14</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Custom Worktag 15</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Fund</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Gift</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Grant</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Job Profile</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Location</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Program</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Region</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">Comment</Data>
+				</Cell>
+			</Row>
+          {%- for record in dataset %}
+			<Row>
+				<Cell>
+					<Data ss:Type="String" />
+				</Cell>
+				<Cell>
+					<Data ss:Type="Number">{{ record.Header_Line|e }}</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="Number">{{ record.Line_Key|e }}</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">{{ record.Employee_ID|e }}</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String" />
+				</Cell>
+				<Cell>
+					<Data ss:Type="String" />
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">{{ record.Time_Entry_Code|e }}</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="String" />
+				</Cell>
+				<Cell>
+					<Data ss:Type="String" />
+				</Cell>
+				<Cell>
+					<Data ss:Type="String">{{ record.Date|e }}</Data>
+				</Cell>
+				<Cell>
+					<Data ss:Type="Number">{{ record.Hours|e }}</Data>
+				</Cell>
+			</Row>
+           {%- endfor %}
+		</Table>
+		<WorksheetOptions
+			xmlns="urn:schemas-microsoft-com:office:excel">
+			<PageSetup>
+				<Layout x:Orientation="Portrait" />
+				<PageMargins />
+			</PageSetup>
+			<Print />
+		</WorksheetOptions>
+	</Worksheet>
+</Workbook>

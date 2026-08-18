@@ -1,0 +1,40 @@
+[
+  {
+    "PersonWorkAgreement": "XX1234",
+    "CompanyCode": "US03",
+    "TimeSheetRecord": null,
+    "TimeSheetDate": "04/07/2025",
+    "TimeSheetOperation": null,
+    "ControllingArea": "TEST Control",
+    "ReceiverCostCenter": "US0301279A",
+    "ActivityType": "TXAN00",
+    "WBSElement": "TAX_Business Plan Assesment and Suppor ",
+    "WorkItem": " Implementing",
+    "BillingControlCategory": "NON_BILL",
+    "TimeSheetNote": "test for comments",
+    "RecordedHours": "8.00",
+    "HoursUnitOfMeasure": "H",
+    "TimeSheetWrkLocCode": "1007",
+    "TimeSheetStatus": "30",
+    "RepliconUniqueNum": "6fd888a2-21b2-4fc4-9438-aef6c4c60df2"
+  },
+  {
+    "PersonWorkAgreement": "XX1234",
+    "CompanyCode": "US03",
+    "TimeSheetRecord": null,
+    "TimeSheetDate": "04/08/2025",
+    "TimeSheetOperation": null,
+    "ControllingArea": "TEST Control",
+    "ReceiverCostCenter": "US0301279A",
+    "ActivityType": "TXAN00",
+    "WBSElement": "TAX_Business Plan Assesment and Suppor ",
+    "WorkItem": " Implementing",
+    "BillingControlCategory": "NON_BILL",
+    "TimeSheetNote": null,
+    "RecordedHours": "8.00",
+    "HoursUnitOfMeasure": "H",
+    "TimeSheetWrkLocCode": "1007",
+    "TimeSheetStatus": "30",
+    "RepliconUniqueNum": "32bbf863-ed49-46ff-9152-7ff8087c090a"
+  }
+]

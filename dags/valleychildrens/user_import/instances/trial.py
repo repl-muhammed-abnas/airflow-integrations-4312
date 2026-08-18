@@ -1,0 +1,38 @@
+from valleychildrens.user_import.config import *
+from valleychildrens.user_import.mappers.user_import_master_mapper import valleychildrens_user_import_master_mapper_prod
+from valleychildrens.user_import.mappers.activity_department_mapper import valleychildrens_activity_department_mapper_prod
+from valleychildrens.user_import.mappers.supervisor_check_mapper import valleychildrens_supervisor_check
+from valleychildrens.user_import.mappers.time_off_mapper import valleychildrens_time_off_mapper
+
+instance = "trial"
+environment = "pre-production"
+company_key = "ValleyChildrensafmig"
+replicon_conn_id = "ValleyChildrensafmig_replicon_userimport"
+sftp_conn_id = "target_tmf_sftp"
+input_file_directory = '/Production/Inbound/User Interface/Input'
+log_filepath = '/Production/Inbound/User Interface/Logs'
+archive_filepath = '/Production/Inbound/User Interface/Archive'
+reference_directory = '/Production/Inbound/User Interface/Reference'
+reference_filename = 'VCH_reference.csv'
+reference_filepath = f'{reference_directory}/{reference_filename}'
+tenant_email = '{{ var.value.dagrun_internal_testing_email }}'
+internal_logs_email = '{{ var.value.dagrun_internal_testing_email }}'
+alert_email = '{{ var.value.dagrun_failure_alert_email }}'
+
+master_dagid = f"valleychildrens_user_import_master_{instance}_v1"
+process_add_user_dagid = f"valleychildrens_user_import_process_add_user_child_{instance}_v1"
+process_user_update_dagid = f"valleychildrens_user_import_process_user_update_child_{instance}_v1"
+process_supervisor_assignment_dagid = f"valleychildrens_user_import_process_supervisor_assignment_child_{instance}_v1"
+process_update_user_time_off_assign_dagid = f"valleychildrens_user_import_process_update_user_time_off_assign_child_{instance}_v1"
+process_rehire_update_user_time_off_assign_dagid = f"valleychildrens_user_import_process_rehire_update_user_time_off_assign_child_{instance}_v1"
+process_timeoff_add_new_user_dagid = f"valleychildrens_user_import_process_timeoff_add_new_user_child_{instance}_v1"
+process_time_off_policy_add_pto_dagid = f"valleychildrens_user_import_process_time_off_policy_add_pto_child_{instance}_v1"
+process_time_off_policy_update_on_fte_change_dagid = f"valleychildrens_user_import_process_time_off_policy_update_on_fte_change_child_{instance}_v1"
+process_timeoff_policy_payoutbalance_dagid = f"valleychildrens_user_import_process_timeoff_policy_payoutbalance_child_{instance}_v1"
+process_log_generation_dagid = f"valleychildrens_user_import_process_log_generation_child_{instance}_v1"
+can_run_batch_task_var_name = f"valleychildrens_user_import_can_run_batch_task_{instance}"
+
+USER_IMPORT_MAPPER = valleychildrens_user_import_master_mapper_prod
+ACTIVITY_DEPARTMENT_MAPPER = valleychildrens_activity_department_mapper_prod
+SUPERVISOR_CHECK_MAPPER = valleychildrens_supervisor_check
+TIME_OFF_MAPPER = valleychildrens_time_off_mapper

@@ -1,0 +1,192 @@
+{
+  "ai_lines": {
+    "100": "d16f81bc7680639ccd609e1ef1bccce47dd0f0f98424b14b08b7e3f336988546",
+    "101": "7a20c122d51232a3b084b9d456c1219e190d805abb9450c4ce6c11c03e8264d9",
+    "102": "d0ed3e192847c302ffcc163aff94789b0ab5d6088390ec604daec4c7e8ab898c",
+    "103": "44005d86d9ca7ab529989f3f0a4925a667893c12c7ef8b4a7457d3ffd275776f",
+    "104": "8cd63084783719cf5c97ba96342f28f93a33b6d35ddb230a3245df042f1d43ba",
+    "105": "55ebf423a240dd03063fdd082be36a27c8d4229fb15ca4cb35cf35d943486066",
+    "106": "447da6060f0474735072d0e5b39c2c9488c7c5239aaad7b230da80315e37500b",
+    "107": "e5a921247a3f96cc25552562c22e20fb06adc178ece43fb2feaec06fbed4e6df",
+    "108": "4c447b28d203730ba0d3686d9eeb72f492bd8cae3b8190b51a907f05e9bb33c7",
+    "109": "1d06b551ac14618d0c30693ae556a0be8983d587013e567d52ae67a84249c8ea",
+    "110": "86afdf70a95436e883aa7fc5c06a2ab083719054438f1218d15ebdaf287b4bac",
+    "111": "55ebf423a240dd03063fdd082be36a27c8d4229fb15ca4cb35cf35d943486066",
+    "112": "70cfe51e6bd5c495c9872ed7f81ecc96772a6a2a9b441a773306efda1e4fb892",
+    "113": "28d86778615f6af47bb1bc4f40face756749768e5111f114cfa234a5060c25af",
+    "210": "0ce439d656f58838f55dbf8ed0c70c2090909c603a9f6f93f4df3f24bb245094",
+    "211": "355f5163964deb26e2955cc2436594fa44758e47a11e6bd374c565e9cc5ecc65",
+    "212": "dbff4160b785d6f21f4c12b5861d30e237c158c58a4d94bb16d352a77be47167",
+    "213": "9acc9e76df21ba47c53564bfc8f34364f7dab570692b1cc7b525622d634f1774",
+    "216": "d70b148e7eed3189c882e7ebeeb519a6a782da320ff2a5b846d40a0370defa34",
+    "299": "e01e20b23a894c46bcfd005d0fa04b57e80764a9fe261cd72e4e6b2f72a8aea4",
+    "300": "5c8c7ea8fea9f5a71485e66a28786377266810a1473a45b185e8fa00dfe1aa73",
+    "301": "c946505e7268b7d7a0c5502a604a90a535107917bb0359252d428b904896e741",
+    "302": "805ff45ea940bb09ebb4befb6fa3f7cf0d9929e16b4b32bfb171ad0a0c9429d8",
+    "305": "f48e74d115f68aca7a23aabb7dcbe1bcac97122a479eb6fed64885df4f5d079e",
+    "309": "4f146964f96699f450244eb94790eaf1ac7a60551cec3bff884ffc04bf3c28cc",
+    "311": "0d229ed140e5750399f99abd5f2fbc65cf6aa61328da80d4a77cfebe5af905c1",
+    "312": "e01e20b23a894c46bcfd005d0fa04b57e80764a9fe261cd72e4e6b2f72a8aea4",
+    "313": "5c8c7ea8fea9f5a71485e66a28786377266810a1473a45b185e8fa00dfe1aa73",
+    "314": "c946505e7268b7d7a0c5502a604a90a535107917bb0359252d428b904896e741",
+    "315": "805ff45ea940bb09ebb4befb6fa3f7cf0d9929e16b4b32bfb171ad0a0c9429d8",
+    "316": "24f7937ccb32d25fe3f53e73e944f5c4ce337676611604dcb8c85d2175669b95",
+    "317": "320b6803623ed9716a6d7abd985aadabb7044720320e815bf83b418968d8d7de",
+    "318": "7046b5cf40de4bb1e185601dcb314d9a7c50abc7f70fb7864e3e1930859e9cc5",
+    "319": "f48e74d115f68aca7a23aabb7dcbe1bcac97122a479eb6fed64885df4f5d079e",
+    "321": "5c8c7ea8fea9f5a71485e66a28786377266810a1473a45b185e8fa00dfe1aa73",
+    "322": "c946505e7268b7d7a0c5502a604a90a535107917bb0359252d428b904896e741",
+    "323": "805ff45ea940bb09ebb4befb6fa3f7cf0d9929e16b4b32bfb171ad0a0c9429d8",
+    "324": "24f7937ccb32d25fe3f53e73e944f5c4ce337676611604dcb8c85d2175669b95",
+    "325": "7046b5cf40de4bb1e185601dcb314d9a7c50abc7f70fb7864e3e1930859e9cc5",
+    "327": "d33fa821478c87319d2f22177eec15512357011103d68b1328f37613366e447a",
+    "332": "24f7937ccb32d25fe3f53e73e944f5c4ce337676611604dcb8c85d2175669b95",
+    "335": "1dca6f8d31e853cb5a69d4eb937179c4c256b5fb563d103d3526a7202c0e3809",
+    "50": "0bf0a088a649c22dc9b184a9519d1ed05a4389bc2c3c5f1b6c8c857c3fb84ba1",
+    "76": "b8d1918176757f7935444fcf43fbbdd5f055a65dc3bfbdc1dd1f925edd564a5b",
+    "97": "ad81244e40268c6eb22cc6e7d488a44295ac9294a649eb8051f9e7b695c4180d",
+    "98": "cf31b3a90cd61bf185ca706971d3ac2b20fe27987d1e2b5d82df95554d56b63f",
+    "99": "9c9a8ad94678044e943bc7a8aa4b3bd63b87e550ed7f89c678de070f4926e606"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 4,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-22T09:27:56.853Z",
+  "file_state": {
+    "file_sha256": "ae155095664060c0209de12bffe6c7c201c9db21d4a9e1ae01735c57ef447f90",
+    "total_file_lines": 347,
+    "total_lines": 317
+  },
+  "removed_or_modified_lines": [
+    {
+      "hash": "56a1c09fede63f5c0419a8370db66ba40024bb9a06658bfe517811d617a6671d",
+      "last_known_line": 189,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "df1a57962e713fee01bb187ff139709b0ae68c774a9bc04bdd85929f302bb405",
+      "last_known_line": 190,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "4c1f227dc26e2f680f829cd67bef9056a43fe9eb6740b11381dd5f0a8045b035",
+      "last_known_line": 267,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "d0cb242433b993c5ef23dac50d6ee6d0bedadeb7d9e25a337dc988f349871af5",
+      "last_known_line": 268,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "0b9c751c89ee667d05cb9d6e9cd9e3edce96f960eba2d4e948adebd876530c11",
+      "last_known_line": 269,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "87a36513b2f17e90579f50770173e1ddd08d1562d871f7afee25321b67c218a0",
+      "last_known_line": 270,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "e0f811fb8a5075ec2eeb80c9936d9d8c69e1754eccfdaad5433f035aa599543d",
+      "last_known_line": 271,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "bed88e8e799c776c6d3b87336d4eb8cb051fc81c5c403bf10a3305ebabad8725",
+      "last_known_line": 272,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "11bdf4484acdb5366f542a4429ce621ae79e01edf9f9c3b12c086f76dc9288c2",
+      "last_known_line": 273,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "c851b69f3fb235b3d0e86c2c3f3d804d889563eb56d40d4db05333d7f381ceaa",
+      "last_known_line": 274,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "168d4989a206bb28146bf327ce4699c81d4f1dece7d4634d4d01ff5841364f6b",
+      "last_known_line": 289,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "aee717cf39494457b0677b6a3d3293dadd450b056b817ca5d3d7c97c24d4a314",
+      "last_known_line": 290,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "48fd5345e501439a06077d53fc59c47a6a9b46774daf62bc416d17503531ff21",
+      "last_known_line": 291,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "50fe3e9f3ac6beb68abeb4ab33477d1f5f68ef800386304e61df8b866381a196",
+      "last_known_line": 292,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "17077c38b3953117fffd1eef76c0c49268ba350483e89b9bfaffc5e352bd21b3",
+      "last_known_line": 293,
+      "removed_at": "2026-04-24T14:52:06.952Z"
+    },
+    {
+      "hash": "7dc4027019ac6c3d410dd5d0d07a185aa3ea0c6c5a4aa77255be1c367f640098",
+      "last_known_line": 189,
+      "removed_at": "2026-04-24T17:05:41.784Z"
+    },
+    {
+      "hash": "d4ad218ce8bd0137597051d178880c3bc0c6ae8ec1eefd8795ccaffc36f56581",
+      "last_known_line": 190,
+      "removed_at": "2026-04-24T17:05:41.784Z"
+    },
+    {
+      "hash": "de8d3a70bae0d31e1873282664ba1f67a70eee67776dcec2ed97d851798284f1",
+      "last_known_line": 191,
+      "removed_at": "2026-04-24T17:05:41.784Z"
+    },
+    {
+      "hash": "173b39daa0c823ab830940b5225dc1633818f3c896ed10de4d53920d3ff92db4",
+      "last_known_line": 192,
+      "removed_at": "2026-04-24T17:05:41.784Z"
+    },
+    {
+      "hash": "a517b379f7e8af52c8363ea95f792995d78b997274db279a5cb8797dcde510a3",
+      "last_known_line": 193,
+      "removed_at": "2026-04-24T17:05:41.784Z"
+    },
+    {
+      "hash": "9059b4b221d37bef6742be151c4d883a8f5f0531802c6c2813a3feeb18f7a2e1",
+      "last_known_line": 194,
+      "removed_at": "2026-04-24T17:05:41.784Z"
+    },
+    {
+      "hash": "201fd5985cb25a744297cb1c3271067c28ff1e6f756924598f39a82cb96d8683",
+      "last_known_line": 195,
+      "removed_at": "2026-04-24T17:05:41.784Z"
+    },
+    {
+      "hash": "811dedeec5525295447a3f9dccb5d1be4918c483112f24cb1304115794e6bf21",
+      "last_known_line": 205,
+      "removed_at": "2026-04-24T17:05:41.784Z"
+    }
+  ],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\tsystems\\project_import_file_based_v4\\utils\\request_payload.py",
+  "stats": {
+    "ai_line_count": 47,
+    "ai_line_pct": 14.83,
+    "ai_lines_removed_or_modified": 23
+  },
+  "updated_at": "2026-04-24T17:05:41.784Z",
+  "version": 1
+}

@@ -1,0 +1,50 @@
+<p>
+    <strong>This is an automated mail, please don't reply.</strong>
+    <br />
+    <br />
+    <br />
+    There are {{ result('dagrun_query_result').active_dags_count }} DAG(s) active.
+    <br />
+    <br />
+    <table cellpadding="5" cellspacing="0" style="border:1px solid Silver; font-size:small" border="1">
+        <thead>
+            <tr align="center">
+                <th bgcolor="LightBlue">Sl No</th>
+                <th bgcolor="LightBlue">DAG ID</th>
+                <th bgcolor="LightBlue">Max Active Runs</th>
+                <th bgcolor="LightBlue">Dag Run Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%- for item in result('dagrun_query_result').dags %}
+            <tr>
+                <td bgcolor="LightBlue">{{ loop.index }}</td>
+                <td>{{ item.dag_id }}</td>
+                <td>{{ item.max_active_runs }}</td>
+                <td>{{ item.dag_run_count }}</td>
+            </tr>
+            {%- endfor %}
+            <td></td>
+            <th align="right">Total</th>
+            <td>{{ result('dagrun_query_result').total_max_active_runs }}</td>
+            <td>{{ result('dagrun_query_result').total_dag_run_count }}</td>
+        </tbody>
+    </table>
+    <br />
+    <br />
+    Please click on the below link to download the report in csv format.
+    <br />
+    <a href="{{ result('generate_download_link') }}">Download Report</a>
+</p>
+<p>
+    <em>
+        <span style="font-size: 9pt">
+            The download link is valid for 4 days.
+        </span>
+    </em>
+</p>
+<p>
+    Regards,
+    <br />
+    Deltek Inc
+</p>

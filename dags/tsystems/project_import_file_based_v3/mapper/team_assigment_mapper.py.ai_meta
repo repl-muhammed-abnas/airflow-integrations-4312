@@ -1,0 +1,58 @@
+{
+  "ai_lines": {
+    "10": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "105": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "109": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "116": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "120": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "17": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "21": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "28": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "32": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "385": "26f5d921400d194f0f92601539f415afe836ba7e5cf742534e4a2d80b02ff1d6",
+    "386": "a21853e167a0a961e7627d22f0a264dcc3084c1556b373eca37feabd7cfda612",
+    "387": "0965a83defa11218ae02a8ac2e90eea31455ba2e59458a91e25fcba58fc4a915",
+    "389": "55ebf423a240dd03063fdd082be36a27c8d4229fb15ca4cb35cf35d943486066",
+    "39": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "390": "a96647719a2bde78f9a79a529f9194398e9d7772d4825bbeab0ee45544365e11",
+    "391": "33f7d41c641bcc7b4288b66f6d48978e9bbbcf114c0cf044c6c89992871d4ae5",
+    "392": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "43": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "50": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "54": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "6": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "61": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "65": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "72": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "76": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "83": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "87": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "94": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24",
+    "98": "a81e04c6a99dfc85c378e1f41abff50b7efebb1a28ad50590ad5d49ddf2e1d24"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 2,
+    "last_tool": "Edit",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-03-18T14:06:24.180Z",
+  "file_state": {
+    "file_sha256": "82380076b44fe622f570837a98488c89d9be9f5f1358182aabe853d73071d3c6",
+    "total_file_lines": 886,
+    "total_lines": 886
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\tsystems\\project_import_file_based_v3\\mapper\\team_assigment_mapper.py",
+  "stats": {
+    "ai_line_count": 29,
+    "ai_line_pct": 3.27,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-03-18T14:06:40.404Z",
+  "version": 1
+}

@@ -1,0 +1,13 @@
+<p>Hi {{ result('get_supervisor_details').firstname }},<br /> <br />
+    <p>
+        Below mentioned reportee of yours  is being terminated, kindly ensure to approve the timesheets and time off of the reportee on high priority.
+    </p>
+      <ul>
+    <li>Employee ID    : {{ dag_run.conf.empl_id }}</li>
+    <li>Employees Name : {{ dag_run.conf.display_name }}</li>
+    <li>End Date       : {{ dag_run.conf.enddate }}</li>
+</ul>
+<br />
+<p><strong>This is an automated mail from Deltek Integration, Please do not reply to this email.</strong><br /> <br />
+  Regards,<br />
+  Deltek Inc</p>

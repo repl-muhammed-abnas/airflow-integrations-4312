@@ -1,0 +1,22 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The User Import USA
+  in Replicon is {{ " " }}
+  {%- set has_errors = result("format_logs", key="error_record_count") > 0 -%}
+  {%- if has_errors -%}
+  completed with errors
+  {%- else -%}
+  {%- if result("format_logs", key="exception_record_count") > 0 -%}
+  completed with exceptions
+  {%- else -%}
+  completed successfully
+  {%- endif -%}
+  {%- endif -%}
+  {{ " on " + current_time_in_specified_tz() }}. Please find the log file details below for reference: <br /> <br />
+  File path: {{ params.log_filepath }}<br />
+  File name: {{ dag_run.conf.log_filename }}<br />
+  Please click on the below link to download the logs and review. <br /> <br /><a
+    href="{{result('generate_downloadable_link')}}">Download log</a></p>
+<p>
+  {%- if has_errors -%}
+  {%- endif -%}
+  For any queries, please contact our support team at <a
+    href="https://support.deltek.com/">https://support.deltek.com/</a> <br /><br />Regards, <br />Deltek Inc.</p>

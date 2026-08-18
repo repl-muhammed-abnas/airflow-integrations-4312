@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Israel PUF mapper - Ma'am compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["Peppol BIS 3.0", "Israeli VAT"]
+  },
+
+  "country": {
+    "code": "IL",
+    "name": "Israel",
+    "currency": "ILS",
+    "language": "he"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 18.0,
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Standard rate",
+      "Z": "Zero rated",
+      "E": "Exempt"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "9954",
+    "buyer_endpoint_scheme": "9954",
+    "vat_scheme_id": "9954",
+    "company_scheme_id": "9954",
+    "vat_prefix": "IL",
+    "scheme_mappings": {
+      "vat_number": "9954",
+      "hp_number": "IL:HP",
+      "gln": "0088"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": ["IL:HP"],
+    "registration_data": {
+      "hp_number": {
+        "id_type": "IL:HP",
+        "description": "Authorized Dealer Number (Osek Murshe)"
+      }
+    }
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^IL[0-9]{9}$",
+    "hp_pattern": "^[0-9]{9}$",
+    "postal_code_pattern": "^[0-9]{7}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Net 30 days",
+    "contact_department": "Accounting Department"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false
+  },
+
+  "translations": {
+    "invoice": "Hashbon Mas",
+    "credit_note": "Hashbon Zikui",
+    "total": "Sach Hakol",
+    "vat": "Ma'am"
+  }
+}

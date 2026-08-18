@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Sweden PUF mapper - MOMS compliant",
+    "inherits": "_base.json",
+    "last_updated": "2026-01-18",
+    "compliance": ["EN16931", "Peppol BIS 3.0", "Swedish VAT", "Svefaktura"]
+  },
+
+  "country": {
+    "code": "SE",
+    "name": "Sweden",
+    "currency": "SEK",
+    "language": "sv"
+  },
+
+  "tax_system": {
+    "type": "VAT",
+    "scheme_id": "VAT",
+    "rates": {
+      "standard": 25.0,
+      "reduced": [6.0, 12.0],
+      "zero": 0.0
+    },
+    "tax_categories": {
+      "S": "Normalskattesats",
+      "AA": "Reducerad skattesats",
+      "Z": "Nollskattesats",
+      "E": "Skattefri",
+      "AE": "Omvand skattskyldighet"
+    }
+  },
+
+  "identifiers": {
+    "seller_endpoint_scheme": "0007",
+    "buyer_endpoint_scheme": "0007",
+    "vat_scheme_id": "9955",
+    "company_scheme_id": "0007",
+    "vat_prefix": "SE",
+    "scheme_mappings": {
+      "vat_number": "9955",
+      "org_number": "0007",
+      "gln": "0088",
+      "bankgiro": "SE:BANKGIRO",
+      "plusgiro": "SE:PLUSGIRO"
+    }
+  },
+
+  "extensions": {
+    "required": [],
+    "optional": []
+  },
+
+  "validation_rules": {
+    "vat_number_pattern": "^SE[0-9]{12}$",
+    "org_number_pattern": "^[0-9]{6}-[0-9]{4}$",
+    "postal_code_pattern": "^[0-9]{3}\\s?[0-9]{2}$",
+    "iban_pattern": "^SE[0-9]{22}$",
+    "required_fields": ["invoice_number", "issue_date", "currency_code", "seller_vat_number"]
+  },
+
+  "defaults": {
+    "payment_terms": "Betalningsvillkor 30 dagar netto",
+    "contact_department": "Ekonomiavdelningen"
+  },
+
+  "special_rules": {
+    "requires_issue_time": false,
+    "requires_duty_stamp": false,
+    "requires_fiscal_code": false
+  },
+
+  "translations": {
+    "invoice": "Faktura",
+    "credit_note": "Kreditnota",
+    "total": "Totalt",
+    "vat": "Moms"
+  }
+}

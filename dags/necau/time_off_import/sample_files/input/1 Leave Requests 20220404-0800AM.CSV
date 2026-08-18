@@ -1,0 +1,3 @@
+detnumber,detsurname,detprefnm,lphlap,blank,lapkey,blank,blank,lapseq,laptypecd,laptypecd.trn,lapstart,lapend,lapworkflow.trn,lapdaytake,laphrstake
+Staff Member,Surname,Preferred Name,Form Code,Form Code Desc,LAP Workflow Key,Creation Date,Creation Time,Seq No.,Leave Type,Leave Type Desc,Start Date,End Date,Status,Days Taken,Hours Taken
+"82598","Wood","Matt","LAP","","PERS2806202228062022","","",1,"PERS","Personal Leave_test",28/06/2022,28/06/2022,"Requested",0.73684211,5.60000004

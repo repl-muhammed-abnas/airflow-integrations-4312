@@ -1,0 +1,191 @@
+{
+    "id": "186a36508953af01",
+    "threadId": "186a36508953af01",
+    "labelIds": [
+      "Label_925063762434052355",
+      "IMPORTANT",
+      "CATEGORY_PERSONAL",
+      "INBOX"
+    ],
+    "snippet": "",
+    "payload": {
+      "partId": "",
+      "mimeType": "multipart/mixed",
+      "filename": "",
+      "headers": [
+        {
+          "name": "Delivered-To",
+          "value": "testerpig69@gmail.com"
+        },
+        {
+          "name": "Received",
+          "value": "by 2002:a02:334f:0:0:0:0:0 with SMTP id k15csp4837400jak;        Thu, 2 Mar 2023 09:35:53 -0800 (PST)"
+        },
+        {
+          "name": "X-Received",
+          "value": "by 2002:a2e:7a04:0:b0:295:a313:1365 with SMTP id v4-20020a2e7a04000000b00295a3131365mr3164367ljc.3.1677778552876;        Thu, 02 Mar 2023 09:35:52 -0800 (PST)"
+        },
+        {
+          "name": "ARC-Seal",
+          "value": "i=1; a=rsa-sha256; t=1677778552; cv=none;        d=google.com; s=arc-20160816;        b=oTogkhSCbzkCriJ0z+oQSJA6en3x2tR1ylvSuxRTaIHhd8s8YA3XfS9jT+5PbArjtR         7ofNMtICq3dhKJcQiLate/aWuR+C+bP7wwm7Sq8oi1fnGea/2jftOXxZkfTfnUfSfz3i         QWoiXPQv+ez0UN/ZUQ2XQRKCHpI/YUMu+eHrW3arFVgVhnTNgvSvpMwYt2+sDA/LYdXH         7+Hd12y2yiFdxbxXE0I+1L3HDiXI28hNsQBfy7ORI5gBmKorCZWSTTW5swzEaRFISw1B         n4ENWYdMPjOJvWfFghNdV4gM+XW9gazo52e8qIn5MW/G8iI2b8ttIhQolekWENSbUnN/         eADw=="
+        },
+        {
+          "name": "ARC-Message-Signature",
+          "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;        h=to:subject:message-id:date:from:mime-version:dkim-signature;        bh=GrBr9bzGDpMUG1JsGq91rrAFzuliAHwA0EFmhSwv+A8=;        b=SJ3DI+Hm8RwJHsUDKZptuNn5HItUz05PyalnZHATE6xnNs6fBZVyX4cw9aST2OPWQh         qBSlZyMjlEjY3lnoLQlqIk76ub5DBGDuD/6ernEF1fzoJZ52idzt/rX5ClHS6nkCVE83         XLAQ/KpWxLLSYdVdVFA0wQ3vXKHMJjWmjWl/FDPBN7s2RW5z5UeR4zE4jm13Mn0SxWc7         vhCZRMHcldi0fgfXUWvGY8xt9hmhoMgquJrCjfP66Ue57XHCE+sDDxJWXrheExKvJ2Qn         FcPwUwrONcmMCecpX/kxkAXr5k+1JOtco7fC/+loqivC6oC5n/0GXwEGDACWnBNn+FIk         2PtQ=="
+        },
+        {
+          "name": "ARC-Authentication-Results",
+          "value": "i=1; mx.google.com;       dkim=pass header.i=@gmail.com header.s=20210112 header.b=NPJmKXu4;       spf=pass (google.com: domain of justsmurf91@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=justsmurf91@gmail.com;       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com"
+        },
+        {
+          "name": "Return-Path",
+          "value": "<justsmurf91@gmail.com>"
+        },
+        {
+          "name": "Received",
+          "value": "from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])        by mx.google.com with SMTPS id g18-20020a2eb0d2000000b00295b16c6eb6sor5327302ljl.76.2023.03.02.09.35.52        for <testerpig69@gmail.com>        (Google Transport Security);        Thu, 02 Mar 2023 09:35:52 -0800 (PST)"
+        },
+        {
+          "name": "Received-SPF",
+          "value": "pass (google.com: domain of justsmurf91@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;"
+        },
+        {
+          "name": "Authentication-Results",
+          "value": "mx.google.com;       dkim=pass header.i=@gmail.com header.s=20210112 header.b=NPJmKXu4;       spf=pass (google.com: domain of justsmurf91@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=justsmurf91@gmail.com;       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com"
+        },
+        {
+          "name": "DKIM-Signature",
+          "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=gmail.com; s=20210112;        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject         :date:message-id:reply-to;        bh=GrBr9bzGDpMUG1JsGq91rrAFzuliAHwA0EFmhSwv+A8=;        b=NPJmKXu4WlYAPHzK7fDzoXPLQJKVWmXvGT1PGHtCJX2nox7PvimCZJ7BK2eBsPGM9Z         BtbXVRLauiRg/ZJAl2n+xb6Wer0MthCIzHhIBJcBkusDQBmcs9b0ueuOxoOKoRQXzDFO         Zsg+mNYwk7k0k1Pe1Ub5AltWi567xE4x06wT7x1lxslckAU7mKa+lw5EqFBSqxFS0NHs         /frxEERDWS9Z4lnphyBhfGldgxLfmVECalI/VDa1p9LjmfDgl/EsdIQ/zcpXl7KDLSsN         6StFo+TuQtWztd0AAzZq4EgAZSN8UypPm2iPja5VGdWZcugdCHS0w1gyQw9BHtOtOWXp         ++YA=="
+        },
+        {
+          "name": "X-Google-DKIM-Signature",
+          "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=1e100.net; s=20210112;        h=to:subject:message-id:date:from:mime-version:x-gm-message-state         :from:to:cc:subject:date:message-id:reply-to;        bh=GrBr9bzGDpMUG1JsGq91rrAFzuliAHwA0EFmhSwv+A8=;        b=gGI1VAZ3jd4EU6f8AbmKIDwc1PQwH80qRic+H/d5qUT6GfvV0oaG0x9poIZueHfTKp         XRkvZEG0uB1zAL/PAFZfycV2MLQoH5hlCUVdf1VZgFDYEnDKO+58KgNwBgHIM1bXCqc5         NOP0O9fvuaI2xhvZSohhWLumGjeMSUufj/XsDaRrWXeyR02hqP5OKBT+DFF59MoYoV/3         hv3TjO4qPoA/xWexHW+bF90I26DIEW1xgDEkQo/1FNm+xnvHMSbeRMYCsaK15Fcbt7GJ         3znUR7ZuGslCahucLL+W+i/HotXsG9xzK0xhUui25Xfn+fT3SLIeVV4zD2L67oOFdLjZ         dKyw=="
+        },
+        {
+          "name": "X-Gm-Message-State",
+          "value": "AO0yUKWzxc2jj5uASWhvnF6nquMxJf8Z872oLBvj0fJC9uShChkGtOws RIKgMFsSVQPciyIgPrrnm67tKPi8IwtQUy3uC7AJEzsV"
+        },
+        {
+          "name": "X-Google-Smtp-Source",
+          "value": "AK7set95RJYIgzZoU3tjOleu9WjZqkLTRra2aNzBcWnJlF8ezi5KttBVmsJEDSqYAn+J7YxtTrvbitDbdp5ebzYmNSY="
+        },
+        {
+          "name": "X-Received",
+          "value": "by 2002:a2e:a369:0:b0:293:53bd:fc9 with SMTP id i9-20020a2ea369000000b0029353bd0fc9mr3535952ljn.7.1677778551643; Thu, 02 Mar 2023 09:35:51 -0800 (PST)"
+        },
+        {
+          "name": "MIME-Version",
+          "value": "1.0"
+        },
+        {
+          "name": "From",
+          "value": "Just Smurf <justsmurf91@gmail.com>"
+        },
+        {
+          "name": "Date",
+          "value": "Thu, 2 Mar 2023 23:05:37 +0530"
+        },
+        {
+          "name": "Message-ID",
+          "value": "<CAKgcnawEpV5eiwhXBgu=FMu1v24VirEK-XGdE3t+rWrUGDM7nA@mail.gmail.com>"
+        },
+        {
+          "name": "Subject",
+          "value": "New CSV file"
+        },
+        {
+          "name": "To",
+          "value": "testerpig69@gmail.com"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/mixed; boundary=\"00000000000097d67905f5ee421a\""
+        }
+      ],
+      "body": {
+        "size": 0
+      },
+      "parts": [
+        {
+          "partId": "0",
+          "mimeType": "multipart/alternative",
+          "filename": "",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "multipart/alternative; boundary=\"00000000000097d67805f5ee4218\""
+            }
+          ],
+          "body": {
+            "size": 0
+          },
+          "parts": [
+            {
+              "partId": "0.0",
+              "mimeType": "text/plain",
+              "filename": "",
+              "headers": [
+                {
+                  "name": "Content-Type",
+                  "value": "text/plain; charset=\"UTF-8\""
+                }
+              ],
+              "body": {
+                "size": 2,
+                "data": "DQo="
+              }
+            },
+            {
+              "partId": "0.1",
+              "mimeType": "text/html",
+              "filename": "",
+              "headers": [
+                {
+                  "name": "Content-Type",
+                  "value": "text/html; charset=\"UTF-8\""
+                }
+              ],
+              "body": {
+                "size": 24,
+                "data": "PGRpdiBkaXI9ImF1dG8iPjwvZGl2Pg0K"
+              }
+            }
+          ]
+        },
+        {
+          "partId": "1",
+          "mimeType": "text/csv",
+          "filename": "addresses.csv",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "text/csv; charset=\"US-ASCII\"; name=\"addresses.csv\""
+            },
+            {
+              "name": "Content-Disposition",
+              "value": "attachment; filename=\"addresses.csv\""
+            },
+            {
+              "name": "Content-Transfer-Encoding",
+              "value": "base64"
+            },
+            {
+              "name": "Content-ID",
+              "value": "<186a364c41cf26c45ba1>"
+            },
+            {
+              "name": "X-Attachment-Id",
+              "value": "186a364c41cf26c45ba1"
+            }
+          ],
+          "body": {
+            "attachmentId": "ANGjdJ-_R-YR3Wbhv6FJcessuCahbHjOvy6WThaSlzLZtkidGjCYo8d5vs6YGhspX47BC8TVUzdclxJnvBThdpVTlw_9iIxaJQf5gDempW-Q9IA4G8s-vl7JHJfnw_aelES808tuIz3tMsKFjgtyantqkqW0SkaJxjzI7wJKNjTdZckSQHotoAeuE_dIOMC3wqEHbEXLFSJTqly2WQ3WWDrbv0UDG84MbZ_2SLos75InM4_DGjB4K7Yawj3ouVCUdiwratnSP5BcHRCshWL_iaZgJOZh-jyxRn1-W58sLIQCm0YKXTeAeSAJgWtH1PuY_goodR4EbX_woKYWultzJQyVD4ZaTG1lAGeJhVXGby6ulTA9K0BZJ78C0mZIjKaMKpdnxSRJF8YMNkUu8Ass",
+            "size": 328
+          }
+        }
+      ]
+    },
+    "sizeEstimate": 5795,
+    "historyId": "2181",
+    "internalDate": "1677778537000"
+  }

@@ -1,0 +1,40 @@
+{
+  "ai_lines": {
+    "1": "e6a93f9e21c4e1cd994958ed0c777d63882b41ab8bb4f241f10468803b88086e",
+    "11": "44fcc2469a2bfdb012873f9deef3ac411c32a5df414520592511d3adff17ad30",
+    "13": "5c4402d43744766409e1e5ac95b82b39fd7787587852d80f034de6298292aa4a",
+    "15": "e0e9ece9b256a7b6868383cd62fe071235a3892789126583836d6bf3cbb0f47f",
+    "16": "e233ffa2dc7ee650b76d6ef1576e7361d8759beb04846f5a4b461c8d28cd3a2e",
+    "17": "a1df853076508190fa32e2524f88ec6bce76ffc29ca42c6977684feba95fd901",
+    "19": "01e4850202ea69b479905296a3bf30555c2d6a82de9c2334b106c64733b35c15",
+    "3": "f9e23d0dae3c536c2f9cdf7a20785646fdebd72b252c22018830dd30e87d6b44",
+    "5": "d49dac9b9fac4463dd07896c232fa77a499821a843577d046ec98505801f370d",
+    "7": "9dca8fbe932e1957bacd84cdbce5a00997cc2b0ac512046cf9850c9e53c3bf75",
+    "9": "5dae6564feda75eeee28afb96cebeeaf7e2d3c36af825b009d67a5ba990269b9"
+  },
+  "algo": "sha256",
+  "attribution": {
+    "event_count": 1,
+    "last_tool": "Write",
+    "tool": "claude",
+    "tracked_tools": [
+      "Write",
+      "Edit"
+    ]
+  },
+  "created_at": "2026-04-08T15:39:10.231Z",
+  "file_state": {
+    "file_sha256": "5e7b2d33e98f78321eca3d71208fdd52375337eb8771ec063c85aece93b9ee2d",
+    "total_file_lines": 19,
+    "total_lines": 11
+  },
+  "removed_or_modified_lines": [],
+  "source_file": "c:\\Workspaces\\airflow-integrations\\dags\\mercury_systems_inc\\time_export_weekly_v2\\instances\\trial.py",
+  "stats": {
+    "ai_line_count": 11,
+    "ai_line_pct": 100.0,
+    "ai_lines_removed_or_modified": 0
+  },
+  "updated_at": "2026-04-08T15:39:10.231Z",
+  "version": 1
+}

@@ -1,0 +1,6 @@
+<p><strong>This is an automated mail, please don't reply.</strong><br /> <br />Hello, <br /> <br /> The Replicon Payroll
+    Export is completed sucessfully on {{ current_time("%Y-%m-%dT%H:%M:%S.%f%z") }}. Please find the file
+    details below for reference: <br /> <br />
+    File path: {{ params.log_filepath }}<br />
+    File name: {{ params.log_file_name }}{{ result('get_logging_details')['file_date_time'] }}.csv</p>
+<p>For any queries, please contact our support team at https://support.deltek.com <br /><br />Regards, <br />Deltek Inc.</p>
